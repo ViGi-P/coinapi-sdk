@@ -24,11 +24,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import java.util.*;
-import org.openapitools.client.model.V1Asset;
-import org.openapitools.client.model.V1Chain;
-import org.openapitools.client.model.V1Exchange;
-import org.openapitools.client.model.V1Icon;
-import org.openapitools.client.model.V1Symbol;
+import org.openapitools.client.model.MarketDataMetadataAsset;
+import org.openapitools.client.model.MarketDataMetadataChain;
+import org.openapitools.client.model.MarketDataMetadataExchange;
+import org.openapitools.client.model.MarketDataMetadataIcon;
+import org.openapitools.client.model.MarketDataMetadataSymbol;
 import org.openapitools.client.model.V1SymbolMapping;
 
 import org.apache.http.HttpEntity;
@@ -65,9 +65,9 @@ public class MetadataApi {
   * List all assets by asset ID
   * 
    * @param assetId The asset ID.
-   * @return List<V1Asset>
+   * @return List<MarketDataMetadataAsset>
   */
-  public List<V1Asset> v1AssetsAssetIdGet (String assetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataAsset> v1AssetsAssetIdGet (String assetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'assetId' is set
     if (assetId == null) {
@@ -102,7 +102,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Asset>) ApiInvoker.deserialize(localVarResponse, "array", V1Asset.class);
+         return (List<MarketDataMetadataAsset>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataAsset.class);
       } else {
          return null;
       }
@@ -128,7 +128,7 @@ public class MetadataApi {
    * 
    * @param assetId The asset ID.
   */
-  public void v1AssetsAssetIdGet (String assetId, final Response.Listener<List<V1Asset>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1AssetsAssetIdGet (String assetId, final Response.Listener<List<MarketDataMetadataAsset>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'assetId' is set
@@ -173,7 +173,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Asset>) ApiInvoker.deserialize(localVarResponse,  "array", V1Asset.class));
+              responseListener.onResponse((List<MarketDataMetadataAsset>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataAsset.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -192,9 +192,9 @@ public class MetadataApi {
   * List all assets
   * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
    * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
-   * @return List<V1Asset>
+   * @return List<MarketDataMetadataAsset>
   */
-  public List<V1Asset> v1AssetsGet (String filterAssetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataAsset> v1AssetsGet (String filterAssetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -225,7 +225,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Asset>) ApiInvoker.deserialize(localVarResponse, "array", V1Asset.class);
+         return (List<MarketDataMetadataAsset>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataAsset.class);
       } else {
          return null;
       }
@@ -251,7 +251,7 @@ public class MetadataApi {
    * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
    * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
   */
-  public void v1AssetsGet (String filterAssetId, final Response.Listener<List<V1Asset>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1AssetsGet (String filterAssetId, final Response.Listener<List<MarketDataMetadataAsset>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -292,7 +292,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Asset>) ApiInvoker.deserialize(localVarResponse,  "array", V1Asset.class));
+              responseListener.onResponse((List<MarketDataMetadataAsset>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataAsset.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -311,9 +311,9 @@ public class MetadataApi {
   * List all asset icons
   * Gets the list of icons (of the given size) for all the assets.
    * @param size The size of the icons.
-   * @return List<V1Icon>
+   * @return List<MarketDataMetadataIcon>
   */
-  public List<V1Icon> v1AssetsIconsSizeGet (Integer size) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataIcon> v1AssetsIconsSizeGet (Integer size) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'size' is set
     if (size == null) {
@@ -348,7 +348,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Icon>) ApiInvoker.deserialize(localVarResponse, "array", V1Icon.class);
+         return (List<MarketDataMetadataIcon>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataIcon.class);
       } else {
          return null;
       }
@@ -374,7 +374,7 @@ public class MetadataApi {
    * Gets the list of icons (of the given size) for all the assets.
    * @param size The size of the icons.
   */
-  public void v1AssetsIconsSizeGet (Integer size, final Response.Listener<List<V1Icon>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1AssetsIconsSizeGet (Integer size, final Response.Listener<List<MarketDataMetadataIcon>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'size' is set
@@ -419,7 +419,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Icon>) ApiInvoker.deserialize(localVarResponse,  "array", V1Icon.class));
+              responseListener.onResponse((List<MarketDataMetadataIcon>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataIcon.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -438,9 +438,9 @@ public class MetadataApi {
   * List all chains by chain ID
   * 
    * @param chainId The chain ID.
-   * @return List<V1Chain>
+   * @return List<MarketDataMetadataChain>
   */
-  public List<V1Chain> v1ChainsChainIdGet (String chainId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataChain> v1ChainsChainIdGet (String chainId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'chainId' is set
     if (chainId == null) {
@@ -475,7 +475,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Chain>) ApiInvoker.deserialize(localVarResponse, "array", V1Chain.class);
+         return (List<MarketDataMetadataChain>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataChain.class);
       } else {
          return null;
       }
@@ -501,7 +501,7 @@ public class MetadataApi {
    * 
    * @param chainId The chain ID.
   */
-  public void v1ChainsChainIdGet (String chainId, final Response.Listener<List<V1Chain>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1ChainsChainIdGet (String chainId, final Response.Listener<List<MarketDataMetadataChain>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'chainId' is set
@@ -546,7 +546,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Chain>) ApiInvoker.deserialize(localVarResponse,  "array", V1Chain.class));
+              responseListener.onResponse((List<MarketDataMetadataChain>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataChain.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -565,9 +565,9 @@ public class MetadataApi {
   * List all blockchain chains
   * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
    * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
-   * @return List<V1Chain>
+   * @return List<MarketDataMetadataChain>
   */
-  public List<V1Chain> v1ChainsGet (String filterChainId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataChain> v1ChainsGet (String filterChainId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -598,7 +598,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Chain>) ApiInvoker.deserialize(localVarResponse, "array", V1Chain.class);
+         return (List<MarketDataMetadataChain>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataChain.class);
       } else {
          return null;
       }
@@ -624,7 +624,7 @@ public class MetadataApi {
    * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
    * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
   */
-  public void v1ChainsGet (String filterChainId, final Response.Listener<List<V1Chain>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1ChainsGet (String filterChainId, final Response.Listener<List<MarketDataMetadataChain>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -665,7 +665,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Chain>) ApiInvoker.deserialize(localVarResponse,  "array", V1Chain.class));
+              responseListener.onResponse((List<MarketDataMetadataChain>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataChain.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -684,9 +684,9 @@ public class MetadataApi {
   * List all exchanges by exchange_id
   * 
    * @param exchangeId The ID of the exchange.
-   * @return List<V1Exchange>
+   * @return List<MarketDataMetadataExchange>
   */
-  public List<V1Exchange> v1ExchangesExchangeIdGet (String exchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataExchange> v1ExchangesExchangeIdGet (String exchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -721,7 +721,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Exchange>) ApiInvoker.deserialize(localVarResponse, "array", V1Exchange.class);
+         return (List<MarketDataMetadataExchange>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataExchange.class);
       } else {
          return null;
       }
@@ -747,7 +747,7 @@ public class MetadataApi {
    * 
    * @param exchangeId The ID of the exchange.
   */
-  public void v1ExchangesExchangeIdGet (String exchangeId, final Response.Listener<List<V1Exchange>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1ExchangesExchangeIdGet (String exchangeId, final Response.Listener<List<MarketDataMetadataExchange>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -792,7 +792,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Exchange>) ApiInvoker.deserialize(localVarResponse,  "array", V1Exchange.class));
+              responseListener.onResponse((List<MarketDataMetadataExchange>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataExchange.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -811,9 +811,9 @@ public class MetadataApi {
   * List all exchanges
   * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
    * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
-   * @return List<V1Exchange>
+   * @return List<MarketDataMetadataExchange>
   */
-  public List<V1Exchange> v1ExchangesGet (String filterExchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataExchange> v1ExchangesGet (String filterExchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -844,7 +844,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Exchange>) ApiInvoker.deserialize(localVarResponse, "array", V1Exchange.class);
+         return (List<MarketDataMetadataExchange>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataExchange.class);
       } else {
          return null;
       }
@@ -870,7 +870,7 @@ public class MetadataApi {
    * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
    * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
   */
-  public void v1ExchangesGet (String filterExchangeId, final Response.Listener<List<V1Exchange>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1ExchangesGet (String filterExchangeId, final Response.Listener<List<MarketDataMetadataExchange>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -911,7 +911,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Exchange>) ApiInvoker.deserialize(localVarResponse,  "array", V1Exchange.class));
+              responseListener.onResponse((List<MarketDataMetadataExchange>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataExchange.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -930,9 +930,9 @@ public class MetadataApi {
   * List of icons for the exchanges
   * 
    * @param size The size of the icons.
-   * @return List<V1Icon>
+   * @return List<MarketDataMetadataIcon>
   */
-  public List<V1Icon> v1ExchangesIconsSizeGet (Integer size) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataIcon> v1ExchangesIconsSizeGet (Integer size) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'size' is set
     if (size == null) {
@@ -967,7 +967,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Icon>) ApiInvoker.deserialize(localVarResponse, "array", V1Icon.class);
+         return (List<MarketDataMetadataIcon>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataIcon.class);
       } else {
          return null;
       }
@@ -993,7 +993,7 @@ public class MetadataApi {
    * 
    * @param size The size of the icons.
   */
-  public void v1ExchangesIconsSizeGet (Integer size, final Response.Listener<List<V1Icon>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1ExchangesIconsSizeGet (Integer size, final Response.Listener<List<MarketDataMetadataIcon>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'size' is set
@@ -1038,7 +1038,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Icon>) ApiInvoker.deserialize(localVarResponse,  "array", V1Icon.class));
+              responseListener.onResponse((List<MarketDataMetadataIcon>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataIcon.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1059,9 +1059,9 @@ public class MetadataApi {
    * @param exchangeId The ID of the exchange.
    * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
    * @param filterAssetId The filter for asset ID.
-   * @return List<V1Symbol>
+   * @return List<MarketDataMetadataSymbol>
   */
-  public List<V1Symbol> v1SymbolsExchangeIdActiveGet (String exchangeId, String filterSymbolId, String filterAssetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataSymbol> v1SymbolsExchangeIdActiveGet (String exchangeId, String filterSymbolId, String filterAssetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -1098,7 +1098,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Symbol>) ApiInvoker.deserialize(localVarResponse, "array", V1Symbol.class);
+         return (List<MarketDataMetadataSymbol>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataSymbol.class);
       } else {
          return null;
       }
@@ -1124,7 +1124,7 @@ public class MetadataApi {
    * Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern --------- | --------- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; DEPLOYER_PERPETUAL | &#x60;{exchange_id}_DPERP_{deployer_symbol}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time DEPLOYER_PERPETUAL | Deployer Perpetual contract | Perpetual contract for user-deployed markets *(e.g. Hyperliquid user-deployed perpetuals)* INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; DEPLOYER_PERPETUAL&#x60;              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
    * @param exchangeId The ID of the exchange.   * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)   * @param filterAssetId The filter for asset ID.
   */
-  public void v1SymbolsExchangeIdActiveGet (String exchangeId, String filterSymbolId, String filterAssetId, final Response.Listener<List<V1Symbol>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1SymbolsExchangeIdActiveGet (String exchangeId, String filterSymbolId, String filterAssetId, final Response.Listener<List<MarketDataMetadataSymbol>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -1171,7 +1171,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Symbol>) ApiInvoker.deserialize(localVarResponse,  "array", V1Symbol.class));
+              responseListener.onResponse((List<MarketDataMetadataSymbol>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataSymbol.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1192,9 +1192,9 @@ public class MetadataApi {
    * @param exchangeId The ID of the exchange.
    * @param page The page number for pagination (starts from 1).
    * @param limit Number of records to return per page.
-   * @return List<V1Symbol>
+   * @return List<MarketDataMetadataSymbol>
   */
-  public List<V1Symbol> v1SymbolsExchangeIdHistoryGet (String exchangeId, Integer page, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataSymbol> v1SymbolsExchangeIdHistoryGet (String exchangeId, Integer page, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -1231,7 +1231,7 @@ public class MetadataApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<V1Symbol>) ApiInvoker.deserialize(localVarResponse, "array", V1Symbol.class);
+         return (List<MarketDataMetadataSymbol>) ApiInvoker.deserialize(localVarResponse, "array", MarketDataMetadataSymbol.class);
       } else {
          return null;
       }
@@ -1257,7 +1257,7 @@ public class MetadataApi {
    * This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange. The data is provided with pagination support.
    * @param exchangeId The ID of the exchange.   * @param page The page number for pagination (starts from 1).   * @param limit Number of records to return per page.
   */
-  public void v1SymbolsExchangeIdHistoryGet (String exchangeId, Integer page, Integer limit, final Response.Listener<List<V1Symbol>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1SymbolsExchangeIdHistoryGet (String exchangeId, Integer page, Integer limit, final Response.Listener<List<MarketDataMetadataSymbol>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -1304,7 +1304,7 @@ public class MetadataApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<V1Symbol>) ApiInvoker.deserialize(localVarResponse,  "array", V1Symbol.class));
+              responseListener.onResponse((List<MarketDataMetadataSymbol>) ApiInvoker.deserialize(localVarResponse,  "array", MarketDataMetadataSymbol.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

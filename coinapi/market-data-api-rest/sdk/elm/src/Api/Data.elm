@@ -15,17 +15,18 @@
 
 
 module Api.Data exposing
-    ( OhlcvExchangeTimeseriesItem
-    , V1Asset
-    , V1Chain
+    ( MarketDataMetadataAsset
+    , MarketDataMetadataChain
+    , MarketDataMetadataExchange
+    , MarketDataMetadataIcon
+    , MarketDataMetadataSymbol
+    , OhlcvExchangeTimeseriesItem
     , V1ChainNetworkAddress
-    , V1Exchange
     , V1ExchangeRate
     , V1ExchangeRates
     , V1ExchangeRatesRate
     , V1ExchangeRatesTimeseriesItem
     , V1GeneralData
-    , V1Icon
     , V1LastTrade
     , V1ListingItem
     , V1Metric
@@ -38,22 +39,22 @@ module Api.Data exposing
     , V1Quote
     , V1QuoteTrade
     , V1Strike
-    , V1Symbol
     , V1SymbolMapping
     , V1TimeseriesItem
     , V1TimeseriesPeriod
     , V1Trade
+    , encodeMarketDataMetadataAsset
+    , encodeMarketDataMetadataChain
+    , encodeMarketDataMetadataExchange
+    , encodeMarketDataMetadataIcon
+    , encodeMarketDataMetadataSymbol
     , encodeOhlcvExchangeTimeseriesItem
-    , encodeV1Asset
-    , encodeV1Chain
     , encodeV1ChainNetworkAddress
-    , encodeV1Exchange
     , encodeV1ExchangeRate
     , encodeV1ExchangeRates
     , encodeV1ExchangeRatesRate
     , encodeV1ExchangeRatesTimeseriesItem
     , encodeV1GeneralData
-    , encodeV1Icon
     , encodeV1LastTrade
     , encodeV1ListingItem
     , encodeV1Metric
@@ -66,22 +67,22 @@ module Api.Data exposing
     , encodeV1Quote
     , encodeV1QuoteTrade
     , encodeV1Strike
-    , encodeV1Symbol
     , encodeV1SymbolMapping
     , encodeV1TimeseriesItem
     , encodeV1TimeseriesPeriod
     , encodeV1Trade
+    , marketDataMetadataAssetDecoder
+    , marketDataMetadataChainDecoder
+    , marketDataMetadataExchangeDecoder
+    , marketDataMetadataIconDecoder
+    , marketDataMetadataSymbolDecoder
     , ohlcvExchangeTimeseriesItemDecoder
-    , v1AssetDecoder
-    , v1ChainDecoder
     , v1ChainNetworkAddressDecoder
-    , v1ExchangeDecoder
     , v1ExchangeRateDecoder
     , v1ExchangeRatesDecoder
     , v1ExchangeRatesRateDecoder
     , v1ExchangeRatesTimeseriesItemDecoder
     , v1GeneralDataDecoder
-    , v1IconDecoder
     , v1LastTradeDecoder
     , v1ListingItemDecoder
     , v1MetricDecoder
@@ -94,7 +95,6 @@ module Api.Data exposing
     , v1QuoteDecoder
     , v1QuoteTradeDecoder
     , v1StrikeDecoder
-    , v1SymbolDecoder
     , v1SymbolMappingDecoder
     , v1TimeseriesItemDecoder
     , v1TimeseriesPeriodDecoder
@@ -112,27 +112,9 @@ import Uuid exposing (Uuid)
 -- MODEL
 
 
-{-| Represents a timeseries item with price and volume information.
--}
-type alias OhlcvExchangeTimeseriesItem =
-    { timePeriodStart : Maybe Posix
-    , timePeriodEnd : Maybe Posix
-    , timeOpen : Maybe Posix
-    , timeClose : Maybe Posix
-    , priceOpen : Maybe Float
-    , priceHigh : Maybe Float
-    , priceLow : Maybe Float
-    , priceClose : Maybe Float
-    , volumeTraded : Maybe Float
-    , tradesCount : Maybe Int
-    , symbolIdExchange : Maybe String
-    , symbolIdCoinapi : Maybe String
-    }
-
-
 {-| Represents an asset.
 -}
-type alias V1Asset =
+type alias MarketDataMetadataAsset =
     { assetId : Maybe String
     , name : Maybe String
     , typeIsCrypto : Maybe Int
@@ -159,24 +141,15 @@ type alias V1Asset =
 
 {-| Represents a blockchain chain.
 -}
-type alias V1Chain =
+type alias MarketDataMetadataChain =
     { chainId : Maybe String
     , name : Maybe String
     }
 
 
-{-| Contains information about assets' chain network addresses
--}
-type alias V1ChainNetworkAddress =
-    { chainId : Maybe String
-    , networkId : Maybe String
-    , address : Maybe String
-    }
-
-
 {-| Represents an exchange.
 -}
-type alias V1Exchange =
+type alias MarketDataMetadataExchange =
     { exchangeId : Maybe String
     , website : Maybe String
     , name : Maybe String
@@ -194,9 +167,103 @@ type alias V1Exchange =
     , volume1dayUsd : Maybe Float
     , volume1mthUsd : Maybe Float
     , metricId : Maybe ( List String )
-    , icons : Maybe ( List V1Icon )
+    , icons : Maybe ( List MarketDataMetadataIcon )
     , rank : Maybe Float
     , integrationStatus : Maybe String
+    }
+
+
+{-| Represents an icon.
+-}
+type alias MarketDataMetadataIcon =
+    { exchangeId : Maybe String
+    , assetId : Maybe String
+    , url : Maybe String
+    }
+
+
+{-| Represents a symbol data model.
+-}
+type alias MarketDataMetadataSymbol =
+    { symbolId : Maybe String
+    , exchangeId : Maybe String
+    , symbolType : Maybe String
+    , assetIdBase : Maybe String
+    , assetIdQuote : Maybe String
+    , assetIdUnit : Maybe String
+    , futureContractUnit : Maybe Float
+    , futureContractUnitAsset : Maybe String
+    , futureDeliveryTime : Maybe Posix
+    , optionTypeIsCall : Maybe Bool
+    , optionStrikePrice : Maybe Float
+    , optionContractUnit : Maybe Float
+    , optionExerciseStyle : Maybe String
+    , optionExpirationTime : Maybe Posix
+    , contractDeliveryTime : Maybe Posix
+    , contractUnit : Maybe Float
+    , contractUnitAsset : Maybe String
+    , contractId : Maybe String
+    , contractDisplayName : Maybe String
+    , contractDisplayDescription : Maybe String
+    , dataStart : Maybe String
+    , dataEnd : Maybe String
+    , dataQuoteStart : Maybe Posix
+    , dataQuoteEnd : Maybe Posix
+    , dataOrderbookStart : Maybe Posix
+    , dataOrderbookEnd : Maybe Posix
+    , dataTradeStart : Maybe Posix
+    , dataTradeEnd : Maybe Posix
+    , indexId : Maybe String
+    , indexDisplayName : Maybe String
+    , indexDisplayDescription : Maybe String
+    , volume1hrs : Maybe Float
+    , volume1hrsUsd : Maybe Float
+    , volume1day : Maybe Float
+    , volume1dayUsd : Maybe Float
+    , volume1mth : Maybe Float
+    , volume1mthUsd : Maybe Float
+    , price : Maybe Float
+    , symbolIdExchange : Maybe String
+    , assetIdBaseExchange : Maybe String
+    , assetIdQuoteExchange : Maybe String
+    , pricePrecision : Maybe Float
+    , sizePrecision : Maybe Float
+    , rawKvp : Maybe ( Dict.Dict String Maybe String )
+    , futureIsInverse : Maybe Bool
+    , futureIsQuanto : Maybe Bool
+    , volumeToUsd : Maybe Float
+    , optionBarrierUpPrice : Maybe Float
+    , optionBarrierUpType : Maybe String
+    , optionBarrierDownPrice : Maybe Float
+    , optionBarrierDownType : Maybe String
+    , symbolIdInt : Maybe Int
+    }
+
+
+{-| Represents a timeseries item with price and volume information.
+-}
+type alias OhlcvExchangeTimeseriesItem =
+    { timePeriodStart : Maybe Posix
+    , timePeriodEnd : Maybe Posix
+    , timeOpen : Maybe Posix
+    , timeClose : Maybe Posix
+    , priceOpen : Maybe Float
+    , priceHigh : Maybe Float
+    , priceLow : Maybe Float
+    , priceClose : Maybe Float
+    , volumeTraded : Maybe Float
+    , tradesCount : Maybe Int
+    , symbolIdExchange : Maybe String
+    , symbolIdCoinapi : Maybe String
+    }
+
+
+{-| Contains information about assets' chain network addresses
+-}
+type alias V1ChainNetworkAddress =
+    { chainId : Maybe String
+    , networkId : Maybe String
+    , address : Maybe String
     }
 
 
@@ -253,15 +320,6 @@ type alias V1GeneralData =
     , valueDecimal : Maybe Float
     , valueText : Maybe String
     , valueTime : Maybe Posix
-    }
-
-
-{-| Represents an icon.
--}
-type alias V1Icon =
-    { exchangeId : Maybe String
-    , assetId : Maybe String
-    , url : Maybe String
     }
 
 
@@ -399,64 +457,6 @@ type alias V1Strike =
     }
 
 
-{-| Represents a symbol data model.
--}
-type alias V1Symbol =
-    { symbolId : Maybe String
-    , exchangeId : Maybe String
-    , symbolType : Maybe String
-    , assetIdBase : Maybe String
-    , assetIdQuote : Maybe String
-    , assetIdUnit : Maybe String
-    , futureContractUnit : Maybe Float
-    , futureContractUnitAsset : Maybe String
-    , futureDeliveryTime : Maybe Posix
-    , optionTypeIsCall : Maybe Bool
-    , optionStrikePrice : Maybe Float
-    , optionContractUnit : Maybe Float
-    , optionExerciseStyle : Maybe String
-    , optionExpirationTime : Maybe Posix
-    , contractDeliveryTime : Maybe Posix
-    , contractUnit : Maybe Float
-    , contractUnitAsset : Maybe String
-    , contractId : Maybe String
-    , contractDisplayName : Maybe String
-    , contractDisplayDescription : Maybe String
-    , dataStart : Maybe String
-    , dataEnd : Maybe String
-    , dataQuoteStart : Maybe Posix
-    , dataQuoteEnd : Maybe Posix
-    , dataOrderbookStart : Maybe Posix
-    , dataOrderbookEnd : Maybe Posix
-    , dataTradeStart : Maybe Posix
-    , dataTradeEnd : Maybe Posix
-    , indexId : Maybe String
-    , indexDisplayName : Maybe String
-    , indexDisplayDescription : Maybe String
-    , volume1hrs : Maybe Float
-    , volume1hrsUsd : Maybe Float
-    , volume1day : Maybe Float
-    , volume1dayUsd : Maybe Float
-    , volume1mth : Maybe Float
-    , volume1mthUsd : Maybe Float
-    , price : Maybe Float
-    , symbolIdExchange : Maybe String
-    , assetIdBaseExchange : Maybe String
-    , assetIdQuoteExchange : Maybe String
-    , pricePrecision : Maybe Float
-    , sizePrecision : Maybe Float
-    , rawKvp : Maybe ( Dict.Dict String Maybe String )
-    , futureIsInverse : Maybe Bool
-    , futureIsQuanto : Maybe Bool
-    , volumeToUsd : Maybe Float
-    , optionBarrierUpPrice : Maybe Float
-    , optionBarrierUpType : Maybe String
-    , optionBarrierDownPrice : Maybe Float
-    , optionBarrierDownType : Maybe String
-    , symbolIdInt : Maybe Int
-    }
-
-
 {-| Represents symbol mapping information for exchange symbols.
 -}
 type alias V1SymbolMapping =
@@ -521,6 +521,199 @@ type alias V1Trade =
 -- ENCODER
 
 
+encodeMarketDataMetadataAsset : MarketDataMetadataAsset -> Json.Encode.Value
+encodeMarketDataMetadataAsset =
+    encodeObject << encodeMarketDataMetadataAssetPairs
+
+
+encodeMarketDataMetadataAssetWithTag : ( String, String ) -> MarketDataMetadataAsset -> Json.Encode.Value
+encodeMarketDataMetadataAssetWithTag (tagField, tag) model =
+    encodeObject (encodeMarketDataMetadataAssetPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeMarketDataMetadataAssetPairs : MarketDataMetadataAsset -> List EncodedField
+encodeMarketDataMetadataAssetPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "asset_id" Json.Encode.string model.assetId
+            , maybeEncodeNullable "name" Json.Encode.string model.name
+            , maybeEncode "type_is_crypto" Json.Encode.int model.typeIsCrypto
+            , maybeEncodeNullable "data_quote_start" Api.Time.encodeDateTime model.dataQuoteStart
+            , maybeEncodeNullable "data_quote_end" Api.Time.encodeDateTime model.dataQuoteEnd
+            , maybeEncodeNullable "data_orderbook_start" Api.Time.encodeDateTime model.dataOrderbookStart
+            , maybeEncodeNullable "data_orderbook_end" Api.Time.encodeDateTime model.dataOrderbookEnd
+            , maybeEncodeNullable "data_trade_start" Api.Time.encodeDateTime model.dataTradeStart
+            , maybeEncodeNullable "data_trade_end" Api.Time.encodeDateTime model.dataTradeEnd
+            , maybeEncodeNullable "data_symbols_count" Json.Encode.int model.dataSymbolsCount
+            , maybeEncodeNullable "volume_1hrs_usd" Json.Encode.float model.volume1hrsUsd
+            , maybeEncodeNullable "volume_1day_usd" Json.Encode.float model.volume1dayUsd
+            , maybeEncodeNullable "volume_1mth_usd" Json.Encode.float model.volume1mthUsd
+            , maybeEncodeNullable "price_usd" Json.Encode.float model.priceUsd
+            , maybeEncodeNullable "id_icon" Uuid.encode model.idIcon
+            , maybeEncodeNullable "supply_current" Json.Encode.float model.supplyCurrent
+            , maybeEncodeNullable "supply_total" Json.Encode.float model.supplyTotal
+            , maybeEncodeNullable "supply_max" Json.Encode.float model.supplyMax
+            , maybeEncodeNullable "chain_addresses" (Json.Encode.list encodeV1ChainNetworkAddress) model.chainAddresses
+            , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
+            , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
+            ]
+    in
+    pairs
+
+
+encodeMarketDataMetadataChain : MarketDataMetadataChain -> Json.Encode.Value
+encodeMarketDataMetadataChain =
+    encodeObject << encodeMarketDataMetadataChainPairs
+
+
+encodeMarketDataMetadataChainWithTag : ( String, String ) -> MarketDataMetadataChain -> Json.Encode.Value
+encodeMarketDataMetadataChainWithTag (tagField, tag) model =
+    encodeObject (encodeMarketDataMetadataChainPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeMarketDataMetadataChainPairs : MarketDataMetadataChain -> List EncodedField
+encodeMarketDataMetadataChainPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "chain_id" Json.Encode.string model.chainId
+            , maybeEncodeNullable "name" Json.Encode.string model.name
+            ]
+    in
+    pairs
+
+
+encodeMarketDataMetadataExchange : MarketDataMetadataExchange -> Json.Encode.Value
+encodeMarketDataMetadataExchange =
+    encodeObject << encodeMarketDataMetadataExchangePairs
+
+
+encodeMarketDataMetadataExchangeWithTag : ( String, String ) -> MarketDataMetadataExchange -> Json.Encode.Value
+encodeMarketDataMetadataExchangeWithTag (tagField, tag) model =
+    encodeObject (encodeMarketDataMetadataExchangePairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeMarketDataMetadataExchangePairs : MarketDataMetadataExchange -> List EncodedField
+encodeMarketDataMetadataExchangePairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
+            , maybeEncodeNullable "website" Json.Encode.string model.website
+            , maybeEncodeNullable "name" Json.Encode.string model.name
+            , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
+            , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
+            , maybeEncodeNullable "data_quote_start" Api.Time.encodeDateTime model.dataQuoteStart
+            , maybeEncodeNullable "data_quote_end" Api.Time.encodeDateTime model.dataQuoteEnd
+            , maybeEncodeNullable "data_orderbook_start" Api.Time.encodeDateTime model.dataOrderbookStart
+            , maybeEncodeNullable "data_orderbook_end" Api.Time.encodeDateTime model.dataOrderbookEnd
+            , maybeEncodeNullable "data_trade_start" Api.Time.encodeDateTime model.dataTradeStart
+            , maybeEncodeNullable "data_trade_end" Api.Time.encodeDateTime model.dataTradeEnd
+            , maybeEncodeNullable "data_trade_count" Json.Encode.int model.dataTradeCount
+            , maybeEncodeNullable "data_symbols_count" Json.Encode.int model.dataSymbolsCount
+            , maybeEncodeNullable "volume_1hrs_usd" Json.Encode.float model.volume1hrsUsd
+            , maybeEncodeNullable "volume_1day_usd" Json.Encode.float model.volume1dayUsd
+            , maybeEncodeNullable "volume_1mth_usd" Json.Encode.float model.volume1mthUsd
+            , maybeEncodeNullable "metric_id" (Json.Encode.list Json.Encode.string) model.metricId
+            , maybeEncodeNullable "icons" (Json.Encode.list encodeMarketDataMetadataIcon) model.icons
+            , maybeEncode "rank" Json.Encode.float model.rank
+            , maybeEncodeNullable "integration_status" Json.Encode.string model.integrationStatus
+            ]
+    in
+    pairs
+
+
+encodeMarketDataMetadataIcon : MarketDataMetadataIcon -> Json.Encode.Value
+encodeMarketDataMetadataIcon =
+    encodeObject << encodeMarketDataMetadataIconPairs
+
+
+encodeMarketDataMetadataIconWithTag : ( String, String ) -> MarketDataMetadataIcon -> Json.Encode.Value
+encodeMarketDataMetadataIconWithTag (tagField, tag) model =
+    encodeObject (encodeMarketDataMetadataIconPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeMarketDataMetadataIconPairs : MarketDataMetadataIcon -> List EncodedField
+encodeMarketDataMetadataIconPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
+            , maybeEncodeNullable "asset_id" Json.Encode.string model.assetId
+            , maybeEncodeNullable "url" Json.Encode.string model.url
+            ]
+    in
+    pairs
+
+
+encodeMarketDataMetadataSymbol : MarketDataMetadataSymbol -> Json.Encode.Value
+encodeMarketDataMetadataSymbol =
+    encodeObject << encodeMarketDataMetadataSymbolPairs
+
+
+encodeMarketDataMetadataSymbolWithTag : ( String, String ) -> MarketDataMetadataSymbol -> Json.Encode.Value
+encodeMarketDataMetadataSymbolWithTag (tagField, tag) model =
+    encodeObject (encodeMarketDataMetadataSymbolPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeMarketDataMetadataSymbolPairs : MarketDataMetadataSymbol -> List EncodedField
+encodeMarketDataMetadataSymbolPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol_id" Json.Encode.string model.symbolId
+            , maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
+            , maybeEncodeNullable "symbol_type" Json.Encode.string model.symbolType
+            , maybeEncodeNullable "asset_id_base" Json.Encode.string model.assetIdBase
+            , maybeEncodeNullable "asset_id_quote" Json.Encode.string model.assetIdQuote
+            , maybeEncodeNullable "asset_id_unit" Json.Encode.string model.assetIdUnit
+            , maybeEncodeNullable "future_contract_unit" Json.Encode.float model.futureContractUnit
+            , maybeEncodeNullable "future_contract_unit_asset" Json.Encode.string model.futureContractUnitAsset
+            , maybeEncodeNullable "future_delivery_time" Api.Time.encodeDateTime model.futureDeliveryTime
+            , maybeEncodeNullable "option_type_is_call" Json.Encode.bool model.optionTypeIsCall
+            , maybeEncodeNullable "option_strike_price" Json.Encode.float model.optionStrikePrice
+            , maybeEncodeNullable "option_contract_unit" Json.Encode.float model.optionContractUnit
+            , maybeEncodeNullable "option_exercise_style" Json.Encode.string model.optionExerciseStyle
+            , maybeEncodeNullable "option_expiration_time" Api.Time.encodeDateTime model.optionExpirationTime
+            , maybeEncodeNullable "contract_delivery_time" Api.Time.encodeDateTime model.contractDeliveryTime
+            , maybeEncodeNullable "contract_unit" Json.Encode.float model.contractUnit
+            , maybeEncodeNullable "contract_unit_asset" Json.Encode.string model.contractUnitAsset
+            , maybeEncodeNullable "contract_id" Json.Encode.string model.contractId
+            , maybeEncodeNullable "contract_display_name" Json.Encode.string model.contractDisplayName
+            , maybeEncodeNullable "contract_display_description" Json.Encode.string model.contractDisplayDescription
+            , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
+            , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
+            , maybeEncodeNullable "data_quote_start" Api.Time.encodeDateTime model.dataQuoteStart
+            , maybeEncodeNullable "data_quote_end" Api.Time.encodeDateTime model.dataQuoteEnd
+            , maybeEncodeNullable "data_orderbook_start" Api.Time.encodeDateTime model.dataOrderbookStart
+            , maybeEncodeNullable "data_orderbook_end" Api.Time.encodeDateTime model.dataOrderbookEnd
+            , maybeEncodeNullable "data_trade_start" Api.Time.encodeDateTime model.dataTradeStart
+            , maybeEncodeNullable "data_trade_end" Api.Time.encodeDateTime model.dataTradeEnd
+            , maybeEncodeNullable "index_id" Json.Encode.string model.indexId
+            , maybeEncodeNullable "index_display_name" Json.Encode.string model.indexDisplayName
+            , maybeEncodeNullable "index_display_description" Json.Encode.string model.indexDisplayDescription
+            , maybeEncodeNullable "volume_1hrs" Json.Encode.float model.volume1hrs
+            , maybeEncodeNullable "volume_1hrs_usd" Json.Encode.float model.volume1hrsUsd
+            , maybeEncodeNullable "volume_1day" Json.Encode.float model.volume1day
+            , maybeEncodeNullable "volume_1day_usd" Json.Encode.float model.volume1dayUsd
+            , maybeEncodeNullable "volume_1mth" Json.Encode.float model.volume1mth
+            , maybeEncodeNullable "volume_1mth_usd" Json.Encode.float model.volume1mthUsd
+            , maybeEncodeNullable "price" Json.Encode.float model.price
+            , maybeEncodeNullable "symbol_id_exchange" Json.Encode.string model.symbolIdExchange
+            , maybeEncodeNullable "asset_id_base_exchange" Json.Encode.string model.assetIdBaseExchange
+            , maybeEncodeNullable "asset_id_quote_exchange" Json.Encode.string model.assetIdQuoteExchange
+            , maybeEncodeNullable "price_precision" Json.Encode.float model.pricePrecision
+            , maybeEncodeNullable "size_precision" Json.Encode.float model.sizePrecision
+            , maybeEncodeNullable "raw_kvp" (Json.Encode.dict identity Json.Encode.string) model.rawKvp
+            , maybeEncodeNullable "future_is_inverse" Json.Encode.bool model.futureIsInverse
+            , maybeEncodeNullable "future_is_quanto" Json.Encode.bool model.futureIsQuanto
+            , maybeEncodeNullable "volume_to_usd" Json.Encode.float model.volumeToUsd
+            , maybeEncodeNullable "option_barrier_up_price" Json.Encode.float model.optionBarrierUpPrice
+            , maybeEncodeNullable "option_barrier_up_type" Json.Encode.string model.optionBarrierUpType
+            , maybeEncodeNullable "option_barrier_down_price" Json.Encode.float model.optionBarrierDownPrice
+            , maybeEncodeNullable "option_barrier_down_type" Json.Encode.string model.optionBarrierDownType
+            , maybeEncodeNullable "symbol_id_int" Json.Encode.int model.symbolIdInt
+            ]
+    in
+    pairs
+
+
 encodeOhlcvExchangeTimeseriesItem : OhlcvExchangeTimeseriesItem -> Json.Encode.Value
 encodeOhlcvExchangeTimeseriesItem =
     encodeObject << encodeOhlcvExchangeTimeseriesItemPairs
@@ -552,67 +745,6 @@ encodeOhlcvExchangeTimeseriesItemPairs model =
     pairs
 
 
-encodeV1Asset : V1Asset -> Json.Encode.Value
-encodeV1Asset =
-    encodeObject << encodeV1AssetPairs
-
-
-encodeV1AssetWithTag : ( String, String ) -> V1Asset -> Json.Encode.Value
-encodeV1AssetWithTag (tagField, tag) model =
-    encodeObject (encodeV1AssetPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeV1AssetPairs : V1Asset -> List EncodedField
-encodeV1AssetPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "asset_id" Json.Encode.string model.assetId
-            , maybeEncodeNullable "name" Json.Encode.string model.name
-            , maybeEncode "type_is_crypto" Json.Encode.int model.typeIsCrypto
-            , maybeEncodeNullable "data_quote_start" Api.Time.encodeDateTime model.dataQuoteStart
-            , maybeEncodeNullable "data_quote_end" Api.Time.encodeDateTime model.dataQuoteEnd
-            , maybeEncodeNullable "data_orderbook_start" Api.Time.encodeDateTime model.dataOrderbookStart
-            , maybeEncodeNullable "data_orderbook_end" Api.Time.encodeDateTime model.dataOrderbookEnd
-            , maybeEncodeNullable "data_trade_start" Api.Time.encodeDateTime model.dataTradeStart
-            , maybeEncodeNullable "data_trade_end" Api.Time.encodeDateTime model.dataTradeEnd
-            , maybeEncodeNullable "data_symbols_count" Json.Encode.int model.dataSymbolsCount
-            , maybeEncodeNullable "volume_1hrs_usd" Json.Encode.float model.volume1hrsUsd
-            , maybeEncodeNullable "volume_1day_usd" Json.Encode.float model.volume1dayUsd
-            , maybeEncodeNullable "volume_1mth_usd" Json.Encode.float model.volume1mthUsd
-            , maybeEncodeNullable "price_usd" Json.Encode.float model.priceUsd
-            , maybeEncodeNullable "id_icon" Uuid.encode model.idIcon
-            , maybeEncodeNullable "supply_current" Json.Encode.float model.supplyCurrent
-            , maybeEncodeNullable "supply_total" Json.Encode.float model.supplyTotal
-            , maybeEncodeNullable "supply_max" Json.Encode.float model.supplyMax
-            , maybeEncodeNullable "chain_addresses" (Json.Encode.list encodeV1ChainNetworkAddress) model.chainAddresses
-            , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
-            , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
-            ]
-    in
-    pairs
-
-
-encodeV1Chain : V1Chain -> Json.Encode.Value
-encodeV1Chain =
-    encodeObject << encodeV1ChainPairs
-
-
-encodeV1ChainWithTag : ( String, String ) -> V1Chain -> Json.Encode.Value
-encodeV1ChainWithTag (tagField, tag) model =
-    encodeObject (encodeV1ChainPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeV1ChainPairs : V1Chain -> List EncodedField
-encodeV1ChainPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "chain_id" Json.Encode.string model.chainId
-            , maybeEncodeNullable "name" Json.Encode.string model.name
-            ]
-    in
-    pairs
-
-
 encodeV1ChainNetworkAddress : V1ChainNetworkAddress -> Json.Encode.Value
 encodeV1ChainNetworkAddress =
     encodeObject << encodeV1ChainNetworkAddressPairs
@@ -630,45 +762,6 @@ encodeV1ChainNetworkAddressPairs model =
             [ maybeEncodeNullable "chain_id" Json.Encode.string model.chainId
             , maybeEncodeNullable "network_id" Json.Encode.string model.networkId
             , maybeEncodeNullable "address" Json.Encode.string model.address
-            ]
-    in
-    pairs
-
-
-encodeV1Exchange : V1Exchange -> Json.Encode.Value
-encodeV1Exchange =
-    encodeObject << encodeV1ExchangePairs
-
-
-encodeV1ExchangeWithTag : ( String, String ) -> V1Exchange -> Json.Encode.Value
-encodeV1ExchangeWithTag (tagField, tag) model =
-    encodeObject (encodeV1ExchangePairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeV1ExchangePairs : V1Exchange -> List EncodedField
-encodeV1ExchangePairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
-            , maybeEncodeNullable "website" Json.Encode.string model.website
-            , maybeEncodeNullable "name" Json.Encode.string model.name
-            , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
-            , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
-            , maybeEncodeNullable "data_quote_start" Api.Time.encodeDateTime model.dataQuoteStart
-            , maybeEncodeNullable "data_quote_end" Api.Time.encodeDateTime model.dataQuoteEnd
-            , maybeEncodeNullable "data_orderbook_start" Api.Time.encodeDateTime model.dataOrderbookStart
-            , maybeEncodeNullable "data_orderbook_end" Api.Time.encodeDateTime model.dataOrderbookEnd
-            , maybeEncodeNullable "data_trade_start" Api.Time.encodeDateTime model.dataTradeStart
-            , maybeEncodeNullable "data_trade_end" Api.Time.encodeDateTime model.dataTradeEnd
-            , maybeEncodeNullable "data_trade_count" Json.Encode.int model.dataTradeCount
-            , maybeEncodeNullable "data_symbols_count" Json.Encode.int model.dataSymbolsCount
-            , maybeEncodeNullable "volume_1hrs_usd" Json.Encode.float model.volume1hrsUsd
-            , maybeEncodeNullable "volume_1day_usd" Json.Encode.float model.volume1dayUsd
-            , maybeEncodeNullable "volume_1mth_usd" Json.Encode.float model.volume1mthUsd
-            , maybeEncodeNullable "metric_id" (Json.Encode.list Json.Encode.string) model.metricId
-            , maybeEncodeNullable "icons" (Json.Encode.list encodeV1Icon) model.icons
-            , maybeEncode "rank" Json.Encode.float model.rank
-            , maybeEncodeNullable "integration_status" Json.Encode.string model.integrationStatus
             ]
     in
     pairs
@@ -790,28 +883,6 @@ encodeV1GeneralDataPairs model =
             , maybeEncodeNullable "value_decimal" Json.Encode.float model.valueDecimal
             , maybeEncodeNullable "value_text" Json.Encode.string model.valueText
             , maybeEncodeNullable "value_time" Api.Time.encodeDateTime model.valueTime
-            ]
-    in
-    pairs
-
-
-encodeV1Icon : V1Icon -> Json.Encode.Value
-encodeV1Icon =
-    encodeObject << encodeV1IconPairs
-
-
-encodeV1IconWithTag : ( String, String ) -> V1Icon -> Json.Encode.Value
-encodeV1IconWithTag (tagField, tag) model =
-    encodeObject (encodeV1IconPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeV1IconPairs : V1Icon -> List EncodedField
-encodeV1IconPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
-            , maybeEncodeNullable "asset_id" Json.Encode.string model.assetId
-            , maybeEncodeNullable "url" Json.Encode.string model.url
             ]
     in
     pairs
@@ -1107,77 +1178,6 @@ encodeV1StrikePairs model =
     pairs
 
 
-encodeV1Symbol : V1Symbol -> Json.Encode.Value
-encodeV1Symbol =
-    encodeObject << encodeV1SymbolPairs
-
-
-encodeV1SymbolWithTag : ( String, String ) -> V1Symbol -> Json.Encode.Value
-encodeV1SymbolWithTag (tagField, tag) model =
-    encodeObject (encodeV1SymbolPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeV1SymbolPairs : V1Symbol -> List EncodedField
-encodeV1SymbolPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol_id" Json.Encode.string model.symbolId
-            , maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
-            , maybeEncodeNullable "symbol_type" Json.Encode.string model.symbolType
-            , maybeEncodeNullable "asset_id_base" Json.Encode.string model.assetIdBase
-            , maybeEncodeNullable "asset_id_quote" Json.Encode.string model.assetIdQuote
-            , maybeEncodeNullable "asset_id_unit" Json.Encode.string model.assetIdUnit
-            , maybeEncodeNullable "future_contract_unit" Json.Encode.float model.futureContractUnit
-            , maybeEncodeNullable "future_contract_unit_asset" Json.Encode.string model.futureContractUnitAsset
-            , maybeEncodeNullable "future_delivery_time" Api.Time.encodeDateTime model.futureDeliveryTime
-            , maybeEncodeNullable "option_type_is_call" Json.Encode.bool model.optionTypeIsCall
-            , maybeEncodeNullable "option_strike_price" Json.Encode.float model.optionStrikePrice
-            , maybeEncodeNullable "option_contract_unit" Json.Encode.float model.optionContractUnit
-            , maybeEncodeNullable "option_exercise_style" Json.Encode.string model.optionExerciseStyle
-            , maybeEncodeNullable "option_expiration_time" Api.Time.encodeDateTime model.optionExpirationTime
-            , maybeEncodeNullable "contract_delivery_time" Api.Time.encodeDateTime model.contractDeliveryTime
-            , maybeEncodeNullable "contract_unit" Json.Encode.float model.contractUnit
-            , maybeEncodeNullable "contract_unit_asset" Json.Encode.string model.contractUnitAsset
-            , maybeEncodeNullable "contract_id" Json.Encode.string model.contractId
-            , maybeEncodeNullable "contract_display_name" Json.Encode.string model.contractDisplayName
-            , maybeEncodeNullable "contract_display_description" Json.Encode.string model.contractDisplayDescription
-            , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
-            , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
-            , maybeEncodeNullable "data_quote_start" Api.Time.encodeDateTime model.dataQuoteStart
-            , maybeEncodeNullable "data_quote_end" Api.Time.encodeDateTime model.dataQuoteEnd
-            , maybeEncodeNullable "data_orderbook_start" Api.Time.encodeDateTime model.dataOrderbookStart
-            , maybeEncodeNullable "data_orderbook_end" Api.Time.encodeDateTime model.dataOrderbookEnd
-            , maybeEncodeNullable "data_trade_start" Api.Time.encodeDateTime model.dataTradeStart
-            , maybeEncodeNullable "data_trade_end" Api.Time.encodeDateTime model.dataTradeEnd
-            , maybeEncodeNullable "index_id" Json.Encode.string model.indexId
-            , maybeEncodeNullable "index_display_name" Json.Encode.string model.indexDisplayName
-            , maybeEncodeNullable "index_display_description" Json.Encode.string model.indexDisplayDescription
-            , maybeEncodeNullable "volume_1hrs" Json.Encode.float model.volume1hrs
-            , maybeEncodeNullable "volume_1hrs_usd" Json.Encode.float model.volume1hrsUsd
-            , maybeEncodeNullable "volume_1day" Json.Encode.float model.volume1day
-            , maybeEncodeNullable "volume_1day_usd" Json.Encode.float model.volume1dayUsd
-            , maybeEncodeNullable "volume_1mth" Json.Encode.float model.volume1mth
-            , maybeEncodeNullable "volume_1mth_usd" Json.Encode.float model.volume1mthUsd
-            , maybeEncodeNullable "price" Json.Encode.float model.price
-            , maybeEncodeNullable "symbol_id_exchange" Json.Encode.string model.symbolIdExchange
-            , maybeEncodeNullable "asset_id_base_exchange" Json.Encode.string model.assetIdBaseExchange
-            , maybeEncodeNullable "asset_id_quote_exchange" Json.Encode.string model.assetIdQuoteExchange
-            , maybeEncodeNullable "price_precision" Json.Encode.float model.pricePrecision
-            , maybeEncodeNullable "size_precision" Json.Encode.float model.sizePrecision
-            , maybeEncodeNullable "raw_kvp" (Json.Encode.dict identity Json.Encode.string) model.rawKvp
-            , maybeEncodeNullable "future_is_inverse" Json.Encode.bool model.futureIsInverse
-            , maybeEncodeNullable "future_is_quanto" Json.Encode.bool model.futureIsQuanto
-            , maybeEncodeNullable "volume_to_usd" Json.Encode.float model.volumeToUsd
-            , maybeEncodeNullable "option_barrier_up_price" Json.Encode.float model.optionBarrierUpPrice
-            , maybeEncodeNullable "option_barrier_up_type" Json.Encode.string model.optionBarrierUpType
-            , maybeEncodeNullable "option_barrier_down_price" Json.Encode.float model.optionBarrierDownPrice
-            , maybeEncodeNullable "option_barrier_down_type" Json.Encode.string model.optionBarrierDownType
-            , maybeEncodeNullable "symbol_id_int" Json.Encode.int model.symbolIdInt
-            ]
-    in
-    pairs
-
-
 encodeV1SymbolMapping : V1SymbolMapping -> Json.Encode.Value
 encodeV1SymbolMapping =
     encodeObject << encodeV1SymbolMappingPairs
@@ -1294,26 +1294,9 @@ encodeV1TradePairs model =
 -- DECODER
 
 
-ohlcvExchangeTimeseriesItemDecoder : Json.Decode.Decoder OhlcvExchangeTimeseriesItem
-ohlcvExchangeTimeseriesItemDecoder =
-    Json.Decode.succeed OhlcvExchangeTimeseriesItem
-        |> maybeDecode "time_period_start" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "time_period_end" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "time_open" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "time_close" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "price_open" Json.Decode.float Nothing
-        |> maybeDecodeNullable "price_high" Json.Decode.float Nothing
-        |> maybeDecodeNullable "price_low" Json.Decode.float Nothing
-        |> maybeDecodeNullable "price_close" Json.Decode.float Nothing
-        |> maybeDecode "volume_traded" Json.Decode.float Nothing
-        |> maybeDecode "trades_count" Json.Decode.int Nothing
-        |> maybeDecodeNullable "symbol_id_exchange" Json.Decode.string Nothing
-        |> maybeDecodeNullable "symbol_id_coinapi" Json.Decode.string Nothing
-
-
-v1AssetDecoder : Json.Decode.Decoder V1Asset
-v1AssetDecoder =
-    Json.Decode.succeed V1Asset
+marketDataMetadataAssetDecoder : Json.Decode.Decoder MarketDataMetadataAsset
+marketDataMetadataAssetDecoder =
+    Json.Decode.succeed MarketDataMetadataAsset
         |> maybeDecodeNullable "asset_id" Json.Decode.string Nothing
         |> maybeDecodeNullable "name" Json.Decode.string Nothing
         |> maybeDecode "type_is_crypto" Json.Decode.int Nothing
@@ -1337,24 +1320,16 @@ v1AssetDecoder =
         |> maybeDecodeNullable "data_end" Json.Decode.string Nothing
 
 
-v1ChainDecoder : Json.Decode.Decoder V1Chain
-v1ChainDecoder =
-    Json.Decode.succeed V1Chain
+marketDataMetadataChainDecoder : Json.Decode.Decoder MarketDataMetadataChain
+marketDataMetadataChainDecoder =
+    Json.Decode.succeed MarketDataMetadataChain
         |> maybeDecodeNullable "chain_id" Json.Decode.string Nothing
         |> maybeDecodeNullable "name" Json.Decode.string Nothing
 
 
-v1ChainNetworkAddressDecoder : Json.Decode.Decoder V1ChainNetworkAddress
-v1ChainNetworkAddressDecoder =
-    Json.Decode.succeed V1ChainNetworkAddress
-        |> maybeDecodeNullable "chain_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "network_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "address" Json.Decode.string Nothing
-
-
-v1ExchangeDecoder : Json.Decode.Decoder V1Exchange
-v1ExchangeDecoder =
-    Json.Decode.succeed V1Exchange
+marketDataMetadataExchangeDecoder : Json.Decode.Decoder MarketDataMetadataExchange
+marketDataMetadataExchangeDecoder =
+    Json.Decode.succeed MarketDataMetadataExchange
         |> maybeDecodeNullable "exchange_id" Json.Decode.string Nothing
         |> maybeDecodeNullable "website" Json.Decode.string Nothing
         |> maybeDecodeNullable "name" Json.Decode.string Nothing
@@ -1372,9 +1347,99 @@ v1ExchangeDecoder =
         |> maybeDecodeNullable "volume_1day_usd" Json.Decode.float Nothing
         |> maybeDecodeNullable "volume_1mth_usd" Json.Decode.float Nothing
         |> maybeDecodeNullable "metric_id" (Json.Decode.list Json.Decode.string) Nothing
-        |> maybeDecodeNullable "icons" (Json.Decode.list v1IconDecoder) Nothing
+        |> maybeDecodeNullable "icons" (Json.Decode.list marketDataMetadataIconDecoder) Nothing
         |> maybeDecode "rank" Json.Decode.float Nothing
         |> maybeDecodeNullable "integration_status" Json.Decode.string Nothing
+
+
+marketDataMetadataIconDecoder : Json.Decode.Decoder MarketDataMetadataIcon
+marketDataMetadataIconDecoder =
+    Json.Decode.succeed MarketDataMetadataIcon
+        |> maybeDecodeNullable "exchange_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "asset_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "url" Json.Decode.string Nothing
+
+
+marketDataMetadataSymbolDecoder : Json.Decode.Decoder MarketDataMetadataSymbol
+marketDataMetadataSymbolDecoder =
+    Json.Decode.succeed MarketDataMetadataSymbol
+        |> maybeDecodeNullable "symbol_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "exchange_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "symbol_type" Json.Decode.string Nothing
+        |> maybeDecodeNullable "asset_id_base" Json.Decode.string Nothing
+        |> maybeDecodeNullable "asset_id_quote" Json.Decode.string Nothing
+        |> maybeDecodeNullable "asset_id_unit" Json.Decode.string Nothing
+        |> maybeDecodeNullable "future_contract_unit" Json.Decode.float Nothing
+        |> maybeDecodeNullable "future_contract_unit_asset" Json.Decode.string Nothing
+        |> maybeDecodeNullable "future_delivery_time" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "option_type_is_call" Json.Decode.bool Nothing
+        |> maybeDecodeNullable "option_strike_price" Json.Decode.float Nothing
+        |> maybeDecodeNullable "option_contract_unit" Json.Decode.float Nothing
+        |> maybeDecodeNullable "option_exercise_style" Json.Decode.string Nothing
+        |> maybeDecodeNullable "option_expiration_time" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "contract_delivery_time" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "contract_unit" Json.Decode.float Nothing
+        |> maybeDecodeNullable "contract_unit_asset" Json.Decode.string Nothing
+        |> maybeDecodeNullable "contract_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "contract_display_name" Json.Decode.string Nothing
+        |> maybeDecodeNullable "contract_display_description" Json.Decode.string Nothing
+        |> maybeDecodeNullable "data_start" Json.Decode.string Nothing
+        |> maybeDecodeNullable "data_end" Json.Decode.string Nothing
+        |> maybeDecodeNullable "data_quote_start" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "data_quote_end" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "data_orderbook_start" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "data_orderbook_end" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "data_trade_start" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "data_trade_end" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "index_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "index_display_name" Json.Decode.string Nothing
+        |> maybeDecodeNullable "index_display_description" Json.Decode.string Nothing
+        |> maybeDecodeNullable "volume_1hrs" Json.Decode.float Nothing
+        |> maybeDecodeNullable "volume_1hrs_usd" Json.Decode.float Nothing
+        |> maybeDecodeNullable "volume_1day" Json.Decode.float Nothing
+        |> maybeDecodeNullable "volume_1day_usd" Json.Decode.float Nothing
+        |> maybeDecodeNullable "volume_1mth" Json.Decode.float Nothing
+        |> maybeDecodeNullable "volume_1mth_usd" Json.Decode.float Nothing
+        |> maybeDecodeNullable "price" Json.Decode.float Nothing
+        |> maybeDecodeNullable "symbol_id_exchange" Json.Decode.string Nothing
+        |> maybeDecodeNullable "asset_id_base_exchange" Json.Decode.string Nothing
+        |> maybeDecodeNullable "asset_id_quote_exchange" Json.Decode.string Nothing
+        |> maybeDecodeNullable "price_precision" Json.Decode.float Nothing
+        |> maybeDecodeNullable "size_precision" Json.Decode.float Nothing
+        |> maybeDecodeNullable "raw_kvp" (Json.Decode.dict Json.Decode.string) Nothing
+        |> maybeDecodeNullable "future_is_inverse" Json.Decode.bool Nothing
+        |> maybeDecodeNullable "future_is_quanto" Json.Decode.bool Nothing
+        |> maybeDecodeNullable "volume_to_usd" Json.Decode.float Nothing
+        |> maybeDecodeNullable "option_barrier_up_price" Json.Decode.float Nothing
+        |> maybeDecodeNullable "option_barrier_up_type" Json.Decode.string Nothing
+        |> maybeDecodeNullable "option_barrier_down_price" Json.Decode.float Nothing
+        |> maybeDecodeNullable "option_barrier_down_type" Json.Decode.string Nothing
+        |> maybeDecodeNullable "symbol_id_int" Json.Decode.int Nothing
+
+
+ohlcvExchangeTimeseriesItemDecoder : Json.Decode.Decoder OhlcvExchangeTimeseriesItem
+ohlcvExchangeTimeseriesItemDecoder =
+    Json.Decode.succeed OhlcvExchangeTimeseriesItem
+        |> maybeDecode "time_period_start" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "time_period_end" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "time_open" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "time_close" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "price_open" Json.Decode.float Nothing
+        |> maybeDecodeNullable "price_high" Json.Decode.float Nothing
+        |> maybeDecodeNullable "price_low" Json.Decode.float Nothing
+        |> maybeDecodeNullable "price_close" Json.Decode.float Nothing
+        |> maybeDecode "volume_traded" Json.Decode.float Nothing
+        |> maybeDecode "trades_count" Json.Decode.int Nothing
+        |> maybeDecodeNullable "symbol_id_exchange" Json.Decode.string Nothing
+        |> maybeDecodeNullable "symbol_id_coinapi" Json.Decode.string Nothing
+
+
+v1ChainNetworkAddressDecoder : Json.Decode.Decoder V1ChainNetworkAddress
+v1ChainNetworkAddressDecoder =
+    Json.Decode.succeed V1ChainNetworkAddress
+        |> maybeDecodeNullable "chain_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "network_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "address" Json.Decode.string Nothing
 
 
 v1ExchangeRateDecoder : Json.Decode.Decoder V1ExchangeRate
@@ -1426,14 +1491,6 @@ v1GeneralDataDecoder =
         |> maybeDecodeNullable "value_decimal" Json.Decode.float Nothing
         |> maybeDecodeNullable "value_text" Json.Decode.string Nothing
         |> maybeDecodeNullable "value_time" Api.Time.dateTimeDecoder Nothing
-
-
-v1IconDecoder : Json.Decode.Decoder V1Icon
-v1IconDecoder =
-    Json.Decode.succeed V1Icon
-        |> maybeDecodeNullable "exchange_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "asset_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "url" Json.Decode.string Nothing
 
 
 v1LastTradeDecoder : Json.Decode.Decoder V1LastTrade
@@ -1556,63 +1613,6 @@ v1StrikeDecoder =
         |> maybeDecode "strike_price" Json.Decode.float Nothing
         |> maybeDecode "call" v1QuoteTradeDecoder Nothing
         |> maybeDecode "put" v1QuoteTradeDecoder Nothing
-
-
-v1SymbolDecoder : Json.Decode.Decoder V1Symbol
-v1SymbolDecoder =
-    Json.Decode.succeed V1Symbol
-        |> maybeDecodeNullable "symbol_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "exchange_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "symbol_type" Json.Decode.string Nothing
-        |> maybeDecodeNullable "asset_id_base" Json.Decode.string Nothing
-        |> maybeDecodeNullable "asset_id_quote" Json.Decode.string Nothing
-        |> maybeDecodeNullable "asset_id_unit" Json.Decode.string Nothing
-        |> maybeDecodeNullable "future_contract_unit" Json.Decode.float Nothing
-        |> maybeDecodeNullable "future_contract_unit_asset" Json.Decode.string Nothing
-        |> maybeDecodeNullable "future_delivery_time" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "option_type_is_call" Json.Decode.bool Nothing
-        |> maybeDecodeNullable "option_strike_price" Json.Decode.float Nothing
-        |> maybeDecodeNullable "option_contract_unit" Json.Decode.float Nothing
-        |> maybeDecodeNullable "option_exercise_style" Json.Decode.string Nothing
-        |> maybeDecodeNullable "option_expiration_time" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "contract_delivery_time" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "contract_unit" Json.Decode.float Nothing
-        |> maybeDecodeNullable "contract_unit_asset" Json.Decode.string Nothing
-        |> maybeDecodeNullable "contract_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "contract_display_name" Json.Decode.string Nothing
-        |> maybeDecodeNullable "contract_display_description" Json.Decode.string Nothing
-        |> maybeDecodeNullable "data_start" Json.Decode.string Nothing
-        |> maybeDecodeNullable "data_end" Json.Decode.string Nothing
-        |> maybeDecodeNullable "data_quote_start" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "data_quote_end" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "data_orderbook_start" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "data_orderbook_end" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "data_trade_start" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "data_trade_end" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "index_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "index_display_name" Json.Decode.string Nothing
-        |> maybeDecodeNullable "index_display_description" Json.Decode.string Nothing
-        |> maybeDecodeNullable "volume_1hrs" Json.Decode.float Nothing
-        |> maybeDecodeNullable "volume_1hrs_usd" Json.Decode.float Nothing
-        |> maybeDecodeNullable "volume_1day" Json.Decode.float Nothing
-        |> maybeDecodeNullable "volume_1day_usd" Json.Decode.float Nothing
-        |> maybeDecodeNullable "volume_1mth" Json.Decode.float Nothing
-        |> maybeDecodeNullable "volume_1mth_usd" Json.Decode.float Nothing
-        |> maybeDecodeNullable "price" Json.Decode.float Nothing
-        |> maybeDecodeNullable "symbol_id_exchange" Json.Decode.string Nothing
-        |> maybeDecodeNullable "asset_id_base_exchange" Json.Decode.string Nothing
-        |> maybeDecodeNullable "asset_id_quote_exchange" Json.Decode.string Nothing
-        |> maybeDecodeNullable "price_precision" Json.Decode.float Nothing
-        |> maybeDecodeNullable "size_precision" Json.Decode.float Nothing
-        |> maybeDecodeNullable "raw_kvp" (Json.Decode.dict Json.Decode.string) Nothing
-        |> maybeDecodeNullable "future_is_inverse" Json.Decode.bool Nothing
-        |> maybeDecodeNullable "future_is_quanto" Json.Decode.bool Nothing
-        |> maybeDecodeNullable "volume_to_usd" Json.Decode.float Nothing
-        |> maybeDecodeNullable "option_barrier_up_price" Json.Decode.float Nothing
-        |> maybeDecodeNullable "option_barrier_up_type" Json.Decode.string Nothing
-        |> maybeDecodeNullable "option_barrier_down_price" Json.Decode.float Nothing
-        |> maybeDecodeNullable "option_barrier_down_type" Json.Decode.string Nothing
-        |> maybeDecodeNullable "symbol_id_int" Json.Decode.int Nothing
 
 
 v1SymbolMappingDecoder : Json.Decode.Decoder V1SymbolMapping

@@ -247,17 +247,18 @@ use WWW::OpenAPIClient::TradesApi;
 
 To load the models:
 ```perl
+use WWW::OpenAPIClient::Object::MarketDataMetadataAsset;
+use WWW::OpenAPIClient::Object::MarketDataMetadataChain;
+use WWW::OpenAPIClient::Object::MarketDataMetadataExchange;
+use WWW::OpenAPIClient::Object::MarketDataMetadataIcon;
+use WWW::OpenAPIClient::Object::MarketDataMetadataSymbol;
 use WWW::OpenAPIClient::Object::OhlcvExchangeTimeseriesItem;
-use WWW::OpenAPIClient::Object::V1Asset;
-use WWW::OpenAPIClient::Object::V1Chain;
 use WWW::OpenAPIClient::Object::V1ChainNetworkAddress;
-use WWW::OpenAPIClient::Object::V1Exchange;
 use WWW::OpenAPIClient::Object::V1ExchangeRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRates;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesTimeseriesItem;
 use WWW::OpenAPIClient::Object::V1GeneralData;
-use WWW::OpenAPIClient::Object::V1Icon;
 use WWW::OpenAPIClient::Object::V1LastTrade;
 use WWW::OpenAPIClient::Object::V1ListingItem;
 use WWW::OpenAPIClient::Object::V1Metric;
@@ -270,7 +271,6 @@ use WWW::OpenAPIClient::Object::V1OrderBookDepth;
 use WWW::OpenAPIClient::Object::V1Quote;
 use WWW::OpenAPIClient::Object::V1QuoteTrade;
 use WWW::OpenAPIClient::Object::V1Strike;
-use WWW::OpenAPIClient::Object::V1Symbol;
 use WWW::OpenAPIClient::Object::V1SymbolMapping;
 use WWW::OpenAPIClient::Object::V1TimeseriesItem;
 use WWW::OpenAPIClient::Object::V1TimeseriesPeriod;
@@ -298,17 +298,18 @@ use WWW::OpenAPIClient::QuotesApi;
 use WWW::OpenAPIClient::TradesApi;
 
 # load the models
+use WWW::OpenAPIClient::Object::MarketDataMetadataAsset;
+use WWW::OpenAPIClient::Object::MarketDataMetadataChain;
+use WWW::OpenAPIClient::Object::MarketDataMetadataExchange;
+use WWW::OpenAPIClient::Object::MarketDataMetadataIcon;
+use WWW::OpenAPIClient::Object::MarketDataMetadataSymbol;
 use WWW::OpenAPIClient::Object::OhlcvExchangeTimeseriesItem;
-use WWW::OpenAPIClient::Object::V1Asset;
-use WWW::OpenAPIClient::Object::V1Chain;
 use WWW::OpenAPIClient::Object::V1ChainNetworkAddress;
-use WWW::OpenAPIClient::Object::V1Exchange;
 use WWW::OpenAPIClient::Object::V1ExchangeRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRates;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesTimeseriesItem;
 use WWW::OpenAPIClient::Object::V1GeneralData;
-use WWW::OpenAPIClient::Object::V1Icon;
 use WWW::OpenAPIClient::Object::V1LastTrade;
 use WWW::OpenAPIClient::Object::V1ListingItem;
 use WWW::OpenAPIClient::Object::V1Metric;
@@ -321,7 +322,6 @@ use WWW::OpenAPIClient::Object::V1OrderBookDepth;
 use WWW::OpenAPIClient::Object::V1Quote;
 use WWW::OpenAPIClient::Object::V1QuoteTrade;
 use WWW::OpenAPIClient::Object::V1Strike;
-use WWW::OpenAPIClient::Object::V1Symbol;
 use WWW::OpenAPIClient::Object::V1SymbolMapping;
 use WWW::OpenAPIClient::Object::V1TimeseriesItem;
 use WWW::OpenAPIClient::Object::V1TimeseriesPeriod;
@@ -411,17 +411,18 @@ Class | Method | HTTP request | Description
 
 
 # DOCUMENTATION FOR MODELS
+ - [WWW::OpenAPIClient::Object::MarketDataMetadataAsset](docs/MarketDataMetadataAsset.md)
+ - [WWW::OpenAPIClient::Object::MarketDataMetadataChain](docs/MarketDataMetadataChain.md)
+ - [WWW::OpenAPIClient::Object::MarketDataMetadataExchange](docs/MarketDataMetadataExchange.md)
+ - [WWW::OpenAPIClient::Object::MarketDataMetadataIcon](docs/MarketDataMetadataIcon.md)
+ - [WWW::OpenAPIClient::Object::MarketDataMetadataSymbol](docs/MarketDataMetadataSymbol.md)
  - [WWW::OpenAPIClient::Object::OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [WWW::OpenAPIClient::Object::V1Asset](docs/V1Asset.md)
- - [WWW::OpenAPIClient::Object::V1Chain](docs/V1Chain.md)
  - [WWW::OpenAPIClient::Object::V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
- - [WWW::OpenAPIClient::Object::V1Exchange](docs/V1Exchange.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRate](docs/V1ExchangeRate.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRates](docs/V1ExchangeRates.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRatesTimeseriesItem](docs/V1ExchangeRatesTimeseriesItem.md)
  - [WWW::OpenAPIClient::Object::V1GeneralData](docs/V1GeneralData.md)
- - [WWW::OpenAPIClient::Object::V1Icon](docs/V1Icon.md)
  - [WWW::OpenAPIClient::Object::V1LastTrade](docs/V1LastTrade.md)
  - [WWW::OpenAPIClient::Object::V1ListingItem](docs/V1ListingItem.md)
  - [WWW::OpenAPIClient::Object::V1Metric](docs/V1Metric.md)
@@ -434,7 +435,6 @@ Class | Method | HTTP request | Description
  - [WWW::OpenAPIClient::Object::V1Quote](docs/V1Quote.md)
  - [WWW::OpenAPIClient::Object::V1QuoteTrade](docs/V1QuoteTrade.md)
  - [WWW::OpenAPIClient::Object::V1Strike](docs/V1Strike.md)
- - [WWW::OpenAPIClient::Object::V1Symbol](docs/V1Symbol.md)
  - [WWW::OpenAPIClient::Object::V1SymbolMapping](docs/V1SymbolMapping.md)
  - [WWW::OpenAPIClient::Object::V1TimeseriesItem](docs/V1TimeseriesItem.md)
  - [WWW::OpenAPIClient::Object::V1TimeseriesPeriod](docs/V1TimeseriesPeriod.md)

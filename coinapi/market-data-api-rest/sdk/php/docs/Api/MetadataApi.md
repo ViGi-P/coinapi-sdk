@@ -22,7 +22,7 @@ All URIs are relative to https://rest.coinapi.io, except if the operation define
 ## `v1AssetsAssetIdGet()`
 
 ```php
-v1AssetsAssetIdGet($asset_id): \OpenAPI\Client\Model\V1Asset[]
+v1AssetsAssetIdGet($asset_id): \OpenAPI\Client\Model\MarketDataMetadataAsset[]
 ```
 
 List all assets by asset ID
@@ -67,7 +67,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Asset[]**](../Model/V1Asset.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataAsset[]**](../Model/MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ try {
 ## `v1AssetsGet()`
 
 ```php
-v1AssetsGet($filter_asset_id): \OpenAPI\Client\Model\V1Asset[]
+v1AssetsGet($filter_asset_id): \OpenAPI\Client\Model\MarketDataMetadataAsset[]
 ```
 
 List all assets
@@ -132,7 +132,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Asset[]**](../Model/V1Asset.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataAsset[]**](../Model/MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ try {
 ## `v1AssetsIconsSizeGet()`
 
 ```php
-v1AssetsIconsSizeGet($size): \OpenAPI\Client\Model\V1Icon[]
+v1AssetsIconsSizeGet($size): \OpenAPI\Client\Model\MarketDataMetadataIcon[]
 ```
 
 List all asset icons
@@ -197,7 +197,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Icon[]**](../Model/V1Icon.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataIcon[]**](../Model/MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ try {
 ## `v1ChainsChainIdGet()`
 
 ```php
-v1ChainsChainIdGet($chain_id): \OpenAPI\Client\Model\V1Chain[]
+v1ChainsChainIdGet($chain_id): \OpenAPI\Client\Model\MarketDataMetadataChain[]
 ```
 
 List all chains by chain ID
@@ -260,7 +260,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Chain[]**](../Model/V1Chain.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataChain[]**](../Model/MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ try {
 ## `v1ChainsGet()`
 
 ```php
-v1ChainsGet($filter_chain_id): \OpenAPI\Client\Model\V1Chain[]
+v1ChainsGet($filter_chain_id): \OpenAPI\Client\Model\MarketDataMetadataChain[]
 ```
 
 List all blockchain chains
@@ -325,7 +325,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Chain[]**](../Model/V1Chain.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataChain[]**](../Model/MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ## `v1ExchangesExchangeIdGet()`
 
 ```php
-v1ExchangesExchangeIdGet($exchange_id): \OpenAPI\Client\Model\V1Exchange[]
+v1ExchangesExchangeIdGet($exchange_id): \OpenAPI\Client\Model\MarketDataMetadataExchange[]
 ```
 
 List all exchanges by exchange_id
@@ -388,7 +388,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Exchange[]**](../Model/V1Exchange.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataExchange[]**](../Model/MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -406,7 +406,7 @@ try {
 ## `v1ExchangesGet()`
 
 ```php
-v1ExchangesGet($filter_exchange_id): \OpenAPI\Client\Model\V1Exchange[]
+v1ExchangesGet($filter_exchange_id): \OpenAPI\Client\Model\MarketDataMetadataExchange[]
 ```
 
 List all exchanges
@@ -453,7 +453,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Exchange[]**](../Model/V1Exchange.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataExchange[]**](../Model/MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -471,7 +471,7 @@ try {
 ## `v1ExchangesIconsSizeGet()`
 
 ```php
-v1ExchangesIconsSizeGet($size): \OpenAPI\Client\Model\V1Icon[]
+v1ExchangesIconsSizeGet($size): \OpenAPI\Client\Model\MarketDataMetadataIcon[]
 ```
 
 List of icons for the exchanges
@@ -516,7 +516,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Icon[]**](../Model/V1Icon.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataIcon[]**](../Model/MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ try {
 ## `v1SymbolsExchangeIdActiveGet()`
 
 ```php
-v1SymbolsExchangeIdActiveGet($exchange_id, $filter_symbol_id, $filter_asset_id): \OpenAPI\Client\Model\V1Symbol[]
+v1SymbolsExchangeIdActiveGet($exchange_id, $filter_symbol_id, $filter_asset_id): \OpenAPI\Client\Model\MarketDataMetadataSymbol[]
 ```
 
 List all active symbols
@@ -585,7 +585,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Symbol[]**](../Model/V1Symbol.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataSymbol[]**](../Model/MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -603,7 +603,7 @@ try {
 ## `v1SymbolsExchangeIdHistoryGet()`
 
 ```php
-v1SymbolsExchangeIdHistoryGet($exchange_id, $page, $limit): \OpenAPI\Client\Model\V1Symbol[]
+v1SymbolsExchangeIdHistoryGet($exchange_id, $page, $limit): \OpenAPI\Client\Model\MarketDataMetadataSymbol[]
 ```
 
 List all historical symbols for an exchange.
@@ -654,7 +654,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\V1Symbol[]**](../Model/V1Symbol.md)
+[**\OpenAPI\Client\Model\MarketDataMetadataSymbol[]**](../Model/MarketDataMetadataSymbol.md)
 
 ### Authorization
 

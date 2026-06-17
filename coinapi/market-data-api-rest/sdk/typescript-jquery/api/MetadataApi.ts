@@ -52,7 +52,7 @@ export class MetadataApi {
      * @param assetId The asset ID.
      */
     public v1AssetsAssetIdGet(assetId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Asset>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataAsset>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/assets/{asset_id}'.replace('{asset_id}', encodeURIComponent(String(assetId)));
@@ -105,11 +105,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Asset>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataAsset>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Asset>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataAsset>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -123,7 +123,7 @@ export class MetadataApi {
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
      */
     public v1AssetsGet(filterAssetId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Asset>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataAsset>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/assets';
@@ -174,11 +174,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Asset>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataAsset>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Asset>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataAsset>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -192,7 +192,7 @@ export class MetadataApi {
      * @param size The size of the icons.
      */
     public v1AssetsIconsSizeGet(size: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Icon>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataIcon>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/assets/icons/{size}'.replace('{size}', encodeURIComponent(String(size)));
@@ -245,11 +245,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Icon>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataIcon>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Icon>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataIcon>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -263,7 +263,7 @@ export class MetadataApi {
      * @param chainId The chain ID.
      */
     public v1ChainsChainIdGet(chainId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Chain>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataChain>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/chains/{chain_id}'.replace('{chain_id}', encodeURIComponent(String(chainId)));
@@ -316,11 +316,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Chain>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataChain>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Chain>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataChain>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -334,7 +334,7 @@ export class MetadataApi {
      * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
      */
     public v1ChainsGet(filterChainId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Chain>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataChain>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/chains';
@@ -385,11 +385,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Chain>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataChain>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Chain>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataChain>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -403,7 +403,7 @@ export class MetadataApi {
      * @param exchangeId The ID of the exchange.
      */
     public v1ExchangesExchangeIdGet(exchangeId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Exchange>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataExchange>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/exchanges/{exchange_id}'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
@@ -456,11 +456,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Exchange>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataExchange>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Exchange>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataExchange>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -474,7 +474,7 @@ export class MetadataApi {
      * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
      */
     public v1ExchangesGet(filterExchangeId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Exchange>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataExchange>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/exchanges';
@@ -525,11 +525,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Exchange>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataExchange>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Exchange>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataExchange>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -543,7 +543,7 @@ export class MetadataApi {
      * @param size The size of the icons.
      */
     public v1ExchangesIconsSizeGet(size: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Icon>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataIcon>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/exchanges/icons/{size}'.replace('{size}', encodeURIComponent(String(size)));
@@ -596,11 +596,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Icon>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataIcon>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Icon>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataIcon>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -616,7 +616,7 @@ export class MetadataApi {
      * @param filterAssetId The filter for asset ID.
      */
     public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Symbol>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataSymbol>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/symbols/{exchange_id}/active'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
@@ -675,11 +675,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Symbol>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataSymbol>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Symbol>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataSymbol>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -695,7 +695,7 @@ export class MetadataApi {
      * @param limit Number of records to return per page.
      */
     public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.V1Symbol>;  },
+    { response: JQueryXHR; body: Array<models.MarketDataMetadataSymbol>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/symbols/{exchange_id}/history'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
@@ -754,11 +754,11 @@ export class MetadataApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.V1Symbol>;  },
+            { response: JQueryXHR; body: Array<models.MarketDataMetadataSymbol>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.V1Symbol>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.MarketDataMetadataSymbol>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})

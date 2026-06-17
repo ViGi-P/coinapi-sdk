@@ -37,6 +37,516 @@ import CoinAPIMarketDataREST.Model
 import CoinAPIMarketDataREST.Core
 
 
+-- * MarketDataMetadataAsset
+
+-- | 'marketDataMetadataAssetAssetId' Lens
+marketDataMetadataAssetAssetIdL :: Lens_' MarketDataMetadataAsset (Maybe Text)
+marketDataMetadataAssetAssetIdL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetAssetId -> MarketDataMetadataAsset { marketDataMetadataAssetAssetId, ..} ) <$> f marketDataMetadataAssetAssetId
+{-# INLINE marketDataMetadataAssetAssetIdL #-}
+
+-- | 'marketDataMetadataAssetName' Lens
+marketDataMetadataAssetNameL :: Lens_' MarketDataMetadataAsset (Maybe Text)
+marketDataMetadataAssetNameL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetName -> MarketDataMetadataAsset { marketDataMetadataAssetName, ..} ) <$> f marketDataMetadataAssetName
+{-# INLINE marketDataMetadataAssetNameL #-}
+
+-- | 'marketDataMetadataAssetTypeIsCrypto' Lens
+marketDataMetadataAssetTypeIsCryptoL :: Lens_' MarketDataMetadataAsset (Maybe Int)
+marketDataMetadataAssetTypeIsCryptoL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetTypeIsCrypto -> MarketDataMetadataAsset { marketDataMetadataAssetTypeIsCrypto, ..} ) <$> f marketDataMetadataAssetTypeIsCrypto
+{-# INLINE marketDataMetadataAssetTypeIsCryptoL #-}
+
+-- | 'marketDataMetadataAssetDataQuoteStart' Lens
+marketDataMetadataAssetDataQuoteStartL :: Lens_' MarketDataMetadataAsset (Maybe DateTime)
+marketDataMetadataAssetDataQuoteStartL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataQuoteStart -> MarketDataMetadataAsset { marketDataMetadataAssetDataQuoteStart, ..} ) <$> f marketDataMetadataAssetDataQuoteStart
+{-# INLINE marketDataMetadataAssetDataQuoteStartL #-}
+
+-- | 'marketDataMetadataAssetDataQuoteEnd' Lens
+marketDataMetadataAssetDataQuoteEndL :: Lens_' MarketDataMetadataAsset (Maybe DateTime)
+marketDataMetadataAssetDataQuoteEndL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataQuoteEnd -> MarketDataMetadataAsset { marketDataMetadataAssetDataQuoteEnd, ..} ) <$> f marketDataMetadataAssetDataQuoteEnd
+{-# INLINE marketDataMetadataAssetDataQuoteEndL #-}
+
+-- | 'marketDataMetadataAssetDataOrderbookStart' Lens
+marketDataMetadataAssetDataOrderbookStartL :: Lens_' MarketDataMetadataAsset (Maybe DateTime)
+marketDataMetadataAssetDataOrderbookStartL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataOrderbookStart -> MarketDataMetadataAsset { marketDataMetadataAssetDataOrderbookStart, ..} ) <$> f marketDataMetadataAssetDataOrderbookStart
+{-# INLINE marketDataMetadataAssetDataOrderbookStartL #-}
+
+-- | 'marketDataMetadataAssetDataOrderbookEnd' Lens
+marketDataMetadataAssetDataOrderbookEndL :: Lens_' MarketDataMetadataAsset (Maybe DateTime)
+marketDataMetadataAssetDataOrderbookEndL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataOrderbookEnd -> MarketDataMetadataAsset { marketDataMetadataAssetDataOrderbookEnd, ..} ) <$> f marketDataMetadataAssetDataOrderbookEnd
+{-# INLINE marketDataMetadataAssetDataOrderbookEndL #-}
+
+-- | 'marketDataMetadataAssetDataTradeStart' Lens
+marketDataMetadataAssetDataTradeStartL :: Lens_' MarketDataMetadataAsset (Maybe DateTime)
+marketDataMetadataAssetDataTradeStartL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataTradeStart -> MarketDataMetadataAsset { marketDataMetadataAssetDataTradeStart, ..} ) <$> f marketDataMetadataAssetDataTradeStart
+{-# INLINE marketDataMetadataAssetDataTradeStartL #-}
+
+-- | 'marketDataMetadataAssetDataTradeEnd' Lens
+marketDataMetadataAssetDataTradeEndL :: Lens_' MarketDataMetadataAsset (Maybe DateTime)
+marketDataMetadataAssetDataTradeEndL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataTradeEnd -> MarketDataMetadataAsset { marketDataMetadataAssetDataTradeEnd, ..} ) <$> f marketDataMetadataAssetDataTradeEnd
+{-# INLINE marketDataMetadataAssetDataTradeEndL #-}
+
+-- | 'marketDataMetadataAssetDataSymbolsCount' Lens
+marketDataMetadataAssetDataSymbolsCountL :: Lens_' MarketDataMetadataAsset (Maybe Integer)
+marketDataMetadataAssetDataSymbolsCountL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataSymbolsCount -> MarketDataMetadataAsset { marketDataMetadataAssetDataSymbolsCount, ..} ) <$> f marketDataMetadataAssetDataSymbolsCount
+{-# INLINE marketDataMetadataAssetDataSymbolsCountL #-}
+
+-- | 'marketDataMetadataAssetVolume1hrsUsd' Lens
+marketDataMetadataAssetVolume1hrsUsdL :: Lens_' MarketDataMetadataAsset (Maybe Double)
+marketDataMetadataAssetVolume1hrsUsdL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetVolume1hrsUsd -> MarketDataMetadataAsset { marketDataMetadataAssetVolume1hrsUsd, ..} ) <$> f marketDataMetadataAssetVolume1hrsUsd
+{-# INLINE marketDataMetadataAssetVolume1hrsUsdL #-}
+
+-- | 'marketDataMetadataAssetVolume1dayUsd' Lens
+marketDataMetadataAssetVolume1dayUsdL :: Lens_' MarketDataMetadataAsset (Maybe Double)
+marketDataMetadataAssetVolume1dayUsdL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetVolume1dayUsd -> MarketDataMetadataAsset { marketDataMetadataAssetVolume1dayUsd, ..} ) <$> f marketDataMetadataAssetVolume1dayUsd
+{-# INLINE marketDataMetadataAssetVolume1dayUsdL #-}
+
+-- | 'marketDataMetadataAssetVolume1mthUsd' Lens
+marketDataMetadataAssetVolume1mthUsdL :: Lens_' MarketDataMetadataAsset (Maybe Double)
+marketDataMetadataAssetVolume1mthUsdL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetVolume1mthUsd -> MarketDataMetadataAsset { marketDataMetadataAssetVolume1mthUsd, ..} ) <$> f marketDataMetadataAssetVolume1mthUsd
+{-# INLINE marketDataMetadataAssetVolume1mthUsdL #-}
+
+-- | 'marketDataMetadataAssetPriceUsd' Lens
+marketDataMetadataAssetPriceUsdL :: Lens_' MarketDataMetadataAsset (Maybe Double)
+marketDataMetadataAssetPriceUsdL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetPriceUsd -> MarketDataMetadataAsset { marketDataMetadataAssetPriceUsd, ..} ) <$> f marketDataMetadataAssetPriceUsd
+{-# INLINE marketDataMetadataAssetPriceUsdL #-}
+
+-- | 'marketDataMetadataAssetIdIcon' Lens
+marketDataMetadataAssetIdIconL :: Lens_' MarketDataMetadataAsset (Maybe Text)
+marketDataMetadataAssetIdIconL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetIdIcon -> MarketDataMetadataAsset { marketDataMetadataAssetIdIcon, ..} ) <$> f marketDataMetadataAssetIdIcon
+{-# INLINE marketDataMetadataAssetIdIconL #-}
+
+-- | 'marketDataMetadataAssetSupplyCurrent' Lens
+marketDataMetadataAssetSupplyCurrentL :: Lens_' MarketDataMetadataAsset (Maybe Double)
+marketDataMetadataAssetSupplyCurrentL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetSupplyCurrent -> MarketDataMetadataAsset { marketDataMetadataAssetSupplyCurrent, ..} ) <$> f marketDataMetadataAssetSupplyCurrent
+{-# INLINE marketDataMetadataAssetSupplyCurrentL #-}
+
+-- | 'marketDataMetadataAssetSupplyTotal' Lens
+marketDataMetadataAssetSupplyTotalL :: Lens_' MarketDataMetadataAsset (Maybe Double)
+marketDataMetadataAssetSupplyTotalL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetSupplyTotal -> MarketDataMetadataAsset { marketDataMetadataAssetSupplyTotal, ..} ) <$> f marketDataMetadataAssetSupplyTotal
+{-# INLINE marketDataMetadataAssetSupplyTotalL #-}
+
+-- | 'marketDataMetadataAssetSupplyMax' Lens
+marketDataMetadataAssetSupplyMaxL :: Lens_' MarketDataMetadataAsset (Maybe Double)
+marketDataMetadataAssetSupplyMaxL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetSupplyMax -> MarketDataMetadataAsset { marketDataMetadataAssetSupplyMax, ..} ) <$> f marketDataMetadataAssetSupplyMax
+{-# INLINE marketDataMetadataAssetSupplyMaxL #-}
+
+-- | 'marketDataMetadataAssetChainAddresses' Lens
+marketDataMetadataAssetChainAddressesL :: Lens_' MarketDataMetadataAsset (Maybe [V1ChainNetworkAddress])
+marketDataMetadataAssetChainAddressesL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetChainAddresses -> MarketDataMetadataAsset { marketDataMetadataAssetChainAddresses, ..} ) <$> f marketDataMetadataAssetChainAddresses
+{-# INLINE marketDataMetadataAssetChainAddressesL #-}
+
+-- | 'marketDataMetadataAssetDataStart' Lens
+marketDataMetadataAssetDataStartL :: Lens_' MarketDataMetadataAsset (Maybe Text)
+marketDataMetadataAssetDataStartL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataStart -> MarketDataMetadataAsset { marketDataMetadataAssetDataStart, ..} ) <$> f marketDataMetadataAssetDataStart
+{-# INLINE marketDataMetadataAssetDataStartL #-}
+
+-- | 'marketDataMetadataAssetDataEnd' Lens
+marketDataMetadataAssetDataEndL :: Lens_' MarketDataMetadataAsset (Maybe Text)
+marketDataMetadataAssetDataEndL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataEnd -> MarketDataMetadataAsset { marketDataMetadataAssetDataEnd, ..} ) <$> f marketDataMetadataAssetDataEnd
+{-# INLINE marketDataMetadataAssetDataEndL #-}
+
+
+
+-- * MarketDataMetadataChain
+
+-- | 'marketDataMetadataChainChainId' Lens
+marketDataMetadataChainChainIdL :: Lens_' MarketDataMetadataChain (Maybe Text)
+marketDataMetadataChainChainIdL f MarketDataMetadataChain{..} = (\marketDataMetadataChainChainId -> MarketDataMetadataChain { marketDataMetadataChainChainId, ..} ) <$> f marketDataMetadataChainChainId
+{-# INLINE marketDataMetadataChainChainIdL #-}
+
+-- | 'marketDataMetadataChainName' Lens
+marketDataMetadataChainNameL :: Lens_' MarketDataMetadataChain (Maybe Text)
+marketDataMetadataChainNameL f MarketDataMetadataChain{..} = (\marketDataMetadataChainName -> MarketDataMetadataChain { marketDataMetadataChainName, ..} ) <$> f marketDataMetadataChainName
+{-# INLINE marketDataMetadataChainNameL #-}
+
+
+
+-- * MarketDataMetadataExchange
+
+-- | 'marketDataMetadataExchangeExchangeId' Lens
+marketDataMetadataExchangeExchangeIdL :: Lens_' MarketDataMetadataExchange (Maybe Text)
+marketDataMetadataExchangeExchangeIdL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeExchangeId -> MarketDataMetadataExchange { marketDataMetadataExchangeExchangeId, ..} ) <$> f marketDataMetadataExchangeExchangeId
+{-# INLINE marketDataMetadataExchangeExchangeIdL #-}
+
+-- | 'marketDataMetadataExchangeWebsite' Lens
+marketDataMetadataExchangeWebsiteL :: Lens_' MarketDataMetadataExchange (Maybe Text)
+marketDataMetadataExchangeWebsiteL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeWebsite -> MarketDataMetadataExchange { marketDataMetadataExchangeWebsite, ..} ) <$> f marketDataMetadataExchangeWebsite
+{-# INLINE marketDataMetadataExchangeWebsiteL #-}
+
+-- | 'marketDataMetadataExchangeName' Lens
+marketDataMetadataExchangeNameL :: Lens_' MarketDataMetadataExchange (Maybe Text)
+marketDataMetadataExchangeNameL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeName -> MarketDataMetadataExchange { marketDataMetadataExchangeName, ..} ) <$> f marketDataMetadataExchangeName
+{-# INLINE marketDataMetadataExchangeNameL #-}
+
+-- | 'marketDataMetadataExchangeDataStart' Lens
+marketDataMetadataExchangeDataStartL :: Lens_' MarketDataMetadataExchange (Maybe Text)
+marketDataMetadataExchangeDataStartL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataStart -> MarketDataMetadataExchange { marketDataMetadataExchangeDataStart, ..} ) <$> f marketDataMetadataExchangeDataStart
+{-# INLINE marketDataMetadataExchangeDataStartL #-}
+
+-- | 'marketDataMetadataExchangeDataEnd' Lens
+marketDataMetadataExchangeDataEndL :: Lens_' MarketDataMetadataExchange (Maybe Text)
+marketDataMetadataExchangeDataEndL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataEnd -> MarketDataMetadataExchange { marketDataMetadataExchangeDataEnd, ..} ) <$> f marketDataMetadataExchangeDataEnd
+{-# INLINE marketDataMetadataExchangeDataEndL #-}
+
+-- | 'marketDataMetadataExchangeDataQuoteStart' Lens
+marketDataMetadataExchangeDataQuoteStartL :: Lens_' MarketDataMetadataExchange (Maybe DateTime)
+marketDataMetadataExchangeDataQuoteStartL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataQuoteStart -> MarketDataMetadataExchange { marketDataMetadataExchangeDataQuoteStart, ..} ) <$> f marketDataMetadataExchangeDataQuoteStart
+{-# INLINE marketDataMetadataExchangeDataQuoteStartL #-}
+
+-- | 'marketDataMetadataExchangeDataQuoteEnd' Lens
+marketDataMetadataExchangeDataQuoteEndL :: Lens_' MarketDataMetadataExchange (Maybe DateTime)
+marketDataMetadataExchangeDataQuoteEndL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataQuoteEnd -> MarketDataMetadataExchange { marketDataMetadataExchangeDataQuoteEnd, ..} ) <$> f marketDataMetadataExchangeDataQuoteEnd
+{-# INLINE marketDataMetadataExchangeDataQuoteEndL #-}
+
+-- | 'marketDataMetadataExchangeDataOrderbookStart' Lens
+marketDataMetadataExchangeDataOrderbookStartL :: Lens_' MarketDataMetadataExchange (Maybe DateTime)
+marketDataMetadataExchangeDataOrderbookStartL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataOrderbookStart -> MarketDataMetadataExchange { marketDataMetadataExchangeDataOrderbookStart, ..} ) <$> f marketDataMetadataExchangeDataOrderbookStart
+{-# INLINE marketDataMetadataExchangeDataOrderbookStartL #-}
+
+-- | 'marketDataMetadataExchangeDataOrderbookEnd' Lens
+marketDataMetadataExchangeDataOrderbookEndL :: Lens_' MarketDataMetadataExchange (Maybe DateTime)
+marketDataMetadataExchangeDataOrderbookEndL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataOrderbookEnd -> MarketDataMetadataExchange { marketDataMetadataExchangeDataOrderbookEnd, ..} ) <$> f marketDataMetadataExchangeDataOrderbookEnd
+{-# INLINE marketDataMetadataExchangeDataOrderbookEndL #-}
+
+-- | 'marketDataMetadataExchangeDataTradeStart' Lens
+marketDataMetadataExchangeDataTradeStartL :: Lens_' MarketDataMetadataExchange (Maybe DateTime)
+marketDataMetadataExchangeDataTradeStartL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataTradeStart -> MarketDataMetadataExchange { marketDataMetadataExchangeDataTradeStart, ..} ) <$> f marketDataMetadataExchangeDataTradeStart
+{-# INLINE marketDataMetadataExchangeDataTradeStartL #-}
+
+-- | 'marketDataMetadataExchangeDataTradeEnd' Lens
+marketDataMetadataExchangeDataTradeEndL :: Lens_' MarketDataMetadataExchange (Maybe DateTime)
+marketDataMetadataExchangeDataTradeEndL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataTradeEnd -> MarketDataMetadataExchange { marketDataMetadataExchangeDataTradeEnd, ..} ) <$> f marketDataMetadataExchangeDataTradeEnd
+{-# INLINE marketDataMetadataExchangeDataTradeEndL #-}
+
+-- | 'marketDataMetadataExchangeDataTradeCount' Lens
+marketDataMetadataExchangeDataTradeCountL :: Lens_' MarketDataMetadataExchange (Maybe Integer)
+marketDataMetadataExchangeDataTradeCountL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataTradeCount -> MarketDataMetadataExchange { marketDataMetadataExchangeDataTradeCount, ..} ) <$> f marketDataMetadataExchangeDataTradeCount
+{-# INLINE marketDataMetadataExchangeDataTradeCountL #-}
+
+-- | 'marketDataMetadataExchangeDataSymbolsCount' Lens
+marketDataMetadataExchangeDataSymbolsCountL :: Lens_' MarketDataMetadataExchange (Maybe Integer)
+marketDataMetadataExchangeDataSymbolsCountL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeDataSymbolsCount -> MarketDataMetadataExchange { marketDataMetadataExchangeDataSymbolsCount, ..} ) <$> f marketDataMetadataExchangeDataSymbolsCount
+{-# INLINE marketDataMetadataExchangeDataSymbolsCountL #-}
+
+-- | 'marketDataMetadataExchangeVolume1hrsUsd' Lens
+marketDataMetadataExchangeVolume1hrsUsdL :: Lens_' MarketDataMetadataExchange (Maybe Double)
+marketDataMetadataExchangeVolume1hrsUsdL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeVolume1hrsUsd -> MarketDataMetadataExchange { marketDataMetadataExchangeVolume1hrsUsd, ..} ) <$> f marketDataMetadataExchangeVolume1hrsUsd
+{-# INLINE marketDataMetadataExchangeVolume1hrsUsdL #-}
+
+-- | 'marketDataMetadataExchangeVolume1dayUsd' Lens
+marketDataMetadataExchangeVolume1dayUsdL :: Lens_' MarketDataMetadataExchange (Maybe Double)
+marketDataMetadataExchangeVolume1dayUsdL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeVolume1dayUsd -> MarketDataMetadataExchange { marketDataMetadataExchangeVolume1dayUsd, ..} ) <$> f marketDataMetadataExchangeVolume1dayUsd
+{-# INLINE marketDataMetadataExchangeVolume1dayUsdL #-}
+
+-- | 'marketDataMetadataExchangeVolume1mthUsd' Lens
+marketDataMetadataExchangeVolume1mthUsdL :: Lens_' MarketDataMetadataExchange (Maybe Double)
+marketDataMetadataExchangeVolume1mthUsdL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeVolume1mthUsd -> MarketDataMetadataExchange { marketDataMetadataExchangeVolume1mthUsd, ..} ) <$> f marketDataMetadataExchangeVolume1mthUsd
+{-# INLINE marketDataMetadataExchangeVolume1mthUsdL #-}
+
+-- | 'marketDataMetadataExchangeMetricId' Lens
+marketDataMetadataExchangeMetricIdL :: Lens_' MarketDataMetadataExchange (Maybe [Text])
+marketDataMetadataExchangeMetricIdL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeMetricId -> MarketDataMetadataExchange { marketDataMetadataExchangeMetricId, ..} ) <$> f marketDataMetadataExchangeMetricId
+{-# INLINE marketDataMetadataExchangeMetricIdL #-}
+
+-- | 'marketDataMetadataExchangeIcons' Lens
+marketDataMetadataExchangeIconsL :: Lens_' MarketDataMetadataExchange (Maybe [MarketDataMetadataIcon])
+marketDataMetadataExchangeIconsL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeIcons -> MarketDataMetadataExchange { marketDataMetadataExchangeIcons, ..} ) <$> f marketDataMetadataExchangeIcons
+{-# INLINE marketDataMetadataExchangeIconsL #-}
+
+-- | 'marketDataMetadataExchangeRank' Lens
+marketDataMetadataExchangeRankL :: Lens_' MarketDataMetadataExchange (Maybe Double)
+marketDataMetadataExchangeRankL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeRank -> MarketDataMetadataExchange { marketDataMetadataExchangeRank, ..} ) <$> f marketDataMetadataExchangeRank
+{-# INLINE marketDataMetadataExchangeRankL #-}
+
+-- | 'marketDataMetadataExchangeIntegrationStatus' Lens
+marketDataMetadataExchangeIntegrationStatusL :: Lens_' MarketDataMetadataExchange (Maybe Text)
+marketDataMetadataExchangeIntegrationStatusL f MarketDataMetadataExchange{..} = (\marketDataMetadataExchangeIntegrationStatus -> MarketDataMetadataExchange { marketDataMetadataExchangeIntegrationStatus, ..} ) <$> f marketDataMetadataExchangeIntegrationStatus
+{-# INLINE marketDataMetadataExchangeIntegrationStatusL #-}
+
+
+
+-- * MarketDataMetadataIcon
+
+-- | 'marketDataMetadataIconExchangeId' Lens
+marketDataMetadataIconExchangeIdL :: Lens_' MarketDataMetadataIcon (Maybe Text)
+marketDataMetadataIconExchangeIdL f MarketDataMetadataIcon{..} = (\marketDataMetadataIconExchangeId -> MarketDataMetadataIcon { marketDataMetadataIconExchangeId, ..} ) <$> f marketDataMetadataIconExchangeId
+{-# INLINE marketDataMetadataIconExchangeIdL #-}
+
+-- | 'marketDataMetadataIconAssetId' Lens
+marketDataMetadataIconAssetIdL :: Lens_' MarketDataMetadataIcon (Maybe Text)
+marketDataMetadataIconAssetIdL f MarketDataMetadataIcon{..} = (\marketDataMetadataIconAssetId -> MarketDataMetadataIcon { marketDataMetadataIconAssetId, ..} ) <$> f marketDataMetadataIconAssetId
+{-# INLINE marketDataMetadataIconAssetIdL #-}
+
+-- | 'marketDataMetadataIconUrl' Lens
+marketDataMetadataIconUrlL :: Lens_' MarketDataMetadataIcon (Maybe Text)
+marketDataMetadataIconUrlL f MarketDataMetadataIcon{..} = (\marketDataMetadataIconUrl -> MarketDataMetadataIcon { marketDataMetadataIconUrl, ..} ) <$> f marketDataMetadataIconUrl
+{-# INLINE marketDataMetadataIconUrlL #-}
+
+
+
+-- * MarketDataMetadataSymbol
+
+-- | 'marketDataMetadataSymbolSymbolId' Lens
+marketDataMetadataSymbolSymbolIdL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolSymbolIdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolSymbolId -> MarketDataMetadataSymbol { marketDataMetadataSymbolSymbolId, ..} ) <$> f marketDataMetadataSymbolSymbolId
+{-# INLINE marketDataMetadataSymbolSymbolIdL #-}
+
+-- | 'marketDataMetadataSymbolExchangeId' Lens
+marketDataMetadataSymbolExchangeIdL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolExchangeIdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolExchangeId -> MarketDataMetadataSymbol { marketDataMetadataSymbolExchangeId, ..} ) <$> f marketDataMetadataSymbolExchangeId
+{-# INLINE marketDataMetadataSymbolExchangeIdL #-}
+
+-- | 'marketDataMetadataSymbolSymbolType' Lens
+marketDataMetadataSymbolSymbolTypeL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolSymbolTypeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolSymbolType -> MarketDataMetadataSymbol { marketDataMetadataSymbolSymbolType, ..} ) <$> f marketDataMetadataSymbolSymbolType
+{-# INLINE marketDataMetadataSymbolSymbolTypeL #-}
+
+-- | 'marketDataMetadataSymbolAssetIdBase' Lens
+marketDataMetadataSymbolAssetIdBaseL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolAssetIdBaseL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolAssetIdBase -> MarketDataMetadataSymbol { marketDataMetadataSymbolAssetIdBase, ..} ) <$> f marketDataMetadataSymbolAssetIdBase
+{-# INLINE marketDataMetadataSymbolAssetIdBaseL #-}
+
+-- | 'marketDataMetadataSymbolAssetIdQuote' Lens
+marketDataMetadataSymbolAssetIdQuoteL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolAssetIdQuoteL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolAssetIdQuote -> MarketDataMetadataSymbol { marketDataMetadataSymbolAssetIdQuote, ..} ) <$> f marketDataMetadataSymbolAssetIdQuote
+{-# INLINE marketDataMetadataSymbolAssetIdQuoteL #-}
+
+-- | 'marketDataMetadataSymbolAssetIdUnit' Lens
+marketDataMetadataSymbolAssetIdUnitL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolAssetIdUnitL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolAssetIdUnit -> MarketDataMetadataSymbol { marketDataMetadataSymbolAssetIdUnit, ..} ) <$> f marketDataMetadataSymbolAssetIdUnit
+{-# INLINE marketDataMetadataSymbolAssetIdUnitL #-}
+
+-- | 'marketDataMetadataSymbolFutureContractUnit' Lens
+marketDataMetadataSymbolFutureContractUnitL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolFutureContractUnitL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolFutureContractUnit -> MarketDataMetadataSymbol { marketDataMetadataSymbolFutureContractUnit, ..} ) <$> f marketDataMetadataSymbolFutureContractUnit
+{-# INLINE marketDataMetadataSymbolFutureContractUnitL #-}
+
+-- | 'marketDataMetadataSymbolFutureContractUnitAsset' Lens
+marketDataMetadataSymbolFutureContractUnitAssetL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolFutureContractUnitAssetL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolFutureContractUnitAsset -> MarketDataMetadataSymbol { marketDataMetadataSymbolFutureContractUnitAsset, ..} ) <$> f marketDataMetadataSymbolFutureContractUnitAsset
+{-# INLINE marketDataMetadataSymbolFutureContractUnitAssetL #-}
+
+-- | 'marketDataMetadataSymbolFutureDeliveryTime' Lens
+marketDataMetadataSymbolFutureDeliveryTimeL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolFutureDeliveryTimeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolFutureDeliveryTime -> MarketDataMetadataSymbol { marketDataMetadataSymbolFutureDeliveryTime, ..} ) <$> f marketDataMetadataSymbolFutureDeliveryTime
+{-# INLINE marketDataMetadataSymbolFutureDeliveryTimeL #-}
+
+-- | 'marketDataMetadataSymbolOptionTypeIsCall' Lens
+marketDataMetadataSymbolOptionTypeIsCallL :: Lens_' MarketDataMetadataSymbol (Maybe Bool)
+marketDataMetadataSymbolOptionTypeIsCallL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionTypeIsCall -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionTypeIsCall, ..} ) <$> f marketDataMetadataSymbolOptionTypeIsCall
+{-# INLINE marketDataMetadataSymbolOptionTypeIsCallL #-}
+
+-- | 'marketDataMetadataSymbolOptionStrikePrice' Lens
+marketDataMetadataSymbolOptionStrikePriceL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolOptionStrikePriceL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionStrikePrice -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionStrikePrice, ..} ) <$> f marketDataMetadataSymbolOptionStrikePrice
+{-# INLINE marketDataMetadataSymbolOptionStrikePriceL #-}
+
+-- | 'marketDataMetadataSymbolOptionContractUnit' Lens
+marketDataMetadataSymbolOptionContractUnitL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolOptionContractUnitL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionContractUnit -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionContractUnit, ..} ) <$> f marketDataMetadataSymbolOptionContractUnit
+{-# INLINE marketDataMetadataSymbolOptionContractUnitL #-}
+
+-- | 'marketDataMetadataSymbolOptionExerciseStyle' Lens
+marketDataMetadataSymbolOptionExerciseStyleL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolOptionExerciseStyleL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionExerciseStyle -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionExerciseStyle, ..} ) <$> f marketDataMetadataSymbolOptionExerciseStyle
+{-# INLINE marketDataMetadataSymbolOptionExerciseStyleL #-}
+
+-- | 'marketDataMetadataSymbolOptionExpirationTime' Lens
+marketDataMetadataSymbolOptionExpirationTimeL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolOptionExpirationTimeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionExpirationTime -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionExpirationTime, ..} ) <$> f marketDataMetadataSymbolOptionExpirationTime
+{-# INLINE marketDataMetadataSymbolOptionExpirationTimeL #-}
+
+-- | 'marketDataMetadataSymbolContractDeliveryTime' Lens
+marketDataMetadataSymbolContractDeliveryTimeL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolContractDeliveryTimeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolContractDeliveryTime -> MarketDataMetadataSymbol { marketDataMetadataSymbolContractDeliveryTime, ..} ) <$> f marketDataMetadataSymbolContractDeliveryTime
+{-# INLINE marketDataMetadataSymbolContractDeliveryTimeL #-}
+
+-- | 'marketDataMetadataSymbolContractUnit' Lens
+marketDataMetadataSymbolContractUnitL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolContractUnitL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolContractUnit -> MarketDataMetadataSymbol { marketDataMetadataSymbolContractUnit, ..} ) <$> f marketDataMetadataSymbolContractUnit
+{-# INLINE marketDataMetadataSymbolContractUnitL #-}
+
+-- | 'marketDataMetadataSymbolContractUnitAsset' Lens
+marketDataMetadataSymbolContractUnitAssetL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolContractUnitAssetL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolContractUnitAsset -> MarketDataMetadataSymbol { marketDataMetadataSymbolContractUnitAsset, ..} ) <$> f marketDataMetadataSymbolContractUnitAsset
+{-# INLINE marketDataMetadataSymbolContractUnitAssetL #-}
+
+-- | 'marketDataMetadataSymbolContractId' Lens
+marketDataMetadataSymbolContractIdL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolContractIdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolContractId -> MarketDataMetadataSymbol { marketDataMetadataSymbolContractId, ..} ) <$> f marketDataMetadataSymbolContractId
+{-# INLINE marketDataMetadataSymbolContractIdL #-}
+
+-- | 'marketDataMetadataSymbolContractDisplayName' Lens
+marketDataMetadataSymbolContractDisplayNameL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolContractDisplayNameL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolContractDisplayName -> MarketDataMetadataSymbol { marketDataMetadataSymbolContractDisplayName, ..} ) <$> f marketDataMetadataSymbolContractDisplayName
+{-# INLINE marketDataMetadataSymbolContractDisplayNameL #-}
+
+-- | 'marketDataMetadataSymbolContractDisplayDescription' Lens
+marketDataMetadataSymbolContractDisplayDescriptionL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolContractDisplayDescriptionL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolContractDisplayDescription -> MarketDataMetadataSymbol { marketDataMetadataSymbolContractDisplayDescription, ..} ) <$> f marketDataMetadataSymbolContractDisplayDescription
+{-# INLINE marketDataMetadataSymbolContractDisplayDescriptionL #-}
+
+-- | 'marketDataMetadataSymbolDataStart' Lens
+marketDataMetadataSymbolDataStartL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolDataStartL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataStart -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataStart, ..} ) <$> f marketDataMetadataSymbolDataStart
+{-# INLINE marketDataMetadataSymbolDataStartL #-}
+
+-- | 'marketDataMetadataSymbolDataEnd' Lens
+marketDataMetadataSymbolDataEndL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolDataEndL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataEnd -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataEnd, ..} ) <$> f marketDataMetadataSymbolDataEnd
+{-# INLINE marketDataMetadataSymbolDataEndL #-}
+
+-- | 'marketDataMetadataSymbolDataQuoteStart' Lens
+marketDataMetadataSymbolDataQuoteStartL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolDataQuoteStartL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataQuoteStart -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataQuoteStart, ..} ) <$> f marketDataMetadataSymbolDataQuoteStart
+{-# INLINE marketDataMetadataSymbolDataQuoteStartL #-}
+
+-- | 'marketDataMetadataSymbolDataQuoteEnd' Lens
+marketDataMetadataSymbolDataQuoteEndL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolDataQuoteEndL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataQuoteEnd -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataQuoteEnd, ..} ) <$> f marketDataMetadataSymbolDataQuoteEnd
+{-# INLINE marketDataMetadataSymbolDataQuoteEndL #-}
+
+-- | 'marketDataMetadataSymbolDataOrderbookStart' Lens
+marketDataMetadataSymbolDataOrderbookStartL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolDataOrderbookStartL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataOrderbookStart -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataOrderbookStart, ..} ) <$> f marketDataMetadataSymbolDataOrderbookStart
+{-# INLINE marketDataMetadataSymbolDataOrderbookStartL #-}
+
+-- | 'marketDataMetadataSymbolDataOrderbookEnd' Lens
+marketDataMetadataSymbolDataOrderbookEndL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolDataOrderbookEndL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataOrderbookEnd -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataOrderbookEnd, ..} ) <$> f marketDataMetadataSymbolDataOrderbookEnd
+{-# INLINE marketDataMetadataSymbolDataOrderbookEndL #-}
+
+-- | 'marketDataMetadataSymbolDataTradeStart' Lens
+marketDataMetadataSymbolDataTradeStartL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolDataTradeStartL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataTradeStart -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataTradeStart, ..} ) <$> f marketDataMetadataSymbolDataTradeStart
+{-# INLINE marketDataMetadataSymbolDataTradeStartL #-}
+
+-- | 'marketDataMetadataSymbolDataTradeEnd' Lens
+marketDataMetadataSymbolDataTradeEndL :: Lens_' MarketDataMetadataSymbol (Maybe DateTime)
+marketDataMetadataSymbolDataTradeEndL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolDataTradeEnd -> MarketDataMetadataSymbol { marketDataMetadataSymbolDataTradeEnd, ..} ) <$> f marketDataMetadataSymbolDataTradeEnd
+{-# INLINE marketDataMetadataSymbolDataTradeEndL #-}
+
+-- | 'marketDataMetadataSymbolIndexId' Lens
+marketDataMetadataSymbolIndexIdL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolIndexIdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolIndexId -> MarketDataMetadataSymbol { marketDataMetadataSymbolIndexId, ..} ) <$> f marketDataMetadataSymbolIndexId
+{-# INLINE marketDataMetadataSymbolIndexIdL #-}
+
+-- | 'marketDataMetadataSymbolIndexDisplayName' Lens
+marketDataMetadataSymbolIndexDisplayNameL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolIndexDisplayNameL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolIndexDisplayName -> MarketDataMetadataSymbol { marketDataMetadataSymbolIndexDisplayName, ..} ) <$> f marketDataMetadataSymbolIndexDisplayName
+{-# INLINE marketDataMetadataSymbolIndexDisplayNameL #-}
+
+-- | 'marketDataMetadataSymbolIndexDisplayDescription' Lens
+marketDataMetadataSymbolIndexDisplayDescriptionL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolIndexDisplayDescriptionL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolIndexDisplayDescription -> MarketDataMetadataSymbol { marketDataMetadataSymbolIndexDisplayDescription, ..} ) <$> f marketDataMetadataSymbolIndexDisplayDescription
+{-# INLINE marketDataMetadataSymbolIndexDisplayDescriptionL #-}
+
+-- | 'marketDataMetadataSymbolVolume1hrs' Lens
+marketDataMetadataSymbolVolume1hrsL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolVolume1hrsL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolVolume1hrs -> MarketDataMetadataSymbol { marketDataMetadataSymbolVolume1hrs, ..} ) <$> f marketDataMetadataSymbolVolume1hrs
+{-# INLINE marketDataMetadataSymbolVolume1hrsL #-}
+
+-- | 'marketDataMetadataSymbolVolume1hrsUsd' Lens
+marketDataMetadataSymbolVolume1hrsUsdL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolVolume1hrsUsdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolVolume1hrsUsd -> MarketDataMetadataSymbol { marketDataMetadataSymbolVolume1hrsUsd, ..} ) <$> f marketDataMetadataSymbolVolume1hrsUsd
+{-# INLINE marketDataMetadataSymbolVolume1hrsUsdL #-}
+
+-- | 'marketDataMetadataSymbolVolume1day' Lens
+marketDataMetadataSymbolVolume1dayL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolVolume1dayL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolVolume1day -> MarketDataMetadataSymbol { marketDataMetadataSymbolVolume1day, ..} ) <$> f marketDataMetadataSymbolVolume1day
+{-# INLINE marketDataMetadataSymbolVolume1dayL #-}
+
+-- | 'marketDataMetadataSymbolVolume1dayUsd' Lens
+marketDataMetadataSymbolVolume1dayUsdL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolVolume1dayUsdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolVolume1dayUsd -> MarketDataMetadataSymbol { marketDataMetadataSymbolVolume1dayUsd, ..} ) <$> f marketDataMetadataSymbolVolume1dayUsd
+{-# INLINE marketDataMetadataSymbolVolume1dayUsdL #-}
+
+-- | 'marketDataMetadataSymbolVolume1mth' Lens
+marketDataMetadataSymbolVolume1mthL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolVolume1mthL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolVolume1mth -> MarketDataMetadataSymbol { marketDataMetadataSymbolVolume1mth, ..} ) <$> f marketDataMetadataSymbolVolume1mth
+{-# INLINE marketDataMetadataSymbolVolume1mthL #-}
+
+-- | 'marketDataMetadataSymbolVolume1mthUsd' Lens
+marketDataMetadataSymbolVolume1mthUsdL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolVolume1mthUsdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolVolume1mthUsd -> MarketDataMetadataSymbol { marketDataMetadataSymbolVolume1mthUsd, ..} ) <$> f marketDataMetadataSymbolVolume1mthUsd
+{-# INLINE marketDataMetadataSymbolVolume1mthUsdL #-}
+
+-- | 'marketDataMetadataSymbolPrice' Lens
+marketDataMetadataSymbolPriceL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolPriceL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolPrice -> MarketDataMetadataSymbol { marketDataMetadataSymbolPrice, ..} ) <$> f marketDataMetadataSymbolPrice
+{-# INLINE marketDataMetadataSymbolPriceL #-}
+
+-- | 'marketDataMetadataSymbolSymbolIdExchange' Lens
+marketDataMetadataSymbolSymbolIdExchangeL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolSymbolIdExchangeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolSymbolIdExchange -> MarketDataMetadataSymbol { marketDataMetadataSymbolSymbolIdExchange, ..} ) <$> f marketDataMetadataSymbolSymbolIdExchange
+{-# INLINE marketDataMetadataSymbolSymbolIdExchangeL #-}
+
+-- | 'marketDataMetadataSymbolAssetIdBaseExchange' Lens
+marketDataMetadataSymbolAssetIdBaseExchangeL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolAssetIdBaseExchangeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolAssetIdBaseExchange -> MarketDataMetadataSymbol { marketDataMetadataSymbolAssetIdBaseExchange, ..} ) <$> f marketDataMetadataSymbolAssetIdBaseExchange
+{-# INLINE marketDataMetadataSymbolAssetIdBaseExchangeL #-}
+
+-- | 'marketDataMetadataSymbolAssetIdQuoteExchange' Lens
+marketDataMetadataSymbolAssetIdQuoteExchangeL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolAssetIdQuoteExchangeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolAssetIdQuoteExchange -> MarketDataMetadataSymbol { marketDataMetadataSymbolAssetIdQuoteExchange, ..} ) <$> f marketDataMetadataSymbolAssetIdQuoteExchange
+{-# INLINE marketDataMetadataSymbolAssetIdQuoteExchangeL #-}
+
+-- | 'marketDataMetadataSymbolPricePrecision' Lens
+marketDataMetadataSymbolPricePrecisionL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolPricePrecisionL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolPricePrecision -> MarketDataMetadataSymbol { marketDataMetadataSymbolPricePrecision, ..} ) <$> f marketDataMetadataSymbolPricePrecision
+{-# INLINE marketDataMetadataSymbolPricePrecisionL #-}
+
+-- | 'marketDataMetadataSymbolSizePrecision' Lens
+marketDataMetadataSymbolSizePrecisionL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolSizePrecisionL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolSizePrecision -> MarketDataMetadataSymbol { marketDataMetadataSymbolSizePrecision, ..} ) <$> f marketDataMetadataSymbolSizePrecision
+{-# INLINE marketDataMetadataSymbolSizePrecisionL #-}
+
+-- | 'marketDataMetadataSymbolRawKvp' Lens
+marketDataMetadataSymbolRawKvpL :: Lens_' MarketDataMetadataSymbol (Maybe (Map.Map String Text))
+marketDataMetadataSymbolRawKvpL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolRawKvp -> MarketDataMetadataSymbol { marketDataMetadataSymbolRawKvp, ..} ) <$> f marketDataMetadataSymbolRawKvp
+{-# INLINE marketDataMetadataSymbolRawKvpL #-}
+
+-- | 'marketDataMetadataSymbolFutureIsInverse' Lens
+marketDataMetadataSymbolFutureIsInverseL :: Lens_' MarketDataMetadataSymbol (Maybe Bool)
+marketDataMetadataSymbolFutureIsInverseL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolFutureIsInverse -> MarketDataMetadataSymbol { marketDataMetadataSymbolFutureIsInverse, ..} ) <$> f marketDataMetadataSymbolFutureIsInverse
+{-# INLINE marketDataMetadataSymbolFutureIsInverseL #-}
+
+-- | 'marketDataMetadataSymbolFutureIsQuanto' Lens
+marketDataMetadataSymbolFutureIsQuantoL :: Lens_' MarketDataMetadataSymbol (Maybe Bool)
+marketDataMetadataSymbolFutureIsQuantoL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolFutureIsQuanto -> MarketDataMetadataSymbol { marketDataMetadataSymbolFutureIsQuanto, ..} ) <$> f marketDataMetadataSymbolFutureIsQuanto
+{-# INLINE marketDataMetadataSymbolFutureIsQuantoL #-}
+
+-- | 'marketDataMetadataSymbolVolumeToUsd' Lens
+marketDataMetadataSymbolVolumeToUsdL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolVolumeToUsdL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolVolumeToUsd -> MarketDataMetadataSymbol { marketDataMetadataSymbolVolumeToUsd, ..} ) <$> f marketDataMetadataSymbolVolumeToUsd
+{-# INLINE marketDataMetadataSymbolVolumeToUsdL #-}
+
+-- | 'marketDataMetadataSymbolOptionBarrierUpPrice' Lens
+marketDataMetadataSymbolOptionBarrierUpPriceL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolOptionBarrierUpPriceL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionBarrierUpPrice -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionBarrierUpPrice, ..} ) <$> f marketDataMetadataSymbolOptionBarrierUpPrice
+{-# INLINE marketDataMetadataSymbolOptionBarrierUpPriceL #-}
+
+-- | 'marketDataMetadataSymbolOptionBarrierUpType' Lens
+marketDataMetadataSymbolOptionBarrierUpTypeL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolOptionBarrierUpTypeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionBarrierUpType -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionBarrierUpType, ..} ) <$> f marketDataMetadataSymbolOptionBarrierUpType
+{-# INLINE marketDataMetadataSymbolOptionBarrierUpTypeL #-}
+
+-- | 'marketDataMetadataSymbolOptionBarrierDownPrice' Lens
+marketDataMetadataSymbolOptionBarrierDownPriceL :: Lens_' MarketDataMetadataSymbol (Maybe Double)
+marketDataMetadataSymbolOptionBarrierDownPriceL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionBarrierDownPrice -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionBarrierDownPrice, ..} ) <$> f marketDataMetadataSymbolOptionBarrierDownPrice
+{-# INLINE marketDataMetadataSymbolOptionBarrierDownPriceL #-}
+
+-- | 'marketDataMetadataSymbolOptionBarrierDownType' Lens
+marketDataMetadataSymbolOptionBarrierDownTypeL :: Lens_' MarketDataMetadataSymbol (Maybe Text)
+marketDataMetadataSymbolOptionBarrierDownTypeL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolOptionBarrierDownType -> MarketDataMetadataSymbol { marketDataMetadataSymbolOptionBarrierDownType, ..} ) <$> f marketDataMetadataSymbolOptionBarrierDownType
+{-# INLINE marketDataMetadataSymbolOptionBarrierDownTypeL #-}
+
+-- | 'marketDataMetadataSymbolSymbolIdInt' Lens
+marketDataMetadataSymbolSymbolIdIntL :: Lens_' MarketDataMetadataSymbol (Maybe Int)
+marketDataMetadataSymbolSymbolIdIntL f MarketDataMetadataSymbol{..} = (\marketDataMetadataSymbolSymbolIdInt -> MarketDataMetadataSymbol { marketDataMetadataSymbolSymbolIdInt, ..} ) <$> f marketDataMetadataSymbolSymbolIdInt
+{-# INLINE marketDataMetadataSymbolSymbolIdIntL #-}
+
+
+
 -- * OhlcvExchangeTimeseriesItem
 
 -- | 'ohlcvExchangeTimeseriesItemTimePeriodStart' Lens
@@ -101,129 +611,6 @@ ohlcvExchangeTimeseriesItemSymbolIdCoinapiL f OhlcvExchangeTimeseriesItem{..} = 
 
 
 
--- * V1Asset
-
--- | 'v1AssetAssetId' Lens
-v1AssetAssetIdL :: Lens_' V1Asset (Maybe Text)
-v1AssetAssetIdL f V1Asset{..} = (\v1AssetAssetId -> V1Asset { v1AssetAssetId, ..} ) <$> f v1AssetAssetId
-{-# INLINE v1AssetAssetIdL #-}
-
--- | 'v1AssetName' Lens
-v1AssetNameL :: Lens_' V1Asset (Maybe Text)
-v1AssetNameL f V1Asset{..} = (\v1AssetName -> V1Asset { v1AssetName, ..} ) <$> f v1AssetName
-{-# INLINE v1AssetNameL #-}
-
--- | 'v1AssetTypeIsCrypto' Lens
-v1AssetTypeIsCryptoL :: Lens_' V1Asset (Maybe Int)
-v1AssetTypeIsCryptoL f V1Asset{..} = (\v1AssetTypeIsCrypto -> V1Asset { v1AssetTypeIsCrypto, ..} ) <$> f v1AssetTypeIsCrypto
-{-# INLINE v1AssetTypeIsCryptoL #-}
-
--- | 'v1AssetDataQuoteStart' Lens
-v1AssetDataQuoteStartL :: Lens_' V1Asset (Maybe DateTime)
-v1AssetDataQuoteStartL f V1Asset{..} = (\v1AssetDataQuoteStart -> V1Asset { v1AssetDataQuoteStart, ..} ) <$> f v1AssetDataQuoteStart
-{-# INLINE v1AssetDataQuoteStartL #-}
-
--- | 'v1AssetDataQuoteEnd' Lens
-v1AssetDataQuoteEndL :: Lens_' V1Asset (Maybe DateTime)
-v1AssetDataQuoteEndL f V1Asset{..} = (\v1AssetDataQuoteEnd -> V1Asset { v1AssetDataQuoteEnd, ..} ) <$> f v1AssetDataQuoteEnd
-{-# INLINE v1AssetDataQuoteEndL #-}
-
--- | 'v1AssetDataOrderbookStart' Lens
-v1AssetDataOrderbookStartL :: Lens_' V1Asset (Maybe DateTime)
-v1AssetDataOrderbookStartL f V1Asset{..} = (\v1AssetDataOrderbookStart -> V1Asset { v1AssetDataOrderbookStart, ..} ) <$> f v1AssetDataOrderbookStart
-{-# INLINE v1AssetDataOrderbookStartL #-}
-
--- | 'v1AssetDataOrderbookEnd' Lens
-v1AssetDataOrderbookEndL :: Lens_' V1Asset (Maybe DateTime)
-v1AssetDataOrderbookEndL f V1Asset{..} = (\v1AssetDataOrderbookEnd -> V1Asset { v1AssetDataOrderbookEnd, ..} ) <$> f v1AssetDataOrderbookEnd
-{-# INLINE v1AssetDataOrderbookEndL #-}
-
--- | 'v1AssetDataTradeStart' Lens
-v1AssetDataTradeStartL :: Lens_' V1Asset (Maybe DateTime)
-v1AssetDataTradeStartL f V1Asset{..} = (\v1AssetDataTradeStart -> V1Asset { v1AssetDataTradeStart, ..} ) <$> f v1AssetDataTradeStart
-{-# INLINE v1AssetDataTradeStartL #-}
-
--- | 'v1AssetDataTradeEnd' Lens
-v1AssetDataTradeEndL :: Lens_' V1Asset (Maybe DateTime)
-v1AssetDataTradeEndL f V1Asset{..} = (\v1AssetDataTradeEnd -> V1Asset { v1AssetDataTradeEnd, ..} ) <$> f v1AssetDataTradeEnd
-{-# INLINE v1AssetDataTradeEndL #-}
-
--- | 'v1AssetDataSymbolsCount' Lens
-v1AssetDataSymbolsCountL :: Lens_' V1Asset (Maybe Integer)
-v1AssetDataSymbolsCountL f V1Asset{..} = (\v1AssetDataSymbolsCount -> V1Asset { v1AssetDataSymbolsCount, ..} ) <$> f v1AssetDataSymbolsCount
-{-# INLINE v1AssetDataSymbolsCountL #-}
-
--- | 'v1AssetVolume1hrsUsd' Lens
-v1AssetVolume1hrsUsdL :: Lens_' V1Asset (Maybe Double)
-v1AssetVolume1hrsUsdL f V1Asset{..} = (\v1AssetVolume1hrsUsd -> V1Asset { v1AssetVolume1hrsUsd, ..} ) <$> f v1AssetVolume1hrsUsd
-{-# INLINE v1AssetVolume1hrsUsdL #-}
-
--- | 'v1AssetVolume1dayUsd' Lens
-v1AssetVolume1dayUsdL :: Lens_' V1Asset (Maybe Double)
-v1AssetVolume1dayUsdL f V1Asset{..} = (\v1AssetVolume1dayUsd -> V1Asset { v1AssetVolume1dayUsd, ..} ) <$> f v1AssetVolume1dayUsd
-{-# INLINE v1AssetVolume1dayUsdL #-}
-
--- | 'v1AssetVolume1mthUsd' Lens
-v1AssetVolume1mthUsdL :: Lens_' V1Asset (Maybe Double)
-v1AssetVolume1mthUsdL f V1Asset{..} = (\v1AssetVolume1mthUsd -> V1Asset { v1AssetVolume1mthUsd, ..} ) <$> f v1AssetVolume1mthUsd
-{-# INLINE v1AssetVolume1mthUsdL #-}
-
--- | 'v1AssetPriceUsd' Lens
-v1AssetPriceUsdL :: Lens_' V1Asset (Maybe Double)
-v1AssetPriceUsdL f V1Asset{..} = (\v1AssetPriceUsd -> V1Asset { v1AssetPriceUsd, ..} ) <$> f v1AssetPriceUsd
-{-# INLINE v1AssetPriceUsdL #-}
-
--- | 'v1AssetIdIcon' Lens
-v1AssetIdIconL :: Lens_' V1Asset (Maybe Text)
-v1AssetIdIconL f V1Asset{..} = (\v1AssetIdIcon -> V1Asset { v1AssetIdIcon, ..} ) <$> f v1AssetIdIcon
-{-# INLINE v1AssetIdIconL #-}
-
--- | 'v1AssetSupplyCurrent' Lens
-v1AssetSupplyCurrentL :: Lens_' V1Asset (Maybe Double)
-v1AssetSupplyCurrentL f V1Asset{..} = (\v1AssetSupplyCurrent -> V1Asset { v1AssetSupplyCurrent, ..} ) <$> f v1AssetSupplyCurrent
-{-# INLINE v1AssetSupplyCurrentL #-}
-
--- | 'v1AssetSupplyTotal' Lens
-v1AssetSupplyTotalL :: Lens_' V1Asset (Maybe Double)
-v1AssetSupplyTotalL f V1Asset{..} = (\v1AssetSupplyTotal -> V1Asset { v1AssetSupplyTotal, ..} ) <$> f v1AssetSupplyTotal
-{-# INLINE v1AssetSupplyTotalL #-}
-
--- | 'v1AssetSupplyMax' Lens
-v1AssetSupplyMaxL :: Lens_' V1Asset (Maybe Double)
-v1AssetSupplyMaxL f V1Asset{..} = (\v1AssetSupplyMax -> V1Asset { v1AssetSupplyMax, ..} ) <$> f v1AssetSupplyMax
-{-# INLINE v1AssetSupplyMaxL #-}
-
--- | 'v1AssetChainAddresses' Lens
-v1AssetChainAddressesL :: Lens_' V1Asset (Maybe [V1ChainNetworkAddress])
-v1AssetChainAddressesL f V1Asset{..} = (\v1AssetChainAddresses -> V1Asset { v1AssetChainAddresses, ..} ) <$> f v1AssetChainAddresses
-{-# INLINE v1AssetChainAddressesL #-}
-
--- | 'v1AssetDataStart' Lens
-v1AssetDataStartL :: Lens_' V1Asset (Maybe Text)
-v1AssetDataStartL f V1Asset{..} = (\v1AssetDataStart -> V1Asset { v1AssetDataStart, ..} ) <$> f v1AssetDataStart
-{-# INLINE v1AssetDataStartL #-}
-
--- | 'v1AssetDataEnd' Lens
-v1AssetDataEndL :: Lens_' V1Asset (Maybe Text)
-v1AssetDataEndL f V1Asset{..} = (\v1AssetDataEnd -> V1Asset { v1AssetDataEnd, ..} ) <$> f v1AssetDataEnd
-{-# INLINE v1AssetDataEndL #-}
-
-
-
--- * V1Chain
-
--- | 'v1ChainChainId' Lens
-v1ChainChainIdL :: Lens_' V1Chain (Maybe Text)
-v1ChainChainIdL f V1Chain{..} = (\v1ChainChainId -> V1Chain { v1ChainChainId, ..} ) <$> f v1ChainChainId
-{-# INLINE v1ChainChainIdL #-}
-
--- | 'v1ChainName' Lens
-v1ChainNameL :: Lens_' V1Chain (Maybe Text)
-v1ChainNameL f V1Chain{..} = (\v1ChainName -> V1Chain { v1ChainName, ..} ) <$> f v1ChainName
-{-# INLINE v1ChainNameL #-}
-
-
-
 -- * V1ChainNetworkAddress
 
 -- | 'v1ChainNetworkAddressChainId' Lens
@@ -240,110 +627,6 @@ v1ChainNetworkAddressNetworkIdL f V1ChainNetworkAddress{..} = (\v1ChainNetworkAd
 v1ChainNetworkAddressAddressL :: Lens_' V1ChainNetworkAddress (Maybe Text)
 v1ChainNetworkAddressAddressL f V1ChainNetworkAddress{..} = (\v1ChainNetworkAddressAddress -> V1ChainNetworkAddress { v1ChainNetworkAddressAddress, ..} ) <$> f v1ChainNetworkAddressAddress
 {-# INLINE v1ChainNetworkAddressAddressL #-}
-
-
-
--- * V1Exchange
-
--- | 'v1ExchangeExchangeId' Lens
-v1ExchangeExchangeIdL :: Lens_' V1Exchange (Maybe Text)
-v1ExchangeExchangeIdL f V1Exchange{..} = (\v1ExchangeExchangeId -> V1Exchange { v1ExchangeExchangeId, ..} ) <$> f v1ExchangeExchangeId
-{-# INLINE v1ExchangeExchangeIdL #-}
-
--- | 'v1ExchangeWebsite' Lens
-v1ExchangeWebsiteL :: Lens_' V1Exchange (Maybe Text)
-v1ExchangeWebsiteL f V1Exchange{..} = (\v1ExchangeWebsite -> V1Exchange { v1ExchangeWebsite, ..} ) <$> f v1ExchangeWebsite
-{-# INLINE v1ExchangeWebsiteL #-}
-
--- | 'v1ExchangeName' Lens
-v1ExchangeNameL :: Lens_' V1Exchange (Maybe Text)
-v1ExchangeNameL f V1Exchange{..} = (\v1ExchangeName -> V1Exchange { v1ExchangeName, ..} ) <$> f v1ExchangeName
-{-# INLINE v1ExchangeNameL #-}
-
--- | 'v1ExchangeDataStart' Lens
-v1ExchangeDataStartL :: Lens_' V1Exchange (Maybe Text)
-v1ExchangeDataStartL f V1Exchange{..} = (\v1ExchangeDataStart -> V1Exchange { v1ExchangeDataStart, ..} ) <$> f v1ExchangeDataStart
-{-# INLINE v1ExchangeDataStartL #-}
-
--- | 'v1ExchangeDataEnd' Lens
-v1ExchangeDataEndL :: Lens_' V1Exchange (Maybe Text)
-v1ExchangeDataEndL f V1Exchange{..} = (\v1ExchangeDataEnd -> V1Exchange { v1ExchangeDataEnd, ..} ) <$> f v1ExchangeDataEnd
-{-# INLINE v1ExchangeDataEndL #-}
-
--- | 'v1ExchangeDataQuoteStart' Lens
-v1ExchangeDataQuoteStartL :: Lens_' V1Exchange (Maybe DateTime)
-v1ExchangeDataQuoteStartL f V1Exchange{..} = (\v1ExchangeDataQuoteStart -> V1Exchange { v1ExchangeDataQuoteStart, ..} ) <$> f v1ExchangeDataQuoteStart
-{-# INLINE v1ExchangeDataQuoteStartL #-}
-
--- | 'v1ExchangeDataQuoteEnd' Lens
-v1ExchangeDataQuoteEndL :: Lens_' V1Exchange (Maybe DateTime)
-v1ExchangeDataQuoteEndL f V1Exchange{..} = (\v1ExchangeDataQuoteEnd -> V1Exchange { v1ExchangeDataQuoteEnd, ..} ) <$> f v1ExchangeDataQuoteEnd
-{-# INLINE v1ExchangeDataQuoteEndL #-}
-
--- | 'v1ExchangeDataOrderbookStart' Lens
-v1ExchangeDataOrderbookStartL :: Lens_' V1Exchange (Maybe DateTime)
-v1ExchangeDataOrderbookStartL f V1Exchange{..} = (\v1ExchangeDataOrderbookStart -> V1Exchange { v1ExchangeDataOrderbookStart, ..} ) <$> f v1ExchangeDataOrderbookStart
-{-# INLINE v1ExchangeDataOrderbookStartL #-}
-
--- | 'v1ExchangeDataOrderbookEnd' Lens
-v1ExchangeDataOrderbookEndL :: Lens_' V1Exchange (Maybe DateTime)
-v1ExchangeDataOrderbookEndL f V1Exchange{..} = (\v1ExchangeDataOrderbookEnd -> V1Exchange { v1ExchangeDataOrderbookEnd, ..} ) <$> f v1ExchangeDataOrderbookEnd
-{-# INLINE v1ExchangeDataOrderbookEndL #-}
-
--- | 'v1ExchangeDataTradeStart' Lens
-v1ExchangeDataTradeStartL :: Lens_' V1Exchange (Maybe DateTime)
-v1ExchangeDataTradeStartL f V1Exchange{..} = (\v1ExchangeDataTradeStart -> V1Exchange { v1ExchangeDataTradeStart, ..} ) <$> f v1ExchangeDataTradeStart
-{-# INLINE v1ExchangeDataTradeStartL #-}
-
--- | 'v1ExchangeDataTradeEnd' Lens
-v1ExchangeDataTradeEndL :: Lens_' V1Exchange (Maybe DateTime)
-v1ExchangeDataTradeEndL f V1Exchange{..} = (\v1ExchangeDataTradeEnd -> V1Exchange { v1ExchangeDataTradeEnd, ..} ) <$> f v1ExchangeDataTradeEnd
-{-# INLINE v1ExchangeDataTradeEndL #-}
-
--- | 'v1ExchangeDataTradeCount' Lens
-v1ExchangeDataTradeCountL :: Lens_' V1Exchange (Maybe Integer)
-v1ExchangeDataTradeCountL f V1Exchange{..} = (\v1ExchangeDataTradeCount -> V1Exchange { v1ExchangeDataTradeCount, ..} ) <$> f v1ExchangeDataTradeCount
-{-# INLINE v1ExchangeDataTradeCountL #-}
-
--- | 'v1ExchangeDataSymbolsCount' Lens
-v1ExchangeDataSymbolsCountL :: Lens_' V1Exchange (Maybe Integer)
-v1ExchangeDataSymbolsCountL f V1Exchange{..} = (\v1ExchangeDataSymbolsCount -> V1Exchange { v1ExchangeDataSymbolsCount, ..} ) <$> f v1ExchangeDataSymbolsCount
-{-# INLINE v1ExchangeDataSymbolsCountL #-}
-
--- | 'v1ExchangeVolume1hrsUsd' Lens
-v1ExchangeVolume1hrsUsdL :: Lens_' V1Exchange (Maybe Double)
-v1ExchangeVolume1hrsUsdL f V1Exchange{..} = (\v1ExchangeVolume1hrsUsd -> V1Exchange { v1ExchangeVolume1hrsUsd, ..} ) <$> f v1ExchangeVolume1hrsUsd
-{-# INLINE v1ExchangeVolume1hrsUsdL #-}
-
--- | 'v1ExchangeVolume1dayUsd' Lens
-v1ExchangeVolume1dayUsdL :: Lens_' V1Exchange (Maybe Double)
-v1ExchangeVolume1dayUsdL f V1Exchange{..} = (\v1ExchangeVolume1dayUsd -> V1Exchange { v1ExchangeVolume1dayUsd, ..} ) <$> f v1ExchangeVolume1dayUsd
-{-# INLINE v1ExchangeVolume1dayUsdL #-}
-
--- | 'v1ExchangeVolume1mthUsd' Lens
-v1ExchangeVolume1mthUsdL :: Lens_' V1Exchange (Maybe Double)
-v1ExchangeVolume1mthUsdL f V1Exchange{..} = (\v1ExchangeVolume1mthUsd -> V1Exchange { v1ExchangeVolume1mthUsd, ..} ) <$> f v1ExchangeVolume1mthUsd
-{-# INLINE v1ExchangeVolume1mthUsdL #-}
-
--- | 'v1ExchangeMetricId' Lens
-v1ExchangeMetricIdL :: Lens_' V1Exchange (Maybe [Text])
-v1ExchangeMetricIdL f V1Exchange{..} = (\v1ExchangeMetricId -> V1Exchange { v1ExchangeMetricId, ..} ) <$> f v1ExchangeMetricId
-{-# INLINE v1ExchangeMetricIdL #-}
-
--- | 'v1ExchangeIcons' Lens
-v1ExchangeIconsL :: Lens_' V1Exchange (Maybe [V1Icon])
-v1ExchangeIconsL f V1Exchange{..} = (\v1ExchangeIcons -> V1Exchange { v1ExchangeIcons, ..} ) <$> f v1ExchangeIcons
-{-# INLINE v1ExchangeIconsL #-}
-
--- | 'v1ExchangeRank' Lens
-v1ExchangeRankL :: Lens_' V1Exchange (Maybe Double)
-v1ExchangeRankL f V1Exchange{..} = (\v1ExchangeRank -> V1Exchange { v1ExchangeRank, ..} ) <$> f v1ExchangeRank
-{-# INLINE v1ExchangeRankL #-}
-
--- | 'v1ExchangeIntegrationStatus' Lens
-v1ExchangeIntegrationStatusL :: Lens_' V1Exchange (Maybe Text)
-v1ExchangeIntegrationStatusL f V1Exchange{..} = (\v1ExchangeIntegrationStatus -> V1Exchange { v1ExchangeIntegrationStatus, ..} ) <$> f v1ExchangeIntegrationStatus
-{-# INLINE v1ExchangeIntegrationStatusL #-}
 
 
 
@@ -494,25 +777,6 @@ v1GeneralDataValueTextL f V1GeneralData{..} = (\v1GeneralDataValueText -> V1Gene
 v1GeneralDataValueTimeL :: Lens_' V1GeneralData (Maybe DateTime)
 v1GeneralDataValueTimeL f V1GeneralData{..} = (\v1GeneralDataValueTime -> V1GeneralData { v1GeneralDataValueTime, ..} ) <$> f v1GeneralDataValueTime
 {-# INLINE v1GeneralDataValueTimeL #-}
-
-
-
--- * V1Icon
-
--- | 'v1IconExchangeId' Lens
-v1IconExchangeIdL :: Lens_' V1Icon (Maybe Text)
-v1IconExchangeIdL f V1Icon{..} = (\v1IconExchangeId -> V1Icon { v1IconExchangeId, ..} ) <$> f v1IconExchangeId
-{-# INLINE v1IconExchangeIdL #-}
-
--- | 'v1IconAssetId' Lens
-v1IconAssetIdL :: Lens_' V1Icon (Maybe Text)
-v1IconAssetIdL f V1Icon{..} = (\v1IconAssetId -> V1Icon { v1IconAssetId, ..} ) <$> f v1IconAssetId
-{-# INLINE v1IconAssetIdL #-}
-
--- | 'v1IconUrl' Lens
-v1IconUrlL :: Lens_' V1Icon (Maybe Text)
-v1IconUrlL f V1Icon{..} = (\v1IconUrl -> V1Icon { v1IconUrl, ..} ) <$> f v1IconUrl
-{-# INLINE v1IconUrlL #-}
 
 
 
@@ -871,270 +1135,6 @@ v1StrikeCallL f V1Strike{..} = (\v1StrikeCall -> V1Strike { v1StrikeCall, ..} ) 
 v1StrikePutL :: Lens_' V1Strike (Maybe V1QuoteTrade)
 v1StrikePutL f V1Strike{..} = (\v1StrikePut -> V1Strike { v1StrikePut, ..} ) <$> f v1StrikePut
 {-# INLINE v1StrikePutL #-}
-
-
-
--- * V1Symbol
-
--- | 'v1SymbolSymbolId' Lens
-v1SymbolSymbolIdL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolSymbolIdL f V1Symbol{..} = (\v1SymbolSymbolId -> V1Symbol { v1SymbolSymbolId, ..} ) <$> f v1SymbolSymbolId
-{-# INLINE v1SymbolSymbolIdL #-}
-
--- | 'v1SymbolExchangeId' Lens
-v1SymbolExchangeIdL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolExchangeIdL f V1Symbol{..} = (\v1SymbolExchangeId -> V1Symbol { v1SymbolExchangeId, ..} ) <$> f v1SymbolExchangeId
-{-# INLINE v1SymbolExchangeIdL #-}
-
--- | 'v1SymbolSymbolType' Lens
-v1SymbolSymbolTypeL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolSymbolTypeL f V1Symbol{..} = (\v1SymbolSymbolType -> V1Symbol { v1SymbolSymbolType, ..} ) <$> f v1SymbolSymbolType
-{-# INLINE v1SymbolSymbolTypeL #-}
-
--- | 'v1SymbolAssetIdBase' Lens
-v1SymbolAssetIdBaseL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolAssetIdBaseL f V1Symbol{..} = (\v1SymbolAssetIdBase -> V1Symbol { v1SymbolAssetIdBase, ..} ) <$> f v1SymbolAssetIdBase
-{-# INLINE v1SymbolAssetIdBaseL #-}
-
--- | 'v1SymbolAssetIdQuote' Lens
-v1SymbolAssetIdQuoteL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolAssetIdQuoteL f V1Symbol{..} = (\v1SymbolAssetIdQuote -> V1Symbol { v1SymbolAssetIdQuote, ..} ) <$> f v1SymbolAssetIdQuote
-{-# INLINE v1SymbolAssetIdQuoteL #-}
-
--- | 'v1SymbolAssetIdUnit' Lens
-v1SymbolAssetIdUnitL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolAssetIdUnitL f V1Symbol{..} = (\v1SymbolAssetIdUnit -> V1Symbol { v1SymbolAssetIdUnit, ..} ) <$> f v1SymbolAssetIdUnit
-{-# INLINE v1SymbolAssetIdUnitL #-}
-
--- | 'v1SymbolFutureContractUnit' Lens
-v1SymbolFutureContractUnitL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolFutureContractUnitL f V1Symbol{..} = (\v1SymbolFutureContractUnit -> V1Symbol { v1SymbolFutureContractUnit, ..} ) <$> f v1SymbolFutureContractUnit
-{-# INLINE v1SymbolFutureContractUnitL #-}
-
--- | 'v1SymbolFutureContractUnitAsset' Lens
-v1SymbolFutureContractUnitAssetL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolFutureContractUnitAssetL f V1Symbol{..} = (\v1SymbolFutureContractUnitAsset -> V1Symbol { v1SymbolFutureContractUnitAsset, ..} ) <$> f v1SymbolFutureContractUnitAsset
-{-# INLINE v1SymbolFutureContractUnitAssetL #-}
-
--- | 'v1SymbolFutureDeliveryTime' Lens
-v1SymbolFutureDeliveryTimeL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolFutureDeliveryTimeL f V1Symbol{..} = (\v1SymbolFutureDeliveryTime -> V1Symbol { v1SymbolFutureDeliveryTime, ..} ) <$> f v1SymbolFutureDeliveryTime
-{-# INLINE v1SymbolFutureDeliveryTimeL #-}
-
--- | 'v1SymbolOptionTypeIsCall' Lens
-v1SymbolOptionTypeIsCallL :: Lens_' V1Symbol (Maybe Bool)
-v1SymbolOptionTypeIsCallL f V1Symbol{..} = (\v1SymbolOptionTypeIsCall -> V1Symbol { v1SymbolOptionTypeIsCall, ..} ) <$> f v1SymbolOptionTypeIsCall
-{-# INLINE v1SymbolOptionTypeIsCallL #-}
-
--- | 'v1SymbolOptionStrikePrice' Lens
-v1SymbolOptionStrikePriceL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolOptionStrikePriceL f V1Symbol{..} = (\v1SymbolOptionStrikePrice -> V1Symbol { v1SymbolOptionStrikePrice, ..} ) <$> f v1SymbolOptionStrikePrice
-{-# INLINE v1SymbolOptionStrikePriceL #-}
-
--- | 'v1SymbolOptionContractUnit' Lens
-v1SymbolOptionContractUnitL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolOptionContractUnitL f V1Symbol{..} = (\v1SymbolOptionContractUnit -> V1Symbol { v1SymbolOptionContractUnit, ..} ) <$> f v1SymbolOptionContractUnit
-{-# INLINE v1SymbolOptionContractUnitL #-}
-
--- | 'v1SymbolOptionExerciseStyle' Lens
-v1SymbolOptionExerciseStyleL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolOptionExerciseStyleL f V1Symbol{..} = (\v1SymbolOptionExerciseStyle -> V1Symbol { v1SymbolOptionExerciseStyle, ..} ) <$> f v1SymbolOptionExerciseStyle
-{-# INLINE v1SymbolOptionExerciseStyleL #-}
-
--- | 'v1SymbolOptionExpirationTime' Lens
-v1SymbolOptionExpirationTimeL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolOptionExpirationTimeL f V1Symbol{..} = (\v1SymbolOptionExpirationTime -> V1Symbol { v1SymbolOptionExpirationTime, ..} ) <$> f v1SymbolOptionExpirationTime
-{-# INLINE v1SymbolOptionExpirationTimeL #-}
-
--- | 'v1SymbolContractDeliveryTime' Lens
-v1SymbolContractDeliveryTimeL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolContractDeliveryTimeL f V1Symbol{..} = (\v1SymbolContractDeliveryTime -> V1Symbol { v1SymbolContractDeliveryTime, ..} ) <$> f v1SymbolContractDeliveryTime
-{-# INLINE v1SymbolContractDeliveryTimeL #-}
-
--- | 'v1SymbolContractUnit' Lens
-v1SymbolContractUnitL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolContractUnitL f V1Symbol{..} = (\v1SymbolContractUnit -> V1Symbol { v1SymbolContractUnit, ..} ) <$> f v1SymbolContractUnit
-{-# INLINE v1SymbolContractUnitL #-}
-
--- | 'v1SymbolContractUnitAsset' Lens
-v1SymbolContractUnitAssetL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolContractUnitAssetL f V1Symbol{..} = (\v1SymbolContractUnitAsset -> V1Symbol { v1SymbolContractUnitAsset, ..} ) <$> f v1SymbolContractUnitAsset
-{-# INLINE v1SymbolContractUnitAssetL #-}
-
--- | 'v1SymbolContractId' Lens
-v1SymbolContractIdL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolContractIdL f V1Symbol{..} = (\v1SymbolContractId -> V1Symbol { v1SymbolContractId, ..} ) <$> f v1SymbolContractId
-{-# INLINE v1SymbolContractIdL #-}
-
--- | 'v1SymbolContractDisplayName' Lens
-v1SymbolContractDisplayNameL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolContractDisplayNameL f V1Symbol{..} = (\v1SymbolContractDisplayName -> V1Symbol { v1SymbolContractDisplayName, ..} ) <$> f v1SymbolContractDisplayName
-{-# INLINE v1SymbolContractDisplayNameL #-}
-
--- | 'v1SymbolContractDisplayDescription' Lens
-v1SymbolContractDisplayDescriptionL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolContractDisplayDescriptionL f V1Symbol{..} = (\v1SymbolContractDisplayDescription -> V1Symbol { v1SymbolContractDisplayDescription, ..} ) <$> f v1SymbolContractDisplayDescription
-{-# INLINE v1SymbolContractDisplayDescriptionL #-}
-
--- | 'v1SymbolDataStart' Lens
-v1SymbolDataStartL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolDataStartL f V1Symbol{..} = (\v1SymbolDataStart -> V1Symbol { v1SymbolDataStart, ..} ) <$> f v1SymbolDataStart
-{-# INLINE v1SymbolDataStartL #-}
-
--- | 'v1SymbolDataEnd' Lens
-v1SymbolDataEndL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolDataEndL f V1Symbol{..} = (\v1SymbolDataEnd -> V1Symbol { v1SymbolDataEnd, ..} ) <$> f v1SymbolDataEnd
-{-# INLINE v1SymbolDataEndL #-}
-
--- | 'v1SymbolDataQuoteStart' Lens
-v1SymbolDataQuoteStartL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolDataQuoteStartL f V1Symbol{..} = (\v1SymbolDataQuoteStart -> V1Symbol { v1SymbolDataQuoteStart, ..} ) <$> f v1SymbolDataQuoteStart
-{-# INLINE v1SymbolDataQuoteStartL #-}
-
--- | 'v1SymbolDataQuoteEnd' Lens
-v1SymbolDataQuoteEndL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolDataQuoteEndL f V1Symbol{..} = (\v1SymbolDataQuoteEnd -> V1Symbol { v1SymbolDataQuoteEnd, ..} ) <$> f v1SymbolDataQuoteEnd
-{-# INLINE v1SymbolDataQuoteEndL #-}
-
--- | 'v1SymbolDataOrderbookStart' Lens
-v1SymbolDataOrderbookStartL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolDataOrderbookStartL f V1Symbol{..} = (\v1SymbolDataOrderbookStart -> V1Symbol { v1SymbolDataOrderbookStart, ..} ) <$> f v1SymbolDataOrderbookStart
-{-# INLINE v1SymbolDataOrderbookStartL #-}
-
--- | 'v1SymbolDataOrderbookEnd' Lens
-v1SymbolDataOrderbookEndL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolDataOrderbookEndL f V1Symbol{..} = (\v1SymbolDataOrderbookEnd -> V1Symbol { v1SymbolDataOrderbookEnd, ..} ) <$> f v1SymbolDataOrderbookEnd
-{-# INLINE v1SymbolDataOrderbookEndL #-}
-
--- | 'v1SymbolDataTradeStart' Lens
-v1SymbolDataTradeStartL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolDataTradeStartL f V1Symbol{..} = (\v1SymbolDataTradeStart -> V1Symbol { v1SymbolDataTradeStart, ..} ) <$> f v1SymbolDataTradeStart
-{-# INLINE v1SymbolDataTradeStartL #-}
-
--- | 'v1SymbolDataTradeEnd' Lens
-v1SymbolDataTradeEndL :: Lens_' V1Symbol (Maybe DateTime)
-v1SymbolDataTradeEndL f V1Symbol{..} = (\v1SymbolDataTradeEnd -> V1Symbol { v1SymbolDataTradeEnd, ..} ) <$> f v1SymbolDataTradeEnd
-{-# INLINE v1SymbolDataTradeEndL #-}
-
--- | 'v1SymbolIndexId' Lens
-v1SymbolIndexIdL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolIndexIdL f V1Symbol{..} = (\v1SymbolIndexId -> V1Symbol { v1SymbolIndexId, ..} ) <$> f v1SymbolIndexId
-{-# INLINE v1SymbolIndexIdL #-}
-
--- | 'v1SymbolIndexDisplayName' Lens
-v1SymbolIndexDisplayNameL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolIndexDisplayNameL f V1Symbol{..} = (\v1SymbolIndexDisplayName -> V1Symbol { v1SymbolIndexDisplayName, ..} ) <$> f v1SymbolIndexDisplayName
-{-# INLINE v1SymbolIndexDisplayNameL #-}
-
--- | 'v1SymbolIndexDisplayDescription' Lens
-v1SymbolIndexDisplayDescriptionL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolIndexDisplayDescriptionL f V1Symbol{..} = (\v1SymbolIndexDisplayDescription -> V1Symbol { v1SymbolIndexDisplayDescription, ..} ) <$> f v1SymbolIndexDisplayDescription
-{-# INLINE v1SymbolIndexDisplayDescriptionL #-}
-
--- | 'v1SymbolVolume1hrs' Lens
-v1SymbolVolume1hrsL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolVolume1hrsL f V1Symbol{..} = (\v1SymbolVolume1hrs -> V1Symbol { v1SymbolVolume1hrs, ..} ) <$> f v1SymbolVolume1hrs
-{-# INLINE v1SymbolVolume1hrsL #-}
-
--- | 'v1SymbolVolume1hrsUsd' Lens
-v1SymbolVolume1hrsUsdL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolVolume1hrsUsdL f V1Symbol{..} = (\v1SymbolVolume1hrsUsd -> V1Symbol { v1SymbolVolume1hrsUsd, ..} ) <$> f v1SymbolVolume1hrsUsd
-{-# INLINE v1SymbolVolume1hrsUsdL #-}
-
--- | 'v1SymbolVolume1day' Lens
-v1SymbolVolume1dayL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolVolume1dayL f V1Symbol{..} = (\v1SymbolVolume1day -> V1Symbol { v1SymbolVolume1day, ..} ) <$> f v1SymbolVolume1day
-{-# INLINE v1SymbolVolume1dayL #-}
-
--- | 'v1SymbolVolume1dayUsd' Lens
-v1SymbolVolume1dayUsdL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolVolume1dayUsdL f V1Symbol{..} = (\v1SymbolVolume1dayUsd -> V1Symbol { v1SymbolVolume1dayUsd, ..} ) <$> f v1SymbolVolume1dayUsd
-{-# INLINE v1SymbolVolume1dayUsdL #-}
-
--- | 'v1SymbolVolume1mth' Lens
-v1SymbolVolume1mthL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolVolume1mthL f V1Symbol{..} = (\v1SymbolVolume1mth -> V1Symbol { v1SymbolVolume1mth, ..} ) <$> f v1SymbolVolume1mth
-{-# INLINE v1SymbolVolume1mthL #-}
-
--- | 'v1SymbolVolume1mthUsd' Lens
-v1SymbolVolume1mthUsdL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolVolume1mthUsdL f V1Symbol{..} = (\v1SymbolVolume1mthUsd -> V1Symbol { v1SymbolVolume1mthUsd, ..} ) <$> f v1SymbolVolume1mthUsd
-{-# INLINE v1SymbolVolume1mthUsdL #-}
-
--- | 'v1SymbolPrice' Lens
-v1SymbolPriceL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolPriceL f V1Symbol{..} = (\v1SymbolPrice -> V1Symbol { v1SymbolPrice, ..} ) <$> f v1SymbolPrice
-{-# INLINE v1SymbolPriceL #-}
-
--- | 'v1SymbolSymbolIdExchange' Lens
-v1SymbolSymbolIdExchangeL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolSymbolIdExchangeL f V1Symbol{..} = (\v1SymbolSymbolIdExchange -> V1Symbol { v1SymbolSymbolIdExchange, ..} ) <$> f v1SymbolSymbolIdExchange
-{-# INLINE v1SymbolSymbolIdExchangeL #-}
-
--- | 'v1SymbolAssetIdBaseExchange' Lens
-v1SymbolAssetIdBaseExchangeL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolAssetIdBaseExchangeL f V1Symbol{..} = (\v1SymbolAssetIdBaseExchange -> V1Symbol { v1SymbolAssetIdBaseExchange, ..} ) <$> f v1SymbolAssetIdBaseExchange
-{-# INLINE v1SymbolAssetIdBaseExchangeL #-}
-
--- | 'v1SymbolAssetIdQuoteExchange' Lens
-v1SymbolAssetIdQuoteExchangeL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolAssetIdQuoteExchangeL f V1Symbol{..} = (\v1SymbolAssetIdQuoteExchange -> V1Symbol { v1SymbolAssetIdQuoteExchange, ..} ) <$> f v1SymbolAssetIdQuoteExchange
-{-# INLINE v1SymbolAssetIdQuoteExchangeL #-}
-
--- | 'v1SymbolPricePrecision' Lens
-v1SymbolPricePrecisionL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolPricePrecisionL f V1Symbol{..} = (\v1SymbolPricePrecision -> V1Symbol { v1SymbolPricePrecision, ..} ) <$> f v1SymbolPricePrecision
-{-# INLINE v1SymbolPricePrecisionL #-}
-
--- | 'v1SymbolSizePrecision' Lens
-v1SymbolSizePrecisionL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolSizePrecisionL f V1Symbol{..} = (\v1SymbolSizePrecision -> V1Symbol { v1SymbolSizePrecision, ..} ) <$> f v1SymbolSizePrecision
-{-# INLINE v1SymbolSizePrecisionL #-}
-
--- | 'v1SymbolRawKvp' Lens
-v1SymbolRawKvpL :: Lens_' V1Symbol (Maybe (Map.Map String Text))
-v1SymbolRawKvpL f V1Symbol{..} = (\v1SymbolRawKvp -> V1Symbol { v1SymbolRawKvp, ..} ) <$> f v1SymbolRawKvp
-{-# INLINE v1SymbolRawKvpL #-}
-
--- | 'v1SymbolFutureIsInverse' Lens
-v1SymbolFutureIsInverseL :: Lens_' V1Symbol (Maybe Bool)
-v1SymbolFutureIsInverseL f V1Symbol{..} = (\v1SymbolFutureIsInverse -> V1Symbol { v1SymbolFutureIsInverse, ..} ) <$> f v1SymbolFutureIsInverse
-{-# INLINE v1SymbolFutureIsInverseL #-}
-
--- | 'v1SymbolFutureIsQuanto' Lens
-v1SymbolFutureIsQuantoL :: Lens_' V1Symbol (Maybe Bool)
-v1SymbolFutureIsQuantoL f V1Symbol{..} = (\v1SymbolFutureIsQuanto -> V1Symbol { v1SymbolFutureIsQuanto, ..} ) <$> f v1SymbolFutureIsQuanto
-{-# INLINE v1SymbolFutureIsQuantoL #-}
-
--- | 'v1SymbolVolumeToUsd' Lens
-v1SymbolVolumeToUsdL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolVolumeToUsdL f V1Symbol{..} = (\v1SymbolVolumeToUsd -> V1Symbol { v1SymbolVolumeToUsd, ..} ) <$> f v1SymbolVolumeToUsd
-{-# INLINE v1SymbolVolumeToUsdL #-}
-
--- | 'v1SymbolOptionBarrierUpPrice' Lens
-v1SymbolOptionBarrierUpPriceL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolOptionBarrierUpPriceL f V1Symbol{..} = (\v1SymbolOptionBarrierUpPrice -> V1Symbol { v1SymbolOptionBarrierUpPrice, ..} ) <$> f v1SymbolOptionBarrierUpPrice
-{-# INLINE v1SymbolOptionBarrierUpPriceL #-}
-
--- | 'v1SymbolOptionBarrierUpType' Lens
-v1SymbolOptionBarrierUpTypeL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolOptionBarrierUpTypeL f V1Symbol{..} = (\v1SymbolOptionBarrierUpType -> V1Symbol { v1SymbolOptionBarrierUpType, ..} ) <$> f v1SymbolOptionBarrierUpType
-{-# INLINE v1SymbolOptionBarrierUpTypeL #-}
-
--- | 'v1SymbolOptionBarrierDownPrice' Lens
-v1SymbolOptionBarrierDownPriceL :: Lens_' V1Symbol (Maybe Double)
-v1SymbolOptionBarrierDownPriceL f V1Symbol{..} = (\v1SymbolOptionBarrierDownPrice -> V1Symbol { v1SymbolOptionBarrierDownPrice, ..} ) <$> f v1SymbolOptionBarrierDownPrice
-{-# INLINE v1SymbolOptionBarrierDownPriceL #-}
-
--- | 'v1SymbolOptionBarrierDownType' Lens
-v1SymbolOptionBarrierDownTypeL :: Lens_' V1Symbol (Maybe Text)
-v1SymbolOptionBarrierDownTypeL f V1Symbol{..} = (\v1SymbolOptionBarrierDownType -> V1Symbol { v1SymbolOptionBarrierDownType, ..} ) <$> f v1SymbolOptionBarrierDownType
-{-# INLINE v1SymbolOptionBarrierDownTypeL #-}
-
--- | 'v1SymbolSymbolIdInt' Lens
-v1SymbolSymbolIdIntL :: Lens_' V1Symbol (Maybe Int)
-v1SymbolSymbolIdIntL f V1Symbol{..} = (\v1SymbolSymbolIdInt -> V1Symbol { v1SymbolSymbolIdInt, ..} ) <$> f v1SymbolSymbolIdInt
-{-# INLINE v1SymbolSymbolIdIntL #-}
 
 
 

@@ -69,7 +69,7 @@ import qualified Prelude as P
 v1AssetsAssetIdGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> AssetId -- ^ "assetId" -  The asset ID.
-  -> CoinAPIMarketDataRESTRequest V1AssetsAssetIdGet MimeNoContent [V1Asset] accept
+  -> CoinAPIMarketDataRESTRequest V1AssetsAssetIdGet MimeNoContent [MarketDataMetadataAsset] accept
 v1AssetsAssetIdGet  _ (AssetId assetId) =
   _mkRequest "GET" ["/v1/assets/",toPath assetId]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -98,7 +98,7 @@ instance Produces V1AssetsAssetIdGet MimePlainText
 -- 
 v1AssetsGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> CoinAPIMarketDataRESTRequest V1AssetsGet MimeNoContent [V1Asset] accept
+  -> CoinAPIMarketDataRESTRequest V1AssetsGet MimeNoContent [MarketDataMetadataAsset] accept
 v1AssetsGet  _ =
   _mkRequest "GET" ["/v1/assets"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -133,7 +133,7 @@ instance Produces V1AssetsGet MimePlainText
 v1AssetsIconsSizeGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> Size -- ^ "size" -  The size of the icons.
-  -> CoinAPIMarketDataRESTRequest V1AssetsIconsSizeGet MimeNoContent [V1Icon] accept
+  -> CoinAPIMarketDataRESTRequest V1AssetsIconsSizeGet MimeNoContent [MarketDataMetadataIcon] accept
 v1AssetsIconsSizeGet  _ (Size size) =
   _mkRequest "GET" ["/v1/assets/icons/",toPath size]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -161,7 +161,7 @@ instance Produces V1AssetsIconsSizeGet MimePlainText
 v1ChainsChainIdGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> ChainId -- ^ "chainId" -  The chain ID.
-  -> CoinAPIMarketDataRESTRequest V1ChainsChainIdGet MimeNoContent [V1Chain] accept
+  -> CoinAPIMarketDataRESTRequest V1ChainsChainIdGet MimeNoContent [MarketDataMetadataChain] accept
 v1ChainsChainIdGet  _ (ChainId chainId) =
   _mkRequest "GET" ["/v1/chains/",toPath chainId]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -190,7 +190,7 @@ instance Produces V1ChainsChainIdGet MimePlainText
 -- 
 v1ChainsGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> CoinAPIMarketDataRESTRequest V1ChainsGet MimeNoContent [V1Chain] accept
+  -> CoinAPIMarketDataRESTRequest V1ChainsGet MimeNoContent [MarketDataMetadataChain] accept
 v1ChainsGet  _ =
   _mkRequest "GET" ["/v1/chains"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -223,7 +223,7 @@ instance Produces V1ChainsGet MimePlainText
 v1ExchangesExchangeIdGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> ExchangeId -- ^ "exchangeId" -  The ID of the exchange.
-  -> CoinAPIMarketDataRESTRequest V1ExchangesExchangeIdGet MimeNoContent [V1Exchange] accept
+  -> CoinAPIMarketDataRESTRequest V1ExchangesExchangeIdGet MimeNoContent [MarketDataMetadataExchange] accept
 v1ExchangesExchangeIdGet  _ (ExchangeId exchangeId) =
   _mkRequest "GET" ["/v1/exchanges/",toPath exchangeId]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -252,7 +252,7 @@ instance Produces V1ExchangesExchangeIdGet MimePlainText
 -- 
 v1ExchangesGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> CoinAPIMarketDataRESTRequest V1ExchangesGet MimeNoContent [V1Exchange] accept
+  -> CoinAPIMarketDataRESTRequest V1ExchangesGet MimeNoContent [MarketDataMetadataExchange] accept
 v1ExchangesGet  _ =
   _mkRequest "GET" ["/v1/exchanges"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -285,7 +285,7 @@ instance Produces V1ExchangesGet MimePlainText
 v1ExchangesIconsSizeGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> Size -- ^ "size" -  The size of the icons.
-  -> CoinAPIMarketDataRESTRequest V1ExchangesIconsSizeGet MimeNoContent [V1Icon] accept
+  -> CoinAPIMarketDataRESTRequest V1ExchangesIconsSizeGet MimeNoContent [MarketDataMetadataIcon] accept
 v1ExchangesIconsSizeGet  _ (Size size) =
   _mkRequest "GET" ["/v1/exchanges/icons/",toPath size]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -315,7 +315,7 @@ instance Produces V1ExchangesIconsSizeGet MimePlainText
 v1SymbolsExchangeIdActiveGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> ExchangeId -- ^ "exchangeId" -  The ID of the exchange.
-  -> CoinAPIMarketDataRESTRequest V1SymbolsExchangeIdActiveGet MimeNoContent [V1Symbol] accept
+  -> CoinAPIMarketDataRESTRequest V1SymbolsExchangeIdActiveGet MimeNoContent [MarketDataMetadataSymbol] accept
 v1SymbolsExchangeIdActiveGet  _ (ExchangeId exchangeId) =
   _mkRequest "GET" ["/v1/symbols/",toPath exchangeId,"/active"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -355,7 +355,7 @@ instance Produces V1SymbolsExchangeIdActiveGet MimePlainText
 v1SymbolsExchangeIdHistoryGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> ExchangeId -- ^ "exchangeId" -  The ID of the exchange.
-  -> CoinAPIMarketDataRESTRequest V1SymbolsExchangeIdHistoryGet MimeNoContent [V1Symbol] accept
+  -> CoinAPIMarketDataRESTRequest V1SymbolsExchangeIdHistoryGet MimeNoContent [MarketDataMetadataSymbol] accept
 v1SymbolsExchangeIdHistoryGet  _ (ExchangeId exchangeId) =
   _mkRequest "GET" ["/v1/symbols/",toPath exchangeId,"/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)

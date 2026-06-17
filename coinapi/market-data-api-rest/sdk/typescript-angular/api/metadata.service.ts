@@ -17,15 +17,15 @@ import { Observable }                                        from 'rxjs';
 import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
-import { V1Asset } from '../model/v1Asset';
+import { MarketDataMetadataAsset } from '../model/marketDataMetadataAsset';
 // @ts-ignore
-import { V1Chain } from '../model/v1Chain';
+import { MarketDataMetadataChain } from '../model/marketDataMetadataChain';
 // @ts-ignore
-import { V1Exchange } from '../model/v1Exchange';
+import { MarketDataMetadataExchange } from '../model/marketDataMetadataExchange';
 // @ts-ignore
-import { V1Icon } from '../model/v1Icon';
+import { MarketDataMetadataIcon } from '../model/marketDataMetadataIcon';
 // @ts-ignore
-import { V1Symbol } from '../model/v1Symbol';
+import { MarketDataMetadataSymbol } from '../model/marketDataMetadataSymbol';
 // @ts-ignore
 import { V1SymbolMapping } from '../model/v1SymbolMapping';
 
@@ -53,9 +53,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1AssetsAssetIdGet(assetId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Asset>>;
-    public v1AssetsAssetIdGet(assetId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Asset>>>;
-    public v1AssetsAssetIdGet(assetId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Asset>>>;
+    public v1AssetsAssetIdGet(assetId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataAsset>>;
+    public v1AssetsAssetIdGet(assetId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataAsset>>>;
+    public v1AssetsAssetIdGet(assetId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataAsset>>>;
     public v1AssetsAssetIdGet(assetId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (assetId === null || assetId === undefined) {
             throw new Error('Required parameter assetId was null or undefined when calling v1AssetsAssetIdGet.');
@@ -97,7 +97,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/assets/${this.configuration.encodeParam({name: "assetId", value: assetId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Asset>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataAsset>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -119,9 +119,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1AssetsGet(filterAssetId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Asset>>;
-    public v1AssetsGet(filterAssetId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Asset>>>;
-    public v1AssetsGet(filterAssetId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Asset>>>;
+    public v1AssetsGet(filterAssetId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataAsset>>;
+    public v1AssetsGet(filterAssetId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataAsset>>>;
+    public v1AssetsGet(filterAssetId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataAsset>>>;
     public v1AssetsGet(filterAssetId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -171,7 +171,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/assets`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Asset>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataAsset>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -194,9 +194,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1AssetsIconsSizeGet(size: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Icon>>;
-    public v1AssetsIconsSizeGet(size: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Icon>>>;
-    public v1AssetsIconsSizeGet(size: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Icon>>>;
+    public v1AssetsIconsSizeGet(size: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataIcon>>;
+    public v1AssetsIconsSizeGet(size: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataIcon>>>;
+    public v1AssetsIconsSizeGet(size: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataIcon>>>;
     public v1AssetsIconsSizeGet(size: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (size === null || size === undefined) {
             throw new Error('Required parameter size was null or undefined when calling v1AssetsIconsSizeGet.');
@@ -238,7 +238,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/assets/icons/${this.configuration.encodeParam({name: "size", value: size, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int32"})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Icon>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataIcon>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -259,9 +259,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1ChainsChainIdGet(chainId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Chain>>;
-    public v1ChainsChainIdGet(chainId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Chain>>>;
-    public v1ChainsChainIdGet(chainId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Chain>>>;
+    public v1ChainsChainIdGet(chainId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataChain>>;
+    public v1ChainsChainIdGet(chainId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataChain>>>;
+    public v1ChainsChainIdGet(chainId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataChain>>>;
     public v1ChainsChainIdGet(chainId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (chainId === null || chainId === undefined) {
             throw new Error('Required parameter chainId was null or undefined when calling v1ChainsChainIdGet.');
@@ -303,7 +303,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/chains/${this.configuration.encodeParam({name: "chainId", value: chainId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Chain>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataChain>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -325,9 +325,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1ChainsGet(filterChainId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Chain>>;
-    public v1ChainsGet(filterChainId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Chain>>>;
-    public v1ChainsGet(filterChainId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Chain>>>;
+    public v1ChainsGet(filterChainId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataChain>>;
+    public v1ChainsGet(filterChainId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataChain>>>;
+    public v1ChainsGet(filterChainId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataChain>>>;
     public v1ChainsGet(filterChainId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -377,7 +377,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/chains`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Chain>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataChain>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -399,9 +399,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1ExchangesExchangeIdGet(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Exchange>>;
-    public v1ExchangesExchangeIdGet(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Exchange>>>;
-    public v1ExchangesExchangeIdGet(exchangeId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Exchange>>>;
+    public v1ExchangesExchangeIdGet(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataExchange>>;
+    public v1ExchangesExchangeIdGet(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataExchange>>>;
+    public v1ExchangesExchangeIdGet(exchangeId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataExchange>>>;
     public v1ExchangesExchangeIdGet(exchangeId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (exchangeId === null || exchangeId === undefined) {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1ExchangesExchangeIdGet.');
@@ -443,7 +443,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/exchanges/${this.configuration.encodeParam({name: "exchangeId", value: exchangeId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Exchange>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataExchange>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -465,9 +465,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1ExchangesGet(filterExchangeId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Exchange>>;
-    public v1ExchangesGet(filterExchangeId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Exchange>>>;
-    public v1ExchangesGet(filterExchangeId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Exchange>>>;
+    public v1ExchangesGet(filterExchangeId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataExchange>>;
+    public v1ExchangesGet(filterExchangeId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataExchange>>>;
+    public v1ExchangesGet(filterExchangeId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataExchange>>>;
     public v1ExchangesGet(filterExchangeId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -517,7 +517,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/exchanges`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Exchange>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataExchange>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -539,9 +539,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1ExchangesIconsSizeGet(size: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Icon>>;
-    public v1ExchangesIconsSizeGet(size: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Icon>>>;
-    public v1ExchangesIconsSizeGet(size: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Icon>>>;
+    public v1ExchangesIconsSizeGet(size: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataIcon>>;
+    public v1ExchangesIconsSizeGet(size: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataIcon>>>;
+    public v1ExchangesIconsSizeGet(size: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataIcon>>>;
     public v1ExchangesIconsSizeGet(size: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (size === null || size === undefined) {
             throw new Error('Required parameter size was null or undefined when calling v1ExchangesIconsSizeGet.');
@@ -583,7 +583,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/exchanges/icons/${this.configuration.encodeParam({name: "size", value: size, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int32"})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Icon>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataIcon>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -607,9 +607,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Symbol>>;
-    public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Symbol>>>;
-    public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Symbol>>>;
+    public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataSymbol>>;
+    public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataSymbol>>>;
+    public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataSymbol>>>;
     public v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (exchangeId === null || exchangeId === undefined) {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdActiveGet.');
@@ -671,7 +671,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/symbols/${this.configuration.encodeParam({name: "exchangeId", value: exchangeId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/active`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Symbol>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataSymbol>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -696,9 +696,9 @@ export class MetadataService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Symbol>>;
-    public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Symbol>>>;
-    public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Symbol>>>;
+    public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataSymbol>>;
+    public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataSymbol>>>;
+    public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataSymbol>>>;
     public v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (exchangeId === null || exchangeId === undefined) {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdHistoryGet.');
@@ -760,7 +760,7 @@ export class MetadataService extends BaseService {
 
         let localVarPath = `/v1/symbols/${this.configuration.encodeParam({name: "exchangeId", value: exchangeId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/history`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<V1Symbol>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<MarketDataMetadataSymbol>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),

@@ -3,6 +3,11 @@ README.md
 rebar.config
 src/openapi.app.src
 src/openapi_exchange_rates_api.erl
+src/openapi_market_data_metadata_asset.erl
+src/openapi_market_data_metadata_chain.erl
+src/openapi_market_data_metadata_exchange.erl
+src/openapi_market_data_metadata_icon.erl
+src/openapi_market_data_metadata_symbol.erl
 src/openapi_metadata_api.erl
 src/openapi_metrics_v1_api.erl
 src/openapi_metrics_v2_api.erl
@@ -14,16 +19,12 @@ src/openapi_order_book_l3_api.erl
 src/openapi_quotes_api.erl
 src/openapi_trades_api.erl
 src/openapi_utils.erl
-src/openapi_v1_asset.erl
-src/openapi_v1_chain.erl
 src/openapi_v1_chain_network_address.erl
-src/openapi_v1_exchange.erl
 src/openapi_v1_exchange_rate.erl
 src/openapi_v1_exchange_rates.erl
 src/openapi_v1_exchange_rates_rate.erl
 src/openapi_v1_exchange_rates_timeseries_item.erl
 src/openapi_v1_general_data.erl
-src/openapi_v1_icon.erl
 src/openapi_v1_last_trade.erl
 src/openapi_v1_listing_item.erl
 src/openapi_v1_metric.erl
@@ -36,7 +37,6 @@ src/openapi_v1_order_book_depth.erl
 src/openapi_v1_quote.erl
 src/openapi_v1_quote_trade.erl
 src/openapi_v1_strike.erl
-src/openapi_v1_symbol.erl
 src/openapi_v1_symbol_mapping.erl
 src/openapi_v1_timeseries_item.erl
 src/openapi_v1_timeseries_period.erl

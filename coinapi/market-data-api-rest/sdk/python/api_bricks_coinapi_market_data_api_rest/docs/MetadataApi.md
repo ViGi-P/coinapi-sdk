@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **v1_assets_asset_id_get**
-> List[V1Asset] v1_assets_asset_id_get(asset_id)
+> List[MarketDataMetadataAsset] v1_assets_asset_id_get(asset_id)
 
 List all assets by asset ID
 
@@ -29,7 +29,7 @@ List all assets by asset ID
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_asset import V1Asset
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_asset import MarketDataMetadataAsset
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Asset]**](V1Asset.md)
+[**List[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_get**
-> List[V1Asset] v1_assets_get(filter_asset_id=filter_asset_id)
+> List[MarketDataMetadataAsset] v1_assets_get(filter_asset_id=filter_asset_id)
 
 List all assets
 
@@ -122,7 +122,7 @@ Properties of the output are providing aggregated information from across all sy
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_asset import V1Asset
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_asset import MarketDataMetadataAsset
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Asset]**](V1Asset.md)
+[**List[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_icons_size_get**
-> List[V1Icon] v1_assets_icons_size_get(size)
+> List[MarketDataMetadataIcon] v1_assets_icons_size_get(size)
 
 List all asset icons
 
@@ -207,7 +207,7 @@ Gets the list of icons (of the given size) for all the assets.
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_icon import V1Icon
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_icon import MarketDataMetadataIcon
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Icon]**](V1Icon.md)
+[**List[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_chains_chain_id_get**
-> List[V1Chain] v1_chains_chain_id_get(chain_id)
+> List[MarketDataMetadataChain] v1_chains_chain_id_get(chain_id)
 
 List all chains by chain ID
 
@@ -290,7 +290,7 @@ List all chains by chain ID
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_chain import V1Chain
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_chain import MarketDataMetadataChain
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Chain]**](V1Chain.md)
+[**List[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_chains_get**
-> List[V1Chain] v1_chains_get(filter_chain_id=filter_chain_id)
+> List[MarketDataMetadataChain] v1_chains_get(filter_chain_id=filter_chain_id)
 
 List all blockchain chains
 
@@ -379,7 +379,7 @@ Properties of the output are providing aggregated information from across all sy
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_chain import V1Chain
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_chain import MarketDataMetadataChain
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Chain]**](V1Chain.md)
+[**List[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_exchange_id_get**
-> List[V1Exchange] v1_exchanges_exchange_id_get(exchange_id)
+> List[MarketDataMetadataExchange] v1_exchanges_exchange_id_get(exchange_id)
 
 List all exchanges by exchange_id
 
@@ -462,7 +462,7 @@ List all exchanges by exchange_id
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_exchange import V1Exchange
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_exchange import MarketDataMetadataExchange
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -514,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Exchange]**](V1Exchange.md)
+[**List[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_get**
-> List[V1Exchange] v1_exchanges_get(filter_exchange_id=filter_exchange_id)
+> List[MarketDataMetadataExchange] v1_exchanges_get(filter_exchange_id=filter_exchange_id)
 
 List all exchanges
 
@@ -551,7 +551,7 @@ Properties of the output are providing aggregated information from across all sy
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_exchange import V1Exchange
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_exchange import MarketDataMetadataExchange
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Exchange]**](V1Exchange.md)
+[**List[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_icons_size_get**
-> List[V1Icon] v1_exchanges_icons_size_get(size)
+> List[MarketDataMetadataIcon] v1_exchanges_icons_size_get(size)
 
 List of icons for the exchanges
 
@@ -634,7 +634,7 @@ List of icons for the exchanges
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_icon import V1Icon
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_icon import MarketDataMetadataIcon
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -686,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Icon]**](V1Icon.md)
+[**List[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -706,7 +706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_active_get**
-> List[V1Symbol] v1_symbols_exchange_id_active_get(exchange_id, filter_symbol_id=filter_symbol_id, filter_asset_id=filter_asset_id)
+> List[MarketDataMetadataSymbol] v1_symbols_exchange_id_active_get(exchange_id, filter_symbol_id=filter_symbol_id, filter_asset_id=filter_asset_id)
 
 List all active symbols
 
@@ -808,7 +808,7 @@ contract_id | Identifier of contract by the exchange
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_symbol import V1Symbol
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_symbol import MarketDataMetadataSymbol
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Symbol]**](V1Symbol.md)
+[**List[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_history_get**
-> List[V1Symbol] v1_symbols_exchange_id_history_get(exchange_id, page=page, limit=limit)
+> List[MarketDataMetadataSymbol] v1_symbols_exchange_id_history_get(exchange_id, page=page, limit=limit)
 
 List all historical symbols for an exchange.
 
@@ -898,7 +898,7 @@ The data is provided with pagination support.
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.v1_symbol import V1Symbol
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_symbol import MarketDataMetadataSymbol
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[V1Symbol]**](V1Symbol.md)
+[**List[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

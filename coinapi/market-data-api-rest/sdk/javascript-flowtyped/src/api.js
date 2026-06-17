@@ -70,6 +70,629 @@ export class RequiredError extends Error {
 }
 
 /**
+ * Represents an asset.
+ * @export
+ */
+export type MarketDataMetadataAsset = {
+    /**
+     * Gets or sets the asset ID.
+     * @type {string}
+     * @memberof MarketDataMetadataAsset
+     */
+    asset_id?: string;
+    /**
+     * Gets or sets the name of the asset.
+     * @type {string}
+     * @memberof MarketDataMetadataAsset
+     */
+    name?: string;
+    /**
+     * Gets or sets a value indicating whether the asset is a cryptocurrency.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    type_is_crypto?: number;
+    /**
+     * Gets or sets the start date of quote data.
+     * @type {Date}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_quote_start?: Date;
+    /**
+     * Gets or sets the end date of quote data.
+     * @type {Date}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_quote_end?: Date;
+    /**
+     * Gets or sets the start date of order book data.
+     * @type {Date}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_orderbook_start?: Date;
+    /**
+     * Gets or sets the end date of order book data.
+     * @type {Date}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_orderbook_end?: Date;
+    /**
+     * Gets or sets the start date of trade data.
+     * @type {Date}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_trade_start?: Date;
+    /**
+     * Gets or sets the end date of trade data.
+     * @type {Date}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_trade_end?: Date;
+    /**
+     * Gets or sets the number of symbols.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_symbols_count?: number;
+    /**
+     * Gets or sets the USD volume in the last 1 hour.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    volume_1hrs_usd?: number;
+    /**
+     * Gets or sets the USD volume in the last 1 day.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    volume_1day_usd?: number;
+    /**
+     * Gets or sets the USD volume in the last 1 month.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    volume_1mth_usd?: number;
+    /**
+     * Gets or sets the USD price of the asset.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    price_usd?: number;
+    /**
+     * Gets or sets the ID of the icon for the asset.
+     * @type {string}
+     * @memberof MarketDataMetadataAsset
+     */
+    id_icon?: string;
+    /**
+     * Gets or sets the current supply of the asset.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    supply_current?: number;
+    /**
+     * Gets or sets the total supply of the asset.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    supply_total?: number;
+    /**
+     * Gets or sets the maximum supply of the asset.
+     * @type {number}
+     * @memberof MarketDataMetadataAsset
+     */
+    supply_max?: number;
+    /**
+     * 
+     * @type {Array<V1ChainNetworkAddress>}
+     * @memberof MarketDataMetadataAsset
+     */
+    chain_addresses?: Array<V1ChainNetworkAddress>;
+    /**
+     * 
+     * @type {string}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_start?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MarketDataMetadataAsset
+     */
+    data_end?: string;
+}
+
+/**
+ * Represents a blockchain chain.
+ * @export
+ */
+export type MarketDataMetadataChain = {
+    /**
+     * Gets or sets the chain identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataChain
+     */
+    chain_id?: string;
+    /**
+     * Gets or sets the name of the chain.
+     * @type {string}
+     * @memberof MarketDataMetadataChain
+     */
+    name?: string;
+}
+
+/**
+ * Represents an exchange.
+ * @export
+ */
+export type MarketDataMetadataExchange = {
+    /**
+     * Gets or sets the exchange ID.
+     * @type {string}
+     * @memberof MarketDataMetadataExchange
+     */
+    exchange_id?: string;
+    /**
+     * Gets or sets the website URL of the exchange.
+     * @type {string}
+     * @memberof MarketDataMetadataExchange
+     */
+    website?: string;
+    /**
+     * Gets or sets the name of the exchange.
+     * @type {string}
+     * @memberof MarketDataMetadataExchange
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_start?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_end?: string;
+    /**
+     * Gets or sets the start date of quote data.
+     * @type {Date}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_quote_start?: Date;
+    /**
+     * Gets or sets the end date of quote data.
+     * @type {Date}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_quote_end?: Date;
+    /**
+     * Gets or sets the start date of order book data.
+     * @type {Date}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_orderbook_start?: Date;
+    /**
+     * Gets or sets the end date of order book data.
+     * @type {Date}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_orderbook_end?: Date;
+    /**
+     * Gets or sets the start date of trade data.
+     * @type {Date}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_trade_start?: Date;
+    /**
+     * Gets or sets the end date of trade data.
+     * @type {Date}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_trade_end?: Date;
+    /**
+     * Gets or sets the number of trades.
+     * @type {number}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_trade_count?: number;
+    /**
+     * Gets or sets the number of symbols.
+     * @type {number}
+     * @memberof MarketDataMetadataExchange
+     */
+    data_symbols_count?: number;
+    /**
+     * Gets or sets the USD volume in the last 1 hour.
+     * @type {number}
+     * @memberof MarketDataMetadataExchange
+     */
+    volume_1hrs_usd?: number;
+    /**
+     * Gets or sets the USD volume in the last 1 day.
+     * @type {number}
+     * @memberof MarketDataMetadataExchange
+     */
+    volume_1day_usd?: number;
+    /**
+     * Gets or sets the USD volume in the last 1 month.
+     * @type {number}
+     * @memberof MarketDataMetadataExchange
+     */
+    volume_1mth_usd?: number;
+    /**
+     * Gets or sets the list of metric IDs.
+     * @type {Array<string>}
+     * @memberof MarketDataMetadataExchange
+     */
+    metric_id?: Array<string>;
+    /**
+     * Gets or sets the list of icons for the exchange.
+     * @type {Array<MarketDataMetadataIcon>}
+     * @memberof MarketDataMetadataExchange
+     */
+    icons?: Array<MarketDataMetadataIcon>;
+    /**
+     * Rank of the exchange.
+     * @type {number}
+     * @memberof MarketDataMetadataExchange
+     */
+    rank?: number;
+    /**
+     * Status of the integration
+     * @type {string}
+     * @memberof MarketDataMetadataExchange
+     */
+    integration_status?: string;
+}
+
+/**
+ * Represents an icon.
+ * @export
+ */
+export type MarketDataMetadataIcon = {
+    /**
+     * Gets or sets the exchange ID associated with the icon.
+     * @type {string}
+     * @memberof MarketDataMetadataIcon
+     */
+    exchange_id?: string;
+    /**
+     * Gets or sets the asset ID associated with the icon.
+     * @type {string}
+     * @memberof MarketDataMetadataIcon
+     */
+    asset_id?: string;
+    /**
+     * Gets or sets the URL of the icon.
+     * @type {string}
+     * @memberof MarketDataMetadataIcon
+     */
+    url?: string;
+}
+
+/**
+ * Represents a symbol data model.
+ * @export
+ */
+export type MarketDataMetadataSymbol = {
+    /**
+     * The symbol identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    symbol_id?: string;
+    /**
+     * The exchange identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    exchange_id?: string;
+    /**
+     * The symbol type.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    symbol_type?: string;
+    /**
+     * The base asset identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    asset_id_base?: string;
+    /**
+     * The quote asset identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    asset_id_quote?: string;
+    /**
+     * The unit asset identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    asset_id_unit?: string;
+    /**
+     * The contract unit for futures.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    future_contract_unit?: number;
+    /**
+     * The asset used as the unit for futures contract.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    future_contract_unit_asset?: string;
+    /**
+     * The future delivery time for futures contract.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    future_delivery_time?: Date;
+    /**
+     * Indicates whether the option type is a call.
+     * @type {boolean}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_type_is_call?: boolean;
+    /**
+     * The strike price for options.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_strike_price?: number;
+    /**
+     * The contract unit for options.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_contract_unit?: number;
+    /**
+     * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_exercise_style?: string;
+    /**
+     * The expiration time for options.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_expiration_time?: Date;
+    /**
+     * The delivery time for contracts.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    contract_delivery_time?: Date;
+    /**
+     * The contract unit for contracts.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    contract_unit?: number;
+    /**
+     * The asset used as the unit for contracts.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    contract_unit_asset?: string;
+    /**
+     * The contract identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    contract_id?: string;
+    /**
+     * The display name of the contract.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    contract_display_name?: string;
+    /**
+     * The display description of the contract.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    contract_display_description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_start?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_end?: string;
+    /**
+     * The start date of quote data.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_quote_start?: Date;
+    /**
+     * The end date of quote data.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_quote_end?: Date;
+    /**
+     * The start date of order book data.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_orderbook_start?: Date;
+    /**
+     * The end date of order book data.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_orderbook_end?: Date;
+    /**
+     * The start date of trade data.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_trade_start?: Date;
+    /**
+     * The end date of trade data.
+     * @type {Date}
+     * @memberof MarketDataMetadataSymbol
+     */
+    data_trade_end?: Date;
+    /**
+     * The index identifier.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    index_id?: string;
+    /**
+     * The display name of the index.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    index_display_name?: string;
+    /**
+     * The display description of the index.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    index_display_description?: string;
+    /**
+     * The volume in the last 1 hour.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    volume_1hrs?: number;
+    /**
+     * The volume in USD in the last 1 hour.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    volume_1hrs_usd?: number;
+    /**
+     * The volume in the last 1 day.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    volume_1day?: number;
+    /**
+     * The volume in USD in the last 1 day.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    volume_1day_usd?: number;
+    /**
+     * The volume in the last 1 month.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    volume_1mth?: number;
+    /**
+     * The volume in USD in the last 1 month.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    volume_1mth_usd?: number;
+    /**
+     * The price.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    price?: number;
+    /**
+     * The symbol identifier in the exchange.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    symbol_id_exchange?: string;
+    /**
+     * The base asset identifier in the exchange.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    asset_id_base_exchange?: string;
+    /**
+     * The quote asset identifier in the exchange.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    asset_id_quote_exchange?: string;
+    /**
+     * The price precision.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    price_precision?: number;
+    /**
+     * The size precision.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    size_precision?: number;
+    /**
+     * Key Value Pair store with raw data from the data source.
+     * @type {{ [key: string]: string | null; }}
+     * @memberof MarketDataMetadataSymbol
+     */
+    raw_kvp?: { [key: string]: string | null; };
+    /**
+     * Indicates whether the futures contract is inverse (coin-margined).
+     * @type {boolean}
+     * @memberof MarketDataMetadataSymbol
+     */
+    future_is_inverse?: boolean;
+    /**
+     * Indicates whether the futures contract is quanto.
+     * @type {boolean}
+     * @memberof MarketDataMetadataSymbol
+     */
+    future_is_quanto?: boolean;
+    /**
+     * Volume unit in USD.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    volume_to_usd?: number;
+    /**
+     * The up barrier price for barrier options.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_barrier_up_price?: number;
+    /**
+     * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_barrier_up_type?: string;
+    /**
+     * The down barrier price for barrier options.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_barrier_down_price?: number;
+    /**
+     * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * @type {string}
+     * @memberof MarketDataMetadataSymbol
+     */
+    option_barrier_down_type?: string;
+    /**
+     * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+     * @type {number}
+     * @memberof MarketDataMetadataSymbol
+     */
+    symbol_id_int?: number;
+}
+
+/**
  * Represents a timeseries item with price and volume information.
  * @export
  */
@@ -149,158 +772,6 @@ export type OhlcvExchangeTimeseriesItem = {
 }
 
 /**
- * Represents an asset.
- * @export
- */
-export type V1Asset = {
-    /**
-     * Gets or sets the asset ID.
-     * @type {string}
-     * @memberof V1Asset
-     */
-    asset_id?: string;
-    /**
-     * Gets or sets the name of the asset.
-     * @type {string}
-     * @memberof V1Asset
-     */
-    name?: string;
-    /**
-     * Gets or sets a value indicating whether the asset is a cryptocurrency.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    type_is_crypto?: number;
-    /**
-     * Gets or sets the start date of quote data.
-     * @type {Date}
-     * @memberof V1Asset
-     */
-    data_quote_start?: Date;
-    /**
-     * Gets or sets the end date of quote data.
-     * @type {Date}
-     * @memberof V1Asset
-     */
-    data_quote_end?: Date;
-    /**
-     * Gets or sets the start date of order book data.
-     * @type {Date}
-     * @memberof V1Asset
-     */
-    data_orderbook_start?: Date;
-    /**
-     * Gets or sets the end date of order book data.
-     * @type {Date}
-     * @memberof V1Asset
-     */
-    data_orderbook_end?: Date;
-    /**
-     * Gets or sets the start date of trade data.
-     * @type {Date}
-     * @memberof V1Asset
-     */
-    data_trade_start?: Date;
-    /**
-     * Gets or sets the end date of trade data.
-     * @type {Date}
-     * @memberof V1Asset
-     */
-    data_trade_end?: Date;
-    /**
-     * Gets or sets the number of symbols.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    data_symbols_count?: number;
-    /**
-     * Gets or sets the USD volume in the last 1 hour.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    volume_1hrs_usd?: number;
-    /**
-     * Gets or sets the USD volume in the last 1 day.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    volume_1day_usd?: number;
-    /**
-     * Gets or sets the USD volume in the last 1 month.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    volume_1mth_usd?: number;
-    /**
-     * Gets or sets the USD price of the asset.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    price_usd?: number;
-    /**
-     * Gets or sets the ID of the icon for the asset.
-     * @type {string}
-     * @memberof V1Asset
-     */
-    id_icon?: string;
-    /**
-     * Gets or sets the current supply of the asset.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    supply_current?: number;
-    /**
-     * Gets or sets the total supply of the asset.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    supply_total?: number;
-    /**
-     * Gets or sets the maximum supply of the asset.
-     * @type {number}
-     * @memberof V1Asset
-     */
-    supply_max?: number;
-    /**
-     * 
-     * @type {Array<V1ChainNetworkAddress>}
-     * @memberof V1Asset
-     */
-    chain_addresses?: Array<V1ChainNetworkAddress>;
-    /**
-     * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
-     * @type {string}
-     * @memberof V1Asset
-     */
-    data_start?: string;
-    /**
-     * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
-     * @type {string}
-     * @memberof V1Asset
-     */
-    data_end?: string;
-}
-
-/**
- * Represents a blockchain chain.
- * @export
- */
-export type V1Chain = {
-    /**
-     * Gets or sets the chain identifier.
-     * @type {string}
-     * @memberof V1Chain
-     */
-    chain_id?: string;
-    /**
-     * Gets or sets the name of the chain.
-     * @type {string}
-     * @memberof V1Chain
-     */
-    name?: string;
-}
-
-/**
  * Contains information about assets\' chain network addresses
  * @export
  */
@@ -323,133 +794,6 @@ export type V1ChainNetworkAddress = {
      * @memberof V1ChainNetworkAddress
      */
     address?: string;
-}
-
-/**
- * Represents an exchange.
- * @export
- */
-export type V1Exchange = {
-    /**
-     * Gets or sets the exchange ID.
-     * @type {string}
-     * @memberof V1Exchange
-     */
-    exchange_id?: string;
-    /**
-     * Gets or sets the website URL of the exchange.
-     * @type {string}
-     * @memberof V1Exchange
-     */
-    website?: string;
-    /**
-     * Gets or sets the name of the exchange.
-     * @type {string}
-     * @memberof V1Exchange
-     */
-    name?: string;
-    /**
-     * Gets the start date of the exchange\'s data.
-     * @type {string}
-     * @memberof V1Exchange
-     */
-    data_start?: string;
-    /**
-     * Gets the end date of the exchange\'s data.
-     * @type {string}
-     * @memberof V1Exchange
-     */
-    data_end?: string;
-    /**
-     * Gets or sets the start date of quote data.
-     * @type {Date}
-     * @memberof V1Exchange
-     */
-    data_quote_start?: Date;
-    /**
-     * Gets or sets the end date of quote data.
-     * @type {Date}
-     * @memberof V1Exchange
-     */
-    data_quote_end?: Date;
-    /**
-     * Gets or sets the start date of order book data.
-     * @type {Date}
-     * @memberof V1Exchange
-     */
-    data_orderbook_start?: Date;
-    /**
-     * Gets or sets the end date of order book data.
-     * @type {Date}
-     * @memberof V1Exchange
-     */
-    data_orderbook_end?: Date;
-    /**
-     * Gets or sets the start date of trade data.
-     * @type {Date}
-     * @memberof V1Exchange
-     */
-    data_trade_start?: Date;
-    /**
-     * Gets or sets the end date of trade data.
-     * @type {Date}
-     * @memberof V1Exchange
-     */
-    data_trade_end?: Date;
-    /**
-     * Gets or sets the number of trades.
-     * @type {number}
-     * @memberof V1Exchange
-     */
-    data_trade_count?: number;
-    /**
-     * Gets or sets the number of symbols.
-     * @type {number}
-     * @memberof V1Exchange
-     */
-    data_symbols_count?: number;
-    /**
-     * Gets or sets the USD volume in the last 1 hour.
-     * @type {number}
-     * @memberof V1Exchange
-     */
-    volume_1hrs_usd?: number;
-    /**
-     * Gets or sets the USD volume in the last 1 day.
-     * @type {number}
-     * @memberof V1Exchange
-     */
-    volume_1day_usd?: number;
-    /**
-     * Gets or sets the USD volume in the last 1 month.
-     * @type {number}
-     * @memberof V1Exchange
-     */
-    volume_1mth_usd?: number;
-    /**
-     * Gets or sets the list of metric IDs.
-     * @type {Array<string>}
-     * @memberof V1Exchange
-     */
-    metric_id?: Array<string>;
-    /**
-     * Gets or sets the list of icons for the exchange.
-     * @type {Array<V1Icon>}
-     * @memberof V1Exchange
-     */
-    icons?: Array<V1Icon>;
-    /**
-     * Rank of the exchange - higher rank means exchange is more reliable
-     * @type {number}
-     * @memberof V1Exchange
-     */
-    rank?: number;
-    /**
-     * Status of the integration
-     * @type {string}
-     * @memberof V1Exchange
-     */
-    integration_status?: string;
 }
 
 /**
@@ -641,31 +985,6 @@ export type V1GeneralData = {
      * @memberof V1GeneralData
      */
     value_time?: Date;
-}
-
-/**
- * Represents an icon.
- * @export
- */
-export type V1Icon = {
-    /**
-     * Gets or sets the exchange ID associated with the icon.
-     * @type {string}
-     * @memberof V1Icon
-     */
-    exchange_id?: string;
-    /**
-     * Gets or sets the asset ID associated with the icon.
-     * @type {string}
-     * @memberof V1Icon
-     */
-    asset_id?: string;
-    /**
-     * Gets or sets the URL of the icon.
-     * @type {string}
-     * @memberof V1Icon
-     */
-    url?: string;
 }
 
 /**
@@ -1122,325 +1441,6 @@ export type V1Strike = {
      * @memberof V1Strike
      */
     put?: V1QuoteTrade;
-}
-
-/**
- * Represents a symbol data model.
- * @export
- */
-export type V1Symbol = {
-    /**
-     * Gets or sets the symbol identifier.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    symbol_id?: string;
-    /**
-     * Gets or sets the exchange identifier.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    exchange_id?: string;
-    /**
-     * Gets or sets the symbol type.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    symbol_type?: string;
-    /**
-     * Gets or sets the base asset identifier.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    asset_id_base?: string;
-    /**
-     * Gets or sets the quote asset identifier.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    asset_id_quote?: string;
-    /**
-     * Gets or sets the unit asset identifier.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    asset_id_unit?: string;
-    /**
-     * Gets or sets the contract unit for futures.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    future_contract_unit?: number;
-    /**
-     * Gets or sets the asset used as the unit for futures contract.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    future_contract_unit_asset?: string;
-    /**
-     * Gets or sets the future delivery time for futures contract.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    future_delivery_time?: Date;
-    /**
-     * Gets or sets a value indicating whether the option type is a call.
-     * @type {boolean}
-     * @memberof V1Symbol
-     */
-    option_type_is_call?: boolean;
-    /**
-     * Gets or sets the strike price for options.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    option_strike_price?: number;
-    /**
-     * Gets or sets the contract unit for options.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    option_contract_unit?: number;
-    /**
-     * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    option_exercise_style?: string;
-    /**
-     * Gets or sets the expiration time for options.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    option_expiration_time?: Date;
-    /**
-     * Gets or sets the delivery time for contracts.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    contract_delivery_time?: Date;
-    /**
-     * Gets or sets the contract unit for contracts.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    contract_unit?: number;
-    /**
-     * Gets or sets the asset used as the unit for contracts.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    contract_unit_asset?: string;
-    /**
-     * Gets or sets the contract identifier.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    contract_id?: string;
-    /**
-     * Gets or sets the display name of the contract.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    contract_display_name?: string;
-    /**
-     * Gets or sets the display description of the contract.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    contract_display_description?: string;
-    /**
-     * Gets the start date of the data in string format (\"yyyy-MM-dd\").
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    data_start?: string;
-    /**
-     * Gets the end date of the data in string format (\"yyyy-MM-dd\").
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    data_end?: string;
-    /**
-     * Gets or sets the start date of quote data.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    data_quote_start?: Date;
-    /**
-     * Gets or sets the end date of quote data.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    data_quote_end?: Date;
-    /**
-     * Gets or sets the start date of order book data.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    data_orderbook_start?: Date;
-    /**
-     * Gets or sets the end date of order book data.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    data_orderbook_end?: Date;
-    /**
-     * Gets or sets the start date of trade data.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    data_trade_start?: Date;
-    /**
-     * Gets or sets the end date of trade data.
-     * @type {Date}
-     * @memberof V1Symbol
-     */
-    data_trade_end?: Date;
-    /**
-     * Gets or sets the index identifier.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    index_id?: string;
-    /**
-     * Gets or sets the display name of the index.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    index_display_name?: string;
-    /**
-     * Gets or sets the display description of the index.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    index_display_description?: string;
-    /**
-     * Gets or sets the volume in the last 1 hour.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    volume_1hrs?: number;
-    /**
-     * Gets or sets the volume in USD in the last 1 hour.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    volume_1hrs_usd?: number;
-    /**
-     * Gets or sets the volume in the last 1 day.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    volume_1day?: number;
-    /**
-     * Gets or sets the volume in USD in the last 1 day.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    volume_1day_usd?: number;
-    /**
-     * Gets or sets the volume in the last 1 month.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    volume_1mth?: number;
-    /**
-     * Gets or sets the volume in USD in the last 1 month.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    volume_1mth_usd?: number;
-    /**
-     * Gets or sets the price.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    price?: number;
-    /**
-     * Gets or sets the symbol identifier in the exchange.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    symbol_id_exchange?: string;
-    /**
-     * Gets or sets the base asset identifier in the exchange.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    asset_id_base_exchange?: string;
-    /**
-     * Gets or sets the quote asset identifier in the exchange.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    asset_id_quote_exchange?: string;
-    /**
-     * Gets or sets the price precision.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    price_precision?: number;
-    /**
-     * Gets or sets the size precision.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    size_precision?: number;
-    /**
-     * Key Value Pair store with raw data from the data source.
-     * @type {{ [key: string]: string | null; }}
-     * @memberof V1Symbol
-     */
-    raw_kvp?: { [key: string]: string | null; };
-    /**
-     * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
-     * @type {boolean}
-     * @memberof V1Symbol
-     */
-    future_is_inverse?: boolean;
-    /**
-     * Gets or sets a value indicating whether the futures contract is quanto.
-     * @type {boolean}
-     * @memberof V1Symbol
-     */
-    future_is_quanto?: boolean;
-    /**
-     * Gets or sets the volume in USD.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    volume_to_usd?: number;
-    /**
-     * Gets or sets the up barrier price for barrier options.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    option_barrier_up_price?: number;
-    /**
-     * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    option_barrier_up_type?: string;
-    /**
-     * Gets or sets the down barrier price for barrier options.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    option_barrier_down_price?: number;
-    /**
-     * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-     * @type {string}
-     * @memberof V1Symbol
-     */
-    option_barrier_down_type?: string;
-    /**
-     * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
-     * @type {number}
-     * @memberof V1Symbol
-     */
-    symbol_id_int?: number;
 }
 
 /**
@@ -2400,25 +2400,25 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
 };
 
 export type MetadataApiType = { 
-    v1AssetsAssetIdGet(assetId: string, options?: RequestOptions): Promise<Array<V1Asset>>,
+    v1AssetsAssetIdGet(assetId: string, options?: RequestOptions): Promise<Array<MarketDataMetadataAsset>>,
 
-    v1AssetsGet(filterAssetId?: string, options?: RequestOptions): Promise<Array<V1Asset>>,
+    v1AssetsGet(filterAssetId?: string, options?: RequestOptions): Promise<Array<MarketDataMetadataAsset>>,
 
-    v1AssetsIconsSizeGet(size: number, options?: RequestOptions): Promise<Array<V1Icon>>,
+    v1AssetsIconsSizeGet(size: number, options?: RequestOptions): Promise<Array<MarketDataMetadataIcon>>,
 
-    v1ChainsChainIdGet(chainId: string, options?: RequestOptions): Promise<Array<V1Chain>>,
+    v1ChainsChainIdGet(chainId: string, options?: RequestOptions): Promise<Array<MarketDataMetadataChain>>,
 
-    v1ChainsGet(filterChainId?: string, options?: RequestOptions): Promise<Array<V1Chain>>,
+    v1ChainsGet(filterChainId?: string, options?: RequestOptions): Promise<Array<MarketDataMetadataChain>>,
 
-    v1ExchangesExchangeIdGet(exchangeId: string, options?: RequestOptions): Promise<Array<V1Exchange>>,
+    v1ExchangesExchangeIdGet(exchangeId: string, options?: RequestOptions): Promise<Array<MarketDataMetadataExchange>>,
 
-    v1ExchangesGet(filterExchangeId?: string, options?: RequestOptions): Promise<Array<V1Exchange>>,
+    v1ExchangesGet(filterExchangeId?: string, options?: RequestOptions): Promise<Array<MarketDataMetadataExchange>>,
 
-    v1ExchangesIconsSizeGet(size: number, options?: RequestOptions): Promise<Array<V1Icon>>,
+    v1ExchangesIconsSizeGet(size: number, options?: RequestOptions): Promise<Array<MarketDataMetadataIcon>>,
 
-    v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, options?: RequestOptions): Promise<Array<V1Symbol>>,
+    v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, options?: RequestOptions): Promise<Array<MarketDataMetadataSymbol>>,
 
-    v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, options?: RequestOptions): Promise<Array<V1Symbol>>,
+    v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, options?: RequestOptions): Promise<Array<MarketDataMetadataSymbol>>,
 
     v1SymbolsMapExchangeIdGet(exchangeId: string, options?: RequestOptions): Promise<Array<V1SymbolMapping>>,
 }
@@ -2435,7 +2435,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all assets by asset ID
          * @throws {RequiredError}
          */
-        v1AssetsAssetIdGet(assetId: string, options?: RequestOptions = {}): Promise<Array<V1Asset>> {
+        v1AssetsAssetIdGet(assetId: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataAsset>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1AssetsAssetIdGet(assetId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2450,7 +2450,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all assets
          * @throws {RequiredError}
          */
-        v1AssetsGet(filterAssetId?: string, options?: RequestOptions = {}): Promise<Array<V1Asset>> {
+        v1AssetsGet(filterAssetId?: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataAsset>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1AssetsGet(filterAssetId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2465,7 +2465,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all asset icons
          * @throws {RequiredError}
          */
-        v1AssetsIconsSizeGet(size: number, options?: RequestOptions = {}): Promise<Array<V1Icon>> {
+        v1AssetsIconsSizeGet(size: number, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataIcon>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1AssetsIconsSizeGet(size, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2480,7 +2480,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all chains by chain ID
          * @throws {RequiredError}
          */
-        v1ChainsChainIdGet(chainId: string, options?: RequestOptions = {}): Promise<Array<V1Chain>> {
+        v1ChainsChainIdGet(chainId: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataChain>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1ChainsChainIdGet(chainId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2495,7 +2495,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all blockchain chains
          * @throws {RequiredError}
          */
-        v1ChainsGet(filterChainId?: string, options?: RequestOptions = {}): Promise<Array<V1Chain>> {
+        v1ChainsGet(filterChainId?: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataChain>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1ChainsGet(filterChainId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2510,7 +2510,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all exchanges by exchange_id
          * @throws {RequiredError}
          */
-        v1ExchangesExchangeIdGet(exchangeId: string, options?: RequestOptions = {}): Promise<Array<V1Exchange>> {
+        v1ExchangesExchangeIdGet(exchangeId: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataExchange>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1ExchangesExchangeIdGet(exchangeId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2525,7 +2525,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all exchanges
          * @throws {RequiredError}
          */
-        v1ExchangesGet(filterExchangeId?: string, options?: RequestOptions = {}): Promise<Array<V1Exchange>> {
+        v1ExchangesGet(filterExchangeId?: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataExchange>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1ExchangesGet(filterExchangeId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2540,7 +2540,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List of icons for the exchanges
          * @throws {RequiredError}
          */
-        v1ExchangesIconsSizeGet(size: number, options?: RequestOptions = {}): Promise<Array<V1Icon>> {
+        v1ExchangesIconsSizeGet(size: number, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataIcon>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1ExchangesIconsSizeGet(size, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2555,7 +2555,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all active symbols
          * @throws {RequiredError}
          */
-        v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, options?: RequestOptions = {}): Promise<Array<V1Symbol>> {
+        v1SymbolsExchangeIdActiveGet(exchangeId: string, filterSymbolId?: string, filterAssetId?: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataSymbol>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2570,7 +2570,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all historical symbols for an exchange.
          * @throws {RequiredError}
          */
-        v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, options?: RequestOptions = {}): Promise<Array<V1Symbol>> {
+        v1SymbolsExchangeIdHistoryGet(exchangeId: string, page?: number, limit?: number, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataSymbol>> {
             const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {

@@ -23,11 +23,11 @@
 
 #include "CppRestOpenAPIClient/ApiClient.h"
 
-#include "CppRestOpenAPIClient/model/V1_Asset.h"
-#include "CppRestOpenAPIClient/model/V1_Chain.h"
-#include "CppRestOpenAPIClient/model/V1_Exchange.h"
-#include "CppRestOpenAPIClient/model/V1_Icon.h"
-#include "CppRestOpenAPIClient/model/V1_Symbol.h"
+#include "CppRestOpenAPIClient/model/MarketDataMetadata_Asset.h"
+#include "CppRestOpenAPIClient/model/MarketDataMetadata_Chain.h"
+#include "CppRestOpenAPIClient/model/MarketDataMetadata_Exchange.h"
+#include "CppRestOpenAPIClient/model/MarketDataMetadata_Icon.h"
+#include "CppRestOpenAPIClient/model/MarketDataMetadata_Symbol.h"
 #include "CppRestOpenAPIClient/model/V1_SymbolMapping.h"
 #include <vector>
 #include <cpprest/details/basic_types.h>
@@ -57,7 +57,7 @@ public:
     /// 
     /// </remarks>
     /// <param name="assetId">The asset ID.</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Asset>>> v1AssetsAssetIdGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> v1AssetsAssetIdGet(
         utility::string_t assetId
     ) const;
     /// <summary>
@@ -67,7 +67,7 @@ public:
     /// Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     /// </remarks>
     /// <param name="filterAssetId">Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Asset>>> v1AssetsGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> v1AssetsGet(
         boost::optional<utility::string_t> filterAssetId
     ) const;
     /// <summary>
@@ -77,7 +77,7 @@ public:
     /// Gets the list of icons (of the given size) for all the assets.
     /// </remarks>
     /// <param name="size">The size of the icons.</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Icon>>> v1AssetsIconsSizeGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Icon>>> v1AssetsIconsSizeGet(
         int32_t size
     ) const;
     /// <summary>
@@ -87,7 +87,7 @@ public:
     /// 
     /// </remarks>
     /// <param name="chainId">The chain ID.</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Chain>>> v1ChainsChainIdGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Chain>>> v1ChainsChainIdGet(
         utility::string_t chainId
     ) const;
     /// <summary>
@@ -97,7 +97,7 @@ public:
     /// Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     /// </remarks>
     /// <param name="filterChainId">Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Chain>>> v1ChainsGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Chain>>> v1ChainsGet(
         boost::optional<utility::string_t> filterChainId
     ) const;
     /// <summary>
@@ -107,7 +107,7 @@ public:
     /// 
     /// </remarks>
     /// <param name="exchangeId">The ID of the exchange.</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> v1ExchangesExchangeIdGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Exchange>>> v1ExchangesExchangeIdGet(
         utility::string_t exchangeId
     ) const;
     /// <summary>
@@ -117,7 +117,7 @@ public:
     /// Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     /// </remarks>
     /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> v1ExchangesGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Exchange>>> v1ExchangesGet(
         boost::optional<utility::string_t> filterExchangeId
     ) const;
     /// <summary>
@@ -127,7 +127,7 @@ public:
     /// 
     /// </remarks>
     /// <param name="size">The size of the icons.</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Icon>>> v1ExchangesIconsSizeGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Icon>>> v1ExchangesIconsSizeGet(
         int32_t size
     ) const;
     /// <summary>
@@ -139,7 +139,7 @@ public:
     /// <param name="exchangeId">The ID of the exchange.</param>
     /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="filterAssetId">The filter for asset ID. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> v1SymbolsExchangeIdActiveGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Symbol>>> v1SymbolsExchangeIdActiveGet(
         utility::string_t exchangeId,
         boost::optional<utility::string_t> filterSymbolId,
         boost::optional<utility::string_t> filterAssetId
@@ -153,7 +153,7 @@ public:
     /// <param name="exchangeId">The ID of the exchange.</param>
     /// <param name="page">The page number for pagination (starts from 1). (optional, default to 0)</param>
     /// <param name="limit">Number of records to return per page. (optional, default to 0)</param>
-    pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> v1SymbolsExchangeIdHistoryGet(
+    pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Symbol>>> v1SymbolsExchangeIdHistoryGet(
         utility::string_t exchangeId,
         boost::optional<int32_t> page,
         boost::optional<int32_t> limit

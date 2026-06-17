@@ -1,11 +1,11 @@
 package org.openapitools.api;
 
 import org.openapitools.api.ApiUtils
-import org.openapitools.model.V1Asset
-import org.openapitools.model.V1Chain
-import org.openapitools.model.V1Exchange
-import org.openapitools.model.V1Icon
-import org.openapitools.model.V1Symbol
+import org.openapitools.model.MarketDataMetadataAsset
+import org.openapitools.model.MarketDataMetadataChain
+import org.openapitools.model.MarketDataMetadataExchange
+import org.openapitools.model.MarketDataMetadataIcon
+import org.openapitools.model.MarketDataMetadataSymbol
 import org.openapitools.model.V1SymbolMapping
 
 class MetadataApi {
@@ -36,7 +36,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Asset.class )
+                    MarketDataMetadataAsset.class )
 
     }
 
@@ -62,7 +62,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Asset.class )
+                    MarketDataMetadataAsset.class )
 
     }
 
@@ -89,7 +89,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Icon.class )
+                    MarketDataMetadataIcon.class )
 
     }
 
@@ -116,7 +116,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Chain.class )
+                    MarketDataMetadataChain.class )
 
     }
 
@@ -142,7 +142,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Chain.class )
+                    MarketDataMetadataChain.class )
 
     }
 
@@ -169,7 +169,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Exchange.class )
+                    MarketDataMetadataExchange.class )
 
     }
 
@@ -195,7 +195,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Exchange.class )
+                    MarketDataMetadataExchange.class )
 
     }
 
@@ -222,7 +222,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Icon.class )
+                    MarketDataMetadataIcon.class )
 
     }
 
@@ -255,7 +255,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Symbol.class )
+                    MarketDataMetadataSymbol.class )
 
     }
 
@@ -288,7 +288,7 @@ class MetadataApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    V1Symbol.class )
+                    MarketDataMetadataSymbol.class )
 
     }
 

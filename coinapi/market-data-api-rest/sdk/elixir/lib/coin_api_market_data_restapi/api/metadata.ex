@@ -20,10 +20,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Asset{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataAsset{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_assets_asset_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Asset.t]} | {:error, Tesla.Env.t}
+  @spec v1_assets_asset_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataAsset.t]} | {:error, Tesla.Env.t}
   def v1_assets_asset_id_get(connection, asset_id, _opts \\ []) do
     request =
       %{}
@@ -34,7 +34,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Asset}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataAsset}
     ])
   end
 
@@ -50,10 +50,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Asset{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataAsset{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_assets_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Asset.t]} | {:error, Tesla.Env.t}
+  @spec v1_assets_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataAsset.t]} | {:error, Tesla.Env.t}
   def v1_assets_get(connection, opts \\ []) do
     optional_params = %{
       :filter_asset_id => :query
@@ -69,7 +69,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Asset}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataAsset}
     ])
   end
 
@@ -85,10 +85,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Icon{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataIcon{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_assets_icons_size_get(Tesla.Env.client, integer(), keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Icon.t]} | {:error, Tesla.Env.t}
+  @spec v1_assets_icons_size_get(Tesla.Env.client, integer(), keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataIcon.t]} | {:error, Tesla.Env.t}
   def v1_assets_icons_size_get(connection, size, _opts \\ []) do
     request =
       %{}
@@ -99,7 +99,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Icon}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataIcon}
     ])
   end
 
@@ -114,10 +114,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Chain{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataChain{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_chains_chain_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Chain.t]} | {:error, Tesla.Env.t}
+  @spec v1_chains_chain_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataChain.t]} | {:error, Tesla.Env.t}
   def v1_chains_chain_id_get(connection, chain_id, _opts \\ []) do
     request =
       %{}
@@ -128,7 +128,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Chain}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataChain}
     ])
   end
 
@@ -144,10 +144,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Chain{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataChain{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_chains_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Chain.t]} | {:error, Tesla.Env.t}
+  @spec v1_chains_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataChain.t]} | {:error, Tesla.Env.t}
   def v1_chains_get(connection, opts \\ []) do
     optional_params = %{
       :filter_chain_id => :query
@@ -163,7 +163,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Chain}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataChain}
     ])
   end
 
@@ -178,10 +178,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Exchange{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataExchange{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_exchanges_exchange_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Exchange.t]} | {:error, Tesla.Env.t}
+  @spec v1_exchanges_exchange_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataExchange.t]} | {:error, Tesla.Env.t}
   def v1_exchanges_exchange_id_get(connection, exchange_id, _opts \\ []) do
     request =
       %{}
@@ -192,7 +192,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Exchange}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataExchange}
     ])
   end
 
@@ -208,10 +208,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Exchange{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataExchange{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_exchanges_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Exchange.t]} | {:error, Tesla.Env.t}
+  @spec v1_exchanges_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataExchange.t]} | {:error, Tesla.Env.t}
   def v1_exchanges_get(connection, opts \\ []) do
     optional_params = %{
       :filter_exchange_id => :query
@@ -227,7 +227,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Exchange}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataExchange}
     ])
   end
 
@@ -242,10 +242,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Icon{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataIcon{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_exchanges_icons_size_get(Tesla.Env.client, integer(), keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Icon.t]} | {:error, Tesla.Env.t}
+  @spec v1_exchanges_icons_size_get(Tesla.Env.client, integer(), keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataIcon.t]} | {:error, Tesla.Env.t}
   def v1_exchanges_icons_size_get(connection, size, _opts \\ []) do
     request =
       %{}
@@ -256,7 +256,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Icon}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataIcon}
     ])
   end
 
@@ -274,10 +274,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Symbol{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataSymbol{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_symbols_exchange_id_active_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Symbol.t]} | {:error, Tesla.Env.t}
+  @spec v1_symbols_exchange_id_active_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataSymbol.t]} | {:error, Tesla.Env.t}
   def v1_symbols_exchange_id_active_get(connection, exchange_id, opts \\ []) do
     optional_params = %{
       :filter_symbol_id => :query,
@@ -294,7 +294,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Symbol}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataSymbol}
     ])
   end
 
@@ -312,10 +312,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
 
   ### Returns
 
-  - `{:ok, [%V1Symbol{}, ...]}` on success
+  - `{:ok, [%MarketDataMetadataSymbol{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_symbols_exchange_id_history_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1Symbol.t]} | {:error, Tesla.Env.t}
+  @spec v1_symbols_exchange_id_history_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataSymbol.t]} | {:error, Tesla.Env.t}
   def v1_symbols_exchange_id_history_get(connection, exchange_id, opts \\ []) do
     optional_params = %{
       :page => :query,
@@ -332,7 +332,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1Symbol}
+      {200, CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataSymbol}
     ])
   end
 

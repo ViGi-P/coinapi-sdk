@@ -57,7 +57,7 @@ class MetadataApi {
   ///
   /// * [String] assetId (required):
   ///   The asset ID.
-  Future<List<V1Asset>?> v1AssetsAssetIdGet(String assetId, { Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataAsset>?> v1AssetsAssetIdGet(String assetId, { Future<void>? abortTrigger, }) async {
     final response = await v1AssetsAssetIdGetWithHttpInfo(assetId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -67,8 +67,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Asset>') as List)
-        .cast<V1Asset>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataAsset>') as List)
+        .cast<MarketDataMetadataAsset>()
         .toList(growable: false);
 
     }
@@ -123,7 +123,7 @@ class MetadataApi {
   ///
   /// * [String] filterAssetId:
   ///   Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
-  Future<List<V1Asset>?> v1AssetsGet({ String? filterAssetId, Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataAsset>?> v1AssetsGet({ String? filterAssetId, Future<void>? abortTrigger, }) async {
     final response = await v1AssetsGetWithHttpInfo(filterAssetId: filterAssetId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -133,8 +133,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Asset>') as List)
-        .cast<V1Asset>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataAsset>') as List)
+        .cast<MarketDataMetadataAsset>()
         .toList(growable: false);
 
     }
@@ -186,7 +186,7 @@ class MetadataApi {
   ///
   /// * [int] size (required):
   ///   The size of the icons.
-  Future<List<V1Icon>?> v1AssetsIconsSizeGet(int size, { Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataIcon>?> v1AssetsIconsSizeGet(int size, { Future<void>? abortTrigger, }) async {
     final response = await v1AssetsIconsSizeGetWithHttpInfo(size, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -196,8 +196,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Icon>') as List)
-        .cast<V1Icon>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataIcon>') as List)
+        .cast<MarketDataMetadataIcon>()
         .toList(growable: false);
 
     }
@@ -245,7 +245,7 @@ class MetadataApi {
   ///
   /// * [String] chainId (required):
   ///   The chain ID.
-  Future<List<V1Chain>?> v1ChainsChainIdGet(String chainId, { Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataChain>?> v1ChainsChainIdGet(String chainId, { Future<void>? abortTrigger, }) async {
     final response = await v1ChainsChainIdGetWithHttpInfo(chainId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -255,8 +255,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Chain>') as List)
-        .cast<V1Chain>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataChain>') as List)
+        .cast<MarketDataMetadataChain>()
         .toList(growable: false);
 
     }
@@ -311,7 +311,7 @@ class MetadataApi {
   ///
   /// * [String] filterChainId:
   ///   Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`).
-  Future<List<V1Chain>?> v1ChainsGet({ String? filterChainId, Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataChain>?> v1ChainsGet({ String? filterChainId, Future<void>? abortTrigger, }) async {
     final response = await v1ChainsGetWithHttpInfo(filterChainId: filterChainId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -321,8 +321,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Chain>') as List)
-        .cast<V1Chain>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataChain>') as List)
+        .cast<MarketDataMetadataChain>()
         .toList(growable: false);
 
     }
@@ -370,7 +370,7 @@ class MetadataApi {
   ///
   /// * [String] exchangeId (required):
   ///   The ID of the exchange.
-  Future<List<V1Exchange>?> v1ExchangesExchangeIdGet(String exchangeId, { Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataExchange>?> v1ExchangesExchangeIdGet(String exchangeId, { Future<void>? abortTrigger, }) async {
     final response = await v1ExchangesExchangeIdGetWithHttpInfo(exchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -380,8 +380,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Exchange>') as List)
-        .cast<V1Exchange>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataExchange>') as List)
+        .cast<MarketDataMetadataExchange>()
         .toList(growable: false);
 
     }
@@ -436,7 +436,7 @@ class MetadataApi {
   ///
   /// * [String] filterExchangeId:
   ///   Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
-  Future<List<V1Exchange>?> v1ExchangesGet({ String? filterExchangeId, Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataExchange>?> v1ExchangesGet({ String? filterExchangeId, Future<void>? abortTrigger, }) async {
     final response = await v1ExchangesGetWithHttpInfo(filterExchangeId: filterExchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -446,8 +446,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Exchange>') as List)
-        .cast<V1Exchange>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataExchange>') as List)
+        .cast<MarketDataMetadataExchange>()
         .toList(growable: false);
 
     }
@@ -495,7 +495,7 @@ class MetadataApi {
   ///
   /// * [int] size (required):
   ///   The size of the icons.
-  Future<List<V1Icon>?> v1ExchangesIconsSizeGet(int size, { Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataIcon>?> v1ExchangesIconsSizeGet(int size, { Future<void>? abortTrigger, }) async {
     final response = await v1ExchangesIconsSizeGetWithHttpInfo(size, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -505,8 +505,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Icon>') as List)
-        .cast<V1Icon>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataIcon>') as List)
+        .cast<MarketDataMetadataIcon>()
         .toList(growable: false);
 
     }
@@ -577,7 +577,7 @@ class MetadataApi {
   ///
   /// * [String] filterAssetId:
   ///   The filter for asset ID.
-  Future<List<V1Symbol>?> v1SymbolsExchangeIdActiveGet(String exchangeId, { String? filterSymbolId, String? filterAssetId, Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataSymbol>?> v1SymbolsExchangeIdActiveGet(String exchangeId, { String? filterSymbolId, String? filterAssetId, Future<void>? abortTrigger, }) async {
     final response = await v1SymbolsExchangeIdActiveGetWithHttpInfo(exchangeId, filterSymbolId: filterSymbolId, filterAssetId: filterAssetId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -587,8 +587,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Symbol>') as List)
-        .cast<V1Symbol>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataSymbol>') as List)
+        .cast<MarketDataMetadataSymbol>()
         .toList(growable: false);
 
     }
@@ -659,7 +659,7 @@ class MetadataApi {
   ///
   /// * [int] limit:
   ///   Number of records to return per page.
-  Future<List<V1Symbol>?> v1SymbolsExchangeIdHistoryGet(String exchangeId, { int? page, int? limit, Future<void>? abortTrigger, }) async {
+  Future<List<MarketDataMetadataSymbol>?> v1SymbolsExchangeIdHistoryGet(String exchangeId, { int? page, int? limit, Future<void>? abortTrigger, }) async {
     final response = await v1SymbolsExchangeIdHistoryGetWithHttpInfo(exchangeId, page: page, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -669,8 +669,8 @@ class MetadataApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<V1Symbol>') as List)
-        .cast<V1Symbol>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<MarketDataMetadataSymbol>') as List)
+        .cast<MarketDataMetadataSymbol>()
         .toList(growable: false);
 
     }

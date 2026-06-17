@@ -14,11 +14,11 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
-import org.openapitools.client.model.V1Asset;
-import org.openapitools.client.model.V1Chain;
-import org.openapitools.client.model.V1Exchange;
-import org.openapitools.client.model.V1Icon;
-import org.openapitools.client.model.V1Symbol;
+import org.openapitools.client.model.MarketDataMetadataAsset;
+import org.openapitools.client.model.MarketDataMetadataChain;
+import org.openapitools.client.model.MarketDataMetadataExchange;
+import org.openapitools.client.model.MarketDataMetadataIcon;
+import org.openapitools.client.model.MarketDataMetadataSymbol;
 import org.openapitools.client.model.V1SymbolMapping;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -44,7 +44,7 @@ public class MetadataApiTest {
     @Test
     public void v1AssetsAssetIdGetTest() throws ApiException {
         String assetId = null;
-        List<V1Asset> response = api.v1AssetsAssetIdGet(assetId);
+        List<MarketDataMetadataAsset> response = api.v1AssetsAssetIdGet(assetId);
         // TODO: test validations
     }
 
@@ -58,7 +58,7 @@ public class MetadataApiTest {
     @Test
     public void v1AssetsGetTest() throws ApiException {
         String filterAssetId = null;
-        List<V1Asset> response = api.v1AssetsGet(filterAssetId);
+        List<MarketDataMetadataAsset> response = api.v1AssetsGet(filterAssetId);
         // TODO: test validations
     }
 
@@ -72,7 +72,7 @@ public class MetadataApiTest {
     @Test
     public void v1AssetsIconsSizeGetTest() throws ApiException {
         Integer size = null;
-        List<V1Icon> response = api.v1AssetsIconsSizeGet(size);
+        List<MarketDataMetadataIcon> response = api.v1AssetsIconsSizeGet(size);
         // TODO: test validations
     }
 
@@ -84,7 +84,7 @@ public class MetadataApiTest {
     @Test
     public void v1ChainsChainIdGetTest() throws ApiException {
         String chainId = null;
-        List<V1Chain> response = api.v1ChainsChainIdGet(chainId);
+        List<MarketDataMetadataChain> response = api.v1ChainsChainIdGet(chainId);
         // TODO: test validations
     }
 
@@ -98,7 +98,7 @@ public class MetadataApiTest {
     @Test
     public void v1ChainsGetTest() throws ApiException {
         String filterChainId = null;
-        List<V1Chain> response = api.v1ChainsGet(filterChainId);
+        List<MarketDataMetadataChain> response = api.v1ChainsGet(filterChainId);
         // TODO: test validations
     }
 
@@ -110,7 +110,7 @@ public class MetadataApiTest {
     @Test
     public void v1ExchangesExchangeIdGetTest() throws ApiException {
         String exchangeId = null;
-        List<V1Exchange> response = api.v1ExchangesExchangeIdGet(exchangeId);
+        List<MarketDataMetadataExchange> response = api.v1ExchangesExchangeIdGet(exchangeId);
         // TODO: test validations
     }
 
@@ -124,7 +124,7 @@ public class MetadataApiTest {
     @Test
     public void v1ExchangesGetTest() throws ApiException {
         String filterExchangeId = null;
-        List<V1Exchange> response = api.v1ExchangesGet(filterExchangeId);
+        List<MarketDataMetadataExchange> response = api.v1ExchangesGet(filterExchangeId);
         // TODO: test validations
     }
 
@@ -136,7 +136,7 @@ public class MetadataApiTest {
     @Test
     public void v1ExchangesIconsSizeGetTest() throws ApiException {
         Integer size = null;
-        List<V1Icon> response = api.v1ExchangesIconsSizeGet(size);
+        List<MarketDataMetadataIcon> response = api.v1ExchangesIconsSizeGet(size);
         // TODO: test validations
     }
 
@@ -152,7 +152,7 @@ public class MetadataApiTest {
         String exchangeId = null;
         String filterSymbolId = null;
         String filterAssetId = null;
-        List<V1Symbol> response = api.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId);
+        List<MarketDataMetadataSymbol> response = api.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId);
         // TODO: test validations
     }
 
@@ -168,7 +168,7 @@ public class MetadataApiTest {
         String exchangeId = null;
         Integer page = null;
         Integer limit = null;
-        List<V1Symbol> response = api.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit);
+        List<MarketDataMetadataSymbol> response = api.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit);
         // TODO: test validations
     }
 

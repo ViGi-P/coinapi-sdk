@@ -32,7 +32,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_asset.md) *
+[list_t](market_data_metadata_asset.md) *
 
 
 ### Authorization
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_asset.md) *
+[list_t](market_data_metadata_asset.md) *
 
 
 ### Authorization
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_icon.md) *
+[list_t](market_data_metadata_icon.md) *
 
 
 ### Authorization
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_chain.md) *
+[list_t](market_data_metadata_chain.md) *
 
 
 ### Authorization
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_chain.md) *
+[list_t](market_data_metadata_chain.md) *
 
 
 ### Authorization
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_exchange.md) *
+[list_t](market_data_metadata_exchange.md) *
 
 
 ### Authorization
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_exchange.md) *
+[list_t](market_data_metadata_exchange.md) *
 
 
 ### Authorization
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_icon.md) *
+[list_t](market_data_metadata_icon.md) *
 
 
 ### Authorization
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_symbol.md) *
+[list_t](market_data_metadata_symbol.md) *
 
 
 ### Authorization
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](v1_symbol.md) *
+[list_t](market_data_metadata_symbol.md) *
 
 
 ### Authorization

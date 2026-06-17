@@ -65,10 +65,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'v1_assets_asset_id_get' } = {
         summary => 'List all assets by asset ID',
         params => $params,
-        returns => 'ARRAY[V1Asset]',
+        returns => 'ARRAY[MarketDataMetadataAsset]',
         };
 }
-# @return ARRAY[V1Asset]
+# @return ARRAY[MarketDataMetadataAsset]
 #
 sub v1_assets_asset_id_get {
     my ($self, %args) = @_;
@@ -111,7 +111,7 @@ sub v1_assets_asset_id_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Asset]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataAsset]', $response);
     return $_response_object;
 }
 
@@ -132,10 +132,10 @@ sub v1_assets_asset_id_get {
     __PACKAGE__->method_documentation->{ 'v1_assets_get' } = {
         summary => 'List all assets',
         params => $params,
-        returns => 'ARRAY[V1Asset]',
+        returns => 'ARRAY[MarketDataMetadataAsset]',
         };
 }
-# @return ARRAY[V1Asset]
+# @return ARRAY[MarketDataMetadataAsset]
 #
 sub v1_assets_get {
     my ($self, %args) = @_;
@@ -171,7 +171,7 @@ sub v1_assets_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Asset]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataAsset]', $response);
     return $_response_object;
 }
 
@@ -192,10 +192,10 @@ sub v1_assets_get {
     __PACKAGE__->method_documentation->{ 'v1_assets_icons_size_get' } = {
         summary => 'List all asset icons',
         params => $params,
-        returns => 'ARRAY[V1Icon]',
+        returns => 'ARRAY[MarketDataMetadataIcon]',
         };
 }
-# @return ARRAY[V1Icon]
+# @return ARRAY[MarketDataMetadataIcon]
 #
 sub v1_assets_icons_size_get {
     my ($self, %args) = @_;
@@ -238,7 +238,7 @@ sub v1_assets_icons_size_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Icon]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataIcon]', $response);
     return $_response_object;
 }
 
@@ -259,10 +259,10 @@ sub v1_assets_icons_size_get {
     __PACKAGE__->method_documentation->{ 'v1_chains_chain_id_get' } = {
         summary => 'List all chains by chain ID',
         params => $params,
-        returns => 'ARRAY[V1Chain]',
+        returns => 'ARRAY[MarketDataMetadataChain]',
         };
 }
-# @return ARRAY[V1Chain]
+# @return ARRAY[MarketDataMetadataChain]
 #
 sub v1_chains_chain_id_get {
     my ($self, %args) = @_;
@@ -305,7 +305,7 @@ sub v1_chains_chain_id_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Chain]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataChain]', $response);
     return $_response_object;
 }
 
@@ -326,10 +326,10 @@ sub v1_chains_chain_id_get {
     __PACKAGE__->method_documentation->{ 'v1_chains_get' } = {
         summary => 'List all blockchain chains',
         params => $params,
-        returns => 'ARRAY[V1Chain]',
+        returns => 'ARRAY[MarketDataMetadataChain]',
         };
 }
-# @return ARRAY[V1Chain]
+# @return ARRAY[MarketDataMetadataChain]
 #
 sub v1_chains_get {
     my ($self, %args) = @_;
@@ -365,7 +365,7 @@ sub v1_chains_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Chain]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataChain]', $response);
     return $_response_object;
 }
 
@@ -386,10 +386,10 @@ sub v1_chains_get {
     __PACKAGE__->method_documentation->{ 'v1_exchanges_exchange_id_get' } = {
         summary => 'List all exchanges by exchange_id',
         params => $params,
-        returns => 'ARRAY[V1Exchange]',
+        returns => 'ARRAY[MarketDataMetadataExchange]',
         };
 }
-# @return ARRAY[V1Exchange]
+# @return ARRAY[MarketDataMetadataExchange]
 #
 sub v1_exchanges_exchange_id_get {
     my ($self, %args) = @_;
@@ -432,7 +432,7 @@ sub v1_exchanges_exchange_id_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Exchange]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataExchange]', $response);
     return $_response_object;
 }
 
@@ -453,10 +453,10 @@ sub v1_exchanges_exchange_id_get {
     __PACKAGE__->method_documentation->{ 'v1_exchanges_get' } = {
         summary => 'List all exchanges',
         params => $params,
-        returns => 'ARRAY[V1Exchange]',
+        returns => 'ARRAY[MarketDataMetadataExchange]',
         };
 }
-# @return ARRAY[V1Exchange]
+# @return ARRAY[MarketDataMetadataExchange]
 #
 sub v1_exchanges_get {
     my ($self, %args) = @_;
@@ -492,7 +492,7 @@ sub v1_exchanges_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Exchange]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataExchange]', $response);
     return $_response_object;
 }
 
@@ -513,10 +513,10 @@ sub v1_exchanges_get {
     __PACKAGE__->method_documentation->{ 'v1_exchanges_icons_size_get' } = {
         summary => 'List of icons for the exchanges',
         params => $params,
-        returns => 'ARRAY[V1Icon]',
+        returns => 'ARRAY[MarketDataMetadataIcon]',
         };
 }
-# @return ARRAY[V1Icon]
+# @return ARRAY[MarketDataMetadataIcon]
 #
 sub v1_exchanges_icons_size_get {
     my ($self, %args) = @_;
@@ -559,7 +559,7 @@ sub v1_exchanges_icons_size_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Icon]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataIcon]', $response);
     return $_response_object;
 }
 
@@ -592,10 +592,10 @@ sub v1_exchanges_icons_size_get {
     __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_active_get' } = {
         summary => 'List all active symbols',
         params => $params,
-        returns => 'ARRAY[V1Symbol]',
+        returns => 'ARRAY[MarketDataMetadataSymbol]',
         };
 }
-# @return ARRAY[V1Symbol]
+# @return ARRAY[MarketDataMetadataSymbol]
 #
 sub v1_symbols_exchange_id_active_get {
     my ($self, %args) = @_;
@@ -648,7 +648,7 @@ sub v1_symbols_exchange_id_active_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Symbol]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataSymbol]', $response);
     return $_response_object;
 }
 
@@ -681,10 +681,10 @@ sub v1_symbols_exchange_id_active_get {
     __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_history_get' } = {
         summary => 'List all historical symbols for an exchange.',
         params => $params,
-        returns => 'ARRAY[V1Symbol]',
+        returns => 'ARRAY[MarketDataMetadataSymbol]',
         };
 }
-# @return ARRAY[V1Symbol]
+# @return ARRAY[MarketDataMetadataSymbol]
 #
 sub v1_symbols_exchange_id_history_get {
     my ($self, %args) = @_;
@@ -737,7 +737,7 @@ sub v1_symbols_exchange_id_history_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Symbol]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[MarketDataMetadataSymbol]', $response);
     return $_response_object;
 }
 

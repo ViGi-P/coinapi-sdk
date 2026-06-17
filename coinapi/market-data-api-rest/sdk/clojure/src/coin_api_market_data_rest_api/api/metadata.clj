@@ -3,25 +3,23 @@
             [clojure.spec.alpha :as s]
             [spec-tools.core :as st]
             [orchestra.core :refer [defn-spec]]
-            [coin-api-market-data-rest-api.specs.v1/asset :refer :all]
             [coin-api-market-data-rest-api.specs.v1/metric-data :refer :all]
-            [coin-api-market-data-rest-api.specs.v1/icon :refer :all]
             [coin-api-market-data-rest-api.specs.v1/listing-item :refer :all]
             [coin-api-market-data-rest-api.specs.v1/order-book-depth :refer :all]
             [coin-api-market-data-rest-api.specs.v1/metric-info :refer :all]
             [coin-api-market-data-rest-api.specs.v1/exchange-rates :refer :all]
             [coin-api-market-data-rest-api.specs.ohlcv/exchange-timeseries-item :refer :all]
-            [coin-api-market-data-rest-api.specs.v1/exchange :refer :all]
+            [coin-api-market-data-rest-api.specs.market-data-metadata/asset :refer :all]
             [coin-api-market-data-rest-api.specs.v1/quote :refer :all]
             [coin-api-market-data-rest-api.specs.v1/symbol-mapping :refer :all]
             [coin-api-market-data-rest-api.specs.v1/general-data :refer :all]
-            [coin-api-market-data-rest-api.specs.v1/chain :refer :all]
+            [coin-api-market-data-rest-api.specs.market-data-metadata/exchange :refer :all]
             [coin-api-market-data-rest-api.specs.v1/quote-trade :refer :all]
             [coin-api-market-data-rest-api.specs.v1/last-trade :refer :all]
             [coin-api-market-data-rest-api.specs.v1/option-exchange-group :refer :all]
+            [coin-api-market-data-rest-api.specs.market-data-metadata/symbol :refer :all]
             [coin-api-market-data-rest-api.specs.v1/metric :refer :all]
             [coin-api-market-data-rest-api.specs.v1/exchange-rates-timeseries-item :refer :all]
-            [coin-api-market-data-rest-api.specs.v1/symbol :refer :all]
             [coin-api-market-data-rest-api.specs.v1/order-book :refer :all]
             [coin-api-market-data-rest-api.specs.v1/timeseries-period :refer :all]
             [coin-api-market-data-rest-api.specs.v1/trade :refer :all]
@@ -31,6 +29,8 @@
             [coin-api-market-data-rest-api.specs.v1/exchange-rate :refer :all]
             [coin-api-market-data-rest-api.specs.v1/order-book-base :refer :all]
             [coin-api-market-data-rest-api.specs.v1/timeseries-item :refer :all]
+            [coin-api-market-data-rest-api.specs.market-data-metadata/chain :refer :all]
+            [coin-api-market-data-rest-api.specs.market-data-metadata/icon :refer :all]
             )
   (:import (java.io File)))
 
@@ -48,12 +48,12 @@
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-assets-asset-id-get (s/coll-of v1/asset-spec)
+(defn-spec v1-assets-asset-id-get (s/coll-of market-data-metadata/asset-spec)
   "List all assets by asset ID"
   [asset_id string?]
   (let [res (:data (v1-assets-asset-id-get-with-http-info asset_id))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/asset-spec) res st/string-transformer)
+       (st/decode (s/coll-of market-data-metadata/asset-spec) res st/string-transformer)
        res)))
 
 
@@ -79,7 +79,7 @@ Properties of the output are providing aggregated information from across all sy
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-assets-get (s/coll-of v1/asset-spec)
+(defn-spec v1-assets-get (s/coll-of market-data-metadata/asset-spec)
   "List all assets
   Retrieves all assets.
             
@@ -94,7 +94,7 @@ Properties of the output are providing aggregated information from across all sy
   ([optional-params any?]
    (let [res (:data (v1-assets-get-with-http-info optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of v1/asset-spec) res st/string-transformer)
+        (st/decode (s/coll-of market-data-metadata/asset-spec) res st/string-transformer)
         res))))
 
 
@@ -112,13 +112,13 @@ Properties of the output are providing aggregated information from across all sy
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-assets-icons-size-get (s/coll-of v1/icon-spec)
+(defn-spec v1-assets-icons-size-get (s/coll-of market-data-metadata/icon-spec)
   "List all asset icons
   Gets the list of icons (of the given size) for all the assets."
   [size int?]
   (let [res (:data (v1-assets-icons-size-get-with-http-info size))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/icon-spec) res st/string-transformer)
+       (st/decode (s/coll-of market-data-metadata/icon-spec) res st/string-transformer)
        res)))
 
 
@@ -135,12 +135,12 @@ Properties of the output are providing aggregated information from across all sy
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-chains-chain-id-get (s/coll-of v1/chain-spec)
+(defn-spec v1-chains-chain-id-get (s/coll-of market-data-metadata/chain-spec)
   "List all chains by chain ID"
   [chain_id string?]
   (let [res (:data (v1-chains-chain-id-get-with-http-info chain_id))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/chain-spec) res st/string-transformer)
+       (st/decode (s/coll-of market-data-metadata/chain-spec) res st/string-transformer)
        res)))
 
 
@@ -162,7 +162,7 @@ Properties of the output are providing aggregated information from across all sy
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-chains-get (s/coll-of v1/chain-spec)
+(defn-spec v1-chains-get (s/coll-of market-data-metadata/chain-spec)
   "List all blockchain chains
   Retrieves all blockchain chains supported by the system.
             
@@ -173,7 +173,7 @@ Properties of the output are providing aggregated information from across all sy
   ([optional-params any?]
    (let [res (:data (v1-chains-get-with-http-info optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of v1/chain-spec) res st/string-transformer)
+        (st/decode (s/coll-of market-data-metadata/chain-spec) res st/string-transformer)
         res))))
 
 
@@ -190,12 +190,12 @@ Properties of the output are providing aggregated information from across all sy
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-exchanges-exchange-id-get (s/coll-of v1/exchange-spec)
+(defn-spec v1-exchanges-exchange-id-get (s/coll-of market-data-metadata/exchange-spec)
   "List all exchanges by exchange_id"
   [exchange_id string?]
   (let [res (:data (v1-exchanges-exchange-id-get-with-http-info exchange_id))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/exchange-spec) res st/string-transformer)
+       (st/decode (s/coll-of market-data-metadata/exchange-spec) res st/string-transformer)
        res)))
 
 
@@ -217,7 +217,7 @@ Properties of the output are providing aggregated information from across all sy
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-exchanges-get (s/coll-of v1/exchange-spec)
+(defn-spec v1-exchanges-get (s/coll-of market-data-metadata/exchange-spec)
   "List all exchanges
   Get a detailed list of exchanges provided by the system.
             
@@ -228,7 +228,7 @@ Properties of the output are providing aggregated information from across all sy
   ([optional-params any?]
    (let [res (:data (v1-exchanges-get-with-http-info optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of v1/exchange-spec) res st/string-transformer)
+        (st/decode (s/coll-of market-data-metadata/exchange-spec) res st/string-transformer)
         res))))
 
 
@@ -245,12 +245,12 @@ Properties of the output are providing aggregated information from across all sy
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-exchanges-icons-size-get (s/coll-of v1/icon-spec)
+(defn-spec v1-exchanges-icons-size-get (s/coll-of market-data-metadata/icon-spec)
   "List of icons for the exchanges"
   [size int?]
   (let [res (:data (v1-exchanges-icons-size-get-with-http-info size))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/icon-spec) res st/string-transformer)
+       (st/decode (s/coll-of market-data-metadata/icon-spec) res st/string-transformer)
        res)))
 
 
@@ -358,7 +358,7 @@ contract_id | Identifier of contract by the exchange"
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-symbols-exchange-id-active-get (s/coll-of v1/symbol-spec)
+(defn-spec v1-symbols-exchange-id-active-get (s/coll-of market-data-metadata/symbol-spec)
   "List all active symbols
   Retrieves all currently active (listed) symbols, with optional filtering.
             
@@ -454,7 +454,7 @@ contract_id | Identifier of contract by the exchange"
   ([exchange_id string?, optional-params any?]
    (let [res (:data (v1-symbols-exchange-id-active-get-with-http-info exchange_id optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of v1/symbol-spec) res st/string-transformer)
+        (st/decode (s/coll-of market-data-metadata/symbol-spec) res st/string-transformer)
         res))))
 
 
@@ -474,7 +474,7 @@ The data is provided with pagination support."
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-symbols-exchange-id-history-get (s/coll-of v1/symbol-spec)
+(defn-spec v1-symbols-exchange-id-history-get (s/coll-of market-data-metadata/symbol-spec)
   "List all historical symbols for an exchange.
   This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
 The data is provided with pagination support."
@@ -482,7 +482,7 @@ The data is provided with pagination support."
   ([exchange_id string?, optional-params any?]
    (let [res (:data (v1-symbols-exchange-id-history-get-with-http-info exchange_id optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of v1/symbol-spec) res st/string-transformer)
+        (st/decode (s/coll-of market-data-metadata/symbol-spec) res st/string-transformer)
         res))))
 
 

@@ -15,11 +15,11 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { V1Asset } from '../model/v1Asset';
-import { V1Chain } from '../model/v1Chain';
-import { V1Exchange } from '../model/v1Exchange';
-import { V1Icon } from '../model/v1Icon';
-import { V1Symbol } from '../model/v1Symbol';
+import { MarketDataMetadataAsset } from '../model/marketDataMetadataAsset';
+import { MarketDataMetadataChain } from '../model/marketDataMetadataChain';
+import { MarketDataMetadataExchange } from '../model/marketDataMetadataExchange';
+import { MarketDataMetadataIcon } from '../model/marketDataMetadataIcon';
+import { MarketDataMetadataSymbol } from '../model/marketDataMetadataSymbol';
 import { V1SymbolMapping } from '../model/v1SymbolMapping';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
@@ -104,7 +104,7 @@ export class MetadataApi {
      * @summary List all assets by asset ID
      * @param assetId The asset ID.
      */
-    public async v1AssetsAssetIdGet (assetId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Asset>;  }> {
+    public async v1AssetsAssetIdGet (assetId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataAsset>;  }> {
         const localVarPath = this.basePath + '/v1/assets/{asset_id}'
             .replace('{asset_id}', encodeURIComponent(String(assetId)));
         let localVarQueryParameters: any = {};
@@ -158,13 +158,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Asset>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataAsset>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Asset>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataAsset>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -179,7 +179,7 @@ export class MetadataApi {
      * @summary List all assets
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
      */
-    public async v1AssetsGet (filterAssetId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Asset>;  }> {
+    public async v1AssetsGet (filterAssetId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataAsset>;  }> {
         const localVarPath = this.basePath + '/v1/assets';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -231,13 +231,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Asset>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataAsset>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Asset>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataAsset>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -252,7 +252,7 @@ export class MetadataApi {
      * @summary List all asset icons
      * @param size The size of the icons.
      */
-    public async v1AssetsIconsSizeGet (size: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Icon>;  }> {
+    public async v1AssetsIconsSizeGet (size: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataIcon>;  }> {
         const localVarPath = this.basePath + '/v1/assets/icons/{size}'
             .replace('{size}', encodeURIComponent(String(size)));
         let localVarQueryParameters: any = {};
@@ -306,13 +306,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Icon>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataIcon>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Icon>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataIcon>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -327,7 +327,7 @@ export class MetadataApi {
      * @summary List all chains by chain ID
      * @param chainId The chain ID.
      */
-    public async v1ChainsChainIdGet (chainId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Chain>;  }> {
+    public async v1ChainsChainIdGet (chainId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataChain>;  }> {
         const localVarPath = this.basePath + '/v1/chains/{chain_id}'
             .replace('{chain_id}', encodeURIComponent(String(chainId)));
         let localVarQueryParameters: any = {};
@@ -381,13 +381,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Chain>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataChain>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Chain>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataChain>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -402,7 +402,7 @@ export class MetadataApi {
      * @summary List all blockchain chains
      * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
      */
-    public async v1ChainsGet (filterChainId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Chain>;  }> {
+    public async v1ChainsGet (filterChainId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataChain>;  }> {
         const localVarPath = this.basePath + '/v1/chains';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -454,13 +454,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Chain>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataChain>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Chain>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataChain>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -475,7 +475,7 @@ export class MetadataApi {
      * @summary List all exchanges by exchange_id
      * @param exchangeId The ID of the exchange.
      */
-    public async v1ExchangesExchangeIdGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Exchange>;  }> {
+    public async v1ExchangesExchangeIdGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataExchange>;  }> {
         const localVarPath = this.basePath + '/v1/exchanges/{exchange_id}'
             .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
@@ -529,13 +529,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Exchange>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataExchange>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Exchange>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataExchange>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -550,7 +550,7 @@ export class MetadataApi {
      * @summary List all exchanges
      * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
      */
-    public async v1ExchangesGet (filterExchangeId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Exchange>;  }> {
+    public async v1ExchangesGet (filterExchangeId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataExchange>;  }> {
         const localVarPath = this.basePath + '/v1/exchanges';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -602,13 +602,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Exchange>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataExchange>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Exchange>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataExchange>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -623,7 +623,7 @@ export class MetadataApi {
      * @summary List of icons for the exchanges
      * @param size The size of the icons.
      */
-    public async v1ExchangesIconsSizeGet (size: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Icon>;  }> {
+    public async v1ExchangesIconsSizeGet (size: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataIcon>;  }> {
         const localVarPath = this.basePath + '/v1/exchanges/icons/{size}'
             .replace('{size}', encodeURIComponent(String(size)));
         let localVarQueryParameters: any = {};
@@ -677,13 +677,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Icon>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataIcon>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Icon>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataIcon>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -700,7 +700,7 @@ export class MetadataApi {
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
      * @param filterAssetId The filter for asset ID.
      */
-    public async v1SymbolsExchangeIdActiveGet (exchangeId: string, filterSymbolId?: string, filterAssetId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Symbol>;  }> {
+    public async v1SymbolsExchangeIdActiveGet (exchangeId: string, filterSymbolId?: string, filterAssetId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataSymbol>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/{exchange_id}/active'
             .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
@@ -762,13 +762,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Symbol>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataSymbol>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Symbol>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataSymbol>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -785,7 +785,7 @@ export class MetadataApi {
      * @param page The page number for pagination (starts from 1).
      * @param limit Number of records to return per page.
      */
-    public async v1SymbolsExchangeIdHistoryGet (exchangeId: string, page?: number, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Symbol>;  }> {
+    public async v1SymbolsExchangeIdHistoryGet (exchangeId: string, page?: number, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataSymbol>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/{exchange_id}/history'
             .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
@@ -847,13 +847,13 @@ export class MetadataApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<V1Symbol>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataSymbol>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<V1Symbol>");
+                            body = ObjectSerializer.deserialize(body, "Array<MarketDataMetadataSymbol>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

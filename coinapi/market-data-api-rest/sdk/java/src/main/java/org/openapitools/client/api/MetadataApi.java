@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.V1Asset;
-import org.openapitools.client.model.V1Chain;
-import org.openapitools.client.model.V1Exchange;
-import org.openapitools.client.model.V1Icon;
-import org.openapitools.client.model.V1Symbol;
+import org.openapitools.client.model.MarketDataMetadataAsset;
+import org.openapitools.client.model.MarketDataMetadataChain;
+import org.openapitools.client.model.MarketDataMetadataExchange;
+import org.openapitools.client.model.MarketDataMetadataIcon;
+import org.openapitools.client.model.MarketDataMetadataSymbol;
 import org.openapitools.client.model.V1SymbolMapping;
 
 import java.lang.reflect.Type;
@@ -153,7 +153,7 @@ public class MetadataApi {
      * List all assets by asset ID
      * 
      * @param assetId The asset ID. (required)
-     * @return List&lt;V1Asset&gt;
+     * @return List&lt;MarketDataMetadataAsset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -162,8 +162,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Asset> v1AssetsAssetIdGet(@javax.annotation.Nonnull String assetId) throws ApiException {
-        ApiResponse<List<V1Asset>> localVarResp = v1AssetsAssetIdGetWithHttpInfo(assetId);
+    public List<MarketDataMetadataAsset> v1AssetsAssetIdGet(@javax.annotation.Nonnull String assetId) throws ApiException {
+        ApiResponse<List<MarketDataMetadataAsset>> localVarResp = v1AssetsAssetIdGetWithHttpInfo(assetId);
         return localVarResp.getData();
     }
 
@@ -171,7 +171,7 @@ public class MetadataApi {
      * List all assets by asset ID
      * 
      * @param assetId The asset ID. (required)
-     * @return ApiResponse&lt;List&lt;V1Asset&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataAsset&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -180,9 +180,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Asset>> v1AssetsAssetIdGetWithHttpInfo(@javax.annotation.Nonnull String assetId) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataAsset>> v1AssetsAssetIdGetWithHttpInfo(@javax.annotation.Nonnull String assetId) throws ApiException {
         okhttp3.Call localVarCall = v1AssetsAssetIdGetValidateBeforeCall(assetId, null);
-        Type localVarReturnType = new TypeToken<List<V1Asset>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataAsset>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -200,10 +200,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1AssetsAssetIdGetAsync(@javax.annotation.Nonnull String assetId, final ApiCallback<List<V1Asset>> _callback) throws ApiException {
+    public okhttp3.Call v1AssetsAssetIdGetAsync(@javax.annotation.Nonnull String assetId, final ApiCallback<List<MarketDataMetadataAsset>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1AssetsAssetIdGetValidateBeforeCall(assetId, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Asset>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataAsset>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -281,7 +281,7 @@ public class MetadataApi {
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
-     * @return List&lt;V1Asset&gt;
+     * @return List&lt;MarketDataMetadataAsset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -290,8 +290,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Asset> v1AssetsGet(@javax.annotation.Nullable String filterAssetId) throws ApiException {
-        ApiResponse<List<V1Asset>> localVarResp = v1AssetsGetWithHttpInfo(filterAssetId);
+    public List<MarketDataMetadataAsset> v1AssetsGet(@javax.annotation.Nullable String filterAssetId) throws ApiException {
+        ApiResponse<List<MarketDataMetadataAsset>> localVarResp = v1AssetsGetWithHttpInfo(filterAssetId);
         return localVarResp.getData();
     }
 
@@ -299,7 +299,7 @@ public class MetadataApi {
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
-     * @return ApiResponse&lt;List&lt;V1Asset&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataAsset&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -308,9 +308,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Asset>> v1AssetsGetWithHttpInfo(@javax.annotation.Nullable String filterAssetId) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataAsset>> v1AssetsGetWithHttpInfo(@javax.annotation.Nullable String filterAssetId) throws ApiException {
         okhttp3.Call localVarCall = v1AssetsGetValidateBeforeCall(filterAssetId, null);
-        Type localVarReturnType = new TypeToken<List<V1Asset>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataAsset>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -328,10 +328,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1AssetsGetAsync(@javax.annotation.Nullable String filterAssetId, final ApiCallback<List<V1Asset>> _callback) throws ApiException {
+    public okhttp3.Call v1AssetsGetAsync(@javax.annotation.Nullable String filterAssetId, final ApiCallback<List<MarketDataMetadataAsset>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1AssetsGetValidateBeforeCall(filterAssetId, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Asset>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataAsset>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -411,7 +411,7 @@ public class MetadataApi {
      * List all asset icons
      * Gets the list of icons (of the given size) for all the assets.
      * @param size The size of the icons. (required)
-     * @return List&lt;V1Icon&gt;
+     * @return List&lt;MarketDataMetadataIcon&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -420,8 +420,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Icon> v1AssetsIconsSizeGet(@javax.annotation.Nonnull Integer size) throws ApiException {
-        ApiResponse<List<V1Icon>> localVarResp = v1AssetsIconsSizeGetWithHttpInfo(size);
+    public List<MarketDataMetadataIcon> v1AssetsIconsSizeGet(@javax.annotation.Nonnull Integer size) throws ApiException {
+        ApiResponse<List<MarketDataMetadataIcon>> localVarResp = v1AssetsIconsSizeGetWithHttpInfo(size);
         return localVarResp.getData();
     }
 
@@ -429,7 +429,7 @@ public class MetadataApi {
      * List all asset icons
      * Gets the list of icons (of the given size) for all the assets.
      * @param size The size of the icons. (required)
-     * @return ApiResponse&lt;List&lt;V1Icon&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataIcon&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -438,9 +438,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Icon>> v1AssetsIconsSizeGetWithHttpInfo(@javax.annotation.Nonnull Integer size) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataIcon>> v1AssetsIconsSizeGetWithHttpInfo(@javax.annotation.Nonnull Integer size) throws ApiException {
         okhttp3.Call localVarCall = v1AssetsIconsSizeGetValidateBeforeCall(size, null);
-        Type localVarReturnType = new TypeToken<List<V1Icon>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataIcon>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -458,10 +458,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1AssetsIconsSizeGetAsync(@javax.annotation.Nonnull Integer size, final ApiCallback<List<V1Icon>> _callback) throws ApiException {
+    public okhttp3.Call v1AssetsIconsSizeGetAsync(@javax.annotation.Nonnull Integer size, final ApiCallback<List<MarketDataMetadataIcon>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1AssetsIconsSizeGetValidateBeforeCall(size, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Icon>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataIcon>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -541,7 +541,7 @@ public class MetadataApi {
      * List all chains by chain ID
      * 
      * @param chainId The chain ID. (required)
-     * @return List&lt;V1Chain&gt;
+     * @return List&lt;MarketDataMetadataChain&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -550,8 +550,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Chain> v1ChainsChainIdGet(@javax.annotation.Nonnull String chainId) throws ApiException {
-        ApiResponse<List<V1Chain>> localVarResp = v1ChainsChainIdGetWithHttpInfo(chainId);
+    public List<MarketDataMetadataChain> v1ChainsChainIdGet(@javax.annotation.Nonnull String chainId) throws ApiException {
+        ApiResponse<List<MarketDataMetadataChain>> localVarResp = v1ChainsChainIdGetWithHttpInfo(chainId);
         return localVarResp.getData();
     }
 
@@ -559,7 +559,7 @@ public class MetadataApi {
      * List all chains by chain ID
      * 
      * @param chainId The chain ID. (required)
-     * @return ApiResponse&lt;List&lt;V1Chain&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataChain&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -568,9 +568,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Chain>> v1ChainsChainIdGetWithHttpInfo(@javax.annotation.Nonnull String chainId) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataChain>> v1ChainsChainIdGetWithHttpInfo(@javax.annotation.Nonnull String chainId) throws ApiException {
         okhttp3.Call localVarCall = v1ChainsChainIdGetValidateBeforeCall(chainId, null);
-        Type localVarReturnType = new TypeToken<List<V1Chain>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataChain>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -588,10 +588,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1ChainsChainIdGetAsync(@javax.annotation.Nonnull String chainId, final ApiCallback<List<V1Chain>> _callback) throws ApiException {
+    public okhttp3.Call v1ChainsChainIdGetAsync(@javax.annotation.Nonnull String chainId, final ApiCallback<List<MarketDataMetadataChain>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1ChainsChainIdGetValidateBeforeCall(chainId, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Chain>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataChain>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -669,7 +669,7 @@ public class MetadataApi {
      * List all blockchain chains
      * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;). (optional)
-     * @return List&lt;V1Chain&gt;
+     * @return List&lt;MarketDataMetadataChain&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -678,8 +678,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Chain> v1ChainsGet(@javax.annotation.Nullable String filterChainId) throws ApiException {
-        ApiResponse<List<V1Chain>> localVarResp = v1ChainsGetWithHttpInfo(filterChainId);
+    public List<MarketDataMetadataChain> v1ChainsGet(@javax.annotation.Nullable String filterChainId) throws ApiException {
+        ApiResponse<List<MarketDataMetadataChain>> localVarResp = v1ChainsGetWithHttpInfo(filterChainId);
         return localVarResp.getData();
     }
 
@@ -687,7 +687,7 @@ public class MetadataApi {
      * List all blockchain chains
      * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;). (optional)
-     * @return ApiResponse&lt;List&lt;V1Chain&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataChain&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -696,9 +696,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Chain>> v1ChainsGetWithHttpInfo(@javax.annotation.Nullable String filterChainId) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataChain>> v1ChainsGetWithHttpInfo(@javax.annotation.Nullable String filterChainId) throws ApiException {
         okhttp3.Call localVarCall = v1ChainsGetValidateBeforeCall(filterChainId, null);
-        Type localVarReturnType = new TypeToken<List<V1Chain>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataChain>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -716,10 +716,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1ChainsGetAsync(@javax.annotation.Nullable String filterChainId, final ApiCallback<List<V1Chain>> _callback) throws ApiException {
+    public okhttp3.Call v1ChainsGetAsync(@javax.annotation.Nullable String filterChainId, final ApiCallback<List<MarketDataMetadataChain>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1ChainsGetValidateBeforeCall(filterChainId, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Chain>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataChain>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -799,7 +799,7 @@ public class MetadataApi {
      * List all exchanges by exchange_id
      * 
      * @param exchangeId The ID of the exchange. (required)
-     * @return List&lt;V1Exchange&gt;
+     * @return List&lt;MarketDataMetadataExchange&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -808,8 +808,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Exchange> v1ExchangesExchangeIdGet(@javax.annotation.Nonnull String exchangeId) throws ApiException {
-        ApiResponse<List<V1Exchange>> localVarResp = v1ExchangesExchangeIdGetWithHttpInfo(exchangeId);
+    public List<MarketDataMetadataExchange> v1ExchangesExchangeIdGet(@javax.annotation.Nonnull String exchangeId) throws ApiException {
+        ApiResponse<List<MarketDataMetadataExchange>> localVarResp = v1ExchangesExchangeIdGetWithHttpInfo(exchangeId);
         return localVarResp.getData();
     }
 
@@ -817,7 +817,7 @@ public class MetadataApi {
      * List all exchanges by exchange_id
      * 
      * @param exchangeId The ID of the exchange. (required)
-     * @return ApiResponse&lt;List&lt;V1Exchange&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataExchange&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -826,9 +826,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Exchange>> v1ExchangesExchangeIdGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataExchange>> v1ExchangesExchangeIdGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId) throws ApiException {
         okhttp3.Call localVarCall = v1ExchangesExchangeIdGetValidateBeforeCall(exchangeId, null);
-        Type localVarReturnType = new TypeToken<List<V1Exchange>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataExchange>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -846,10 +846,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1ExchangesExchangeIdGetAsync(@javax.annotation.Nonnull String exchangeId, final ApiCallback<List<V1Exchange>> _callback) throws ApiException {
+    public okhttp3.Call v1ExchangesExchangeIdGetAsync(@javax.annotation.Nonnull String exchangeId, final ApiCallback<List<MarketDataMetadataExchange>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1ExchangesExchangeIdGetValidateBeforeCall(exchangeId, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Exchange>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataExchange>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -927,7 +927,7 @@ public class MetadataApi {
      * List all exchanges
      * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;) (optional)
-     * @return List&lt;V1Exchange&gt;
+     * @return List&lt;MarketDataMetadataExchange&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -936,8 +936,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Exchange> v1ExchangesGet(@javax.annotation.Nullable String filterExchangeId) throws ApiException {
-        ApiResponse<List<V1Exchange>> localVarResp = v1ExchangesGetWithHttpInfo(filterExchangeId);
+    public List<MarketDataMetadataExchange> v1ExchangesGet(@javax.annotation.Nullable String filterExchangeId) throws ApiException {
+        ApiResponse<List<MarketDataMetadataExchange>> localVarResp = v1ExchangesGetWithHttpInfo(filterExchangeId);
         return localVarResp.getData();
     }
 
@@ -945,7 +945,7 @@ public class MetadataApi {
      * List all exchanges
      * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;) (optional)
-     * @return ApiResponse&lt;List&lt;V1Exchange&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataExchange&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -954,9 +954,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Exchange>> v1ExchangesGetWithHttpInfo(@javax.annotation.Nullable String filterExchangeId) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataExchange>> v1ExchangesGetWithHttpInfo(@javax.annotation.Nullable String filterExchangeId) throws ApiException {
         okhttp3.Call localVarCall = v1ExchangesGetValidateBeforeCall(filterExchangeId, null);
-        Type localVarReturnType = new TypeToken<List<V1Exchange>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataExchange>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -974,10 +974,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1ExchangesGetAsync(@javax.annotation.Nullable String filterExchangeId, final ApiCallback<List<V1Exchange>> _callback) throws ApiException {
+    public okhttp3.Call v1ExchangesGetAsync(@javax.annotation.Nullable String filterExchangeId, final ApiCallback<List<MarketDataMetadataExchange>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1ExchangesGetValidateBeforeCall(filterExchangeId, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Exchange>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataExchange>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1057,7 +1057,7 @@ public class MetadataApi {
      * List of icons for the exchanges
      * 
      * @param size The size of the icons. (required)
-     * @return List&lt;V1Icon&gt;
+     * @return List&lt;MarketDataMetadataIcon&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1066,8 +1066,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Icon> v1ExchangesIconsSizeGet(@javax.annotation.Nonnull Integer size) throws ApiException {
-        ApiResponse<List<V1Icon>> localVarResp = v1ExchangesIconsSizeGetWithHttpInfo(size);
+    public List<MarketDataMetadataIcon> v1ExchangesIconsSizeGet(@javax.annotation.Nonnull Integer size) throws ApiException {
+        ApiResponse<List<MarketDataMetadataIcon>> localVarResp = v1ExchangesIconsSizeGetWithHttpInfo(size);
         return localVarResp.getData();
     }
 
@@ -1075,7 +1075,7 @@ public class MetadataApi {
      * List of icons for the exchanges
      * 
      * @param size The size of the icons. (required)
-     * @return ApiResponse&lt;List&lt;V1Icon&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataIcon&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1084,9 +1084,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Icon>> v1ExchangesIconsSizeGetWithHttpInfo(@javax.annotation.Nonnull Integer size) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataIcon>> v1ExchangesIconsSizeGetWithHttpInfo(@javax.annotation.Nonnull Integer size) throws ApiException {
         okhttp3.Call localVarCall = v1ExchangesIconsSizeGetValidateBeforeCall(size, null);
-        Type localVarReturnType = new TypeToken<List<V1Icon>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataIcon>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1104,10 +1104,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1ExchangesIconsSizeGetAsync(@javax.annotation.Nonnull Integer size, final ApiCallback<List<V1Icon>> _callback) throws ApiException {
+    public okhttp3.Call v1ExchangesIconsSizeGetAsync(@javax.annotation.Nonnull Integer size, final ApiCallback<List<MarketDataMetadataIcon>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1ExchangesIconsSizeGetValidateBeforeCall(size, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Icon>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataIcon>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1199,7 +1199,7 @@ public class MetadataApi {
      * @param exchangeId The ID of the exchange. (required)
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param filterAssetId The filter for asset ID. (optional)
-     * @return List&lt;V1Symbol&gt;
+     * @return List&lt;MarketDataMetadataSymbol&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1208,8 +1208,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Symbol> v1SymbolsExchangeIdActiveGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterAssetId) throws ApiException {
-        ApiResponse<List<V1Symbol>> localVarResp = v1SymbolsExchangeIdActiveGetWithHttpInfo(exchangeId, filterSymbolId, filterAssetId);
+    public List<MarketDataMetadataSymbol> v1SymbolsExchangeIdActiveGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterAssetId) throws ApiException {
+        ApiResponse<List<MarketDataMetadataSymbol>> localVarResp = v1SymbolsExchangeIdActiveGetWithHttpInfo(exchangeId, filterSymbolId, filterAssetId);
         return localVarResp.getData();
     }
 
@@ -1219,7 +1219,7 @@ public class MetadataApi {
      * @param exchangeId The ID of the exchange. (required)
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param filterAssetId The filter for asset ID. (optional)
-     * @return ApiResponse&lt;List&lt;V1Symbol&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataSymbol&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1228,9 +1228,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Symbol>> v1SymbolsExchangeIdActiveGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterAssetId) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataSymbol>> v1SymbolsExchangeIdActiveGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterAssetId) throws ApiException {
         okhttp3.Call localVarCall = v1SymbolsExchangeIdActiveGetValidateBeforeCall(exchangeId, filterSymbolId, filterAssetId, null);
-        Type localVarReturnType = new TypeToken<List<V1Symbol>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataSymbol>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1250,10 +1250,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1SymbolsExchangeIdActiveGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterAssetId, final ApiCallback<List<V1Symbol>> _callback) throws ApiException {
+    public okhttp3.Call v1SymbolsExchangeIdActiveGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterAssetId, final ApiCallback<List<MarketDataMetadataSymbol>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1SymbolsExchangeIdActiveGetValidateBeforeCall(exchangeId, filterSymbolId, filterAssetId, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Symbol>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataSymbol>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1345,7 +1345,7 @@ public class MetadataApi {
      * @param exchangeId The ID of the exchange. (required)
      * @param page The page number for pagination (starts from 1). (optional, default to 1)
      * @param limit Number of records to return per page. (optional, default to 100)
-     * @return List&lt;V1Symbol&gt;
+     * @return List&lt;MarketDataMetadataSymbol&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1354,8 +1354,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Symbol> v1SymbolsExchangeIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<V1Symbol>> localVarResp = v1SymbolsExchangeIdHistoryGetWithHttpInfo(exchangeId, page, limit);
+    public List<MarketDataMetadataSymbol> v1SymbolsExchangeIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<MarketDataMetadataSymbol>> localVarResp = v1SymbolsExchangeIdHistoryGetWithHttpInfo(exchangeId, page, limit);
         return localVarResp.getData();
     }
 
@@ -1365,7 +1365,7 @@ public class MetadataApi {
      * @param exchangeId The ID of the exchange. (required)
      * @param page The page number for pagination (starts from 1). (optional, default to 1)
      * @param limit Number of records to return per page. (optional, default to 100)
-     * @return ApiResponse&lt;List&lt;V1Symbol&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MarketDataMetadataSymbol&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1374,9 +1374,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Symbol>> v1SymbolsExchangeIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
+    public ApiResponse<List<MarketDataMetadataSymbol>> v1SymbolsExchangeIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = v1SymbolsExchangeIdHistoryGetValidateBeforeCall(exchangeId, page, limit, null);
-        Type localVarReturnType = new TypeToken<List<V1Symbol>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataSymbol>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1396,10 +1396,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1SymbolsExchangeIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback<List<V1Symbol>> _callback) throws ApiException {
+    public okhttp3.Call v1SymbolsExchangeIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback<List<MarketDataMetadataSymbol>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1SymbolsExchangeIdHistoryGetValidateBeforeCall(exchangeId, page, limit, _callback);
-        Type localVarReturnType = new TypeToken<List<V1Symbol>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MarketDataMetadataSymbol>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

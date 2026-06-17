@@ -18,7 +18,7 @@ Feature | HTTP request | Description
 
 
 # **v1_assets_asset_id_get**
-> v1_assets_asset_id_get (asset_id: STRING_32 ): detachable LIST [V1_ASSET]
+> v1_assets_asset_id_get (asset_id: STRING_32 ): detachable LIST [MARKET_DATA_METADATA_ASSET]
 
 
 List all assets by asset ID
@@ -32,7 +32,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_ASSET]**](v1.Asset.md)
+[**LIST [MARKET_DATA_METADATA_ASSET]**](MarketDataMetadata.Asset.md)
 
 ### Authorization
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_get**
-> v1_assets_get (filter_asset_id:  detachable STRING_32 ): detachable LIST [V1_ASSET]
+> v1_assets_get (filter_asset_id:  detachable STRING_32 ): detachable LIST [MARKET_DATA_METADATA_ASSET]
 
 
 List all assets
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_ASSET]**](v1.Asset.md)
+[**LIST [MARKET_DATA_METADATA_ASSET]**](MarketDataMetadata.Asset.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_icons_size_get**
-> v1_assets_icons_size_get (size: INTEGER_32 ): detachable LIST [V1_ICON]
+> v1_assets_icons_size_get (size: INTEGER_32 ): detachable LIST [MARKET_DATA_METADATA_ICON]
 
 
 List all asset icons
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_ICON]**](v1.Icon.md)
+[**LIST [MARKET_DATA_METADATA_ICON]**](MarketDataMetadata.Icon.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_chains_chain_id_get**
-> v1_chains_chain_id_get (chain_id: STRING_32 ): detachable LIST [V1_CHAIN]
+> v1_chains_chain_id_get (chain_id: STRING_32 ): detachable LIST [MARKET_DATA_METADATA_CHAIN]
 
 
 List all chains by chain ID
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_CHAIN]**](v1.Chain.md)
+[**LIST [MARKET_DATA_METADATA_CHAIN]**](MarketDataMetadata.Chain.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_chains_get**
-> v1_chains_get (filter_chain_id:  detachable STRING_32 ): detachable LIST [V1_CHAIN]
+> v1_chains_get (filter_chain_id:  detachable STRING_32 ): detachable LIST [MARKET_DATA_METADATA_CHAIN]
 
 
 List all blockchain chains
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_CHAIN]**](v1.Chain.md)
+[**LIST [MARKET_DATA_METADATA_CHAIN]**](MarketDataMetadata.Chain.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_exchange_id_get**
-> v1_exchanges_exchange_id_get (exchange_id: STRING_32 ): detachable LIST [V1_EXCHANGE]
+> v1_exchanges_exchange_id_get (exchange_id: STRING_32 ): detachable LIST [MARKET_DATA_METADATA_EXCHANGE]
 
 
 List all exchanges by exchange_id
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_EXCHANGE]**](v1.Exchange.md)
+[**LIST [MARKET_DATA_METADATA_EXCHANGE]**](MarketDataMetadata.Exchange.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_get**
-> v1_exchanges_get (filter_exchange_id:  detachable STRING_32 ): detachable LIST [V1_EXCHANGE]
+> v1_exchanges_get (filter_exchange_id:  detachable STRING_32 ): detachable LIST [MARKET_DATA_METADATA_EXCHANGE]
 
 
 List all exchanges
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_EXCHANGE]**](v1.Exchange.md)
+[**LIST [MARKET_DATA_METADATA_EXCHANGE]**](MarketDataMetadata.Exchange.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_icons_size_get**
-> v1_exchanges_icons_size_get (size: INTEGER_32 ): detachable LIST [V1_ICON]
+> v1_exchanges_icons_size_get (size: INTEGER_32 ): detachable LIST [MARKET_DATA_METADATA_ICON]
 
 
 List of icons for the exchanges
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_ICON]**](v1.Icon.md)
+[**LIST [MARKET_DATA_METADATA_ICON]**](MarketDataMetadata.Icon.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_active_get**
-> v1_symbols_exchange_id_active_get (exchange_id: STRING_32 ; filter_symbol_id:  detachable STRING_32 ; filter_asset_id:  detachable STRING_32 ): detachable LIST [V1_SYMBOL]
+> v1_symbols_exchange_id_active_get (exchange_id: STRING_32 ; filter_symbol_id:  detachable STRING_32 ; filter_asset_id:  detachable STRING_32 ): detachable LIST [MARKET_DATA_METADATA_SYMBOL]
 
 
 List all active symbols
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_SYMBOL]**](v1.Symbol.md)
+[**LIST [MARKET_DATA_METADATA_SYMBOL]**](MarketDataMetadata.Symbol.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_history_get**
-> v1_symbols_exchange_id_history_get (exchange_id: STRING_32 ; page:  detachable INTEGER_32 ; limit:  detachable INTEGER_32 ): detachable LIST [V1_SYMBOL]
+> v1_symbols_exchange_id_history_get (exchange_id: STRING_32 ; page:  detachable INTEGER_32 ; limit:  detachable INTEGER_32 ): detachable LIST [MARKET_DATA_METADATA_SYMBOL]
 
 
 List all historical symbols for an exchange.
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [V1_SYMBOL]**](v1.Symbol.md)
+[**LIST [MARKET_DATA_METADATA_SYMBOL]**](MarketDataMetadata.Symbol.md)
 
 ### Authorization
 

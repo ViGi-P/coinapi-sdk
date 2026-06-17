@@ -27,11 +27,11 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.apis.MetadataApi
-import org.openapitools.client.models.V1Asset
-import org.openapitools.client.models.V1Chain
-import org.openapitools.client.models.V1Exchange
-import org.openapitools.client.models.V1Icon
-import org.openapitools.client.models.V1Symbol
+import org.openapitools.client.models.MarketDataMetadataAsset
+import org.openapitools.client.models.MarketDataMetadataChain
+import org.openapitools.client.models.MarketDataMetadataExchange
+import org.openapitools.client.models.MarketDataMetadataIcon
+import org.openapitools.client.models.MarketDataMetadataSymbol
 import org.openapitools.client.models.V1SymbolMapping
 
 class MetadataApiTest : ShouldSpec() {
@@ -43,7 +43,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1AssetsAssetIdGet") {
             // uncomment below to test v1AssetsAssetIdGet
             //val assetId : kotlin.String = assetId_example // kotlin.String | The asset ID.
-            //val result : kotlin.collections.List<V1Asset> = apiInstance.v1AssetsAssetIdGet(assetId)
+            //val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsAssetIdGet(assetId)
             //result shouldBe ("TODO")
         }
 
@@ -51,7 +51,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1AssetsGet") {
             // uncomment below to test v1AssetsGet
             //val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
-            //val result : kotlin.collections.List<V1Asset> = apiInstance.v1AssetsGet(filterAssetId)
+            //val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsGet(filterAssetId)
             //result shouldBe ("TODO")
         }
 
@@ -59,7 +59,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1AssetsIconsSizeGet") {
             // uncomment below to test v1AssetsIconsSizeGet
             //val size : kotlin.Int = 56 // kotlin.Int | The size of the icons.
-            //val result : kotlin.collections.List<V1Icon> = apiInstance.v1AssetsIconsSizeGet(size)
+            //val result : kotlin.collections.List<MarketDataMetadataIcon> = apiInstance.v1AssetsIconsSizeGet(size)
             //result shouldBe ("TODO")
         }
 
@@ -67,7 +67,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1ChainsChainIdGet") {
             // uncomment below to test v1ChainsChainIdGet
             //val chainId : kotlin.String = chainId_example // kotlin.String | The chain ID.
-            //val result : kotlin.collections.List<V1Chain> = apiInstance.v1ChainsChainIdGet(chainId)
+            //val result : kotlin.collections.List<MarketDataMetadataChain> = apiInstance.v1ChainsChainIdGet(chainId)
             //result shouldBe ("TODO")
         }
 
@@ -75,7 +75,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1ChainsGet") {
             // uncomment below to test v1ChainsGet
             //val filterChainId : kotlin.String = filterChainId_example // kotlin.String | Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`).
-            //val result : kotlin.collections.List<V1Chain> = apiInstance.v1ChainsGet(filterChainId)
+            //val result : kotlin.collections.List<MarketDataMetadataChain> = apiInstance.v1ChainsGet(filterChainId)
             //result shouldBe ("TODO")
         }
 
@@ -83,7 +83,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1ExchangesExchangeIdGet") {
             // uncomment below to test v1ExchangesExchangeIdGet
             //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
-            //val result : kotlin.collections.List<V1Exchange> = apiInstance.v1ExchangesExchangeIdGet(exchangeId)
+            //val result : kotlin.collections.List<MarketDataMetadataExchange> = apiInstance.v1ExchangesExchangeIdGet(exchangeId)
             //result shouldBe ("TODO")
         }
 
@@ -91,7 +91,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1ExchangesGet") {
             // uncomment below to test v1ExchangesGet
             //val filterExchangeId : kotlin.String = filterExchangeId_example // kotlin.String | Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
-            //val result : kotlin.collections.List<V1Exchange> = apiInstance.v1ExchangesGet(filterExchangeId)
+            //val result : kotlin.collections.List<MarketDataMetadataExchange> = apiInstance.v1ExchangesGet(filterExchangeId)
             //result shouldBe ("TODO")
         }
 
@@ -99,7 +99,7 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1ExchangesIconsSizeGet") {
             // uncomment below to test v1ExchangesIconsSizeGet
             //val size : kotlin.Int = 56 // kotlin.Int | The size of the icons.
-            //val result : kotlin.collections.List<V1Icon> = apiInstance.v1ExchangesIconsSizeGet(size)
+            //val result : kotlin.collections.List<MarketDataMetadataIcon> = apiInstance.v1ExchangesIconsSizeGet(size)
             //result shouldBe ("TODO")
         }
 
@@ -109,7 +109,7 @@ class MetadataApiTest : ShouldSpec() {
             //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
             //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
             //val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | The filter for asset ID.
-            //val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
+            //val result : kotlin.collections.List<MarketDataMetadataSymbol> = apiInstance.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
             //result shouldBe ("TODO")
         }
 
@@ -119,7 +119,7 @@ class MetadataApiTest : ShouldSpec() {
             //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
             //val page : kotlin.Int = 56 // kotlin.Int | The page number for pagination (starts from 1).
             //val limit : kotlin.Int = 56 // kotlin.Int | Number of records to return per page.
-            //val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+            //val result : kotlin.collections.List<MarketDataMetadataSymbol> = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
             //result shouldBe ("TODO")
         }
 

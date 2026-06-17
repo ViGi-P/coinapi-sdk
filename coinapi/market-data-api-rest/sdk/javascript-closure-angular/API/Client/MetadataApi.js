@@ -15,11 +15,11 @@
 
 goog.provide('API.Client.MetadataApi');
 
-goog.require('API.Client.v1.Asset');
-goog.require('API.Client.v1.Chain');
-goog.require('API.Client.v1.Exchange');
-goog.require('API.Client.v1.Icon');
-goog.require('API.Client.v1.Symbol');
+goog.require('API.Client.MarketDataMetadata.Asset');
+goog.require('API.Client.MarketDataMetadata.Chain');
+goog.require('API.Client.MarketDataMetadata.Exchange');
+goog.require('API.Client.MarketDataMetadata.Icon');
+goog.require('API.Client.MarketDataMetadata.Symbol');
 goog.require('API.Client.v1.SymbolMapping');
 
 /**
@@ -54,7 +54,7 @@ API.Client.MetadataApi.$inject = ['$http', '$httpParamSerializer', '$injector'];
  * 
  * @param {!string} assetId The asset ID.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Asset>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Asset>>}
  */
 API.Client.MetadataApi.prototype.v1AssetsAssetIdGet = function(assetId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -91,7 +91,7 @@ API.Client.MetadataApi.prototype.v1AssetsAssetIdGet = function(assetId, opt_extr
  * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
  * @param {!string=} opt_filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Asset>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Asset>>}
  */
 API.Client.MetadataApi.prototype.v1AssetsGet = function(opt_filterAssetId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -127,7 +127,7 @@ API.Client.MetadataApi.prototype.v1AssetsGet = function(opt_filterAssetId, opt_e
  * Gets the list of icons (of the given size) for all the assets.
  * @param {!number} size The size of the icons.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Icon>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Icon>>}
  */
 API.Client.MetadataApi.prototype.v1AssetsIconsSizeGet = function(size, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -164,7 +164,7 @@ API.Client.MetadataApi.prototype.v1AssetsIconsSizeGet = function(size, opt_extra
  * 
  * @param {!string} chainId The chain ID.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Chain>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Chain>>}
  */
 API.Client.MetadataApi.prototype.v1ChainsChainIdGet = function(chainId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -201,7 +201,7 @@ API.Client.MetadataApi.prototype.v1ChainsChainIdGet = function(chainId, opt_extr
  * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
  * @param {!string=} opt_filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Chain>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Chain>>}
  */
 API.Client.MetadataApi.prototype.v1ChainsGet = function(opt_filterChainId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -237,7 +237,7 @@ API.Client.MetadataApi.prototype.v1ChainsGet = function(opt_filterChainId, opt_e
  * 
  * @param {!string} exchangeId The ID of the exchange.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Exchange>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Exchange>>}
  */
 API.Client.MetadataApi.prototype.v1ExchangesExchangeIdGet = function(exchangeId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -274,7 +274,7 @@ API.Client.MetadataApi.prototype.v1ExchangesExchangeIdGet = function(exchangeId,
  * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
  * @param {!string=} opt_filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Exchange>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Exchange>>}
  */
 API.Client.MetadataApi.prototype.v1ExchangesGet = function(opt_filterExchangeId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -310,7 +310,7 @@ API.Client.MetadataApi.prototype.v1ExchangesGet = function(opt_filterExchangeId,
  * 
  * @param {!number} size The size of the icons.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Icon>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Icon>>}
  */
 API.Client.MetadataApi.prototype.v1ExchangesIconsSizeGet = function(size, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -349,7 +349,7 @@ API.Client.MetadataApi.prototype.v1ExchangesIconsSizeGet = function(size, opt_ex
  * @param {!string=} opt_filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
  * @param {!string=} opt_filterAssetId The filter for asset ID.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Symbol>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Symbol>>}
  */
 API.Client.MetadataApi.prototype.v1SymbolsExchangeIdActiveGet = function(exchangeId, opt_filterSymbolId, opt_filterAssetId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -396,7 +396,7 @@ API.Client.MetadataApi.prototype.v1SymbolsExchangeIdActiveGet = function(exchang
  * @param {!number=} opt_page The page number for pagination (starts from 1).
  * @param {!number=} opt_limit Number of records to return per page.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.v1.Symbol>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Symbol>>}
  */
 API.Client.MetadataApi.prototype.v1SymbolsExchangeIdHistoryGet = function(exchangeId, opt_page, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */

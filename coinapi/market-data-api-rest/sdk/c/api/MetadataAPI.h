@@ -5,11 +5,11 @@
 #include "../external/cJSON.h"
 #include "../include/keyValuePair.h"
 #include "../include/binary.h"
-#include "../model/v1_asset.h"
-#include "../model/v1_chain.h"
-#include "../model/v1_exchange.h"
-#include "../model/v1_icon.h"
-#include "../model/v1_symbol.h"
+#include "../model/market_data_metadata_asset.h"
+#include "../model/market_data_metadata_chain.h"
+#include "../model/market_data_metadata_exchange.h"
+#include "../model/market_data_metadata_icon.h"
+#include "../model/market_data_metadata_symbol.h"
 #include "../model/v1_symbol_mapping.h"
 
 

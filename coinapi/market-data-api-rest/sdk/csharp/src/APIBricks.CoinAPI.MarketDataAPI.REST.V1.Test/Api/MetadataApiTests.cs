@@ -60,7 +60,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             string assetId = default!;
             var response = await _instance.V1AssetsAssetIdGetAsync(assetId);
             var model = response.Ok();
-            Assert.IsType<List<V1Asset>>(model);
+            Assert.IsType<List<MarketDataMetadataAsset>>(model);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> filterAssetId = default!;
             var response = await _instance.V1AssetsGetAsync(filterAssetId);
             var model = response.Ok();
-            Assert.IsType<List<V1Asset>>(model);
+            Assert.IsType<List<MarketDataMetadataAsset>>(model);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             int size = default!;
             var response = await _instance.V1AssetsIconsSizeGetAsync(size);
             var model = response.Ok();
-            Assert.IsType<List<V1Icon>>(model);
+            Assert.IsType<List<MarketDataMetadataIcon>>(model);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             string chainId = default!;
             var response = await _instance.V1ChainsChainIdGetAsync(chainId);
             var model = response.Ok();
-            Assert.IsType<List<V1Chain>>(model);
+            Assert.IsType<List<MarketDataMetadataChain>>(model);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> filterChainId = default!;
             var response = await _instance.V1ChainsGetAsync(filterChainId);
             var model = response.Ok();
-            Assert.IsType<List<V1Chain>>(model);
+            Assert.IsType<List<MarketDataMetadataChain>>(model);
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             string exchangeId = default!;
             var response = await _instance.V1ExchangesExchangeIdGetAsync(exchangeId);
             var model = response.Ok();
-            Assert.IsType<List<V1Exchange>>(model);
+            Assert.IsType<List<MarketDataMetadataExchange>>(model);
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> filterExchangeId = default!;
             var response = await _instance.V1ExchangesGetAsync(filterExchangeId);
             var model = response.Ok();
-            Assert.IsType<List<V1Exchange>>(model);
+            Assert.IsType<List<MarketDataMetadataExchange>>(model);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             int size = default!;
             var response = await _instance.V1ExchangesIconsSizeGetAsync(size);
             var model = response.Ok();
-            Assert.IsType<List<V1Icon>>(model);
+            Assert.IsType<List<MarketDataMetadataIcon>>(model);
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> filterAssetId = default!;
             var response = await _instance.V1SymbolsExchangeIdActiveGetAsync(exchangeId, filterSymbolId, filterAssetId);
             var model = response.Ok();
-            Assert.IsType<List<V1Symbol>>(model);
+            Assert.IsType<List<MarketDataMetadataSymbol>>(model);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<int> limit = default!;
             var response = await _instance.V1SymbolsExchangeIdHistoryGetAsync(exchangeId, page, limit);
             var model = response.Ok();
-            Assert.IsType<List<V1Symbol>>(model);
+            Assert.IsType<List<MarketDataMetadataSymbol>>(model);
         }
 
         /// <summary>

@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **v1_assets_asset_id_get**
-> ARRAY[V1Asset] v1_assets_asset_id_get(asset_id => $asset_id)
+> ARRAY[MarketDataMetadataAsset] v1_assets_asset_id_get(asset_id => $asset_id)
 
 List all assets by asset ID
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Asset]**](V1Asset.md)
+[**ARRAY[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_get**
-> ARRAY[V1Asset] v1_assets_get(filter_asset_id => $filter_asset_id)
+> ARRAY[MarketDataMetadataAsset] v1_assets_get(filter_asset_id => $filter_asset_id)
 
 List all assets
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Asset]**](V1Asset.md)
+[**ARRAY[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_icons_size_get**
-> ARRAY[V1Icon] v1_assets_icons_size_get(size => $size)
+> ARRAY[MarketDataMetadataIcon] v1_assets_icons_size_get(size => $size)
 
 List all asset icons
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Icon]**](V1Icon.md)
+[**ARRAY[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_chains_chain_id_get**
-> ARRAY[V1Chain] v1_chains_chain_id_get(chain_id => $chain_id)
+> ARRAY[MarketDataMetadataChain] v1_chains_chain_id_get(chain_id => $chain_id)
 
 List all chains by chain ID
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Chain]**](V1Chain.md)
+[**ARRAY[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_chains_get**
-> ARRAY[V1Chain] v1_chains_get(filter_chain_id => $filter_chain_id)
+> ARRAY[MarketDataMetadataChain] v1_chains_get(filter_chain_id => $filter_chain_id)
 
 List all blockchain chains
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Chain]**](V1Chain.md)
+[**ARRAY[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_exchange_id_get**
-> ARRAY[V1Exchange] v1_exchanges_exchange_id_get(exchange_id => $exchange_id)
+> ARRAY[MarketDataMetadataExchange] v1_exchanges_exchange_id_get(exchange_id => $exchange_id)
 
 List all exchanges by exchange_id
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Exchange]**](V1Exchange.md)
+[**ARRAY[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_get**
-> ARRAY[V1Exchange] v1_exchanges_get(filter_exchange_id => $filter_exchange_id)
+> ARRAY[MarketDataMetadataExchange] v1_exchanges_get(filter_exchange_id => $filter_exchange_id)
 
 List all exchanges
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Exchange]**](V1Exchange.md)
+[**ARRAY[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchanges_icons_size_get**
-> ARRAY[V1Icon] v1_exchanges_icons_size_get(size => $size)
+> ARRAY[MarketDataMetadataIcon] v1_exchanges_icons_size_get(size => $size)
 
 List of icons for the exchanges
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Icon]**](V1Icon.md)
+[**ARRAY[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_active_get**
-> ARRAY[V1Symbol] v1_symbols_exchange_id_active_get(exchange_id => $exchange_id, filter_symbol_id => $filter_symbol_id, filter_asset_id => $filter_asset_id)
+> ARRAY[MarketDataMetadataSymbol] v1_symbols_exchange_id_active_get(exchange_id => $exchange_id, filter_symbol_id => $filter_symbol_id, filter_asset_id => $filter_asset_id)
 
 List all active symbols
 
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Symbol]**](V1Symbol.md)
+[**ARRAY[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_history_get**
-> ARRAY[V1Symbol] v1_symbols_exchange_id_history_get(exchange_id => $exchange_id, page => $page, limit => $limit)
+> ARRAY[MarketDataMetadataSymbol] v1_symbols_exchange_id_history_get(exchange_id => $exchange_id, page => $page, limit => $limit)
 
 List all historical symbols for an exchange.
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[V1Symbol]**](V1Symbol.md)
+[**ARRAY[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

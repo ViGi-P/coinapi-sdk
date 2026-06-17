@@ -113,6 +113,139 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
+instance Arbitrary MarketDataMetadataAsset where
+  arbitrary = sized genMarketDataMetadataAsset
+
+genMarketDataMetadataAsset :: Int -> Gen MarketDataMetadataAsset
+genMarketDataMetadataAsset n =
+  MarketDataMetadataAsset
+    <$> arbitraryReducedMaybe n -- marketDataMetadataAssetAssetId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetTypeIsCrypto :: Maybe Int
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataQuoteStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataQuoteEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataOrderbookStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataOrderbookEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataTradeStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataTradeEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataSymbolsCount :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetVolume1hrsUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetVolume1dayUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetVolume1mthUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetPriceUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetIdIcon :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetSupplyCurrent :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetSupplyTotal :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetSupplyMax :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetChainAddresses :: Maybe [V1ChainNetworkAddress]
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataStart :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataEnd :: Maybe Text
+  
+instance Arbitrary MarketDataMetadataChain where
+  arbitrary = sized genMarketDataMetadataChain
+
+genMarketDataMetadataChain :: Int -> Gen MarketDataMetadataChain
+genMarketDataMetadataChain n =
+  MarketDataMetadataChain
+    <$> arbitraryReducedMaybe n -- marketDataMetadataChainChainId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataChainName :: Maybe Text
+  
+instance Arbitrary MarketDataMetadataExchange where
+  arbitrary = sized genMarketDataMetadataExchange
+
+genMarketDataMetadataExchange :: Int -> Gen MarketDataMetadataExchange
+genMarketDataMetadataExchange n =
+  MarketDataMetadataExchange
+    <$> arbitraryReducedMaybe n -- marketDataMetadataExchangeExchangeId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeWebsite :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataStart :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataEnd :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataQuoteStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataQuoteEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataOrderbookStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataOrderbookEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataTradeStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataTradeEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataTradeCount :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeDataSymbolsCount :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeVolume1hrsUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeVolume1dayUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeVolume1mthUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeMetricId :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeIcons :: Maybe [MarketDataMetadataIcon]
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeRank :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataExchangeIntegrationStatus :: Maybe Text
+  
+instance Arbitrary MarketDataMetadataIcon where
+  arbitrary = sized genMarketDataMetadataIcon
+
+genMarketDataMetadataIcon :: Int -> Gen MarketDataMetadataIcon
+genMarketDataMetadataIcon n =
+  MarketDataMetadataIcon
+    <$> arbitraryReducedMaybe n -- marketDataMetadataIconExchangeId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataIconAssetId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataIconUrl :: Maybe Text
+  
+instance Arbitrary MarketDataMetadataSymbol where
+  arbitrary = sized genMarketDataMetadataSymbol
+
+genMarketDataMetadataSymbol :: Int -> Gen MarketDataMetadataSymbol
+genMarketDataMetadataSymbol n =
+  MarketDataMetadataSymbol
+    <$> arbitraryReducedMaybe n -- marketDataMetadataSymbolSymbolId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolExchangeId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolSymbolType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolAssetIdBase :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolAssetIdQuote :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolAssetIdUnit :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolFutureContractUnit :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolFutureContractUnitAsset :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolFutureDeliveryTime :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionTypeIsCall :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionStrikePrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionContractUnit :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionExerciseStyle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionExpirationTime :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolContractDeliveryTime :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolContractUnit :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolContractUnitAsset :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolContractId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolContractDisplayName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolContractDisplayDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataStart :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataEnd :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataQuoteStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataQuoteEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataOrderbookStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataOrderbookEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataTradeStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolDataTradeEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolIndexId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolIndexDisplayName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolIndexDisplayDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolVolume1hrs :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolVolume1hrsUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolVolume1day :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolVolume1dayUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolVolume1mth :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolVolume1mthUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolSymbolIdExchange :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolAssetIdBaseExchange :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolAssetIdQuoteExchange :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolPricePrecision :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolSizePrecision :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolRawKvp :: Maybe (Map.Map String Text)
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolFutureIsInverse :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolFutureIsQuanto :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolVolumeToUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionBarrierUpPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionBarrierUpType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionBarrierDownPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolOptionBarrierDownType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- marketDataMetadataSymbolSymbolIdInt :: Maybe Int
+  
 instance Arbitrary OhlcvExchangeTimeseriesItem where
   arbitrary = sized genOhlcvExchangeTimeseriesItem
 
@@ -132,43 +265,6 @@ genOhlcvExchangeTimeseriesItem n =
     <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemSymbolIdExchange :: Maybe Text
     <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemSymbolIdCoinapi :: Maybe Text
   
-instance Arbitrary V1Asset where
-  arbitrary = sized genV1Asset
-
-genV1Asset :: Int -> Gen V1Asset
-genV1Asset n =
-  V1Asset
-    <$> arbitraryReducedMaybe n -- v1AssetAssetId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1AssetName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1AssetTypeIsCrypto :: Maybe Int
-    <*> arbitraryReducedMaybe n -- v1AssetDataQuoteStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1AssetDataQuoteEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1AssetDataOrderbookStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1AssetDataOrderbookEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1AssetDataTradeStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1AssetDataTradeEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1AssetDataSymbolsCount :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- v1AssetVolume1hrsUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetVolume1dayUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetVolume1mthUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetPriceUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetIdIcon :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1AssetSupplyCurrent :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetSupplyTotal :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetSupplyMax :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetChainAddresses :: Maybe [V1ChainNetworkAddress]
-    <*> arbitraryReducedMaybe n -- v1AssetDataStart :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1AssetDataEnd :: Maybe Text
-  
-instance Arbitrary V1Chain where
-  arbitrary = sized genV1Chain
-
-genV1Chain :: Int -> Gen V1Chain
-genV1Chain n =
-  V1Chain
-    <$> arbitraryReducedMaybe n -- v1ChainChainId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ChainName :: Maybe Text
-  
 instance Arbitrary V1ChainNetworkAddress where
   arbitrary = sized genV1ChainNetworkAddress
 
@@ -178,33 +274,6 @@ genV1ChainNetworkAddress n =
     <$> arbitraryReducedMaybe n -- v1ChainNetworkAddressChainId :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1ChainNetworkAddressNetworkId :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1ChainNetworkAddressAddress :: Maybe Text
-  
-instance Arbitrary V1Exchange where
-  arbitrary = sized genV1Exchange
-
-genV1Exchange :: Int -> Gen V1Exchange
-genV1Exchange n =
-  V1Exchange
-    <$> arbitraryReducedMaybe n -- v1ExchangeExchangeId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ExchangeWebsite :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ExchangeName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataStart :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataEnd :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataQuoteStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataQuoteEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataOrderbookStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataOrderbookEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataTradeStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataTradeEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataTradeCount :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- v1ExchangeDataSymbolsCount :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- v1ExchangeVolume1hrsUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1ExchangeVolume1dayUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1ExchangeVolume1mthUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1ExchangeMetricId :: Maybe [Text]
-    <*> arbitraryReducedMaybe n -- v1ExchangeIcons :: Maybe [V1Icon]
-    <*> arbitraryReducedMaybe n -- v1ExchangeRank :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1ExchangeIntegrationStatus :: Maybe Text
   
 instance Arbitrary V1ExchangeRate where
   arbitrary = sized genV1ExchangeRate
@@ -266,16 +335,6 @@ genV1GeneralData n =
     <*> arbitraryReducedMaybe n -- v1GeneralDataValueDecimal :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1GeneralDataValueText :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1GeneralDataValueTime :: Maybe DateTime
-  
-instance Arbitrary V1Icon where
-  arbitrary = sized genV1Icon
-
-genV1Icon :: Int -> Gen V1Icon
-genV1Icon n =
-  V1Icon
-    <$> arbitraryReducedMaybe n -- v1IconExchangeId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1IconAssetId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1IconUrl :: Maybe Text
   
 instance Arbitrary V1LastTrade where
   arbitrary = sized genV1LastTrade
@@ -422,65 +481,6 @@ genV1Strike n =
     <$> arbitraryReducedMaybe n -- v1StrikeStrikePrice :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1StrikeCall :: Maybe V1QuoteTrade
     <*> arbitraryReducedMaybe n -- v1StrikePut :: Maybe V1QuoteTrade
-  
-instance Arbitrary V1Symbol where
-  arbitrary = sized genV1Symbol
-
-genV1Symbol :: Int -> Gen V1Symbol
-genV1Symbol n =
-  V1Symbol
-    <$> arbitraryReducedMaybe n -- v1SymbolSymbolId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolExchangeId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolSymbolType :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolAssetIdBase :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolAssetIdQuote :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolAssetIdUnit :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolFutureContractUnit :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolFutureContractUnitAsset :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolFutureDeliveryTime :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionTypeIsCall :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionStrikePrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionContractUnit :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionExerciseStyle :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionExpirationTime :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolContractDeliveryTime :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolContractUnit :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolContractUnitAsset :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolContractId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolContractDisplayName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolContractDisplayDescription :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolDataStart :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolDataEnd :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolDataQuoteStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolDataQuoteEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolDataOrderbookStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolDataOrderbookEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolDataTradeStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolDataTradeEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- v1SymbolIndexId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolIndexDisplayName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolIndexDisplayDescription :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolVolume1hrs :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolVolume1hrsUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolVolume1day :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolVolume1dayUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolVolume1mth :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolVolume1mthUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolSymbolIdExchange :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolAssetIdBaseExchange :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolAssetIdQuoteExchange :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolPricePrecision :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolSizePrecision :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolRawKvp :: Maybe (Map.Map String Text)
-    <*> arbitraryReducedMaybe n -- v1SymbolFutureIsInverse :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- v1SymbolFutureIsQuanto :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- v1SymbolVolumeToUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierUpPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierUpType :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierDownPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierDownType :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1SymbolSymbolIdInt :: Maybe Int
   
 instance Arbitrary V1SymbolMapping where
   arbitrary = sized genV1SymbolMapping

@@ -13,17 +13,18 @@
 
 
 import ApiClient from './ApiClient';
+import MarketDataMetadataAsset from './model/MarketDataMetadataAsset';
+import MarketDataMetadataChain from './model/MarketDataMetadataChain';
+import MarketDataMetadataExchange from './model/MarketDataMetadataExchange';
+import MarketDataMetadataIcon from './model/MarketDataMetadataIcon';
+import MarketDataMetadataSymbol from './model/MarketDataMetadataSymbol';
 import OhlcvExchangeTimeseriesItem from './model/OhlcvExchangeTimeseriesItem';
-import V1Asset from './model/V1Asset';
-import V1Chain from './model/V1Chain';
 import V1ChainNetworkAddress from './model/V1ChainNetworkAddress';
-import V1Exchange from './model/V1Exchange';
 import V1ExchangeRate from './model/V1ExchangeRate';
 import V1ExchangeRates from './model/V1ExchangeRates';
 import V1ExchangeRatesRate from './model/V1ExchangeRatesRate';
 import V1ExchangeRatesTimeseriesItem from './model/V1ExchangeRatesTimeseriesItem';
 import V1GeneralData from './model/V1GeneralData';
-import V1Icon from './model/V1Icon';
 import V1LastTrade from './model/V1LastTrade';
 import V1ListingItem from './model/V1ListingItem';
 import V1Metric from './model/V1Metric';
@@ -36,7 +37,6 @@ import V1OrderBookDepth from './model/V1OrderBookDepth';
 import V1Quote from './model/V1Quote';
 import V1QuoteTrade from './model/V1QuoteTrade';
 import V1Strike from './model/V1Strike';
-import V1Symbol from './model/V1Symbol';
 import V1SymbolMapping from './model/V1SymbolMapping';
 import V1TimeseriesItem from './model/V1TimeseriesItem';
 import V1TimeseriesPeriod from './model/V1TimeseriesPeriod';
@@ -92,34 +92,46 @@ export {
     ApiClient,
 
     /**
+     * The MarketDataMetadataAsset model constructor.
+     * @property {module:model/MarketDataMetadataAsset}
+     */
+    MarketDataMetadataAsset,
+
+    /**
+     * The MarketDataMetadataChain model constructor.
+     * @property {module:model/MarketDataMetadataChain}
+     */
+    MarketDataMetadataChain,
+
+    /**
+     * The MarketDataMetadataExchange model constructor.
+     * @property {module:model/MarketDataMetadataExchange}
+     */
+    MarketDataMetadataExchange,
+
+    /**
+     * The MarketDataMetadataIcon model constructor.
+     * @property {module:model/MarketDataMetadataIcon}
+     */
+    MarketDataMetadataIcon,
+
+    /**
+     * The MarketDataMetadataSymbol model constructor.
+     * @property {module:model/MarketDataMetadataSymbol}
+     */
+    MarketDataMetadataSymbol,
+
+    /**
      * The OhlcvExchangeTimeseriesItem model constructor.
      * @property {module:model/OhlcvExchangeTimeseriesItem}
      */
     OhlcvExchangeTimeseriesItem,
 
     /**
-     * The V1Asset model constructor.
-     * @property {module:model/V1Asset}
-     */
-    V1Asset,
-
-    /**
-     * The V1Chain model constructor.
-     * @property {module:model/V1Chain}
-     */
-    V1Chain,
-
-    /**
      * The V1ChainNetworkAddress model constructor.
      * @property {module:model/V1ChainNetworkAddress}
      */
     V1ChainNetworkAddress,
-
-    /**
-     * The V1Exchange model constructor.
-     * @property {module:model/V1Exchange}
-     */
-    V1Exchange,
 
     /**
      * The V1ExchangeRate model constructor.
@@ -150,12 +162,6 @@ export {
      * @property {module:model/V1GeneralData}
      */
     V1GeneralData,
-
-    /**
-     * The V1Icon model constructor.
-     * @property {module:model/V1Icon}
-     */
-    V1Icon,
 
     /**
      * The V1LastTrade model constructor.
@@ -228,12 +234,6 @@ export {
      * @property {module:model/V1Strike}
      */
     V1Strike,
-
-    /**
-     * The V1Symbol model constructor.
-     * @property {module:model/V1Symbol}
-     */
-    V1Symbol,
 
     /**
      * The V1SymbolMapping model constructor.

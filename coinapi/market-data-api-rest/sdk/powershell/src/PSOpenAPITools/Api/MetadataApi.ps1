@@ -28,7 +28,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Asset[]
+MarketDataMetadataAsset[]
 #>
 function Invoke-V1AssetsAssetIdGet {
     [CmdletBinding()]
@@ -95,7 +95,7 @@ function Invoke-V1AssetsAssetIdGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Asset[]" `
+                                -ReturnType "MarketDataMetadataAsset[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -128,7 +128,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Asset[]
+MarketDataMetadataAsset[]
 #>
 function Invoke-V1AssetsGet {
     [CmdletBinding()]
@@ -195,7 +195,7 @@ function Invoke-V1AssetsGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Asset[]" `
+                                -ReturnType "MarketDataMetadataAsset[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -228,7 +228,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Icon[]
+MarketDataMetadataIcon[]
 #>
 function Invoke-V1AssetsIconsSizeGet {
     [CmdletBinding()]
@@ -295,7 +295,7 @@ function Invoke-V1AssetsIconsSizeGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Icon[]" `
+                                -ReturnType "MarketDataMetadataIcon[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -328,7 +328,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Chain[]
+MarketDataMetadataChain[]
 #>
 function Invoke-V1ChainsChainIdGet {
     [CmdletBinding()]
@@ -395,7 +395,7 @@ function Invoke-V1ChainsChainIdGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Chain[]" `
+                                -ReturnType "MarketDataMetadataChain[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -428,7 +428,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Chain[]
+MarketDataMetadataChain[]
 #>
 function Invoke-V1ChainsGet {
     [CmdletBinding()]
@@ -495,7 +495,7 @@ function Invoke-V1ChainsGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Chain[]" `
+                                -ReturnType "MarketDataMetadataChain[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -528,7 +528,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Exchange[]
+MarketDataMetadataExchange[]
 #>
 function Invoke-V1ExchangesExchangeIdGet {
     [CmdletBinding()]
@@ -595,7 +595,7 @@ function Invoke-V1ExchangesExchangeIdGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Exchange[]" `
+                                -ReturnType "MarketDataMetadataExchange[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -628,7 +628,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Exchange[]
+MarketDataMetadataExchange[]
 #>
 function Invoke-V1ExchangesGet {
     [CmdletBinding()]
@@ -695,7 +695,7 @@ function Invoke-V1ExchangesGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Exchange[]" `
+                                -ReturnType "MarketDataMetadataExchange[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -728,7 +728,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Icon[]
+MarketDataMetadataIcon[]
 #>
 function Invoke-V1ExchangesIconsSizeGet {
     [CmdletBinding()]
@@ -795,7 +795,7 @@ function Invoke-V1ExchangesIconsSizeGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Icon[]" `
+                                -ReturnType "MarketDataMetadataIcon[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -834,7 +834,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Symbol[]
+MarketDataMetadataSymbol[]
 #>
 function Invoke-V1SymbolsExchangeIdActiveGet {
     [CmdletBinding()]
@@ -915,7 +915,7 @@ function Invoke-V1SymbolsExchangeIdActiveGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Symbol[]" `
+                                -ReturnType "MarketDataMetadataSymbol[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -954,7 +954,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-V1Symbol[]
+MarketDataMetadataSymbol[]
 #>
 function Invoke-V1SymbolsExchangeIdHistoryGet {
     [CmdletBinding()]
@@ -1035,7 +1035,7 @@ function Invoke-V1SymbolsExchangeIdHistoryGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Symbol[]" `
+                                -ReturnType "MarketDataMetadataSymbol[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {

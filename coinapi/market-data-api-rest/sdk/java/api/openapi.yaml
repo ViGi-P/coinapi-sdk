@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-16T06:03:16.2200016Z
+                    time: 2026-06-17T06:04:45.4901710Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-16T06:03:16.2200016Z
+                    time: 2026-06-17T06:04:45.4901710Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-16T06:03:16.2200016Z
+                    time: 2026-06-17T06:04:45.4901710Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-16T06:03:16.2200016Z
+                    time: 2026-06-17T06:04:45.4901710Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -812,7 +812,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
             application/json:
               examples:
@@ -874,7 +874,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
             text/json:
               examples:
@@ -936,7 +936,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
             application/x-msgpack:
               examples:
@@ -998,7 +998,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
           description: successful operation
       summary: List all active symbols
@@ -1106,7 +1106,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
             application/json:
               examples:
@@ -1168,7 +1168,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
             text/json:
               examples:
@@ -1230,7 +1230,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
             application/x-msgpack:
               examples:
@@ -1292,7 +1292,7 @@ paths:
                     symbol_id_int: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Symbol"
+                  $ref: "#/components/schemas/MarketDataMetadata.Symbol"
                 type: array
           description: successful operation
       summary: List all historical symbols for an exchange.
@@ -1357,7 +1357,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
             application/json:
               examples:
@@ -1393,7 +1393,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
             text/json:
               examples:
@@ -1429,7 +1429,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
             application/x-msgpack:
               examples:
@@ -1465,7 +1465,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
           description: successful operation
       summary: List all exchanges
@@ -1524,7 +1524,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
             application/json:
               examples:
@@ -1560,7 +1560,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
             text/json:
               examples:
@@ -1596,7 +1596,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
             application/x-msgpack:
               examples:
@@ -1632,7 +1632,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Exchange"
+                  $ref: "#/components/schemas/MarketDataMetadata.Exchange"
                 type: array
           description: successful operation
       summary: List all exchanges by exchange_id
@@ -1670,7 +1670,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
             application/json:
               examples:
@@ -1684,7 +1684,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
             text/json:
               examples:
@@ -1698,7 +1698,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
             application/x-msgpack:
               examples:
@@ -1712,7 +1712,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
           description: successful operation
       summary: List of icons for the exchanges
@@ -1755,7 +1755,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
             application/json:
               examples:
@@ -1769,7 +1769,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
             text/json:
               examples:
@@ -1783,7 +1783,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
             application/x-msgpack:
               examples:
@@ -1797,7 +1797,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
           description: successful operation
       summary: List all blockchain chains
@@ -1834,7 +1834,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
             application/json:
               examples:
@@ -1848,7 +1848,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
             text/json:
               examples:
@@ -1862,7 +1862,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
             application/x-msgpack:
               examples:
@@ -1876,7 +1876,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Chain"
+                  $ref: "#/components/schemas/MarketDataMetadata.Chain"
                 type: array
           description: successful operation
       summary: List all chains by chain ID
@@ -1958,7 +1958,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
             application/json:
               examples:
@@ -2009,7 +2009,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
             text/json:
               examples:
@@ -2060,7 +2060,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
             application/x-msgpack:
               examples:
@@ -2111,7 +2111,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
           description: successful operation
       summary: List all assets
@@ -2185,7 +2185,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
             application/json:
               examples:
@@ -2236,7 +2236,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
             text/json:
               examples:
@@ -2287,7 +2287,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
             application/x-msgpack:
               examples:
@@ -2338,7 +2338,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Asset"
+                  $ref: "#/components/schemas/MarketDataMetadata.Asset"
                 type: array
           description: successful operation
       summary: List all assets by asset ID
@@ -2377,7 +2377,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
             application/json:
               examples:
@@ -2391,7 +2391,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
             text/json:
               examples:
@@ -2405,7 +2405,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
             application/x-msgpack:
               examples:
@@ -2419,7 +2419,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: "#/components/schemas/v1.Icon"
+                  $ref: "#/components/schemas/MarketDataMetadata.Icon"
                 type: array
           description: successful operation
       summary: List all asset icons
@@ -7279,81 +7279,7 @@ paths:
       - text/plain
 components:
   schemas:
-    Models.BaseCsvModel:
-      additionalProperties: false
-      type: object
-    Ohlcv.ExchangeTimeseriesItem:
-      additionalProperties: false
-      description: Represents a timeseries item with price and volume information.
-      example:
-        time_period_start: 2000-01-23T04:56:07.000+00:00
-        time_period_end: 2000-01-23T04:56:07.000+00:00
-        time_open: 2000-01-23T04:56:07.000+00:00
-        time_close: 2000-01-23T04:56:07.000+00:00
-        price_open: 0.8008281904610115
-        price_high: 6.027456183070403
-        price_low: 1.4658129805029452
-        price_close: 5.962133916683182
-        volume_traded: 5.637376656633329
-        trades_count: 2
-        symbol_id_exchange: symbol_id_exchange
-        symbol_id_coinapi: symbol_id_coinapi
-      properties:
-        time_period_start:
-          description: Gets or sets the start time of the time period.
-          format: date-time
-          type: string
-        time_period_end:
-          description: Gets or sets the end time of the time period.
-          format: date-time
-          type: string
-        time_open:
-          description: Gets or sets the time when the price opened.
-          format: date-time
-          nullable: true
-          type: string
-        time_close:
-          description: Gets or sets the time when the price closed.
-          format: date-time
-          nullable: true
-          type: string
-        price_open:
-          description: Gets or sets the opening price.
-          format: double
-          nullable: true
-          type: number
-        price_high:
-          description: Gets or sets the highest price during the time period.
-          format: double
-          nullable: true
-          type: number
-        price_low:
-          description: Gets or sets the lowest price during the time period.
-          format: double
-          nullable: true
-          type: number
-        price_close:
-          description: Gets or sets the closing price.
-          format: double
-          nullable: true
-          type: number
-        volume_traded:
-          description: Gets or sets the total volume traded during the time period.
-          format: double
-          type: number
-        trades_count:
-          description: Gets or sets the number of trades executed during the time
-            period.
-          format: int64
-          type: integer
-        symbol_id_exchange:
-          nullable: true
-          type: string
-        symbol_id_coinapi:
-          nullable: true
-          type: string
-      type: object
-    v1.Asset:
+    MarketDataMetadata.Asset:
       additionalProperties: false
       description: Represents an asset.
       example:
@@ -7479,19 +7405,15 @@ components:
           nullable: true
           type: array
         data_start:
-          description: Gets the start date of the available data as a string in the
-            format "yyyy-MM-dd".
           nullable: true
           readOnly: true
           type: string
         data_end:
-          description: Gets the end date of the available data as a string in the
-            format "yyyy-MM-dd".
           nullable: true
           readOnly: true
           type: string
       type: object
-    v1.Chain:
+    MarketDataMetadata.Chain:
       additionalProperties: false
       description: Represents a blockchain chain.
       example:
@@ -7507,28 +7429,7 @@ components:
           nullable: true
           type: string
       type: object
-    v1.ChainNetworkAddress:
-      additionalProperties: false
-      description: Contains information about assets' chain network addresses
-      example:
-        chain_id: chain_id
-        network_id: network_id
-        address: address
-      properties:
-        chain_id:
-          description: Gets or sets chain id
-          nullable: true
-          type: string
-        network_id:
-          description: Gets or sets network id
-          nullable: true
-          type: string
-        address:
-          description: Gets or sets chain address
-          nullable: true
-          type: string
-      type: object
-    v1.Exchange:
+    MarketDataMetadata.Exchange:
       additionalProperties: false
       description: Represents an exchange.
       example:
@@ -7574,12 +7475,10 @@ components:
           nullable: true
           type: string
         data_start:
-          description: Gets the start date of the exchange's data.
           nullable: true
           readOnly: true
           type: string
         data_end:
-          description: Gets the end date of the exchange's data.
           nullable: true
           readOnly: true
           type: string
@@ -7647,16 +7546,433 @@ components:
         icons:
           description: Gets or sets the list of icons for the exchange.
           items:
-            $ref: "#/components/schemas/v1.Icon"
+            $ref: "#/components/schemas/MarketDataMetadata.Icon"
           nullable: true
           readOnly: true
           type: array
         rank:
-          description: Rank of the exchange - higher rank means exchange is more reliable
+          description: Rank of the exchange.
           format: double
           type: number
         integration_status:
           description: Status of the integration
+          nullable: true
+          type: string
+      type: object
+    MarketDataMetadata.Icon:
+      additionalProperties: false
+      description: Represents an icon.
+      example:
+        exchange_id: exchange_id
+        asset_id: asset_id
+        url: url
+      properties:
+        exchange_id:
+          description: Gets or sets the exchange ID associated with the icon.
+          nullable: true
+          type: string
+        asset_id:
+          description: Gets or sets the asset ID associated with the icon.
+          nullable: true
+          type: string
+        url:
+          description: Gets or sets the URL of the icon.
+          nullable: true
+          type: string
+      type: object
+    MarketDataMetadata.Symbol:
+      additionalProperties: false
+      description: Represents a symbol data model.
+      example:
+        symbol_id: symbol_id
+        exchange_id: exchange_id
+        symbol_type: symbol_type
+        asset_id_base: asset_id_base
+        asset_id_quote: asset_id_quote
+        asset_id_unit: asset_id_unit
+        future_contract_unit: 0.8008281904610115
+        future_contract_unit_asset: future_contract_unit_asset
+        future_delivery_time: 2000-01-23T04:56:07.000+00:00
+        option_type_is_call: true
+        option_strike_price: 6.027456183070403
+        option_contract_unit: 1.4658129805029452
+        option_exercise_style: option_exercise_style
+        option_expiration_time: 2000-01-23T04:56:07.000+00:00
+        contract_delivery_time: 2000-01-23T04:56:07.000+00:00
+        contract_unit: 5.962133916683182
+        contract_unit_asset: contract_unit_asset
+        contract_id: contract_id
+        contract_display_name: contract_display_name
+        contract_display_description: contract_display_description
+        data_start: data_start
+        data_end: data_end
+        data_quote_start: 2000-01-23T04:56:07.000+00:00
+        data_quote_end: 2000-01-23T04:56:07.000+00:00
+        data_orderbook_start: 2000-01-23T04:56:07.000+00:00
+        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
+        data_trade_start: 2000-01-23T04:56:07.000+00:00
+        data_trade_end: 2000-01-23T04:56:07.000+00:00
+        index_id: index_id
+        index_display_name: index_display_name
+        index_display_description: index_display_description
+        volume_1hrs: 5.637376656633329
+        volume_1hrs_usd: 2.3021358869347655
+        volume_1day: 7.061401241503109
+        volume_1day_usd: 9.301444243932576
+        volume_1mth: 3.616076749251911
+        volume_1mth_usd: 2.027123023002322
+        price: 4.145608029883936
+        symbol_id_exchange: symbol_id_exchange
+        asset_id_base_exchange: asset_id_base_exchange
+        asset_id_quote_exchange: asset_id_quote_exchange
+        price_precision: 7.386281948385884
+        size_precision: 1.2315135367772556
+        raw_kvp:
+          key: raw_kvp
+        future_is_inverse: true
+        future_is_quanto: true
+        volume_to_usd: 1.0246457001441578
+        option_barrier_up_price: 1.4894159098541704
+        option_barrier_up_type: option_barrier_up_type
+        option_barrier_down_price: 6.84685269835264
+        option_barrier_down_type: option_barrier_down_type
+        symbol_id_int: 7
+      properties:
+        symbol_id:
+          description: The symbol identifier.
+          nullable: true
+          type: string
+        exchange_id:
+          description: The exchange identifier.
+          nullable: true
+          type: string
+        symbol_type:
+          description: The symbol type.
+          nullable: true
+          type: string
+        asset_id_base:
+          description: The base asset identifier.
+          nullable: true
+          type: string
+        asset_id_quote:
+          description: The quote asset identifier.
+          nullable: true
+          type: string
+        asset_id_unit:
+          description: The unit asset identifier.
+          nullable: true
+          type: string
+        future_contract_unit:
+          description: The contract unit for futures.
+          format: double
+          nullable: true
+          type: number
+        future_contract_unit_asset:
+          description: The asset used as the unit for futures contract.
+          nullable: true
+          type: string
+        future_delivery_time:
+          description: The future delivery time for futures contract.
+          format: date-time
+          nullable: true
+          type: string
+        option_type_is_call:
+          description: Indicates whether the option type is a call.
+          nullable: true
+          type: boolean
+        option_strike_price:
+          description: The strike price for options.
+          format: double
+          nullable: true
+          type: number
+        option_contract_unit:
+          description: The contract unit for options.
+          format: double
+          nullable: true
+          type: number
+        option_exercise_style:
+          description: "The exercise style for options. Possible values: AMERICAN,\
+            \ ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC."
+          nullable: true
+          type: string
+        option_expiration_time:
+          description: The expiration time for options.
+          format: date-time
+          nullable: true
+          type: string
+        contract_delivery_time:
+          description: The delivery time for contracts.
+          format: date-time
+          nullable: true
+          type: string
+        contract_unit:
+          description: The contract unit for contracts.
+          format: double
+          nullable: true
+          type: number
+        contract_unit_asset:
+          description: The asset used as the unit for contracts.
+          nullable: true
+          type: string
+        contract_id:
+          description: The contract identifier.
+          nullable: true
+          type: string
+        contract_display_name:
+          description: The display name of the contract.
+          nullable: true
+          type: string
+        contract_display_description:
+          description: The display description of the contract.
+          nullable: true
+          type: string
+        data_start:
+          nullable: true
+          readOnly: true
+          type: string
+        data_end:
+          nullable: true
+          readOnly: true
+          type: string
+        data_quote_start:
+          description: The start date of quote data.
+          format: date-time
+          nullable: true
+          type: string
+        data_quote_end:
+          description: The end date of quote data.
+          format: date-time
+          nullable: true
+          type: string
+        data_orderbook_start:
+          description: The start date of order book data.
+          format: date-time
+          nullable: true
+          type: string
+        data_orderbook_end:
+          description: The end date of order book data.
+          format: date-time
+          nullable: true
+          type: string
+        data_trade_start:
+          description: The start date of trade data.
+          format: date-time
+          nullable: true
+          type: string
+        data_trade_end:
+          description: The end date of trade data.
+          format: date-time
+          nullable: true
+          type: string
+        index_id:
+          description: The index identifier.
+          nullable: true
+          type: string
+        index_display_name:
+          description: The display name of the index.
+          nullable: true
+          type: string
+        index_display_description:
+          description: The display description of the index.
+          nullable: true
+          type: string
+        volume_1hrs:
+          description: The volume in the last 1 hour.
+          format: double
+          nullable: true
+          type: number
+        volume_1hrs_usd:
+          description: The volume in USD in the last 1 hour.
+          format: double
+          nullable: true
+          type: number
+        volume_1day:
+          description: The volume in the last 1 day.
+          format: double
+          nullable: true
+          type: number
+        volume_1day_usd:
+          description: The volume in USD in the last 1 day.
+          format: double
+          nullable: true
+          type: number
+        volume_1mth:
+          description: The volume in the last 1 month.
+          format: double
+          nullable: true
+          type: number
+        volume_1mth_usd:
+          description: The volume in USD in the last 1 month.
+          format: double
+          nullable: true
+          type: number
+        price:
+          description: The price.
+          format: double
+          nullable: true
+          type: number
+        symbol_id_exchange:
+          description: The symbol identifier in the exchange.
+          nullable: true
+          type: string
+        asset_id_base_exchange:
+          description: The base asset identifier in the exchange.
+          nullable: true
+          type: string
+        asset_id_quote_exchange:
+          description: The quote asset identifier in the exchange.
+          nullable: true
+          type: string
+        price_precision:
+          description: The price precision.
+          format: double
+          nullable: true
+          type: number
+        size_precision:
+          description: The size precision.
+          format: double
+          nullable: true
+          type: number
+        raw_kvp:
+          additionalProperties:
+            nullable: true
+            type: string
+          description: Key Value Pair store with raw data from the data source.
+          nullable: true
+          type: object
+        future_is_inverse:
+          description: Indicates whether the futures contract is inverse (coin-margined).
+          nullable: true
+          type: boolean
+        future_is_quanto:
+          description: Indicates whether the futures contract is quanto.
+          nullable: true
+          type: boolean
+        volume_to_usd:
+          description: Volume unit in USD.
+          format: double
+          nullable: true
+          type: number
+        option_barrier_up_price:
+          description: The up barrier price for barrier options.
+          format: double
+          nullable: true
+          type: number
+        option_barrier_up_type:
+          description: "The up barrier type for barrier options. Possible values:\
+            \ EXPIRATION, IN, OUT."
+          nullable: true
+          type: string
+        option_barrier_down_price:
+          description: The down barrier price for barrier options.
+          format: double
+          nullable: true
+          type: number
+        option_barrier_down_type:
+          description: "The down barrier type for barrier options. Possible values:\
+            \ EXPIRATION, IN, OUT."
+          nullable: true
+          type: string
+        symbol_id_int:
+          description: "The symbol identifier in integer immutable format, used to\
+            \ correlate data across different APIs."
+          format: int32
+          nullable: true
+          readOnly: true
+          type: integer
+      type: object
+    Models.BaseCsvModel:
+      additionalProperties: false
+      type: object
+    Ohlcv.ExchangeTimeseriesItem:
+      additionalProperties: false
+      description: Represents a timeseries item with price and volume information.
+      example:
+        time_period_start: 2000-01-23T04:56:07.000+00:00
+        time_period_end: 2000-01-23T04:56:07.000+00:00
+        time_open: 2000-01-23T04:56:07.000+00:00
+        time_close: 2000-01-23T04:56:07.000+00:00
+        price_open: 0.8008281904610115
+        price_high: 6.027456183070403
+        price_low: 1.4658129805029452
+        price_close: 5.962133916683182
+        volume_traded: 5.637376656633329
+        trades_count: 2
+        symbol_id_exchange: symbol_id_exchange
+        symbol_id_coinapi: symbol_id_coinapi
+      properties:
+        time_period_start:
+          description: Gets or sets the start time of the time period.
+          format: date-time
+          type: string
+        time_period_end:
+          description: Gets or sets the end time of the time period.
+          format: date-time
+          type: string
+        time_open:
+          description: Gets or sets the time when the price opened.
+          format: date-time
+          nullable: true
+          type: string
+        time_close:
+          description: Gets or sets the time when the price closed.
+          format: date-time
+          nullable: true
+          type: string
+        price_open:
+          description: Gets or sets the opening price.
+          format: double
+          nullable: true
+          type: number
+        price_high:
+          description: Gets or sets the highest price during the time period.
+          format: double
+          nullable: true
+          type: number
+        price_low:
+          description: Gets or sets the lowest price during the time period.
+          format: double
+          nullable: true
+          type: number
+        price_close:
+          description: Gets or sets the closing price.
+          format: double
+          nullable: true
+          type: number
+        volume_traded:
+          description: Gets or sets the total volume traded during the time period.
+          format: double
+          type: number
+        trades_count:
+          description: Gets or sets the number of trades executed during the time
+            period.
+          format: int64
+          type: integer
+        symbol_id_exchange:
+          nullable: true
+          type: string
+        symbol_id_coinapi:
+          nullable: true
+          type: string
+      type: object
+    v1.ChainNetworkAddress:
+      additionalProperties: false
+      description: Contains information about assets' chain network addresses
+      example:
+        chain_id: chain_id
+        network_id: network_id
+        address: address
+      properties:
+        chain_id:
+          description: Gets or sets chain id
+          nullable: true
+          type: string
+        network_id:
+          description: Gets or sets network id
+          nullable: true
+          type: string
+        address:
+          description: Gets or sets chain address
           nullable: true
           type: string
       type: object
@@ -7835,27 +8151,6 @@ components:
         value_time:
           description: Gets or sets the timestamp value for the metric.
           format: date-time
-          nullable: true
-          type: string
-      type: object
-    v1.Icon:
-      additionalProperties: false
-      description: Represents an icon.
-      example:
-        exchange_id: exchange_id
-        asset_id: asset_id
-        url: url
-      properties:
-        exchange_id:
-          description: Gets or sets the exchange ID associated with the icon.
-          nullable: true
-          type: string
-        asset_id:
-          description: Gets or sets the asset ID associated with the icon.
-          nullable: true
-          type: string
-        url:
-          description: Gets or sets the URL of the icon.
           nullable: true
           type: string
       type: object
@@ -8347,312 +8642,6 @@ components:
           $ref: "#/components/schemas/v1.QuoteTrade"
         put:
           $ref: "#/components/schemas/v1.QuoteTrade"
-      type: object
-    v1.Symbol:
-      additionalProperties: false
-      description: Represents a symbol data model.
-      example:
-        symbol_id: symbol_id
-        exchange_id: exchange_id
-        symbol_type: symbol_type
-        asset_id_base: asset_id_base
-        asset_id_quote: asset_id_quote
-        asset_id_unit: asset_id_unit
-        future_contract_unit: 0.8008281904610115
-        future_contract_unit_asset: future_contract_unit_asset
-        future_delivery_time: 2000-01-23T04:56:07.000+00:00
-        option_type_is_call: true
-        option_strike_price: 6.027456183070403
-        option_contract_unit: 1.4658129805029452
-        option_exercise_style: option_exercise_style
-        option_expiration_time: 2000-01-23T04:56:07.000+00:00
-        contract_delivery_time: 2000-01-23T04:56:07.000+00:00
-        contract_unit: 5.962133916683182
-        contract_unit_asset: contract_unit_asset
-        contract_id: contract_id
-        contract_display_name: contract_display_name
-        contract_display_description: contract_display_description
-        data_start: data_start
-        data_end: data_end
-        data_quote_start: 2000-01-23T04:56:07.000+00:00
-        data_quote_end: 2000-01-23T04:56:07.000+00:00
-        data_orderbook_start: 2000-01-23T04:56:07.000+00:00
-        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
-        data_trade_start: 2000-01-23T04:56:07.000+00:00
-        data_trade_end: 2000-01-23T04:56:07.000+00:00
-        index_id: index_id
-        index_display_name: index_display_name
-        index_display_description: index_display_description
-        volume_1hrs: 5.637376656633329
-        volume_1hrs_usd: 2.3021358869347655
-        volume_1day: 7.061401241503109
-        volume_1day_usd: 9.301444243932576
-        volume_1mth: 3.616076749251911
-        volume_1mth_usd: 2.027123023002322
-        price: 4.145608029883936
-        symbol_id_exchange: symbol_id_exchange
-        asset_id_base_exchange: asset_id_base_exchange
-        asset_id_quote_exchange: asset_id_quote_exchange
-        price_precision: 7.386281948385884
-        size_precision: 1.2315135367772556
-        raw_kvp:
-          key: raw_kvp
-        future_is_inverse: true
-        future_is_quanto: true
-        volume_to_usd: 1.0246457001441578
-        option_barrier_up_price: 1.4894159098541704
-        option_barrier_up_type: option_barrier_up_type
-        option_barrier_down_price: 6.84685269835264
-        option_barrier_down_type: option_barrier_down_type
-        symbol_id_int: 7
-      properties:
-        symbol_id:
-          description: Gets or sets the symbol identifier.
-          nullable: true
-          type: string
-        exchange_id:
-          description: Gets or sets the exchange identifier.
-          nullable: true
-          type: string
-        symbol_type:
-          description: Gets or sets the symbol type.
-          nullable: true
-          type: string
-        asset_id_base:
-          description: Gets or sets the base asset identifier.
-          nullable: true
-          type: string
-        asset_id_quote:
-          description: Gets or sets the quote asset identifier.
-          nullable: true
-          type: string
-        asset_id_unit:
-          description: Gets or sets the unit asset identifier.
-          nullable: true
-          type: string
-        future_contract_unit:
-          description: Gets or sets the contract unit for futures.
-          format: double
-          nullable: true
-          type: number
-        future_contract_unit_asset:
-          description: Gets or sets the asset used as the unit for futures contract.
-          nullable: true
-          type: string
-        future_delivery_time:
-          description: Gets or sets the future delivery time for futures contract.
-          format: date-time
-          nullable: true
-          type: string
-        option_type_is_call:
-          description: Gets or sets a value indicating whether the option type is
-            a call.
-          nullable: true
-          type: boolean
-        option_strike_price:
-          description: Gets or sets the strike price for options.
-          format: double
-          nullable: true
-          type: number
-        option_contract_unit:
-          description: Gets or sets the contract unit for options.
-          format: double
-          nullable: true
-          type: number
-        option_exercise_style:
-          description: "Gets or sets the exercise style for options. Possible values:\
-            \ AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC."
-          nullable: true
-          type: string
-        option_expiration_time:
-          description: Gets or sets the expiration time for options.
-          format: date-time
-          nullable: true
-          type: string
-        contract_delivery_time:
-          description: Gets or sets the delivery time for contracts.
-          format: date-time
-          nullable: true
-          type: string
-        contract_unit:
-          description: Gets or sets the contract unit for contracts.
-          format: double
-          nullable: true
-          type: number
-        contract_unit_asset:
-          description: Gets or sets the asset used as the unit for contracts.
-          nullable: true
-          type: string
-        contract_id:
-          description: Gets or sets the contract identifier.
-          nullable: true
-          type: string
-        contract_display_name:
-          description: Gets or sets the display name of the contract.
-          nullable: true
-          type: string
-        contract_display_description:
-          description: Gets or sets the display description of the contract.
-          nullable: true
-          type: string
-        data_start:
-          description: Gets the start date of the data in string format ("yyyy-MM-dd").
-          nullable: true
-          readOnly: true
-          type: string
-        data_end:
-          description: Gets the end date of the data in string format ("yyyy-MM-dd").
-          nullable: true
-          readOnly: true
-          type: string
-        data_quote_start:
-          description: Gets or sets the start date of quote data.
-          format: date-time
-          nullable: true
-          type: string
-        data_quote_end:
-          description: Gets or sets the end date of quote data.
-          format: date-time
-          nullable: true
-          type: string
-        data_orderbook_start:
-          description: Gets or sets the start date of order book data.
-          format: date-time
-          nullable: true
-          type: string
-        data_orderbook_end:
-          description: Gets or sets the end date of order book data.
-          format: date-time
-          nullable: true
-          type: string
-        data_trade_start:
-          description: Gets or sets the start date of trade data.
-          format: date-time
-          nullable: true
-          type: string
-        data_trade_end:
-          description: Gets or sets the end date of trade data.
-          format: date-time
-          nullable: true
-          type: string
-        index_id:
-          description: Gets or sets the index identifier.
-          nullable: true
-          type: string
-        index_display_name:
-          description: Gets or sets the display name of the index.
-          nullable: true
-          type: string
-        index_display_description:
-          description: Gets or sets the display description of the index.
-          nullable: true
-          type: string
-        volume_1hrs:
-          description: Gets or sets the volume in the last 1 hour.
-          format: double
-          nullable: true
-          type: number
-        volume_1hrs_usd:
-          description: Gets or sets the volume in USD in the last 1 hour.
-          format: double
-          nullable: true
-          type: number
-        volume_1day:
-          description: Gets or sets the volume in the last 1 day.
-          format: double
-          nullable: true
-          type: number
-        volume_1day_usd:
-          description: Gets or sets the volume in USD in the last 1 day.
-          format: double
-          nullable: true
-          type: number
-        volume_1mth:
-          description: Gets or sets the volume in the last 1 month.
-          format: double
-          nullable: true
-          type: number
-        volume_1mth_usd:
-          description: Gets or sets the volume in USD in the last 1 month.
-          format: double
-          nullable: true
-          type: number
-        price:
-          description: Gets or sets the price.
-          format: double
-          nullable: true
-          type: number
-        symbol_id_exchange:
-          description: Gets or sets the symbol identifier in the exchange.
-          nullable: true
-          type: string
-        asset_id_base_exchange:
-          description: Gets or sets the base asset identifier in the exchange.
-          nullable: true
-          type: string
-        asset_id_quote_exchange:
-          description: Gets or sets the quote asset identifier in the exchange.
-          nullable: true
-          type: string
-        price_precision:
-          description: Gets or sets the price precision.
-          format: double
-          nullable: true
-          type: number
-        size_precision:
-          description: Gets or sets the size precision.
-          format: double
-          nullable: true
-          type: number
-        raw_kvp:
-          additionalProperties:
-            nullable: true
-            type: string
-          description: Key Value Pair store with raw data from the data source.
-          nullable: true
-          type: object
-        future_is_inverse:
-          description: Gets or sets a value indicating whether the futures contract
-            is inverse (coin-margined).
-          nullable: true
-          type: boolean
-        future_is_quanto:
-          description: Gets or sets a value indicating whether the futures contract
-            is quanto.
-          nullable: true
-          type: boolean
-        volume_to_usd:
-          description: Gets or sets the volume in USD.
-          format: double
-          nullable: true
-          type: number
-        option_barrier_up_price:
-          description: Gets or sets the up barrier price for barrier options.
-          format: double
-          nullable: true
-          type: number
-        option_barrier_up_type:
-          description: "Gets or sets the up barrier type for barrier options. Possible\
-            \ values: EXPIRATION, IN, OUT."
-          nullable: true
-          type: string
-        option_barrier_down_price:
-          description: Gets or sets the down barrier price for barrier options.
-          format: double
-          nullable: true
-          type: number
-        option_barrier_down_type:
-          description: "Gets or sets the down barrier type for barrier options. Possible\
-            \ values: EXPIRATION, IN, OUT."
-          nullable: true
-          type: string
-        symbol_id_int:
-          description: "Gets or sets the symbol identifier in integer immutable format,\
-            \ used to correlate data across different APIs."
-          format: int32
-          nullable: true
-          readOnly: true
-          type: integer
       type: object
     v1.SymbolMapping:
       additionalProperties: false

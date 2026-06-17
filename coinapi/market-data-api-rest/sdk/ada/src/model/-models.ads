@@ -15,6 +15,135 @@ package .Models is
 
 
 
+   type MarketDataMetadataChain_Type is
+     record
+       Chain_Id : Swagger.Nullable_UString;
+       Name : Swagger.Nullable_UString;
+     end record;
+
+
+   package MarketDataMetadataChain_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.MarketDataMetadataChain_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.MarketDataMetadataChain_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in MarketDataMetadataChain_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.MarketDataMetadataChain_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out MarketDataMetadataChain_Type_Vectors.Vector);
+
+
+
+   type MarketDataMetadataIcon_Type is
+     record
+       Exchange_Id : Swagger.Nullable_UString;
+       Asset_Id : Swagger.Nullable_UString;
+       Url : Swagger.Nullable_UString;
+     end record;
+
+
+   package MarketDataMetadataIcon_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.MarketDataMetadataIcon_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.MarketDataMetadataIcon_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in MarketDataMetadataIcon_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.MarketDataMetadataIcon_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out MarketDataMetadataIcon_Type_Vectors.Vector);
+
+
+
+   type MarketDataMetadataSymbol_Type is
+     record
+       Symbol_Id : Swagger.Nullable_UString;
+       Exchange_Id : Swagger.Nullable_UString;
+       Symbol_Type : Swagger.Nullable_UString;
+       Asset_Id_Base : Swagger.Nullable_UString;
+       Asset_Id_Quote : Swagger.Nullable_UString;
+       Asset_Id_Unit : Swagger.Nullable_UString;
+       Future_Contract_Unit : Swagger.Number;
+       Future_Contract_Unit_Asset : Swagger.Nullable_UString;
+       Future_Delivery_Time : Swagger.Nullable_Date;
+       Option_Type_Is_Call : Swagger.Nullable_Boolean;
+       Option_Strike_Price : Swagger.Number;
+       Option_Contract_Unit : Swagger.Number;
+       Option_Exercise_Style : Swagger.Nullable_UString;
+       Option_Expiration_Time : Swagger.Nullable_Date;
+       Contract_Delivery_Time : Swagger.Nullable_Date;
+       Contract_Unit : Swagger.Number;
+       Contract_Unit_Asset : Swagger.Nullable_UString;
+       Contract_Id : Swagger.Nullable_UString;
+       Contract_Display_Name : Swagger.Nullable_UString;
+       Contract_Display_Description : Swagger.Nullable_UString;
+       Data_Start : Swagger.Nullable_UString;
+       Data_End : Swagger.Nullable_UString;
+       Data_Quote_Start : Swagger.Nullable_Date;
+       Data_Quote_End : Swagger.Nullable_Date;
+       Data_Orderbook_Start : Swagger.Nullable_Date;
+       Data_Orderbook_End : Swagger.Nullable_Date;
+       Data_Trade_Start : Swagger.Nullable_Date;
+       Data_Trade_End : Swagger.Nullable_Date;
+       Index_Id : Swagger.Nullable_UString;
+       Index_Display_Name : Swagger.Nullable_UString;
+       Index_Display_Description : Swagger.Nullable_UString;
+       Volume_1hrs : Swagger.Number;
+       Volume_1hrs_Usd : Swagger.Number;
+       Volume_1day : Swagger.Number;
+       Volume_1day_Usd : Swagger.Number;
+       Volume_1mth : Swagger.Number;
+       Volume_1mth_Usd : Swagger.Number;
+       Price : Swagger.Number;
+       Symbol_Id_Exchange : Swagger.Nullable_UString;
+       Asset_Id_Base_Exchange : Swagger.Nullable_UString;
+       Asset_Id_Quote_Exchange : Swagger.Nullable_UString;
+       Price_Precision : Swagger.Number;
+       Size_Precision : Swagger.Number;
+       Raw_Kvp : Swagger.UString_Map;
+       Future_Is_Inverse : Swagger.Nullable_Boolean;
+       Future_Is_Quanto : Swagger.Nullable_Boolean;
+       Volume_To_Usd : Swagger.Number;
+       Option_Barrier_Up_Price : Swagger.Number;
+       Option_Barrier_Up_Type : Swagger.Nullable_UString;
+       Option_Barrier_Down_Price : Swagger.Number;
+       Option_Barrier_Down_Type : Swagger.Nullable_UString;
+       Symbol_Id_Int : Swagger.Nullable_Integer;
+     end record;
+
+
+   package MarketDataMetadataSymbol_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.MarketDataMetadataSymbol_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.MarketDataMetadataSymbol_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in MarketDataMetadataSymbol_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.MarketDataMetadataSymbol_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out MarketDataMetadataSymbol_Type_Vectors.Vector);
+
+
+
    type OhlcvExchangeTimeseriesItem_Type is
      record
        Time_Period_Start : Swagger.Nullable_Date;
@@ -75,32 +204,6 @@ package .Models is
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
                           Value : in out V1ChainNetworkAddress_Type_Vectors.Vector);
-
-
-
-   type V1Chain_Type is
-     record
-       Chain_Id : Swagger.Nullable_UString;
-       Name : Swagger.Nullable_UString;
-     end record;
-
-
-   package V1Chain_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.V1Chain_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.V1Chain_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in V1Chain_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.V1Chain_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out V1Chain_Type_Vectors.Vector);
 
 
 
@@ -221,33 +324,6 @@ package .Models is
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
                           Value : in out V1GeneralData_Type_Vectors.Vector);
-
-
-
-   type V1Icon_Type is
-     record
-       Exchange_Id : Swagger.Nullable_UString;
-       Asset_Id : Swagger.Nullable_UString;
-       Url : Swagger.Nullable_UString;
-     end record;
-
-
-   package V1Icon_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.V1Icon_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.V1Icon_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in V1Icon_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.V1Icon_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out V1Icon_Type_Vectors.Vector);
 
 
 
@@ -488,82 +564,6 @@ package .Models is
 
 
 
-   type V1Symbol_Type is
-     record
-       Symbol_Id : Swagger.Nullable_UString;
-       Exchange_Id : Swagger.Nullable_UString;
-       Symbol_Type : Swagger.Nullable_UString;
-       Asset_Id_Base : Swagger.Nullable_UString;
-       Asset_Id_Quote : Swagger.Nullable_UString;
-       Asset_Id_Unit : Swagger.Nullable_UString;
-       Future_Contract_Unit : Swagger.Number;
-       Future_Contract_Unit_Asset : Swagger.Nullable_UString;
-       Future_Delivery_Time : Swagger.Nullable_Date;
-       Option_Type_Is_Call : Swagger.Nullable_Boolean;
-       Option_Strike_Price : Swagger.Number;
-       Option_Contract_Unit : Swagger.Number;
-       Option_Exercise_Style : Swagger.Nullable_UString;
-       Option_Expiration_Time : Swagger.Nullable_Date;
-       Contract_Delivery_Time : Swagger.Nullable_Date;
-       Contract_Unit : Swagger.Number;
-       Contract_Unit_Asset : Swagger.Nullable_UString;
-       Contract_Id : Swagger.Nullable_UString;
-       Contract_Display_Name : Swagger.Nullable_UString;
-       Contract_Display_Description : Swagger.Nullable_UString;
-       Data_Start : Swagger.Nullable_UString;
-       Data_End : Swagger.Nullable_UString;
-       Data_Quote_Start : Swagger.Nullable_Date;
-       Data_Quote_End : Swagger.Nullable_Date;
-       Data_Orderbook_Start : Swagger.Nullable_Date;
-       Data_Orderbook_End : Swagger.Nullable_Date;
-       Data_Trade_Start : Swagger.Nullable_Date;
-       Data_Trade_End : Swagger.Nullable_Date;
-       Index_Id : Swagger.Nullable_UString;
-       Index_Display_Name : Swagger.Nullable_UString;
-       Index_Display_Description : Swagger.Nullable_UString;
-       Volume_1hrs : Swagger.Number;
-       Volume_1hrs_Usd : Swagger.Number;
-       Volume_1day : Swagger.Number;
-       Volume_1day_Usd : Swagger.Number;
-       Volume_1mth : Swagger.Number;
-       Volume_1mth_Usd : Swagger.Number;
-       Price : Swagger.Number;
-       Symbol_Id_Exchange : Swagger.Nullable_UString;
-       Asset_Id_Base_Exchange : Swagger.Nullable_UString;
-       Asset_Id_Quote_Exchange : Swagger.Nullable_UString;
-       Price_Precision : Swagger.Number;
-       Size_Precision : Swagger.Number;
-       Raw_Kvp : Swagger.UString_Map;
-       Future_Is_Inverse : Swagger.Nullable_Boolean;
-       Future_Is_Quanto : Swagger.Nullable_Boolean;
-       Volume_To_Usd : Swagger.Number;
-       Option_Barrier_Up_Price : Swagger.Number;
-       Option_Barrier_Up_Type : Swagger.Nullable_UString;
-       Option_Barrier_Down_Price : Swagger.Number;
-       Option_Barrier_Down_Type : Swagger.Nullable_UString;
-       Symbol_Id_Int : Swagger.Nullable_Integer;
-     end record;
-
-
-   package V1Symbol_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.V1Symbol_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.V1Symbol_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in V1Symbol_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.V1Symbol_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out V1Symbol_Type_Vectors.Vector);
-
-
-
    type V1TimeseriesItem_Type is
      record
        Time_Period_Start : Swagger.Nullable_Date;
@@ -664,7 +664,7 @@ package .Models is
 
 
 
-   type V1Asset_Type is
+   type MarketDataMetadataAsset_Type is
      record
        Asset_Id : Swagger.Nullable_UString;
        Name : Swagger.Nullable_UString;
@@ -690,22 +690,66 @@ package .Models is
      end record;
 
 
-   package V1Asset_Type_Vectors is
+   package MarketDataMetadataAsset_Type_Vectors is
       new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.V1Asset_Type);
+                                  Element_Type => .Models.MarketDataMetadataAsset_Type);
 
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in .Models.V1Asset_Type);
+                        Value : in .Models.MarketDataMetadataAsset_Type);
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in V1Asset_Type_Vectors.Vector);
+                        Value : in MarketDataMetadataAsset_Type_Vectors.Vector);
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
-                          Value : out .Models.V1Asset_Type);
+                          Value : out .Models.MarketDataMetadataAsset_Type);
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
-                          Value : in out V1Asset_Type_Vectors.Vector);
+                          Value : in out MarketDataMetadataAsset_Type_Vectors.Vector);
+
+
+
+   type MarketDataMetadataExchange_Type is
+     record
+       Exchange_Id : Swagger.Nullable_UString;
+       Website : Swagger.Nullable_UString;
+       Name : Swagger.Nullable_UString;
+       Data_Start : Swagger.Nullable_UString;
+       Data_End : Swagger.Nullable_UString;
+       Data_Quote_Start : Swagger.Nullable_Date;
+       Data_Quote_End : Swagger.Nullable_Date;
+       Data_Orderbook_Start : Swagger.Nullable_Date;
+       Data_Orderbook_End : Swagger.Nullable_Date;
+       Data_Trade_Start : Swagger.Nullable_Date;
+       Data_Trade_End : Swagger.Nullable_Date;
+       Data_Trade_Count : Swagger.Nullable_Long;
+       Data_Symbols_Count : Swagger.Nullable_Long;
+       Volume_1hrs_Usd : Swagger.Number;
+       Volume_1day_Usd : Swagger.Number;
+       Volume_1mth_Usd : Swagger.Number;
+       Metric_Id : Swagger.UString_Vectors.Vector;
+       Icons : .Models.MarketDataMetadataIcon_Type_Vectors.Vector;
+       Rank : Swagger.Number;
+       Integration_Status : Swagger.Nullable_UString;
+     end record;
+
+
+   package MarketDataMetadataExchange_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.MarketDataMetadataExchange_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.MarketDataMetadataExchange_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in MarketDataMetadataExchange_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.MarketDataMetadataExchange_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out MarketDataMetadataExchange_Type_Vectors.Vector);
 
 
 
@@ -732,50 +776,6 @@ package .Models is
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
                           Value : in out V1ExchangeRates_Type_Vectors.Vector);
-
-
-
-   type V1Exchange_Type is
-     record
-       Exchange_Id : Swagger.Nullable_UString;
-       Website : Swagger.Nullable_UString;
-       Name : Swagger.Nullable_UString;
-       Data_Start : Swagger.Nullable_UString;
-       Data_End : Swagger.Nullable_UString;
-       Data_Quote_Start : Swagger.Nullable_Date;
-       Data_Quote_End : Swagger.Nullable_Date;
-       Data_Orderbook_Start : Swagger.Nullable_Date;
-       Data_Orderbook_End : Swagger.Nullable_Date;
-       Data_Trade_Start : Swagger.Nullable_Date;
-       Data_Trade_End : Swagger.Nullable_Date;
-       Data_Trade_Count : Swagger.Nullable_Long;
-       Data_Symbols_Count : Swagger.Nullable_Long;
-       Volume_1hrs_Usd : Swagger.Number;
-       Volume_1day_Usd : Swagger.Number;
-       Volume_1mth_Usd : Swagger.Number;
-       Metric_Id : Swagger.UString_Vectors.Vector;
-       Icons : .Models.V1Icon_Type_Vectors.Vector;
-       Rank : Swagger.Number;
-       Integration_Status : Swagger.Nullable_UString;
-     end record;
-
-
-   package V1Exchange_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.V1Exchange_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.V1Exchange_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in V1Exchange_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.V1Exchange_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out V1Exchange_Type_Vectors.Vector);
 
 
 
