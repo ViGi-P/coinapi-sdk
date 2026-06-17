@@ -30,7 +30,7 @@ type ApiV1AssetsAssetIdGetRequest struct {
 	assetId string
 }
 
-func (r ApiV1AssetsAssetIdGetRequest) Execute() ([]V1Asset, *http.Response, error) {
+func (r ApiV1AssetsAssetIdGetRequest) Execute() ([]MarketDataMetadataAsset, *http.Response, error) {
 	return r.ApiService.V1AssetsAssetIdGetExecute(r)
 }
 
@@ -50,13 +50,13 @@ func (a *MetadataAPIService) V1AssetsAssetIdGet(ctx context.Context, assetId str
 }
 
 // Execute executes the request
-//  @return []V1Asset
-func (a *MetadataAPIService) V1AssetsAssetIdGetExecute(r ApiV1AssetsAssetIdGetRequest) ([]V1Asset, *http.Response, error) {
+//  @return []MarketDataMetadataAsset
+func (a *MetadataAPIService) V1AssetsAssetIdGetExecute(r ApiV1AssetsAssetIdGetRequest) ([]MarketDataMetadataAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Asset
+		localVarReturnValue  []MarketDataMetadataAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1AssetsAssetIdGet")
@@ -151,7 +151,7 @@ func (r ApiV1AssetsGetRequest) FilterAssetId(filterAssetId string) ApiV1AssetsGe
 	return r
 }
 
-func (r ApiV1AssetsGetRequest) Execute() ([]V1Asset, *http.Response, error) {
+func (r ApiV1AssetsGetRequest) Execute() ([]MarketDataMetadataAsset, *http.Response, error) {
 	return r.ApiService.V1AssetsGetExecute(r)
 }
 
@@ -179,13 +179,13 @@ func (a *MetadataAPIService) V1AssetsGet(ctx context.Context) ApiV1AssetsGetRequ
 }
 
 // Execute executes the request
-//  @return []V1Asset
-func (a *MetadataAPIService) V1AssetsGetExecute(r ApiV1AssetsGetRequest) ([]V1Asset, *http.Response, error) {
+//  @return []MarketDataMetadataAsset
+func (a *MetadataAPIService) V1AssetsGetExecute(r ApiV1AssetsGetRequest) ([]MarketDataMetadataAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Asset
+		localVarReturnValue  []MarketDataMetadataAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1AssetsGet")
@@ -276,7 +276,7 @@ type ApiV1AssetsIconsSizeGetRequest struct {
 	size int32
 }
 
-func (r ApiV1AssetsIconsSizeGetRequest) Execute() ([]V1Icon, *http.Response, error) {
+func (r ApiV1AssetsIconsSizeGetRequest) Execute() ([]MarketDataMetadataIcon, *http.Response, error) {
 	return r.ApiService.V1AssetsIconsSizeGetExecute(r)
 }
 
@@ -298,13 +298,13 @@ func (a *MetadataAPIService) V1AssetsIconsSizeGet(ctx context.Context, size int3
 }
 
 // Execute executes the request
-//  @return []V1Icon
-func (a *MetadataAPIService) V1AssetsIconsSizeGetExecute(r ApiV1AssetsIconsSizeGetRequest) ([]V1Icon, *http.Response, error) {
+//  @return []MarketDataMetadataIcon
+func (a *MetadataAPIService) V1AssetsIconsSizeGetExecute(r ApiV1AssetsIconsSizeGetRequest) ([]MarketDataMetadataIcon, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Icon
+		localVarReturnValue  []MarketDataMetadataIcon
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1AssetsIconsSizeGet")
@@ -393,7 +393,7 @@ type ApiV1ChainsChainIdGetRequest struct {
 	chainId string
 }
 
-func (r ApiV1ChainsChainIdGetRequest) Execute() ([]V1Chain, *http.Response, error) {
+func (r ApiV1ChainsChainIdGetRequest) Execute() ([]MarketDataMetadataChain, *http.Response, error) {
 	return r.ApiService.V1ChainsChainIdGetExecute(r)
 }
 
@@ -413,13 +413,13 @@ func (a *MetadataAPIService) V1ChainsChainIdGet(ctx context.Context, chainId str
 }
 
 // Execute executes the request
-//  @return []V1Chain
-func (a *MetadataAPIService) V1ChainsChainIdGetExecute(r ApiV1ChainsChainIdGetRequest) ([]V1Chain, *http.Response, error) {
+//  @return []MarketDataMetadataChain
+func (a *MetadataAPIService) V1ChainsChainIdGetExecute(r ApiV1ChainsChainIdGetRequest) ([]MarketDataMetadataChain, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Chain
+		localVarReturnValue  []MarketDataMetadataChain
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1ChainsChainIdGet")
@@ -514,7 +514,7 @@ func (r ApiV1ChainsGetRequest) FilterChainId(filterChainId string) ApiV1ChainsGe
 	return r
 }
 
-func (r ApiV1ChainsGetRequest) Execute() ([]V1Chain, *http.Response, error) {
+func (r ApiV1ChainsGetRequest) Execute() ([]MarketDataMetadataChain, *http.Response, error) {
 	return r.ApiService.V1ChainsGetExecute(r)
 }
 
@@ -538,13 +538,13 @@ func (a *MetadataAPIService) V1ChainsGet(ctx context.Context) ApiV1ChainsGetRequ
 }
 
 // Execute executes the request
-//  @return []V1Chain
-func (a *MetadataAPIService) V1ChainsGetExecute(r ApiV1ChainsGetRequest) ([]V1Chain, *http.Response, error) {
+//  @return []MarketDataMetadataChain
+func (a *MetadataAPIService) V1ChainsGetExecute(r ApiV1ChainsGetRequest) ([]MarketDataMetadataChain, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Chain
+		localVarReturnValue  []MarketDataMetadataChain
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1ChainsGet")
@@ -635,7 +635,7 @@ type ApiV1ExchangesExchangeIdGetRequest struct {
 	exchangeId string
 }
 
-func (r ApiV1ExchangesExchangeIdGetRequest) Execute() ([]V1Exchange, *http.Response, error) {
+func (r ApiV1ExchangesExchangeIdGetRequest) Execute() ([]MarketDataMetadataExchange, *http.Response, error) {
 	return r.ApiService.V1ExchangesExchangeIdGetExecute(r)
 }
 
@@ -655,13 +655,13 @@ func (a *MetadataAPIService) V1ExchangesExchangeIdGet(ctx context.Context, excha
 }
 
 // Execute executes the request
-//  @return []V1Exchange
-func (a *MetadataAPIService) V1ExchangesExchangeIdGetExecute(r ApiV1ExchangesExchangeIdGetRequest) ([]V1Exchange, *http.Response, error) {
+//  @return []MarketDataMetadataExchange
+func (a *MetadataAPIService) V1ExchangesExchangeIdGetExecute(r ApiV1ExchangesExchangeIdGetRequest) ([]MarketDataMetadataExchange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Exchange
+		localVarReturnValue  []MarketDataMetadataExchange
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1ExchangesExchangeIdGet")
@@ -756,7 +756,7 @@ func (r ApiV1ExchangesGetRequest) FilterExchangeId(filterExchangeId string) ApiV
 	return r
 }
 
-func (r ApiV1ExchangesGetRequest) Execute() ([]V1Exchange, *http.Response, error) {
+func (r ApiV1ExchangesGetRequest) Execute() ([]MarketDataMetadataExchange, *http.Response, error) {
 	return r.ApiService.V1ExchangesGetExecute(r)
 }
 
@@ -780,13 +780,13 @@ func (a *MetadataAPIService) V1ExchangesGet(ctx context.Context) ApiV1ExchangesG
 }
 
 // Execute executes the request
-//  @return []V1Exchange
-func (a *MetadataAPIService) V1ExchangesGetExecute(r ApiV1ExchangesGetRequest) ([]V1Exchange, *http.Response, error) {
+//  @return []MarketDataMetadataExchange
+func (a *MetadataAPIService) V1ExchangesGetExecute(r ApiV1ExchangesGetRequest) ([]MarketDataMetadataExchange, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Exchange
+		localVarReturnValue  []MarketDataMetadataExchange
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1ExchangesGet")
@@ -877,7 +877,7 @@ type ApiV1ExchangesIconsSizeGetRequest struct {
 	size int32
 }
 
-func (r ApiV1ExchangesIconsSizeGetRequest) Execute() ([]V1Icon, *http.Response, error) {
+func (r ApiV1ExchangesIconsSizeGetRequest) Execute() ([]MarketDataMetadataIcon, *http.Response, error) {
 	return r.ApiService.V1ExchangesIconsSizeGetExecute(r)
 }
 
@@ -897,13 +897,13 @@ func (a *MetadataAPIService) V1ExchangesIconsSizeGet(ctx context.Context, size i
 }
 
 // Execute executes the request
-//  @return []V1Icon
-func (a *MetadataAPIService) V1ExchangesIconsSizeGetExecute(r ApiV1ExchangesIconsSizeGetRequest) ([]V1Icon, *http.Response, error) {
+//  @return []MarketDataMetadataIcon
+func (a *MetadataAPIService) V1ExchangesIconsSizeGetExecute(r ApiV1ExchangesIconsSizeGetRequest) ([]MarketDataMetadataIcon, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Icon
+		localVarReturnValue  []MarketDataMetadataIcon
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1ExchangesIconsSizeGet")
@@ -1006,7 +1006,7 @@ func (r ApiV1SymbolsExchangeIdActiveGetRequest) FilterAssetId(filterAssetId stri
 	return r
 }
 
-func (r ApiV1SymbolsExchangeIdActiveGetRequest) Execute() ([]V1Symbol, *http.Response, error) {
+func (r ApiV1SymbolsExchangeIdActiveGetRequest) Execute() ([]MarketDataMetadataSymbol, *http.Response, error) {
 	return r.ApiService.V1SymbolsExchangeIdActiveGetExecute(r)
 }
 
@@ -1117,13 +1117,13 @@ func (a *MetadataAPIService) V1SymbolsExchangeIdActiveGet(ctx context.Context, e
 }
 
 // Execute executes the request
-//  @return []V1Symbol
-func (a *MetadataAPIService) V1SymbolsExchangeIdActiveGetExecute(r ApiV1SymbolsExchangeIdActiveGetRequest) ([]V1Symbol, *http.Response, error) {
+//  @return []MarketDataMetadataSymbol
+func (a *MetadataAPIService) V1SymbolsExchangeIdActiveGetExecute(r ApiV1SymbolsExchangeIdActiveGetRequest) ([]MarketDataMetadataSymbol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Symbol
+		localVarReturnValue  []MarketDataMetadataSymbol
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1SymbolsExchangeIdActiveGet")
@@ -1232,7 +1232,7 @@ func (r ApiV1SymbolsExchangeIdHistoryGetRequest) Limit(limit int32) ApiV1Symbols
 	return r
 }
 
-func (r ApiV1SymbolsExchangeIdHistoryGetRequest) Execute() ([]V1Symbol, *http.Response, error) {
+func (r ApiV1SymbolsExchangeIdHistoryGetRequest) Execute() ([]MarketDataMetadataSymbol, *http.Response, error) {
 	return r.ApiService.V1SymbolsExchangeIdHistoryGetExecute(r)
 }
 
@@ -1255,13 +1255,13 @@ func (a *MetadataAPIService) V1SymbolsExchangeIdHistoryGet(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return []V1Symbol
-func (a *MetadataAPIService) V1SymbolsExchangeIdHistoryGetExecute(r ApiV1SymbolsExchangeIdHistoryGetRequest) ([]V1Symbol, *http.Response, error) {
+//  @return []MarketDataMetadataSymbol
+func (a *MetadataAPIService) V1SymbolsExchangeIdHistoryGetExecute(r ApiV1SymbolsExchangeIdHistoryGetRequest) ([]MarketDataMetadataSymbol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []V1Symbol
+		localVarReturnValue  []MarketDataMetadataSymbol
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1SymbolsExchangeIdHistoryGet")

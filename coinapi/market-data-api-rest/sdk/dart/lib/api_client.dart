@@ -183,16 +183,20 @@ class ApiClient {
           return valueString == 'true' || valueString == '1';
         case 'DateTime':
           return value is DateTime ? value : DateTime.tryParse(value);
+        case 'MarketDataMetadataAsset':
+          return MarketDataMetadataAsset.fromJson(value);
+        case 'MarketDataMetadataChain':
+          return MarketDataMetadataChain.fromJson(value);
+        case 'MarketDataMetadataExchange':
+          return MarketDataMetadataExchange.fromJson(value);
+        case 'MarketDataMetadataIcon':
+          return MarketDataMetadataIcon.fromJson(value);
+        case 'MarketDataMetadataSymbol':
+          return MarketDataMetadataSymbol.fromJson(value);
         case 'OhlcvExchangeTimeseriesItem':
           return OhlcvExchangeTimeseriesItem.fromJson(value);
-        case 'V1Asset':
-          return V1Asset.fromJson(value);
-        case 'V1Chain':
-          return V1Chain.fromJson(value);
         case 'V1ChainNetworkAddress':
           return V1ChainNetworkAddress.fromJson(value);
-        case 'V1Exchange':
-          return V1Exchange.fromJson(value);
         case 'V1ExchangeRate':
           return V1ExchangeRate.fromJson(value);
         case 'V1ExchangeRates':
@@ -203,8 +207,6 @@ class ApiClient {
           return V1ExchangeRatesTimeseriesItem.fromJson(value);
         case 'V1GeneralData':
           return V1GeneralData.fromJson(value);
-        case 'V1Icon':
-          return V1Icon.fromJson(value);
         case 'V1LastTrade':
           return V1LastTrade.fromJson(value);
         case 'V1ListingItem':
@@ -229,8 +231,6 @@ class ApiClient {
           return V1QuoteTrade.fromJson(value);
         case 'V1Strike':
           return V1Strike.fromJson(value);
-        case 'V1Symbol':
-          return V1Symbol.fromJson(value);
         case 'V1SymbolMapping':
           return V1SymbolMapping.fromJson(value);
         case 'V1TimeseriesItem':

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a id="Invoke-V1AssetsAssetIdGet"></a>
 # **Invoke-V1AssetsAssetIdGet**
-> V1Asset[] Invoke-V1AssetsAssetIdGet<br>
+> MarketDataMetadataAsset[] Invoke-V1AssetsAssetIdGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AssetId] <String><br>
 
 List all assets by asset ID
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Asset[]**](V1Asset.md) (PSCustomObject)
+[**MarketDataMetadataAsset[]**](MarketDataMetadataAsset.md) (PSCustomObject)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1AssetsGet"></a>
 # **Invoke-V1AssetsGet**
-> V1Asset[] Invoke-V1AssetsGet<br>
+> MarketDataMetadataAsset[] Invoke-V1AssetsGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterAssetId] <String><br>
 
 List all assets
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Asset[]**](V1Asset.md) (PSCustomObject)
+[**MarketDataMetadataAsset[]**](MarketDataMetadataAsset.md) (PSCustomObject)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1AssetsIconsSizeGet"></a>
 # **Invoke-V1AssetsIconsSizeGet**
-> V1Icon[] Invoke-V1AssetsIconsSizeGet<br>
+> MarketDataMetadataIcon[] Invoke-V1AssetsIconsSizeGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Size] <Int32><br>
 
 List all asset icons
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Icon[]**](V1Icon.md) (PSCustomObject)
+[**MarketDataMetadataIcon[]**](MarketDataMetadataIcon.md) (PSCustomObject)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1ChainsChainIdGet"></a>
 # **Invoke-V1ChainsChainIdGet**
-> V1Chain[] Invoke-V1ChainsChainIdGet<br>
+> MarketDataMetadataChain[] Invoke-V1ChainsChainIdGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ChainId] <String><br>
 
 List all chains by chain ID
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Chain[]**](V1Chain.md) (PSCustomObject)
+[**MarketDataMetadataChain[]**](MarketDataMetadataChain.md) (PSCustomObject)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1ChainsGet"></a>
 # **Invoke-V1ChainsGet**
-> V1Chain[] Invoke-V1ChainsGet<br>
+> MarketDataMetadataChain[] Invoke-V1ChainsGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterChainId] <String><br>
 
 List all blockchain chains
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Chain[]**](V1Chain.md) (PSCustomObject)
+[**MarketDataMetadataChain[]**](MarketDataMetadataChain.md) (PSCustomObject)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1ExchangesExchangeIdGet"></a>
 # **Invoke-V1ExchangesExchangeIdGet**
-> V1Exchange[] Invoke-V1ExchangesExchangeIdGet<br>
+> MarketDataMetadataExchange[] Invoke-V1ExchangesExchangeIdGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 
 List all exchanges by exchange_id
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Exchange[]**](V1Exchange.md) (PSCustomObject)
+[**MarketDataMetadataExchange[]**](MarketDataMetadataExchange.md) (PSCustomObject)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1ExchangesGet"></a>
 # **Invoke-V1ExchangesGet**
-> V1Exchange[] Invoke-V1ExchangesGet<br>
+> MarketDataMetadataExchange[] Invoke-V1ExchangesGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterExchangeId] <String><br>
 
 List all exchanges
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Exchange[]**](V1Exchange.md) (PSCustomObject)
+[**MarketDataMetadataExchange[]**](MarketDataMetadataExchange.md) (PSCustomObject)
 
 ### Authorization
 
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1ExchangesIconsSizeGet"></a>
 # **Invoke-V1ExchangesIconsSizeGet**
-> V1Icon[] Invoke-V1ExchangesIconsSizeGet<br>
+> MarketDataMetadataIcon[] Invoke-V1ExchangesIconsSizeGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Size] <Int32><br>
 
 List of icons for the exchanges
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Icon[]**](V1Icon.md) (PSCustomObject)
+[**MarketDataMetadataIcon[]**](MarketDataMetadataIcon.md) (PSCustomObject)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1SymbolsExchangeIdActiveGet"></a>
 # **Invoke-V1SymbolsExchangeIdActiveGet**
-> V1Symbol[] Invoke-V1SymbolsExchangeIdActiveGet<br>
+> MarketDataMetadataSymbol[] Invoke-V1SymbolsExchangeIdActiveGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterSymbolId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterAssetId] <String><br>
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Symbol[]**](V1Symbol.md) (PSCustomObject)
+[**MarketDataMetadataSymbol[]**](MarketDataMetadataSymbol.md) (PSCustomObject)
 
 ### Authorization
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1SymbolsExchangeIdHistoryGet"></a>
 # **Invoke-V1SymbolsExchangeIdHistoryGet**
-> V1Symbol[] Invoke-V1SymbolsExchangeIdHistoryGet<br>
+> MarketDataMetadataSymbol[] Invoke-V1SymbolsExchangeIdHistoryGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Page] <System.Nullable[Int32]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Symbol[]**](V1Symbol.md) (PSCustomObject)
+[**MarketDataMetadataSymbol[]**](MarketDataMetadataSymbol.md) (PSCustomObject)
 
 ### Authorization
 

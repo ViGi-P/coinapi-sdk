@@ -36,7 +36,7 @@ MetadataApi::~MetadataApi()
 {
 }
 
-pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsAssetIdGet(utility::string_t assetId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> MetadataApi::v1AssetsAssetIdGet(utility::string_t assetId) const
 {
 
 
@@ -150,14 +150,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsAssetIdG
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Asset>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Asset>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Asset> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Asset> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -175,7 +175,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsAssetIdG
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsGet(boost::optional<utility::string_t> filterAssetId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> MetadataApi::v1AssetsGet(boost::optional<utility::string_t> filterAssetId) const
 {
 
 
@@ -292,14 +292,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsGet(boos
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Asset>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Asset>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Asset> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Asset> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -317,7 +317,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsGet(boos
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Icon>>> MetadataApi::v1AssetsIconsSizeGet(int32_t size) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Icon>>> MetadataApi::v1AssetsIconsSizeGet(int32_t size) const
 {
 
 
@@ -431,14 +431,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Icon>>> MetadataApi::v1AssetsIconsSize
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Icon>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Icon>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Icon> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Icon> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -456,7 +456,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Icon>>> MetadataApi::v1AssetsIconsSize
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Chain>>> MetadataApi::v1ChainsChainIdGet(utility::string_t chainId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Chain>>> MetadataApi::v1ChainsChainIdGet(utility::string_t chainId) const
 {
 
 
@@ -570,14 +570,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Chain>>> MetadataApi::v1ChainsChainIdG
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Chain>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Chain>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Chain> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Chain> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -595,7 +595,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Chain>>> MetadataApi::v1ChainsChainIdG
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Chain>>> MetadataApi::v1ChainsGet(boost::optional<utility::string_t> filterChainId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Chain>>> MetadataApi::v1ChainsGet(boost::optional<utility::string_t> filterChainId) const
 {
 
 
@@ -712,14 +712,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Chain>>> MetadataApi::v1ChainsGet(boos
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Chain>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Chain>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Chain> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Chain> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -737,7 +737,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Chain>>> MetadataApi::v1ChainsGet(boos
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> MetadataApi::v1ExchangesExchangeIdGet(utility::string_t exchangeId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Exchange>>> MetadataApi::v1ExchangesExchangeIdGet(utility::string_t exchangeId) const
 {
 
 
@@ -851,14 +851,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> MetadataApi::v1ExchangesEx
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Exchange>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Exchange>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Exchange> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Exchange> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -876,7 +876,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> MetadataApi::v1ExchangesEx
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> MetadataApi::v1ExchangesGet(boost::optional<utility::string_t> filterExchangeId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Exchange>>> MetadataApi::v1ExchangesGet(boost::optional<utility::string_t> filterExchangeId) const
 {
 
 
@@ -993,14 +993,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> MetadataApi::v1ExchangesGe
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Exchange>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Exchange>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Exchange> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Exchange> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -1018,7 +1018,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Exchange>>> MetadataApi::v1ExchangesGe
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Icon>>> MetadataApi::v1ExchangesIconsSizeGet(int32_t size) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Icon>>> MetadataApi::v1ExchangesIconsSizeGet(int32_t size) const
 {
 
 
@@ -1132,14 +1132,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Icon>>> MetadataApi::v1ExchangesIconsS
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Icon>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Icon>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Icon> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Icon> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -1157,7 +1157,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Icon>>> MetadataApi::v1ExchangesIconsS
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> MetadataApi::v1SymbolsExchangeIdActiveGet(utility::string_t exchangeId, boost::optional<utility::string_t> filterSymbolId, boost::optional<utility::string_t> filterAssetId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Symbol>>> MetadataApi::v1SymbolsExchangeIdActiveGet(utility::string_t exchangeId, boost::optional<utility::string_t> filterSymbolId, boost::optional<utility::string_t> filterAssetId) const
 {
 
 
@@ -1279,14 +1279,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> MetadataApi::v1SymbolsExchan
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Symbol>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Symbol>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Symbol> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Symbol> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -1304,7 +1304,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> MetadataApi::v1SymbolsExchan
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> MetadataApi::v1SymbolsExchangeIdHistoryGet(utility::string_t exchangeId, boost::optional<int32_t> page, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Symbol>>> MetadataApi::v1SymbolsExchangeIdHistoryGet(utility::string_t exchangeId, boost::optional<int32_t> page, boost::optional<int32_t> limit) const
 {
 
 
@@ -1426,14 +1426,14 @@ pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> MetadataApi::v1SymbolsExchan
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<V1_Symbol>> localVarResult;
+        std::vector<std::shared_ptr<MarketDataMetadata_Symbol>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<V1_Symbol> localVarItemObj;
+                std::shared_ptr<MarketDataMetadata_Symbol> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }

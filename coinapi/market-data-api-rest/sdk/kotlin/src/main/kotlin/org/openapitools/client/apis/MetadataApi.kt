@@ -27,11 +27,11 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import org.openapitools.client.models.V1Asset
-import org.openapitools.client.models.V1Chain
-import org.openapitools.client.models.V1Exchange
-import org.openapitools.client.models.V1Icon
-import org.openapitools.client.models.V1Symbol
+import org.openapitools.client.models.MarketDataMetadataAsset
+import org.openapitools.client.models.MarketDataMetadataChain
+import org.openapitools.client.models.MarketDataMetadataExchange
+import org.openapitools.client.models.MarketDataMetadataIcon
+import org.openapitools.client.models.MarketDataMetadataSymbol
 import org.openapitools.client.models.V1SymbolMapping
 
 import com.squareup.moshi.Json
@@ -63,7 +63,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all assets by asset ID
      * 
      * @param assetId The asset ID.
-     * @return kotlin.collections.List<V1Asset>
+     * @return kotlin.collections.List<MarketDataMetadataAsset>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -72,11 +72,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1AssetsAssetIdGet(assetId: kotlin.String) : kotlin.collections.List<V1Asset> {
+    fun v1AssetsAssetIdGet(assetId: kotlin.String) : kotlin.collections.List<MarketDataMetadataAsset> {
         val localVarResponse = v1AssetsAssetIdGetWithHttpInfo(assetId = assetId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Asset>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataAsset>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -95,16 +95,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all assets by asset ID
      * 
      * @param assetId The asset ID.
-     * @return ApiResponse<kotlin.collections.List<V1Asset>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataAsset>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1AssetsAssetIdGetWithHttpInfo(assetId: kotlin.String) : ApiResponse<kotlin.collections.List<V1Asset>?> {
+    fun v1AssetsAssetIdGetWithHttpInfo(assetId: kotlin.String) : ApiResponse<kotlin.collections.List<MarketDataMetadataAsset>?> {
         val localVariableConfig = v1AssetsAssetIdGetRequestConfig(assetId = assetId)
 
-        return request<Unit, kotlin.collections.List<V1Asset>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataAsset>>(
             localVariableConfig
         )
     }
@@ -136,7 +136,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
-     * @return kotlin.collections.List<V1Asset>
+     * @return kotlin.collections.List<MarketDataMetadataAsset>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -145,11 +145,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1AssetsGet(filterAssetId: kotlin.String? = null) : kotlin.collections.List<V1Asset> {
+    fun v1AssetsGet(filterAssetId: kotlin.String? = null) : kotlin.collections.List<MarketDataMetadataAsset> {
         val localVarResponse = v1AssetsGetWithHttpInfo(filterAssetId = filterAssetId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Asset>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataAsset>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -168,16 +168,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
-     * @return ApiResponse<kotlin.collections.List<V1Asset>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataAsset>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1AssetsGetWithHttpInfo(filterAssetId: kotlin.String?) : ApiResponse<kotlin.collections.List<V1Asset>?> {
+    fun v1AssetsGetWithHttpInfo(filterAssetId: kotlin.String?) : ApiResponse<kotlin.collections.List<MarketDataMetadataAsset>?> {
         val localVariableConfig = v1AssetsGetRequestConfig(filterAssetId = filterAssetId)
 
-        return request<Unit, kotlin.collections.List<V1Asset>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataAsset>>(
             localVariableConfig
         )
     }
@@ -214,7 +214,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all asset icons
      * Gets the list of icons (of the given size) for all the assets.
      * @param size The size of the icons.
-     * @return kotlin.collections.List<V1Icon>
+     * @return kotlin.collections.List<MarketDataMetadataIcon>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -223,11 +223,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1AssetsIconsSizeGet(size: kotlin.Int) : kotlin.collections.List<V1Icon> {
+    fun v1AssetsIconsSizeGet(size: kotlin.Int) : kotlin.collections.List<MarketDataMetadataIcon> {
         val localVarResponse = v1AssetsIconsSizeGetWithHttpInfo(size = size)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Icon>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataIcon>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -246,16 +246,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all asset icons
      * Gets the list of icons (of the given size) for all the assets.
      * @param size The size of the icons.
-     * @return ApiResponse<kotlin.collections.List<V1Icon>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataIcon>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1AssetsIconsSizeGetWithHttpInfo(size: kotlin.Int) : ApiResponse<kotlin.collections.List<V1Icon>?> {
+    fun v1AssetsIconsSizeGetWithHttpInfo(size: kotlin.Int) : ApiResponse<kotlin.collections.List<MarketDataMetadataIcon>?> {
         val localVariableConfig = v1AssetsIconsSizeGetRequestConfig(size = size)
 
-        return request<Unit, kotlin.collections.List<V1Icon>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataIcon>>(
             localVariableConfig
         )
     }
@@ -287,7 +287,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all chains by chain ID
      * 
      * @param chainId The chain ID.
-     * @return kotlin.collections.List<V1Chain>
+     * @return kotlin.collections.List<MarketDataMetadataChain>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -296,11 +296,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1ChainsChainIdGet(chainId: kotlin.String) : kotlin.collections.List<V1Chain> {
+    fun v1ChainsChainIdGet(chainId: kotlin.String) : kotlin.collections.List<MarketDataMetadataChain> {
         val localVarResponse = v1ChainsChainIdGetWithHttpInfo(chainId = chainId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Chain>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataChain>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -319,16 +319,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all chains by chain ID
      * 
      * @param chainId The chain ID.
-     * @return ApiResponse<kotlin.collections.List<V1Chain>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataChain>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1ChainsChainIdGetWithHttpInfo(chainId: kotlin.String) : ApiResponse<kotlin.collections.List<V1Chain>?> {
+    fun v1ChainsChainIdGetWithHttpInfo(chainId: kotlin.String) : ApiResponse<kotlin.collections.List<MarketDataMetadataChain>?> {
         val localVariableConfig = v1ChainsChainIdGetRequestConfig(chainId = chainId)
 
-        return request<Unit, kotlin.collections.List<V1Chain>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataChain>>(
             localVariableConfig
         )
     }
@@ -360,7 +360,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all blockchain chains
      * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;). (optional)
-     * @return kotlin.collections.List<V1Chain>
+     * @return kotlin.collections.List<MarketDataMetadataChain>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -369,11 +369,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1ChainsGet(filterChainId: kotlin.String? = null) : kotlin.collections.List<V1Chain> {
+    fun v1ChainsGet(filterChainId: kotlin.String? = null) : kotlin.collections.List<MarketDataMetadataChain> {
         val localVarResponse = v1ChainsGetWithHttpInfo(filterChainId = filterChainId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Chain>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataChain>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -392,16 +392,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all blockchain chains
      * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;). (optional)
-     * @return ApiResponse<kotlin.collections.List<V1Chain>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataChain>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1ChainsGetWithHttpInfo(filterChainId: kotlin.String?) : ApiResponse<kotlin.collections.List<V1Chain>?> {
+    fun v1ChainsGetWithHttpInfo(filterChainId: kotlin.String?) : ApiResponse<kotlin.collections.List<MarketDataMetadataChain>?> {
         val localVariableConfig = v1ChainsGetRequestConfig(filterChainId = filterChainId)
 
-        return request<Unit, kotlin.collections.List<V1Chain>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataChain>>(
             localVariableConfig
         )
     }
@@ -438,7 +438,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all exchanges by exchange_id
      * 
      * @param exchangeId The ID of the exchange.
-     * @return kotlin.collections.List<V1Exchange>
+     * @return kotlin.collections.List<MarketDataMetadataExchange>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -447,11 +447,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1ExchangesExchangeIdGet(exchangeId: kotlin.String) : kotlin.collections.List<V1Exchange> {
+    fun v1ExchangesExchangeIdGet(exchangeId: kotlin.String) : kotlin.collections.List<MarketDataMetadataExchange> {
         val localVarResponse = v1ExchangesExchangeIdGetWithHttpInfo(exchangeId = exchangeId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Exchange>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataExchange>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -470,16 +470,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all exchanges by exchange_id
      * 
      * @param exchangeId The ID of the exchange.
-     * @return ApiResponse<kotlin.collections.List<V1Exchange>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataExchange>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1ExchangesExchangeIdGetWithHttpInfo(exchangeId: kotlin.String) : ApiResponse<kotlin.collections.List<V1Exchange>?> {
+    fun v1ExchangesExchangeIdGetWithHttpInfo(exchangeId: kotlin.String) : ApiResponse<kotlin.collections.List<MarketDataMetadataExchange>?> {
         val localVariableConfig = v1ExchangesExchangeIdGetRequestConfig(exchangeId = exchangeId)
 
-        return request<Unit, kotlin.collections.List<V1Exchange>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataExchange>>(
             localVariableConfig
         )
     }
@@ -511,7 +511,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all exchanges
      * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;) (optional)
-     * @return kotlin.collections.List<V1Exchange>
+     * @return kotlin.collections.List<MarketDataMetadataExchange>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -520,11 +520,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1ExchangesGet(filterExchangeId: kotlin.String? = null) : kotlin.collections.List<V1Exchange> {
+    fun v1ExchangesGet(filterExchangeId: kotlin.String? = null) : kotlin.collections.List<MarketDataMetadataExchange> {
         val localVarResponse = v1ExchangesGetWithHttpInfo(filterExchangeId = filterExchangeId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Exchange>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataExchange>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -543,16 +543,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all exchanges
      * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;) (optional)
-     * @return ApiResponse<kotlin.collections.List<V1Exchange>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataExchange>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1ExchangesGetWithHttpInfo(filterExchangeId: kotlin.String?) : ApiResponse<kotlin.collections.List<V1Exchange>?> {
+    fun v1ExchangesGetWithHttpInfo(filterExchangeId: kotlin.String?) : ApiResponse<kotlin.collections.List<MarketDataMetadataExchange>?> {
         val localVariableConfig = v1ExchangesGetRequestConfig(filterExchangeId = filterExchangeId)
 
-        return request<Unit, kotlin.collections.List<V1Exchange>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataExchange>>(
             localVariableConfig
         )
     }
@@ -589,7 +589,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List of icons for the exchanges
      * 
      * @param size The size of the icons.
-     * @return kotlin.collections.List<V1Icon>
+     * @return kotlin.collections.List<MarketDataMetadataIcon>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -598,11 +598,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1ExchangesIconsSizeGet(size: kotlin.Int) : kotlin.collections.List<V1Icon> {
+    fun v1ExchangesIconsSizeGet(size: kotlin.Int) : kotlin.collections.List<MarketDataMetadataIcon> {
         val localVarResponse = v1ExchangesIconsSizeGetWithHttpInfo(size = size)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Icon>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataIcon>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -621,16 +621,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List of icons for the exchanges
      * 
      * @param size The size of the icons.
-     * @return ApiResponse<kotlin.collections.List<V1Icon>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataIcon>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1ExchangesIconsSizeGetWithHttpInfo(size: kotlin.Int) : ApiResponse<kotlin.collections.List<V1Icon>?> {
+    fun v1ExchangesIconsSizeGetWithHttpInfo(size: kotlin.Int) : ApiResponse<kotlin.collections.List<MarketDataMetadataIcon>?> {
         val localVariableConfig = v1ExchangesIconsSizeGetRequestConfig(size = size)
 
-        return request<Unit, kotlin.collections.List<V1Icon>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataIcon>>(
             localVariableConfig
         )
     }
@@ -664,7 +664,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @param exchangeId The ID of the exchange.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param filterAssetId The filter for asset ID. (optional)
-     * @return kotlin.collections.List<V1Symbol>
+     * @return kotlin.collections.List<MarketDataMetadataSymbol>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -673,11 +673,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1SymbolsExchangeIdActiveGet(exchangeId: kotlin.String, filterSymbolId: kotlin.String? = null, filterAssetId: kotlin.String? = null) : kotlin.collections.List<V1Symbol> {
+    fun v1SymbolsExchangeIdActiveGet(exchangeId: kotlin.String, filterSymbolId: kotlin.String? = null, filterAssetId: kotlin.String? = null) : kotlin.collections.List<MarketDataMetadataSymbol> {
         val localVarResponse = v1SymbolsExchangeIdActiveGetWithHttpInfo(exchangeId = exchangeId, filterSymbolId = filterSymbolId, filterAssetId = filterAssetId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Symbol>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataSymbol>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -698,16 +698,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @param exchangeId The ID of the exchange.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param filterAssetId The filter for asset ID. (optional)
-     * @return ApiResponse<kotlin.collections.List<V1Symbol>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataSymbol>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1SymbolsExchangeIdActiveGetWithHttpInfo(exchangeId: kotlin.String, filterSymbolId: kotlin.String?, filterAssetId: kotlin.String?) : ApiResponse<kotlin.collections.List<V1Symbol>?> {
+    fun v1SymbolsExchangeIdActiveGetWithHttpInfo(exchangeId: kotlin.String, filterSymbolId: kotlin.String?, filterAssetId: kotlin.String?) : ApiResponse<kotlin.collections.List<MarketDataMetadataSymbol>?> {
         val localVariableConfig = v1SymbolsExchangeIdActiveGetRequestConfig(exchangeId = exchangeId, filterSymbolId = filterSymbolId, filterAssetId = filterAssetId)
 
-        return request<Unit, kotlin.collections.List<V1Symbol>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataSymbol>>(
             localVariableConfig
         )
     }
@@ -751,7 +751,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @param exchangeId The ID of the exchange.
      * @param page The page number for pagination (starts from 1). (optional, default to 1)
      * @param limit Number of records to return per page. (optional, default to 100)
-     * @return kotlin.collections.List<V1Symbol>
+     * @return kotlin.collections.List<MarketDataMetadataSymbol>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -760,11 +760,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1SymbolsExchangeIdHistoryGet(exchangeId: kotlin.String, page: kotlin.Int? = 1, limit: kotlin.Int? = 100) : kotlin.collections.List<V1Symbol> {
+    fun v1SymbolsExchangeIdHistoryGet(exchangeId: kotlin.String, page: kotlin.Int? = 1, limit: kotlin.Int? = 100) : kotlin.collections.List<MarketDataMetadataSymbol> {
         val localVarResponse = v1SymbolsExchangeIdHistoryGetWithHttpInfo(exchangeId = exchangeId, page = page, limit = limit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Symbol>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataSymbol>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -785,16 +785,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @param exchangeId The ID of the exchange.
      * @param page The page number for pagination (starts from 1). (optional, default to 1)
      * @param limit Number of records to return per page. (optional, default to 100)
-     * @return ApiResponse<kotlin.collections.List<V1Symbol>?>
+     * @return ApiResponse<kotlin.collections.List<MarketDataMetadataSymbol>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1SymbolsExchangeIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, page: kotlin.Int?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<V1Symbol>?> {
+    fun v1SymbolsExchangeIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, page: kotlin.Int?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<MarketDataMetadataSymbol>?> {
         val localVariableConfig = v1SymbolsExchangeIdHistoryGetRequestConfig(exchangeId = exchangeId, page = page, limit = limit)
 
-        return request<Unit, kotlin.collections.List<V1Symbol>>(
+        return request<Unit, kotlin.collections.List<MarketDataMetadataSymbol>>(
             localVariableConfig
         )
     }

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **V1AssetsAssetIdGet**
-> array[V1Asset] V1AssetsAssetIdGet(asset_id)
+> array[MarketDataMetadataAsset] V1AssetsAssetIdGet(asset_id)
 
 List all assets by asset ID
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Asset]**](v1.Asset.md)
+[**array[MarketDataMetadataAsset]**](MarketDataMetadata.Asset.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1AssetsGet**
-> array[V1Asset] V1AssetsGet(filter_asset_id = var.filter_asset_id)
+> array[MarketDataMetadataAsset] V1AssetsGet(filter_asset_id = var.filter_asset_id)
 
 List all assets
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Asset]**](v1.Asset.md)
+[**array[MarketDataMetadataAsset]**](MarketDataMetadata.Asset.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1AssetsIconsSizeGet**
-> array[V1Icon] V1AssetsIconsSizeGet(size)
+> array[MarketDataMetadataIcon] V1AssetsIconsSizeGet(size)
 
 List all asset icons
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Icon]**](v1.Icon.md)
+[**array[MarketDataMetadataIcon]**](MarketDataMetadata.Icon.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1ChainsChainIdGet**
-> array[V1Chain] V1ChainsChainIdGet(chain_id)
+> array[MarketDataMetadataChain] V1ChainsChainIdGet(chain_id)
 
 List all chains by chain ID
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Chain]**](v1.Chain.md)
+[**array[MarketDataMetadataChain]**](MarketDataMetadata.Chain.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1ChainsGet**
-> array[V1Chain] V1ChainsGet(filter_chain_id = var.filter_chain_id)
+> array[MarketDataMetadataChain] V1ChainsGet(filter_chain_id = var.filter_chain_id)
 
 List all blockchain chains
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Chain]**](v1.Chain.md)
+[**array[MarketDataMetadataChain]**](MarketDataMetadata.Chain.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1ExchangesExchangeIdGet**
-> array[V1Exchange] V1ExchangesExchangeIdGet(exchange_id)
+> array[MarketDataMetadataExchange] V1ExchangesExchangeIdGet(exchange_id)
 
 List all exchanges by exchange_id
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Exchange]**](v1.Exchange.md)
+[**array[MarketDataMetadataExchange]**](MarketDataMetadata.Exchange.md)
 
 ### Authorization
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1ExchangesGet**
-> array[V1Exchange] V1ExchangesGet(filter_exchange_id = var.filter_exchange_id)
+> array[MarketDataMetadataExchange] V1ExchangesGet(filter_exchange_id = var.filter_exchange_id)
 
 List all exchanges
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Exchange]**](v1.Exchange.md)
+[**array[MarketDataMetadataExchange]**](MarketDataMetadata.Exchange.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1ExchangesIconsSizeGet**
-> array[V1Icon] V1ExchangesIconsSizeGet(size)
+> array[MarketDataMetadataIcon] V1ExchangesIconsSizeGet(size)
 
 List of icons for the exchanges
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Icon]**](v1.Icon.md)
+[**array[MarketDataMetadataIcon]**](MarketDataMetadata.Icon.md)
 
 ### Authorization
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1SymbolsExchangeIdActiveGet**
-> array[V1Symbol] V1SymbolsExchangeIdActiveGet(exchange_id, filter_symbol_id = var.filter_symbol_id, filter_asset_id = var.filter_asset_id)
+> array[MarketDataMetadataSymbol] V1SymbolsExchangeIdActiveGet(exchange_id, filter_symbol_id = var.filter_symbol_id, filter_asset_id = var.filter_asset_id)
 
 List all active symbols
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Symbol]**](v1.Symbol.md)
+[**array[MarketDataMetadataSymbol]**](MarketDataMetadata.Symbol.md)
 
 ### Authorization
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1SymbolsExchangeIdHistoryGet**
-> array[V1Symbol] V1SymbolsExchangeIdHistoryGet(exchange_id, page = 1, limit = 100)
+> array[MarketDataMetadataSymbol] V1SymbolsExchangeIdHistoryGet(exchange_id, page = 1, limit = 100)
 
 List all historical symbols for an exchange.
 
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Symbol]**](v1.Symbol.md)
+[**array[MarketDataMetadataSymbol]**](MarketDataMetadata.Symbol.md)
 
 ### Authorization
 

@@ -38,17 +38,18 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "MarketDataMetadataAsset",
+    "MarketDataMetadataChain",
+    "MarketDataMetadataExchange",
+    "MarketDataMetadataIcon",
+    "MarketDataMetadataSymbol",
     "OhlcvExchangeTimeseriesItem",
-    "V1Asset",
-    "V1Chain",
     "V1ChainNetworkAddress",
-    "V1Exchange",
     "V1ExchangeRate",
     "V1ExchangeRates",
     "V1ExchangeRatesRate",
     "V1ExchangeRatesTimeseriesItem",
     "V1GeneralData",
-    "V1Icon",
     "V1LastTrade",
     "V1ListingItem",
     "V1Metric",
@@ -61,7 +62,6 @@ __all__ = [
     "V1Quote",
     "V1QuoteTrade",
     "V1Strike",
-    "V1Symbol",
     "V1SymbolMapping",
     "V1TimeseriesItem",
     "V1TimeseriesPeriod",
@@ -92,17 +92,18 @@ from api_bricks_coinapi_market_data_api_rest.exceptions import ApiAttributeError
 from api_bricks_coinapi_market_data_api_rest.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_asset import MarketDataMetadataAsset as MarketDataMetadataAsset
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_chain import MarketDataMetadataChain as MarketDataMetadataChain
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_exchange import MarketDataMetadataExchange as MarketDataMetadataExchange
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_icon import MarketDataMetadataIcon as MarketDataMetadataIcon
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_symbol import MarketDataMetadataSymbol as MarketDataMetadataSymbol
 from api_bricks_coinapi_market_data_api_rest.models.ohlcv_exchange_timeseries_item import OhlcvExchangeTimeseriesItem as OhlcvExchangeTimeseriesItem
-from api_bricks_coinapi_market_data_api_rest.models.v1_asset import V1Asset as V1Asset
-from api_bricks_coinapi_market_data_api_rest.models.v1_chain import V1Chain as V1Chain
 from api_bricks_coinapi_market_data_api_rest.models.v1_chain_network_address import V1ChainNetworkAddress as V1ChainNetworkAddress
-from api_bricks_coinapi_market_data_api_rest.models.v1_exchange import V1Exchange as V1Exchange
 from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rate import V1ExchangeRate as V1ExchangeRate
 from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates import V1ExchangeRates as V1ExchangeRates
 from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates_rate import V1ExchangeRatesRate as V1ExchangeRatesRate
 from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem as V1ExchangeRatesTimeseriesItem
 from api_bricks_coinapi_market_data_api_rest.models.v1_general_data import V1GeneralData as V1GeneralData
-from api_bricks_coinapi_market_data_api_rest.models.v1_icon import V1Icon as V1Icon
 from api_bricks_coinapi_market_data_api_rest.models.v1_last_trade import V1LastTrade as V1LastTrade
 from api_bricks_coinapi_market_data_api_rest.models.v1_listing_item import V1ListingItem as V1ListingItem
 from api_bricks_coinapi_market_data_api_rest.models.v1_metric import V1Metric as V1Metric
@@ -115,7 +116,6 @@ from api_bricks_coinapi_market_data_api_rest.models.v1_order_book_depth import V
 from api_bricks_coinapi_market_data_api_rest.models.v1_quote import V1Quote as V1Quote
 from api_bricks_coinapi_market_data_api_rest.models.v1_quote_trade import V1QuoteTrade as V1QuoteTrade
 from api_bricks_coinapi_market_data_api_rest.models.v1_strike import V1Strike as V1Strike
-from api_bricks_coinapi_market_data_api_rest.models.v1_symbol import V1Symbol as V1Symbol
 from api_bricks_coinapi_market_data_api_rest.models.v1_symbol_mapping import V1SymbolMapping as V1SymbolMapping
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_item import V1TimeseriesItem as V1TimeseriesItem
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_period import V1TimeseriesPeriod as V1TimeseriesPeriod

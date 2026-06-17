@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## V1AssetsAssetIdGet
 
-> []V1Asset V1AssetsAssetIdGet(ctx, assetId).Execute()
+> []MarketDataMetadataAsset V1AssetsAssetIdGet(ctx, assetId).Execute()
 
 List all assets by asset ID
 
@@ -46,7 +46,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1AssetsAssetIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AssetsAssetIdGet`: []V1Asset
+	// response from `V1AssetsAssetIdGet`: []MarketDataMetadataAsset
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1AssetsAssetIdGet`: %v\n", resp)
 }
 ```
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Asset**](V1Asset.md)
+[**[]MarketDataMetadataAsset**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AssetsGet
 
-> []V1Asset V1AssetsGet(ctx).FilterAssetId(filterAssetId).Execute()
+> []MarketDataMetadataAsset V1AssetsGet(ctx).FilterAssetId(filterAssetId).Execute()
 
 List all assets
 
@@ -116,7 +116,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1AssetsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AssetsGet`: []V1Asset
+	// response from `V1AssetsGet`: []MarketDataMetadataAsset
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1AssetsGet`: %v\n", resp)
 }
 ```
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Asset**](V1Asset.md)
+[**[]MarketDataMetadataAsset**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## V1AssetsIconsSizeGet
 
-> []V1Icon V1AssetsIconsSizeGet(ctx, size).Execute()
+> []MarketDataMetadataIcon V1AssetsIconsSizeGet(ctx, size).Execute()
 
 List all asset icons
 
@@ -182,7 +182,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1AssetsIconsSizeGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AssetsIconsSizeGet`: []V1Icon
+	// response from `V1AssetsIconsSizeGet`: []MarketDataMetadataIcon
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1AssetsIconsSizeGet`: %v\n", resp)
 }
 ```
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Icon**](V1Icon.md)
+[**[]MarketDataMetadataIcon**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## V1ChainsChainIdGet
 
-> []V1Chain V1ChainsChainIdGet(ctx, chainId).Execute()
+> []MarketDataMetadataChain V1ChainsChainIdGet(ctx, chainId).Execute()
 
 List all chains by chain ID
 
@@ -250,7 +250,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1ChainsChainIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ChainsChainIdGet`: []V1Chain
+	// response from `V1ChainsChainIdGet`: []MarketDataMetadataChain
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1ChainsChainIdGet`: %v\n", resp)
 }
 ```
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Chain**](V1Chain.md)
+[**[]MarketDataMetadataChain**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ## V1ChainsGet
 
-> []V1Chain V1ChainsGet(ctx).FilterChainId(filterChainId).Execute()
+> []MarketDataMetadataChain V1ChainsGet(ctx).FilterChainId(filterChainId).Execute()
 
 List all blockchain chains
 
@@ -320,7 +320,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1ChainsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ChainsGet`: []V1Chain
+	// response from `V1ChainsGet`: []MarketDataMetadataChain
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1ChainsGet`: %v\n", resp)
 }
 ```
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Chain**](V1Chain.md)
+[**[]MarketDataMetadataChain**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ## V1ExchangesExchangeIdGet
 
-> []V1Exchange V1ExchangesExchangeIdGet(ctx, exchangeId).Execute()
+> []MarketDataMetadataExchange V1ExchangesExchangeIdGet(ctx, exchangeId).Execute()
 
 List all exchanges by exchange_id
 
@@ -384,7 +384,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1ExchangesExchangeIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExchangesExchangeIdGet`: []V1Exchange
+	// response from `V1ExchangesExchangeIdGet`: []MarketDataMetadataExchange
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1ExchangesExchangeIdGet`: %v\n", resp)
 }
 ```
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Exchange**](V1Exchange.md)
+[**[]MarketDataMetadataExchange**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ## V1ExchangesGet
 
-> []V1Exchange V1ExchangesGet(ctx).FilterExchangeId(filterExchangeId).Execute()
+> []MarketDataMetadataExchange V1ExchangesGet(ctx).FilterExchangeId(filterExchangeId).Execute()
 
 List all exchanges
 
@@ -454,7 +454,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1ExchangesGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExchangesGet`: []V1Exchange
+	// response from `V1ExchangesGet`: []MarketDataMetadataExchange
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1ExchangesGet`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Exchange**](V1Exchange.md)
+[**[]MarketDataMetadataExchange**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## V1ExchangesIconsSizeGet
 
-> []V1Icon V1ExchangesIconsSizeGet(ctx, size).Execute()
+> []MarketDataMetadataIcon V1ExchangesIconsSizeGet(ctx, size).Execute()
 
 List of icons for the exchanges
 
@@ -518,7 +518,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1ExchangesIconsSizeGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExchangesIconsSizeGet`: []V1Icon
+	// response from `V1ExchangesIconsSizeGet`: []MarketDataMetadataIcon
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1ExchangesIconsSizeGet`: %v\n", resp)
 }
 ```
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Icon**](V1Icon.md)
+[**[]MarketDataMetadataIcon**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ## V1SymbolsExchangeIdActiveGet
 
-> []V1Symbol V1SymbolsExchangeIdActiveGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).FilterAssetId(filterAssetId).Execute()
+> []MarketDataMetadataSymbol V1SymbolsExchangeIdActiveGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).FilterAssetId(filterAssetId).Execute()
 
 List all active symbols
 
@@ -590,7 +590,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsExchangeIdActiveGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1SymbolsExchangeIdActiveGet`: []V1Symbol
+	// response from `V1SymbolsExchangeIdActiveGet`: []MarketDataMetadataSymbol
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1SymbolsExchangeIdActiveGet`: %v\n", resp)
 }
 ```
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Symbol**](V1Symbol.md)
+[**[]MarketDataMetadataSymbol**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ## V1SymbolsExchangeIdHistoryGet
 
-> []V1Symbol V1SymbolsExchangeIdHistoryGet(ctx, exchangeId).Page(page).Limit(limit).Execute()
+> []MarketDataMetadataSymbol V1SymbolsExchangeIdHistoryGet(ctx, exchangeId).Page(page).Limit(limit).Execute()
 
 List all historical symbols for an exchange.
 
@@ -664,7 +664,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsExchangeIdHistoryGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1SymbolsExchangeIdHistoryGet`: []V1Symbol
+	// response from `V1SymbolsExchangeIdHistoryGet`: []MarketDataMetadataSymbol
 	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1SymbolsExchangeIdHistoryGet`: %v\n", resp)
 }
 ```
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]V1Symbol**](V1Symbol.md)
+[**[]MarketDataMetadataSymbol**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

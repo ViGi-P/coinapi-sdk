@@ -29,15 +29,15 @@ public class OASMetadataApi {
      * List all assets by asset ID
      * 
      * @param assetId The asset ID. (required)
-     * @return List<OASV1Asset>
+     * @return List<OASMarketDataMetadataAsset>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Asset> v1AssetsAssetIdGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataAsset> v1AssetsAssetIdGet(Map<String, Object> params) {
         client.assertNotNull(params.get('assetId'), 'assetId');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Asset>) client.invoke(
+        return (List<OASMarketDataMetadataAsset>) client.invoke(
             'GET', '/v1/assets/{asset_id}', '',
             query, form,
             new Map<String, Object>{
@@ -47,17 +47,17 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Asset>.class
+            List<OASMarketDataMetadataAsset>.class
         );
     }
     /**
      * List all assets
      * Retrieves all assets.\n            \n:::info\nOur asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency).\n:::\n            \n:::info\nProperties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.\n:::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
-     * @return List<OASV1Asset>
+     * @return List<OASMarketDataMetadataAsset>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Asset> v1AssetsGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataAsset> v1AssetsGet(Map<String, Object> params) {
         List<OAS.Param> query = new List<OAS.Param>();
 
         // cast query params to verify their expected type
@@ -65,7 +65,7 @@ public class OASMetadataApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Asset>) client.invoke(
+        return (List<OASMarketDataMetadataAsset>) client.invoke(
             'GET', '/v1/assets', '',
             query, form,
             new Map<String, Object>(),
@@ -73,22 +73,22 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Asset>.class
+            List<OASMarketDataMetadataAsset>.class
         );
     }
     /**
      * List all asset icons
      * Gets the list of icons (of the given size) for all the assets.
      * @param size The size of the icons. (required)
-     * @return List<OASV1Icon>
+     * @return List<OASMarketDataMetadataIcon>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Icon> v1AssetsIconsSizeGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataIcon> v1AssetsIconsSizeGet(Map<String, Object> params) {
         client.assertNotNull(params.get('size'), 'size');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Icon>) client.invoke(
+        return (List<OASMarketDataMetadataIcon>) client.invoke(
             'GET', '/v1/assets/icons/{size}', '',
             query, form,
             new Map<String, Object>{
@@ -98,22 +98,22 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Icon>.class
+            List<OASMarketDataMetadataIcon>.class
         );
     }
     /**
      * List all chains by chain ID
      * 
      * @param chainId The chain ID. (required)
-     * @return List<OASV1Chain>
+     * @return List<OASMarketDataMetadataChain>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Chain> v1ChainsChainIdGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataChain> v1ChainsChainIdGet(Map<String, Object> params) {
         client.assertNotNull(params.get('chainId'), 'chainId');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Chain>) client.invoke(
+        return (List<OASMarketDataMetadataChain>) client.invoke(
             'GET', '/v1/chains/{chain_id}', '',
             query, form,
             new Map<String, Object>{
@@ -123,17 +123,17 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Chain>.class
+            List<OASMarketDataMetadataChain>.class
         );
     }
     /**
      * List all blockchain chains
      * Retrieves all blockchain chains supported by the system.\n            \n:::info\nProperties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.\n:::
      * @param filterChainId Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;). (optional)
-     * @return List<OASV1Chain>
+     * @return List<OASMarketDataMetadataChain>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Chain> v1ChainsGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataChain> v1ChainsGet(Map<String, Object> params) {
         List<OAS.Param> query = new List<OAS.Param>();
 
         // cast query params to verify their expected type
@@ -141,7 +141,7 @@ public class OASMetadataApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Chain>) client.invoke(
+        return (List<OASMarketDataMetadataChain>) client.invoke(
             'GET', '/v1/chains', '',
             query, form,
             new Map<String, Object>(),
@@ -149,22 +149,22 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Chain>.class
+            List<OASMarketDataMetadataChain>.class
         );
     }
     /**
      * List all exchanges by exchange_id
      * 
      * @param exchangeId The ID of the exchange. (required)
-     * @return List<OASV1Exchange>
+     * @return List<OASMarketDataMetadataExchange>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Exchange> v1ExchangesExchangeIdGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataExchange> v1ExchangesExchangeIdGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Exchange>) client.invoke(
+        return (List<OASMarketDataMetadataExchange>) client.invoke(
             'GET', '/v1/exchanges/{exchange_id}', '',
             query, form,
             new Map<String, Object>{
@@ -174,17 +174,17 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Exchange>.class
+            List<OASMarketDataMetadataExchange>.class
         );
     }
     /**
      * List all exchanges
      * Get a detailed list of exchanges provided by the system.\n            \n:::info\nProperties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.\n:::
      * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;) (optional)
-     * @return List<OASV1Exchange>
+     * @return List<OASMarketDataMetadataExchange>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Exchange> v1ExchangesGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataExchange> v1ExchangesGet(Map<String, Object> params) {
         List<OAS.Param> query = new List<OAS.Param>();
 
         // cast query params to verify their expected type
@@ -192,7 +192,7 @@ public class OASMetadataApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Exchange>) client.invoke(
+        return (List<OASMarketDataMetadataExchange>) client.invoke(
             'GET', '/v1/exchanges', '',
             query, form,
             new Map<String, Object>(),
@@ -200,22 +200,22 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Exchange>.class
+            List<OASMarketDataMetadataExchange>.class
         );
     }
     /**
      * List of icons for the exchanges
      * 
      * @param size The size of the icons. (required)
-     * @return List<OASV1Icon>
+     * @return List<OASMarketDataMetadataIcon>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Icon> v1ExchangesIconsSizeGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataIcon> v1ExchangesIconsSizeGet(Map<String, Object> params) {
         client.assertNotNull(params.get('size'), 'size');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Icon>) client.invoke(
+        return (List<OASMarketDataMetadataIcon>) client.invoke(
             'GET', '/v1/exchanges/icons/{size}', '',
             query, form,
             new Map<String, Object>{
@@ -225,7 +225,7 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Icon>.class
+            List<OASMarketDataMetadataIcon>.class
         );
     }
     /**
@@ -234,10 +234,10 @@ public class OASMetadataApi {
      * @param exchangeId The ID of the exchange. (required)
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param filterAssetId The filter for asset ID. (optional)
-     * @return List<OASV1Symbol>
+     * @return List<OASMarketDataMetadataSymbol>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Symbol> v1SymbolsExchangeIdActiveGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataSymbol> v1SymbolsExchangeIdActiveGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -247,7 +247,7 @@ public class OASMetadataApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Symbol>) client.invoke(
+        return (List<OASMarketDataMetadataSymbol>) client.invoke(
             'GET', '/v1/symbols/{exchange_id}/active', '',
             query, form,
             new Map<String, Object>{
@@ -257,7 +257,7 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Symbol>.class
+            List<OASMarketDataMetadataSymbol>.class
         );
     }
     /**
@@ -266,10 +266,10 @@ public class OASMetadataApi {
      * @param exchangeId The ID of the exchange. (required)
      * @param page The page number for pagination (starts from 1). (optional, default to 1)
      * @param r_limit Number of records to return per page. (optional, default to 100)
-     * @return List<OASV1Symbol>
+     * @return List<OASMarketDataMetadataSymbol>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1Symbol> v1SymbolsExchangeIdHistoryGet(Map<String, Object> params) {
+    public List<OASMarketDataMetadataSymbol> v1SymbolsExchangeIdHistoryGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -279,7 +279,7 @@ public class OASMetadataApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASV1Symbol>) client.invoke(
+        return (List<OASMarketDataMetadataSymbol>) client.invoke(
             'GET', '/v1/symbols/{exchange_id}/history', '',
             query, form,
             new Map<String, Object>{
@@ -289,7 +289,7 @@ public class OASMetadataApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASV1Symbol>.class
+            List<OASMarketDataMetadataSymbol>.class
         );
     }
     /**

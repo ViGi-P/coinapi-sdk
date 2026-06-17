@@ -10,11 +10,11 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/v1_asset.dart';
-import 'package:openapi/src/model/v1_chain.dart';
-import 'package:openapi/src/model/v1_exchange.dart';
-import 'package:openapi/src/model/v1_icon.dart';
-import 'package:openapi/src/model/v1_symbol.dart';
+import 'package:openapi/src/model/market_data_metadata_asset.dart';
+import 'package:openapi/src/model/market_data_metadata_chain.dart';
+import 'package:openapi/src/model/market_data_metadata_exchange.dart';
+import 'package:openapi/src/model/market_data_metadata_icon.dart';
+import 'package:openapi/src/model/market_data_metadata_symbol.dart';
 import 'package:openapi/src/model/v1_symbol_mapping.dart';
 
 class MetadataApi {
@@ -37,9 +37,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Asset>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataAsset>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Asset>>> v1AssetsAssetIdGet({ 
+  Future<Response<BuiltList<MarketDataMetadataAsset>>> v1AssetsAssetIdGet({ 
     required String assetId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -80,14 +80,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Asset>? _responseData;
+    BuiltList<MarketDataMetadataAsset>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Asset)]),
-      ) as BuiltList<V1Asset>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataAsset)]),
+      ) as BuiltList<MarketDataMetadataAsset>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -99,7 +99,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Asset>>(
+    return Response<BuiltList<MarketDataMetadataAsset>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -123,9 +123,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Asset>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataAsset>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Asset>>> v1AssetsGet({ 
+  Future<Response<BuiltList<MarketDataMetadataAsset>>> v1AssetsGet({ 
     String? filterAssetId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -171,14 +171,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Asset>? _responseData;
+    BuiltList<MarketDataMetadataAsset>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Asset)]),
-      ) as BuiltList<V1Asset>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataAsset)]),
+      ) as BuiltList<MarketDataMetadataAsset>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -190,7 +190,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Asset>>(
+    return Response<BuiltList<MarketDataMetadataAsset>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -214,9 +214,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Icon>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataIcon>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Icon>>> v1AssetsIconsSizeGet({ 
+  Future<Response<BuiltList<MarketDataMetadataIcon>>> v1AssetsIconsSizeGet({ 
     required int size,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -257,14 +257,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Icon>? _responseData;
+    BuiltList<MarketDataMetadataIcon>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Icon)]),
-      ) as BuiltList<V1Icon>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataIcon)]),
+      ) as BuiltList<MarketDataMetadataIcon>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -276,7 +276,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Icon>>(
+    return Response<BuiltList<MarketDataMetadataIcon>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -300,9 +300,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Chain>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataChain>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Chain>>> v1ChainsChainIdGet({ 
+  Future<Response<BuiltList<MarketDataMetadataChain>>> v1ChainsChainIdGet({ 
     required String chainId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -343,14 +343,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Chain>? _responseData;
+    BuiltList<MarketDataMetadataChain>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Chain)]),
-      ) as BuiltList<V1Chain>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataChain)]),
+      ) as BuiltList<MarketDataMetadataChain>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -362,7 +362,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Chain>>(
+    return Response<BuiltList<MarketDataMetadataChain>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -386,9 +386,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Chain>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataChain>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Chain>>> v1ChainsGet({ 
+  Future<Response<BuiltList<MarketDataMetadataChain>>> v1ChainsGet({ 
     String? filterChainId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -434,14 +434,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Chain>? _responseData;
+    BuiltList<MarketDataMetadataChain>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Chain)]),
-      ) as BuiltList<V1Chain>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataChain)]),
+      ) as BuiltList<MarketDataMetadataChain>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -453,7 +453,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Chain>>(
+    return Response<BuiltList<MarketDataMetadataChain>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -477,9 +477,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Exchange>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataExchange>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Exchange>>> v1ExchangesExchangeIdGet({ 
+  Future<Response<BuiltList<MarketDataMetadataExchange>>> v1ExchangesExchangeIdGet({ 
     required String exchangeId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -520,14 +520,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Exchange>? _responseData;
+    BuiltList<MarketDataMetadataExchange>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Exchange)]),
-      ) as BuiltList<V1Exchange>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataExchange)]),
+      ) as BuiltList<MarketDataMetadataExchange>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -539,7 +539,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Exchange>>(
+    return Response<BuiltList<MarketDataMetadataExchange>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -563,9 +563,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Exchange>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataExchange>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Exchange>>> v1ExchangesGet({ 
+  Future<Response<BuiltList<MarketDataMetadataExchange>>> v1ExchangesGet({ 
     String? filterExchangeId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -611,14 +611,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Exchange>? _responseData;
+    BuiltList<MarketDataMetadataExchange>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Exchange)]),
-      ) as BuiltList<V1Exchange>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataExchange)]),
+      ) as BuiltList<MarketDataMetadataExchange>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -630,7 +630,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Exchange>>(
+    return Response<BuiltList<MarketDataMetadataExchange>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -654,9 +654,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Icon>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataIcon>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Icon>>> v1ExchangesIconsSizeGet({ 
+  Future<Response<BuiltList<MarketDataMetadataIcon>>> v1ExchangesIconsSizeGet({ 
     required int size,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -697,14 +697,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Icon>? _responseData;
+    BuiltList<MarketDataMetadataIcon>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Icon)]),
-      ) as BuiltList<V1Icon>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataIcon)]),
+      ) as BuiltList<MarketDataMetadataIcon>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -716,7 +716,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Icon>>(
+    return Response<BuiltList<MarketDataMetadataIcon>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -742,9 +742,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Symbol>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataSymbol>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Symbol>>> v1SymbolsExchangeIdActiveGet({ 
+  Future<Response<BuiltList<MarketDataMetadataSymbol>>> v1SymbolsExchangeIdActiveGet({ 
     required String exchangeId,
     String? filterSymbolId,
     String? filterAssetId,
@@ -793,14 +793,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Symbol>? _responseData;
+    BuiltList<MarketDataMetadataSymbol>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Symbol)]),
-      ) as BuiltList<V1Symbol>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataSymbol)]),
+      ) as BuiltList<MarketDataMetadataSymbol>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -812,7 +812,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Symbol>>(
+    return Response<BuiltList<MarketDataMetadataSymbol>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -838,9 +838,9 @@ class MetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<V1Symbol>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MarketDataMetadataSymbol>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1Symbol>>> v1SymbolsExchangeIdHistoryGet({ 
+  Future<Response<BuiltList<MarketDataMetadataSymbol>>> v1SymbolsExchangeIdHistoryGet({ 
     required String exchangeId,
     int? page = 1,
     int? limit = 100,
@@ -889,14 +889,14 @@ class MetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<V1Symbol>? _responseData;
+    BuiltList<MarketDataMetadataSymbol>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(V1Symbol)]),
-      ) as BuiltList<V1Symbol>;
+        specifiedType: const FullType(BuiltList, [FullType(MarketDataMetadataSymbol)]),
+      ) as BuiltList<MarketDataMetadataSymbol>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -908,7 +908,7 @@ class MetadataApi {
       );
     }
 
-    return Response<BuiltList<V1Symbol>>(
+    return Response<BuiltList<MarketDataMetadataSymbol>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

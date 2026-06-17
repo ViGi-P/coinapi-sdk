@@ -37,7 +37,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Asset]**](V1Asset.md)
+[**array[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Asset]**](V1Asset.md)
+[**array[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Icon]**](V1Icon.md)
+[**array[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Chain]**](V1Chain.md)
+[**array[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Chain]**](V1Chain.md)
+[**array[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Exchange]**](V1Exchange.md)
+[**array[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Exchange]**](V1Exchange.md)
+[**array[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Icon]**](V1Icon.md)
+[**array[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Symbol]**](V1Symbol.md)
+[**array[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[V1Symbol]**](V1Symbol.md)
+[**array[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

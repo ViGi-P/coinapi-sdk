@@ -10,7 +10,7 @@ test_that("V1AssetsAssetIdGet", {
   # base path: https://rest.coinapi.io
   # List all assets by asset ID
   # @param asset_id character The asset ID.
-  # @return [array[V1Asset]]
+  # @return [array[MarketDataMetadataAsset]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -22,7 +22,7 @@ test_that("V1AssetsGet", {
   # List all assets
   # Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
   # @param filter_asset_id character Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). (optional)
-  # @return [array[V1Asset]]
+  # @return [array[MarketDataMetadataAsset]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -34,7 +34,7 @@ test_that("V1AssetsIconsSizeGet", {
   # List all asset icons
   # Gets the list of icons (of the given size) for all the assets.
   # @param size integer The size of the icons.
-  # @return [array[V1Icon]]
+  # @return [array[MarketDataMetadataIcon]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -45,7 +45,7 @@ test_that("V1ChainsChainIdGet", {
   # base path: https://rest.coinapi.io
   # List all chains by chain ID
   # @param chain_id character The chain ID.
-  # @return [array[V1Chain]]
+  # @return [array[MarketDataMetadataChain]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -57,7 +57,7 @@ test_that("V1ChainsGet", {
   # List all blockchain chains
   # Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
   # @param filter_chain_id character Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`). (optional)
-  # @return [array[V1Chain]]
+  # @return [array[MarketDataMetadataChain]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -68,7 +68,7 @@ test_that("V1ExchangesExchangeIdGet", {
   # base path: https://rest.coinapi.io
   # List all exchanges by exchange_id
   # @param exchange_id character The ID of the exchange.
-  # @return [array[V1Exchange]]
+  # @return [array[MarketDataMetadataExchange]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -80,7 +80,7 @@ test_that("V1ExchangesGet", {
   # List all exchanges
   # Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
   # @param filter_exchange_id character Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`) (optional)
-  # @return [array[V1Exchange]]
+  # @return [array[MarketDataMetadataExchange]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -91,7 +91,7 @@ test_that("V1ExchangesIconsSizeGet", {
   # base path: https://rest.coinapi.io
   # List of icons for the exchanges
   # @param size integer The size of the icons.
-  # @return [array[V1Icon]]
+  # @return [array[MarketDataMetadataIcon]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -105,7 +105,7 @@ test_that("V1SymbolsExchangeIdActiveGet", {
   # @param exchange_id character The ID of the exchange.
   # @param filter_symbol_id character Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`) (optional)
   # @param filter_asset_id character The filter for asset ID. (optional)
-  # @return [array[V1Symbol]]
+  # @return [array[MarketDataMetadataSymbol]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -119,7 +119,7 @@ test_that("V1SymbolsExchangeIdHistoryGet", {
   # @param exchange_id character The ID of the exchange.
   # @param page integer The page number for pagination (starts from 1). (optional)
   # @param limit integer Number of records to return per page. (optional)
-  # @return [array[V1Symbol]]
+  # @return [array[MarketDataMetadataSymbol]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

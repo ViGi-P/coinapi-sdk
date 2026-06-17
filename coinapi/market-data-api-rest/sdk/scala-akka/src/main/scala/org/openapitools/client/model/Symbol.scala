@@ -15,109 +15,107 @@ import java.time.OffsetDateTime
 import org.openapitools.client.core.ApiModel
 
 case class Symbol (
-  /* Gets or sets the symbol identifier. */
+  /* The symbol identifier. */
   symbolId: Option[String] = None,
-  /* Gets or sets the exchange identifier. */
+  /* The exchange identifier. */
   exchangeId: Option[String] = None,
-  /* Gets or sets the symbol type. */
+  /* The symbol type. */
   symbolType: Option[String] = None,
-  /* Gets or sets the base asset identifier. */
+  /* The base asset identifier. */
   assetIdBase: Option[String] = None,
-  /* Gets or sets the quote asset identifier. */
+  /* The quote asset identifier. */
   assetIdQuote: Option[String] = None,
-  /* Gets or sets the unit asset identifier. */
+  /* The unit asset identifier. */
   assetIdUnit: Option[String] = None,
-  /* Gets or sets the contract unit for futures. */
+  /* The contract unit for futures. */
   futureContractUnit: Option[Double] = None,
-  /* Gets or sets the asset used as the unit for futures contract. */
+  /* The asset used as the unit for futures contract. */
   futureContractUnitAsset: Option[String] = None,
-  /* Gets or sets the future delivery time for futures contract. */
+  /* The future delivery time for futures contract. */
   futureDeliveryTime: Option[OffsetDateTime] = None,
-  /* Gets or sets a value indicating whether the option type is a call. */
+  /* Indicates whether the option type is a call. */
   optionTypeIsCall: Option[Boolean] = None,
-  /* Gets or sets the strike price for options. */
+  /* The strike price for options. */
   optionStrikePrice: Option[Double] = None,
-  /* Gets or sets the contract unit for options. */
+  /* The contract unit for options. */
   optionContractUnit: Option[Double] = None,
-  /* Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. */
+  /* The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. */
   optionExerciseStyle: Option[String] = None,
-  /* Gets or sets the expiration time for options. */
+  /* The expiration time for options. */
   optionExpirationTime: Option[OffsetDateTime] = None,
-  /* Gets or sets the delivery time for contracts. */
+  /* The delivery time for contracts. */
   contractDeliveryTime: Option[OffsetDateTime] = None,
-  /* Gets or sets the contract unit for contracts. */
+  /* The contract unit for contracts. */
   contractUnit: Option[Double] = None,
-  /* Gets or sets the asset used as the unit for contracts. */
+  /* The asset used as the unit for contracts. */
   contractUnitAsset: Option[String] = None,
-  /* Gets or sets the contract identifier. */
+  /* The contract identifier. */
   contractId: Option[String] = None,
-  /* Gets or sets the display name of the contract. */
+  /* The display name of the contract. */
   contractDisplayName: Option[String] = None,
-  /* Gets or sets the display description of the contract. */
+  /* The display description of the contract. */
   contractDisplayDescription: Option[String] = None,
-  /* Gets the start date of the data in string format (\"yyyy-MM-dd\"). */
   dataStart: Option[String] = None,
-  /* Gets the end date of the data in string format (\"yyyy-MM-dd\"). */
   dataEnd: Option[String] = None,
-  /* Gets or sets the start date of quote data. */
+  /* The start date of quote data. */
   dataQuoteStart: Option[OffsetDateTime] = None,
-  /* Gets or sets the end date of quote data. */
+  /* The end date of quote data. */
   dataQuoteEnd: Option[OffsetDateTime] = None,
-  /* Gets or sets the start date of order book data. */
+  /* The start date of order book data. */
   dataOrderbookStart: Option[OffsetDateTime] = None,
-  /* Gets or sets the end date of order book data. */
+  /* The end date of order book data. */
   dataOrderbookEnd: Option[OffsetDateTime] = None,
-  /* Gets or sets the start date of trade data. */
+  /* The start date of trade data. */
   dataTradeStart: Option[OffsetDateTime] = None,
-  /* Gets or sets the end date of trade data. */
+  /* The end date of trade data. */
   dataTradeEnd: Option[OffsetDateTime] = None,
-  /* Gets or sets the index identifier. */
+  /* The index identifier. */
   indexId: Option[String] = None,
-  /* Gets or sets the display name of the index. */
+  /* The display name of the index. */
   indexDisplayName: Option[String] = None,
-  /* Gets or sets the display description of the index. */
+  /* The display description of the index. */
   indexDisplayDescription: Option[String] = None,
-  /* Gets or sets the volume in the last 1 hour. */
+  /* The volume in the last 1 hour. */
   volume1hrs: Option[Double] = None,
-  /* Gets or sets the volume in USD in the last 1 hour. */
+  /* The volume in USD in the last 1 hour. */
   volume1hrsUsd: Option[Double] = None,
-  /* Gets or sets the volume in the last 1 day. */
+  /* The volume in the last 1 day. */
   volume1day: Option[Double] = None,
-  /* Gets or sets the volume in USD in the last 1 day. */
+  /* The volume in USD in the last 1 day. */
   volume1dayUsd: Option[Double] = None,
-  /* Gets or sets the volume in the last 1 month. */
+  /* The volume in the last 1 month. */
   volume1mth: Option[Double] = None,
-  /* Gets or sets the volume in USD in the last 1 month. */
+  /* The volume in USD in the last 1 month. */
   volume1mthUsd: Option[Double] = None,
-  /* Gets or sets the price. */
+  /* The price. */
   price: Option[Double] = None,
-  /* Gets or sets the symbol identifier in the exchange. */
+  /* The symbol identifier in the exchange. */
   symbolIdExchange: Option[String] = None,
-  /* Gets or sets the base asset identifier in the exchange. */
+  /* The base asset identifier in the exchange. */
   assetIdBaseExchange: Option[String] = None,
-  /* Gets or sets the quote asset identifier in the exchange. */
+  /* The quote asset identifier in the exchange. */
   assetIdQuoteExchange: Option[String] = None,
-  /* Gets or sets the price precision. */
+  /* The price precision. */
   pricePrecision: Option[Double] = None,
-  /* Gets or sets the size precision. */
+  /* The size precision. */
   sizePrecision: Option[Double] = None,
   /* Key Value Pair store with raw data from the data source. */
   rawKvp: Option[Map[String, String]] = None,
-  /* Gets or sets a value indicating whether the futures contract is inverse (coin-margined). */
+  /* Indicates whether the futures contract is inverse (coin-margined). */
   futureIsInverse: Option[Boolean] = None,
-  /* Gets or sets a value indicating whether the futures contract is quanto. */
+  /* Indicates whether the futures contract is quanto. */
   futureIsQuanto: Option[Boolean] = None,
-  /* Gets or sets the volume in USD. */
+  /* Volume unit in USD. */
   volumeToUsd: Option[Double] = None,
-  /* Gets or sets the up barrier price for barrier options. */
+  /* The up barrier price for barrier options. */
   optionBarrierUpPrice: Option[Double] = None,
-  /* Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+  /* The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
   optionBarrierUpType: Option[String] = None,
-  /* Gets or sets the down barrier price for barrier options. */
+  /* The down barrier price for barrier options. */
   optionBarrierDownPrice: Option[Double] = None,
-  /* Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+  /* The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
   optionBarrierDownType: Option[String] = None,
-  /* Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs. */
+  /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
   symbolIdInt: Option[Int] = None
 ) extends ApiModel
 

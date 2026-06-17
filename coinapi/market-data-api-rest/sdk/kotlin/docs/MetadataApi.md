@@ -19,7 +19,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1AssetsAssetIdGet"></a>
 # **v1AssetsAssetIdGet**
-> kotlin.collections.List&lt;V1Asset&gt; v1AssetsAssetIdGet(assetId)
+> kotlin.collections.List&lt;MarketDataMetadataAsset&gt; v1AssetsAssetIdGet(assetId)
 
 List all assets by asset ID
 
@@ -32,7 +32,7 @@ List all assets by asset ID
 val apiInstance = MetadataApi()
 val assetId : kotlin.String = assetId_example // kotlin.String | The asset ID.
 try {
-    val result : kotlin.collections.List<V1Asset> = apiInstance.v1AssetsAssetIdGet(assetId)
+    val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsAssetIdGet(assetId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1AssetsAssetIdGet")
@@ -50,7 +50,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Asset&gt;**](V1Asset.md)
+[**kotlin.collections.List&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1AssetsGet"></a>
 # **v1AssetsGet**
-> kotlin.collections.List&lt;V1Asset&gt; v1AssetsGet(filterAssetId)
+> kotlin.collections.List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId)
 
 List all assets
 
@@ -89,7 +89,7 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 val apiInstance = MetadataApi()
 val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
 try {
-    val result : kotlin.collections.List<V1Asset> = apiInstance.v1AssetsGet(filterAssetId)
+    val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsGet(filterAssetId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1AssetsGet")
@@ -107,7 +107,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Asset&gt;**](V1Asset.md)
+[**kotlin.collections.List&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1AssetsIconsSizeGet"></a>
 # **v1AssetsIconsSizeGet**
-> kotlin.collections.List&lt;V1Icon&gt; v1AssetsIconsSizeGet(size)
+> kotlin.collections.List&lt;MarketDataMetadataIcon&gt; v1AssetsIconsSizeGet(size)
 
 List all asset icons
 
@@ -146,7 +146,7 @@ Gets the list of icons (of the given size) for all the assets.
 val apiInstance = MetadataApi()
 val size : kotlin.Int = 56 // kotlin.Int | The size of the icons.
 try {
-    val result : kotlin.collections.List<V1Icon> = apiInstance.v1AssetsIconsSizeGet(size)
+    val result : kotlin.collections.List<MarketDataMetadataIcon> = apiInstance.v1AssetsIconsSizeGet(size)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1AssetsIconsSizeGet")
@@ -164,7 +164,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Icon&gt;**](V1Icon.md)
+[**kotlin.collections.List&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1ChainsChainIdGet"></a>
 # **v1ChainsChainIdGet**
-> kotlin.collections.List&lt;V1Chain&gt; v1ChainsChainIdGet(chainId)
+> kotlin.collections.List&lt;MarketDataMetadataChain&gt; v1ChainsChainIdGet(chainId)
 
 List all chains by chain ID
 
@@ -201,7 +201,7 @@ List all chains by chain ID
 val apiInstance = MetadataApi()
 val chainId : kotlin.String = chainId_example // kotlin.String | The chain ID.
 try {
-    val result : kotlin.collections.List<V1Chain> = apiInstance.v1ChainsChainIdGet(chainId)
+    val result : kotlin.collections.List<MarketDataMetadataChain> = apiInstance.v1ChainsChainIdGet(chainId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1ChainsChainIdGet")
@@ -219,7 +219,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Chain&gt;**](V1Chain.md)
+[**kotlin.collections.List&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1ChainsGet"></a>
 # **v1ChainsGet**
-> kotlin.collections.List&lt;V1Chain&gt; v1ChainsGet(filterChainId)
+> kotlin.collections.List&lt;MarketDataMetadataChain&gt; v1ChainsGet(filterChainId)
 
 List all blockchain chains
 
@@ -258,7 +258,7 @@ Retrieves all blockchain chains supported by the system.              :::info Pr
 val apiInstance = MetadataApi()
 val filterChainId : kotlin.String = filterChainId_example // kotlin.String | Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`).
 try {
-    val result : kotlin.collections.List<V1Chain> = apiInstance.v1ChainsGet(filterChainId)
+    val result : kotlin.collections.List<MarketDataMetadataChain> = apiInstance.v1ChainsGet(filterChainId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1ChainsGet")
@@ -276,7 +276,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Chain&gt;**](V1Chain.md)
+[**kotlin.collections.List&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1ExchangesExchangeIdGet"></a>
 # **v1ExchangesExchangeIdGet**
-> kotlin.collections.List&lt;V1Exchange&gt; v1ExchangesExchangeIdGet(exchangeId)
+> kotlin.collections.List&lt;MarketDataMetadataExchange&gt; v1ExchangesExchangeIdGet(exchangeId)
 
 List all exchanges by exchange_id
 
@@ -313,7 +313,7 @@ List all exchanges by exchange_id
 val apiInstance = MetadataApi()
 val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
 try {
-    val result : kotlin.collections.List<V1Exchange> = apiInstance.v1ExchangesExchangeIdGet(exchangeId)
+    val result : kotlin.collections.List<MarketDataMetadataExchange> = apiInstance.v1ExchangesExchangeIdGet(exchangeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1ExchangesExchangeIdGet")
@@ -331,7 +331,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Exchange&gt;**](V1Exchange.md)
+[**kotlin.collections.List&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -355,7 +355,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1ExchangesGet"></a>
 # **v1ExchangesGet**
-> kotlin.collections.List&lt;V1Exchange&gt; v1ExchangesGet(filterExchangeId)
+> kotlin.collections.List&lt;MarketDataMetadataExchange&gt; v1ExchangesGet(filterExchangeId)
 
 List all exchanges
 
@@ -370,7 +370,7 @@ Get a detailed list of exchanges provided by the system.              :::info Pr
 val apiInstance = MetadataApi()
 val filterExchangeId : kotlin.String = filterExchangeId_example // kotlin.String | Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
 try {
-    val result : kotlin.collections.List<V1Exchange> = apiInstance.v1ExchangesGet(filterExchangeId)
+    val result : kotlin.collections.List<MarketDataMetadataExchange> = apiInstance.v1ExchangesGet(filterExchangeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1ExchangesGet")
@@ -388,7 +388,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Exchange&gt;**](V1Exchange.md)
+[**kotlin.collections.List&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1ExchangesIconsSizeGet"></a>
 # **v1ExchangesIconsSizeGet**
-> kotlin.collections.List&lt;V1Icon&gt; v1ExchangesIconsSizeGet(size)
+> kotlin.collections.List&lt;MarketDataMetadataIcon&gt; v1ExchangesIconsSizeGet(size)
 
 List of icons for the exchanges
 
@@ -425,7 +425,7 @@ List of icons for the exchanges
 val apiInstance = MetadataApi()
 val size : kotlin.Int = 56 // kotlin.Int | The size of the icons.
 try {
-    val result : kotlin.collections.List<V1Icon> = apiInstance.v1ExchangesIconsSizeGet(size)
+    val result : kotlin.collections.List<MarketDataMetadataIcon> = apiInstance.v1ExchangesIconsSizeGet(size)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1ExchangesIconsSizeGet")
@@ -443,7 +443,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Icon&gt;**](V1Icon.md)
+[**kotlin.collections.List&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -467,7 +467,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1SymbolsExchangeIdActiveGet"></a>
 # **v1SymbolsExchangeIdActiveGet**
-> kotlin.collections.List&lt;V1Symbol&gt; v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
+> kotlin.collections.List&lt;MarketDataMetadataSymbol&gt; v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
 
 List all active symbols
 
@@ -484,7 +484,7 @@ val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of
 val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
 val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | The filter for asset ID.
 try {
-    val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
+    val result : kotlin.collections.List<MarketDataMetadataSymbol> = apiInstance.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1SymbolsExchangeIdActiveGet")
@@ -504,7 +504,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Symbol&gt;**](V1Symbol.md)
+[**kotlin.collections.List&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -528,7 +528,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1SymbolsExchangeIdHistoryGet"></a>
 # **v1SymbolsExchangeIdHistoryGet**
-> kotlin.collections.List&lt;V1Symbol&gt; v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+> kotlin.collections.List&lt;MarketDataMetadataSymbol&gt; v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
 
 List all historical symbols for an exchange.
 
@@ -545,7 +545,7 @@ val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of
 val page : kotlin.Int = 56 // kotlin.Int | The page number for pagination (starts from 1).
 val limit : kotlin.Int = 56 // kotlin.Int | Number of records to return per page.
 try {
-    val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+    val result : kotlin.collections.List<MarketDataMetadataSymbol> = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1SymbolsExchangeIdHistoryGet")
@@ -565,7 +565,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;V1Symbol&gt;**](V1Symbol.md)
+[**kotlin.collections.List&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

@@ -51,13 +51,13 @@ static gpointer __MetadataManagerthreadFunc(gpointer data)
 static bool v1AssetsAssetIdGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Asset>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Asset>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Asset>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Asset> out;
+	std::list<MarketDataMetadata.Asset> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -71,7 +71,7 @@ static bool v1AssetsAssetIdGetProcessor(MemoryStruct_s p_chunk, long code, char*
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Asset singlemodel;
+			MarketDataMetadata.Asset singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -97,7 +97,7 @@ static bool v1AssetsAssetIdGetProcessor(MemoryStruct_s p_chunk, long code, char*
 
 static bool v1AssetsAssetIdGetHelper(char * accessToken,
 	std::string assetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -174,7 +174,7 @@ static bool v1AssetsAssetIdGetHelper(char * accessToken,
 
 bool MetadataManager::v1AssetsAssetIdGetAsync(char * accessToken,
 	std::string assetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsAssetIdGetHelper(accessToken,
@@ -184,7 +184,7 @@ bool MetadataManager::v1AssetsAssetIdGetAsync(char * accessToken,
 
 bool MetadataManager::v1AssetsAssetIdGetSync(char * accessToken,
 	std::string assetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsAssetIdGetHelper(accessToken,
@@ -195,13 +195,13 @@ bool MetadataManager::v1AssetsAssetIdGetSync(char * accessToken,
 static bool v1AssetsGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Asset>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Asset>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Asset>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Asset> out;
+	std::list<MarketDataMetadata.Asset> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -215,7 +215,7 @@ static bool v1AssetsGetProcessor(MemoryStruct_s p_chunk, long code, char* errorm
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Asset singlemodel;
+			MarketDataMetadata.Asset singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -241,7 +241,7 @@ static bool v1AssetsGetProcessor(MemoryStruct_s p_chunk, long code, char* errorm
 
 static bool v1AssetsGetHelper(char * accessToken,
 	std::string filterAssetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -319,7 +319,7 @@ static bool v1AssetsGetHelper(char * accessToken,
 
 bool MetadataManager::v1AssetsGetAsync(char * accessToken,
 	std::string filterAssetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsGetHelper(accessToken,
@@ -329,7 +329,7 @@ bool MetadataManager::v1AssetsGetAsync(char * accessToken,
 
 bool MetadataManager::v1AssetsGetSync(char * accessToken,
 	std::string filterAssetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsGetHelper(accessToken,
@@ -340,13 +340,13 @@ bool MetadataManager::v1AssetsGetSync(char * accessToken,
 static bool v1AssetsIconsSizeGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Icon>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Icon>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Icon>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Icon> out;
+	std::list<MarketDataMetadata.Icon> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -360,7 +360,7 @@ static bool v1AssetsIconsSizeGetProcessor(MemoryStruct_s p_chunk, long code, cha
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Icon singlemodel;
+			MarketDataMetadata.Icon singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -386,7 +386,7 @@ static bool v1AssetsIconsSizeGetProcessor(MemoryStruct_s p_chunk, long code, cha
 
 static bool v1AssetsIconsSizeGetHelper(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -463,7 +463,7 @@ static bool v1AssetsIconsSizeGetHelper(char * accessToken,
 
 bool MetadataManager::v1AssetsIconsSizeGetAsync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsIconsSizeGetHelper(accessToken,
@@ -473,7 +473,7 @@ bool MetadataManager::v1AssetsIconsSizeGetAsync(char * accessToken,
 
 bool MetadataManager::v1AssetsIconsSizeGetSync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsIconsSizeGetHelper(accessToken,
@@ -484,13 +484,13 @@ bool MetadataManager::v1AssetsIconsSizeGetSync(char * accessToken,
 static bool v1ChainsChainIdGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Chain>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Chain>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Chain>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Chain> out;
+	std::list<MarketDataMetadata.Chain> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -504,7 +504,7 @@ static bool v1ChainsChainIdGetProcessor(MemoryStruct_s p_chunk, long code, char*
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Chain singlemodel;
+			MarketDataMetadata.Chain singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -530,7 +530,7 @@ static bool v1ChainsChainIdGetProcessor(MemoryStruct_s p_chunk, long code, char*
 
 static bool v1ChainsChainIdGetHelper(char * accessToken,
 	std::string chainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -607,7 +607,7 @@ static bool v1ChainsChainIdGetHelper(char * accessToken,
 
 bool MetadataManager::v1ChainsChainIdGetAsync(char * accessToken,
 	std::string chainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData)
 {
 	return v1ChainsChainIdGetHelper(accessToken,
@@ -617,7 +617,7 @@ bool MetadataManager::v1ChainsChainIdGetAsync(char * accessToken,
 
 bool MetadataManager::v1ChainsChainIdGetSync(char * accessToken,
 	std::string chainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData)
 {
 	return v1ChainsChainIdGetHelper(accessToken,
@@ -628,13 +628,13 @@ bool MetadataManager::v1ChainsChainIdGetSync(char * accessToken,
 static bool v1ChainsGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Chain>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Chain>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Chain>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Chain> out;
+	std::list<MarketDataMetadata.Chain> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -648,7 +648,7 @@ static bool v1ChainsGetProcessor(MemoryStruct_s p_chunk, long code, char* errorm
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Chain singlemodel;
+			MarketDataMetadata.Chain singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -674,7 +674,7 @@ static bool v1ChainsGetProcessor(MemoryStruct_s p_chunk, long code, char* errorm
 
 static bool v1ChainsGetHelper(char * accessToken,
 	std::string filterChainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -752,7 +752,7 @@ static bool v1ChainsGetHelper(char * accessToken,
 
 bool MetadataManager::v1ChainsGetAsync(char * accessToken,
 	std::string filterChainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData)
 {
 	return v1ChainsGetHelper(accessToken,
@@ -762,7 +762,7 @@ bool MetadataManager::v1ChainsGetAsync(char * accessToken,
 
 bool MetadataManager::v1ChainsGetSync(char * accessToken,
 	std::string filterChainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData)
 {
 	return v1ChainsGetHelper(accessToken,
@@ -773,13 +773,13 @@ bool MetadataManager::v1ChainsGetSync(char * accessToken,
 static bool v1ExchangesExchangeIdGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Exchange>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Exchange>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Exchange> out;
+	std::list<MarketDataMetadata.Exchange> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -793,7 +793,7 @@ static bool v1ExchangesExchangeIdGetProcessor(MemoryStruct_s p_chunk, long code,
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Exchange singlemodel;
+			MarketDataMetadata.Exchange singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -819,7 +819,7 @@ static bool v1ExchangesExchangeIdGetProcessor(MemoryStruct_s p_chunk, long code,
 
 static bool v1ExchangesExchangeIdGetHelper(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -896,7 +896,7 @@ static bool v1ExchangesExchangeIdGetHelper(char * accessToken,
 
 bool MetadataManager::v1ExchangesExchangeIdGetAsync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangesExchangeIdGetHelper(accessToken,
@@ -906,7 +906,7 @@ bool MetadataManager::v1ExchangesExchangeIdGetAsync(char * accessToken,
 
 bool MetadataManager::v1ExchangesExchangeIdGetSync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangesExchangeIdGetHelper(accessToken,
@@ -917,13 +917,13 @@ bool MetadataManager::v1ExchangesExchangeIdGetSync(char * accessToken,
 static bool v1ExchangesGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Exchange>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Exchange>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Exchange> out;
+	std::list<MarketDataMetadata.Exchange> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -937,7 +937,7 @@ static bool v1ExchangesGetProcessor(MemoryStruct_s p_chunk, long code, char* err
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Exchange singlemodel;
+			MarketDataMetadata.Exchange singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -963,7 +963,7 @@ static bool v1ExchangesGetProcessor(MemoryStruct_s p_chunk, long code, char* err
 
 static bool v1ExchangesGetHelper(char * accessToken,
 	std::string filterExchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -1041,7 +1041,7 @@ static bool v1ExchangesGetHelper(char * accessToken,
 
 bool MetadataManager::v1ExchangesGetAsync(char * accessToken,
 	std::string filterExchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangesGetHelper(accessToken,
@@ -1051,7 +1051,7 @@ bool MetadataManager::v1ExchangesGetAsync(char * accessToken,
 
 bool MetadataManager::v1ExchangesGetSync(char * accessToken,
 	std::string filterExchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangesGetHelper(accessToken,
@@ -1062,13 +1062,13 @@ bool MetadataManager::v1ExchangesGetSync(char * accessToken,
 static bool v1ExchangesIconsSizeGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Icon>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Icon>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Icon>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Icon> out;
+	std::list<MarketDataMetadata.Icon> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -1082,7 +1082,7 @@ static bool v1ExchangesIconsSizeGetProcessor(MemoryStruct_s p_chunk, long code, 
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Icon singlemodel;
+			MarketDataMetadata.Icon singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -1108,7 +1108,7 @@ static bool v1ExchangesIconsSizeGetProcessor(MemoryStruct_s p_chunk, long code, 
 
 static bool v1ExchangesIconsSizeGetHelper(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -1185,7 +1185,7 @@ static bool v1ExchangesIconsSizeGetHelper(char * accessToken,
 
 bool MetadataManager::v1ExchangesIconsSizeGetAsync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangesIconsSizeGetHelper(accessToken,
@@ -1195,7 +1195,7 @@ bool MetadataManager::v1ExchangesIconsSizeGetAsync(char * accessToken,
 
 bool MetadataManager::v1ExchangesIconsSizeGetSync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangesIconsSizeGetHelper(accessToken,
@@ -1206,13 +1206,13 @@ bool MetadataManager::v1ExchangesIconsSizeGetSync(char * accessToken,
 static bool v1SymbolsExchangeIdActiveGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Symbol>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Symbol>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Symbol> out;
+	std::list<MarketDataMetadata.Symbol> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -1226,7 +1226,7 @@ static bool v1SymbolsExchangeIdActiveGetProcessor(MemoryStruct_s p_chunk, long c
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Symbol singlemodel;
+			MarketDataMetadata.Symbol singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -1252,7 +1252,7 @@ static bool v1SymbolsExchangeIdActiveGetProcessor(MemoryStruct_s p_chunk, long c
 
 static bool v1SymbolsExchangeIdActiveGetHelper(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -1343,7 +1343,7 @@ static bool v1SymbolsExchangeIdActiveGetHelper(char * accessToken,
 
 bool MetadataManager::v1SymbolsExchangeIdActiveGetAsync(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData)
 {
 	return v1SymbolsExchangeIdActiveGetHelper(accessToken,
@@ -1353,7 +1353,7 @@ bool MetadataManager::v1SymbolsExchangeIdActiveGetAsync(char * accessToken,
 
 bool MetadataManager::v1SymbolsExchangeIdActiveGetSync(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData)
 {
 	return v1SymbolsExchangeIdActiveGetHelper(accessToken,
@@ -1364,13 +1364,13 @@ bool MetadataManager::v1SymbolsExchangeIdActiveGetSync(char * accessToken,
 static bool v1SymbolsExchangeIdHistoryGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Symbol>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<MarketDataMetadata.Symbol>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<V1.Symbol> out;
+	std::list<MarketDataMetadata.Symbol> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -1384,7 +1384,7 @@ static bool v1SymbolsExchangeIdHistoryGetProcessor(MemoryStruct_s p_chunk, long 
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			V1.Symbol singlemodel;
+			MarketDataMetadata.Symbol singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -1410,7 +1410,7 @@ static bool v1SymbolsExchangeIdHistoryGetProcessor(MemoryStruct_s p_chunk, long 
 
 static bool v1SymbolsExchangeIdHistoryGetHelper(char * accessToken,
 	std::string exchangeId, int page, int limit, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -1501,7 +1501,7 @@ static bool v1SymbolsExchangeIdHistoryGetHelper(char * accessToken,
 
 bool MetadataManager::v1SymbolsExchangeIdHistoryGetAsync(char * accessToken,
 	std::string exchangeId, int page, int limit, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData)
 {
 	return v1SymbolsExchangeIdHistoryGetHelper(accessToken,
@@ -1511,7 +1511,7 @@ bool MetadataManager::v1SymbolsExchangeIdHistoryGetAsync(char * accessToken,
 
 bool MetadataManager::v1SymbolsExchangeIdHistoryGetSync(char * accessToken,
 	std::string exchangeId, int page, int limit, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData)
 {
 	return v1SymbolsExchangeIdHistoryGetHelper(accessToken,

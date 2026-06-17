@@ -16,11 +16,11 @@ import type { AjaxResponse } from 'rxjs/ajax';
 import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
 import type { OperationOpts, HttpHeaders, HttpQuery } from '../runtime';
 import type {
-    V1Asset,
-    V1Chain,
-    V1Exchange,
-    V1Icon,
-    V1Symbol,
+    MarketDataMetadataAsset,
+    MarketDataMetadataChain,
+    MarketDataMetadataExchange,
+    MarketDataMetadataIcon,
+    MarketDataMetadataSymbol,
     V1SymbolMapping,
 } from '../models';
 
@@ -80,16 +80,16 @@ export class MetadataApi extends BaseAPI {
     /**
      * List all assets by asset ID
      */
-    v1AssetsAssetIdGet({ assetId }: V1AssetsAssetIdGetRequest): Observable<Array<V1Asset>>
-    v1AssetsAssetIdGet({ assetId }: V1AssetsAssetIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Asset>>>
-    v1AssetsAssetIdGet({ assetId }: V1AssetsAssetIdGetRequest, opts?: OperationOpts): Observable<Array<V1Asset> | AjaxResponse<Array<V1Asset>>> {
+    v1AssetsAssetIdGet({ assetId }: V1AssetsAssetIdGetRequest): Observable<Array<MarketDataMetadataAsset>>
+    v1AssetsAssetIdGet({ assetId }: V1AssetsAssetIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataAsset>>>
+    v1AssetsAssetIdGet({ assetId }: V1AssetsAssetIdGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataAsset> | AjaxResponse<Array<MarketDataMetadataAsset>>> {
         throwIfNullOrUndefined(assetId, 'assetId', 'v1AssetsAssetIdGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<V1Asset>>({
+        return this.request<Array<MarketDataMetadataAsset>>({
             url: '/v1/assets/{asset_id}'.replace('{asset_id}', encodeURI(assetId)),
             method: 'GET',
             headers,
@@ -100,9 +100,9 @@ export class MetadataApi extends BaseAPI {
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * List all assets
      */
-    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest): Observable<Array<V1Asset>>
-    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Asset>>>
-    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest, opts?: OperationOpts): Observable<Array<V1Asset> | AjaxResponse<Array<V1Asset>>> {
+    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest): Observable<Array<MarketDataMetadataAsset>>
+    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataAsset>>>
+    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataAsset> | AjaxResponse<Array<MarketDataMetadataAsset>>> {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -112,7 +112,7 @@ export class MetadataApi extends BaseAPI {
 
         if (filterAssetId != null) { query['filter_asset_id'] = filterAssetId; }
 
-        return this.request<Array<V1Asset>>({
+        return this.request<Array<MarketDataMetadataAsset>>({
             url: '/v1/assets',
             method: 'GET',
             headers,
@@ -124,16 +124,16 @@ export class MetadataApi extends BaseAPI {
      * Gets the list of icons (of the given size) for all the assets.
      * List all asset icons
      */
-    v1AssetsIconsSizeGet({ size }: V1AssetsIconsSizeGetRequest): Observable<Array<V1Icon>>
-    v1AssetsIconsSizeGet({ size }: V1AssetsIconsSizeGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Icon>>>
-    v1AssetsIconsSizeGet({ size }: V1AssetsIconsSizeGetRequest, opts?: OperationOpts): Observable<Array<V1Icon> | AjaxResponse<Array<V1Icon>>> {
+    v1AssetsIconsSizeGet({ size }: V1AssetsIconsSizeGetRequest): Observable<Array<MarketDataMetadataIcon>>
+    v1AssetsIconsSizeGet({ size }: V1AssetsIconsSizeGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataIcon>>>
+    v1AssetsIconsSizeGet({ size }: V1AssetsIconsSizeGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataIcon> | AjaxResponse<Array<MarketDataMetadataIcon>>> {
         throwIfNullOrUndefined(size, 'size', 'v1AssetsIconsSizeGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<V1Icon>>({
+        return this.request<Array<MarketDataMetadataIcon>>({
             url: '/v1/assets/icons/{size}'.replace('{size}', encodeURI(size)),
             method: 'GET',
             headers,
@@ -143,16 +143,16 @@ export class MetadataApi extends BaseAPI {
     /**
      * List all chains by chain ID
      */
-    v1ChainsChainIdGet({ chainId }: V1ChainsChainIdGetRequest): Observable<Array<V1Chain>>
-    v1ChainsChainIdGet({ chainId }: V1ChainsChainIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Chain>>>
-    v1ChainsChainIdGet({ chainId }: V1ChainsChainIdGetRequest, opts?: OperationOpts): Observable<Array<V1Chain> | AjaxResponse<Array<V1Chain>>> {
+    v1ChainsChainIdGet({ chainId }: V1ChainsChainIdGetRequest): Observable<Array<MarketDataMetadataChain>>
+    v1ChainsChainIdGet({ chainId }: V1ChainsChainIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataChain>>>
+    v1ChainsChainIdGet({ chainId }: V1ChainsChainIdGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataChain> | AjaxResponse<Array<MarketDataMetadataChain>>> {
         throwIfNullOrUndefined(chainId, 'chainId', 'v1ChainsChainIdGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<V1Chain>>({
+        return this.request<Array<MarketDataMetadataChain>>({
             url: '/v1/chains/{chain_id}'.replace('{chain_id}', encodeURI(chainId)),
             method: 'GET',
             headers,
@@ -163,9 +163,9 @@ export class MetadataApi extends BaseAPI {
      * Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * List all blockchain chains
      */
-    v1ChainsGet({ filterChainId }: V1ChainsGetRequest): Observable<Array<V1Chain>>
-    v1ChainsGet({ filterChainId }: V1ChainsGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Chain>>>
-    v1ChainsGet({ filterChainId }: V1ChainsGetRequest, opts?: OperationOpts): Observable<Array<V1Chain> | AjaxResponse<Array<V1Chain>>> {
+    v1ChainsGet({ filterChainId }: V1ChainsGetRequest): Observable<Array<MarketDataMetadataChain>>
+    v1ChainsGet({ filterChainId }: V1ChainsGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataChain>>>
+    v1ChainsGet({ filterChainId }: V1ChainsGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataChain> | AjaxResponse<Array<MarketDataMetadataChain>>> {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -175,7 +175,7 @@ export class MetadataApi extends BaseAPI {
 
         if (filterChainId != null) { query['filter_chain_id'] = filterChainId; }
 
-        return this.request<Array<V1Chain>>({
+        return this.request<Array<MarketDataMetadataChain>>({
             url: '/v1/chains',
             method: 'GET',
             headers,
@@ -186,16 +186,16 @@ export class MetadataApi extends BaseAPI {
     /**
      * List all exchanges by exchange_id
      */
-    v1ExchangesExchangeIdGet({ exchangeId }: V1ExchangesExchangeIdGetRequest): Observable<Array<V1Exchange>>
-    v1ExchangesExchangeIdGet({ exchangeId }: V1ExchangesExchangeIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Exchange>>>
-    v1ExchangesExchangeIdGet({ exchangeId }: V1ExchangesExchangeIdGetRequest, opts?: OperationOpts): Observable<Array<V1Exchange> | AjaxResponse<Array<V1Exchange>>> {
+    v1ExchangesExchangeIdGet({ exchangeId }: V1ExchangesExchangeIdGetRequest): Observable<Array<MarketDataMetadataExchange>>
+    v1ExchangesExchangeIdGet({ exchangeId }: V1ExchangesExchangeIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataExchange>>>
+    v1ExchangesExchangeIdGet({ exchangeId }: V1ExchangesExchangeIdGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataExchange> | AjaxResponse<Array<MarketDataMetadataExchange>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1ExchangesExchangeIdGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<V1Exchange>>({
+        return this.request<Array<MarketDataMetadataExchange>>({
             url: '/v1/exchanges/{exchange_id}'.replace('{exchange_id}', encodeURI(exchangeId)),
             method: 'GET',
             headers,
@@ -206,9 +206,9 @@ export class MetadataApi extends BaseAPI {
      * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * List all exchanges
      */
-    v1ExchangesGet({ filterExchangeId }: V1ExchangesGetRequest): Observable<Array<V1Exchange>>
-    v1ExchangesGet({ filterExchangeId }: V1ExchangesGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Exchange>>>
-    v1ExchangesGet({ filterExchangeId }: V1ExchangesGetRequest, opts?: OperationOpts): Observable<Array<V1Exchange> | AjaxResponse<Array<V1Exchange>>> {
+    v1ExchangesGet({ filterExchangeId }: V1ExchangesGetRequest): Observable<Array<MarketDataMetadataExchange>>
+    v1ExchangesGet({ filterExchangeId }: V1ExchangesGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataExchange>>>
+    v1ExchangesGet({ filterExchangeId }: V1ExchangesGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataExchange> | AjaxResponse<Array<MarketDataMetadataExchange>>> {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -218,7 +218,7 @@ export class MetadataApi extends BaseAPI {
 
         if (filterExchangeId != null) { query['filter_exchange_id'] = filterExchangeId; }
 
-        return this.request<Array<V1Exchange>>({
+        return this.request<Array<MarketDataMetadataExchange>>({
             url: '/v1/exchanges',
             method: 'GET',
             headers,
@@ -229,16 +229,16 @@ export class MetadataApi extends BaseAPI {
     /**
      * List of icons for the exchanges
      */
-    v1ExchangesIconsSizeGet({ size }: V1ExchangesIconsSizeGetRequest): Observable<Array<V1Icon>>
-    v1ExchangesIconsSizeGet({ size }: V1ExchangesIconsSizeGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Icon>>>
-    v1ExchangesIconsSizeGet({ size }: V1ExchangesIconsSizeGetRequest, opts?: OperationOpts): Observable<Array<V1Icon> | AjaxResponse<Array<V1Icon>>> {
+    v1ExchangesIconsSizeGet({ size }: V1ExchangesIconsSizeGetRequest): Observable<Array<MarketDataMetadataIcon>>
+    v1ExchangesIconsSizeGet({ size }: V1ExchangesIconsSizeGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataIcon>>>
+    v1ExchangesIconsSizeGet({ size }: V1ExchangesIconsSizeGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataIcon> | AjaxResponse<Array<MarketDataMetadataIcon>>> {
         throwIfNullOrUndefined(size, 'size', 'v1ExchangesIconsSizeGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<V1Icon>>({
+        return this.request<Array<MarketDataMetadataIcon>>({
             url: '/v1/exchanges/icons/{size}'.replace('{size}', encodeURI(size)),
             method: 'GET',
             headers,
@@ -249,9 +249,9 @@ export class MetadataApi extends BaseAPI {
      * Retrieves all currently active (listed) symbols, with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` DEPLOYER_PERPETUAL | `{exchange_id}_DPERP_{deployer_symbol}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time DEPLOYER_PERPETUAL | Deployer Perpetual contract | Perpetual contract for user-deployed markets *(e.g. Hyperliquid user-deployed perpetuals)* INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = DEPLOYER_PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
      * List all active symbols
      */
-    v1SymbolsExchangeIdActiveGet({ exchangeId, filterSymbolId, filterAssetId }: V1SymbolsExchangeIdActiveGetRequest): Observable<Array<V1Symbol>>
-    v1SymbolsExchangeIdActiveGet({ exchangeId, filterSymbolId, filterAssetId }: V1SymbolsExchangeIdActiveGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Symbol>>>
-    v1SymbolsExchangeIdActiveGet({ exchangeId, filterSymbolId, filterAssetId }: V1SymbolsExchangeIdActiveGetRequest, opts?: OperationOpts): Observable<Array<V1Symbol> | AjaxResponse<Array<V1Symbol>>> {
+    v1SymbolsExchangeIdActiveGet({ exchangeId, filterSymbolId, filterAssetId }: V1SymbolsExchangeIdActiveGetRequest): Observable<Array<MarketDataMetadataSymbol>>
+    v1SymbolsExchangeIdActiveGet({ exchangeId, filterSymbolId, filterAssetId }: V1SymbolsExchangeIdActiveGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataSymbol>>>
+    v1SymbolsExchangeIdActiveGet({ exchangeId, filterSymbolId, filterAssetId }: V1SymbolsExchangeIdActiveGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataSymbol> | AjaxResponse<Array<MarketDataMetadataSymbol>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1SymbolsExchangeIdActiveGet');
 
         const headers: HttpHeaders = {
@@ -263,7 +263,7 @@ export class MetadataApi extends BaseAPI {
         if (filterSymbolId != null) { query['filter_symbol_id'] = filterSymbolId; }
         if (filterAssetId != null) { query['filter_asset_id'] = filterAssetId; }
 
-        return this.request<Array<V1Symbol>>({
+        return this.request<Array<MarketDataMetadataSymbol>>({
             url: '/v1/symbols/{exchange_id}/active'.replace('{exchange_id}', encodeURI(exchangeId)),
             method: 'GET',
             headers,
@@ -275,9 +275,9 @@ export class MetadataApi extends BaseAPI {
      * This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange. The data is provided with pagination support.
      * List all historical symbols for an exchange.
      */
-    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest): Observable<Array<V1Symbol>>
-    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Symbol>>>
-    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<V1Symbol> | AjaxResponse<Array<V1Symbol>>> {
+    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest): Observable<Array<MarketDataMetadataSymbol>>
+    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataSymbol>>>
+    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataSymbol> | AjaxResponse<Array<MarketDataMetadataSymbol>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1SymbolsExchangeIdHistoryGet');
 
         const headers: HttpHeaders = {
@@ -289,7 +289,7 @@ export class MetadataApi extends BaseAPI {
         if (page != null) { query['page'] = page; }
         if (limit != null) { query['limit'] = limit; }
 
-        return this.request<Array<V1Symbol>>({
+        return this.request<Array<MarketDataMetadataSymbol>>({
             url: '/v1/symbols/{exchange_id}/history'.replace('{exchange_id}', encodeURI(exchangeId)),
             method: 'GET',
             headers,

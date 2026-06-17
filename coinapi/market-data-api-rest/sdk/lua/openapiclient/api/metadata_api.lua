@@ -16,11 +16,11 @@ local dkjson = require "dkjson"
 local basexx = require "basexx"
 
 -- model import
-local openapiclient_v1_asset = require "openapiclient.model.v1_asset"
-local openapiclient_v1_chain = require "openapiclient.model.v1_chain"
-local openapiclient_v1_exchange = require "openapiclient.model.v1_exchange"
-local openapiclient_v1_icon = require "openapiclient.model.v1_icon"
-local openapiclient_v1_symbol = require "openapiclient.model.v1_symbol"
+local openapiclient_market_data_metadata_asset = require "openapiclient.model.market_data_metadata_asset"
+local openapiclient_market_data_metadata_chain = require "openapiclient.model.market_data_metadata_chain"
+local openapiclient_market_data_metadata_exchange = require "openapiclient.model.market_data_metadata_exchange"
+local openapiclient_market_data_metadata_icon = require "openapiclient.model.market_data_metadata_icon"
+local openapiclient_market_data_metadata_symbol = require "openapiclient.model.market_data_metadata_symbol"
 local openapiclient_v1_symbol_mapping = require "openapiclient.model.v1_symbol_mapping"
 
 local metadata_api = {}
@@ -88,7 +88,7 @@ function metadata_api:v1_assets_asset_id_get(asset_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_asset.cast(ob)
+			openapiclient_market_data_metadata_asset.cast(ob)
 		end
 		return result, headers
 	else
@@ -141,7 +141,7 @@ function metadata_api:v1_assets_get(filter_asset_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_asset.cast(ob)
+			openapiclient_market_data_metadata_asset.cast(ob)
 		end
 		return result, headers
 	else
@@ -194,7 +194,7 @@ function metadata_api:v1_assets_icons_size_get(size)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_icon.cast(ob)
+			openapiclient_market_data_metadata_icon.cast(ob)
 		end
 		return result, headers
 	else
@@ -247,7 +247,7 @@ function metadata_api:v1_chains_chain_id_get(chain_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_chain.cast(ob)
+			openapiclient_market_data_metadata_chain.cast(ob)
 		end
 		return result, headers
 	else
@@ -300,7 +300,7 @@ function metadata_api:v1_chains_get(filter_chain_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_chain.cast(ob)
+			openapiclient_market_data_metadata_chain.cast(ob)
 		end
 		return result, headers
 	else
@@ -353,7 +353,7 @@ function metadata_api:v1_exchanges_exchange_id_get(exchange_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_exchange.cast(ob)
+			openapiclient_market_data_metadata_exchange.cast(ob)
 		end
 		return result, headers
 	else
@@ -406,7 +406,7 @@ function metadata_api:v1_exchanges_get(filter_exchange_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_exchange.cast(ob)
+			openapiclient_market_data_metadata_exchange.cast(ob)
 		end
 		return result, headers
 	else
@@ -459,7 +459,7 @@ function metadata_api:v1_exchanges_icons_size_get(size)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_icon.cast(ob)
+			openapiclient_market_data_metadata_icon.cast(ob)
 		end
 		return result, headers
 	else
@@ -512,7 +512,7 @@ function metadata_api:v1_symbols_exchange_id_active_get(exchange_id, filter_symb
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_symbol.cast(ob)
+			openapiclient_market_data_metadata_symbol.cast(ob)
 		end
 		return result, headers
 	else
@@ -565,7 +565,7 @@ function metadata_api:v1_symbols_exchange_id_history_get(exchange_id, page, limi
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_v1_symbol.cast(ob)
+			openapiclient_market_data_metadata_symbol.cast(ob)
 		end
 		return result, headers
 	else

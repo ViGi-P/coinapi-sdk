@@ -18,7 +18,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1assetsassetidget"></a>
 # **V1AssetsAssetIdGet**
-> List&lt;V1Asset&gt; V1AssetsAssetIdGet (string assetId)
+> List&lt;MarketDataMetadataAsset&gt; V1AssetsAssetIdGet (string assetId)
 
 List all assets by asset ID
 
@@ -31,7 +31,7 @@ List all assets by asset ID
 
 ### Return type
 
-[**List&lt;V1Asset&gt;**](V1Asset.md)
+[**List&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -52,7 +52,7 @@ List all assets by asset ID
 
 <a id="v1assetsget"></a>
 # **V1AssetsGet**
-> List&lt;V1Asset&gt; V1AssetsGet (string filterAssetId = null)
+> List&lt;MarketDataMetadataAsset&gt; V1AssetsGet (string filterAssetId = null)
 
 List all assets
 
@@ -67,7 +67,7 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 
 ### Return type
 
-[**List&lt;V1Asset&gt;**](V1Asset.md)
+[**List&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 
 <a id="v1assetsiconssizeget"></a>
 # **V1AssetsIconsSizeGet**
-> List&lt;V1Icon&gt; V1AssetsIconsSizeGet (int size)
+> List&lt;MarketDataMetadataIcon&gt; V1AssetsIconsSizeGet (int size)
 
 List all asset icons
 
@@ -103,7 +103,7 @@ Gets the list of icons (of the given size) for all the assets.
 
 ### Return type
 
-[**List&lt;V1Icon&gt;**](V1Icon.md)
+[**List&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -124,7 +124,7 @@ Gets the list of icons (of the given size) for all the assets.
 
 <a id="v1chainschainidget"></a>
 # **V1ChainsChainIdGet**
-> List&lt;V1Chain&gt; V1ChainsChainIdGet (string chainId)
+> List&lt;MarketDataMetadataChain&gt; V1ChainsChainIdGet (string chainId)
 
 List all chains by chain ID
 
@@ -137,7 +137,7 @@ List all chains by chain ID
 
 ### Return type
 
-[**List&lt;V1Chain&gt;**](V1Chain.md)
+[**List&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ List all chains by chain ID
 
 <a id="v1chainsget"></a>
 # **V1ChainsGet**
-> List&lt;V1Chain&gt; V1ChainsGet (string filterChainId = null)
+> List&lt;MarketDataMetadataChain&gt; V1ChainsGet (string filterChainId = null)
 
 List all blockchain chains
 
@@ -173,7 +173,7 @@ Retrieves all blockchain chains supported by the system.              :::info Pr
 
 ### Return type
 
-[**List&lt;V1Chain&gt;**](V1Chain.md)
+[**List&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Retrieves all blockchain chains supported by the system.              :::info Pr
 
 <a id="v1exchangesexchangeidget"></a>
 # **V1ExchangesExchangeIdGet**
-> List&lt;V1Exchange&gt; V1ExchangesExchangeIdGet (string exchangeId)
+> List&lt;MarketDataMetadataExchange&gt; V1ExchangesExchangeIdGet (string exchangeId)
 
 List all exchanges by exchange_id
 
@@ -207,7 +207,7 @@ List all exchanges by exchange_id
 
 ### Return type
 
-[**List&lt;V1Exchange&gt;**](V1Exchange.md)
+[**List&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ List all exchanges by exchange_id
 
 <a id="v1exchangesget"></a>
 # **V1ExchangesGet**
-> List&lt;V1Exchange&gt; V1ExchangesGet (string filterExchangeId = null)
+> List&lt;MarketDataMetadataExchange&gt; V1ExchangesGet (string filterExchangeId = null)
 
 List all exchanges
 
@@ -243,7 +243,7 @@ Get a detailed list of exchanges provided by the system.              :::info Pr
 
 ### Return type
 
-[**List&lt;V1Exchange&gt;**](V1Exchange.md)
+[**List&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ Get a detailed list of exchanges provided by the system.              :::info Pr
 
 <a id="v1exchangesiconssizeget"></a>
 # **V1ExchangesIconsSizeGet**
-> List&lt;V1Icon&gt; V1ExchangesIconsSizeGet (int size)
+> List&lt;MarketDataMetadataIcon&gt; V1ExchangesIconsSizeGet (int size)
 
 List of icons for the exchanges
 
@@ -277,7 +277,7 @@ List of icons for the exchanges
 
 ### Return type
 
-[**List&lt;V1Icon&gt;**](V1Icon.md)
+[**List&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -298,7 +298,7 @@ List of icons for the exchanges
 
 <a id="v1symbolsexchangeidactiveget"></a>
 # **V1SymbolsExchangeIdActiveGet**
-> List&lt;V1Symbol&gt; V1SymbolsExchangeIdActiveGet (string exchangeId, string filterSymbolId = null, string filterAssetId = null)
+> List&lt;MarketDataMetadataSymbol&gt; V1SymbolsExchangeIdActiveGet (string exchangeId, string filterSymbolId = null, string filterAssetId = null)
 
 List all active symbols
 
@@ -315,7 +315,7 @@ Retrieves all currently active (listed) symbols, with optional filtering.       
 
 ### Return type
 
-[**List&lt;V1Symbol&gt;**](V1Symbol.md)
+[**List&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ Retrieves all currently active (listed) symbols, with optional filtering.       
 
 <a id="v1symbolsexchangeidhistoryget"></a>
 # **V1SymbolsExchangeIdHistoryGet**
-> List&lt;V1Symbol&gt; V1SymbolsExchangeIdHistoryGet (string exchangeId, int page = null, int limit = null)
+> List&lt;MarketDataMetadataSymbol&gt; V1SymbolsExchangeIdHistoryGet (string exchangeId, int page = null, int limit = null)
 
 List all historical symbols for an exchange.
 
@@ -353,7 +353,7 @@ This endpoint provides access to symbols that are no longer actively traded or l
 
 ### Return type
 
-[**List&lt;V1Symbol&gt;**](V1Symbol.md)
+[**List&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

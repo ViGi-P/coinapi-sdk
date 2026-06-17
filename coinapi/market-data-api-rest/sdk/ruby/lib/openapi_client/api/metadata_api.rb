@@ -22,7 +22,7 @@ module OpenapiClient
     # List all assets by asset ID
     # @param asset_id [String] The asset ID.
     # @param [Hash] opts the optional parameters
-    # @return [Array<V1Asset>]
+    # @return [Array<MarketDataMetadataAsset>]
     def v1_assets_asset_id_get(asset_id, opts = {})
       data, _status_code, _headers = v1_assets_asset_id_get_with_http_info(asset_id, opts)
       data
@@ -31,7 +31,7 @@ module OpenapiClient
     # List all assets by asset ID
     # @param asset_id [String] The asset ID.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<V1Asset>, Integer, Hash)>] Array<V1Asset> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataAsset>, Integer, Hash)>] Array<MarketDataMetadataAsset> data, response status code and response headers
     def v1_assets_asset_id_get_with_http_info(asset_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_assets_asset_id_get ...'
@@ -58,7 +58,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Asset>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataAsset>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -84,7 +84,7 @@ module OpenapiClient
     # Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
-    # @return [Array<V1Asset>]
+    # @return [Array<MarketDataMetadataAsset>]
     def v1_assets_get(opts = {})
       data, _status_code, _headers = v1_assets_get_with_http_info(opts)
       data
@@ -94,7 +94,7 @@ module OpenapiClient
     # Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
-    # @return [Array<(Array<V1Asset>, Integer, Hash)>] Array<V1Asset> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataAsset>, Integer, Hash)>] Array<MarketDataMetadataAsset> data, response status code and response headers
     def v1_assets_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_assets_get ...'
@@ -118,7 +118,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Asset>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataAsset>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -144,7 +144,7 @@ module OpenapiClient
     # Gets the list of icons (of the given size) for all the assets.
     # @param size [Integer] The size of the icons.
     # @param [Hash] opts the optional parameters
-    # @return [Array<V1Icon>]
+    # @return [Array<MarketDataMetadataIcon>]
     def v1_assets_icons_size_get(size, opts = {})
       data, _status_code, _headers = v1_assets_icons_size_get_with_http_info(size, opts)
       data
@@ -154,7 +154,7 @@ module OpenapiClient
     # Gets the list of icons (of the given size) for all the assets.
     # @param size [Integer] The size of the icons.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<V1Icon>, Integer, Hash)>] Array<V1Icon> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataIcon>, Integer, Hash)>] Array<MarketDataMetadataIcon> data, response status code and response headers
     def v1_assets_icons_size_get_with_http_info(size, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_assets_icons_size_get ...'
@@ -181,7 +181,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Icon>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataIcon>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -206,7 +206,7 @@ module OpenapiClient
     # List all chains by chain ID
     # @param chain_id [String] The chain ID.
     # @param [Hash] opts the optional parameters
-    # @return [Array<V1Chain>]
+    # @return [Array<MarketDataMetadataChain>]
     def v1_chains_chain_id_get(chain_id, opts = {})
       data, _status_code, _headers = v1_chains_chain_id_get_with_http_info(chain_id, opts)
       data
@@ -215,7 +215,7 @@ module OpenapiClient
     # List all chains by chain ID
     # @param chain_id [String] The chain ID.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<V1Chain>, Integer, Hash)>] Array<V1Chain> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataChain>, Integer, Hash)>] Array<MarketDataMetadataChain> data, response status code and response headers
     def v1_chains_chain_id_get_with_http_info(chain_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_chains_chain_id_get ...'
@@ -242,7 +242,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Chain>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataChain>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -268,7 +268,7 @@ module OpenapiClient
     # Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_chain_id Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
-    # @return [Array<V1Chain>]
+    # @return [Array<MarketDataMetadataChain>]
     def v1_chains_get(opts = {})
       data, _status_code, _headers = v1_chains_get_with_http_info(opts)
       data
@@ -278,7 +278,7 @@ module OpenapiClient
     # Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_chain_id Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
-    # @return [Array<(Array<V1Chain>, Integer, Hash)>] Array<V1Chain> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataChain>, Integer, Hash)>] Array<MarketDataMetadataChain> data, response status code and response headers
     def v1_chains_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_chains_get ...'
@@ -302,7 +302,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Chain>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataChain>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -327,7 +327,7 @@ module OpenapiClient
     # List all exchanges by exchange_id
     # @param exchange_id [String] The ID of the exchange.
     # @param [Hash] opts the optional parameters
-    # @return [Array<V1Exchange>]
+    # @return [Array<MarketDataMetadataExchange>]
     def v1_exchanges_exchange_id_get(exchange_id, opts = {})
       data, _status_code, _headers = v1_exchanges_exchange_id_get_with_http_info(exchange_id, opts)
       data
@@ -336,7 +336,7 @@ module OpenapiClient
     # List all exchanges by exchange_id
     # @param exchange_id [String] The ID of the exchange.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<V1Exchange>, Integer, Hash)>] Array<V1Exchange> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataExchange>, Integer, Hash)>] Array<MarketDataMetadataExchange> data, response status code and response headers
     def v1_exchanges_exchange_id_get_with_http_info(exchange_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_exchanges_exchange_id_get ...'
@@ -363,7 +363,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Exchange>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataExchange>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -389,7 +389,7 @@ module OpenapiClient
     # Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
-    # @return [Array<V1Exchange>]
+    # @return [Array<MarketDataMetadataExchange>]
     def v1_exchanges_get(opts = {})
       data, _status_code, _headers = v1_exchanges_get_with_http_info(opts)
       data
@@ -399,7 +399,7 @@ module OpenapiClient
     # Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
-    # @return [Array<(Array<V1Exchange>, Integer, Hash)>] Array<V1Exchange> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataExchange>, Integer, Hash)>] Array<MarketDataMetadataExchange> data, response status code and response headers
     def v1_exchanges_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_exchanges_get ...'
@@ -423,7 +423,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Exchange>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataExchange>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -448,7 +448,7 @@ module OpenapiClient
     # List of icons for the exchanges
     # @param size [Integer] The size of the icons.
     # @param [Hash] opts the optional parameters
-    # @return [Array<V1Icon>]
+    # @return [Array<MarketDataMetadataIcon>]
     def v1_exchanges_icons_size_get(size, opts = {})
       data, _status_code, _headers = v1_exchanges_icons_size_get_with_http_info(size, opts)
       data
@@ -457,7 +457,7 @@ module OpenapiClient
     # List of icons for the exchanges
     # @param size [Integer] The size of the icons.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<V1Icon>, Integer, Hash)>] Array<V1Icon> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataIcon>, Integer, Hash)>] Array<MarketDataMetadataIcon> data, response status code and response headers
     def v1_exchanges_icons_size_get_with_http_info(size, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_exchanges_icons_size_get ...'
@@ -484,7 +484,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Icon>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataIcon>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -512,7 +512,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
     # @option opts [String] :filter_asset_id The filter for asset ID.
-    # @return [Array<V1Symbol>]
+    # @return [Array<MarketDataMetadataSymbol>]
     def v1_symbols_exchange_id_active_get(exchange_id, opts = {})
       data, _status_code, _headers = v1_symbols_exchange_id_active_get_with_http_info(exchange_id, opts)
       data
@@ -524,7 +524,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
     # @option opts [String] :filter_asset_id The filter for asset ID.
-    # @return [Array<(Array<V1Symbol>, Integer, Hash)>] Array<V1Symbol> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataSymbol>, Integer, Hash)>] Array<MarketDataMetadataSymbol> data, response status code and response headers
     def v1_symbols_exchange_id_active_get_with_http_info(exchange_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_symbols_exchange_id_active_get ...'
@@ -553,7 +553,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Symbol>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataSymbol>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -581,7 +581,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page The page number for pagination (starts from 1). (default to 1)
     # @option opts [Integer] :limit Number of records to return per page. (default to 100)
-    # @return [Array<V1Symbol>]
+    # @return [Array<MarketDataMetadataSymbol>]
     def v1_symbols_exchange_id_history_get(exchange_id, opts = {})
       data, _status_code, _headers = v1_symbols_exchange_id_history_get_with_http_info(exchange_id, opts)
       data
@@ -593,7 +593,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page The page number for pagination (starts from 1). (default to 1)
     # @option opts [Integer] :limit Number of records to return per page. (default to 100)
-    # @return [Array<(Array<V1Symbol>, Integer, Hash)>] Array<V1Symbol> data, response status code and response headers
+    # @return [Array<(Array<MarketDataMetadataSymbol>, Integer, Hash)>] Array<MarketDataMetadataSymbol> data, response status code and response headers
     def v1_symbols_exchange_id_history_get_with_http_info(exchange_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataApi.v1_symbols_exchange_id_history_get ...'
@@ -622,7 +622,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<V1Symbol>'
+      return_type = opts[:debug_return_type] || 'Array<MarketDataMetadataSymbol>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']

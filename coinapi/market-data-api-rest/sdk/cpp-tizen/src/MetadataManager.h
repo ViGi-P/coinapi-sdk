@@ -5,11 +5,11 @@
 #include <cstring>
 #include <list>
 #include <glib.h>
-#include "V1.Asset.h"
-#include "V1.Chain.h"
-#include "V1.Exchange.h"
-#include "V1.Icon.h"
-#include "V1.Symbol.h"
+#include "MarketDataMetadata.Asset.h"
+#include "MarketDataMetadata.Chain.h"
+#include "MarketDataMetadata.Exchange.h"
+#include "MarketDataMetadata.Icon.h"
+#include "MarketDataMetadata.Symbol.h"
 #include "V1.SymbolMapping.h"
 #include <list>
 #include "Error.h"
@@ -40,7 +40,7 @@ public:
  */
 bool v1AssetsAssetIdGetSync(char * accessToken,
 	std::string assetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData);
 
 /*! \brief List all assets by asset ID. *Asynchronous*
@@ -53,7 +53,7 @@ bool v1AssetsAssetIdGetSync(char * accessToken,
  */
 bool v1AssetsAssetIdGetAsync(char * accessToken,
 	std::string assetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData);
 
 
@@ -67,7 +67,7 @@ bool v1AssetsAssetIdGetAsync(char * accessToken,
  */
 bool v1AssetsGetSync(char * accessToken,
 	std::string filterAssetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData);
 
 /*! \brief List all assets. *Asynchronous*
@@ -80,7 +80,7 @@ bool v1AssetsGetSync(char * accessToken,
  */
 bool v1AssetsGetAsync(char * accessToken,
 	std::string filterAssetId, 
-	void(* handler)(std::list<V1.Asset>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData);
 
 
@@ -94,7 +94,7 @@ bool v1AssetsGetAsync(char * accessToken,
  */
 bool v1AssetsIconsSizeGetSync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData);
 
 /*! \brief List all asset icons. *Asynchronous*
@@ -107,7 +107,7 @@ bool v1AssetsIconsSizeGetSync(char * accessToken,
  */
 bool v1AssetsIconsSizeGetAsync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData);
 
 
@@ -121,7 +121,7 @@ bool v1AssetsIconsSizeGetAsync(char * accessToken,
  */
 bool v1ChainsChainIdGetSync(char * accessToken,
 	std::string chainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData);
 
 /*! \brief List all chains by chain ID. *Asynchronous*
@@ -134,7 +134,7 @@ bool v1ChainsChainIdGetSync(char * accessToken,
  */
 bool v1ChainsChainIdGetAsync(char * accessToken,
 	std::string chainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData);
 
 
@@ -148,7 +148,7 @@ bool v1ChainsChainIdGetAsync(char * accessToken,
  */
 bool v1ChainsGetSync(char * accessToken,
 	std::string filterChainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData);
 
 /*! \brief List all blockchain chains. *Asynchronous*
@@ -161,7 +161,7 @@ bool v1ChainsGetSync(char * accessToken,
  */
 bool v1ChainsGetAsync(char * accessToken,
 	std::string filterChainId, 
-	void(* handler)(std::list<V1.Chain>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Chain>, Error, void* )
 	, void* userData);
 
 
@@ -175,7 +175,7 @@ bool v1ChainsGetAsync(char * accessToken,
  */
 bool v1ExchangesExchangeIdGetSync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData);
 
 /*! \brief List all exchanges by exchange_id. *Asynchronous*
@@ -188,7 +188,7 @@ bool v1ExchangesExchangeIdGetSync(char * accessToken,
  */
 bool v1ExchangesExchangeIdGetAsync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData);
 
 
@@ -202,7 +202,7 @@ bool v1ExchangesExchangeIdGetAsync(char * accessToken,
  */
 bool v1ExchangesGetSync(char * accessToken,
 	std::string filterExchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData);
 
 /*! \brief List all exchanges. *Asynchronous*
@@ -215,7 +215,7 @@ bool v1ExchangesGetSync(char * accessToken,
  */
 bool v1ExchangesGetAsync(char * accessToken,
 	std::string filterExchangeId, 
-	void(* handler)(std::list<V1.Exchange>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Exchange>, Error, void* )
 	, void* userData);
 
 
@@ -229,7 +229,7 @@ bool v1ExchangesGetAsync(char * accessToken,
  */
 bool v1ExchangesIconsSizeGetSync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData);
 
 /*! \brief List of icons for the exchanges. *Asynchronous*
@@ -242,7 +242,7 @@ bool v1ExchangesIconsSizeGetSync(char * accessToken,
  */
 bool v1ExchangesIconsSizeGetAsync(char * accessToken,
 	int size, 
-	void(* handler)(std::list<V1.Icon>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Icon>, Error, void* )
 	, void* userData);
 
 
@@ -258,7 +258,7 @@ bool v1ExchangesIconsSizeGetAsync(char * accessToken,
  */
 bool v1SymbolsExchangeIdActiveGetSync(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData);
 
 /*! \brief List all active symbols. *Asynchronous*
@@ -273,7 +273,7 @@ bool v1SymbolsExchangeIdActiveGetSync(char * accessToken,
  */
 bool v1SymbolsExchangeIdActiveGetAsync(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData);
 
 
@@ -289,7 +289,7 @@ bool v1SymbolsExchangeIdActiveGetAsync(char * accessToken,
  */
 bool v1SymbolsExchangeIdHistoryGetSync(char * accessToken,
 	std::string exchangeId, int page, int limit, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData);
 
 /*! \brief List all historical symbols for an exchange.. *Asynchronous*
@@ -304,7 +304,7 @@ bool v1SymbolsExchangeIdHistoryGetSync(char * accessToken,
  */
 bool v1SymbolsExchangeIdHistoryGetAsync(char * accessToken,
 	std::string exchangeId, int page, int limit, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
+	void(* handler)(std::list<MarketDataMetadata.Symbol>, Error, void* )
 	, void* userData);
 
 

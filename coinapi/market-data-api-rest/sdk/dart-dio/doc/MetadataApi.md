@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **v1AssetsAssetIdGet**
-> BuiltList<V1Asset> v1AssetsAssetIdGet(assetId)
+> BuiltList<MarketDataMetadataAsset> v1AssetsAssetIdGet(assetId)
 
 List all assets by asset ID
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Asset&gt;**](V1Asset.md)
+[**BuiltList&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1AssetsGet**
-> BuiltList<V1Asset> v1AssetsGet(filterAssetId)
+> BuiltList<MarketDataMetadataAsset> v1AssetsGet(filterAssetId)
 
 List all assets
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Asset&gt;**](V1Asset.md)
+[**BuiltList&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1AssetsIconsSizeGet**
-> BuiltList<V1Icon> v1AssetsIconsSizeGet(size)
+> BuiltList<MarketDataMetadataIcon> v1AssetsIconsSizeGet(size)
 
 List all asset icons
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Icon&gt;**](V1Icon.md)
+[**BuiltList&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1ChainsChainIdGet**
-> BuiltList<V1Chain> v1ChainsChainIdGet(chainId)
+> BuiltList<MarketDataMetadataChain> v1ChainsChainIdGet(chainId)
 
 List all chains by chain ID
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Chain&gt;**](V1Chain.md)
+[**BuiltList&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1ChainsGet**
-> BuiltList<V1Chain> v1ChainsGet(filterChainId)
+> BuiltList<MarketDataMetadataChain> v1ChainsGet(filterChainId)
 
 List all blockchain chains
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Chain&gt;**](V1Chain.md)
+[**BuiltList&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1ExchangesExchangeIdGet**
-> BuiltList<V1Exchange> v1ExchangesExchangeIdGet(exchangeId)
+> BuiltList<MarketDataMetadataExchange> v1ExchangesExchangeIdGet(exchangeId)
 
 List all exchanges by exchange_id
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Exchange&gt;**](V1Exchange.md)
+[**BuiltList&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1ExchangesGet**
-> BuiltList<V1Exchange> v1ExchangesGet(filterExchangeId)
+> BuiltList<MarketDataMetadataExchange> v1ExchangesGet(filterExchangeId)
 
 List all exchanges
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Exchange&gt;**](V1Exchange.md)
+[**BuiltList&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1ExchangesIconsSizeGet**
-> BuiltList<V1Icon> v1ExchangesIconsSizeGet(size)
+> BuiltList<MarketDataMetadataIcon> v1ExchangesIconsSizeGet(size)
 
 List of icons for the exchanges
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Icon&gt;**](V1Icon.md)
+[**BuiltList&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1SymbolsExchangeIdActiveGet**
-> BuiltList<V1Symbol> v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
+> BuiltList<MarketDataMetadataSymbol> v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
 
 List all active symbols
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Symbol&gt;**](V1Symbol.md)
+[**BuiltList&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1SymbolsExchangeIdHistoryGet**
-> BuiltList<V1Symbol> v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+> BuiltList<MarketDataMetadataSymbol> v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
 
 List all historical symbols for an exchange.
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;V1Symbol&gt;**](V1Symbol.md)
+[**BuiltList&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

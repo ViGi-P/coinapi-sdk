@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## v1AssetsAssetIdGet
 
-> List&lt;V1Asset&gt; v1AssetsAssetIdGet(assetId)
+> List&lt;MarketDataMetadataAsset&gt; v1AssetsAssetIdGet(assetId)
 
 List all assets by asset ID
 
@@ -33,7 +33,7 @@ List all assets by asset ID
 MetadataApi apiInstance = new MetadataApi();
 String assetId = null; // String | The asset ID.
 try {
-    List<V1Asset> result = apiInstance.v1AssetsAssetIdGet(assetId);
+    List<MarketDataMetadataAsset> result = apiInstance.v1AssetsAssetIdGet(assetId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1AssetsAssetIdGet");
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Asset&gt;**](V1Asset.md)
+[**List&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## v1AssetsGet
 
-> List&lt;V1Asset&gt; v1AssetsGet(filterAssetId)
+> List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId)
 
 List all assets
 
@@ -79,7 +79,7 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 MetadataApi apiInstance = new MetadataApi();
 String filterAssetId = null; // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
 try {
-    List<V1Asset> result = apiInstance.v1AssetsGet(filterAssetId);
+    List<MarketDataMetadataAsset> result = apiInstance.v1AssetsGet(filterAssetId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1AssetsGet");
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Asset&gt;**](V1Asset.md)
+[**List&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ## v1AssetsIconsSizeGet
 
-> List&lt;V1Icon&gt; v1AssetsIconsSizeGet(size)
+> List&lt;MarketDataMetadataIcon&gt; v1AssetsIconsSizeGet(size)
 
 List all asset icons
 
@@ -125,7 +125,7 @@ Gets the list of icons (of the given size) for all the assets.
 MetadataApi apiInstance = new MetadataApi();
 Integer size = null; // Integer | The size of the icons.
 try {
-    List<V1Icon> result = apiInstance.v1AssetsIconsSizeGet(size);
+    List<MarketDataMetadataIcon> result = apiInstance.v1AssetsIconsSizeGet(size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1AssetsIconsSizeGet");
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Icon&gt;**](V1Icon.md)
+[**List&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## v1ChainsChainIdGet
 
-> List&lt;V1Chain&gt; v1ChainsChainIdGet(chainId)
+> List&lt;MarketDataMetadataChain&gt; v1ChainsChainIdGet(chainId)
 
 List all chains by chain ID
 
@@ -169,7 +169,7 @@ List all chains by chain ID
 MetadataApi apiInstance = new MetadataApi();
 String chainId = null; // String | The chain ID.
 try {
-    List<V1Chain> result = apiInstance.v1ChainsChainIdGet(chainId);
+    List<MarketDataMetadataChain> result = apiInstance.v1ChainsChainIdGet(chainId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1ChainsChainIdGet");
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Chain&gt;**](V1Chain.md)
+[**List&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## v1ChainsGet
 
-> List&lt;V1Chain&gt; v1ChainsGet(filterChainId)
+> List&lt;MarketDataMetadataChain&gt; v1ChainsGet(filterChainId)
 
 List all blockchain chains
 
@@ -215,7 +215,7 @@ Retrieves all blockchain chains supported by the system.              :::info Pr
 MetadataApi apiInstance = new MetadataApi();
 String filterChainId = null; // String | Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`).
 try {
-    List<V1Chain> result = apiInstance.v1ChainsGet(filterChainId);
+    List<MarketDataMetadataChain> result = apiInstance.v1ChainsGet(filterChainId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1ChainsGet");
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Chain&gt;**](V1Chain.md)
+[**List&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ## v1ExchangesExchangeIdGet
 
-> List&lt;V1Exchange&gt; v1ExchangesExchangeIdGet(exchangeId)
+> List&lt;MarketDataMetadataExchange&gt; v1ExchangesExchangeIdGet(exchangeId)
 
 List all exchanges by exchange_id
 
@@ -259,7 +259,7 @@ List all exchanges by exchange_id
 MetadataApi apiInstance = new MetadataApi();
 String exchangeId = null; // String | The ID of the exchange.
 try {
-    List<V1Exchange> result = apiInstance.v1ExchangesExchangeIdGet(exchangeId);
+    List<MarketDataMetadataExchange> result = apiInstance.v1ExchangesExchangeIdGet(exchangeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1ExchangesExchangeIdGet");
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Exchange&gt;**](V1Exchange.md)
+[**List&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ## v1ExchangesGet
 
-> List&lt;V1Exchange&gt; v1ExchangesGet(filterExchangeId)
+> List&lt;MarketDataMetadataExchange&gt; v1ExchangesGet(filterExchangeId)
 
 List all exchanges
 
@@ -305,7 +305,7 @@ Get a detailed list of exchanges provided by the system.              :::info Pr
 MetadataApi apiInstance = new MetadataApi();
 String filterExchangeId = null; // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
 try {
-    List<V1Exchange> result = apiInstance.v1ExchangesGet(filterExchangeId);
+    List<MarketDataMetadataExchange> result = apiInstance.v1ExchangesGet(filterExchangeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1ExchangesGet");
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Exchange&gt;**](V1Exchange.md)
+[**List&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ## v1ExchangesIconsSizeGet
 
-> List&lt;V1Icon&gt; v1ExchangesIconsSizeGet(size)
+> List&lt;MarketDataMetadataIcon&gt; v1ExchangesIconsSizeGet(size)
 
 List of icons for the exchanges
 
@@ -349,7 +349,7 @@ List of icons for the exchanges
 MetadataApi apiInstance = new MetadataApi();
 Integer size = null; // Integer | The size of the icons.
 try {
-    List<V1Icon> result = apiInstance.v1ExchangesIconsSizeGet(size);
+    List<MarketDataMetadataIcon> result = apiInstance.v1ExchangesIconsSizeGet(size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1ExchangesIconsSizeGet");
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Icon&gt;**](V1Icon.md)
+[**List&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsExchangeIdActiveGet
 
-> List&lt;V1Symbol&gt; v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
+> List&lt;MarketDataMetadataSymbol&gt; v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
 
 List all active symbols
 
@@ -397,7 +397,7 @@ String exchangeId = null; // String | The ID of the exchange.
 String filterSymbolId = null; // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
 String filterAssetId = null; // String | The filter for asset ID.
 try {
-    List<V1Symbol> result = apiInstance.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId);
+    List<MarketDataMetadataSymbol> result = apiInstance.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdActiveGet");
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Symbol&gt;**](V1Symbol.md)
+[**List&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsExchangeIdHistoryGet
 
-> List&lt;V1Symbol&gt; v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+> List&lt;MarketDataMetadataSymbol&gt; v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
 
 List all historical symbols for an exchange.
 
@@ -447,7 +447,7 @@ String exchangeId = null; // String | The ID of the exchange.
 Integer page = 1; // Integer | The page number for pagination (starts from 1).
 Integer limit = 100; // Integer | Number of records to return per page.
 try {
-    List<V1Symbol> result = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit);
+    List<MarketDataMetadataSymbol> result = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdHistoryGet");
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;V1Symbol&gt;**](V1Symbol.md)
+[**List&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

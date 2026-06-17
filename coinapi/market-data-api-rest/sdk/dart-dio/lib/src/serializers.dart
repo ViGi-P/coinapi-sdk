@@ -14,17 +14,18 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:openapi/src/date_serializer.dart';
 import 'package:openapi/src/model/date.dart';
 
+import 'package:openapi/src/model/market_data_metadata_asset.dart';
+import 'package:openapi/src/model/market_data_metadata_chain.dart';
+import 'package:openapi/src/model/market_data_metadata_exchange.dart';
+import 'package:openapi/src/model/market_data_metadata_icon.dart';
+import 'package:openapi/src/model/market_data_metadata_symbol.dart';
 import 'package:openapi/src/model/ohlcv_exchange_timeseries_item.dart';
-import 'package:openapi/src/model/v1_asset.dart';
-import 'package:openapi/src/model/v1_chain.dart';
 import 'package:openapi/src/model/v1_chain_network_address.dart';
-import 'package:openapi/src/model/v1_exchange.dart';
 import 'package:openapi/src/model/v1_exchange_rate.dart';
 import 'package:openapi/src/model/v1_exchange_rates.dart';
 import 'package:openapi/src/model/v1_exchange_rates_rate.dart';
 import 'package:openapi/src/model/v1_exchange_rates_timeseries_item.dart';
 import 'package:openapi/src/model/v1_general_data.dart';
-import 'package:openapi/src/model/v1_icon.dart';
 import 'package:openapi/src/model/v1_last_trade.dart';
 import 'package:openapi/src/model/v1_listing_item.dart';
 import 'package:openapi/src/model/v1_metric.dart';
@@ -37,7 +38,6 @@ import 'package:openapi/src/model/v1_order_book_depth.dart';
 import 'package:openapi/src/model/v1_quote.dart';
 import 'package:openapi/src/model/v1_quote_trade.dart';
 import 'package:openapi/src/model/v1_strike.dart';
-import 'package:openapi/src/model/v1_symbol.dart';
 import 'package:openapi/src/model/v1_symbol_mapping.dart';
 import 'package:openapi/src/model/v1_timeseries_item.dart';
 import 'package:openapi/src/model/v1_timeseries_period.dart';
@@ -46,17 +46,18 @@ import 'package:openapi/src/model/v1_trade.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  MarketDataMetadataAsset,
+  MarketDataMetadataChain,
+  MarketDataMetadataExchange,
+  MarketDataMetadataIcon,
+  MarketDataMetadataSymbol,
   OhlcvExchangeTimeseriesItem,
-  V1Asset,
-  V1Chain,
   V1ChainNetworkAddress,
-  V1Exchange,
   V1ExchangeRate,
   V1ExchangeRates,
   V1ExchangeRatesRate,
   V1ExchangeRatesTimeseriesItem,
   V1GeneralData,
-  V1Icon,
   V1LastTrade,
   V1ListingItem,
   V1Metric,
@@ -69,7 +70,6 @@ part 'serializers.g.dart';
   V1Quote,
   V1QuoteTrade,
   V1Strike,
-  V1Symbol,
   V1SymbolMapping,
   V1TimeseriesItem,
   V1TimeseriesPeriod,
@@ -77,12 +77,12 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1Exchange)]),
-        () => ListBuilder<V1Exchange>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(OhlcvExchangeTimeseriesItem)]),
         () => ListBuilder<OhlcvExchangeTimeseriesItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MarketDataMetadataExchange)]),
+        () => ListBuilder<MarketDataMetadataExchange>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1Quote)]),
@@ -121,10 +121,6 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<V1QuoteTrade>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1Chain)]),
-        () => ListBuilder<V1Chain>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1TimeseriesPeriod)]),
         () => ListBuilder<V1TimeseriesPeriod>(),
       )
@@ -137,16 +133,28 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<V1SymbolMapping>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1Asset)]),
-        () => ListBuilder<V1Asset>(),
+        const FullType(BuiltList, [FullType(MarketDataMetadataAsset)]),
+        () => ListBuilder<MarketDataMetadataAsset>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1GeneralData)]),
         () => ListBuilder<V1GeneralData>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MarketDataMetadataSymbol)]),
+        () => ListBuilder<MarketDataMetadataSymbol>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MarketDataMetadataChain)]),
+        () => ListBuilder<MarketDataMetadataChain>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1MetricData)]),
         () => ListBuilder<V1MetricData>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MarketDataMetadataIcon)]),
+        () => ListBuilder<MarketDataMetadataIcon>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1Metric)]),
@@ -155,14 +163,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1ExchangeRatesTimeseriesItem)]),
         () => ListBuilder<V1ExchangeRatesTimeseriesItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1Symbol)]),
-        () => ListBuilder<V1Symbol>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1Icon)]),
-        () => ListBuilder<V1Icon>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

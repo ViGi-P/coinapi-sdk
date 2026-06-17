@@ -57,24 +57,32 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
+    if ("MarketDataMetadataAsset".equalsIgnoreCase(className)) {
+      return new TypeToken<List<MarketDataMetadataAsset>>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataChain".equalsIgnoreCase(className)) {
+      return new TypeToken<List<MarketDataMetadataChain>>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataExchange".equalsIgnoreCase(className)) {
+      return new TypeToken<List<MarketDataMetadataExchange>>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataIcon".equalsIgnoreCase(className)) {
+      return new TypeToken<List<MarketDataMetadataIcon>>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataSymbol".equalsIgnoreCase(className)) {
+      return new TypeToken<List<MarketDataMetadataSymbol>>(){}.getType();
+    }
+    
     if ("OhlcvExchangeTimeseriesItem".equalsIgnoreCase(className)) {
       return new TypeToken<List<OhlcvExchangeTimeseriesItem>>(){}.getType();
     }
     
-    if ("V1Asset".equalsIgnoreCase(className)) {
-      return new TypeToken<List<V1Asset>>(){}.getType();
-    }
-    
-    if ("V1Chain".equalsIgnoreCase(className)) {
-      return new TypeToken<List<V1Chain>>(){}.getType();
-    }
-    
     if ("V1ChainNetworkAddress".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1ChainNetworkAddress>>(){}.getType();
-    }
-    
-    if ("V1Exchange".equalsIgnoreCase(className)) {
-      return new TypeToken<List<V1Exchange>>(){}.getType();
     }
     
     if ("V1ExchangeRate".equalsIgnoreCase(className)) {
@@ -95,10 +103,6 @@ public class JsonUtil {
     
     if ("V1GeneralData".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1GeneralData>>(){}.getType();
-    }
-    
-    if ("V1Icon".equalsIgnoreCase(className)) {
-      return new TypeToken<List<V1Icon>>(){}.getType();
     }
     
     if ("V1LastTrade".equalsIgnoreCase(className)) {
@@ -149,10 +153,6 @@ public class JsonUtil {
       return new TypeToken<List<V1Strike>>(){}.getType();
     }
     
-    if ("V1Symbol".equalsIgnoreCase(className)) {
-      return new TypeToken<List<V1Symbol>>(){}.getType();
-    }
-    
     if ("V1SymbolMapping".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1SymbolMapping>>(){}.getType();
     }
@@ -175,24 +175,32 @@ public class JsonUtil {
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
+    if ("MarketDataMetadataAsset".equalsIgnoreCase(className)) {
+      return new TypeToken<MarketDataMetadataAsset>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataChain".equalsIgnoreCase(className)) {
+      return new TypeToken<MarketDataMetadataChain>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataExchange".equalsIgnoreCase(className)) {
+      return new TypeToken<MarketDataMetadataExchange>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataIcon".equalsIgnoreCase(className)) {
+      return new TypeToken<MarketDataMetadataIcon>(){}.getType();
+    }
+    
+    if ("MarketDataMetadataSymbol".equalsIgnoreCase(className)) {
+      return new TypeToken<MarketDataMetadataSymbol>(){}.getType();
+    }
+    
     if ("OhlcvExchangeTimeseriesItem".equalsIgnoreCase(className)) {
       return new TypeToken<OhlcvExchangeTimeseriesItem>(){}.getType();
     }
     
-    if ("V1Asset".equalsIgnoreCase(className)) {
-      return new TypeToken<V1Asset>(){}.getType();
-    }
-    
-    if ("V1Chain".equalsIgnoreCase(className)) {
-      return new TypeToken<V1Chain>(){}.getType();
-    }
-    
     if ("V1ChainNetworkAddress".equalsIgnoreCase(className)) {
       return new TypeToken<V1ChainNetworkAddress>(){}.getType();
-    }
-    
-    if ("V1Exchange".equalsIgnoreCase(className)) {
-      return new TypeToken<V1Exchange>(){}.getType();
     }
     
     if ("V1ExchangeRate".equalsIgnoreCase(className)) {
@@ -213,10 +221,6 @@ public class JsonUtil {
     
     if ("V1GeneralData".equalsIgnoreCase(className)) {
       return new TypeToken<V1GeneralData>(){}.getType();
-    }
-    
-    if ("V1Icon".equalsIgnoreCase(className)) {
-      return new TypeToken<V1Icon>(){}.getType();
     }
     
     if ("V1LastTrade".equalsIgnoreCase(className)) {
@@ -265,10 +269,6 @@ public class JsonUtil {
     
     if ("V1Strike".equalsIgnoreCase(className)) {
       return new TypeToken<V1Strike>(){}.getType();
-    }
-    
-    if ("V1Symbol".equalsIgnoreCase(className)) {
-      return new TypeToken<V1Symbol>(){}.getType();
     }
     
     if ("V1SymbolMapping".equalsIgnoreCase(className)) {

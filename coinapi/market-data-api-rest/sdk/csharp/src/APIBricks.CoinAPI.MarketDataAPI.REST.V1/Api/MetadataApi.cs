@@ -303,7 +303,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1AssetsAssetIdGetApiResponse"/>
     /// </summary>
-    public interface IV1AssetsAssetIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Asset>?>
+    public interface IV1AssetsAssetIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataAsset>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -315,7 +315,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1AssetsGetApiResponse"/>
     /// </summary>
-    public interface IV1AssetsGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Asset>?>
+    public interface IV1AssetsGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataAsset>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -327,7 +327,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1AssetsIconsSizeGetApiResponse"/>
     /// </summary>
-    public interface IV1AssetsIconsSizeGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Icon>?>
+    public interface IV1AssetsIconsSizeGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataIcon>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -339,7 +339,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1ChainsChainIdGetApiResponse"/>
     /// </summary>
-    public interface IV1ChainsChainIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Chain>?>
+    public interface IV1ChainsChainIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataChain>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -351,7 +351,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1ChainsGetApiResponse"/>
     /// </summary>
-    public interface IV1ChainsGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Chain>?>
+    public interface IV1ChainsGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataChain>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -363,7 +363,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1ExchangesExchangeIdGetApiResponse"/>
     /// </summary>
-    public interface IV1ExchangesExchangeIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Exchange>?>
+    public interface IV1ExchangesExchangeIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataExchange>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -375,7 +375,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1ExchangesGetApiResponse"/>
     /// </summary>
-    public interface IV1ExchangesGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Exchange>?>
+    public interface IV1ExchangesGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataExchange>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -387,7 +387,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1ExchangesIconsSizeGetApiResponse"/>
     /// </summary>
-    public interface IV1ExchangesIconsSizeGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Icon>?>
+    public interface IV1ExchangesIconsSizeGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataIcon>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -399,7 +399,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1SymbolsExchangeIdActiveGetApiResponse"/>
     /// </summary>
-    public interface IV1SymbolsExchangeIdActiveGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
+    public interface IV1SymbolsExchangeIdActiveGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataSymbol>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -411,7 +411,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>
     /// </summary>
-    public interface IV1SymbolsExchangeIdHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
+    public interface IV1SymbolsExchangeIdHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<MarketDataMetadataSymbol>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -933,11 +933,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Asset>? Ok()
+            public List<MarketDataMetadataAsset>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Asset>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataAsset>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -946,7 +946,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Asset>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataAsset>? result)
             {
                 result = null;
 
@@ -1199,11 +1199,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Asset>? Ok()
+            public List<MarketDataMetadataAsset>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Asset>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataAsset>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1212,7 +1212,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Asset>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataAsset>? result)
             {
                 result = null;
 
@@ -1446,11 +1446,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Icon>? Ok()
+            public List<MarketDataMetadataIcon>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Icon>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataIcon>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1459,7 +1459,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Icon>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataIcon>? result)
             {
                 result = null;
 
@@ -1706,11 +1706,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Chain>? Ok()
+            public List<MarketDataMetadataChain>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Chain>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataChain>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1719,7 +1719,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Chain>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataChain>? result)
             {
                 result = null;
 
@@ -1972,11 +1972,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Chain>? Ok()
+            public List<MarketDataMetadataChain>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Chain>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataChain>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1985,7 +1985,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Chain>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataChain>? result)
             {
                 result = null;
 
@@ -2232,11 +2232,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Exchange>? Ok()
+            public List<MarketDataMetadataExchange>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Exchange>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataExchange>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2245,7 +2245,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Exchange>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataExchange>? result)
             {
                 result = null;
 
@@ -2498,11 +2498,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Exchange>? Ok()
+            public List<MarketDataMetadataExchange>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Exchange>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataExchange>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2511,7 +2511,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Exchange>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataExchange>? result)
             {
                 result = null;
 
@@ -2745,11 +2745,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Icon>? Ok()
+            public List<MarketDataMetadataIcon>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Icon>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataIcon>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2758,7 +2758,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Icon>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataIcon>? result)
             {
                 result = null;
 
@@ -3035,11 +3035,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Symbol>? Ok()
+            public List<MarketDataMetadataSymbol>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Symbol>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataSymbol>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3048,7 +3048,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Symbol>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataSymbol>? result)
             {
                 result = null;
 
@@ -3317,11 +3317,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<V1Symbol>? Ok()
+            public List<MarketDataMetadataSymbol>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Symbol>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<MarketDataMetadataSymbol>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3330,7 +3330,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Symbol>? result)
+            public bool TryOk([NotNullWhen(true)]out List<MarketDataMetadataSymbol>? result)
             {
                 result = null;
 

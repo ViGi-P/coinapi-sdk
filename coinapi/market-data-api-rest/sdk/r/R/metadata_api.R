@@ -267,7 +267,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Asset]
+    #' @return array[MarketDataMetadataAsset]
     V1AssetsAssetIdGet = function(asset_id, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1AssetsAssetIdGetWithHttpInfo(asset_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -289,7 +289,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Asset]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataAsset]) with additional information such as HTTP status code, headers
     V1AssetsAssetIdGetWithHttpInfo = function(asset_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -352,7 +352,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Asset]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataAsset]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -386,7 +386,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Asset]
+    #' @return array[MarketDataMetadataAsset]
     V1AssetsGet = function(filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1AssetsGetWithHttpInfo(filter_asset_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -408,7 +408,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Asset]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataAsset]) with additional information such as HTTP status code, headers
     V1AssetsGetWithHttpInfo = function(filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -465,7 +465,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Asset]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataAsset]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -499,7 +499,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Icon]
+    #' @return array[MarketDataMetadataIcon]
     V1AssetsIconsSizeGet = function(size, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1AssetsIconsSizeGetWithHttpInfo(size, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -521,7 +521,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Icon]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataIcon]) with additional information such as HTTP status code, headers
     V1AssetsIconsSizeGetWithHttpInfo = function(size, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -584,7 +584,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Icon]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataIcon]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -618,7 +618,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Chain]
+    #' @return array[MarketDataMetadataChain]
     V1ChainsChainIdGet = function(chain_id, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1ChainsChainIdGetWithHttpInfo(chain_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -640,7 +640,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Chain]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataChain]) with additional information such as HTTP status code, headers
     V1ChainsChainIdGetWithHttpInfo = function(chain_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -703,7 +703,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Chain]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataChain]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -737,7 +737,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Chain]
+    #' @return array[MarketDataMetadataChain]
     V1ChainsGet = function(filter_chain_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1ChainsGetWithHttpInfo(filter_chain_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -759,7 +759,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Chain]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataChain]) with additional information such as HTTP status code, headers
     V1ChainsGetWithHttpInfo = function(filter_chain_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -816,7 +816,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Chain]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataChain]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -850,7 +850,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Exchange]
+    #' @return array[MarketDataMetadataExchange]
     V1ExchangesExchangeIdGet = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1ExchangesExchangeIdGetWithHttpInfo(exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -872,7 +872,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Exchange]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataExchange]) with additional information such as HTTP status code, headers
     V1ExchangesExchangeIdGetWithHttpInfo = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -935,7 +935,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Exchange]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataExchange]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -969,7 +969,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Exchange]
+    #' @return array[MarketDataMetadataExchange]
     V1ExchangesGet = function(filter_exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1ExchangesGetWithHttpInfo(filter_exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -991,7 +991,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Exchange]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataExchange]) with additional information such as HTTP status code, headers
     V1ExchangesGetWithHttpInfo = function(filter_exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -1048,7 +1048,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Exchange]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataExchange]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -1082,7 +1082,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Icon]
+    #' @return array[MarketDataMetadataIcon]
     V1ExchangesIconsSizeGet = function(size, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1ExchangesIconsSizeGetWithHttpInfo(size, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -1104,7 +1104,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Icon]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataIcon]) with additional information such as HTTP status code, headers
     V1ExchangesIconsSizeGetWithHttpInfo = function(size, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -1167,7 +1167,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Icon]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataIcon]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -1203,7 +1203,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Symbol]
+    #' @return array[MarketDataMetadataSymbol]
     V1SymbolsExchangeIdActiveGet = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1SymbolsExchangeIdActiveGetWithHttpInfo(exchange_id, filter_symbol_id, filter_asset_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -1227,7 +1227,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Symbol]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataSymbol]) with additional information such as HTTP status code, headers
     V1SymbolsExchangeIdActiveGetWithHttpInfo = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -1302,7 +1302,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Symbol]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataSymbol]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -1338,7 +1338,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[V1Symbol]
+    #' @return array[MarketDataMetadataSymbol]
     V1SymbolsExchangeIdHistoryGet = function(exchange_id, page = 1, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1SymbolsExchangeIdHistoryGetWithHttpInfo(exchange_id, page, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -1362,7 +1362,7 @@ MetadataApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[V1Symbol]) with additional information such as HTTP status code, headers
+    #' @return API response (array[MarketDataMetadataSymbol]) with additional information such as HTTP status code, headers
     V1SymbolsExchangeIdHistoryGetWithHttpInfo = function(exchange_id, page = 1, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -1437,7 +1437,7 @@ MetadataApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[V1Symbol]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[MarketDataMetadataSymbol]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }

@@ -36,7 +36,7 @@ describe 'MetadataApi' do
   # List all assets by asset ID
   # @param asset_id The asset ID.
   # @param [Hash] opts the optional parameters
-  # @return [Array<V1Asset>]
+  # @return [Array<MarketDataMetadataAsset>]
   describe 'v1_assets_asset_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -48,7 +48,7 @@ describe 'MetadataApi' do
   # Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
-  # @return [Array<V1Asset>]
+  # @return [Array<MarketDataMetadataAsset>]
   describe 'v1_assets_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -60,7 +60,7 @@ describe 'MetadataApi' do
   # Gets the list of icons (of the given size) for all the assets.
   # @param size The size of the icons.
   # @param [Hash] opts the optional parameters
-  # @return [Array<V1Icon>]
+  # @return [Array<MarketDataMetadataIcon>]
   describe 'v1_assets_icons_size_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -71,7 +71,7 @@ describe 'MetadataApi' do
   # List all chains by chain ID
   # @param chain_id The chain ID.
   # @param [Hash] opts the optional parameters
-  # @return [Array<V1Chain>]
+  # @return [Array<MarketDataMetadataChain>]
   describe 'v1_chains_chain_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -83,7 +83,7 @@ describe 'MetadataApi' do
   # Retrieves all blockchain chains supported by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific chain. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_chain_id Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. &#x60;ETHEREUM;ARBITRUM&#x60;).
-  # @return [Array<V1Chain>]
+  # @return [Array<MarketDataMetadataChain>]
   describe 'v1_chains_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -94,7 +94,7 @@ describe 'MetadataApi' do
   # List all exchanges by exchange_id
   # @param exchange_id The ID of the exchange.
   # @param [Hash] opts the optional parameters
-  # @return [Array<V1Exchange>]
+  # @return [Array<MarketDataMetadataExchange>]
   describe 'v1_exchanges_exchange_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -106,7 +106,7 @@ describe 'MetadataApi' do
   # Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#x60;BITSTAMP;GEMINI&#x60;)
-  # @return [Array<V1Exchange>]
+  # @return [Array<MarketDataMetadataExchange>]
   describe 'v1_exchanges_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -117,7 +117,7 @@ describe 'MetadataApi' do
   # List of icons for the exchanges
   # @param size The size of the icons.
   # @param [Hash] opts the optional parameters
-  # @return [Array<V1Icon>]
+  # @return [Array<MarketDataMetadataIcon>]
   describe 'v1_exchanges_icons_size_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -131,7 +131,7 @@ describe 'MetadataApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
   # @option opts [String] :filter_asset_id The filter for asset ID.
-  # @return [Array<V1Symbol>]
+  # @return [Array<MarketDataMetadataSymbol>]
   describe 'v1_symbols_exchange_id_active_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -145,7 +145,7 @@ describe 'MetadataApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page The page number for pagination (starts from 1).
   # @option opts [Integer] :limit Number of records to return per page.
-  # @return [Array<V1Symbol>]
+  # @return [Array<MarketDataMetadataSymbol>]
   describe 'v1_symbols_exchange_id_history_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

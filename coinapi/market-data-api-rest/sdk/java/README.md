@@ -2,7 +2,7 @@
 
 CoinAPI Market Data REST API
 - API version: v1
-  - Build date: 2026-06-16T06:03:52.770599156Z[Etc/UTC]
+  - Build date: 2026-06-17T06:05:22.558283519Z[Etc/UTC]
   - Generator version: 7.23.0
 
 Cryptocurrency market data: metadata, quotes, books, trades, OHLCV, rates, metrics, options.
@@ -183,17 +183,18 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [MarketDataMetadataAsset](docs/MarketDataMetadataAsset.md)
+ - [MarketDataMetadataChain](docs/MarketDataMetadataChain.md)
+ - [MarketDataMetadataExchange](docs/MarketDataMetadataExchange.md)
+ - [MarketDataMetadataIcon](docs/MarketDataMetadataIcon.md)
+ - [MarketDataMetadataSymbol](docs/MarketDataMetadataSymbol.md)
  - [OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [V1Asset](docs/V1Asset.md)
- - [V1Chain](docs/V1Chain.md)
  - [V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
- - [V1Exchange](docs/V1Exchange.md)
  - [V1ExchangeRate](docs/V1ExchangeRate.md)
  - [V1ExchangeRates](docs/V1ExchangeRates.md)
  - [V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [V1ExchangeRatesTimeseriesItem](docs/V1ExchangeRatesTimeseriesItem.md)
  - [V1GeneralData](docs/V1GeneralData.md)
- - [V1Icon](docs/V1Icon.md)
  - [V1LastTrade](docs/V1LastTrade.md)
  - [V1ListingItem](docs/V1ListingItem.md)
  - [V1Metric](docs/V1Metric.md)
@@ -206,7 +207,6 @@ Class | Method | HTTP request | Description
  - [V1Quote](docs/V1Quote.md)
  - [V1QuoteTrade](docs/V1QuoteTrade.md)
  - [V1Strike](docs/V1Strike.md)
- - [V1Symbol](docs/V1Symbol.md)
  - [V1SymbolMapping](docs/V1SymbolMapping.md)
  - [V1TimeseriesItem](docs/V1TimeseriesItem.md)
  - [V1TimeseriesPeriod](docs/V1TimeseriesPeriod.md)

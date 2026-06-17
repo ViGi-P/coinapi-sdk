@@ -166,7 +166,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Asset[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataAsset[]
      */
     public function v1AssetsAssetIdGet($asset_id, string $contentType = self::contentTypes['v1AssetsAssetIdGet'][0])
     {
@@ -184,7 +184,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Asset[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataAsset[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1AssetsAssetIdGetWithHttpInfo($asset_id, string $contentType = self::contentTypes['v1AssetsAssetIdGet'][0])
     {
@@ -216,7 +216,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Asset[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataAsset[]',
                         $request,
                         $response,
                     );
@@ -238,7 +238,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Asset[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataAsset[]',
                 $request,
                 $response,
             );
@@ -247,7 +247,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Asset[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataAsset[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -293,7 +293,7 @@ class MetadataApi
      */
     public function v1AssetsAssetIdGetAsyncWithHttpInfo($asset_id, string $contentType = self::contentTypes['v1AssetsAssetIdGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Asset[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataAsset[]';
         $request = $this->v1AssetsAssetIdGetRequest($asset_id, $contentType);
 
         return $this->client
@@ -443,7 +443,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Asset[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataAsset[]
      */
     public function v1AssetsGet($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
@@ -461,7 +461,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Asset[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataAsset[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1AssetsGetWithHttpInfo($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
@@ -493,7 +493,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Asset[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataAsset[]',
                         $request,
                         $response,
                     );
@@ -515,7 +515,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Asset[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataAsset[]',
                 $request,
                 $response,
             );
@@ -524,7 +524,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Asset[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataAsset[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -570,7 +570,7 @@ class MetadataApi
      */
     public function v1AssetsGetAsyncWithHttpInfo($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Asset[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataAsset[]';
         $request = $this->v1AssetsGetRequest($filter_asset_id, $contentType);
 
         return $this->client
@@ -715,7 +715,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Icon[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataIcon[]
      */
     public function v1AssetsIconsSizeGet($size, string $contentType = self::contentTypes['v1AssetsIconsSizeGet'][0])
     {
@@ -733,7 +733,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Icon[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataIcon[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1AssetsIconsSizeGetWithHttpInfo($size, string $contentType = self::contentTypes['v1AssetsIconsSizeGet'][0])
     {
@@ -765,7 +765,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Icon[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataIcon[]',
                         $request,
                         $response,
                     );
@@ -787,7 +787,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Icon[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataIcon[]',
                 $request,
                 $response,
             );
@@ -796,7 +796,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Icon[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataIcon[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -842,7 +842,7 @@ class MetadataApi
      */
     public function v1AssetsIconsSizeGetAsyncWithHttpInfo($size, string $contentType = self::contentTypes['v1AssetsIconsSizeGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Icon[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataIcon[]';
         $request = $this->v1AssetsIconsSizeGetRequest($size, $contentType);
 
         return $this->client
@@ -992,7 +992,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Chain[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataChain[]
      */
     public function v1ChainsChainIdGet($chain_id, string $contentType = self::contentTypes['v1ChainsChainIdGet'][0])
     {
@@ -1010,7 +1010,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Chain[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataChain[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1ChainsChainIdGetWithHttpInfo($chain_id, string $contentType = self::contentTypes['v1ChainsChainIdGet'][0])
     {
@@ -1042,7 +1042,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Chain[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataChain[]',
                         $request,
                         $response,
                     );
@@ -1064,7 +1064,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Chain[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataChain[]',
                 $request,
                 $response,
             );
@@ -1073,7 +1073,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Chain[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataChain[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1119,7 +1119,7 @@ class MetadataApi
      */
     public function v1ChainsChainIdGetAsyncWithHttpInfo($chain_id, string $contentType = self::contentTypes['v1ChainsChainIdGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Chain[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataChain[]';
         $request = $this->v1ChainsChainIdGetRequest($chain_id, $contentType);
 
         return $this->client
@@ -1269,7 +1269,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Chain[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataChain[]
      */
     public function v1ChainsGet($filter_chain_id = null, string $contentType = self::contentTypes['v1ChainsGet'][0])
     {
@@ -1287,7 +1287,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Chain[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataChain[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1ChainsGetWithHttpInfo($filter_chain_id = null, string $contentType = self::contentTypes['v1ChainsGet'][0])
     {
@@ -1319,7 +1319,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Chain[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataChain[]',
                         $request,
                         $response,
                     );
@@ -1341,7 +1341,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Chain[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataChain[]',
                 $request,
                 $response,
             );
@@ -1350,7 +1350,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Chain[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataChain[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1396,7 +1396,7 @@ class MetadataApi
      */
     public function v1ChainsGetAsyncWithHttpInfo($filter_chain_id = null, string $contentType = self::contentTypes['v1ChainsGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Chain[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataChain[]';
         $request = $this->v1ChainsGetRequest($filter_chain_id, $contentType);
 
         return $this->client
@@ -1541,7 +1541,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Exchange[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataExchange[]
      */
     public function v1ExchangesExchangeIdGet($exchange_id, string $contentType = self::contentTypes['v1ExchangesExchangeIdGet'][0])
     {
@@ -1559,7 +1559,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Exchange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataExchange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1ExchangesExchangeIdGetWithHttpInfo($exchange_id, string $contentType = self::contentTypes['v1ExchangesExchangeIdGet'][0])
     {
@@ -1591,7 +1591,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Exchange[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataExchange[]',
                         $request,
                         $response,
                     );
@@ -1613,7 +1613,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Exchange[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataExchange[]',
                 $request,
                 $response,
             );
@@ -1622,7 +1622,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Exchange[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataExchange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1668,7 +1668,7 @@ class MetadataApi
      */
     public function v1ExchangesExchangeIdGetAsyncWithHttpInfo($exchange_id, string $contentType = self::contentTypes['v1ExchangesExchangeIdGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Exchange[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataExchange[]';
         $request = $this->v1ExchangesExchangeIdGetRequest($exchange_id, $contentType);
 
         return $this->client
@@ -1818,7 +1818,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Exchange[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataExchange[]
      */
     public function v1ExchangesGet($filter_exchange_id = null, string $contentType = self::contentTypes['v1ExchangesGet'][0])
     {
@@ -1836,7 +1836,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Exchange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataExchange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1ExchangesGetWithHttpInfo($filter_exchange_id = null, string $contentType = self::contentTypes['v1ExchangesGet'][0])
     {
@@ -1868,7 +1868,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Exchange[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataExchange[]',
                         $request,
                         $response,
                     );
@@ -1890,7 +1890,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Exchange[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataExchange[]',
                 $request,
                 $response,
             );
@@ -1899,7 +1899,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Exchange[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataExchange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1945,7 +1945,7 @@ class MetadataApi
      */
     public function v1ExchangesGetAsyncWithHttpInfo($filter_exchange_id = null, string $contentType = self::contentTypes['v1ExchangesGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Exchange[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataExchange[]';
         $request = $this->v1ExchangesGetRequest($filter_exchange_id, $contentType);
 
         return $this->client
@@ -2090,7 +2090,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Icon[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataIcon[]
      */
     public function v1ExchangesIconsSizeGet($size, string $contentType = self::contentTypes['v1ExchangesIconsSizeGet'][0])
     {
@@ -2108,7 +2108,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Icon[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataIcon[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1ExchangesIconsSizeGetWithHttpInfo($size, string $contentType = self::contentTypes['v1ExchangesIconsSizeGet'][0])
     {
@@ -2140,7 +2140,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Icon[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataIcon[]',
                         $request,
                         $response,
                     );
@@ -2162,7 +2162,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Icon[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataIcon[]',
                 $request,
                 $response,
             );
@@ -2171,7 +2171,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Icon[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataIcon[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2217,7 +2217,7 @@ class MetadataApi
      */
     public function v1ExchangesIconsSizeGetAsyncWithHttpInfo($size, string $contentType = self::contentTypes['v1ExchangesIconsSizeGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Icon[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataIcon[]';
         $request = $this->v1ExchangesIconsSizeGetRequest($size, $contentType);
 
         return $this->client
@@ -2369,7 +2369,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Symbol[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataSymbol[]
      */
     public function v1SymbolsExchangeIdActiveGet($exchange_id, $filter_symbol_id = null, $filter_asset_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdActiveGet'][0])
     {
@@ -2389,7 +2389,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Symbol[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataSymbol[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1SymbolsExchangeIdActiveGetWithHttpInfo($exchange_id, $filter_symbol_id = null, $filter_asset_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdActiveGet'][0])
     {
@@ -2421,7 +2421,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Symbol[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]',
                         $request,
                         $response,
                     );
@@ -2443,7 +2443,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Symbol[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]',
                 $request,
                 $response,
             );
@@ -2452,7 +2452,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Symbol[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2502,7 +2502,7 @@ class MetadataApi
      */
     public function v1SymbolsExchangeIdActiveGetAsyncWithHttpInfo($exchange_id, $filter_symbol_id = null, $filter_asset_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdActiveGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Symbol[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]';
         $request = $this->v1SymbolsExchangeIdActiveGetRequest($exchange_id, $filter_symbol_id, $filter_asset_id, $contentType);
 
         return $this->client
@@ -2676,7 +2676,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\V1Symbol[]
+     * @return \OpenAPI\Client\Model\MarketDataMetadataSymbol[]
      */
     public function v1SymbolsExchangeIdHistoryGet($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
     {
@@ -2696,7 +2696,7 @@ class MetadataApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\V1Symbol[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\MarketDataMetadataSymbol[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1SymbolsExchangeIdHistoryGetWithHttpInfo($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
     {
@@ -2728,7 +2728,7 @@ class MetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\V1Symbol[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]',
                         $request,
                         $response,
                     );
@@ -2750,7 +2750,7 @@ class MetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\V1Symbol[]',
+                '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]',
                 $request,
                 $response,
             );
@@ -2759,7 +2759,7 @@ class MetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\V1Symbol[]',
+                        '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2809,7 +2809,7 @@ class MetadataApi
      */
     public function v1SymbolsExchangeIdHistoryGetAsyncWithHttpInfo($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\V1Symbol[]';
+        $returnType = '\OpenAPI\Client\Model\MarketDataMetadataSymbol[]';
         $request = $this->v1SymbolsExchangeIdHistoryGetRequest($exchange_id, $page, $limit, $contentType);
 
         return $this->client

@@ -18,8 +18,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Asset> response;
-        List<OASV1Asset> expectedResponse;
+        List<OASMarketDataMetadataAsset> response;
+        List<OASMarketDataMetadataAsset> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -27,20 +27,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Asset>{OASV1Asset.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Asset>{OASV1Asset.getExample()};
-        response = (List<OASV1Asset>) api.v1AssetsAssetIdGet(params);
+        expectedResponse = new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()};
+        response = (List<OASMarketDataMetadataAsset>) api.v1AssetsAssetIdGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Asset>{OASV1Asset.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Asset>{OASV1Asset.getExample()};
-        response = (List<OASV1Asset>) api.v1AssetsAssetIdGet(params);
+        expectedResponse = new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()};
+        response = (List<OASMarketDataMetadataAsset>) api.v1AssetsAssetIdGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -62,8 +62,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Asset> response;
-        List<OASV1Asset> expectedResponse;
+        List<OASMarketDataMetadataAsset> response;
+        List<OASMarketDataMetadataAsset> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -71,20 +71,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Asset>{OASV1Asset.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Asset>{OASV1Asset.getExample()};
-        response = (List<OASV1Asset>) api.v1AssetsGet(params);
+        expectedResponse = new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()};
+        response = (List<OASMarketDataMetadataAsset>) api.v1AssetsGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Asset>{OASV1Asset.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Asset>{OASV1Asset.getExample()};
-        response = (List<OASV1Asset>) api.v1AssetsGet(params);
+        expectedResponse = new List<OASMarketDataMetadataAsset>{OASMarketDataMetadataAsset.getExample()};
+        response = (List<OASMarketDataMetadataAsset>) api.v1AssetsGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -106,8 +106,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Icon> response;
-        List<OASV1Icon> expectedResponse;
+        List<OASMarketDataMetadataIcon> response;
+        List<OASMarketDataMetadataIcon> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -115,20 +115,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Icon>{OASV1Icon.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Icon>{OASV1Icon.getExample()};
-        response = (List<OASV1Icon>) api.v1AssetsIconsSizeGet(params);
+        expectedResponse = new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()};
+        response = (List<OASMarketDataMetadataIcon>) api.v1AssetsIconsSizeGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Icon>{OASV1Icon.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Icon>{OASV1Icon.getExample()};
-        response = (List<OASV1Icon>) api.v1AssetsIconsSizeGet(params);
+        expectedResponse = new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()};
+        response = (List<OASMarketDataMetadataIcon>) api.v1AssetsIconsSizeGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -150,8 +150,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Chain> response;
-        List<OASV1Chain> expectedResponse;
+        List<OASMarketDataMetadataChain> response;
+        List<OASMarketDataMetadataChain> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -159,20 +159,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Chain>{OASV1Chain.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Chain>{OASV1Chain.getExample()};
-        response = (List<OASV1Chain>) api.v1ChainsChainIdGet(params);
+        expectedResponse = new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()};
+        response = (List<OASMarketDataMetadataChain>) api.v1ChainsChainIdGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Chain>{OASV1Chain.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Chain>{OASV1Chain.getExample()};
-        response = (List<OASV1Chain>) api.v1ChainsChainIdGet(params);
+        expectedResponse = new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()};
+        response = (List<OASMarketDataMetadataChain>) api.v1ChainsChainIdGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -194,8 +194,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Chain> response;
-        List<OASV1Chain> expectedResponse;
+        List<OASMarketDataMetadataChain> response;
+        List<OASMarketDataMetadataChain> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -203,20 +203,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Chain>{OASV1Chain.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Chain>{OASV1Chain.getExample()};
-        response = (List<OASV1Chain>) api.v1ChainsGet(params);
+        expectedResponse = new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()};
+        response = (List<OASMarketDataMetadataChain>) api.v1ChainsGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Chain>{OASV1Chain.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Chain>{OASV1Chain.getExample()};
-        response = (List<OASV1Chain>) api.v1ChainsGet(params);
+        expectedResponse = new List<OASMarketDataMetadataChain>{OASMarketDataMetadataChain.getExample()};
+        response = (List<OASMarketDataMetadataChain>) api.v1ChainsGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -238,8 +238,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Exchange> response;
-        List<OASV1Exchange> expectedResponse;
+        List<OASMarketDataMetadataExchange> response;
+        List<OASMarketDataMetadataExchange> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -247,20 +247,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Exchange>{OASV1Exchange.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Exchange>{OASV1Exchange.getExample()};
-        response = (List<OASV1Exchange>) api.v1ExchangesExchangeIdGet(params);
+        expectedResponse = new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()};
+        response = (List<OASMarketDataMetadataExchange>) api.v1ExchangesExchangeIdGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Exchange>{OASV1Exchange.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Exchange>{OASV1Exchange.getExample()};
-        response = (List<OASV1Exchange>) api.v1ExchangesExchangeIdGet(params);
+        expectedResponse = new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()};
+        response = (List<OASMarketDataMetadataExchange>) api.v1ExchangesExchangeIdGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -282,8 +282,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Exchange> response;
-        List<OASV1Exchange> expectedResponse;
+        List<OASMarketDataMetadataExchange> response;
+        List<OASMarketDataMetadataExchange> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -291,20 +291,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Exchange>{OASV1Exchange.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Exchange>{OASV1Exchange.getExample()};
-        response = (List<OASV1Exchange>) api.v1ExchangesGet(params);
+        expectedResponse = new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()};
+        response = (List<OASMarketDataMetadataExchange>) api.v1ExchangesGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Exchange>{OASV1Exchange.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Exchange>{OASV1Exchange.getExample()};
-        response = (List<OASV1Exchange>) api.v1ExchangesGet(params);
+        expectedResponse = new List<OASMarketDataMetadataExchange>{OASMarketDataMetadataExchange.getExample()};
+        response = (List<OASMarketDataMetadataExchange>) api.v1ExchangesGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -326,8 +326,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Icon> response;
-        List<OASV1Icon> expectedResponse;
+        List<OASMarketDataMetadataIcon> response;
+        List<OASMarketDataMetadataIcon> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -335,20 +335,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Icon>{OASV1Icon.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Icon>{OASV1Icon.getExample()};
-        response = (List<OASV1Icon>) api.v1ExchangesIconsSizeGet(params);
+        expectedResponse = new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()};
+        response = (List<OASMarketDataMetadataIcon>) api.v1ExchangesIconsSizeGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Icon>{OASV1Icon.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Icon>{OASV1Icon.getExample()};
-        response = (List<OASV1Icon>) api.v1ExchangesIconsSizeGet(params);
+        expectedResponse = new List<OASMarketDataMetadataIcon>{OASMarketDataMetadataIcon.getExample()};
+        response = (List<OASMarketDataMetadataIcon>) api.v1ExchangesIconsSizeGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -372,8 +372,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Symbol> response;
-        List<OASV1Symbol> expectedResponse;
+        List<OASMarketDataMetadataSymbol> response;
+        List<OASMarketDataMetadataSymbol> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -381,20 +381,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Symbol>{OASV1Symbol.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Symbol>{OASV1Symbol.getExample()};
-        response = (List<OASV1Symbol>) api.v1SymbolsExchangeIdActiveGet(params);
+        expectedResponse = new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()};
+        response = (List<OASMarketDataMetadataSymbol>) api.v1SymbolsExchangeIdActiveGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Symbol>{OASV1Symbol.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Symbol>{OASV1Symbol.getExample()};
-        response = (List<OASV1Symbol>) api.v1SymbolsExchangeIdActiveGet(params);
+        expectedResponse = new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()};
+        response = (List<OASMarketDataMetadataSymbol>) api.v1SymbolsExchangeIdActiveGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -418,8 +418,8 @@ private class OASMetadataApiTest {
 
         OASClient client;
         OASMetadataApi api;
-        List<OASV1Symbol> response;
-        List<OASV1Symbol> expectedResponse;
+        List<OASMarketDataMetadataSymbol> response;
+        List<OASMarketDataMetadataSymbol> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -427,20 +427,20 @@ private class OASMetadataApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASV1Symbol>{OASV1Symbol.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Symbol>{OASV1Symbol.getExample()};
-        response = (List<OASV1Symbol>) api.v1SymbolsExchangeIdHistoryGet(params);
+        expectedResponse = new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()};
+        response = (List<OASMarketDataMetadataSymbol>) api.v1SymbolsExchangeIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetadataApi(client);
 
-        js = JSON.serialize(new List<OASV1Symbol>{OASV1Symbol.getExample()});
+        js = JSON.serialize(new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASV1Symbol>{OASV1Symbol.getExample()};
-        response = (List<OASV1Symbol>) api.v1SymbolsExchangeIdHistoryGet(params);
+        expectedResponse = new List<OASMarketDataMetadataSymbol>{OASMarketDataMetadataSymbol.getExample()};
+        response = (List<OASMarketDataMetadataSymbol>) api.v1SymbolsExchangeIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
     }
 

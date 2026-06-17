@@ -48,17 +48,18 @@ set(SRCS
     src/binary.c
     external/cJSON.c
     model/object.c
+    model/market_data_metadata_asset.c
+    model/market_data_metadata_chain.c
+    model/market_data_metadata_exchange.c
+    model/market_data_metadata_icon.c
+    model/market_data_metadata_symbol.c
     model/ohlcv_exchange_timeseries_item.c
-    model/v1_asset.c
-    model/v1_chain.c
     model/v1_chain_network_address.c
-    model/v1_exchange.c
     model/v1_exchange_rate.c
     model/v1_exchange_rates.c
     model/v1_exchange_rates_rate.c
     model/v1_exchange_rates_timeseries_item.c
     model/v1_general_data.c
-    model/v1_icon.c
     model/v1_last_trade.c
     model/v1_listing_item.c
     model/v1_metric.c
@@ -71,7 +72,6 @@ set(SRCS
     model/v1_quote.c
     model/v1_quote_trade.c
     model/v1_strike.c
-    model/v1_symbol.c
     model/v1_symbol_mapping.c
     model/v1_timeseries_item.c
     model/v1_timeseries_period.c
@@ -97,17 +97,18 @@ set(HDRS
     external/cJSON.h
     model/object.h
     model/any_type.h
+    model/market_data_metadata_asset.h
+    model/market_data_metadata_chain.h
+    model/market_data_metadata_exchange.h
+    model/market_data_metadata_icon.h
+    model/market_data_metadata_symbol.h
     model/ohlcv_exchange_timeseries_item.h
-    model/v1_asset.h
-    model/v1_chain.h
     model/v1_chain_network_address.h
-    model/v1_exchange.h
     model/v1_exchange_rate.h
     model/v1_exchange_rates.h
     model/v1_exchange_rates_rate.h
     model/v1_exchange_rates_timeseries_item.h
     model/v1_general_data.h
-    model/v1_icon.h
     model/v1_last_trade.h
     model/v1_listing_item.h
     model/v1_metric.h
@@ -120,7 +121,6 @@ set(HDRS
     model/v1_quote.h
     model/v1_quote_trade.h
     model/v1_strike.h
-    model/v1_symbol.h
     model/v1_symbol_mapping.h
     model/v1_timeseries_item.h
     model/v1_timeseries_period.h

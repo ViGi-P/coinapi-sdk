@@ -192,17 +192,18 @@ Method | HTTP request | Description
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------
+ *MarketDataMetadata.Asset* | Represents an asset.
+ *MarketDataMetadata.Chain* | Represents a blockchain chain.
+ *MarketDataMetadata.Exchange* | Represents an exchange.
+ *MarketDataMetadata.Icon* | Represents an icon.
+ *MarketDataMetadata.Symbol* | Represents a symbol data model.
  *Ohlcv.ExchangeTimeseriesItem* | Represents a timeseries item with price and volume information.
- *V1.Asset* | Represents an asset.
- *V1.Chain* | Represents a blockchain chain.
  *V1.ChainNetworkAddress* | Contains information about assets' chain network addresses
- *V1.Exchange* | Represents an exchange.
  *V1.ExchangeRate* | Represents an exchange rate.
  *V1.ExchangeRates* | Represents exchange rates for a specific base asset.
  *V1.ExchangeRatesRate* | Represents an exchange rate within a collection of exchange rates.
  *V1.ExchangeRatesTimeseriesItem* | Represents an item in the exchange rate timeseries.
  *V1.GeneralData* | Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
- *V1.Icon* | Represents an icon.
  *V1.LastTrade* | Represents the last executed transaction.
  *V1.ListingItem* | Represents a listing data item.
  *V1.Metric* | Represents a metric.
@@ -215,7 +216,6 @@ Class | Description
  *V1.Quote* | Represents a quote data model.
  *V1.QuoteTrade* | Represents a quote trade data model.
  *V1.Strike* | Represents a strike within the option exchange group.
- *V1.Symbol* | Represents a symbol data model.
  *V1.SymbolMapping* | Represents symbol mapping information for exchange symbols.
  *V1.TimeseriesItem* | Represents a timeseries item with price and volume information.
  *V1.TimeseriesPeriod* | Represents a timeseries period used in exchange rate data.

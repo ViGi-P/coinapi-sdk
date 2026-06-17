@@ -1,16 +1,17 @@
 import localVarRequest from 'request';
 
+export * from './marketDataMetadataAsset';
+export * from './marketDataMetadataChain';
+export * from './marketDataMetadataExchange';
+export * from './marketDataMetadataIcon';
+export * from './marketDataMetadataSymbol';
 export * from './ohlcvExchangeTimeseriesItem';
-export * from './v1Asset';
-export * from './v1Chain';
 export * from './v1ChainNetworkAddress';
-export * from './v1Exchange';
 export * from './v1ExchangeRate';
 export * from './v1ExchangeRates';
 export * from './v1ExchangeRatesRate';
 export * from './v1ExchangeRatesTimeseriesItem';
 export * from './v1GeneralData';
-export * from './v1Icon';
 export * from './v1LastTrade';
 export * from './v1ListingItem';
 export * from './v1Metric';
@@ -23,7 +24,6 @@ export * from './v1OrderBookDepth';
 export * from './v1Quote';
 export * from './v1QuoteTrade';
 export * from './v1Strike';
-export * from './v1Symbol';
 export * from './v1SymbolMapping';
 export * from './v1TimeseriesItem';
 export * from './v1TimeseriesPeriod';
@@ -42,17 +42,18 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
+import { MarketDataMetadataAsset } from './marketDataMetadataAsset';
+import { MarketDataMetadataChain } from './marketDataMetadataChain';
+import { MarketDataMetadataExchange } from './marketDataMetadataExchange';
+import { MarketDataMetadataIcon } from './marketDataMetadataIcon';
+import { MarketDataMetadataSymbol } from './marketDataMetadataSymbol';
 import { OhlcvExchangeTimeseriesItem } from './ohlcvExchangeTimeseriesItem';
-import { V1Asset } from './v1Asset';
-import { V1Chain } from './v1Chain';
 import { V1ChainNetworkAddress } from './v1ChainNetworkAddress';
-import { V1Exchange } from './v1Exchange';
 import { V1ExchangeRate } from './v1ExchangeRate';
 import { V1ExchangeRates } from './v1ExchangeRates';
 import { V1ExchangeRatesRate } from './v1ExchangeRatesRate';
 import { V1ExchangeRatesTimeseriesItem } from './v1ExchangeRatesTimeseriesItem';
 import { V1GeneralData } from './v1GeneralData';
-import { V1Icon } from './v1Icon';
 import { V1LastTrade } from './v1LastTrade';
 import { V1ListingItem } from './v1ListingItem';
 import { V1Metric } from './v1Metric';
@@ -65,7 +66,6 @@ import { V1OrderBookDepth } from './v1OrderBookDepth';
 import { V1Quote } from './v1Quote';
 import { V1QuoteTrade } from './v1QuoteTrade';
 import { V1Strike } from './v1Strike';
-import { V1Symbol } from './v1Symbol';
 import { V1SymbolMapping } from './v1SymbolMapping';
 import { V1TimeseriesItem } from './v1TimeseriesItem';
 import { V1TimeseriesPeriod } from './v1TimeseriesPeriod';
@@ -87,17 +87,18 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
+    "MarketDataMetadataAsset": MarketDataMetadataAsset,
+    "MarketDataMetadataChain": MarketDataMetadataChain,
+    "MarketDataMetadataExchange": MarketDataMetadataExchange,
+    "MarketDataMetadataIcon": MarketDataMetadataIcon,
+    "MarketDataMetadataSymbol": MarketDataMetadataSymbol,
     "OhlcvExchangeTimeseriesItem": OhlcvExchangeTimeseriesItem,
-    "V1Asset": V1Asset,
-    "V1Chain": V1Chain,
     "V1ChainNetworkAddress": V1ChainNetworkAddress,
-    "V1Exchange": V1Exchange,
     "V1ExchangeRate": V1ExchangeRate,
     "V1ExchangeRates": V1ExchangeRates,
     "V1ExchangeRatesRate": V1ExchangeRatesRate,
     "V1ExchangeRatesTimeseriesItem": V1ExchangeRatesTimeseriesItem,
     "V1GeneralData": V1GeneralData,
-    "V1Icon": V1Icon,
     "V1LastTrade": V1LastTrade,
     "V1ListingItem": V1ListingItem,
     "V1Metric": V1Metric,
@@ -110,7 +111,6 @@ let typeMap: {[index: string]: any} = {
     "V1Quote": V1Quote,
     "V1QuoteTrade": V1QuoteTrade,
     "V1Strike": V1Strike,
-    "V1Symbol": V1Symbol,
     "V1SymbolMapping": V1SymbolMapping,
     "V1TimeseriesItem": V1TimeseriesItem,
     "V1TimeseriesPeriod": V1TimeseriesPeriod,

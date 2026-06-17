@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## v1AssetsAssetIdGet
 
-> [V1Asset] v1AssetsAssetIdGet(assetId)
+> [MarketDataMetadataAsset] v1AssetsAssetIdGet(assetId)
 
 List all assets by asset ID
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Asset]**](V1Asset.md)
+[**[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ## v1AssetsGet
 
-> [V1Asset] v1AssetsGet(opts)
+> [MarketDataMetadataAsset] v1AssetsGet(opts)
 
 List all assets
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Asset]**](V1Asset.md)
+[**[MarketDataMetadataAsset]**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ## v1AssetsIconsSizeGet
 
-> [V1Icon] v1AssetsIconsSizeGet(size)
+> [MarketDataMetadataIcon] v1AssetsIconsSizeGet(size)
 
 List all asset icons
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Icon]**](V1Icon.md)
+[**[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ## v1ChainsChainIdGet
 
-> [V1Chain] v1ChainsChainIdGet(chainId)
+> [MarketDataMetadataChain] v1ChainsChainIdGet(chainId)
 
 List all chains by chain ID
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Chain]**](V1Chain.md)
+[**[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ## v1ChainsGet
 
-> [V1Chain] v1ChainsGet(opts)
+> [MarketDataMetadataChain] v1ChainsGet(opts)
 
 List all blockchain chains
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Chain]**](V1Chain.md)
+[**[MarketDataMetadataChain]**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ## v1ExchangesExchangeIdGet
 
-> [V1Exchange] v1ExchangesExchangeIdGet(exchangeId)
+> [MarketDataMetadataExchange] v1ExchangesExchangeIdGet(exchangeId)
 
 List all exchanges by exchange_id
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Exchange]**](V1Exchange.md)
+[**[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ## v1ExchangesGet
 
-> [V1Exchange] v1ExchangesGet(opts)
+> [MarketDataMetadataExchange] v1ExchangesGet(opts)
 
 List all exchanges
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Exchange]**](V1Exchange.md)
+[**[MarketDataMetadataExchange]**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ## v1ExchangesIconsSizeGet
 
-> [V1Icon] v1ExchangesIconsSizeGet(size)
+> [MarketDataMetadataIcon] v1ExchangesIconsSizeGet(size)
 
 List of icons for the exchanges
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Icon]**](V1Icon.md)
+[**[MarketDataMetadataIcon]**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsExchangeIdActiveGet
 
-> [V1Symbol] v1SymbolsExchangeIdActiveGet(exchangeId, opts)
+> [MarketDataMetadataSymbol] v1SymbolsExchangeIdActiveGet(exchangeId, opts)
 
 List all active symbols
 
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Symbol]**](V1Symbol.md)
+[**[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsExchangeIdHistoryGet
 
-> [V1Symbol] v1SymbolsExchangeIdHistoryGet(exchangeId, opts)
+> [MarketDataMetadataSymbol] v1SymbolsExchangeIdHistoryGet(exchangeId, opts)
 
 List all historical symbols for an exchange.
 
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[V1Symbol]**](V1Symbol.md)
+[**[MarketDataMetadataSymbol]**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

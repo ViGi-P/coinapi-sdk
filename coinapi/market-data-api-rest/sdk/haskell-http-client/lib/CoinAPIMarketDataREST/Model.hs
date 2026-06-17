@@ -152,6 +152,523 @@ newtype TimeStartDateTime = TimeStartDateTime { unTimeStartDateTime :: DateTime 
 -- * Models
 
 
+-- ** MarketDataMetadataAsset
+-- | MarketDataMetadataAsset
+-- Represents an asset.
+data MarketDataMetadataAsset = MarketDataMetadataAsset
+  { marketDataMetadataAssetAssetId :: !(Maybe Text) -- ^ "asset_id" - Gets or sets the asset ID.
+  , marketDataMetadataAssetName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the asset.
+  , marketDataMetadataAssetTypeIsCrypto :: !(Maybe Int) -- ^ "type_is_crypto" - Gets or sets a value indicating whether the asset is a cryptocurrency.
+  , marketDataMetadataAssetDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - Gets or sets the start date of quote data.
+  , marketDataMetadataAssetDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - Gets or sets the end date of quote data.
+  , marketDataMetadataAssetDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - Gets or sets the start date of order book data.
+  , marketDataMetadataAssetDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - Gets or sets the end date of order book data.
+  , marketDataMetadataAssetDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - Gets or sets the start date of trade data.
+  , marketDataMetadataAssetDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - Gets or sets the end date of trade data.
+  , marketDataMetadataAssetDataSymbolsCount :: !(Maybe Integer) -- ^ "data_symbols_count" - Gets or sets the number of symbols.
+  , marketDataMetadataAssetVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - Gets or sets the USD volume in the last 1 hour.
+  , marketDataMetadataAssetVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - Gets or sets the USD volume in the last 1 day.
+  , marketDataMetadataAssetVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - Gets or sets the USD volume in the last 1 month.
+  , marketDataMetadataAssetPriceUsd :: !(Maybe Double) -- ^ "price_usd" - Gets or sets the USD price of the asset.
+  , marketDataMetadataAssetIdIcon :: !(Maybe Text) -- ^ "id_icon" - Gets or sets the ID of the icon for the asset.
+  , marketDataMetadataAssetSupplyCurrent :: !(Maybe Double) -- ^ "supply_current" - Gets or sets the current supply of the asset.
+  , marketDataMetadataAssetSupplyTotal :: !(Maybe Double) -- ^ "supply_total" - Gets or sets the total supply of the asset.
+  , marketDataMetadataAssetSupplyMax :: !(Maybe Double) -- ^ "supply_max" - Gets or sets the maximum supply of the asset.
+  , marketDataMetadataAssetChainAddresses :: !(Maybe [V1ChainNetworkAddress]) -- ^ "chain_addresses" - 
+  , marketDataMetadataAssetDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
+  , marketDataMetadataAssetDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON MarketDataMetadataAsset
+instance A.FromJSON MarketDataMetadataAsset where
+  parseJSON = A.withObject "MarketDataMetadataAsset" $ \o ->
+    MarketDataMetadataAsset
+      <$> (o .:? "asset_id")
+      <*> (o .:? "name")
+      <*> (o .:? "type_is_crypto")
+      <*> (o .:? "data_quote_start")
+      <*> (o .:? "data_quote_end")
+      <*> (o .:? "data_orderbook_start")
+      <*> (o .:? "data_orderbook_end")
+      <*> (o .:? "data_trade_start")
+      <*> (o .:? "data_trade_end")
+      <*> (o .:? "data_symbols_count")
+      <*> (o .:? "volume_1hrs_usd")
+      <*> (o .:? "volume_1day_usd")
+      <*> (o .:? "volume_1mth_usd")
+      <*> (o .:? "price_usd")
+      <*> (o .:? "id_icon")
+      <*> (o .:? "supply_current")
+      <*> (o .:? "supply_total")
+      <*> (o .:? "supply_max")
+      <*> (o .:? "chain_addresses")
+      <*> (o .:? "data_start")
+      <*> (o .:? "data_end")
+
+-- | ToJSON MarketDataMetadataAsset
+instance A.ToJSON MarketDataMetadataAsset where
+  toJSON MarketDataMetadataAsset {..} =
+   _omitNulls
+      [ "asset_id" .= marketDataMetadataAssetAssetId
+      , "name" .= marketDataMetadataAssetName
+      , "type_is_crypto" .= marketDataMetadataAssetTypeIsCrypto
+      , "data_quote_start" .= marketDataMetadataAssetDataQuoteStart
+      , "data_quote_end" .= marketDataMetadataAssetDataQuoteEnd
+      , "data_orderbook_start" .= marketDataMetadataAssetDataOrderbookStart
+      , "data_orderbook_end" .= marketDataMetadataAssetDataOrderbookEnd
+      , "data_trade_start" .= marketDataMetadataAssetDataTradeStart
+      , "data_trade_end" .= marketDataMetadataAssetDataTradeEnd
+      , "data_symbols_count" .= marketDataMetadataAssetDataSymbolsCount
+      , "volume_1hrs_usd" .= marketDataMetadataAssetVolume1hrsUsd
+      , "volume_1day_usd" .= marketDataMetadataAssetVolume1dayUsd
+      , "volume_1mth_usd" .= marketDataMetadataAssetVolume1mthUsd
+      , "price_usd" .= marketDataMetadataAssetPriceUsd
+      , "id_icon" .= marketDataMetadataAssetIdIcon
+      , "supply_current" .= marketDataMetadataAssetSupplyCurrent
+      , "supply_total" .= marketDataMetadataAssetSupplyTotal
+      , "supply_max" .= marketDataMetadataAssetSupplyMax
+      , "chain_addresses" .= marketDataMetadataAssetChainAddresses
+      , "data_start" .= marketDataMetadataAssetDataStart
+      , "data_end" .= marketDataMetadataAssetDataEnd
+      ]
+
+
+-- | Construct a value of type 'MarketDataMetadataAsset' (by applying it's required fields, if any)
+mkMarketDataMetadataAsset
+  :: MarketDataMetadataAsset
+mkMarketDataMetadataAsset =
+  MarketDataMetadataAsset
+  { marketDataMetadataAssetAssetId = Nothing
+  , marketDataMetadataAssetName = Nothing
+  , marketDataMetadataAssetTypeIsCrypto = Nothing
+  , marketDataMetadataAssetDataQuoteStart = Nothing
+  , marketDataMetadataAssetDataQuoteEnd = Nothing
+  , marketDataMetadataAssetDataOrderbookStart = Nothing
+  , marketDataMetadataAssetDataOrderbookEnd = Nothing
+  , marketDataMetadataAssetDataTradeStart = Nothing
+  , marketDataMetadataAssetDataTradeEnd = Nothing
+  , marketDataMetadataAssetDataSymbolsCount = Nothing
+  , marketDataMetadataAssetVolume1hrsUsd = Nothing
+  , marketDataMetadataAssetVolume1dayUsd = Nothing
+  , marketDataMetadataAssetVolume1mthUsd = Nothing
+  , marketDataMetadataAssetPriceUsd = Nothing
+  , marketDataMetadataAssetIdIcon = Nothing
+  , marketDataMetadataAssetSupplyCurrent = Nothing
+  , marketDataMetadataAssetSupplyTotal = Nothing
+  , marketDataMetadataAssetSupplyMax = Nothing
+  , marketDataMetadataAssetChainAddresses = Nothing
+  , marketDataMetadataAssetDataStart = Nothing
+  , marketDataMetadataAssetDataEnd = Nothing
+  }
+
+-- ** MarketDataMetadataChain
+-- | MarketDataMetadataChain
+-- Represents a blockchain chain.
+data MarketDataMetadataChain = MarketDataMetadataChain
+  { marketDataMetadataChainChainId :: !(Maybe Text) -- ^ "chain_id" - Gets or sets the chain identifier.
+  , marketDataMetadataChainName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the chain.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON MarketDataMetadataChain
+instance A.FromJSON MarketDataMetadataChain where
+  parseJSON = A.withObject "MarketDataMetadataChain" $ \o ->
+    MarketDataMetadataChain
+      <$> (o .:? "chain_id")
+      <*> (o .:? "name")
+
+-- | ToJSON MarketDataMetadataChain
+instance A.ToJSON MarketDataMetadataChain where
+  toJSON MarketDataMetadataChain {..} =
+   _omitNulls
+      [ "chain_id" .= marketDataMetadataChainChainId
+      , "name" .= marketDataMetadataChainName
+      ]
+
+
+-- | Construct a value of type 'MarketDataMetadataChain' (by applying it's required fields, if any)
+mkMarketDataMetadataChain
+  :: MarketDataMetadataChain
+mkMarketDataMetadataChain =
+  MarketDataMetadataChain
+  { marketDataMetadataChainChainId = Nothing
+  , marketDataMetadataChainName = Nothing
+  }
+
+-- ** MarketDataMetadataExchange
+-- | MarketDataMetadataExchange
+-- Represents an exchange.
+data MarketDataMetadataExchange = MarketDataMetadataExchange
+  { marketDataMetadataExchangeExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID.
+  , marketDataMetadataExchangeWebsite :: !(Maybe Text) -- ^ "website" - Gets or sets the website URL of the exchange.
+  , marketDataMetadataExchangeName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the exchange.
+  , marketDataMetadataExchangeDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
+  , marketDataMetadataExchangeDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
+  , marketDataMetadataExchangeDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - Gets or sets the start date of quote data.
+  , marketDataMetadataExchangeDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - Gets or sets the end date of quote data.
+  , marketDataMetadataExchangeDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - Gets or sets the start date of order book data.
+  , marketDataMetadataExchangeDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - Gets or sets the end date of order book data.
+  , marketDataMetadataExchangeDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - Gets or sets the start date of trade data.
+  , marketDataMetadataExchangeDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - Gets or sets the end date of trade data.
+  , marketDataMetadataExchangeDataTradeCount :: !(Maybe Integer) -- ^ "data_trade_count" - Gets or sets the number of trades.
+  , marketDataMetadataExchangeDataSymbolsCount :: !(Maybe Integer) -- ^ "data_symbols_count" - Gets or sets the number of symbols.
+  , marketDataMetadataExchangeVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - Gets or sets the USD volume in the last 1 hour.
+  , marketDataMetadataExchangeVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - Gets or sets the USD volume in the last 1 day.
+  , marketDataMetadataExchangeVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - Gets or sets the USD volume in the last 1 month.
+  , marketDataMetadataExchangeMetricId :: !(Maybe [Text]) -- ^ "metric_id" - Gets or sets the list of metric IDs.
+  , marketDataMetadataExchangeIcons :: !(Maybe [MarketDataMetadataIcon]) -- ^ /ReadOnly/ "icons" - Gets or sets the list of icons for the exchange.
+  , marketDataMetadataExchangeRank :: !(Maybe Double) -- ^ "rank" - Rank of the exchange.
+  , marketDataMetadataExchangeIntegrationStatus :: !(Maybe Text) -- ^ "integration_status" - Status of the integration
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON MarketDataMetadataExchange
+instance A.FromJSON MarketDataMetadataExchange where
+  parseJSON = A.withObject "MarketDataMetadataExchange" $ \o ->
+    MarketDataMetadataExchange
+      <$> (o .:? "exchange_id")
+      <*> (o .:? "website")
+      <*> (o .:? "name")
+      <*> (o .:? "data_start")
+      <*> (o .:? "data_end")
+      <*> (o .:? "data_quote_start")
+      <*> (o .:? "data_quote_end")
+      <*> (o .:? "data_orderbook_start")
+      <*> (o .:? "data_orderbook_end")
+      <*> (o .:? "data_trade_start")
+      <*> (o .:? "data_trade_end")
+      <*> (o .:? "data_trade_count")
+      <*> (o .:? "data_symbols_count")
+      <*> (o .:? "volume_1hrs_usd")
+      <*> (o .:? "volume_1day_usd")
+      <*> (o .:? "volume_1mth_usd")
+      <*> (o .:? "metric_id")
+      <*> (o .:? "icons")
+      <*> (o .:? "rank")
+      <*> (o .:? "integration_status")
+
+-- | ToJSON MarketDataMetadataExchange
+instance A.ToJSON MarketDataMetadataExchange where
+  toJSON MarketDataMetadataExchange {..} =
+   _omitNulls
+      [ "exchange_id" .= marketDataMetadataExchangeExchangeId
+      , "website" .= marketDataMetadataExchangeWebsite
+      , "name" .= marketDataMetadataExchangeName
+      , "data_start" .= marketDataMetadataExchangeDataStart
+      , "data_end" .= marketDataMetadataExchangeDataEnd
+      , "data_quote_start" .= marketDataMetadataExchangeDataQuoteStart
+      , "data_quote_end" .= marketDataMetadataExchangeDataQuoteEnd
+      , "data_orderbook_start" .= marketDataMetadataExchangeDataOrderbookStart
+      , "data_orderbook_end" .= marketDataMetadataExchangeDataOrderbookEnd
+      , "data_trade_start" .= marketDataMetadataExchangeDataTradeStart
+      , "data_trade_end" .= marketDataMetadataExchangeDataTradeEnd
+      , "data_trade_count" .= marketDataMetadataExchangeDataTradeCount
+      , "data_symbols_count" .= marketDataMetadataExchangeDataSymbolsCount
+      , "volume_1hrs_usd" .= marketDataMetadataExchangeVolume1hrsUsd
+      , "volume_1day_usd" .= marketDataMetadataExchangeVolume1dayUsd
+      , "volume_1mth_usd" .= marketDataMetadataExchangeVolume1mthUsd
+      , "metric_id" .= marketDataMetadataExchangeMetricId
+      , "icons" .= marketDataMetadataExchangeIcons
+      , "rank" .= marketDataMetadataExchangeRank
+      , "integration_status" .= marketDataMetadataExchangeIntegrationStatus
+      ]
+
+
+-- | Construct a value of type 'MarketDataMetadataExchange' (by applying it's required fields, if any)
+mkMarketDataMetadataExchange
+  :: MarketDataMetadataExchange
+mkMarketDataMetadataExchange =
+  MarketDataMetadataExchange
+  { marketDataMetadataExchangeExchangeId = Nothing
+  , marketDataMetadataExchangeWebsite = Nothing
+  , marketDataMetadataExchangeName = Nothing
+  , marketDataMetadataExchangeDataStart = Nothing
+  , marketDataMetadataExchangeDataEnd = Nothing
+  , marketDataMetadataExchangeDataQuoteStart = Nothing
+  , marketDataMetadataExchangeDataQuoteEnd = Nothing
+  , marketDataMetadataExchangeDataOrderbookStart = Nothing
+  , marketDataMetadataExchangeDataOrderbookEnd = Nothing
+  , marketDataMetadataExchangeDataTradeStart = Nothing
+  , marketDataMetadataExchangeDataTradeEnd = Nothing
+  , marketDataMetadataExchangeDataTradeCount = Nothing
+  , marketDataMetadataExchangeDataSymbolsCount = Nothing
+  , marketDataMetadataExchangeVolume1hrsUsd = Nothing
+  , marketDataMetadataExchangeVolume1dayUsd = Nothing
+  , marketDataMetadataExchangeVolume1mthUsd = Nothing
+  , marketDataMetadataExchangeMetricId = Nothing
+  , marketDataMetadataExchangeIcons = Nothing
+  , marketDataMetadataExchangeRank = Nothing
+  , marketDataMetadataExchangeIntegrationStatus = Nothing
+  }
+
+-- ** MarketDataMetadataIcon
+-- | MarketDataMetadataIcon
+-- Represents an icon.
+data MarketDataMetadataIcon = MarketDataMetadataIcon
+  { marketDataMetadataIconExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID associated with the icon.
+  , marketDataMetadataIconAssetId :: !(Maybe Text) -- ^ "asset_id" - Gets or sets the asset ID associated with the icon.
+  , marketDataMetadataIconUrl :: !(Maybe Text) -- ^ "url" - Gets or sets the URL of the icon.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON MarketDataMetadataIcon
+instance A.FromJSON MarketDataMetadataIcon where
+  parseJSON = A.withObject "MarketDataMetadataIcon" $ \o ->
+    MarketDataMetadataIcon
+      <$> (o .:? "exchange_id")
+      <*> (o .:? "asset_id")
+      <*> (o .:? "url")
+
+-- | ToJSON MarketDataMetadataIcon
+instance A.ToJSON MarketDataMetadataIcon where
+  toJSON MarketDataMetadataIcon {..} =
+   _omitNulls
+      [ "exchange_id" .= marketDataMetadataIconExchangeId
+      , "asset_id" .= marketDataMetadataIconAssetId
+      , "url" .= marketDataMetadataIconUrl
+      ]
+
+
+-- | Construct a value of type 'MarketDataMetadataIcon' (by applying it's required fields, if any)
+mkMarketDataMetadataIcon
+  :: MarketDataMetadataIcon
+mkMarketDataMetadataIcon =
+  MarketDataMetadataIcon
+  { marketDataMetadataIconExchangeId = Nothing
+  , marketDataMetadataIconAssetId = Nothing
+  , marketDataMetadataIconUrl = Nothing
+  }
+
+-- ** MarketDataMetadataSymbol
+-- | MarketDataMetadataSymbol
+-- Represents a symbol data model.
+data MarketDataMetadataSymbol = MarketDataMetadataSymbol
+  { marketDataMetadataSymbolSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol identifier.
+  , marketDataMetadataSymbolExchangeId :: !(Maybe Text) -- ^ "exchange_id" - The exchange identifier.
+  , marketDataMetadataSymbolSymbolType :: !(Maybe Text) -- ^ "symbol_type" - The symbol type.
+  , marketDataMetadataSymbolAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - The base asset identifier.
+  , marketDataMetadataSymbolAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - The quote asset identifier.
+  , marketDataMetadataSymbolAssetIdUnit :: !(Maybe Text) -- ^ "asset_id_unit" - The unit asset identifier.
+  , marketDataMetadataSymbolFutureContractUnit :: !(Maybe Double) -- ^ "future_contract_unit" - The contract unit for futures.
+  , marketDataMetadataSymbolFutureContractUnitAsset :: !(Maybe Text) -- ^ "future_contract_unit_asset" - The asset used as the unit for futures contract.
+  , marketDataMetadataSymbolFutureDeliveryTime :: !(Maybe DateTime) -- ^ "future_delivery_time" - The future delivery time for futures contract.
+  , marketDataMetadataSymbolOptionTypeIsCall :: !(Maybe Bool) -- ^ "option_type_is_call" - Indicates whether the option type is a call.
+  , marketDataMetadataSymbolOptionStrikePrice :: !(Maybe Double) -- ^ "option_strike_price" - The strike price for options.
+  , marketDataMetadataSymbolOptionContractUnit :: !(Maybe Double) -- ^ "option_contract_unit" - The contract unit for options.
+  , marketDataMetadataSymbolOptionExerciseStyle :: !(Maybe Text) -- ^ "option_exercise_style" - The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+  , marketDataMetadataSymbolOptionExpirationTime :: !(Maybe DateTime) -- ^ "option_expiration_time" - The expiration time for options.
+  , marketDataMetadataSymbolContractDeliveryTime :: !(Maybe DateTime) -- ^ "contract_delivery_time" - The delivery time for contracts.
+  , marketDataMetadataSymbolContractUnit :: !(Maybe Double) -- ^ "contract_unit" - The contract unit for contracts.
+  , marketDataMetadataSymbolContractUnitAsset :: !(Maybe Text) -- ^ "contract_unit_asset" - The asset used as the unit for contracts.
+  , marketDataMetadataSymbolContractId :: !(Maybe Text) -- ^ "contract_id" - The contract identifier.
+  , marketDataMetadataSymbolContractDisplayName :: !(Maybe Text) -- ^ "contract_display_name" - The display name of the contract.
+  , marketDataMetadataSymbolContractDisplayDescription :: !(Maybe Text) -- ^ "contract_display_description" - The display description of the contract.
+  , marketDataMetadataSymbolDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
+  , marketDataMetadataSymbolDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
+  , marketDataMetadataSymbolDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - The start date of quote data.
+  , marketDataMetadataSymbolDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - The end date of quote data.
+  , marketDataMetadataSymbolDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - The start date of order book data.
+  , marketDataMetadataSymbolDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - The end date of order book data.
+  , marketDataMetadataSymbolDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - The start date of trade data.
+  , marketDataMetadataSymbolDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - The end date of trade data.
+  , marketDataMetadataSymbolIndexId :: !(Maybe Text) -- ^ "index_id" - The index identifier.
+  , marketDataMetadataSymbolIndexDisplayName :: !(Maybe Text) -- ^ "index_display_name" - The display name of the index.
+  , marketDataMetadataSymbolIndexDisplayDescription :: !(Maybe Text) -- ^ "index_display_description" - The display description of the index.
+  , marketDataMetadataSymbolVolume1hrs :: !(Maybe Double) -- ^ "volume_1hrs" - The volume in the last 1 hour.
+  , marketDataMetadataSymbolVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - The volume in USD in the last 1 hour.
+  , marketDataMetadataSymbolVolume1day :: !(Maybe Double) -- ^ "volume_1day" - The volume in the last 1 day.
+  , marketDataMetadataSymbolVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - The volume in USD in the last 1 day.
+  , marketDataMetadataSymbolVolume1mth :: !(Maybe Double) -- ^ "volume_1mth" - The volume in the last 1 month.
+  , marketDataMetadataSymbolVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - The volume in USD in the last 1 month.
+  , marketDataMetadataSymbolPrice :: !(Maybe Double) -- ^ "price" - The price.
+  , marketDataMetadataSymbolSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange" - The symbol identifier in the exchange.
+  , marketDataMetadataSymbolAssetIdBaseExchange :: !(Maybe Text) -- ^ "asset_id_base_exchange" - The base asset identifier in the exchange.
+  , marketDataMetadataSymbolAssetIdQuoteExchange :: !(Maybe Text) -- ^ "asset_id_quote_exchange" - The quote asset identifier in the exchange.
+  , marketDataMetadataSymbolPricePrecision :: !(Maybe Double) -- ^ "price_precision" - The price precision.
+  , marketDataMetadataSymbolSizePrecision :: !(Maybe Double) -- ^ "size_precision" - The size precision.
+  , marketDataMetadataSymbolRawKvp :: !(Maybe (Map.Map String Text)) -- ^ "raw_kvp" - Key Value Pair store with raw data from the data source.
+  , marketDataMetadataSymbolFutureIsInverse :: !(Maybe Bool) -- ^ "future_is_inverse" - Indicates whether the futures contract is inverse (coin-margined).
+  , marketDataMetadataSymbolFutureIsQuanto :: !(Maybe Bool) -- ^ "future_is_quanto" - Indicates whether the futures contract is quanto.
+  , marketDataMetadataSymbolVolumeToUsd :: !(Maybe Double) -- ^ "volume_to_usd" - Volume unit in USD.
+  , marketDataMetadataSymbolOptionBarrierUpPrice :: !(Maybe Double) -- ^ "option_barrier_up_price" - The up barrier price for barrier options.
+  , marketDataMetadataSymbolOptionBarrierUpType :: !(Maybe Text) -- ^ "option_barrier_up_type" - The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  , marketDataMetadataSymbolOptionBarrierDownPrice :: !(Maybe Double) -- ^ "option_barrier_down_price" - The down barrier price for barrier options.
+  , marketDataMetadataSymbolOptionBarrierDownType :: !(Maybe Text) -- ^ "option_barrier_down_type" - The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  , marketDataMetadataSymbolSymbolIdInt :: !(Maybe Int) -- ^ /ReadOnly/ "symbol_id_int" - The symbol identifier in integer immutable format, used to correlate data across different APIs.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON MarketDataMetadataSymbol
+instance A.FromJSON MarketDataMetadataSymbol where
+  parseJSON = A.withObject "MarketDataMetadataSymbol" $ \o ->
+    MarketDataMetadataSymbol
+      <$> (o .:? "symbol_id")
+      <*> (o .:? "exchange_id")
+      <*> (o .:? "symbol_type")
+      <*> (o .:? "asset_id_base")
+      <*> (o .:? "asset_id_quote")
+      <*> (o .:? "asset_id_unit")
+      <*> (o .:? "future_contract_unit")
+      <*> (o .:? "future_contract_unit_asset")
+      <*> (o .:? "future_delivery_time")
+      <*> (o .:? "option_type_is_call")
+      <*> (o .:? "option_strike_price")
+      <*> (o .:? "option_contract_unit")
+      <*> (o .:? "option_exercise_style")
+      <*> (o .:? "option_expiration_time")
+      <*> (o .:? "contract_delivery_time")
+      <*> (o .:? "contract_unit")
+      <*> (o .:? "contract_unit_asset")
+      <*> (o .:? "contract_id")
+      <*> (o .:? "contract_display_name")
+      <*> (o .:? "contract_display_description")
+      <*> (o .:? "data_start")
+      <*> (o .:? "data_end")
+      <*> (o .:? "data_quote_start")
+      <*> (o .:? "data_quote_end")
+      <*> (o .:? "data_orderbook_start")
+      <*> (o .:? "data_orderbook_end")
+      <*> (o .:? "data_trade_start")
+      <*> (o .:? "data_trade_end")
+      <*> (o .:? "index_id")
+      <*> (o .:? "index_display_name")
+      <*> (o .:? "index_display_description")
+      <*> (o .:? "volume_1hrs")
+      <*> (o .:? "volume_1hrs_usd")
+      <*> (o .:? "volume_1day")
+      <*> (o .:? "volume_1day_usd")
+      <*> (o .:? "volume_1mth")
+      <*> (o .:? "volume_1mth_usd")
+      <*> (o .:? "price")
+      <*> (o .:? "symbol_id_exchange")
+      <*> (o .:? "asset_id_base_exchange")
+      <*> (o .:? "asset_id_quote_exchange")
+      <*> (o .:? "price_precision")
+      <*> (o .:? "size_precision")
+      <*> (o .:? "raw_kvp")
+      <*> (o .:? "future_is_inverse")
+      <*> (o .:? "future_is_quanto")
+      <*> (o .:? "volume_to_usd")
+      <*> (o .:? "option_barrier_up_price")
+      <*> (o .:? "option_barrier_up_type")
+      <*> (o .:? "option_barrier_down_price")
+      <*> (o .:? "option_barrier_down_type")
+      <*> (o .:? "symbol_id_int")
+
+-- | ToJSON MarketDataMetadataSymbol
+instance A.ToJSON MarketDataMetadataSymbol where
+  toJSON MarketDataMetadataSymbol {..} =
+   _omitNulls
+      [ "symbol_id" .= marketDataMetadataSymbolSymbolId
+      , "exchange_id" .= marketDataMetadataSymbolExchangeId
+      , "symbol_type" .= marketDataMetadataSymbolSymbolType
+      , "asset_id_base" .= marketDataMetadataSymbolAssetIdBase
+      , "asset_id_quote" .= marketDataMetadataSymbolAssetIdQuote
+      , "asset_id_unit" .= marketDataMetadataSymbolAssetIdUnit
+      , "future_contract_unit" .= marketDataMetadataSymbolFutureContractUnit
+      , "future_contract_unit_asset" .= marketDataMetadataSymbolFutureContractUnitAsset
+      , "future_delivery_time" .= marketDataMetadataSymbolFutureDeliveryTime
+      , "option_type_is_call" .= marketDataMetadataSymbolOptionTypeIsCall
+      , "option_strike_price" .= marketDataMetadataSymbolOptionStrikePrice
+      , "option_contract_unit" .= marketDataMetadataSymbolOptionContractUnit
+      , "option_exercise_style" .= marketDataMetadataSymbolOptionExerciseStyle
+      , "option_expiration_time" .= marketDataMetadataSymbolOptionExpirationTime
+      , "contract_delivery_time" .= marketDataMetadataSymbolContractDeliveryTime
+      , "contract_unit" .= marketDataMetadataSymbolContractUnit
+      , "contract_unit_asset" .= marketDataMetadataSymbolContractUnitAsset
+      , "contract_id" .= marketDataMetadataSymbolContractId
+      , "contract_display_name" .= marketDataMetadataSymbolContractDisplayName
+      , "contract_display_description" .= marketDataMetadataSymbolContractDisplayDescription
+      , "data_start" .= marketDataMetadataSymbolDataStart
+      , "data_end" .= marketDataMetadataSymbolDataEnd
+      , "data_quote_start" .= marketDataMetadataSymbolDataQuoteStart
+      , "data_quote_end" .= marketDataMetadataSymbolDataQuoteEnd
+      , "data_orderbook_start" .= marketDataMetadataSymbolDataOrderbookStart
+      , "data_orderbook_end" .= marketDataMetadataSymbolDataOrderbookEnd
+      , "data_trade_start" .= marketDataMetadataSymbolDataTradeStart
+      , "data_trade_end" .= marketDataMetadataSymbolDataTradeEnd
+      , "index_id" .= marketDataMetadataSymbolIndexId
+      , "index_display_name" .= marketDataMetadataSymbolIndexDisplayName
+      , "index_display_description" .= marketDataMetadataSymbolIndexDisplayDescription
+      , "volume_1hrs" .= marketDataMetadataSymbolVolume1hrs
+      , "volume_1hrs_usd" .= marketDataMetadataSymbolVolume1hrsUsd
+      , "volume_1day" .= marketDataMetadataSymbolVolume1day
+      , "volume_1day_usd" .= marketDataMetadataSymbolVolume1dayUsd
+      , "volume_1mth" .= marketDataMetadataSymbolVolume1mth
+      , "volume_1mth_usd" .= marketDataMetadataSymbolVolume1mthUsd
+      , "price" .= marketDataMetadataSymbolPrice
+      , "symbol_id_exchange" .= marketDataMetadataSymbolSymbolIdExchange
+      , "asset_id_base_exchange" .= marketDataMetadataSymbolAssetIdBaseExchange
+      , "asset_id_quote_exchange" .= marketDataMetadataSymbolAssetIdQuoteExchange
+      , "price_precision" .= marketDataMetadataSymbolPricePrecision
+      , "size_precision" .= marketDataMetadataSymbolSizePrecision
+      , "raw_kvp" .= marketDataMetadataSymbolRawKvp
+      , "future_is_inverse" .= marketDataMetadataSymbolFutureIsInverse
+      , "future_is_quanto" .= marketDataMetadataSymbolFutureIsQuanto
+      , "volume_to_usd" .= marketDataMetadataSymbolVolumeToUsd
+      , "option_barrier_up_price" .= marketDataMetadataSymbolOptionBarrierUpPrice
+      , "option_barrier_up_type" .= marketDataMetadataSymbolOptionBarrierUpType
+      , "option_barrier_down_price" .= marketDataMetadataSymbolOptionBarrierDownPrice
+      , "option_barrier_down_type" .= marketDataMetadataSymbolOptionBarrierDownType
+      , "symbol_id_int" .= marketDataMetadataSymbolSymbolIdInt
+      ]
+
+
+-- | Construct a value of type 'MarketDataMetadataSymbol' (by applying it's required fields, if any)
+mkMarketDataMetadataSymbol
+  :: MarketDataMetadataSymbol
+mkMarketDataMetadataSymbol =
+  MarketDataMetadataSymbol
+  { marketDataMetadataSymbolSymbolId = Nothing
+  , marketDataMetadataSymbolExchangeId = Nothing
+  , marketDataMetadataSymbolSymbolType = Nothing
+  , marketDataMetadataSymbolAssetIdBase = Nothing
+  , marketDataMetadataSymbolAssetIdQuote = Nothing
+  , marketDataMetadataSymbolAssetIdUnit = Nothing
+  , marketDataMetadataSymbolFutureContractUnit = Nothing
+  , marketDataMetadataSymbolFutureContractUnitAsset = Nothing
+  , marketDataMetadataSymbolFutureDeliveryTime = Nothing
+  , marketDataMetadataSymbolOptionTypeIsCall = Nothing
+  , marketDataMetadataSymbolOptionStrikePrice = Nothing
+  , marketDataMetadataSymbolOptionContractUnit = Nothing
+  , marketDataMetadataSymbolOptionExerciseStyle = Nothing
+  , marketDataMetadataSymbolOptionExpirationTime = Nothing
+  , marketDataMetadataSymbolContractDeliveryTime = Nothing
+  , marketDataMetadataSymbolContractUnit = Nothing
+  , marketDataMetadataSymbolContractUnitAsset = Nothing
+  , marketDataMetadataSymbolContractId = Nothing
+  , marketDataMetadataSymbolContractDisplayName = Nothing
+  , marketDataMetadataSymbolContractDisplayDescription = Nothing
+  , marketDataMetadataSymbolDataStart = Nothing
+  , marketDataMetadataSymbolDataEnd = Nothing
+  , marketDataMetadataSymbolDataQuoteStart = Nothing
+  , marketDataMetadataSymbolDataQuoteEnd = Nothing
+  , marketDataMetadataSymbolDataOrderbookStart = Nothing
+  , marketDataMetadataSymbolDataOrderbookEnd = Nothing
+  , marketDataMetadataSymbolDataTradeStart = Nothing
+  , marketDataMetadataSymbolDataTradeEnd = Nothing
+  , marketDataMetadataSymbolIndexId = Nothing
+  , marketDataMetadataSymbolIndexDisplayName = Nothing
+  , marketDataMetadataSymbolIndexDisplayDescription = Nothing
+  , marketDataMetadataSymbolVolume1hrs = Nothing
+  , marketDataMetadataSymbolVolume1hrsUsd = Nothing
+  , marketDataMetadataSymbolVolume1day = Nothing
+  , marketDataMetadataSymbolVolume1dayUsd = Nothing
+  , marketDataMetadataSymbolVolume1mth = Nothing
+  , marketDataMetadataSymbolVolume1mthUsd = Nothing
+  , marketDataMetadataSymbolPrice = Nothing
+  , marketDataMetadataSymbolSymbolIdExchange = Nothing
+  , marketDataMetadataSymbolAssetIdBaseExchange = Nothing
+  , marketDataMetadataSymbolAssetIdQuoteExchange = Nothing
+  , marketDataMetadataSymbolPricePrecision = Nothing
+  , marketDataMetadataSymbolSizePrecision = Nothing
+  , marketDataMetadataSymbolRawKvp = Nothing
+  , marketDataMetadataSymbolFutureIsInverse = Nothing
+  , marketDataMetadataSymbolFutureIsQuanto = Nothing
+  , marketDataMetadataSymbolVolumeToUsd = Nothing
+  , marketDataMetadataSymbolOptionBarrierUpPrice = Nothing
+  , marketDataMetadataSymbolOptionBarrierUpType = Nothing
+  , marketDataMetadataSymbolOptionBarrierDownPrice = Nothing
+  , marketDataMetadataSymbolOptionBarrierDownType = Nothing
+  , marketDataMetadataSymbolSymbolIdInt = Nothing
+  }
+
 -- ** OhlcvExchangeTimeseriesItem
 -- | OhlcvExchangeTimeseriesItem
 -- Represents a timeseries item with price and volume information.
@@ -225,148 +742,6 @@ mkOhlcvExchangeTimeseriesItem =
   , ohlcvExchangeTimeseriesItemSymbolIdCoinapi = Nothing
   }
 
--- ** V1Asset
--- | V1Asset
--- Represents an asset.
-data V1Asset = V1Asset
-  { v1AssetAssetId :: !(Maybe Text) -- ^ "asset_id" - Gets or sets the asset ID.
-  , v1AssetName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the asset.
-  , v1AssetTypeIsCrypto :: !(Maybe Int) -- ^ "type_is_crypto" - Gets or sets a value indicating whether the asset is a cryptocurrency.
-  , v1AssetDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - Gets or sets the start date of quote data.
-  , v1AssetDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - Gets or sets the end date of quote data.
-  , v1AssetDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - Gets or sets the start date of order book data.
-  , v1AssetDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - Gets or sets the end date of order book data.
-  , v1AssetDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - Gets or sets the start date of trade data.
-  , v1AssetDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - Gets or sets the end date of trade data.
-  , v1AssetDataSymbolsCount :: !(Maybe Integer) -- ^ "data_symbols_count" - Gets or sets the number of symbols.
-  , v1AssetVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - Gets or sets the USD volume in the last 1 hour.
-  , v1AssetVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - Gets or sets the USD volume in the last 1 day.
-  , v1AssetVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - Gets or sets the USD volume in the last 1 month.
-  , v1AssetPriceUsd :: !(Maybe Double) -- ^ "price_usd" - Gets or sets the USD price of the asset.
-  , v1AssetIdIcon :: !(Maybe Text) -- ^ "id_icon" - Gets or sets the ID of the icon for the asset.
-  , v1AssetSupplyCurrent :: !(Maybe Double) -- ^ "supply_current" - Gets or sets the current supply of the asset.
-  , v1AssetSupplyTotal :: !(Maybe Double) -- ^ "supply_total" - Gets or sets the total supply of the asset.
-  , v1AssetSupplyMax :: !(Maybe Double) -- ^ "supply_max" - Gets or sets the maximum supply of the asset.
-  , v1AssetChainAddresses :: !(Maybe [V1ChainNetworkAddress]) -- ^ "chain_addresses" - 
-  , v1AssetDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start" - Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
-  , v1AssetDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end" - Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON V1Asset
-instance A.FromJSON V1Asset where
-  parseJSON = A.withObject "V1Asset" $ \o ->
-    V1Asset
-      <$> (o .:? "asset_id")
-      <*> (o .:? "name")
-      <*> (o .:? "type_is_crypto")
-      <*> (o .:? "data_quote_start")
-      <*> (o .:? "data_quote_end")
-      <*> (o .:? "data_orderbook_start")
-      <*> (o .:? "data_orderbook_end")
-      <*> (o .:? "data_trade_start")
-      <*> (o .:? "data_trade_end")
-      <*> (o .:? "data_symbols_count")
-      <*> (o .:? "volume_1hrs_usd")
-      <*> (o .:? "volume_1day_usd")
-      <*> (o .:? "volume_1mth_usd")
-      <*> (o .:? "price_usd")
-      <*> (o .:? "id_icon")
-      <*> (o .:? "supply_current")
-      <*> (o .:? "supply_total")
-      <*> (o .:? "supply_max")
-      <*> (o .:? "chain_addresses")
-      <*> (o .:? "data_start")
-      <*> (o .:? "data_end")
-
--- | ToJSON V1Asset
-instance A.ToJSON V1Asset where
-  toJSON V1Asset {..} =
-   _omitNulls
-      [ "asset_id" .= v1AssetAssetId
-      , "name" .= v1AssetName
-      , "type_is_crypto" .= v1AssetTypeIsCrypto
-      , "data_quote_start" .= v1AssetDataQuoteStart
-      , "data_quote_end" .= v1AssetDataQuoteEnd
-      , "data_orderbook_start" .= v1AssetDataOrderbookStart
-      , "data_orderbook_end" .= v1AssetDataOrderbookEnd
-      , "data_trade_start" .= v1AssetDataTradeStart
-      , "data_trade_end" .= v1AssetDataTradeEnd
-      , "data_symbols_count" .= v1AssetDataSymbolsCount
-      , "volume_1hrs_usd" .= v1AssetVolume1hrsUsd
-      , "volume_1day_usd" .= v1AssetVolume1dayUsd
-      , "volume_1mth_usd" .= v1AssetVolume1mthUsd
-      , "price_usd" .= v1AssetPriceUsd
-      , "id_icon" .= v1AssetIdIcon
-      , "supply_current" .= v1AssetSupplyCurrent
-      , "supply_total" .= v1AssetSupplyTotal
-      , "supply_max" .= v1AssetSupplyMax
-      , "chain_addresses" .= v1AssetChainAddresses
-      , "data_start" .= v1AssetDataStart
-      , "data_end" .= v1AssetDataEnd
-      ]
-
-
--- | Construct a value of type 'V1Asset' (by applying it's required fields, if any)
-mkV1Asset
-  :: V1Asset
-mkV1Asset =
-  V1Asset
-  { v1AssetAssetId = Nothing
-  , v1AssetName = Nothing
-  , v1AssetTypeIsCrypto = Nothing
-  , v1AssetDataQuoteStart = Nothing
-  , v1AssetDataQuoteEnd = Nothing
-  , v1AssetDataOrderbookStart = Nothing
-  , v1AssetDataOrderbookEnd = Nothing
-  , v1AssetDataTradeStart = Nothing
-  , v1AssetDataTradeEnd = Nothing
-  , v1AssetDataSymbolsCount = Nothing
-  , v1AssetVolume1hrsUsd = Nothing
-  , v1AssetVolume1dayUsd = Nothing
-  , v1AssetVolume1mthUsd = Nothing
-  , v1AssetPriceUsd = Nothing
-  , v1AssetIdIcon = Nothing
-  , v1AssetSupplyCurrent = Nothing
-  , v1AssetSupplyTotal = Nothing
-  , v1AssetSupplyMax = Nothing
-  , v1AssetChainAddresses = Nothing
-  , v1AssetDataStart = Nothing
-  , v1AssetDataEnd = Nothing
-  }
-
--- ** V1Chain
--- | V1Chain
--- Represents a blockchain chain.
-data V1Chain = V1Chain
-  { v1ChainChainId :: !(Maybe Text) -- ^ "chain_id" - Gets or sets the chain identifier.
-  , v1ChainName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the chain.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON V1Chain
-instance A.FromJSON V1Chain where
-  parseJSON = A.withObject "V1Chain" $ \o ->
-    V1Chain
-      <$> (o .:? "chain_id")
-      <*> (o .:? "name")
-
--- | ToJSON V1Chain
-instance A.ToJSON V1Chain where
-  toJSON V1Chain {..} =
-   _omitNulls
-      [ "chain_id" .= v1ChainChainId
-      , "name" .= v1ChainName
-      ]
-
-
--- | Construct a value of type 'V1Chain' (by applying it's required fields, if any)
-mkV1Chain
-  :: V1Chain
-mkV1Chain =
-  V1Chain
-  { v1ChainChainId = Nothing
-  , v1ChainName = Nothing
-  }
-
 -- ** V1ChainNetworkAddress
 -- | V1ChainNetworkAddress
 -- Contains information about assets' chain network addresses
@@ -402,111 +777,6 @@ mkV1ChainNetworkAddress =
   { v1ChainNetworkAddressChainId = Nothing
   , v1ChainNetworkAddressNetworkId = Nothing
   , v1ChainNetworkAddressAddress = Nothing
-  }
-
--- ** V1Exchange
--- | V1Exchange
--- Represents an exchange.
-data V1Exchange = V1Exchange
-  { v1ExchangeExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID.
-  , v1ExchangeWebsite :: !(Maybe Text) -- ^ "website" - Gets or sets the website URL of the exchange.
-  , v1ExchangeName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the exchange.
-  , v1ExchangeDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start" - Gets the start date of the exchange&#39;s data.
-  , v1ExchangeDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end" - Gets the end date of the exchange&#39;s data.
-  , v1ExchangeDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - Gets or sets the start date of quote data.
-  , v1ExchangeDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - Gets or sets the end date of quote data.
-  , v1ExchangeDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - Gets or sets the start date of order book data.
-  , v1ExchangeDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - Gets or sets the end date of order book data.
-  , v1ExchangeDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - Gets or sets the start date of trade data.
-  , v1ExchangeDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - Gets or sets the end date of trade data.
-  , v1ExchangeDataTradeCount :: !(Maybe Integer) -- ^ "data_trade_count" - Gets or sets the number of trades.
-  , v1ExchangeDataSymbolsCount :: !(Maybe Integer) -- ^ "data_symbols_count" - Gets or sets the number of symbols.
-  , v1ExchangeVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - Gets or sets the USD volume in the last 1 hour.
-  , v1ExchangeVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - Gets or sets the USD volume in the last 1 day.
-  , v1ExchangeVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - Gets or sets the USD volume in the last 1 month.
-  , v1ExchangeMetricId :: !(Maybe [Text]) -- ^ "metric_id" - Gets or sets the list of metric IDs.
-  , v1ExchangeIcons :: !(Maybe [V1Icon]) -- ^ /ReadOnly/ "icons" - Gets or sets the list of icons for the exchange.
-  , v1ExchangeRank :: !(Maybe Double) -- ^ "rank" - Rank of the exchange - higher rank means exchange is more reliable
-  , v1ExchangeIntegrationStatus :: !(Maybe Text) -- ^ "integration_status" - Status of the integration
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON V1Exchange
-instance A.FromJSON V1Exchange where
-  parseJSON = A.withObject "V1Exchange" $ \o ->
-    V1Exchange
-      <$> (o .:? "exchange_id")
-      <*> (o .:? "website")
-      <*> (o .:? "name")
-      <*> (o .:? "data_start")
-      <*> (o .:? "data_end")
-      <*> (o .:? "data_quote_start")
-      <*> (o .:? "data_quote_end")
-      <*> (o .:? "data_orderbook_start")
-      <*> (o .:? "data_orderbook_end")
-      <*> (o .:? "data_trade_start")
-      <*> (o .:? "data_trade_end")
-      <*> (o .:? "data_trade_count")
-      <*> (o .:? "data_symbols_count")
-      <*> (o .:? "volume_1hrs_usd")
-      <*> (o .:? "volume_1day_usd")
-      <*> (o .:? "volume_1mth_usd")
-      <*> (o .:? "metric_id")
-      <*> (o .:? "icons")
-      <*> (o .:? "rank")
-      <*> (o .:? "integration_status")
-
--- | ToJSON V1Exchange
-instance A.ToJSON V1Exchange where
-  toJSON V1Exchange {..} =
-   _omitNulls
-      [ "exchange_id" .= v1ExchangeExchangeId
-      , "website" .= v1ExchangeWebsite
-      , "name" .= v1ExchangeName
-      , "data_start" .= v1ExchangeDataStart
-      , "data_end" .= v1ExchangeDataEnd
-      , "data_quote_start" .= v1ExchangeDataQuoteStart
-      , "data_quote_end" .= v1ExchangeDataQuoteEnd
-      , "data_orderbook_start" .= v1ExchangeDataOrderbookStart
-      , "data_orderbook_end" .= v1ExchangeDataOrderbookEnd
-      , "data_trade_start" .= v1ExchangeDataTradeStart
-      , "data_trade_end" .= v1ExchangeDataTradeEnd
-      , "data_trade_count" .= v1ExchangeDataTradeCount
-      , "data_symbols_count" .= v1ExchangeDataSymbolsCount
-      , "volume_1hrs_usd" .= v1ExchangeVolume1hrsUsd
-      , "volume_1day_usd" .= v1ExchangeVolume1dayUsd
-      , "volume_1mth_usd" .= v1ExchangeVolume1mthUsd
-      , "metric_id" .= v1ExchangeMetricId
-      , "icons" .= v1ExchangeIcons
-      , "rank" .= v1ExchangeRank
-      , "integration_status" .= v1ExchangeIntegrationStatus
-      ]
-
-
--- | Construct a value of type 'V1Exchange' (by applying it's required fields, if any)
-mkV1Exchange
-  :: V1Exchange
-mkV1Exchange =
-  V1Exchange
-  { v1ExchangeExchangeId = Nothing
-  , v1ExchangeWebsite = Nothing
-  , v1ExchangeName = Nothing
-  , v1ExchangeDataStart = Nothing
-  , v1ExchangeDataEnd = Nothing
-  , v1ExchangeDataQuoteStart = Nothing
-  , v1ExchangeDataQuoteEnd = Nothing
-  , v1ExchangeDataOrderbookStart = Nothing
-  , v1ExchangeDataOrderbookEnd = Nothing
-  , v1ExchangeDataTradeStart = Nothing
-  , v1ExchangeDataTradeEnd = Nothing
-  , v1ExchangeDataTradeCount = Nothing
-  , v1ExchangeDataSymbolsCount = Nothing
-  , v1ExchangeVolume1hrsUsd = Nothing
-  , v1ExchangeVolume1dayUsd = Nothing
-  , v1ExchangeVolume1mthUsd = Nothing
-  , v1ExchangeMetricId = Nothing
-  , v1ExchangeIcons = Nothing
-  , v1ExchangeRank = Nothing
-  , v1ExchangeIntegrationStatus = Nothing
   }
 
 -- ** V1ExchangeRate
@@ -736,43 +1006,6 @@ mkV1GeneralData =
   , v1GeneralDataValueDecimal = Nothing
   , v1GeneralDataValueText = Nothing
   , v1GeneralDataValueTime = Nothing
-  }
-
--- ** V1Icon
--- | V1Icon
--- Represents an icon.
-data V1Icon = V1Icon
-  { v1IconExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID associated with the icon.
-  , v1IconAssetId :: !(Maybe Text) -- ^ "asset_id" - Gets or sets the asset ID associated with the icon.
-  , v1IconUrl :: !(Maybe Text) -- ^ "url" - Gets or sets the URL of the icon.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON V1Icon
-instance A.FromJSON V1Icon where
-  parseJSON = A.withObject "V1Icon" $ \o ->
-    V1Icon
-      <$> (o .:? "exchange_id")
-      <*> (o .:? "asset_id")
-      <*> (o .:? "url")
-
--- | ToJSON V1Icon
-instance A.ToJSON V1Icon where
-  toJSON V1Icon {..} =
-   _omitNulls
-      [ "exchange_id" .= v1IconExchangeId
-      , "asset_id" .= v1IconAssetId
-      , "url" .= v1IconUrl
-      ]
-
-
--- | Construct a value of type 'V1Icon' (by applying it's required fields, if any)
-mkV1Icon
-  :: V1Icon
-mkV1Icon =
-  V1Icon
-  { v1IconExchangeId = Nothing
-  , v1IconAssetId = Nothing
-  , v1IconUrl = Nothing
   }
 
 -- ** V1LastTrade
@@ -1321,239 +1554,6 @@ mkV1Strike =
   { v1StrikeStrikePrice = Nothing
   , v1StrikeCall = Nothing
   , v1StrikePut = Nothing
-  }
-
--- ** V1Symbol
--- | V1Symbol
--- Represents a symbol data model.
-data V1Symbol = V1Symbol
-  { v1SymbolSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol identifier.
-  , v1SymbolExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange identifier.
-  , v1SymbolSymbolType :: !(Maybe Text) -- ^ "symbol_type" - Gets or sets the symbol type.
-  , v1SymbolAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - Gets or sets the base asset identifier.
-  , v1SymbolAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - Gets or sets the quote asset identifier.
-  , v1SymbolAssetIdUnit :: !(Maybe Text) -- ^ "asset_id_unit" - Gets or sets the unit asset identifier.
-  , v1SymbolFutureContractUnit :: !(Maybe Double) -- ^ "future_contract_unit" - Gets or sets the contract unit for futures.
-  , v1SymbolFutureContractUnitAsset :: !(Maybe Text) -- ^ "future_contract_unit_asset" - Gets or sets the asset used as the unit for futures contract.
-  , v1SymbolFutureDeliveryTime :: !(Maybe DateTime) -- ^ "future_delivery_time" - Gets or sets the future delivery time for futures contract.
-  , v1SymbolOptionTypeIsCall :: !(Maybe Bool) -- ^ "option_type_is_call" - Gets or sets a value indicating whether the option type is a call.
-  , v1SymbolOptionStrikePrice :: !(Maybe Double) -- ^ "option_strike_price" - Gets or sets the strike price for options.
-  , v1SymbolOptionContractUnit :: !(Maybe Double) -- ^ "option_contract_unit" - Gets or sets the contract unit for options.
-  , v1SymbolOptionExerciseStyle :: !(Maybe Text) -- ^ "option_exercise_style" - Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
-  , v1SymbolOptionExpirationTime :: !(Maybe DateTime) -- ^ "option_expiration_time" - Gets or sets the expiration time for options.
-  , v1SymbolContractDeliveryTime :: !(Maybe DateTime) -- ^ "contract_delivery_time" - Gets or sets the delivery time for contracts.
-  , v1SymbolContractUnit :: !(Maybe Double) -- ^ "contract_unit" - Gets or sets the contract unit for contracts.
-  , v1SymbolContractUnitAsset :: !(Maybe Text) -- ^ "contract_unit_asset" - Gets or sets the asset used as the unit for contracts.
-  , v1SymbolContractId :: !(Maybe Text) -- ^ "contract_id" - Gets or sets the contract identifier.
-  , v1SymbolContractDisplayName :: !(Maybe Text) -- ^ "contract_display_name" - Gets or sets the display name of the contract.
-  , v1SymbolContractDisplayDescription :: !(Maybe Text) -- ^ "contract_display_description" - Gets or sets the display description of the contract.
-  , v1SymbolDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start" - Gets the start date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
-  , v1SymbolDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end" - Gets the end date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
-  , v1SymbolDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - Gets or sets the start date of quote data.
-  , v1SymbolDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - Gets or sets the end date of quote data.
-  , v1SymbolDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - Gets or sets the start date of order book data.
-  , v1SymbolDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - Gets or sets the end date of order book data.
-  , v1SymbolDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - Gets or sets the start date of trade data.
-  , v1SymbolDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - Gets or sets the end date of trade data.
-  , v1SymbolIndexId :: !(Maybe Text) -- ^ "index_id" - Gets or sets the index identifier.
-  , v1SymbolIndexDisplayName :: !(Maybe Text) -- ^ "index_display_name" - Gets or sets the display name of the index.
-  , v1SymbolIndexDisplayDescription :: !(Maybe Text) -- ^ "index_display_description" - Gets or sets the display description of the index.
-  , v1SymbolVolume1hrs :: !(Maybe Double) -- ^ "volume_1hrs" - Gets or sets the volume in the last 1 hour.
-  , v1SymbolVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - Gets or sets the volume in USD in the last 1 hour.
-  , v1SymbolVolume1day :: !(Maybe Double) -- ^ "volume_1day" - Gets or sets the volume in the last 1 day.
-  , v1SymbolVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - Gets or sets the volume in USD in the last 1 day.
-  , v1SymbolVolume1mth :: !(Maybe Double) -- ^ "volume_1mth" - Gets or sets the volume in the last 1 month.
-  , v1SymbolVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - Gets or sets the volume in USD in the last 1 month.
-  , v1SymbolPrice :: !(Maybe Double) -- ^ "price" - Gets or sets the price.
-  , v1SymbolSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange" - Gets or sets the symbol identifier in the exchange.
-  , v1SymbolAssetIdBaseExchange :: !(Maybe Text) -- ^ "asset_id_base_exchange" - Gets or sets the base asset identifier in the exchange.
-  , v1SymbolAssetIdQuoteExchange :: !(Maybe Text) -- ^ "asset_id_quote_exchange" - Gets or sets the quote asset identifier in the exchange.
-  , v1SymbolPricePrecision :: !(Maybe Double) -- ^ "price_precision" - Gets or sets the price precision.
-  , v1SymbolSizePrecision :: !(Maybe Double) -- ^ "size_precision" - Gets or sets the size precision.
-  , v1SymbolRawKvp :: !(Maybe (Map.Map String Text)) -- ^ "raw_kvp" - Key Value Pair store with raw data from the data source.
-  , v1SymbolFutureIsInverse :: !(Maybe Bool) -- ^ "future_is_inverse" - Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
-  , v1SymbolFutureIsQuanto :: !(Maybe Bool) -- ^ "future_is_quanto" - Gets or sets a value indicating whether the futures contract is quanto.
-  , v1SymbolVolumeToUsd :: !(Maybe Double) -- ^ "volume_to_usd" - Gets or sets the volume in USD.
-  , v1SymbolOptionBarrierUpPrice :: !(Maybe Double) -- ^ "option_barrier_up_price" - Gets or sets the up barrier price for barrier options.
-  , v1SymbolOptionBarrierUpType :: !(Maybe Text) -- ^ "option_barrier_up_type" - Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-  , v1SymbolOptionBarrierDownPrice :: !(Maybe Double) -- ^ "option_barrier_down_price" - Gets or sets the down barrier price for barrier options.
-  , v1SymbolOptionBarrierDownType :: !(Maybe Text) -- ^ "option_barrier_down_type" - Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-  , v1SymbolSymbolIdInt :: !(Maybe Int) -- ^ /ReadOnly/ "symbol_id_int" - Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON V1Symbol
-instance A.FromJSON V1Symbol where
-  parseJSON = A.withObject "V1Symbol" $ \o ->
-    V1Symbol
-      <$> (o .:? "symbol_id")
-      <*> (o .:? "exchange_id")
-      <*> (o .:? "symbol_type")
-      <*> (o .:? "asset_id_base")
-      <*> (o .:? "asset_id_quote")
-      <*> (o .:? "asset_id_unit")
-      <*> (o .:? "future_contract_unit")
-      <*> (o .:? "future_contract_unit_asset")
-      <*> (o .:? "future_delivery_time")
-      <*> (o .:? "option_type_is_call")
-      <*> (o .:? "option_strike_price")
-      <*> (o .:? "option_contract_unit")
-      <*> (o .:? "option_exercise_style")
-      <*> (o .:? "option_expiration_time")
-      <*> (o .:? "contract_delivery_time")
-      <*> (o .:? "contract_unit")
-      <*> (o .:? "contract_unit_asset")
-      <*> (o .:? "contract_id")
-      <*> (o .:? "contract_display_name")
-      <*> (o .:? "contract_display_description")
-      <*> (o .:? "data_start")
-      <*> (o .:? "data_end")
-      <*> (o .:? "data_quote_start")
-      <*> (o .:? "data_quote_end")
-      <*> (o .:? "data_orderbook_start")
-      <*> (o .:? "data_orderbook_end")
-      <*> (o .:? "data_trade_start")
-      <*> (o .:? "data_trade_end")
-      <*> (o .:? "index_id")
-      <*> (o .:? "index_display_name")
-      <*> (o .:? "index_display_description")
-      <*> (o .:? "volume_1hrs")
-      <*> (o .:? "volume_1hrs_usd")
-      <*> (o .:? "volume_1day")
-      <*> (o .:? "volume_1day_usd")
-      <*> (o .:? "volume_1mth")
-      <*> (o .:? "volume_1mth_usd")
-      <*> (o .:? "price")
-      <*> (o .:? "symbol_id_exchange")
-      <*> (o .:? "asset_id_base_exchange")
-      <*> (o .:? "asset_id_quote_exchange")
-      <*> (o .:? "price_precision")
-      <*> (o .:? "size_precision")
-      <*> (o .:? "raw_kvp")
-      <*> (o .:? "future_is_inverse")
-      <*> (o .:? "future_is_quanto")
-      <*> (o .:? "volume_to_usd")
-      <*> (o .:? "option_barrier_up_price")
-      <*> (o .:? "option_barrier_up_type")
-      <*> (o .:? "option_barrier_down_price")
-      <*> (o .:? "option_barrier_down_type")
-      <*> (o .:? "symbol_id_int")
-
--- | ToJSON V1Symbol
-instance A.ToJSON V1Symbol where
-  toJSON V1Symbol {..} =
-   _omitNulls
-      [ "symbol_id" .= v1SymbolSymbolId
-      , "exchange_id" .= v1SymbolExchangeId
-      , "symbol_type" .= v1SymbolSymbolType
-      , "asset_id_base" .= v1SymbolAssetIdBase
-      , "asset_id_quote" .= v1SymbolAssetIdQuote
-      , "asset_id_unit" .= v1SymbolAssetIdUnit
-      , "future_contract_unit" .= v1SymbolFutureContractUnit
-      , "future_contract_unit_asset" .= v1SymbolFutureContractUnitAsset
-      , "future_delivery_time" .= v1SymbolFutureDeliveryTime
-      , "option_type_is_call" .= v1SymbolOptionTypeIsCall
-      , "option_strike_price" .= v1SymbolOptionStrikePrice
-      , "option_contract_unit" .= v1SymbolOptionContractUnit
-      , "option_exercise_style" .= v1SymbolOptionExerciseStyle
-      , "option_expiration_time" .= v1SymbolOptionExpirationTime
-      , "contract_delivery_time" .= v1SymbolContractDeliveryTime
-      , "contract_unit" .= v1SymbolContractUnit
-      , "contract_unit_asset" .= v1SymbolContractUnitAsset
-      , "contract_id" .= v1SymbolContractId
-      , "contract_display_name" .= v1SymbolContractDisplayName
-      , "contract_display_description" .= v1SymbolContractDisplayDescription
-      , "data_start" .= v1SymbolDataStart
-      , "data_end" .= v1SymbolDataEnd
-      , "data_quote_start" .= v1SymbolDataQuoteStart
-      , "data_quote_end" .= v1SymbolDataQuoteEnd
-      , "data_orderbook_start" .= v1SymbolDataOrderbookStart
-      , "data_orderbook_end" .= v1SymbolDataOrderbookEnd
-      , "data_trade_start" .= v1SymbolDataTradeStart
-      , "data_trade_end" .= v1SymbolDataTradeEnd
-      , "index_id" .= v1SymbolIndexId
-      , "index_display_name" .= v1SymbolIndexDisplayName
-      , "index_display_description" .= v1SymbolIndexDisplayDescription
-      , "volume_1hrs" .= v1SymbolVolume1hrs
-      , "volume_1hrs_usd" .= v1SymbolVolume1hrsUsd
-      , "volume_1day" .= v1SymbolVolume1day
-      , "volume_1day_usd" .= v1SymbolVolume1dayUsd
-      , "volume_1mth" .= v1SymbolVolume1mth
-      , "volume_1mth_usd" .= v1SymbolVolume1mthUsd
-      , "price" .= v1SymbolPrice
-      , "symbol_id_exchange" .= v1SymbolSymbolIdExchange
-      , "asset_id_base_exchange" .= v1SymbolAssetIdBaseExchange
-      , "asset_id_quote_exchange" .= v1SymbolAssetIdQuoteExchange
-      , "price_precision" .= v1SymbolPricePrecision
-      , "size_precision" .= v1SymbolSizePrecision
-      , "raw_kvp" .= v1SymbolRawKvp
-      , "future_is_inverse" .= v1SymbolFutureIsInverse
-      , "future_is_quanto" .= v1SymbolFutureIsQuanto
-      , "volume_to_usd" .= v1SymbolVolumeToUsd
-      , "option_barrier_up_price" .= v1SymbolOptionBarrierUpPrice
-      , "option_barrier_up_type" .= v1SymbolOptionBarrierUpType
-      , "option_barrier_down_price" .= v1SymbolOptionBarrierDownPrice
-      , "option_barrier_down_type" .= v1SymbolOptionBarrierDownType
-      , "symbol_id_int" .= v1SymbolSymbolIdInt
-      ]
-
-
--- | Construct a value of type 'V1Symbol' (by applying it's required fields, if any)
-mkV1Symbol
-  :: V1Symbol
-mkV1Symbol =
-  V1Symbol
-  { v1SymbolSymbolId = Nothing
-  , v1SymbolExchangeId = Nothing
-  , v1SymbolSymbolType = Nothing
-  , v1SymbolAssetIdBase = Nothing
-  , v1SymbolAssetIdQuote = Nothing
-  , v1SymbolAssetIdUnit = Nothing
-  , v1SymbolFutureContractUnit = Nothing
-  , v1SymbolFutureContractUnitAsset = Nothing
-  , v1SymbolFutureDeliveryTime = Nothing
-  , v1SymbolOptionTypeIsCall = Nothing
-  , v1SymbolOptionStrikePrice = Nothing
-  , v1SymbolOptionContractUnit = Nothing
-  , v1SymbolOptionExerciseStyle = Nothing
-  , v1SymbolOptionExpirationTime = Nothing
-  , v1SymbolContractDeliveryTime = Nothing
-  , v1SymbolContractUnit = Nothing
-  , v1SymbolContractUnitAsset = Nothing
-  , v1SymbolContractId = Nothing
-  , v1SymbolContractDisplayName = Nothing
-  , v1SymbolContractDisplayDescription = Nothing
-  , v1SymbolDataStart = Nothing
-  , v1SymbolDataEnd = Nothing
-  , v1SymbolDataQuoteStart = Nothing
-  , v1SymbolDataQuoteEnd = Nothing
-  , v1SymbolDataOrderbookStart = Nothing
-  , v1SymbolDataOrderbookEnd = Nothing
-  , v1SymbolDataTradeStart = Nothing
-  , v1SymbolDataTradeEnd = Nothing
-  , v1SymbolIndexId = Nothing
-  , v1SymbolIndexDisplayName = Nothing
-  , v1SymbolIndexDisplayDescription = Nothing
-  , v1SymbolVolume1hrs = Nothing
-  , v1SymbolVolume1hrsUsd = Nothing
-  , v1SymbolVolume1day = Nothing
-  , v1SymbolVolume1dayUsd = Nothing
-  , v1SymbolVolume1mth = Nothing
-  , v1SymbolVolume1mthUsd = Nothing
-  , v1SymbolPrice = Nothing
-  , v1SymbolSymbolIdExchange = Nothing
-  , v1SymbolAssetIdBaseExchange = Nothing
-  , v1SymbolAssetIdQuoteExchange = Nothing
-  , v1SymbolPricePrecision = Nothing
-  , v1SymbolSizePrecision = Nothing
-  , v1SymbolRawKvp = Nothing
-  , v1SymbolFutureIsInverse = Nothing
-  , v1SymbolFutureIsQuanto = Nothing
-  , v1SymbolVolumeToUsd = Nothing
-  , v1SymbolOptionBarrierUpPrice = Nothing
-  , v1SymbolOptionBarrierUpType = Nothing
-  , v1SymbolOptionBarrierDownPrice = Nothing
-  , v1SymbolOptionBarrierDownType = Nothing
-  , v1SymbolSymbolIdInt = Nothing
   }
 
 -- ** V1SymbolMapping

@@ -140,7 +140,7 @@ package body .Clients is
    procedure V_1Assets_Asset_Id_Get
       (Client : in out Client_Type;
        Asset_Id : in Swagger.UString;
-       Result : out .Models.V1Asset_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataAsset_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -166,7 +166,7 @@ package body .Clients is
    procedure V_1Assets_Get
       (Client : in out Client_Type;
        Filter_Asset_Id : in Swagger.Nullable_UString;
-       Result : out .Models.V1Asset_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataAsset_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -184,7 +184,7 @@ package body .Clients is
    procedure V_1Assets_Icons_Size_Get
       (Client : in out Client_Type;
        Size : in Integer;
-       Result : out .Models.V1Icon_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataIcon_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -201,7 +201,7 @@ package body .Clients is
    procedure V_1Chains_Chain_Id_Get
       (Client : in out Client_Type;
        Chain_Id : in Swagger.UString;
-       Result : out .Models.V1Chain_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataChain_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -223,7 +223,7 @@ package body .Clients is
    procedure V_1Chains_Get
       (Client : in out Client_Type;
        Filter_Chain_Id : in Swagger.Nullable_UString;
-       Result : out .Models.V1Chain_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataChain_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -240,7 +240,7 @@ package body .Clients is
    procedure V_1Exchanges_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
-       Result : out .Models.V1Exchange_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataExchange_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -262,7 +262,7 @@ package body .Clients is
    procedure V_1Exchanges_Get
       (Client : in out Client_Type;
        Filter_Exchange_Id : in Swagger.Nullable_UString;
-       Result : out .Models.V1Exchange_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataExchange_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -279,7 +279,7 @@ package body .Clients is
    procedure V_1Exchanges_Icons_Size_Get
       (Client : in out Client_Type;
        Size : in Integer;
-       Result : out .Models.V1Icon_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataIcon_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -388,7 +388,7 @@ package body .Clients is
        Exchange_Id : in Swagger.UString;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
        Filter_Asset_Id : in Swagger.Nullable_UString;
-       Result : out .Models.V1Symbol_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataSymbol_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -411,7 +411,7 @@ package body .Clients is
        Exchange_Id : in Swagger.UString;
        Page : in Swagger.Nullable_Integer;
        Limit : in Swagger.Nullable_Integer;
-       Result : out .Models.V1Symbol_Type_Vectors.Vector) is
+       Result : out .Models.MarketDataMetadataSymbol_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin

@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
-import V1Asset from '../model/V1Asset';
-import V1Chain from '../model/V1Chain';
-import V1Exchange from '../model/V1Exchange';
-import V1Icon from '../model/V1Icon';
-import V1Symbol from '../model/V1Symbol';
+import MarketDataMetadataAsset from '../model/MarketDataMetadataAsset';
+import MarketDataMetadataChain from '../model/MarketDataMetadataChain';
+import MarketDataMetadataExchange from '../model/MarketDataMetadataExchange';
+import MarketDataMetadataIcon from '../model/MarketDataMetadataIcon';
+import MarketDataMetadataSymbol from '../model/MarketDataMetadataSymbol';
 import V1SymbolMapping from '../model/V1SymbolMapping';
 
 /**
@@ -43,7 +43,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1AssetsAssetIdGet operation.
      * @callback module:api/MetadataApi~v1AssetsAssetIdGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Asset>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataAsset>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -51,7 +51,7 @@ export default class MetadataApi {
      * List all assets by asset ID
      * @param {String} assetId The asset ID.
      * @param {module:api/MetadataApi~v1AssetsAssetIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Asset>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataAsset>}
      */
     v1AssetsAssetIdGet(assetId, callback) {
       let postBody = null;
@@ -73,7 +73,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Asset];
+      let returnType = [MarketDataMetadataAsset];
       return this.apiClient.callApi(
         '/v1/assets/{asset_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -85,7 +85,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1AssetsGet operation.
      * @callback module:api/MetadataApi~v1AssetsGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Asset>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataAsset>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -95,7 +95,7 @@ export default class MetadataApi {
      * @param {Object} opts Optional parameters
      * @param {String} [filterAssetId] Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
      * @param {module:api/MetadataApi~v1AssetsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Asset>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataAsset>}
      */
     v1AssetsGet(opts, callback) {
       opts = opts || {};
@@ -114,7 +114,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Asset];
+      let returnType = [MarketDataMetadataAsset];
       return this.apiClient.callApi(
         '/v1/assets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -126,7 +126,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1AssetsIconsSizeGet operation.
      * @callback module:api/MetadataApi~v1AssetsIconsSizeGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Icon>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataIcon>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -135,7 +135,7 @@ export default class MetadataApi {
      * Gets the list of icons (of the given size) for all the assets.
      * @param {Number} size The size of the icons.
      * @param {module:api/MetadataApi~v1AssetsIconsSizeGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Icon>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataIcon>}
      */
     v1AssetsIconsSizeGet(size, callback) {
       let postBody = null;
@@ -157,7 +157,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Icon];
+      let returnType = [MarketDataMetadataIcon];
       return this.apiClient.callApi(
         '/v1/assets/icons/{size}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -169,7 +169,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1ChainsChainIdGet operation.
      * @callback module:api/MetadataApi~v1ChainsChainIdGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Chain>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataChain>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -177,7 +177,7 @@ export default class MetadataApi {
      * List all chains by chain ID
      * @param {String} chainId The chain ID.
      * @param {module:api/MetadataApi~v1ChainsChainIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Chain>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataChain>}
      */
     v1ChainsChainIdGet(chainId, callback) {
       let postBody = null;
@@ -199,7 +199,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Chain];
+      let returnType = [MarketDataMetadataChain];
       return this.apiClient.callApi(
         '/v1/chains/{chain_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -211,7 +211,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1ChainsGet operation.
      * @callback module:api/MetadataApi~v1ChainsGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Chain>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataChain>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -221,7 +221,7 @@ export default class MetadataApi {
      * @param {Object} opts Optional parameters
      * @param {String} [filterChainId] Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`).
      * @param {module:api/MetadataApi~v1ChainsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Chain>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataChain>}
      */
     v1ChainsGet(opts, callback) {
       opts = opts || {};
@@ -240,7 +240,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Chain];
+      let returnType = [MarketDataMetadataChain];
       return this.apiClient.callApi(
         '/v1/chains', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -252,7 +252,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1ExchangesExchangeIdGet operation.
      * @callback module:api/MetadataApi~v1ExchangesExchangeIdGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Exchange>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataExchange>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -260,7 +260,7 @@ export default class MetadataApi {
      * List all exchanges by exchange_id
      * @param {String} exchangeId The ID of the exchange.
      * @param {module:api/MetadataApi~v1ExchangesExchangeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Exchange>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataExchange>}
      */
     v1ExchangesExchangeIdGet(exchangeId, callback) {
       let postBody = null;
@@ -282,7 +282,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Exchange];
+      let returnType = [MarketDataMetadataExchange];
       return this.apiClient.callApi(
         '/v1/exchanges/{exchange_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -294,7 +294,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1ExchangesGet operation.
      * @callback module:api/MetadataApi~v1ExchangesGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Exchange>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataExchange>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -304,7 +304,7 @@ export default class MetadataApi {
      * @param {Object} opts Optional parameters
      * @param {String} [filterExchangeId] Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
      * @param {module:api/MetadataApi~v1ExchangesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Exchange>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataExchange>}
      */
     v1ExchangesGet(opts, callback) {
       opts = opts || {};
@@ -323,7 +323,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Exchange];
+      let returnType = [MarketDataMetadataExchange];
       return this.apiClient.callApi(
         '/v1/exchanges', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -335,7 +335,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1ExchangesIconsSizeGet operation.
      * @callback module:api/MetadataApi~v1ExchangesIconsSizeGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Icon>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataIcon>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -343,7 +343,7 @@ export default class MetadataApi {
      * List of icons for the exchanges
      * @param {Number} size The size of the icons.
      * @param {module:api/MetadataApi~v1ExchangesIconsSizeGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Icon>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataIcon>}
      */
     v1ExchangesIconsSizeGet(size, callback) {
       let postBody = null;
@@ -365,7 +365,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Icon];
+      let returnType = [MarketDataMetadataIcon];
       return this.apiClient.callApi(
         '/v1/exchanges/icons/{size}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -377,7 +377,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1SymbolsExchangeIdActiveGet operation.
      * @callback module:api/MetadataApi~v1SymbolsExchangeIdActiveGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Symbol>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataSymbol>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -389,7 +389,7 @@ export default class MetadataApi {
      * @param {String} [filterSymbolId] Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
      * @param {String} [filterAssetId] The filter for asset ID.
      * @param {module:api/MetadataApi~v1SymbolsExchangeIdActiveGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Symbol>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataSymbol>}
      */
     v1SymbolsExchangeIdActiveGet(exchangeId, opts, callback) {
       opts = opts || {};
@@ -414,7 +414,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Symbol];
+      let returnType = [MarketDataMetadataSymbol];
       return this.apiClient.callApi(
         '/v1/symbols/{exchange_id}/active', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -426,7 +426,7 @@ export default class MetadataApi {
      * Callback function to receive the result of the v1SymbolsExchangeIdHistoryGet operation.
      * @callback module:api/MetadataApi~v1SymbolsExchangeIdHistoryGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1Symbol>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketDataMetadataSymbol>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -438,7 +438,7 @@ export default class MetadataApi {
      * @param {Number} [page = 1)] The page number for pagination (starts from 1).
      * @param {Number} [limit = 100)] Number of records to return per page.
      * @param {module:api/MetadataApi~v1SymbolsExchangeIdHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1Symbol>}
+     * data is of type: {@link Array.<module:model/MarketDataMetadataSymbol>}
      */
     v1SymbolsExchangeIdHistoryGet(exchangeId, opts, callback) {
       opts = opts || {};
@@ -463,7 +463,7 @@ export default class MetadataApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1Symbol];
+      let returnType = [MarketDataMetadataSymbol];
       return this.apiClient.callApi(
         '/v1/symbols/{exchange_id}/history', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

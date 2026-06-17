@@ -19,7 +19,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 ## v1_assets_asset_id_get
 
-> <Array<V1Asset>> v1_assets_asset_id_get(asset_id)
+> <Array<MarketDataMetadataAsset>> v1_assets_asset_id_get(asset_id)
 
 List all assets by asset ID
 
@@ -55,7 +55,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Asset>>, Integer, Hash)> v1_assets_asset_id_get_with_http_info(asset_id)
+> <Array(<Array<MarketDataMetadataAsset>>, Integer, Hash)> v1_assets_asset_id_get_with_http_info(asset_id)
 
 ```ruby
 begin
@@ -63,7 +63,7 @@ begin
   data, status_code, headers = api_instance.v1_assets_asset_id_get_with_http_info(asset_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Asset>>
+  p data # => <Array<MarketDataMetadataAsset>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_assets_asset_id_get_with_http_info: #{e}"
 end
@@ -77,7 +77,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Asset&gt;**](V1Asset.md)
+[**Array&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ end
 
 ## v1_assets_get
 
-> <Array<V1Asset>> v1_assets_get(opts)
+> <Array<MarketDataMetadataAsset>> v1_assets_get(opts)
 
 List all assets
 
@@ -131,7 +131,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Asset>>, Integer, Hash)> v1_assets_get_with_http_info(opts)
+> <Array(<Array<MarketDataMetadataAsset>>, Integer, Hash)> v1_assets_get_with_http_info(opts)
 
 ```ruby
 begin
@@ -139,7 +139,7 @@ begin
   data, status_code, headers = api_instance.v1_assets_get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Asset>>
+  p data # => <Array<MarketDataMetadataAsset>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_assets_get_with_http_info: #{e}"
 end
@@ -153,7 +153,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Asset&gt;**](V1Asset.md)
+[**Array&lt;MarketDataMetadataAsset&gt;**](MarketDataMetadataAsset.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ end
 
 ## v1_assets_icons_size_get
 
-> <Array<V1Icon>> v1_assets_icons_size_get(size)
+> <Array<MarketDataMetadataIcon>> v1_assets_icons_size_get(size)
 
 List all asset icons
 
@@ -205,7 +205,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Icon>>, Integer, Hash)> v1_assets_icons_size_get_with_http_info(size)
+> <Array(<Array<MarketDataMetadataIcon>>, Integer, Hash)> v1_assets_icons_size_get_with_http_info(size)
 
 ```ruby
 begin
@@ -213,7 +213,7 @@ begin
   data, status_code, headers = api_instance.v1_assets_icons_size_get_with_http_info(size)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Icon>>
+  p data # => <Array<MarketDataMetadataIcon>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_assets_icons_size_get_with_http_info: #{e}"
 end
@@ -227,7 +227,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Icon&gt;**](V1Icon.md)
+[**Array&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ end
 
 ## v1_chains_chain_id_get
 
-> <Array<V1Chain>> v1_chains_chain_id_get(chain_id)
+> <Array<MarketDataMetadataChain>> v1_chains_chain_id_get(chain_id)
 
 List all chains by chain ID
 
@@ -277,7 +277,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Chain>>, Integer, Hash)> v1_chains_chain_id_get_with_http_info(chain_id)
+> <Array(<Array<MarketDataMetadataChain>>, Integer, Hash)> v1_chains_chain_id_get_with_http_info(chain_id)
 
 ```ruby
 begin
@@ -285,7 +285,7 @@ begin
   data, status_code, headers = api_instance.v1_chains_chain_id_get_with_http_info(chain_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Chain>>
+  p data # => <Array<MarketDataMetadataChain>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_chains_chain_id_get_with_http_info: #{e}"
 end
@@ -299,7 +299,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Chain&gt;**](V1Chain.md)
+[**Array&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ end
 
 ## v1_chains_get
 
-> <Array<V1Chain>> v1_chains_get(opts)
+> <Array<MarketDataMetadataChain>> v1_chains_get(opts)
 
 List all blockchain chains
 
@@ -353,7 +353,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Chain>>, Integer, Hash)> v1_chains_get_with_http_info(opts)
+> <Array(<Array<MarketDataMetadataChain>>, Integer, Hash)> v1_chains_get_with_http_info(opts)
 
 ```ruby
 begin
@@ -361,7 +361,7 @@ begin
   data, status_code, headers = api_instance.v1_chains_get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Chain>>
+  p data # => <Array<MarketDataMetadataChain>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_chains_get_with_http_info: #{e}"
 end
@@ -375,7 +375,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Chain&gt;**](V1Chain.md)
+[**Array&lt;MarketDataMetadataChain&gt;**](MarketDataMetadataChain.md)
 
 ### Authorization
 
@@ -389,7 +389,7 @@ end
 
 ## v1_exchanges_exchange_id_get
 
-> <Array<V1Exchange>> v1_exchanges_exchange_id_get(exchange_id)
+> <Array<MarketDataMetadataExchange>> v1_exchanges_exchange_id_get(exchange_id)
 
 List all exchanges by exchange_id
 
@@ -425,7 +425,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Exchange>>, Integer, Hash)> v1_exchanges_exchange_id_get_with_http_info(exchange_id)
+> <Array(<Array<MarketDataMetadataExchange>>, Integer, Hash)> v1_exchanges_exchange_id_get_with_http_info(exchange_id)
 
 ```ruby
 begin
@@ -433,7 +433,7 @@ begin
   data, status_code, headers = api_instance.v1_exchanges_exchange_id_get_with_http_info(exchange_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Exchange>>
+  p data # => <Array<MarketDataMetadataExchange>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_exchanges_exchange_id_get_with_http_info: #{e}"
 end
@@ -447,7 +447,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Exchange&gt;**](V1Exchange.md)
+[**Array&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ end
 
 ## v1_exchanges_get
 
-> <Array<V1Exchange>> v1_exchanges_get(opts)
+> <Array<MarketDataMetadataExchange>> v1_exchanges_get(opts)
 
 List all exchanges
 
@@ -501,7 +501,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Exchange>>, Integer, Hash)> v1_exchanges_get_with_http_info(opts)
+> <Array(<Array<MarketDataMetadataExchange>>, Integer, Hash)> v1_exchanges_get_with_http_info(opts)
 
 ```ruby
 begin
@@ -509,7 +509,7 @@ begin
   data, status_code, headers = api_instance.v1_exchanges_get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Exchange>>
+  p data # => <Array<MarketDataMetadataExchange>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_exchanges_get_with_http_info: #{e}"
 end
@@ -523,7 +523,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Exchange&gt;**](V1Exchange.md)
+[**Array&lt;MarketDataMetadataExchange&gt;**](MarketDataMetadataExchange.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ end
 
 ## v1_exchanges_icons_size_get
 
-> <Array<V1Icon>> v1_exchanges_icons_size_get(size)
+> <Array<MarketDataMetadataIcon>> v1_exchanges_icons_size_get(size)
 
 List of icons for the exchanges
 
@@ -573,7 +573,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Icon>>, Integer, Hash)> v1_exchanges_icons_size_get_with_http_info(size)
+> <Array(<Array<MarketDataMetadataIcon>>, Integer, Hash)> v1_exchanges_icons_size_get_with_http_info(size)
 
 ```ruby
 begin
@@ -581,7 +581,7 @@ begin
   data, status_code, headers = api_instance.v1_exchanges_icons_size_get_with_http_info(size)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Icon>>
+  p data # => <Array<MarketDataMetadataIcon>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_exchanges_icons_size_get_with_http_info: #{e}"
 end
@@ -595,7 +595,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Icon&gt;**](V1Icon.md)
+[**Array&lt;MarketDataMetadataIcon&gt;**](MarketDataMetadataIcon.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ end
 
 ## v1_symbols_exchange_id_active_get
 
-> <Array<V1Symbol>> v1_symbols_exchange_id_active_get(exchange_id, opts)
+> <Array<MarketDataMetadataSymbol>> v1_symbols_exchange_id_active_get(exchange_id, opts)
 
 List all active symbols
 
@@ -651,7 +651,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Symbol>>, Integer, Hash)> v1_symbols_exchange_id_active_get_with_http_info(exchange_id, opts)
+> <Array(<Array<MarketDataMetadataSymbol>>, Integer, Hash)> v1_symbols_exchange_id_active_get_with_http_info(exchange_id, opts)
 
 ```ruby
 begin
@@ -659,7 +659,7 @@ begin
   data, status_code, headers = api_instance.v1_symbols_exchange_id_active_get_with_http_info(exchange_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Symbol>>
+  p data # => <Array<MarketDataMetadataSymbol>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_symbols_exchange_id_active_get_with_http_info: #{e}"
 end
@@ -675,7 +675,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Symbol&gt;**](V1Symbol.md)
+[**Array&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ end
 
 ## v1_symbols_exchange_id_history_get
 
-> <Array<V1Symbol>> v1_symbols_exchange_id_history_get(exchange_id, opts)
+> <Array<MarketDataMetadataSymbol>> v1_symbols_exchange_id_history_get(exchange_id, opts)
 
 List all historical symbols for an exchange.
 
@@ -731,7 +731,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Symbol>>, Integer, Hash)> v1_symbols_exchange_id_history_get_with_http_info(exchange_id, opts)
+> <Array(<Array<MarketDataMetadataSymbol>>, Integer, Hash)> v1_symbols_exchange_id_history_get_with_http_info(exchange_id, opts)
 
 ```ruby
 begin
@@ -739,7 +739,7 @@ begin
   data, status_code, headers = api_instance.v1_symbols_exchange_id_history_get_with_http_info(exchange_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<V1Symbol>>
+  p data # => <Array<MarketDataMetadataSymbol>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_symbols_exchange_id_history_get_with_http_info: #{e}"
 end
@@ -755,7 +755,7 @@ end
 
 ### Return type
 
-[**Array&lt;V1Symbol&gt;**](V1Symbol.md)
+[**Array&lt;MarketDataMetadataSymbol&gt;**](MarketDataMetadataSymbol.md)
 
 ### Authorization
 

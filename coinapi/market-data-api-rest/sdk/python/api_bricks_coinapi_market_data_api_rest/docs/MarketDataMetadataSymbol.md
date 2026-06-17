@@ -1,0 +1,81 @@
+# MarketDataMetadataSymbol
+
+Represents a symbol data model.
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**symbol_id** | **str** | The symbol identifier. | [optional] 
+**exchange_id** | **str** | The exchange identifier. | [optional] 
+**symbol_type** | **str** | The symbol type. | [optional] 
+**asset_id_base** | **str** | The base asset identifier. | [optional] 
+**asset_id_quote** | **str** | The quote asset identifier. | [optional] 
+**asset_id_unit** | **str** | The unit asset identifier. | [optional] 
+**future_contract_unit** | **float** | The contract unit for futures. | [optional] 
+**future_contract_unit_asset** | **str** | The asset used as the unit for futures contract. | [optional] 
+**future_delivery_time** | **datetime** | The future delivery time for futures contract. | [optional] 
+**option_type_is_call** | **bool** | Indicates whether the option type is a call. | [optional] 
+**option_strike_price** | **float** | The strike price for options. | [optional] 
+**option_contract_unit** | **float** | The contract unit for options. | [optional] 
+**option_exercise_style** | **str** | The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. | [optional] 
+**option_expiration_time** | **datetime** | The expiration time for options. | [optional] 
+**contract_delivery_time** | **datetime** | The delivery time for contracts. | [optional] 
+**contract_unit** | **float** | The contract unit for contracts. | [optional] 
+**contract_unit_asset** | **str** | The asset used as the unit for contracts. | [optional] 
+**contract_id** | **str** | The contract identifier. | [optional] 
+**contract_display_name** | **str** | The display name of the contract. | [optional] 
+**contract_display_description** | **str** | The display description of the contract. | [optional] 
+**data_start** | **str** |  | [optional] [readonly] 
+**data_end** | **str** |  | [optional] [readonly] 
+**data_quote_start** | **datetime** | The start date of quote data. | [optional] 
+**data_quote_end** | **datetime** | The end date of quote data. | [optional] 
+**data_orderbook_start** | **datetime** | The start date of order book data. | [optional] 
+**data_orderbook_end** | **datetime** | The end date of order book data. | [optional] 
+**data_trade_start** | **datetime** | The start date of trade data. | [optional] 
+**data_trade_end** | **datetime** | The end date of trade data. | [optional] 
+**index_id** | **str** | The index identifier. | [optional] 
+**index_display_name** | **str** | The display name of the index. | [optional] 
+**index_display_description** | **str** | The display description of the index. | [optional] 
+**volume_1hrs** | **float** | The volume in the last 1 hour. | [optional] 
+**volume_1hrs_usd** | **float** | The volume in USD in the last 1 hour. | [optional] 
+**volume_1day** | **float** | The volume in the last 1 day. | [optional] 
+**volume_1day_usd** | **float** | The volume in USD in the last 1 day. | [optional] 
+**volume_1mth** | **float** | The volume in the last 1 month. | [optional] 
+**volume_1mth_usd** | **float** | The volume in USD in the last 1 month. | [optional] 
+**price** | **float** | The price. | [optional] 
+**symbol_id_exchange** | **str** | The symbol identifier in the exchange. | [optional] 
+**asset_id_base_exchange** | **str** | The base asset identifier in the exchange. | [optional] 
+**asset_id_quote_exchange** | **str** | The quote asset identifier in the exchange. | [optional] 
+**price_precision** | **float** | The price precision. | [optional] 
+**size_precision** | **float** | The size precision. | [optional] 
+**raw_kvp** | **Dict[str, Optional[str]]** | Key Value Pair store with raw data from the data source. | [optional] 
+**future_is_inverse** | **bool** | Indicates whether the futures contract is inverse (coin-margined). | [optional] 
+**future_is_quanto** | **bool** | Indicates whether the futures contract is quanto. | [optional] 
+**volume_to_usd** | **float** | Volume unit in USD. | [optional] 
+**option_barrier_up_price** | **float** | The up barrier price for barrier options. | [optional] 
+**option_barrier_up_type** | **str** | The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] 
+**option_barrier_down_price** | **float** | The down barrier price for barrier options. | [optional] 
+**option_barrier_down_type** | **str** | The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] 
+**symbol_id_int** | **int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
+
+## Example
+
+```python
+from api_bricks_coinapi_market_data_api_rest.models.market_data_metadata_symbol import MarketDataMetadataSymbol
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of MarketDataMetadataSymbol from a JSON string
+market_data_metadata_symbol_instance = MarketDataMetadataSymbol.from_json(json)
+# print the JSON string representation of the object
+print(MarketDataMetadataSymbol.to_json())
+
+# convert the object into a dict
+market_data_metadata_symbol_dict = market_data_metadata_symbol_instance.to_dict()
+# create an instance of MarketDataMetadataSymbol from a dict
+market_data_metadata_symbol_from_dict = MarketDataMetadataSymbol.from_dict(market_data_metadata_symbol_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
