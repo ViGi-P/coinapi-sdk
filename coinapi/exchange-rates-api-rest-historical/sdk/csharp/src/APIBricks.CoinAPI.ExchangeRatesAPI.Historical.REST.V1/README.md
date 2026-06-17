@@ -11,7 +11,7 @@ outputDir: out
 
 # https://openapi-generator.tech/docs/generators/csharp
 additionalProperties:
-  packageGuid: '{3BFAE583-1AAF-44D4-A9ED-AF6038232FD4}'
+  packageGuid: '{AB504A8B-7CAE-45F6-B1C2-F42E3B93A3B6}'
 
 # https://openapi-generator.tech/docs/integrations/#github-integration
 # gitHost:
