@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an icon.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T06:05:45.320882327Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T06:06:25.773137367Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class V1Icon {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
