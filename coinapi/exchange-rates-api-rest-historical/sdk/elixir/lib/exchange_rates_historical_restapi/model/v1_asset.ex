@@ -50,7 +50,7 @@ defmodule ExchangeRatesHistoricalRESTAPI.Model.V1Asset do
     :supply_current => float() | nil,
     :supply_total => float() | nil,
     :supply_max => float() | nil,
-    :chain_addresses => [ExchangeRatesHistoricalRESTAPI.Model.V1ChainNetworkAddress.t] | nil,
+    :chain_addresses => [ExchangeRatesHistoricalRESTAPI.Model.V1ExchangeRatesChainNetworkAddress.t] | nil,
     :data_start => String.t | nil,
     :data_end => String.t | nil
   }
@@ -59,7 +59,7 @@ defmodule ExchangeRatesHistoricalRESTAPI.Model.V1Asset do
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:chain_addresses, :list, ExchangeRatesHistoricalRESTAPI.Model.V1ChainNetworkAddress)
+     |> Deserializer.deserialize(:chain_addresses, :list, ExchangeRatesHistoricalRESTAPI.Model.V1ExchangeRatesChainNetworkAddress)
   end
 end
 

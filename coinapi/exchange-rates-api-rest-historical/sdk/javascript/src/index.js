@@ -14,9 +14,9 @@
 
 import ApiClient from './ApiClient';
 import V1Asset from './model/V1Asset';
-import V1ChainNetworkAddress from './model/V1ChainNetworkAddress';
 import V1ExchangeRate from './model/V1ExchangeRate';
 import V1ExchangeRates from './model/V1ExchangeRates';
+import V1ExchangeRatesChainNetworkAddress from './model/V1ExchangeRatesChainNetworkAddress';
 import V1ExchangeRatesRate from './model/V1ExchangeRatesRate';
 import V1ExchangeRatesTimeseriesItem from './model/V1ExchangeRatesTimeseriesItem';
 import V1Icon from './model/V1Icon';
@@ -70,12 +70,6 @@ export {
     V1Asset,
 
     /**
-     * The V1ChainNetworkAddress model constructor.
-     * @property {module:model/V1ChainNetworkAddress}
-     */
-    V1ChainNetworkAddress,
-
-    /**
      * The V1ExchangeRate model constructor.
      * @property {module:model/V1ExchangeRate}
      */
@@ -86,6 +80,12 @@ export {
      * @property {module:model/V1ExchangeRates}
      */
     V1ExchangeRates,
+
+    /**
+     * The V1ExchangeRatesChainNetworkAddress model constructor.
+     * @property {module:model/V1ExchangeRatesChainNetworkAddress}
+     */
+    V1ExchangeRatesChainNetworkAddress,
 
     /**
      * The V1ExchangeRatesRate model constructor.

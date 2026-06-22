@@ -45,9 +45,9 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Client
             _jsonOptions.Converters.Add(new DateOnlyJsonConverter());
             _jsonOptions.Converters.Add(new DateOnlyNullableJsonConverter());
             _jsonOptions.Converters.Add(new V1AssetJsonConverter());
-            _jsonOptions.Converters.Add(new V1ChainNetworkAddressJsonConverter());
             _jsonOptions.Converters.Add(new V1ExchangeRateJsonConverter());
             _jsonOptions.Converters.Add(new V1ExchangeRatesJsonConverter());
+            _jsonOptions.Converters.Add(new V1ExchangeRatesChainNetworkAddressJsonConverter());
             _jsonOptions.Converters.Add(new V1ExchangeRatesRateJsonConverter());
             _jsonOptions.Converters.Add(new V1ExchangeRatesTimeseriesItemJsonConverter());
             _jsonOptions.Converters.Add(new V1IconJsonConverter());

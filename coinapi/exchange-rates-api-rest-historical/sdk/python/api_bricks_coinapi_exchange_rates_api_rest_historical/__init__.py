@@ -31,9 +31,9 @@ __all__ = [
     "ApiAttributeError",
     "ApiException",
     "V1Asset",
-    "V1ChainNetworkAddress",
     "V1ExchangeRate",
     "V1ExchangeRates",
+    "V1ExchangeRatesChainNetworkAddress",
     "V1ExchangeRatesRate",
     "V1ExchangeRatesTimeseriesItem",
     "V1Icon",
@@ -57,9 +57,9 @@ from api_bricks_coinapi_exchange_rates_api_rest_historical.exceptions import Api
 
 # import models into sdk package
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_asset import V1Asset as V1Asset
-from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_chain_network_address import V1ChainNetworkAddress as V1ChainNetworkAddress
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_exchange_rate import V1ExchangeRate as V1ExchangeRate
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_exchange_rates import V1ExchangeRates as V1ExchangeRates
+from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_exchange_rates_chain_network_address import V1ExchangeRatesChainNetworkAddress as V1ExchangeRatesChainNetworkAddress
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_exchange_rates_rate import V1ExchangeRatesRate as V1ExchangeRatesRate
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem as V1ExchangeRatesTimeseriesItem
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_icon import V1Icon as V1Icon

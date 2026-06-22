@@ -7,9 +7,9 @@ client.sh.bash-completion
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/V1Asset.md
-docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
 docs/V1ExchangeRates.md
+docs/V1ExchangeRatesChainNetworkAddress.md
 docs/V1ExchangeRatesRate.md
 docs/V1ExchangeRatesTimeseriesItem.md
 docs/V1Icon.md

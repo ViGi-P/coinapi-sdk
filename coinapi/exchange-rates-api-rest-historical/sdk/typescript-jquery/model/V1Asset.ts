@@ -109,7 +109,7 @@ export interface V1Asset {
     /**
      * 
      */
-    chain_addresses?: Array<models.V1ChainNetworkAddress>;
+    chain_addresses?: Array<models.V1ExchangeRatesChainNetworkAddress>;
 
     data_start?: string;
 

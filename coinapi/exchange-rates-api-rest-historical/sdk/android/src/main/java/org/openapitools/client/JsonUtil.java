@@ -61,16 +61,16 @@ public class JsonUtil {
       return new TypeToken<List<V1Asset>>(){}.getType();
     }
     
-    if ("V1ChainNetworkAddress".equalsIgnoreCase(className)) {
-      return new TypeToken<List<V1ChainNetworkAddress>>(){}.getType();
-    }
-    
     if ("V1ExchangeRate".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1ExchangeRate>>(){}.getType();
     }
     
     if ("V1ExchangeRates".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1ExchangeRates>>(){}.getType();
+    }
+    
+    if ("V1ExchangeRatesChainNetworkAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<List<V1ExchangeRatesChainNetworkAddress>>(){}.getType();
     }
     
     if ("V1ExchangeRatesRate".equalsIgnoreCase(className)) {
@@ -99,16 +99,16 @@ public class JsonUtil {
       return new TypeToken<V1Asset>(){}.getType();
     }
     
-    if ("V1ChainNetworkAddress".equalsIgnoreCase(className)) {
-      return new TypeToken<V1ChainNetworkAddress>(){}.getType();
-    }
-    
     if ("V1ExchangeRate".equalsIgnoreCase(className)) {
       return new TypeToken<V1ExchangeRate>(){}.getType();
     }
     
     if ("V1ExchangeRates".equalsIgnoreCase(className)) {
       return new TypeToken<V1ExchangeRates>(){}.getType();
+    }
+    
+    if ("V1ExchangeRatesChainNetworkAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<V1ExchangeRatesChainNetworkAddress>(){}.getType();
     }
     
     if ("V1ExchangeRatesRate".equalsIgnoreCase(className)) {

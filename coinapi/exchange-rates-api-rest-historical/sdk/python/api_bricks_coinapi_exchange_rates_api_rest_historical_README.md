@@ -89,9 +89,9 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [V1Asset](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1Asset.md)
- - [V1ChainNetworkAddress](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1ChainNetworkAddress.md)
  - [V1ExchangeRate](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1ExchangeRate.md)
  - [V1ExchangeRates](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1ExchangeRates.md)
+ - [V1ExchangeRatesChainNetworkAddress](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1ExchangeRatesChainNetworkAddress.md)
  - [V1ExchangeRatesRate](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1ExchangeRatesRate.md)
  - [V1ExchangeRatesTimeseriesItem](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1ExchangeRatesTimeseriesItem.md)
  - [V1Icon](api_bricks_coinapi_exchange_rates_api_rest_historical/docs/V1Icon.md)

@@ -15,33 +15,6 @@ package .Models is
 
 
 
-   type V1ChainNetworkAddress_Type is
-     record
-       Chain_Id : Swagger.Nullable_UString;
-       Network_Id : Swagger.Nullable_UString;
-       Address : Swagger.Nullable_UString;
-     end record;
-
-
-   package V1ChainNetworkAddress_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.V1ChainNetworkAddress_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.V1ChainNetworkAddress_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in V1ChainNetworkAddress_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.V1ChainNetworkAddress_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out V1ChainNetworkAddress_Type_Vectors.Vector);
-
-
-
    type V1ExchangeRate_Type is
      record
        Time : Swagger.Nullable_Date;
@@ -67,6 +40,33 @@ package .Models is
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
                           Value : in out V1ExchangeRate_Type_Vectors.Vector);
+
+
+
+   type V1ExchangeRatesChainNetworkAddress_Type is
+     record
+       Chain_Id : Swagger.Nullable_UString;
+       Network_Id : Swagger.Nullable_UString;
+       Address : Swagger.Nullable_UString;
+     end record;
+
+
+   package V1ExchangeRatesChainNetworkAddress_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.V1ExchangeRatesChainNetworkAddress_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.V1ExchangeRatesChainNetworkAddress_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in V1ExchangeRatesChainNetworkAddress_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.V1ExchangeRatesChainNetworkAddress_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out V1ExchangeRatesChainNetworkAddress_Type_Vectors.Vector);
 
 
 
@@ -206,7 +206,7 @@ package .Models is
        Supply_Current : Swagger.Number;
        Supply_Total : Swagger.Number;
        Supply_Max : Swagger.Number;
-       Chain_Addresses : .Models.V1ChainNetworkAddress_Type_Vectors.Vector;
+       Chain_Addresses : .Models.V1ExchangeRatesChainNetworkAddress_Type_Vectors.Vector;
        Data_Start : Swagger.Nullable_UString;
        Data_End : Swagger.Nullable_UString;
      end record;

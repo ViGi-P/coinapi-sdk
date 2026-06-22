@@ -23,7 +23,7 @@
 
 package org.openapitools.client.models
 
-import org.openapitools.client.models.V1ChainNetworkAddress
+import org.openapitools.client.models.V1ExchangeRatesChainNetworkAddress
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -131,7 +131,7 @@ data class V1Asset (
 
     /*  */
     @Json(name = "chain_addresses")
-    val chainAddresses: kotlin.collections.List<V1ChainNetworkAddress>? = null,
+    val chainAddresses: kotlin.collections.List<V1ExchangeRatesChainNetworkAddress>? = null,
 
     @Json(name = "data_start")
     val dataStart: kotlin.String? = null,

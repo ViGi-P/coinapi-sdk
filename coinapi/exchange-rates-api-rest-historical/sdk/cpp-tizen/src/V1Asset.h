@@ -9,7 +9,7 @@
 
 
 #include <string>
-#include "V1.ChainNetworkAddress.h"
+#include "V1.ExchangeRatesChainNetworkAddress.h"
 #include <list>
 #include "Object.h"
 
@@ -175,11 +175,11 @@ public:
 	void setSupplyMax(double  supply_max);
 	/*! \brief Get 
 	 */
-	std::list<V1.ChainNetworkAddress> getChainAddresses();
+	std::list<V1.ExchangeRatesChainNetworkAddress> getChainAddresses();
 
 	/*! \brief Set 
 	 */
-	void setChainAddresses(std::list <V1.ChainNetworkAddress> chain_addresses);
+	void setChainAddresses(std::list <V1.ExchangeRatesChainNetworkAddress> chain_addresses);
 	/*! \brief Get 
 	 */
 	std::string getDataStart();
@@ -214,7 +214,7 @@ private:
 	double supply_current;
 	double supply_total;
 	double supply_max;
-	std::list <V1.ChainNetworkAddress>chain_addresses;
+	std::list <V1.ExchangeRatesChainNetworkAddress>chain_addresses;
 	std::string data_start;
 	std::string data_end;
 	void __init();

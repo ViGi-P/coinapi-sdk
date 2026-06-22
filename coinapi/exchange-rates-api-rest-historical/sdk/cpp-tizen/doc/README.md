@@ -67,9 +67,9 @@ Method | HTTP request | Description
 Class | Description
 ------------- | -------------
  *V1.Asset* | Represents an asset.
- *V1.ChainNetworkAddress* | Contains information about assets' chain network addresses
  *V1.ExchangeRate* | Represents an exchange rate.
  *V1.ExchangeRates* | Represents exchange rates for a specific base asset.
+ *V1.ExchangeRatesChainNetworkAddress* | Contains information about assets' chain network addresses
  *V1.ExchangeRatesRate* | Represents an exchange rate within a collection of exchange rates.
  *V1.ExchangeRatesTimeseriesItem* | Represents an item in the exchange rate timeseries.
  *V1.Icon* | Represents an icon.

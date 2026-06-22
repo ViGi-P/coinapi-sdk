@@ -7,7 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { V1ChainNetworkAddress } from './v1ChainNetworkAddress';
+import { V1ExchangeRatesChainNetworkAddress } from './v1ExchangeRatesChainNetworkAddress';
 
 
 /**
@@ -89,7 +89,7 @@ export interface V1Asset {
     /**
      * 
      */
-    chain_addresses?: Array<V1ChainNetworkAddress> | null;
+    chain_addresses?: Array<V1ExchangeRatesChainNetworkAddress> | null;
     readonly data_start?: string | null;
     readonly data_end?: string | null;
 }

@@ -6,9 +6,9 @@ README.md
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/V1Asset.md
-docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
 docs/V1ExchangeRates.md
+docs/V1ExchangeRatesChainNetworkAddress.md
 docs/V1ExchangeRatesRate.md
 docs/V1ExchangeRatesTimeseriesItem.md
 docs/V1Icon.md
@@ -21,9 +21,9 @@ src/api/ExchangeRatesApi.js
 src/api/MetadataApi.js
 src/index.js
 src/model/V1Asset.js
-src/model/V1ChainNetworkAddress.js
 src/model/V1ExchangeRate.js
 src/model/V1ExchangeRates.js
+src/model/V1ExchangeRatesChainNetworkAddress.js
 src/model/V1ExchangeRatesRate.js
 src/model/V1ExchangeRatesTimeseriesItem.js
 src/model/V1Icon.js
@@ -31,9 +31,9 @@ src/model/V1TimeseriesPeriod.js
 test/api/ExchangeRatesApi.spec.js
 test/api/MetadataApi.spec.js
 test/model/V1Asset.spec.js
-test/model/V1ChainNetworkAddress.spec.js
 test/model/V1ExchangeRate.spec.js
 test/model/V1ExchangeRates.spec.js
+test/model/V1ExchangeRatesChainNetworkAddress.spec.js
 test/model/V1ExchangeRatesRate.spec.js
 test/model/V1ExchangeRatesTimeseriesItem.spec.js
 test/model/V1Icon.spec.js
