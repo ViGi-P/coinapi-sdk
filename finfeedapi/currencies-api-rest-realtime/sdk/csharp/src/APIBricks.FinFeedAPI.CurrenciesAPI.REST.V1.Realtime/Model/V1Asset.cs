@@ -57,7 +57,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// <param name="dataStart">dataStart</param>
         /// <param name="dataEnd">dataEnd</param>
         [JsonConstructor]
-        public V1Asset(Option<string?> assetId = default, Option<string?> name = default, Option<int?> typeIsCrypto = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<long?> dataSymbolsCount = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mthUsd = default, Option<double?> priceUsd = default, Option<Guid?> idIcon = default, Option<double?> supplyCurrent = default, Option<double?> supplyTotal = default, Option<double?> supplyMax = default, Option<List<V1ChainNetworkAddress>?> chainAddresses = default, Option<string?> dataStart = default, Option<string?> dataEnd = default)
+        public V1Asset(Option<string?> assetId = default, Option<string?> name = default, Option<int?> typeIsCrypto = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<long?> dataSymbolsCount = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mthUsd = default, Option<double?> priceUsd = default, Option<Guid?> idIcon = default, Option<double?> supplyCurrent = default, Option<double?> supplyTotal = default, Option<double?> supplyMax = default, Option<List<V1ExchangeRatesChainNetworkAddress>?> chainAddresses = default, Option<string?> dataStart = default, Option<string?> dataEnd = default)
         {
             AssetIdOption = assetId;
             NameOption = name;
@@ -342,13 +342,13 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<List<V1ChainNetworkAddress>?> ChainAddressesOption { get; private set; }
+        public Option<List<V1ExchangeRatesChainNetworkAddress>?> ChainAddressesOption { get; private set; }
 
         /// <summary>
         /// Gets or Sets ChainAddresses
         /// </summary>
         [JsonPropertyName("chain_addresses")]
-        public List<V1ChainNetworkAddress>? ChainAddresses { get { return this.ChainAddressesOption.Value; } set { this.ChainAddressesOption = new(value); } }
+        public List<V1ExchangeRatesChainNetworkAddress>? ChainAddresses { get { return this.ChainAddressesOption.Value; } set { this.ChainAddressesOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataStart
@@ -490,7 +490,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
             Option<double?> supplyCurrent = default;
             Option<double?> supplyTotal = default;
             Option<double?> supplyMax = default;
-            Option<List<V1ChainNetworkAddress>?> chainAddresses = default;
+            Option<List<V1ExchangeRatesChainNetworkAddress>?> chainAddresses = default;
             Option<string?> dataStart = default;
             Option<string?> dataEnd = default;
 
@@ -564,7 +564,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
                             supplyMax = new Option<double?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (double?)null : utf8JsonReader.GetDouble());
                             break;
                         case "chain_addresses":
-                            chainAddresses = new Option<List<V1ChainNetworkAddress>?>(JsonSerializer.Deserialize<List<V1ChainNetworkAddress>>(ref utf8JsonReader, jsonSerializerOptions));
+                            chainAddresses = new Option<List<V1ExchangeRatesChainNetworkAddress>?>(JsonSerializer.Deserialize<List<V1ExchangeRatesChainNetworkAddress>>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "data_start":
                             dataStart = new Option<string?>(utf8JsonReader.GetString());

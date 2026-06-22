@@ -5,8 +5,8 @@
             [orchestra.core :refer [defn-spec]]
             [fin-feed-api-currencies-realtime-rest-api.specs.v1/asset :refer :all]
             [fin-feed-api-currencies-realtime-rest-api.specs.v1/exchange-rates :refer :all]
+            [fin-feed-api-currencies-realtime-rest-api.specs.v1/exchange-rates-chain-network-address :refer :all]
             [fin-feed-api-currencies-realtime-rest-api.specs.v1/icon :refer :all]
-            [fin-feed-api-currencies-realtime-rest-api.specs.v1/chain-network-address :refer :all]
             [fin-feed-api-currencies-realtime-rest-api.specs.v1/exchange-rates-rate :refer :all]
             [fin-feed-api-currencies-realtime-rest-api.specs.v1/exchange-rate :refer :all]
             )

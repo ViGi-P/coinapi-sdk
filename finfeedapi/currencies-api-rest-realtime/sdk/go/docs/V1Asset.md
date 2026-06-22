@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **SupplyCurrent** | Pointer to **NullableFloat64** | Gets or sets the current supply of the asset. | [optional] 
 **SupplyTotal** | Pointer to **NullableFloat64** | Gets or sets the total supply of the asset. | [optional] 
 **SupplyMax** | Pointer to **NullableFloat64** | Gets or sets the maximum supply of the asset. | [optional] 
-**ChainAddresses** | Pointer to [**[]V1ChainNetworkAddress**](V1ChainNetworkAddress.md) |  | [optional] 
+**ChainAddresses** | Pointer to [**[]V1ExchangeRatesChainNetworkAddress**](V1ExchangeRatesChainNetworkAddress.md) |  | [optional] 
 **DataStart** | Pointer to **NullableString** |  | [optional] [readonly] 
 **DataEnd** | Pointer to **NullableString** |  | [optional] [readonly] 
 
@@ -667,20 +667,20 @@ HasSupplyMax returns a boolean if a field has been set.
 UnsetSupplyMax ensures that no value is present for SupplyMax, not even an explicit nil
 ### GetChainAddresses
 
-`func (o *V1Asset) GetChainAddresses() []V1ChainNetworkAddress`
+`func (o *V1Asset) GetChainAddresses() []V1ExchangeRatesChainNetworkAddress`
 
 GetChainAddresses returns the ChainAddresses field if non-nil, zero value otherwise.
 
 ### GetChainAddressesOk
 
-`func (o *V1Asset) GetChainAddressesOk() (*[]V1ChainNetworkAddress, bool)`
+`func (o *V1Asset) GetChainAddressesOk() (*[]V1ExchangeRatesChainNetworkAddress, bool)`
 
 GetChainAddressesOk returns a tuple with the ChainAddresses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChainAddresses
 
-`func (o *V1Asset) SetChainAddresses(v []V1ChainNetworkAddress)`
+`func (o *V1Asset) SetChainAddresses(v []V1ExchangeRatesChainNetworkAddress)`
 
 SetChainAddresses sets ChainAddresses field to given value.
 

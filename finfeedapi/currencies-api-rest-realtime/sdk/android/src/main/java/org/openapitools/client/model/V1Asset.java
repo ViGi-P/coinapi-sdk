@@ -15,7 +15,7 @@ package org.openapitools.client.model;
 import java.util.*;
 import java.util.Date;
 import java.util.UUID;
-import org.openapitools.client.model.V1ChainNetworkAddress;
+import org.openapitools.client.model.V1ExchangeRatesChainNetworkAddress;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -62,7 +62,7 @@ public class V1Asset {
   @SerializedName("supply_max")
   private Double supplyMax = null;
   @SerializedName("chain_addresses")
-  private List<V1ChainNetworkAddress> chainAddresses = null;
+  private List<V1ExchangeRatesChainNetworkAddress> chainAddresses = null;
   @SerializedName("data_start")
   private String dataStart = null;
   @SerializedName("data_end")
@@ -270,10 +270,10 @@ public class V1Asset {
    * 
    **/
   @ApiModelProperty(value = "")
-  public List<V1ChainNetworkAddress> getChainAddresses() {
+  public List<V1ExchangeRatesChainNetworkAddress> getChainAddresses() {
     return chainAddresses;
   }
-  public void setChainAddresses(List<V1ChainNetworkAddress> chainAddresses) {
+  public void setChainAddresses(List<V1ExchangeRatesChainNetworkAddress> chainAddresses) {
     this.chainAddresses = chainAddresses;
   }
 

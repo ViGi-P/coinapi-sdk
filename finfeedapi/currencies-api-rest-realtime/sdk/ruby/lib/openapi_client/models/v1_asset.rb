@@ -135,7 +135,7 @@ module OpenapiClient
         :'supply_current' => :'Float',
         :'supply_total' => :'Float',
         :'supply_max' => :'Float',
-        :'chain_addresses' => :'Array<V1ChainNetworkAddress>',
+        :'chain_addresses' => :'Array<V1ExchangeRatesChainNetworkAddress>',
         :'data_start' => :'String',
         :'data_end' => :'String'
       }

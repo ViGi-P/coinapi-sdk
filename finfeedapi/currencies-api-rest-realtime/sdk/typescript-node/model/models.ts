@@ -1,9 +1,9 @@
 import localVarRequest from 'request';
 
 export * from './v1Asset';
-export * from './v1ChainNetworkAddress';
 export * from './v1ExchangeRate';
 export * from './v1ExchangeRates';
+export * from './v1ExchangeRatesChainNetworkAddress';
 export * from './v1ExchangeRatesRate';
 export * from './v1Icon';
 
@@ -21,9 +21,9 @@ export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
 import { V1Asset } from './v1Asset';
-import { V1ChainNetworkAddress } from './v1ChainNetworkAddress';
 import { V1ExchangeRate } from './v1ExchangeRate';
 import { V1ExchangeRates } from './v1ExchangeRates';
+import { V1ExchangeRatesChainNetworkAddress } from './v1ExchangeRatesChainNetworkAddress';
 import { V1ExchangeRatesRate } from './v1ExchangeRatesRate';
 import { V1Icon } from './v1Icon';
 
@@ -44,9 +44,9 @@ let enumsMap: {[index: string]: any} = {
 
 let typeMap: {[index: string]: any} = {
     "V1Asset": V1Asset,
-    "V1ChainNetworkAddress": V1ChainNetworkAddress,
     "V1ExchangeRate": V1ExchangeRate,
     "V1ExchangeRates": V1ExchangeRates,
+    "V1ExchangeRatesChainNetworkAddress": V1ExchangeRatesChainNetworkAddress,
     "V1ExchangeRatesRate": V1ExchangeRatesRate,
     "V1Icon": V1Icon,
 }

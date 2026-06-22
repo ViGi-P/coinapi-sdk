@@ -22,7 +22,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from uuid import UUID
-from api_bricks_currencies_api_rest_realtime.models.v1_chain_network_address import V1ChainNetworkAddress
+from api_bricks_currencies_api_rest_realtime.models.v1_exchange_rates_chain_network_address import V1ExchangeRatesChainNetworkAddress
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -49,7 +49,7 @@ class V1Asset(BaseModel):
     supply_current: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the current supply of the asset.")
     supply_total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the total supply of the asset.")
     supply_max: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the maximum supply of the asset.")
-    chain_addresses: Optional[List[V1ChainNetworkAddress]] = None
+    chain_addresses: Optional[List[V1ExchangeRatesChainNetworkAddress]] = None
     data_start: Optional[StrictStr] = None
     data_end: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "data_start", "data_end"]
@@ -234,7 +234,7 @@ class V1Asset(BaseModel):
             "supply_current": obj.get("supply_current"),
             "supply_total": obj.get("supply_total"),
             "supply_max": obj.get("supply_max"),
-            "chain_addresses": [V1ChainNetworkAddress.from_dict(_item) for _item in obj["chain_addresses"]] if obj.get("chain_addresses") is not None else None,
+            "chain_addresses": [V1ExchangeRatesChainNetworkAddress.from_dict(_item) for _item in obj["chain_addresses"]] if obj.get("chain_addresses") is not None else None,
             "data_start": obj.get("data_start"),
             "data_end": obj.get("data_end")
         })

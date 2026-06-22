@@ -111,7 +111,7 @@ data V1Asset = V1Asset
   , v1AssetSupplyCurrent :: !(Maybe Double) -- ^ "supply_current" - Gets or sets the current supply of the asset.
   , v1AssetSupplyTotal :: !(Maybe Double) -- ^ "supply_total" - Gets or sets the total supply of the asset.
   , v1AssetSupplyMax :: !(Maybe Double) -- ^ "supply_max" - Gets or sets the maximum supply of the asset.
-  , v1AssetChainAddresses :: !(Maybe [V1ChainNetworkAddress]) -- ^ "chain_addresses" - 
+  , v1AssetChainAddresses :: !(Maybe [V1ExchangeRatesChainNetworkAddress]) -- ^ "chain_addresses" - 
   , v1AssetDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
   , v1AssetDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
   } deriving (P.Show, P.Eq, P.Typeable)
@@ -198,43 +198,6 @@ mkV1Asset =
   , v1AssetDataEnd = Nothing
   }
 
--- ** V1ChainNetworkAddress
--- | V1ChainNetworkAddress
--- Contains information about assets' chain network addresses
-data V1ChainNetworkAddress = V1ChainNetworkAddress
-  { v1ChainNetworkAddressChainId :: !(Maybe Text) -- ^ "chain_id" - Gets or sets chain id
-  , v1ChainNetworkAddressNetworkId :: !(Maybe Text) -- ^ "network_id" - Gets or sets network id
-  , v1ChainNetworkAddressAddress :: !(Maybe Text) -- ^ "address" - Gets or sets chain address
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON V1ChainNetworkAddress
-instance A.FromJSON V1ChainNetworkAddress where
-  parseJSON = A.withObject "V1ChainNetworkAddress" $ \o ->
-    V1ChainNetworkAddress
-      <$> (o .:? "chain_id")
-      <*> (o .:? "network_id")
-      <*> (o .:? "address")
-
--- | ToJSON V1ChainNetworkAddress
-instance A.ToJSON V1ChainNetworkAddress where
-  toJSON V1ChainNetworkAddress {..} =
-   _omitNulls
-      [ "chain_id" .= v1ChainNetworkAddressChainId
-      , "network_id" .= v1ChainNetworkAddressNetworkId
-      , "address" .= v1ChainNetworkAddressAddress
-      ]
-
-
--- | Construct a value of type 'V1ChainNetworkAddress' (by applying it's required fields, if any)
-mkV1ChainNetworkAddress
-  :: V1ChainNetworkAddress
-mkV1ChainNetworkAddress =
-  V1ChainNetworkAddress
-  { v1ChainNetworkAddressChainId = Nothing
-  , v1ChainNetworkAddressNetworkId = Nothing
-  , v1ChainNetworkAddressAddress = Nothing
-  }
-
 -- ** V1ExchangeRate
 -- | V1ExchangeRate
 -- Represents an exchange rate.
@@ -307,6 +270,43 @@ mkV1ExchangeRates =
   V1ExchangeRates
   { v1ExchangeRatesAssetIdBase = Nothing
   , v1ExchangeRatesRates = Nothing
+  }
+
+-- ** V1ExchangeRatesChainNetworkAddress
+-- | V1ExchangeRatesChainNetworkAddress
+-- Contains information about assets' chain network addresses
+data V1ExchangeRatesChainNetworkAddress = V1ExchangeRatesChainNetworkAddress
+  { v1ExchangeRatesChainNetworkAddressChainId :: !(Maybe Text) -- ^ "chain_id" - Gets or sets chain id
+  , v1ExchangeRatesChainNetworkAddressNetworkId :: !(Maybe Text) -- ^ "network_id" - Gets or sets network id
+  , v1ExchangeRatesChainNetworkAddressAddress :: !(Maybe Text) -- ^ "address" - Gets or sets chain address
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON V1ExchangeRatesChainNetworkAddress
+instance A.FromJSON V1ExchangeRatesChainNetworkAddress where
+  parseJSON = A.withObject "V1ExchangeRatesChainNetworkAddress" $ \o ->
+    V1ExchangeRatesChainNetworkAddress
+      <$> (o .:? "chain_id")
+      <*> (o .:? "network_id")
+      <*> (o .:? "address")
+
+-- | ToJSON V1ExchangeRatesChainNetworkAddress
+instance A.ToJSON V1ExchangeRatesChainNetworkAddress where
+  toJSON V1ExchangeRatesChainNetworkAddress {..} =
+   _omitNulls
+      [ "chain_id" .= v1ExchangeRatesChainNetworkAddressChainId
+      , "network_id" .= v1ExchangeRatesChainNetworkAddressNetworkId
+      , "address" .= v1ExchangeRatesChainNetworkAddressAddress
+      ]
+
+
+-- | Construct a value of type 'V1ExchangeRatesChainNetworkAddress' (by applying it's required fields, if any)
+mkV1ExchangeRatesChainNetworkAddress
+  :: V1ExchangeRatesChainNetworkAddress
+mkV1ExchangeRatesChainNetworkAddress =
+  V1ExchangeRatesChainNetworkAddress
+  { v1ExchangeRatesChainNetworkAddressChainId = Nothing
+  , v1ExchangeRatesChainNetworkAddressNetworkId = Nothing
+  , v1ExchangeRatesChainNetworkAddressAddress = Nothing
   }
 
 -- ** V1ExchangeRatesRate

@@ -352,7 +352,7 @@ bool V1_Asset::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("chain_addresses")));
         if(!fieldValue.is_null())
         {
-            std::vector<std::shared_ptr<V1_ChainNetworkAddress>> refVal_setChainAddresses;
+            std::vector<std::shared_ptr<V1_ExchangeRatesChainNetworkAddress>> refVal_setChainAddresses;
             ok &= ModelBase::fromJson(fieldValue, refVal_setChainAddresses);
             setChainAddresses(refVal_setChainAddresses);
             
@@ -595,7 +595,7 @@ bool V1_Asset::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const
     }
     if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("chain_addresses"))))
     {
-        std::vector<std::shared_ptr<V1_ChainNetworkAddress>> refVal_setChainAddresses;
+        std::vector<std::shared_ptr<V1_ExchangeRatesChainNetworkAddress>> refVal_setChainAddresses;
         ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("chain_addresses"))), refVal_setChainAddresses );
         setChainAddresses(refVal_setChainAddresses);
     }
@@ -967,13 +967,13 @@ void V1_Asset::unsetSupply_max()
 {
     m_Supply_max.reset();
 }
-std::vector<std::shared_ptr<V1_ChainNetworkAddress>> V1_Asset::getChainAddresses() const
+std::vector<std::shared_ptr<V1_ExchangeRatesChainNetworkAddress>> V1_Asset::getChainAddresses() const
 {
     return m_Chain_addresses.get();
 }
 
 
-void V1_Asset::setChainAddresses(const std::vector<std::shared_ptr<V1_ChainNetworkAddress>>& value)
+void V1_Asset::setChainAddresses(const std::vector<std::shared_ptr<V1_ExchangeRatesChainNetworkAddress>>& value)
 {
     m_Chain_addresses = value;
 }

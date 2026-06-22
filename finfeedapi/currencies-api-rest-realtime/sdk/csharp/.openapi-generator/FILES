@@ -8,9 +8,9 @@ docs/apis/ExchangeRatesApi.md
 docs/apis/MetadataApi.md
 docs/apis/RateLimitApi.md
 docs/models/V1Asset.md
-docs/models/V1ChainNetworkAddress.md
 docs/models/V1ExchangeRate.md
 docs/models/V1ExchangeRates.md
+docs/models/V1ExchangeRatesChainNetworkAddress.md
 docs/models/V1ExchangeRatesRate.md
 docs/models/V1Icon.md
 docs/scripts/git_push.ps1
@@ -22,8 +22,8 @@ src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/ExchangeRatesAp
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/MetadataApiTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/RateLimitApiTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1AssetTests.cs
-src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1ChainNetworkAddressTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1ExchangeRateTests.cs
+src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1ExchangeRatesChainNetworkAddressTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1ExchangeRatesRateTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1ExchangeRatesTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1IconTests.cs
@@ -58,9 +58,9 @@ src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Extensions/IHostBuilderE
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Extensions/IHttpClientBuilderExtensions.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Extensions/IServiceCollectionExtensions.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1Asset.cs
-src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1ChainNetworkAddress.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1ExchangeRate.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1ExchangeRates.cs
+src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1ExchangeRatesChainNetworkAddress.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1ExchangeRatesRate.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1Icon.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/README.md

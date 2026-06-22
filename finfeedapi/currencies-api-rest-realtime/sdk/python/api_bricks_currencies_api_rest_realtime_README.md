@@ -94,9 +94,9 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [V1Asset](api_bricks_currencies_api_rest_realtime/docs/V1Asset.md)
- - [V1ChainNetworkAddress](api_bricks_currencies_api_rest_realtime/docs/V1ChainNetworkAddress.md)
  - [V1ExchangeRate](api_bricks_currencies_api_rest_realtime/docs/V1ExchangeRate.md)
  - [V1ExchangeRates](api_bricks_currencies_api_rest_realtime/docs/V1ExchangeRates.md)
+ - [V1ExchangeRatesChainNetworkAddress](api_bricks_currencies_api_rest_realtime/docs/V1ExchangeRatesChainNetworkAddress.md)
  - [V1ExchangeRatesRate](api_bricks_currencies_api_rest_realtime/docs/V1ExchangeRatesRate.md)
  - [V1Icon](api_bricks_currencies_api_rest_realtime/docs/V1Icon.md)
 

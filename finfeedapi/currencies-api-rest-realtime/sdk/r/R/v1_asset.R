@@ -25,7 +25,7 @@
 #' @field supply_current Gets or sets the current supply of the asset. numeric [optional]
 #' @field supply_total Gets or sets the total supply of the asset. numeric [optional]
 #' @field supply_max Gets or sets the maximum supply of the asset. numeric [optional]
-#' @field chain_addresses  list(\link{V1ChainNetworkAddress}) [optional]
+#' @field chain_addresses  list(\link{V1ExchangeRatesChainNetworkAddress}) [optional]
 #' @field data_start  character [optional]
 #' @field data_end  character [optional]
 #' @importFrom R6 R6Class
@@ -412,7 +412,7 @@ V1Asset <- R6::R6Class(
         self$`supply_max` <- this_object$`supply_max`
       }
       if (!is.null(this_object$`chain_addresses`)) {
-        self$`chain_addresses` <- ApiClient$new()$deserializeObj(this_object$`chain_addresses`, "array[V1ChainNetworkAddress]", loadNamespace("openapi"))
+        self$`chain_addresses` <- ApiClient$new()$deserializeObj(this_object$`chain_addresses`, "array[V1ExchangeRatesChainNetworkAddress]", loadNamespace("openapi"))
       }
       if (!is.null(this_object$`data_start`)) {
         self$`data_start` <- this_object$`data_start`
@@ -459,7 +459,7 @@ V1Asset <- R6::R6Class(
       self$`supply_current` <- this_object$`supply_current`
       self$`supply_total` <- this_object$`supply_total`
       self$`supply_max` <- this_object$`supply_max`
-      self$`chain_addresses` <- ApiClient$new()$deserializeObj(this_object$`chain_addresses`, "array[V1ChainNetworkAddress]", loadNamespace("openapi"))
+      self$`chain_addresses` <- ApiClient$new()$deserializeObj(this_object$`chain_addresses`, "array[V1ExchangeRatesChainNetworkAddress]", loadNamespace("openapi"))
       self$`data_start` <- this_object$`data_start`
       self$`data_end` <- this_object$`data_end`
       self

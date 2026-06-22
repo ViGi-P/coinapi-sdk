@@ -134,7 +134,7 @@ API.Client.V1Asset.prototype.supplyMax;
 
 /**
  * 
- * @type {!Array<!API.Client.v1.ChainNetworkAddress>}
+ * @type {!Array<!API.Client.v1.ExchangeRatesChainNetworkAddress>}
  * @export
  */
 API.Client.V1Asset.prototype.chainAddresses;

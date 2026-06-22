@@ -104,9 +104,9 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OpenapiClient::V1Asset](docs/V1Asset.md)
- - [OpenapiClient::V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
  - [OpenapiClient::V1ExchangeRate](docs/V1ExchangeRate.md)
  - [OpenapiClient::V1ExchangeRates](docs/V1ExchangeRates.md)
+ - [OpenapiClient::V1ExchangeRatesChainNetworkAddress](docs/V1ExchangeRatesChainNetworkAddress.md)
  - [OpenapiClient::V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [OpenapiClient::V1Icon](docs/V1Icon.md)
 

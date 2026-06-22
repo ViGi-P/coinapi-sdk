@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **supplyCurrent** | **Number** | Gets or sets the current supply of the asset. | [optional] 
 **supplyTotal** | **Number** | Gets or sets the total supply of the asset. | [optional] 
 **supplyMax** | **Number** | Gets or sets the maximum supply of the asset. | [optional] 
-**chainAddresses** | [**[V1ChainNetworkAddress]**](V1ChainNetworkAddress.md) |  | [optional] 
+**chainAddresses** | [**[V1ExchangeRatesChainNetworkAddress]**](V1ExchangeRatesChainNetworkAddress.md) |  | [optional] 
 **dataStart** | **String** |  | [optional] [readonly] 
 **dataEnd** | **String** |  | [optional] [readonly] 
 

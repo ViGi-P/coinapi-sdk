@@ -185,12 +185,12 @@ class ApiClient {
           return value is DateTime ? value : DateTime.tryParse(value);
         case 'V1Asset':
           return V1Asset.fromJson(value);
-        case 'V1ChainNetworkAddress':
-          return V1ChainNetworkAddress.fromJson(value);
         case 'V1ExchangeRate':
           return V1ExchangeRate.fromJson(value);
         case 'V1ExchangeRates':
           return V1ExchangeRates.fromJson(value);
+        case 'V1ExchangeRatesChainNetworkAddress':
+          return V1ExchangeRatesChainNetworkAddress.fromJson(value);
         case 'V1ExchangeRatesRate':
           return V1ExchangeRatesRate.fromJson(value);
         case 'V1Icon':
