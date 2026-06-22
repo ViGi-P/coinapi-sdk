@@ -137,19 +137,9 @@ genV1Asset n =
     <*> arbitraryReducedMaybe n -- v1AssetSupplyCurrent :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1AssetSupplyTotal :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1AssetSupplyMax :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1AssetChainAddresses :: Maybe [V1ChainNetworkAddress]
+    <*> arbitraryReducedMaybe n -- v1AssetChainAddresses :: Maybe [V1ExchangeRatesChainNetworkAddress]
     <*> arbitraryReducedMaybe n -- v1AssetDataStart :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1AssetDataEnd :: Maybe Text
-  
-instance Arbitrary V1ChainNetworkAddress where
-  arbitrary = sized genV1ChainNetworkAddress
-
-genV1ChainNetworkAddress :: Int -> Gen V1ChainNetworkAddress
-genV1ChainNetworkAddress n =
-  V1ChainNetworkAddress
-    <$> arbitraryReducedMaybe n -- v1ChainNetworkAddressChainId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ChainNetworkAddressNetworkId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- v1ChainNetworkAddressAddress :: Maybe Text
   
 instance Arbitrary V1ExchangeRate where
   arbitrary = sized genV1ExchangeRate
@@ -170,6 +160,16 @@ genV1ExchangeRates n =
   V1ExchangeRates
     <$> arbitraryReducedMaybe n -- v1ExchangeRatesAssetIdBase :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1ExchangeRatesRates :: Maybe [V1ExchangeRatesRate]
+  
+instance Arbitrary V1ExchangeRatesChainNetworkAddress where
+  arbitrary = sized genV1ExchangeRatesChainNetworkAddress
+
+genV1ExchangeRatesChainNetworkAddress :: Int -> Gen V1ExchangeRatesChainNetworkAddress
+genV1ExchangeRatesChainNetworkAddress n =
+  V1ExchangeRatesChainNetworkAddress
+    <$> arbitraryReducedMaybe n -- v1ExchangeRatesChainNetworkAddressChainId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- v1ExchangeRatesChainNetworkAddressNetworkId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- v1ExchangeRatesChainNetworkAddressAddress :: Maybe Text
   
 instance Arbitrary V1ExchangeRatesRate where
   arbitrary = sized genV1ExchangeRatesRate

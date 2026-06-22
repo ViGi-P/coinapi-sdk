@@ -135,9 +135,9 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Asset](docs/Asset.md)
- - [ChainNetworkAddress](docs/ChainNetworkAddress.md)
  - [ExchangeRate](docs/ExchangeRate.md)
  - [ExchangeRates](docs/ExchangeRates.md)
+ - [ExchangeRatesChainNetworkAddress](docs/ExchangeRatesChainNetworkAddress.md)
  - [ExchangeRatesRate](docs/ExchangeRatesRate.md)
  - [Icon](docs/Icon.md)
 

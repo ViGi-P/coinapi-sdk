@@ -18,9 +18,9 @@ include/CppRestOpenAPIClient/api/ExchangeRatesApi.h
 include/CppRestOpenAPIClient/api/MetadataApi.h
 include/CppRestOpenAPIClient/api/RateLimitApi.h
 include/CppRestOpenAPIClient/model/V1_Asset.h
-include/CppRestOpenAPIClient/model/V1_ChainNetworkAddress.h
 include/CppRestOpenAPIClient/model/V1_ExchangeRate.h
 include/CppRestOpenAPIClient/model/V1_ExchangeRates.h
+include/CppRestOpenAPIClient/model/V1_ExchangeRatesChainNetworkAddress.h
 include/CppRestOpenAPIClient/model/V1_ExchangeRatesRate.h
 include/CppRestOpenAPIClient/model/V1_Icon.h
 src/AnyType.cpp
@@ -36,8 +36,8 @@ src/api/ExchangeRatesApi.cpp
 src/api/MetadataApi.cpp
 src/api/RateLimitApi.cpp
 src/model/V1_Asset.cpp
-src/model/V1_ChainNetworkAddress.cpp
 src/model/V1_ExchangeRate.cpp
 src/model/V1_ExchangeRates.cpp
+src/model/V1_ExchangeRatesChainNetworkAddress.cpp
 src/model/V1_ExchangeRatesRate.cpp
 src/model/V1_Icon.cpp

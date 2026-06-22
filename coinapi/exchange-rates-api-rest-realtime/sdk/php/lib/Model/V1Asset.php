@@ -77,7 +77,7 @@ class V1Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'supply_current' => 'float',
         'supply_total' => 'float',
         'supply_max' => 'float',
-        'chain_addresses' => '\OpenAPI\Client\Model\V1ChainNetworkAddress[]',
+        'chain_addresses' => '\OpenAPI\Client\Model\V1ExchangeRatesChainNetworkAddress[]',
         'data_start' => 'string',
         'data_end' => 'string'
     ];
@@ -1039,7 +1039,7 @@ class V1Asset implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets chain_addresses
      *
-     * @return \OpenAPI\Client\Model\V1ChainNetworkAddress[]|null
+     * @return \OpenAPI\Client\Model\V1ExchangeRatesChainNetworkAddress[]|null
      */
     public function getChainAddresses()
     {
@@ -1049,7 +1049,7 @@ class V1Asset implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets chain_addresses
      *
-     * @param \OpenAPI\Client\Model\V1ChainNetworkAddress[]|null $chain_addresses 
+     * @param \OpenAPI\Client\Model\V1ExchangeRatesChainNetworkAddress[]|null $chain_addresses 
      *
      * @return self
      */

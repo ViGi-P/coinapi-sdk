@@ -79,9 +79,9 @@ Category | Method | HTTP request | Description
 ## Documentation for Models
 
  - [v1_asset_t](docs/v1_asset.md)
- - [v1_chain_network_address_t](docs/v1_chain_network_address.md)
  - [v1_exchange_rate_t](docs/v1_exchange_rate.md)
  - [v1_exchange_rates_t](docs/v1_exchange_rates.md)
+ - [v1_exchange_rates_chain_network_address_t](docs/v1_exchange_rates_chain_network_address.md)
  - [v1_exchange_rates_rate_t](docs/v1_exchange_rates_rate.md)
  - [v1_icon_t](docs/v1_icon.md)
 

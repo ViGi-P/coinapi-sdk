@@ -5,8 +5,8 @@
             [orchestra.core :refer [defn-spec]]
             [exchange-rates-realtime-rest-api.specs.v1/asset :refer :all]
             [exchange-rates-realtime-rest-api.specs.v1/exchange-rates :refer :all]
+            [exchange-rates-realtime-rest-api.specs.v1/exchange-rates-chain-network-address :refer :all]
             [exchange-rates-realtime-rest-api.specs.v1/icon :refer :all]
-            [exchange-rates-realtime-rest-api.specs.v1/chain-network-address :refer :all]
             [exchange-rates-realtime-rest-api.specs.v1/exchange-rates-rate :refer :all]
             [exchange-rates-realtime-rest-api.specs.v1/exchange-rate :refer :all]
             )

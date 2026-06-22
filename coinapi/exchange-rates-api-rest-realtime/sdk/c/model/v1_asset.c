@@ -246,7 +246,7 @@ void v1_asset_free(v1_asset_t *v1_asset) {
     }
     if (v1_asset->chain_addresses) {
         list_ForEach(listEntry, v1_asset->chain_addresses) {
-            v1_chain_network_address_free(listEntry->data);
+            v1_exchange_rates_chain_network_address_free(listEntry->data);
         }
         list_freeList(v1_asset->chain_addresses);
         v1_asset->chain_addresses = NULL;
@@ -419,7 +419,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
     listEntry_t *chain_addressesListEntry;
     if (v1_asset->chain_addresses) {
     list_ForEach(chain_addressesListEntry, v1_asset->chain_addresses) {
-    cJSON *itemLocal = v1_chain_network_address_convertToJSON(chain_addressesListEntry->data);
+    cJSON *itemLocal = v1_exchange_rates_chain_network_address_convertToJSON(chain_addressesListEntry->data);
     if(itemLocal == NULL) {
     goto fail;
     }
@@ -796,7 +796,7 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
         if(!cJSON_IsObject(chain_addresses_local_nonprimitive)){
             goto end;
         }
-        v1_chain_network_address_t *chain_addressesItem = v1_chain_network_address_parseFromJSON(chain_addresses_local_nonprimitive);
+        v1_exchange_rates_chain_network_address_t *chain_addressesItem = v1_exchange_rates_chain_network_address_parseFromJSON(chain_addresses_local_nonprimitive);
 
         list_addElement(chain_addressesList, chain_addressesItem);
     }
@@ -944,7 +944,7 @@ end:
     if (chain_addressesList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, chain_addressesList) {
-            v1_chain_network_address_free(listEntry->data);
+            v1_exchange_rates_chain_network_address_free(listEntry->data);
             listEntry->data = NULL;
         }
         list_freeList(chain_addressesList);

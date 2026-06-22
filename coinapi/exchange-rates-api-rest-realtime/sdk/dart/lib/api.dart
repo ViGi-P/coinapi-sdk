@@ -33,9 +33,9 @@ part 'api/metadata_api.dart';
 part 'api/rate_limit_api.dart';
 
 part 'model/v1_asset.dart';
-part 'model/v1_chain_network_address.dart';
 part 'model/v1_exchange_rate.dart';
 part 'model/v1_exchange_rates.dart';
+part 'model/v1_exchange_rates_chain_network_address.dart';
 part 'model/v1_exchange_rates_rate.dart';
 part 'model/v1_icon.dart';
 

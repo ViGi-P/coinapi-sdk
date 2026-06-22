@@ -18,12 +18,12 @@ src/RateLimitManager.h
 src/RequestInfo.h
 src/V1Asset.cpp
 src/V1Asset.h
-src/V1ChainNetworkAddress.cpp
-src/V1ChainNetworkAddress.h
 src/V1ExchangeRate.cpp
 src/V1ExchangeRate.h
 src/V1ExchangeRates.cpp
 src/V1ExchangeRates.h
+src/V1ExchangeRatesChainNetworkAddress.cpp
+src/V1ExchangeRatesChainNetworkAddress.h
 src/V1ExchangeRatesRate.cpp
 src/V1ExchangeRatesRate.h
 src/V1Icon.cpp

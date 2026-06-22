@@ -1,7 +1,7 @@
 (ns exchange-rates-realtime-rest-api.specs.v1/asset
   (:require [clojure.spec.alpha :as s]
             [spec-tools.data-spec :as ds]
-            [exchange-rates-realtime-rest-api.specs.v1/chain-network-address :refer :all]
+            [exchange-rates-realtime-rest-api.specs.v1/exchange-rates-chain-network-address :refer :all]
             )
   (:import (java.io File)))
 
@@ -26,7 +26,7 @@
    (ds/opt :supply_current) float?
    (ds/opt :supply_total) float?
    (ds/opt :supply_max) float?
-   (ds/opt :chain_addresses) (s/coll-of v1/chain-network-address-spec)
+   (ds/opt :chain_addresses) (s/coll-of v1/exchange-rates-chain-network-address-spec)
    (ds/opt :data_start) string?
    (ds/opt :data_end) string?
    })

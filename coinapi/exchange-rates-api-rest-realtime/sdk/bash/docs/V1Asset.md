@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **supplyUnderscorecurrent** | **float** |  | [optional] [default to null]
 **supplyUnderscoretotal** | **float** |  | [optional] [default to null]
 **supplyUnderscoremax** | **float** |  | [optional] [default to null]
-**chainUnderscoreaddresses** | [**array[V1ChainNetworkAddress]**](V1ChainNetworkAddress.md) |  | [optional] [default to null]
+**chainUnderscoreaddresses** | [**array[V1ExchangeRatesChainNetworkAddress]**](V1ExchangeRatesChainNetworkAddress.md) |  | [optional] [default to null]
 **dataUnderscorestart** | **string** |  | [optional] [readonly] [default to null]
 **dataUnderscoreend** | **string** |  | [optional] [readonly] [default to null]
 

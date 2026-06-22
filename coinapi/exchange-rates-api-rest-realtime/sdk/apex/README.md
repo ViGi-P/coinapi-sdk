@@ -79,9 +79,9 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OASV1Asset](OASV1Asset.md)
- - [OASV1ChainNetworkAddress](OASV1ChainNetworkAddress.md)
  - [OASV1ExchangeRate](OASV1ExchangeRate.md)
  - [OASV1ExchangeRates](OASV1ExchangeRates.md)
+ - [OASV1ExchangeRatesChainNetworkAddres](OASV1ExchangeRatesChainNetworkAddres.md)
  - [OASV1ExchangeRatesRate](OASV1ExchangeRatesRate.md)
  - [OASV1Icon](OASV1Icon.md)
 

@@ -125,7 +125,7 @@ void main() {
     });
 
     // 
-    // List<V1ChainNetworkAddress> chainAddresses (default value: const [])
+    // List<V1ExchangeRatesChainNetworkAddress> chainAddresses (default value: const [])
     test('to test the property `chainAddresses`', () async {
       // TODO
     });

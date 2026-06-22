@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use WWW::OpenAPIClient::Object::V1ChainNetworkAddress;
+use WWW::OpenAPIClient::Object::V1ExchangeRatesChainNetworkAddress;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -347,7 +347,7 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'chain_addresses' => {
-        datatype => 'ARRAY[V1ChainNetworkAddress]',
+        datatype => 'ARRAY[V1ExchangeRatesChainNetworkAddress]',
         base_name => 'chain_addresses',
         description => '',
         format => '',
@@ -388,7 +388,7 @@ __PACKAGE__->openapi_types( {
     'supply_current' => 'double',
     'supply_total' => 'double',
     'supply_max' => 'double',
-    'chain_addresses' => 'ARRAY[V1ChainNetworkAddress]',
+    'chain_addresses' => 'ARRAY[V1ExchangeRatesChainNetworkAddress]',
     'data_start' => 'string',
     'data_end' => 'string'
 } );

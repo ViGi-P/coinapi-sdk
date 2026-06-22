@@ -15,9 +15,9 @@ import 'package:openapi/src/date_serializer.dart';
 import 'package:openapi/src/model/date.dart';
 
 import 'package:openapi/src/model/v1_asset.dart';
-import 'package:openapi/src/model/v1_chain_network_address.dart';
 import 'package:openapi/src/model/v1_exchange_rate.dart';
 import 'package:openapi/src/model/v1_exchange_rates.dart';
+import 'package:openapi/src/model/v1_exchange_rates_chain_network_address.dart';
 import 'package:openapi/src/model/v1_exchange_rates_rate.dart';
 import 'package:openapi/src/model/v1_icon.dart';
 
@@ -25,9 +25,9 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   V1Asset,
-  V1ChainNetworkAddress,
   V1ExchangeRate,
   V1ExchangeRates,
+  V1ExchangeRatesChainNetworkAddress,
   V1ExchangeRatesRate,
   V1Icon,
 ])
