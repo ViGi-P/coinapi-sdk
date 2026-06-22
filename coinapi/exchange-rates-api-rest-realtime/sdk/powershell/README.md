@@ -66,9 +66,9 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [PSOpenAPITools\Model.V1Asset](docs/V1Asset.md)
- - [PSOpenAPITools\Model.V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
  - [PSOpenAPITools\Model.V1ExchangeRate](docs/V1ExchangeRate.md)
  - [PSOpenAPITools\Model.V1ExchangeRates](docs/V1ExchangeRates.md)
+ - [PSOpenAPITools\Model.V1ExchangeRatesChainNetworkAddress](docs/V1ExchangeRatesChainNetworkAddress.md)
  - [PSOpenAPITools\Model.V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [PSOpenAPITools\Model.V1Icon](docs/V1Icon.md)
 

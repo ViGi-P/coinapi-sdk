@@ -27,9 +27,9 @@ build = {
 		["openapiclient.api.metadata_api"] = "openapiclient/api/metadata_api.lua";
 		["openapiclient.api.rate_limit_api"] = "openapiclient/api/rate_limit_api.lua";
 		["openapiclient.model.v1_asset"] = "openapiclient/model/v1_asset.lua";
-		["openapiclient.model.v1_chain_network_address"] = "openapiclient/model/v1_chain_network_address.lua";
 		["openapiclient.model.v1_exchange_rate"] = "openapiclient/model/v1_exchange_rate.lua";
 		["openapiclient.model.v1_exchange_rates"] = "openapiclient/model/v1_exchange_rates.lua";
+		["openapiclient.model.v1_exchange_rates_chain_network_address"] = "openapiclient/model/v1_exchange_rates_chain_network_address.lua";
 		["openapiclient.model.v1_exchange_rates_rate"] = "openapiclient/model/v1_exchange_rates_rate.lua";
 		["openapiclient.model.v1_icon"] = "openapiclient/model/v1_icon.lua";
 	}

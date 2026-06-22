@@ -53,7 +53,7 @@ case class Asset (
   /* Gets or sets the maximum supply of the asset. */
   supplyMax: Option[Double] = None,
   /*  */
-  chainAddresses: Option[Seq[ChainNetworkAddress]] = None,
+  chainAddresses: Option[Seq[ExchangeRatesChainNetworkAddress]] = None,
   dataStart: Option[String] = None,
   dataEnd: Option[String] = None
 ) extends ApiModel

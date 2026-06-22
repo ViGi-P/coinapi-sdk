@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import V1ChainNetworkAddress from './V1ChainNetworkAddress';
+import V1ExchangeRatesChainNetworkAddress from './V1ExchangeRatesChainNetworkAddress';
 
 /**
  * The V1Asset model module.
@@ -104,7 +104,7 @@ class V1Asset {
                 obj['supply_max'] = ApiClient.convertToType(data['supply_max'], 'Number');
             }
             if (data.hasOwnProperty('chain_addresses')) {
-                obj['chain_addresses'] = ApiClient.convertToType(data['chain_addresses'], [V1ChainNetworkAddress]);
+                obj['chain_addresses'] = ApiClient.convertToType(data['chain_addresses'], [V1ExchangeRatesChainNetworkAddress]);
             }
             if (data.hasOwnProperty('data_start')) {
                 obj['data_start'] = ApiClient.convertToType(data['data_start'], 'String');
@@ -141,7 +141,7 @@ class V1Asset {
             }
             // validate the optional field `chain_addresses` (array)
             for (const item of data['chain_addresses']) {
-                V1ChainNetworkAddress.validateJSON(item);
+                V1ExchangeRatesChainNetworkAddress.validateJSON(item);
             };
         }
         // ensure the json data is a string
@@ -271,7 +271,7 @@ V1Asset.prototype['supply_max'] = undefined;
 
 /**
  * 
- * @member {Array.<module:model/V1ChainNetworkAddress>} chain_addresses
+ * @member {Array.<module:model/V1ExchangeRatesChainNetworkAddress>} chain_addresses
  */
 V1Asset.prototype['chain_addresses'] = undefined;
 

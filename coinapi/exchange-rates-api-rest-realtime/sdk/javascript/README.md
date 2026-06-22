@@ -145,9 +145,9 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [ExchangeRatesRealtimeRestApi.V1Asset](docs/V1Asset.md)
- - [ExchangeRatesRealtimeRestApi.V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
  - [ExchangeRatesRealtimeRestApi.V1ExchangeRate](docs/V1ExchangeRate.md)
  - [ExchangeRatesRealtimeRestApi.V1ExchangeRates](docs/V1ExchangeRates.md)
+ - [ExchangeRatesRealtimeRestApi.V1ExchangeRatesChainNetworkAddress](docs/V1ExchangeRatesChainNetworkAddress.md)
  - [ExchangeRatesRealtimeRestApi.V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [ExchangeRatesRealtimeRestApi.V1Icon](docs/V1Icon.md)
 

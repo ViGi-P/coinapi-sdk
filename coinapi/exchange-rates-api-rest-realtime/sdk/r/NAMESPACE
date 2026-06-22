@@ -14,9 +14,9 @@ export(ApiResponse)
 
 # Models
 export(V1Asset)
-export(V1ChainNetworkAddress)
 export(V1ExchangeRate)
 export(V1ExchangeRates)
+export(V1ExchangeRatesChainNetworkAddress)
 export(V1ExchangeRatesRate)
 export(V1Icon)
 

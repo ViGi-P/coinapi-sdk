@@ -19,9 +19,9 @@ require 'openapi_client/configuration'
 
 # Models
 require 'openapi_client/models/v1_asset'
-require 'openapi_client/models/v1_chain_network_address'
 require 'openapi_client/models/v1_exchange_rate'
 require 'openapi_client/models/v1_exchange_rates'
+require 'openapi_client/models/v1_exchange_rates_chain_network_address'
 require 'openapi_client/models/v1_exchange_rates_rate'
 require 'openapi_client/models/v1_icon'
 

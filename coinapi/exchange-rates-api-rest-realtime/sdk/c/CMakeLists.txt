@@ -49,9 +49,9 @@ set(SRCS
     external/cJSON.c
     model/object.c
     model/v1_asset.c
-    model/v1_chain_network_address.c
     model/v1_exchange_rate.c
     model/v1_exchange_rates.c
+    model/v1_exchange_rates_chain_network_address.c
     model/v1_exchange_rates_rate.c
     model/v1_icon.c
     api/ExchangeRatesAPI.c
@@ -69,9 +69,9 @@ set(HDRS
     model/object.h
     model/any_type.h
     model/v1_asset.h
-    model/v1_chain_network_address.h
     model/v1_exchange_rate.h
     model/v1_exchange_rates.h
+    model/v1_exchange_rates_chain_network_address.h
     model/v1_exchange_rates_rate.h
     model/v1_icon.h
     api/ExchangeRatesAPI.h

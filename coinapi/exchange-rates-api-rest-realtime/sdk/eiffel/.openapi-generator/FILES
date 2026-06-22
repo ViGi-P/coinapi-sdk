@@ -6,9 +6,9 @@ docs/EXCHANGERATES_API.md
 docs/METADATA_API.md
 docs/RATELIMIT_API.md
 docs/V1_ASSET.md
-docs/V1_CHAIN_NETWORK_ADDRESS.md
 docs/V1_EXCHANGE_RATE.md
 docs/V1_EXCHANGE_RATES.md
+docs/V1_EXCHANGE_RATES_CHAIN_NETWORK_ADDRESS.md
 docs/V1_EXCHANGE_RATES_RATE.md
 docs/V1_ICON.md
 src/api/exchange_rates_api.e
@@ -16,9 +16,9 @@ src/api/metadata_api.e
 src/api/rate_limit_api.e
 src/api_client.e
 src/domain/v1_asset.e
-src/domain/v1_chain_network_address.e
 src/domain/v1_exchange_rate.e
 src/domain/v1_exchange_rates.e
+src/domain/v1_exchange_rates_chain_network_address.e
 src/domain/v1_exchange_rates_rate.e
 src/domain/v1_icon.e
 src/framework/api_client_request.e

@@ -116,7 +116,7 @@ void main() {
     });
 
     // 
-    // BuiltList<V1ChainNetworkAddress> chainAddresses
+    // BuiltList<V1ExchangeRatesChainNetworkAddress> chainAddresses
     test('to test the property `chainAddresses`', () async {
       // TODO
     });

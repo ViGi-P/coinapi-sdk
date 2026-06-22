@@ -6,9 +6,9 @@ apis/RateLimitApi.ts
 apis/index.ts
 index.ts
 models/V1Asset.ts
-models/V1ChainNetworkAddress.ts
 models/V1ExchangeRate.ts
 models/V1ExchangeRates.ts
+models/V1ExchangeRatesChainNetworkAddress.ts
 models/V1ExchangeRatesRate.ts
 models/V1Icon.ts
 models/index.ts

@@ -6,9 +6,9 @@ docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/RateLimitApi.md
 docs/V1Asset.md
-docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
 docs/V1ExchangeRates.md
+docs/V1ExchangeRatesChainNetworkAddress.md
 docs/V1ExchangeRatesRate.md
 docs/V1Icon.md
 pom.xml
@@ -25,8 +25,8 @@ src/main/scala/org/openapitools/client/core/ApiSettings.scala
 src/main/scala/org/openapitools/client/core/Serializers.scala
 src/main/scala/org/openapitools/client/core/requests.scala
 src/main/scala/org/openapitools/client/model/Asset.scala
-src/main/scala/org/openapitools/client/model/ChainNetworkAddress.scala
 src/main/scala/org/openapitools/client/model/ExchangeRate.scala
 src/main/scala/org/openapitools/client/model/ExchangeRates.scala
+src/main/scala/org/openapitools/client/model/ExchangeRatesChainNetworkAddress.scala
 src/main/scala/org/openapitools/client/model/ExchangeRatesRate.scala
 src/main/scala/org/openapitools/client/model/Icon.scala
