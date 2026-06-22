@@ -58,7 +58,7 @@ type V1Asset struct {
 	// Gets or sets the maximum supply of the asset.
 	SupplyMax NullableFloat64 `json:"supply_max,omitempty"`
 	// 
-	ChainAddresses []V1ChainNetworkAddress `json:"chain_addresses,omitempty"`
+	ChainAddresses []V1ExchangeRatesChainNetworkAddress `json:"chain_addresses,omitempty"`
 	DataStart NullableString `json:"data_start,omitempty"`
 	DataEnd NullableString `json:"data_end,omitempty"`
 }
@@ -827,9 +827,9 @@ func (o *V1Asset) UnsetSupplyMax() {
 }
 
 // GetChainAddresses returns the ChainAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *V1Asset) GetChainAddresses() []V1ChainNetworkAddress {
+func (o *V1Asset) GetChainAddresses() []V1ExchangeRatesChainNetworkAddress {
 	if o == nil {
-		var ret []V1ChainNetworkAddress
+		var ret []V1ExchangeRatesChainNetworkAddress
 		return ret
 	}
 	return o.ChainAddresses
@@ -838,7 +838,7 @@ func (o *V1Asset) GetChainAddresses() []V1ChainNetworkAddress {
 // GetChainAddressesOk returns a tuple with the ChainAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *V1Asset) GetChainAddressesOk() ([]V1ChainNetworkAddress, bool) {
+func (o *V1Asset) GetChainAddressesOk() ([]V1ExchangeRatesChainNetworkAddress, bool) {
 	if o == nil || IsNil(o.ChainAddresses) {
 		return nil, false
 	}
@@ -854,8 +854,8 @@ func (o *V1Asset) HasChainAddresses() bool {
 	return false
 }
 
-// SetChainAddresses gets a reference to the given []V1ChainNetworkAddress and assigns it to the ChainAddresses field.
-func (o *V1Asset) SetChainAddresses(v []V1ChainNetworkAddress) {
+// SetChainAddresses gets a reference to the given []V1ExchangeRatesChainNetworkAddress and assigns it to the ChainAddresses field.
+func (o *V1Asset) SetChainAddresses(v []V1ExchangeRatesChainNetworkAddress) {
 	o.ChainAddresses = v
 }
 

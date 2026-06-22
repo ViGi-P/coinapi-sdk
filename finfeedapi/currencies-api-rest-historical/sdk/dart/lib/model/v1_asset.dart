@@ -97,7 +97,7 @@ class V1Asset {
   double? supplyMax;
 
   /// 
-  List<V1ChainNetworkAddress>? chainAddresses;
+  List<V1ExchangeRatesChainNetworkAddress>? chainAddresses;
 
   String? dataStart;
 
@@ -298,7 +298,7 @@ class V1Asset {
         supplyCurrent: mapValueOfType<double>(json, r'supply_current'),
         supplyTotal: mapValueOfType<double>(json, r'supply_total'),
         supplyMax: mapValueOfType<double>(json, r'supply_max'),
-        chainAddresses: V1ChainNetworkAddress.listFromJson(json[r'chain_addresses']),
+        chainAddresses: V1ExchangeRatesChainNetworkAddress.listFromJson(json[r'chain_addresses']),
         dataStart: mapValueOfType<String>(json, r'data_start'),
         dataEnd: mapValueOfType<String>(json, r'data_end'),
       );

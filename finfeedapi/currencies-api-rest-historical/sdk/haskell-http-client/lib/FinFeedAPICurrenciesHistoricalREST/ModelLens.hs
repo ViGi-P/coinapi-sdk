@@ -130,7 +130,7 @@ v1AssetSupplyMaxL f V1Asset{..} = (\v1AssetSupplyMax -> V1Asset { v1AssetSupplyM
 {-# INLINE v1AssetSupplyMaxL #-}
 
 -- | 'v1AssetChainAddresses' Lens
-v1AssetChainAddressesL :: Lens_' V1Asset (Maybe [V1ChainNetworkAddress])
+v1AssetChainAddressesL :: Lens_' V1Asset (Maybe [V1ExchangeRatesChainNetworkAddress])
 v1AssetChainAddressesL f V1Asset{..} = (\v1AssetChainAddresses -> V1Asset { v1AssetChainAddresses, ..} ) <$> f v1AssetChainAddresses
 {-# INLINE v1AssetChainAddressesL #-}
 
@@ -143,25 +143,6 @@ v1AssetDataStartL f V1Asset{..} = (\v1AssetDataStart -> V1Asset { v1AssetDataSta
 v1AssetDataEndL :: Lens_' V1Asset (Maybe Text)
 v1AssetDataEndL f V1Asset{..} = (\v1AssetDataEnd -> V1Asset { v1AssetDataEnd, ..} ) <$> f v1AssetDataEnd
 {-# INLINE v1AssetDataEndL #-}
-
-
-
--- * V1ChainNetworkAddress
-
--- | 'v1ChainNetworkAddressChainId' Lens
-v1ChainNetworkAddressChainIdL :: Lens_' V1ChainNetworkAddress (Maybe Text)
-v1ChainNetworkAddressChainIdL f V1ChainNetworkAddress{..} = (\v1ChainNetworkAddressChainId -> V1ChainNetworkAddress { v1ChainNetworkAddressChainId, ..} ) <$> f v1ChainNetworkAddressChainId
-{-# INLINE v1ChainNetworkAddressChainIdL #-}
-
--- | 'v1ChainNetworkAddressNetworkId' Lens
-v1ChainNetworkAddressNetworkIdL :: Lens_' V1ChainNetworkAddress (Maybe Text)
-v1ChainNetworkAddressNetworkIdL f V1ChainNetworkAddress{..} = (\v1ChainNetworkAddressNetworkId -> V1ChainNetworkAddress { v1ChainNetworkAddressNetworkId, ..} ) <$> f v1ChainNetworkAddressNetworkId
-{-# INLINE v1ChainNetworkAddressNetworkIdL #-}
-
--- | 'v1ChainNetworkAddressAddress' Lens
-v1ChainNetworkAddressAddressL :: Lens_' V1ChainNetworkAddress (Maybe Text)
-v1ChainNetworkAddressAddressL f V1ChainNetworkAddress{..} = (\v1ChainNetworkAddressAddress -> V1ChainNetworkAddress { v1ChainNetworkAddressAddress, ..} ) <$> f v1ChainNetworkAddressAddress
-{-# INLINE v1ChainNetworkAddressAddressL #-}
 
 
 
@@ -200,6 +181,25 @@ v1ExchangeRatesAssetIdBaseL f V1ExchangeRates{..} = (\v1ExchangeRatesAssetIdBase
 v1ExchangeRatesRatesL :: Lens_' V1ExchangeRates (Maybe [V1ExchangeRatesRate])
 v1ExchangeRatesRatesL f V1ExchangeRates{..} = (\v1ExchangeRatesRates -> V1ExchangeRates { v1ExchangeRatesRates, ..} ) <$> f v1ExchangeRatesRates
 {-# INLINE v1ExchangeRatesRatesL #-}
+
+
+
+-- * V1ExchangeRatesChainNetworkAddress
+
+-- | 'v1ExchangeRatesChainNetworkAddressChainId' Lens
+v1ExchangeRatesChainNetworkAddressChainIdL :: Lens_' V1ExchangeRatesChainNetworkAddress (Maybe Text)
+v1ExchangeRatesChainNetworkAddressChainIdL f V1ExchangeRatesChainNetworkAddress{..} = (\v1ExchangeRatesChainNetworkAddressChainId -> V1ExchangeRatesChainNetworkAddress { v1ExchangeRatesChainNetworkAddressChainId, ..} ) <$> f v1ExchangeRatesChainNetworkAddressChainId
+{-# INLINE v1ExchangeRatesChainNetworkAddressChainIdL #-}
+
+-- | 'v1ExchangeRatesChainNetworkAddressNetworkId' Lens
+v1ExchangeRatesChainNetworkAddressNetworkIdL :: Lens_' V1ExchangeRatesChainNetworkAddress (Maybe Text)
+v1ExchangeRatesChainNetworkAddressNetworkIdL f V1ExchangeRatesChainNetworkAddress{..} = (\v1ExchangeRatesChainNetworkAddressNetworkId -> V1ExchangeRatesChainNetworkAddress { v1ExchangeRatesChainNetworkAddressNetworkId, ..} ) <$> f v1ExchangeRatesChainNetworkAddressNetworkId
+{-# INLINE v1ExchangeRatesChainNetworkAddressNetworkIdL #-}
+
+-- | 'v1ExchangeRatesChainNetworkAddressAddress' Lens
+v1ExchangeRatesChainNetworkAddressAddressL :: Lens_' V1ExchangeRatesChainNetworkAddress (Maybe Text)
+v1ExchangeRatesChainNetworkAddressAddressL f V1ExchangeRatesChainNetworkAddress{..} = (\v1ExchangeRatesChainNetworkAddressAddress -> V1ExchangeRatesChainNetworkAddress { v1ExchangeRatesChainNetworkAddressAddress, ..} ) <$> f v1ExchangeRatesChainNetworkAddressAddress
+{-# INLINE v1ExchangeRatesChainNetworkAddressAddressL #-}
 
 
 

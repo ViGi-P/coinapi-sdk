@@ -10,9 +10,9 @@ configuration.go
 docs/ExchangeRatesAPI.md
 docs/MetadataAPI.md
 docs/V1Asset.md
-docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
 docs/V1ExchangeRates.md
+docs/V1ExchangeRatesChainNetworkAddress.md
 docs/V1ExchangeRatesRate.md
 docs/V1ExchangeRatesTimeseriesItem.md
 docs/V1Icon.md
@@ -21,9 +21,9 @@ git_push.sh
 go.mod
 go.sum
 model_v1_asset.go
-model_v1_chain_network_address.go
 model_v1_exchange_rate.go
 model_v1_exchange_rates.go
+model_v1_exchange_rates_chain_network_address.go
 model_v1_exchange_rates_rate.go
 model_v1_exchange_rates_timeseries_item.go
 model_v1_icon.go

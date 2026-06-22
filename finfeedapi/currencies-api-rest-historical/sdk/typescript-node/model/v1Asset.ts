@@ -11,7 +11,7 @@
  */
 
 import { RequestFile } from './models';
-import { V1ChainNetworkAddress } from './v1ChainNetworkAddress';
+import { V1ExchangeRatesChainNetworkAddress } from './v1ExchangeRatesChainNetworkAddress';
 
 /**
 * Represents an asset.
@@ -92,7 +92,7 @@ export class V1Asset {
     /**
     * 
     */
-    'chainAddresses'?: Array<V1ChainNetworkAddress> | null;
+    'chainAddresses'?: Array<V1ExchangeRatesChainNetworkAddress> | null;
     'dataStart'?: string | null;
     'dataEnd'?: string | null;
 
@@ -192,7 +192,7 @@ export class V1Asset {
         {
             "name": "chainAddresses",
             "baseName": "chain_addresses",
-            "type": "Array<V1ChainNetworkAddress>"
+            "type": "Array<V1ExchangeRatesChainNetworkAddress>"
         },
         {
             "name": "dataStart",

@@ -6,9 +6,9 @@ configuration.ts
 git_push.sh
 index.ts
 model/V1Asset.ts
-model/V1ChainNetworkAddress.ts
 model/V1ExchangeRate.ts
 model/V1ExchangeRates.ts
+model/V1ExchangeRatesChainNetworkAddress.ts
 model/V1ExchangeRatesRate.ts
 model/V1ExchangeRatesTimeseriesItem.ts
 model/V1Icon.ts

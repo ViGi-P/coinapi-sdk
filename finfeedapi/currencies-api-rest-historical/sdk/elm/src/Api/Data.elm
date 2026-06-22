@@ -16,25 +16,25 @@
 
 module Api.Data exposing
     ( V1Asset
-    , V1ChainNetworkAddress
     , V1ExchangeRate
     , V1ExchangeRates
+    , V1ExchangeRatesChainNetworkAddress
     , V1ExchangeRatesRate
     , V1ExchangeRatesTimeseriesItem
     , V1Icon
     , V1TimeseriesPeriod
     , encodeV1Asset
-    , encodeV1ChainNetworkAddress
     , encodeV1ExchangeRate
     , encodeV1ExchangeRates
+    , encodeV1ExchangeRatesChainNetworkAddress
     , encodeV1ExchangeRatesRate
     , encodeV1ExchangeRatesTimeseriesItem
     , encodeV1Icon
     , encodeV1TimeseriesPeriod
     , v1AssetDecoder
-    , v1ChainNetworkAddressDecoder
     , v1ExchangeRateDecoder
     , v1ExchangeRatesDecoder
+    , v1ExchangeRatesChainNetworkAddressDecoder
     , v1ExchangeRatesRateDecoder
     , v1ExchangeRatesTimeseriesItemDecoder
     , v1IconDecoder
@@ -73,18 +73,9 @@ type alias V1Asset =
     , supplyCurrent : Maybe Float
     , supplyTotal : Maybe Float
     , supplyMax : Maybe Float
-    , chainAddresses : Maybe ( List V1ChainNetworkAddress )
+    , chainAddresses : Maybe ( List V1ExchangeRatesChainNetworkAddress )
     , dataStart : Maybe String
     , dataEnd : Maybe String
-    }
-
-
-{-| Contains information about assets' chain network addresses
--}
-type alias V1ChainNetworkAddress =
-    { chainId : Maybe String
-    , networkId : Maybe String
-    , address : Maybe String
     }
 
 
@@ -103,6 +94,15 @@ type alias V1ExchangeRate =
 type alias V1ExchangeRates =
     { assetIdBase : Maybe String
     , rates : Maybe ( List V1ExchangeRatesRate )
+    }
+
+
+{-| Contains information about assets' chain network addresses
+-}
+type alias V1ExchangeRatesChainNetworkAddress =
+    { chainId : Maybe String
+    , networkId : Maybe String
+    , address : Maybe String
     }
 
 
@@ -185,31 +185,9 @@ encodeV1AssetPairs model =
             , maybeEncodeNullable "supply_current" Json.Encode.float model.supplyCurrent
             , maybeEncodeNullable "supply_total" Json.Encode.float model.supplyTotal
             , maybeEncodeNullable "supply_max" Json.Encode.float model.supplyMax
-            , maybeEncodeNullable "chain_addresses" (Json.Encode.list encodeV1ChainNetworkAddress) model.chainAddresses
+            , maybeEncodeNullable "chain_addresses" (Json.Encode.list encodeV1ExchangeRatesChainNetworkAddress) model.chainAddresses
             , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
             , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
-            ]
-    in
-    pairs
-
-
-encodeV1ChainNetworkAddress : V1ChainNetworkAddress -> Json.Encode.Value
-encodeV1ChainNetworkAddress =
-    encodeObject << encodeV1ChainNetworkAddressPairs
-
-
-encodeV1ChainNetworkAddressWithTag : ( String, String ) -> V1ChainNetworkAddress -> Json.Encode.Value
-encodeV1ChainNetworkAddressWithTag (tagField, tag) model =
-    encodeObject (encodeV1ChainNetworkAddressPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeV1ChainNetworkAddressPairs : V1ChainNetworkAddress -> List EncodedField
-encodeV1ChainNetworkAddressPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "chain_id" Json.Encode.string model.chainId
-            , maybeEncodeNullable "network_id" Json.Encode.string model.networkId
-            , maybeEncodeNullable "address" Json.Encode.string model.address
             ]
     in
     pairs
@@ -254,6 +232,28 @@ encodeV1ExchangeRatesPairs model =
         pairs =
             [ maybeEncodeNullable "asset_id_base" Json.Encode.string model.assetIdBase
             , maybeEncodeNullable "rates" (Json.Encode.list encodeV1ExchangeRatesRate) model.rates
+            ]
+    in
+    pairs
+
+
+encodeV1ExchangeRatesChainNetworkAddress : V1ExchangeRatesChainNetworkAddress -> Json.Encode.Value
+encodeV1ExchangeRatesChainNetworkAddress =
+    encodeObject << encodeV1ExchangeRatesChainNetworkAddressPairs
+
+
+encodeV1ExchangeRatesChainNetworkAddressWithTag : ( String, String ) -> V1ExchangeRatesChainNetworkAddress -> Json.Encode.Value
+encodeV1ExchangeRatesChainNetworkAddressWithTag (tagField, tag) model =
+    encodeObject (encodeV1ExchangeRatesChainNetworkAddressPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeV1ExchangeRatesChainNetworkAddressPairs : V1ExchangeRatesChainNetworkAddress -> List EncodedField
+encodeV1ExchangeRatesChainNetworkAddressPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "chain_id" Json.Encode.string model.chainId
+            , maybeEncodeNullable "network_id" Json.Encode.string model.networkId
+            , maybeEncodeNullable "address" Json.Encode.string model.address
             ]
     in
     pairs
@@ -379,17 +379,9 @@ v1AssetDecoder =
         |> maybeDecodeNullable "supply_current" Json.Decode.float Nothing
         |> maybeDecodeNullable "supply_total" Json.Decode.float Nothing
         |> maybeDecodeNullable "supply_max" Json.Decode.float Nothing
-        |> maybeDecodeNullable "chain_addresses" (Json.Decode.list v1ChainNetworkAddressDecoder) Nothing
+        |> maybeDecodeNullable "chain_addresses" (Json.Decode.list v1ExchangeRatesChainNetworkAddressDecoder) Nothing
         |> maybeDecodeNullable "data_start" Json.Decode.string Nothing
         |> maybeDecodeNullable "data_end" Json.Decode.string Nothing
-
-
-v1ChainNetworkAddressDecoder : Json.Decode.Decoder V1ChainNetworkAddress
-v1ChainNetworkAddressDecoder =
-    Json.Decode.succeed V1ChainNetworkAddress
-        |> maybeDecodeNullable "chain_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "network_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "address" Json.Decode.string Nothing
 
 
 v1ExchangeRateDecoder : Json.Decode.Decoder V1ExchangeRate
@@ -406,6 +398,14 @@ v1ExchangeRatesDecoder =
     Json.Decode.succeed V1ExchangeRates
         |> maybeDecodeNullable "asset_id_base" Json.Decode.string Nothing
         |> maybeDecodeNullable "rates" (Json.Decode.list v1ExchangeRatesRateDecoder) Nothing
+
+
+v1ExchangeRatesChainNetworkAddressDecoder : Json.Decode.Decoder V1ExchangeRatesChainNetworkAddress
+v1ExchangeRatesChainNetworkAddressDecoder =
+    Json.Decode.succeed V1ExchangeRatesChainNetworkAddress
+        |> maybeDecodeNullable "chain_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "network_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "address" Json.Decode.string Nothing
 
 
 v1ExchangeRatesRateDecoder : Json.Decode.Decoder V1ExchangeRatesRate

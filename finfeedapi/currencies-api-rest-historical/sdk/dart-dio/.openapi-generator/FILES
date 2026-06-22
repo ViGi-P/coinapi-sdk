@@ -5,9 +5,9 @@ analysis_options.yaml
 doc/ExchangeRatesApi.md
 doc/MetadataApi.md
 doc/V1Asset.md
-doc/V1ChainNetworkAddress.md
 doc/V1ExchangeRate.md
 doc/V1ExchangeRates.md
+doc/V1ExchangeRatesChainNetworkAddress.md
 doc/V1ExchangeRatesRate.md
 doc/V1ExchangeRatesTimeseriesItem.md
 doc/V1Icon.md
@@ -25,9 +25,9 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/date.dart
 lib/src/model/v1_asset.dart
-lib/src/model/v1_chain_network_address.dart
 lib/src/model/v1_exchange_rate.dart
 lib/src/model/v1_exchange_rates.dart
+lib/src/model/v1_exchange_rates_chain_network_address.dart
 lib/src/model/v1_exchange_rates_rate.dart
 lib/src/model/v1_exchange_rates_timeseries_item.dart
 lib/src/model/v1_icon.dart
@@ -37,8 +37,8 @@ pubspec.yaml
 test/exchange_rates_api_test.dart
 test/metadata_api_test.dart
 test/v1_asset_test.dart
-test/v1_chain_network_address_test.dart
 test/v1_exchange_rate_test.dart
+test/v1_exchange_rates_chain_network_address_test.dart
 test/v1_exchange_rates_rate_test.dart
 test/v1_exchange_rates_test.dart
 test/v1_exchange_rates_timeseries_item_test.dart

@@ -367,12 +367,12 @@ V1.Asset::fromJson(char* jsonStr)
 		{
 			JsonArray* arr = json_node_get_array(node);
 			JsonNode*  temp_json;
-			list<V1.ChainNetworkAddress> new_list;
-			V1.ChainNetworkAddress inst;
+			list<V1.ExchangeRatesChainNetworkAddress> new_list;
+			V1.ExchangeRatesChainNetworkAddress inst;
 			for (guint i=0;i<json_array_get_length(arr);i++) {
 				temp_json = json_array_get_element(arr,i);
-				if (isprimitive("V1.ChainNetworkAddress")) {
-					jsonToValue(&inst, temp_json, "V1.ChainNetworkAddress", "");
+				if (isprimitive("V1.ExchangeRatesChainNetworkAddress")) {
+					jsonToValue(&inst, temp_json, "V1.ExchangeRatesChainNetworkAddress", "");
 				} else {
 					
 					inst.fromJson(json_to_string(temp_json, false));
@@ -580,18 +580,18 @@ V1.Asset::toJson()
 	}
 	const gchar *supply_maxKey = "supply_max";
 	json_object_set_member(pJsonObject, supply_maxKey, node);
-	if (isprimitive("V1.ChainNetworkAddress")) {
-		list<V1.ChainNetworkAddress> new_list = static_cast<list <V1.ChainNetworkAddress> > (getChainAddresses());
-		node = converttoJson(&new_list, "V1.ChainNetworkAddress", "array");
+	if (isprimitive("V1.ExchangeRatesChainNetworkAddress")) {
+		list<V1.ExchangeRatesChainNetworkAddress> new_list = static_cast<list <V1.ExchangeRatesChainNetworkAddress> > (getChainAddresses());
+		node = converttoJson(&new_list, "V1.ExchangeRatesChainNetworkAddress", "array");
 	} else {
 		node = json_node_alloc();
-		list<V1.ChainNetworkAddress> new_list = static_cast<list <V1.ChainNetworkAddress> > (getChainAddresses());
+		list<V1.ExchangeRatesChainNetworkAddress> new_list = static_cast<list <V1.ExchangeRatesChainNetworkAddress> > (getChainAddresses());
 		JsonArray* json_array = json_array_new();
 		GError *mygerror;
 		
-		for (list<V1.ChainNetworkAddress>::iterator it = new_list.begin(); it != new_list.end(); it++) {
+		for (list<V1.ExchangeRatesChainNetworkAddress>::iterator it = new_list.begin(); it != new_list.end(); it++) {
 			mygerror = NULL;
-			V1.ChainNetworkAddress obj = *it;
+			V1.ExchangeRatesChainNetworkAddress obj = *it;
 			JsonNode *node_temp = json_from_string(obj.toJson(), &mygerror);
 			json_array_add_element(json_array, node_temp);
 			g_clear_error(&mygerror);
@@ -847,14 +847,14 @@ V1.Asset::setSupplyMax(double  supply_max)
 	this->supply_max = supply_max;
 }
 
-std::list<V1.ChainNetworkAddress>
+std::list<V1.ExchangeRatesChainNetworkAddress>
 V1.Asset::getChainAddresses()
 {
 	return chain_addresses;
 }
 
 void
-V1.Asset::setChainAddresses(std::list <V1.ChainNetworkAddress> chain_addresses)
+V1.Asset::setChainAddresses(std::list <V1.ExchangeRatesChainNetworkAddress> chain_addresses)
 {
 	this->chain_addresses = chain_addresses;
 }

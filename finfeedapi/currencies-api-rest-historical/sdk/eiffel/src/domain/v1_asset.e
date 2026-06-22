@@ -55,7 +55,7 @@ feature --Access
       -- Gets or sets the total supply of the asset.
     supply_max: REAL_64
       -- Gets or sets the maximum supply of the asset.
-    chain_addresses: detachable LIST [V1_CHAIN_NETWORK_ADDRESS]
+    chain_addresses: detachable LIST [V1_EXCHANGE_RATES_CHAIN_NETWORK_ADDRESS]
       -- 
     data_start: detachable STRING_32
       

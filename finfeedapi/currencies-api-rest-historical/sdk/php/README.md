@@ -91,9 +91,9 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [V1Asset](docs/Model/V1Asset.md)
-- [V1ChainNetworkAddress](docs/Model/V1ChainNetworkAddress.md)
 - [V1ExchangeRate](docs/Model/V1ExchangeRate.md)
 - [V1ExchangeRates](docs/Model/V1ExchangeRates.md)
+- [V1ExchangeRatesChainNetworkAddress](docs/Model/V1ExchangeRatesChainNetworkAddress.md)
 - [V1ExchangeRatesRate](docs/Model/V1ExchangeRatesRate.md)
 - [V1ExchangeRatesTimeseriesItem](docs/Model/V1ExchangeRatesTimeseriesItem.md)
 - [V1Icon](docs/Model/V1Icon.md)

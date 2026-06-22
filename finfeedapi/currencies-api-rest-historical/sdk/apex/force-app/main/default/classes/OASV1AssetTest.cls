@@ -98,7 +98,7 @@ private class OASV1AssetTest {
     @isTest
     private static void defaultValuesPopulated() {
         OASV1Asset v1Asset = new OASV1Asset();
-        System.assertEquals(new List<OASV1ChainNetworkAddress>(), v1Asset.chainAddresses);
+        System.assertEquals(new List<OASV1ExchangeRatesChainNetworkAddres>(), v1Asset.chainAddresses);
         System.assertEquals(null, v1Asset.assetId);
         System.assertEquals(null, v1Asset.name);
         System.assertEquals(null, v1Asset.typeIsCrypto);

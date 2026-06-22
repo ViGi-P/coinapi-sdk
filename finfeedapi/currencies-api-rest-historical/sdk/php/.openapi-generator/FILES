@@ -7,9 +7,9 @@ composer.json
 docs/Api/ExchangeRatesApi.md
 docs/Api/MetadataApi.md
 docs/Model/V1Asset.md
-docs/Model/V1ChainNetworkAddress.md
 docs/Model/V1ExchangeRate.md
 docs/Model/V1ExchangeRates.md
+docs/Model/V1ExchangeRatesChainNetworkAddress.md
 docs/Model/V1ExchangeRatesRate.md
 docs/Model/V1ExchangeRatesTimeseriesItem.md
 docs/Model/V1Icon.md
@@ -23,9 +23,9 @@ lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/Model/ModelInterface.php
 lib/Model/V1Asset.php
-lib/Model/V1ChainNetworkAddress.php
 lib/Model/V1ExchangeRate.php
 lib/Model/V1ExchangeRates.php
+lib/Model/V1ExchangeRatesChainNetworkAddress.php
 lib/Model/V1ExchangeRatesRate.php
 lib/Model/V1ExchangeRatesTimeseriesItem.php
 lib/Model/V1Icon.php
@@ -35,8 +35,8 @@ phpunit.xml.dist
 test/Api/ExchangeRatesApiTest.php
 test/Api/MetadataApiTest.php
 test/Model/V1AssetTest.php
-test/Model/V1ChainNetworkAddressTest.php
 test/Model/V1ExchangeRateTest.php
+test/Model/V1ExchangeRatesChainNetworkAddressTest.php
 test/Model/V1ExchangeRatesRateTest.php
 test/Model/V1ExchangeRatesTest.php
 test/Model/V1ExchangeRatesTimeseriesItemTest.php

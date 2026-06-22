@@ -26,7 +26,7 @@ Represents an asset.
 |**supplyCurrent** | **Double** | Gets or sets the current supply of the asset. |  [optional] |
 |**supplyTotal** | **Double** | Gets or sets the total supply of the asset. |  [optional] |
 |**supplyMax** | **Double** | Gets or sets the maximum supply of the asset. |  [optional] |
-|**chainAddresses** | [**List&lt;V1ChainNetworkAddress&gt;**](V1ChainNetworkAddress.md) |  |  [optional] |
+|**chainAddresses** | [**List&lt;V1ExchangeRatesChainNetworkAddress&gt;**](V1ExchangeRatesChainNetworkAddress.md) |  |  [optional] |
 |**dataStart** | **String** |  |  [optional] [readonly] |
 |**dataEnd** | **String** |  |  [optional] [readonly] |
 

@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import org.openapitools.client.model.V1ChainNetworkAddress;
+import org.openapitools.client.model.V1ExchangeRatesChainNetworkAddress;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an asset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-19T06:05:07.972526777Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-22T06:04:57.242870181Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class V1Asset {
   public static final String SERIALIZED_NAME_ASSET_ID = "asset_id";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -149,7 +149,7 @@ public class V1Asset {
   public static final String SERIALIZED_NAME_CHAIN_ADDRESSES = "chain_addresses";
   @SerializedName(SERIALIZED_NAME_CHAIN_ADDRESSES)
   @javax.annotation.Nullable
-  private List<V1ChainNetworkAddress> chainAddresses;
+  private List<V1ExchangeRatesChainNetworkAddress> chainAddresses;
 
   public static final String SERIALIZED_NAME_DATA_START = "data_start";
   @SerializedName(SERIALIZED_NAME_DATA_START)
@@ -515,12 +515,12 @@ public class V1Asset {
   }
 
 
-  public V1Asset chainAddresses(@javax.annotation.Nullable List<V1ChainNetworkAddress> chainAddresses) {
+  public V1Asset chainAddresses(@javax.annotation.Nullable List<V1ExchangeRatesChainNetworkAddress> chainAddresses) {
     this.chainAddresses = chainAddresses;
     return this;
   }
 
-  public V1Asset addChainAddressesItem(V1ChainNetworkAddress chainAddressesItem) {
+  public V1Asset addChainAddressesItem(V1ExchangeRatesChainNetworkAddress chainAddressesItem) {
     if (this.chainAddresses == null) {
       this.chainAddresses = new ArrayList<>();
     }
@@ -533,11 +533,11 @@ public class V1Asset {
    * @return chainAddresses
    */
   @javax.annotation.Nullable
-  public List<V1ChainNetworkAddress> getChainAddresses() {
+  public List<V1ExchangeRatesChainNetworkAddress> getChainAddresses() {
     return chainAddresses;
   }
 
-  public void setChainAddresses(@javax.annotation.Nullable List<V1ChainNetworkAddress> chainAddresses) {
+  public void setChainAddresses(@javax.annotation.Nullable List<V1ExchangeRatesChainNetworkAddress> chainAddresses) {
     this.chainAddresses = chainAddresses;
   }
 
@@ -702,7 +702,7 @@ public class V1Asset {
 
           // validate the optional field `chain_addresses` (array)
           for (int i = 0; i < jsonArraychainAddresses.size(); i++) {
-            V1ChainNetworkAddress.validateJsonElement(jsonArraychainAddresses.get(i));
+            V1ExchangeRatesChainNetworkAddress.validateJsonElement(jsonArraychainAddresses.get(i));
           };
         }
       }

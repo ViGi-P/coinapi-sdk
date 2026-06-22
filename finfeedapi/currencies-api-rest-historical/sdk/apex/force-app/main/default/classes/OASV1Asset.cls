@@ -126,7 +126,7 @@ public class OASV1Asset implements OAS.MappedProperties {
      * 
      * @return chainAddresses
      */
-    public List<OASV1ChainNetworkAddress> chainAddresses { get; set; }
+    public List<OASV1ExchangeRatesChainNetworkAddres> chainAddresses { get; set; }
 
     /**
      * Get dataStart
@@ -681,7 +681,7 @@ public class OASV1Asset implements OAS.MappedProperties {
     }
 
     public OASV1Asset() {
-        chainAddresses = new List<OASV1ChainNetworkAddress>();
+        chainAddresses = new List<OASV1ExchangeRatesChainNetworkAddres>();
     }
 
     public static OASV1Asset getExample() {
@@ -704,7 +704,7 @@ public class OASV1Asset implements OAS.MappedProperties {
           v1Asset.supplyCurrent = 1.3579;
           v1Asset.supplyTotal = 1.3579;
           v1Asset.supplyMax = 1.3579;
-          v1Asset.chainAddresses = new List<OASV1ChainNetworkAddress>{OASV1ChainNetworkAddress.getExample()};
+          v1Asset.chainAddresses = new List<OASV1ExchangeRatesChainNetworkAddres>{OASV1ExchangeRatesChainNetworkAddres.getExample()};
           v1Asset.dataStart = '';
           v1Asset.dataEnd = '';
         return v1Asset;
