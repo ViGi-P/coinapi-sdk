@@ -59,9 +59,9 @@ All URIs are relative to *https://api-historical.fx.finfeedapi.com*
 ## Documentation for Models
 
  - [org.openapitools.client.models.V1Asset](docs/V1Asset.md)
- - [org.openapitools.client.models.V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
  - [org.openapitools.client.models.V1ExchangeRate](docs/V1ExchangeRate.md)
  - [org.openapitools.client.models.V1ExchangeRates](docs/V1ExchangeRates.md)
+ - [org.openapitools.client.models.V1ExchangeRatesChainNetworkAddress](docs/V1ExchangeRatesChainNetworkAddress.md)
  - [org.openapitools.client.models.V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [org.openapitools.client.models.V1ExchangeRatesTimeseriesItem](docs/V1ExchangeRatesTimeseriesItem.md)
  - [org.openapitools.client.models.V1Icon](docs/V1Icon.md)

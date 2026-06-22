@@ -184,10 +184,10 @@ export type V1Asset = {
     supply_max?: number;
     /**
      * 
-     * @type {Array<V1ChainNetworkAddress>}
+     * @type {Array<V1ExchangeRatesChainNetworkAddress>}
      * @memberof V1Asset
      */
-    chain_addresses?: Array<V1ChainNetworkAddress>;
+    chain_addresses?: Array<V1ExchangeRatesChainNetworkAddress>;
     /**
      * 
      * @type {string}
@@ -200,31 +200,6 @@ export type V1Asset = {
      * @memberof V1Asset
      */
     data_end?: string;
-}
-
-/**
- * Contains information about assets\' chain network addresses
- * @export
- */
-export type V1ChainNetworkAddress = {
-    /**
-     * Gets or sets chain id
-     * @type {string}
-     * @memberof V1ChainNetworkAddress
-     */
-    chain_id?: string;
-    /**
-     * Gets or sets network id
-     * @type {string}
-     * @memberof V1ChainNetworkAddress
-     */
-    network_id?: string;
-    /**
-     * Gets or sets chain address
-     * @type {string}
-     * @memberof V1ChainNetworkAddress
-     */
-    address?: string;
 }
 
 /**
@@ -275,6 +250,31 @@ export type V1ExchangeRates = {
      * @memberof V1ExchangeRates
      */
     rates?: Array<V1ExchangeRatesRate>;
+}
+
+/**
+ * Contains information about assets\' chain network addresses
+ * @export
+ */
+export type V1ExchangeRatesChainNetworkAddress = {
+    /**
+     * Gets or sets chain id
+     * @type {string}
+     * @memberof V1ExchangeRatesChainNetworkAddress
+     */
+    chain_id?: string;
+    /**
+     * Gets or sets network id
+     * @type {string}
+     * @memberof V1ExchangeRatesChainNetworkAddress
+     */
+    network_id?: string;
+    /**
+     * Gets or sets chain address
+     * @type {string}
+     * @memberof V1ExchangeRatesChainNetworkAddress
+     */
+    address?: string;
 }
 
 /**

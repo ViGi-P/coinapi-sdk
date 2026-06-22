@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:openapi/src/model/v1_chain_network_address.dart';
+import 'package:openapi/src/model/v1_exchange_rates_chain_network_address.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -110,7 +110,7 @@ abstract class V1Asset implements Built<V1Asset, V1AssetBuilder> {
 
   /// 
   @BuiltValueField(wireName: r'chain_addresses')
-  BuiltList<V1ChainNetworkAddress>? get chainAddresses;
+  BuiltList<V1ExchangeRatesChainNetworkAddress>? get chainAddresses;
 
   @BuiltValueField(wireName: r'data_start')
   String? get dataStart;
@@ -271,7 +271,7 @@ class _$V1AssetSerializer implements PrimitiveSerializer<V1Asset> {
       yield r'chain_addresses';
       yield serializers.serialize(
         object.chainAddresses,
-        specifiedType: const FullType.nullable(BuiltList, [FullType(V1ChainNetworkAddress)]),
+        specifiedType: const FullType.nullable(BuiltList, [FullType(V1ExchangeRatesChainNetworkAddress)]),
       );
     }
     if (object.dataStart != null) {
@@ -457,8 +457,8 @@ class _$V1AssetSerializer implements PrimitiveSerializer<V1Asset> {
         case r'chain_addresses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(V1ChainNetworkAddress)]),
-          ) as BuiltList<V1ChainNetworkAddress>?;
+            specifiedType: const FullType.nullable(BuiltList, [FullType(V1ExchangeRatesChainNetworkAddress)]),
+          ) as BuiltList<V1ExchangeRatesChainNetworkAddress>?;
           if (valueDes == null) continue;
           result.chainAddresses.replace(valueDes);
           break;

@@ -78,9 +78,9 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [V1Asset](doc//V1Asset.md)
- - [V1ChainNetworkAddress](doc//V1ChainNetworkAddress.md)
  - [V1ExchangeRate](doc//V1ExchangeRate.md)
  - [V1ExchangeRates](doc//V1ExchangeRates.md)
+ - [V1ExchangeRatesChainNetworkAddress](doc//V1ExchangeRatesChainNetworkAddress.md)
  - [V1ExchangeRatesRate](doc//V1ExchangeRatesRate.md)
  - [V1ExchangeRatesTimeseriesItem](doc//V1ExchangeRatesTimeseriesItem.md)
  - [V1Icon](doc//V1Icon.md)

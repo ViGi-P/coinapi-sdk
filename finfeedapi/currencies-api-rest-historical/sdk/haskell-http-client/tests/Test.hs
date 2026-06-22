@@ -21,9 +21,9 @@ main =
     describe "JSON instances" $ do
       pure ()
       propMimeEq MimeJSON (Proxy :: Proxy V1Asset)
-      propMimeEq MimeJSON (Proxy :: Proxy V1ChainNetworkAddress)
       propMimeEq MimeJSON (Proxy :: Proxy V1ExchangeRate)
       propMimeEq MimeJSON (Proxy :: Proxy V1ExchangeRates)
+      propMimeEq MimeJSON (Proxy :: Proxy V1ExchangeRatesChainNetworkAddress)
       propMimeEq MimeJSON (Proxy :: Proxy V1ExchangeRatesRate)
       propMimeEq MimeJSON (Proxy :: Proxy V1ExchangeRatesTimeseriesItem)
       propMimeEq MimeJSON (Proxy :: Proxy V1Icon)

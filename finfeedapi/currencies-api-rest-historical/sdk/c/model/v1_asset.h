@@ -15,7 +15,7 @@
 
 typedef struct v1_asset_t v1_asset_t;
 
-#include "v1_chain_network_address.h"
+#include "v1_exchange_rates_chain_network_address.h"
 
 
 

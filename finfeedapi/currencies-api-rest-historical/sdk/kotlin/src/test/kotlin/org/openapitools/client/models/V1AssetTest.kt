@@ -27,7 +27,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.models.V1Asset
-import org.openapitools.client.models.V1ChainNetworkAddress
+import org.openapitools.client.models.V1ExchangeRatesChainNetworkAddress
 
 class V1AssetTest : ShouldSpec() {
     init {

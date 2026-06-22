@@ -23,8 +23,8 @@
 
 #include "CppRestOpenAPIClient/ModelBase.h"
 
+#include "CppRestOpenAPIClient/model/V1_ExchangeRatesChainNetworkAddress.h"
 #include <cpprest/details/basic_types.h>
-#include "CppRestOpenAPIClient/model/V1_ChainNetworkAddress.h"
 #include <vector>
 
 namespace org {
@@ -32,7 +32,7 @@ namespace openapitools {
 namespace client {
 namespace model {
 
-class V1_ChainNetworkAddress;
+class V1_ExchangeRatesChainNetworkAddress;
 
 
 /// <summary>
@@ -208,10 +208,10 @@ public:
     /// <summary>
     /// 
     /// </summary>
-    std::vector<std::shared_ptr<V1_ChainNetworkAddress>> getChainAddresses() const;
+    std::vector<std::shared_ptr<V1_ExchangeRatesChainNetworkAddress>> getChainAddresses() const;
     bool chainAddressesIsSet() const;
     void unsetChain_addresses();
-    void setChainAddresses(const std::vector<std::shared_ptr<V1_ChainNetworkAddress>>& value);
+    void setChainAddresses(const std::vector<std::shared_ptr<V1_ExchangeRatesChainNetworkAddress>>& value);
 
     utility::string_t getDataStart() const;
     bool dataStartIsSet() const;
@@ -262,7 +262,7 @@ protected:
 
     boost::optional<double> m_Supply_max;
 
-    boost::optional<std::vector<std::shared_ptr<V1_ChainNetworkAddress>>> m_Chain_addresses;
+    boost::optional<std::vector<std::shared_ptr<V1_ExchangeRatesChainNetworkAddress>>> m_Chain_addresses;
 
     boost::optional<utility::string_t> m_Data_start;
 

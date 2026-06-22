@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **supply_current** | **double** | Gets or sets the current supply of the asset. | [optional] 
 **supply_total** | **double** | Gets or sets the total supply of the asset. | [optional] 
 **supply_max** | **double** | Gets or sets the maximum supply of the asset. | [optional] 
-**chain_addresses** | [**list_t**](v1_chain_network_address.md) \* |  | [optional] 
+**chain_addresses** | [**list_t**](v1_exchange_rates_chain_network_address.md) \* |  | [optional] 
 **data_start** | **char \*** |  | [optional] [readonly] 
 **data_end** | **char \*** |  | [optional] [readonly] 
 

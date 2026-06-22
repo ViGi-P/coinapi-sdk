@@ -11,9 +11,9 @@ R/api_response.R
 R/exchange_rates_api.R
 R/metadata_api.R
 R/v1_asset.R
-R/v1_chain_network_address.R
 R/v1_exchange_rate.R
 R/v1_exchange_rates.R
+R/v1_exchange_rates_chain_network_address.R
 R/v1_exchange_rates_rate.R
 R/v1_exchange_rates_timeseries_item.R
 R/v1_icon.R
@@ -22,9 +22,9 @@ README.md
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/V1Asset.md
-docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
 docs/V1ExchangeRates.md
+docs/V1ExchangeRatesChainNetworkAddress.md
 docs/V1ExchangeRatesRate.md
 docs/V1ExchangeRatesTimeseriesItem.md
 docs/V1Icon.md
@@ -34,9 +34,9 @@ tests/testthat.R
 tests/testthat/test_exchange_rates_api.R
 tests/testthat/test_metadata_api.R
 tests/testthat/test_v1_asset.R
-tests/testthat/test_v1_chain_network_address.R
 tests/testthat/test_v1_exchange_rate.R
 tests/testthat/test_v1_exchange_rates.R
+tests/testthat/test_v1_exchange_rates_chain_network_address.R
 tests/testthat/test_v1_exchange_rates_rate.R
 tests/testthat/test_v1_exchange_rates_timeseries_item.R
 tests/testthat/test_v1_icon.R

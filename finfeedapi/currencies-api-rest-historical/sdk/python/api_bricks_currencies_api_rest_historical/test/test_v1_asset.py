@@ -55,7 +55,7 @@ class TestV1Asset(unittest.TestCase):
                 supply_total = 1.337,
                 supply_max = 1.337,
                 chain_addresses = [
-                    api_bricks_currencies_api_rest_historical.models.v1/chain_network_address.v1.ChainNetworkAddress(
+                    api_bricks_currencies_api_rest_historical.models.v1/exchange_rates_chain_network_address.v1.ExchangeRatesChainNetworkAddress(
                         chain_id = '', 
                         network_id = '', 
                         address = '', )

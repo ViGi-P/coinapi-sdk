@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.openapitools.model.V1ChainNetworkAddress;
+import org.openapitools.model.V1ExchangeRatesChainNetworkAddress;
 
 @Canonical
 class V1Asset {
@@ -48,7 +48,7 @@ class V1Asset {
     /* Gets or sets the maximum supply of the asset. */
     Double supplyMax
     /*  */
-    List<V1ChainNetworkAddress> chainAddresses
+    List<V1ExchangeRatesChainNetworkAddress> chainAddresses
     
     String dataStart
     

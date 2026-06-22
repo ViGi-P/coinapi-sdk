@@ -5,9 +5,9 @@ build.gradle
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/V1Asset.md
-docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
 docs/V1ExchangeRates.md
+docs/V1ExchangeRatesChainNetworkAddress.md
 docs/V1ExchangeRatesRate.md
 docs/V1ExchangeRatesTimeseriesItem.md
 docs/V1Icon.md
@@ -30,9 +30,9 @@ src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
 src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
 src/main/java/org/openapitools/client/model/V1Asset.java
-src/main/java/org/openapitools/client/model/V1ChainNetworkAddress.java
 src/main/java/org/openapitools/client/model/V1ExchangeRate.java
 src/main/java/org/openapitools/client/model/V1ExchangeRates.java
+src/main/java/org/openapitools/client/model/V1ExchangeRatesChainNetworkAddress.java
 src/main/java/org/openapitools/client/model/V1ExchangeRatesRate.java
 src/main/java/org/openapitools/client/model/V1ExchangeRatesTimeseriesItem.java
 src/main/java/org/openapitools/client/model/V1Icon.java

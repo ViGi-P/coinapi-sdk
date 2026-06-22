@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **supplyCurrent** | **Double** | Gets or sets the current supply of the asset. |  [optional]
 **supplyTotal** | **Double** | Gets or sets the total supply of the asset. |  [optional]
 **supplyMax** | **Double** | Gets or sets the maximum supply of the asset. |  [optional]
-**chainAddresses** | [**Seq&lt;ChainNetworkAddress&gt;**](ChainNetworkAddress.md) |  |  [optional]
+**chainAddresses** | [**Seq&lt;ExchangeRatesChainNetworkAddress&gt;**](ExchangeRatesChainNetworkAddress.md) |  |  [optional]
 **dataStart** | **String** |  |  [optional] [readonly]
 **dataEnd** | **String** |  |  [optional] [readonly]
 

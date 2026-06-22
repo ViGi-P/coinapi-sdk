@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **supply_current** | **REAL_64** | Gets or sets the current supply of the asset. | [optional] [default to null]
 **supply_total** | **REAL_64** | Gets or sets the total supply of the asset. | [optional] [default to null]
 **supply_max** | **REAL_64** | Gets or sets the maximum supply of the asset. | [optional] [default to null]
-**chain_addresses** | [**LIST [V1_CHAIN_NETWORK_ADDRESS]**](v1.ChainNetworkAddress.md) |  | [optional] [default to null]
+**chain_addresses** | [**LIST [V1_EXCHANGE_RATES_CHAIN_NETWORK_ADDRESS]**](v1.ExchangeRatesChainNetworkAddress.md) |  | [optional] [default to null]
 **data_start** | [**STRING_32**](STRING_32.md) |  | [optional] [readonly] [default to null]
 **data_end** | [**STRING_32**](STRING_32.md) |  | [optional] [readonly] [default to null]
 

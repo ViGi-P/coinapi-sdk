@@ -7,9 +7,9 @@ cpanfile
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/V1Asset.md
-docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
 docs/V1ExchangeRates.md
+docs/V1ExchangeRatesChainNetworkAddress.md
 docs/V1ExchangeRatesRate.md
 docs/V1ExchangeRatesTimeseriesItem.md
 docs/V1Icon.md
@@ -21,9 +21,9 @@ lib/WWW/OpenAPIClient/Configuration.pm
 lib/WWW/OpenAPIClient/ExchangeRatesApi.pm
 lib/WWW/OpenAPIClient/MetadataApi.pm
 lib/WWW/OpenAPIClient/Object/V1Asset.pm
-lib/WWW/OpenAPIClient/Object/V1ChainNetworkAddress.pm
 lib/WWW/OpenAPIClient/Object/V1ExchangeRate.pm
 lib/WWW/OpenAPIClient/Object/V1ExchangeRates.pm
+lib/WWW/OpenAPIClient/Object/V1ExchangeRatesChainNetworkAddress.pm
 lib/WWW/OpenAPIClient/Object/V1ExchangeRatesRate.pm
 lib/WWW/OpenAPIClient/Object/V1ExchangeRatesTimeseriesItem.pm
 lib/WWW/OpenAPIClient/Object/V1Icon.pm
@@ -33,8 +33,8 @@ lib/WWW/OpenAPIClient/Role/AutoDoc.pm
 t/ExchangeRatesApiTest.t
 t/MetadataApiTest.t
 t/V1AssetTest.t
-t/V1ChainNetworkAddressTest.t
 t/V1ExchangeRateTest.t
+t/V1ExchangeRatesChainNetworkAddressTest.t
 t/V1ExchangeRatesRateTest.t
 t/V1ExchangeRatesTest.t
 t/V1ExchangeRatesTimeseriesItemTest.t

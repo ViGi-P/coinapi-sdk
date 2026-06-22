@@ -150,7 +150,7 @@ test_that("supply_max", {
 })
 
 test_that("chain_addresses", {
-  # tests for the property `chain_addresses` (array[V1ChainNetworkAddress])
+  # tests for the property `chain_addresses` (array[V1ExchangeRatesChainNetworkAddress])
   # 
 
   # uncomment below to test the property

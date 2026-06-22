@@ -27,7 +27,7 @@
   | {'supply_current', float() }
   | {'supply_total', float() }
   | {'supply_max', float() }
-  | {'chain_addresses', list(openapi_v1_chain_network_address:openapi_v1_chain_network_address()) }
+  | {'chain_addresses', list(openapi_v1_exchange_rates_chain_network_address:openapi_v1_exchange_rates_chain_network_address()) }
   | {'data_start', binary() }
   | {'data_end', binary() }
   ].
@@ -55,7 +55,7 @@ openapi_v1_asset(Fields) ->
             , {'supply_current', float() }
             , {'supply_total', float() }
             , {'supply_max', float() }
-            , {'chain_addresses', list(openapi_v1_chain_network_address:openapi_v1_chain_network_address()) }
+            , {'chain_addresses', list(openapi_v1_exchange_rates_chain_network_address:openapi_v1_exchange_rates_chain_network_address()) }
             , {'data_start', binary() }
             , {'data_end', binary() }
             ],

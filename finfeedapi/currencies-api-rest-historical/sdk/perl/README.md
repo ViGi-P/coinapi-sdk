@@ -240,9 +240,9 @@ use WWW::OpenAPIClient::MetadataApi;
 To load the models:
 ```perl
 use WWW::OpenAPIClient::Object::V1Asset;
-use WWW::OpenAPIClient::Object::V1ChainNetworkAddress;
 use WWW::OpenAPIClient::Object::V1ExchangeRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRates;
+use WWW::OpenAPIClient::Object::V1ExchangeRatesChainNetworkAddress;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesTimeseriesItem;
 use WWW::OpenAPIClient::Object::V1Icon;
@@ -263,9 +263,9 @@ use WWW::OpenAPIClient::MetadataApi;
 
 # load the models
 use WWW::OpenAPIClient::Object::V1Asset;
-use WWW::OpenAPIClient::Object::V1ChainNetworkAddress;
 use WWW::OpenAPIClient::Object::V1ExchangeRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRates;
+use WWW::OpenAPIClient::Object::V1ExchangeRatesChainNetworkAddress;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesRate;
 use WWW::OpenAPIClient::Object::V1ExchangeRatesTimeseriesItem;
 use WWW::OpenAPIClient::Object::V1Icon;
@@ -313,9 +313,9 @@ Class | Method | HTTP request | Description
 
 # DOCUMENTATION FOR MODELS
  - [WWW::OpenAPIClient::Object::V1Asset](docs/V1Asset.md)
- - [WWW::OpenAPIClient::Object::V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRate](docs/V1ExchangeRate.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRates](docs/V1ExchangeRates.md)
+ - [WWW::OpenAPIClient::Object::V1ExchangeRatesChainNetworkAddress](docs/V1ExchangeRatesChainNetworkAddress.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [WWW::OpenAPIClient::Object::V1ExchangeRatesTimeseriesItem](docs/V1ExchangeRatesTimeseriesItem.md)
  - [WWW::OpenAPIClient::Object::V1Icon](docs/V1Icon.md)

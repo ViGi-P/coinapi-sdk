@@ -14,9 +14,9 @@ export 'package:openapi/src/api/exchange_rates_api.dart';
 export 'package:openapi/src/api/metadata_api.dart';
 
 export 'package:openapi/src/model/v1_asset.dart';
-export 'package:openapi/src/model/v1_chain_network_address.dart';
 export 'package:openapi/src/model/v1_exchange_rate.dart';
 export 'package:openapi/src/model/v1_exchange_rates.dart';
+export 'package:openapi/src/model/v1_exchange_rates_chain_network_address.dart';
 export 'package:openapi/src/model/v1_exchange_rates_rate.dart';
 export 'package:openapi/src/model/v1_exchange_rates_timeseries_item.dart';
 export 'package:openapi/src/model/v1_icon.dart';

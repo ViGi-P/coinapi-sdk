@@ -144,9 +144,9 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [FinFeedApiCurrenciesHistoricalRestApi.V1Asset](docs/V1Asset.md)
- - [FinFeedApiCurrenciesHistoricalRestApi.V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
  - [FinFeedApiCurrenciesHistoricalRestApi.V1ExchangeRate](docs/V1ExchangeRate.md)
  - [FinFeedApiCurrenciesHistoricalRestApi.V1ExchangeRates](docs/V1ExchangeRates.md)
+ - [FinFeedApiCurrenciesHistoricalRestApi.V1ExchangeRatesChainNetworkAddress](docs/V1ExchangeRatesChainNetworkAddress.md)
  - [FinFeedApiCurrenciesHistoricalRestApi.V1ExchangeRatesRate](docs/V1ExchangeRatesRate.md)
  - [FinFeedApiCurrenciesHistoricalRestApi.V1ExchangeRatesTimeseriesItem](docs/V1ExchangeRatesTimeseriesItem.md)
  - [FinFeedApiCurrenciesHistoricalRestApi.V1Icon](docs/V1Icon.md)

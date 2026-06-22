@@ -12,7 +12,7 @@
  */
 
 import type {
-    V1ChainNetworkAddress,
+    V1ExchangeRatesChainNetworkAddress,
 } from './';
 
 /**
@@ -131,10 +131,10 @@ export interface V1Asset {
     supply_max?: number | null;
     /**
      * 
-     * @type {Array<V1ChainNetworkAddress>}
+     * @type {Array<V1ExchangeRatesChainNetworkAddress>}
      * @memberof V1Asset
      */
-    chain_addresses?: Array<V1ChainNetworkAddress> | null;
+    chain_addresses?: Array<V1ExchangeRatesChainNetworkAddress> | null;
     /**
      * @type {string}
      * @memberof V1Asset
