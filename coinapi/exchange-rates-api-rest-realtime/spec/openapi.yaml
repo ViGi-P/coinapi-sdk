@@ -42,7 +42,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-06-19T06:06:10.0758880Z",
+  "time": "2026-06-22T06:04:49.7957567Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -53,7 +53,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-06-19T06:06:10.0758880Z",
+  "time": "2026-06-22T06:04:49.7957567Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -64,7 +64,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-06-19T06:06:10.0758880Z",
+  "time": "2026-06-22T06:04:49.7957567Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -75,7 +75,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-06-19T06:06:10.0758880Z",
+  "time": "2026-06-22T06:04:49.7957567Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -990,7 +990,7 @@ components:
         chain_addresses:
           type: array
           items:
-            $ref: '#/components/schemas/v1.ChainNetworkAddress'
+            $ref: '#/components/schemas/v1.ExchangeRatesChainNetworkAddress'
           description: ''
           nullable: true
         data_start:
@@ -1003,23 +1003,6 @@ components:
           readOnly: true
       additionalProperties: false
       description: Represents an asset.
-    v1.ChainNetworkAddress:
-      type: object
-      properties:
-        chain_id:
-          type: string
-          description: Gets or sets chain id
-          nullable: true
-        network_id:
-          type: string
-          description: Gets or sets network id
-          nullable: true
-        address:
-          type: string
-          description: Gets or sets chain address
-          nullable: true
-      additionalProperties: false
-      description: Contains information about assets' chain network addresses
     v1.ExchangeRate:
       type: object
       properties:
@@ -1056,6 +1039,23 @@ components:
           nullable: true
       additionalProperties: false
       description: Represents exchange rates for a specific base asset.
+    v1.ExchangeRatesChainNetworkAddress:
+      type: object
+      properties:
+        chain_id:
+          type: string
+          description: Gets or sets chain id
+          nullable: true
+        network_id:
+          type: string
+          description: Gets or sets network id
+          nullable: true
+        address:
+          type: string
+          description: Gets or sets chain address
+          nullable: true
+      additionalProperties: false
+      description: Contains information about assets' chain network addresses
     v1.ExchangeRatesRate:
       type: object
       properties:
