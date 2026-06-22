@@ -58,7 +58,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-19T06:04:55.3102956Z",
+  "time": "2026-06-22T06:06:53.4411882Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -73,7 +73,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-19T06:04:55.3102956Z",
+  "time": "2026-06-22T06:06:53.4411882Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -88,7 +88,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-19T06:04:55.3102956Z",
+  "time": "2026-06-22T06:06:53.4411882Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -103,7 +103,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-19T06:04:55.3102956Z",
+  "time": "2026-06-22T06:06:53.4411882Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1182,7 +1182,7 @@
           "chain_addresses": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/v1.ChainNetworkAddress"
+              "$ref": "#/components/schemas/v1.ExchangeRatesChainNetworkAddress"
             },
             "description": "",
             "nullable": true
@@ -1200,28 +1200,6 @@
         },
         "additionalProperties": false,
         "description": "Represents an asset."
-      },
-      "v1.ChainNetworkAddress": {
-        "type": "object",
-        "properties": {
-          "chain_id": {
-            "type": "string",
-            "description": "Gets or sets chain id",
-            "nullable": true
-          },
-          "network_id": {
-            "type": "string",
-            "description": "Gets or sets network id",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "description": "Gets or sets chain address",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Contains information about assets' chain network addresses"
       },
       "v1.ExchangeRate": {
         "type": "object",
@@ -1269,6 +1247,28 @@
         },
         "additionalProperties": false,
         "description": "Represents exchange rates for a specific base asset."
+      },
+      "v1.ExchangeRatesChainNetworkAddress": {
+        "type": "object",
+        "properties": {
+          "chain_id": {
+            "type": "string",
+            "description": "Gets or sets chain id",
+            "nullable": true
+          },
+          "network_id": {
+            "type": "string",
+            "description": "Gets or sets network id",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "description": "Gets or sets chain address",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains information about assets' chain network addresses"
       },
       "v1.ExchangeRatesRate": {
         "type": "object",
