@@ -47,7 +47,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-06-23T06:05:21.8316991Z",
+  "time": "2026-06-24T06:09:52.8042119Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -58,7 +58,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-06-23T06:05:21.8316991Z",
+  "time": "2026-06-24T06:09:52.8042119Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -69,7 +69,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-06-23T06:05:21.8316991Z",
+  "time": "2026-06-24T06:09:52.8042119Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
