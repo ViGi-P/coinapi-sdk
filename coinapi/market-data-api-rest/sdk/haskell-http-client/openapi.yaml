@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-23T06:03:23.0644110Z
+                    time: 2026-06-26T06:03:56.7890433Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-23T06:03:23.0644110Z
+                    time: 2026-06-26T06:03:56.7890433Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-23T06:03:23.0644110Z
+                    time: 2026-06-26T06:03:56.7890433Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-23T06:03:23.0644110Z
+                    time: 2026-06-26T06:03:56.7890433Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -647,31 +647,36 @@ paths:
         \ as C/P}`\nPERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`\n\
         DEPLOYER_PERPETUAL | `{exchange_id}_DPERP_{deployer_symbol}_{asset_id_quote}`\n\
         INDEX | `{exchange_id}_IDX_{index_id}`\nCREDIT | `{exchange_id}_CRE_{asset_id_base}`\n\
-        CONTACT  | `{exchange_id}_COT_{contract_id}`\n            \n:::info\nIn the\
-        \ unlikely event when the \"symbol_id\" for more than one market is the same.\
-        \ We will append the additional term (prefixed with the \"_\") at the end\
-        \ of the duplicated identifiers to differentiate them.\n:::info\n        \
-        \    \n### Symbol types list (enumeration of `symbol_type` output variable)\n\
-        \            \nType | Name | Description\n-------- | - | -----------\nSPOT\
-        \ | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC\
-        \ for USD)*\nFUTURES | Futures contract | FX Spot derivative contract where\
-        \ traders agree to trade fx spot at predetermined future time\nOPTION | Option\
-        \ contract | FX Spot derivative contract where traders agree to trade right\
-        \ to require buy or sell of fx spot at agreed price on exercise date\nPERPETUAL\
-        \ | Perpetual contract | FX Spot derivative contract where traders agree to\
-        \ trade fx spot continously without predetermined future delivery time\nDEPLOYER_PERPETUAL\
-        \ | Deployer Perpetual contract | Perpetual contract for user-deployed markets\
-        \ *(e.g. Hyperliquid user-deployed perpetuals)*\nINDEX | Index | Statistical\
-        \ composite that measures changes in the economy or markets.\nCREDIT | Credit/Funding\
-        \ | Margin funding contract. Order book displays lending offers and borrow\
-        \ bids. Price represents the daily rate.\nCONTRACT | Contract | Represents\
-        \ other types of financial instruments *(e.g. spreads, interest rate swap)*\n\
-        \            \n### Additional output variables for `symbol_type = INDEX`\n\
-        \            \nVariable | Description\n--------- | -----------\nindex_id |\
-        \ Index identifier\nindex_display_name | Human readable name of the index\
-        \ *(optional)*\nindex_display_description | Description of the index *(optional)*\n\
-        \            \n### Additional output variables for `symbol_type = FUTURES`\n\
-        \            \nVariable | Description\n--------- | -----------\nfuture_delivery_time\
+        CONTACT  | `{exchange_id}_COT_{contract_id}`\nOPTION_COMBO | `{exchange_id}_OPTCMB_{exchange_symbol_id}`\n\
+        FUTURE_COMBO | `{exchange_id}_FTSCMB_{exchange_symbol_id}`\n            \n\
+        :::info\nIn the unlikely event when the \"symbol_id\" for more than one market\
+        \ is the same. We will append the additional term (prefixed with the \"_\"\
+        ) at the end of the duplicated identifiers to differentiate them.\n:::info\n\
+        \            \n### Symbol types list (enumeration of `symbol_type` output\
+        \ variable)\n            \nType | Name | Description\n-------- | - | -----------\n\
+        SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy\
+        \ BTC for USD)*\nFUTURES | Futures contract | FX Spot derivative contract\
+        \ where traders agree to trade fx spot at predetermined future time\nOPTION\
+        \ | Option contract | FX Spot derivative contract where traders agree to trade\
+        \ right to require buy or sell of fx spot at agreed price on exercise date\n\
+        PERPETUAL | Perpetual contract | FX Spot derivative contract where traders\
+        \ agree to trade fx spot continously without predetermined future delivery\
+        \ time\nDEPLOYER_PERPETUAL | Deployer Perpetual contract | Perpetual contract\
+        \ for user-deployed markets *(e.g. Hyperliquid user-deployed perpetuals)*\n\
+        INDEX | Index | Statistical composite that measures changes in the economy\
+        \ or markets.\nCREDIT | Credit/Funding | Margin funding contract. Order book\
+        \ displays lending offers and borrow bids. Price represents the daily rate.\n\
+        CONTRACT | Contract | Represents other types of financial instruments *(e.g.\
+        \ spreads, interest rate swap)*\nOPTION_COMBO | Option Combo | Multi-leg option\
+        \ strategy combining two or more option positions *(e.g. put spread, protective\
+        \ collar)*\nFUTURE_COMBO | Future Combo | Multi-leg futures calendar spread\
+        \ combining two futures positions *(e.g. futures vs perpetual)*\n        \
+        \    \n### Additional output variables for `symbol_type = INDEX`\n       \
+        \     \nVariable | Description\n--------- | -----------\nindex_id | Index\
+        \ identifier\nindex_display_name | Human readable name of the index *(optional)*\n\
+        index_display_description | Description of the index *(optional)*\n      \
+        \      \n### Additional output variables for `symbol_type = FUTURES`\n   \
+        \         \nVariable | Description\n--------- | -----------\nfuture_delivery_time\
         \ | Predetermined time of futures contract delivery date in ISO 8601\nfuture_contract_unit\
         \ | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset`\
         \ = `BTC`)*\nfuture_contract_unit_asset | Identifier of the asset used to\

@@ -734,6 +734,8 @@ DEPLOYER_PERPETUAL | `{exchange_id}_DPERP_{deployer_symbol}_{asset_id_quote}`
 INDEX | `{exchange_id}_IDX_{index_id}`
 CREDIT | `{exchange_id}_CRE_{asset_id_base}`
 CONTACT  | `{exchange_id}_COT_{contract_id}`
+OPTION_COMBO | `{exchange_id}_OPTCMB_{exchange_symbol_id}`
+FUTURE_COMBO | `{exchange_id}_FTSCMB_{exchange_symbol_id}`
             
 :::info
 In the unlikely event when the "symbol_id" for more than one market is the same. We will append the additional term (prefixed with the "_") at the end of the duplicated identifiers to differentiate them.
@@ -751,6 +753,8 @@ DEPLOYER_PERPETUAL | Deployer Perpetual contract | Perpetual contract for user-d
 INDEX | Index | Statistical composite that measures changes in the economy or markets.
 CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate.
 CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*
+OPTION_COMBO | Option Combo | Multi-leg option strategy combining two or more option positions *(e.g. put spread, protective collar)*
+FUTURE_COMBO | Future Combo | Multi-leg futures calendar spread combining two futures positions *(e.g. futures vs perpetual)*
             
 ### Additional output variables for `symbol_type = INDEX`
             
