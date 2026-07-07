@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an option exchange group data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-06T06:03:58.238930297Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-07T06:07:20.727671635Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class V1OptionExchangeGroup {
   public static final String SERIALIZED_NAME_ASSET_ID_BASE = "asset_id_base";
   @SerializedName(SERIALIZED_NAME_ASSET_ID_BASE)
