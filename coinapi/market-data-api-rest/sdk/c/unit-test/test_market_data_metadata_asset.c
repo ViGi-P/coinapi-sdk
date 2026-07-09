@@ -42,6 +42,7 @@ market_data_metadata_asset_t* instantiate_market_data_metadata_asset(int include
       1.337,
       list_createList(),
       "0",
+      "0",
       "0"
     );
   } else {
@@ -65,6 +66,7 @@ market_data_metadata_asset_t* instantiate_market_data_metadata_asset(int include
       1.337,
       1.337,
       list_createList(),
+      "0",
       "0",
       "0"
     );

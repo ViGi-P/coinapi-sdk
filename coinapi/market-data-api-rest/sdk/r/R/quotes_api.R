@@ -18,6 +18,7 @@
 #'
 #' library(openapi)
 #' var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (Optional)
+#' var_filter_exchange_id <- "filter_exchange_id_example" # character | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (Optional)
 #'
 #' #Current data
 #' api_instance <- QuotesApi$new()
@@ -29,8 +30,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_iddata_file = "result.txt")
-#' result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_id)
+#' # result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_iddata_file = "result.txt")
+#' result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id)
 #' dput(result)
 #'
 #'
@@ -38,6 +39,7 @@
 #'
 #' library(openapi)
 #' var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (Optional)
+#' var_filter_exchange_id <- "filter_exchange_id_example" # character | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (Optional)
 #' var_limit <- 100 # integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
 #'
 #' #Latest data
@@ -50,8 +52,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, limit = var_limit)
+#' # result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id, limit = var_limitdata_file = "result.txt")
+#' result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id, limit = var_limit)
 #' dput(result)
 #'
 #'
@@ -145,13 +147,14 @@ QuotesApi <- R6::R6Class(
     #' Current data
     #'
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    #' @param filter_exchange_id (optional) Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1QuoteTrade]
-    V1QuotesCurrentGet = function(filter_symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1QuotesCurrentGetWithHttpInfo(filter_symbol_id, data_file = data_file, ..., .parse = .parse)
+    V1QuotesCurrentGet = function(filter_symbol_id = NULL, filter_exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1QuotesCurrentGetWithHttpInfo(filter_symbol_id, filter_exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -167,12 +170,13 @@ QuotesApi <- R6::R6Class(
     #' Current data
     #'
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    #' @param filter_exchange_id (optional) Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1QuoteTrade]) with additional information such as HTTP status code, headers
-    V1QuotesCurrentGetWithHttpInfo = function(filter_symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+    V1QuotesCurrentGetWithHttpInfo = function(filter_symbol_id = NULL, filter_exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -186,7 +190,13 @@ QuotesApi <- R6::R6Class(
         stop("Invalid value for `filter_symbol_id` when calling QuotesApi$V1QuotesCurrentGet, `filter_symbol_id` is not nullable")
       }
 
+      if (!missing(`filter_exchange_id`) && is.null(`filter_exchange_id`)) {
+        stop("Invalid value for `filter_exchange_id` when calling QuotesApi$V1QuotesCurrentGet, `filter_exchange_id` is not nullable")
+      }
+
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
+
+      query_params[["filter_exchange_id"]] <- `filter_exchange_id`
 
       local_var_url_path <- "/v1/quotes/current"
       # API key authentication
@@ -258,14 +268,15 @@ QuotesApi <- R6::R6Class(
     #' Latest data
     #'
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    #' @param filter_exchange_id (optional) Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Quote]
-    V1QuotesLatestGet = function(filter_symbol_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1QuotesLatestGetWithHttpInfo(filter_symbol_id, limit, data_file = data_file, ..., .parse = .parse)
+    V1QuotesLatestGet = function(filter_symbol_id = NULL, filter_exchange_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1QuotesLatestGetWithHttpInfo(filter_symbol_id, filter_exchange_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -281,13 +292,14 @@ QuotesApi <- R6::R6Class(
     #' Latest data
     #'
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    #' @param filter_exchange_id (optional) Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Quote]) with additional information such as HTTP status code, headers
-    V1QuotesLatestGetWithHttpInfo = function(filter_symbol_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1QuotesLatestGetWithHttpInfo = function(filter_symbol_id = NULL, filter_exchange_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -301,11 +313,17 @@ QuotesApi <- R6::R6Class(
         stop("Invalid value for `filter_symbol_id` when calling QuotesApi$V1QuotesLatestGet, `filter_symbol_id` is not nullable")
       }
 
+      if (!missing(`filter_exchange_id`) && is.null(`filter_exchange_id`)) {
+        stop("Invalid value for `filter_exchange_id` when calling QuotesApi$V1QuotesLatestGet, `filter_exchange_id` is not nullable")
+      }
+
       if (!missing(`limit`) && is.null(`limit`)) {
         stop("Invalid value for `limit` when calling QuotesApi$V1QuotesLatestGet, `limit` is not nullable")
       }
 
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
+
+      query_params[["filter_exchange_id"]] <- `filter_exchange_id`
 
       query_params[["limit"]] <- `limit`
 

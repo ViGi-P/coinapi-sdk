@@ -157,6 +157,14 @@ test_that("chain_addresses", {
   #expect_equal(model.instance$`chain_addresses`, "EXPECTED_RESULT")
 })
 
+test_that("asset_type", {
+  # tests for the property `asset_type` (character)
+  # Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`asset_type`, "EXPECTED_RESULT")
+})
+
 test_that("data_start", {
   # tests for the property `data_start` (character)
 

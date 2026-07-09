@@ -93,6 +93,10 @@ export class MarketDataMetadataAsset {
     * 
     */
     'chainAddresses'?: Array<V1ChainNetworkAddress> | null;
+    /**
+    * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+    */
+    'assetType'?: string | null;
     'dataStart'?: string | null;
     'dataEnd'?: string | null;
 
@@ -193,6 +197,11 @@ export class MarketDataMetadataAsset {
             "name": "chainAddresses",
             "baseName": "chain_addresses",
             "type": "Array<V1ChainNetworkAddress>"
+        },
+        {
+            "name": "assetType",
+            "baseName": "asset_type",
+            "type": "string"
         },
         {
             "name": "dataStart",

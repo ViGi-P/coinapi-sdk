@@ -94,7 +94,8 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiMarketDataRestApi.MetadataApi();
 let opts = {
-  'filterAssetId': "filterAssetId_example" // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+  'filterAssetId': "filterAssetId_example", // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+  'filterAssetType': "filterAssetType_example" // String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 };
 apiInstance.v1AssetsGet(opts, (error, data, response) => {
   if (error) {
@@ -111,6 +112,7 @@ apiInstance.v1AssetsGet(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterAssetId** | **String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] 
+ **filterAssetType** | **String**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 
 ### Return type
 

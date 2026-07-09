@@ -48,6 +48,7 @@ export default class QuotesApi {
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @param {Object} opts Optional parameters
      * @param {String} [filterSymbolId] Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param {String} [filterExchangeId] Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      * @param {module:api/QuotesApi~v1QuotesCurrentGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1QuoteTrade>}
      */
@@ -58,7 +59,8 @@ export default class QuotesApi {
       let pathParams = {
       };
       let queryParams = {
-        'filter_symbol_id': opts['filterSymbolId']
+        'filter_symbol_id': opts['filterSymbolId'],
+        'filter_exchange_id': opts['filterExchangeId']
       };
       let headerParams = {
       };
@@ -89,6 +91,7 @@ export default class QuotesApi {
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @param {Object} opts Optional parameters
      * @param {String} [filterSymbolId] Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param {String} [filterExchangeId] Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      * @param {Number} [limit = 100)] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param {module:api/QuotesApi~v1QuotesLatestGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1Quote>}
@@ -101,6 +104,7 @@ export default class QuotesApi {
       };
       let queryParams = {
         'filter_symbol_id': opts['filterSymbolId'],
+        'filter_exchange_id': opts['filterExchangeId'],
         'limit': opts['limit']
       };
       let headerParams = {

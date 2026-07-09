@@ -180,6 +180,13 @@ public:
 	/*! \brief Set 
 	 */
 	void setChainAddresses(std::list <V1.ChainNetworkAddress> chain_addresses);
+	/*! \brief Get Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+	 */
+	std::string getAssetType();
+
+	/*! \brief Set Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+	 */
+	void setAssetType(std::string  asset_type);
 	/*! \brief Get 
 	 */
 	std::string getDataStart();
@@ -215,6 +222,7 @@ private:
 	double supply_total;
 	double supply_max;
 	std::list <V1.ChainNetworkAddress>chain_addresses;
+	std::string asset_type;
 	std::string data_start;
 	std::string data_end;
 	void __init();

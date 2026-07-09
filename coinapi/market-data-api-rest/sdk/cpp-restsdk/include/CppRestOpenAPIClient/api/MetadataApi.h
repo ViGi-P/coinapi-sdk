@@ -67,8 +67,10 @@ public:
     /// Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     /// </remarks>
     /// <param name="filterAssetId">Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="filterAssetType">Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> v1AssetsGet(
-        boost::optional<utility::string_t> filterAssetId
+        boost::optional<utility::string_t> filterAssetId,
+        boost::optional<utility::string_t> filterAssetType
     ) const;
     /// <summary>
     /// List all asset icons

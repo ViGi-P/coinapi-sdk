@@ -84,6 +84,7 @@ module OpenapiClient
     # Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+    # @option opts [String] :filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     # @return [Array<MarketDataMetadataAsset>]
     def v1_assets_get(opts = {})
       data, _status_code, _headers = v1_assets_get_with_http_info(opts)
@@ -94,6 +95,7 @@ module OpenapiClient
     # Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+    # @option opts [String] :filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     # @return [Array<(Array<MarketDataMetadataAsset>, Integer, Hash)>] Array<MarketDataMetadataAsset> data, response status code and response headers
     def v1_assets_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -105,6 +107,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'filter_asset_id'] = opts[:'filter_asset_id'] if !opts[:'filter_asset_id'].nil?
+      query_params[:'filter_asset_type'] = opts[:'filter_asset_type'] if !opts[:'filter_asset_type'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

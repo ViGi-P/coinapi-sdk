@@ -23,6 +23,7 @@ module OpenapiClient
     # Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     # @return [Array<V1QuoteTrade>]
     def v1_quotes_current_get(opts = {})
       data, _status_code, _headers = v1_quotes_current_get_with_http_info(opts)
@@ -33,6 +34,7 @@ module OpenapiClient
     # Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     # @return [Array<(Array<V1QuoteTrade>, Integer, Hash)>] Array<V1QuoteTrade> data, response status code and response headers
     def v1_quotes_current_get_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -44,6 +46,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'filter_symbol_id'] = opts[:'filter_symbol_id'] if !opts[:'filter_symbol_id'].nil?
+      query_params[:'filter_exchange_id'] = opts[:'filter_exchange_id'] if !opts[:'filter_exchange_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -83,6 +86,7 @@ module OpenapiClient
     # Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<V1Quote>]
     def v1_quotes_latest_get(opts = {})
@@ -94,6 +98,7 @@ module OpenapiClient
     # Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<(Array<V1Quote>, Integer, Hash)>] Array<V1Quote> data, response status code and response headers
     def v1_quotes_latest_get_with_http_info(opts = {})
@@ -106,6 +111,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'filter_symbol_id'] = opts[:'filter_symbol_id'] if !opts[:'filter_symbol_id'].nil?
+      query_params[:'filter_exchange_id'] = opts[:'filter_exchange_id'] if !opts[:'filter_exchange_id'].nil?
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters

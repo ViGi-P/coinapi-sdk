@@ -70,6 +70,7 @@ Name | Type | Description  | Notes
 # **Invoke-V1AssetsGet**
 > MarketDataMetadataAsset[] Invoke-V1AssetsGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterAssetId] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterAssetType] <String><br>
 
 List all assets
 
@@ -86,10 +87,11 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $FilterAssetId = "MyFilterAssetId" # String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). (optional)
+$FilterAssetType = "MyFilterAssetType" # String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
 
 # List all assets
 try {
-    $Result = Invoke-V1AssetsGet -FilterAssetId $FilterAssetId
+    $Result = Invoke-V1AssetsGet -FilterAssetId $FilterAssetId -FilterAssetType $FilterAssetType
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1AssetsGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -101,6 +103,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **FilterAssetId** | **String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] 
+ **FilterAssetType** | **String**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 
 ### Return type
 

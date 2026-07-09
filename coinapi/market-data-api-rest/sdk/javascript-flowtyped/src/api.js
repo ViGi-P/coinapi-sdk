@@ -189,6 +189,12 @@ export type MarketDataMetadataAsset = {
      */
     chain_addresses?: Array<V1ChainNetworkAddress>;
     /**
+     * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+     * @type {string}
+     * @memberof MarketDataMetadataAsset
+     */
+    asset_type?: string;
+    /**
      * 
      * @type {string}
      * @memberof MarketDataMetadataAsset
@@ -2018,7 +2024,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
          * @summary List all assets
          * @throws {RequiredError}
          */
-        v1AssetsGet(filterAssetId?: string, options: RequestOptions): FetchArgs {
+        v1AssetsGet(filterAssetId?: string, filterAssetType?: string, options: RequestOptions): FetchArgs {
             const localVarPath = `/v1/assets`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
@@ -2037,6 +2043,10 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
 
             if (filterAssetId !== undefined) {
                 localVarQueryParameter['filter_asset_id'] = ((filterAssetId:any):string);
+            }
+
+            if (filterAssetType !== undefined) {
+                localVarQueryParameter['filter_asset_type'] = ((filterAssetType:any):string);
             }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
@@ -2402,7 +2412,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
 export type MetadataApiType = { 
     v1AssetsAssetIdGet(assetId: string, options?: RequestOptions): Promise<Array<MarketDataMetadataAsset>>,
 
-    v1AssetsGet(filterAssetId?: string, options?: RequestOptions): Promise<Array<MarketDataMetadataAsset>>,
+    v1AssetsGet(filterAssetId?: string, filterAssetType?: string, options?: RequestOptions): Promise<Array<MarketDataMetadataAsset>>,
 
     v1AssetsIconsSizeGet(size: number, options?: RequestOptions): Promise<Array<MarketDataMetadataIcon>>,
 
@@ -2450,8 +2460,8 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List all assets
          * @throws {RequiredError}
          */
-        v1AssetsGet(filterAssetId?: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataAsset>> {
-            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1AssetsGet(filterAssetId, options);
+        v1AssetsGet(filterAssetId?: string, filterAssetType?: string, options?: RequestOptions = {}): Promise<Array<MarketDataMetadataAsset>> {
+            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1AssetsGet(filterAssetId, filterAssetType, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -4537,7 +4547,7 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
          * @summary Current data
          * @throws {RequiredError}
          */
-        v1QuotesCurrentGet(filterSymbolId?: string, options: RequestOptions): FetchArgs {
+        v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, options: RequestOptions): FetchArgs {
             const localVarPath = `/v1/quotes/current`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
@@ -4558,6 +4568,10 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
                 localVarQueryParameter['filter_symbol_id'] = ((filterSymbolId:any):string);
             }
 
+            if (filterExchangeId !== undefined) {
+                localVarQueryParameter['filter_exchange_id'] = ((filterExchangeId:any):string);
+            }
+
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -4573,7 +4587,7 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
          * @summary Latest data
          * @throws {RequiredError}
          */
-        v1QuotesLatestGet(filterSymbolId?: string, limit?: number, options: RequestOptions): FetchArgs {
+        v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, options: RequestOptions): FetchArgs {
             const localVarPath = `/v1/quotes/latest`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
@@ -4592,6 +4606,10 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
 
             if (filterSymbolId !== undefined) {
                 localVarQueryParameter['filter_symbol_id'] = ((filterSymbolId:any):string);
+            }
+
+            if (filterExchangeId !== undefined) {
+                localVarQueryParameter['filter_exchange_id'] = ((filterExchangeId:any):string);
             }
 
             if (limit !== undefined) {
@@ -4743,9 +4761,9 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
 };
 
 export type QuotesApiType = { 
-    v1QuotesCurrentGet(filterSymbolId?: string, options?: RequestOptions): Promise<Array<V1QuoteTrade>>,
+    v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, options?: RequestOptions): Promise<Array<V1QuoteTrade>>,
 
-    v1QuotesLatestGet(filterSymbolId?: string, limit?: number, options?: RequestOptions): Promise<Array<V1Quote>>,
+    v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, options?: RequestOptions): Promise<Array<V1Quote>>,
 
     v1QuotesSymbolIdCurrentGet(symbolId: string, options?: RequestOptions): Promise<V1QuoteTrade>,
 
@@ -4766,8 +4784,8 @@ export const QuotesApi = function(configuration?: Configuration, fetch: FetchAPI
          * @summary Current data
          * @throws {RequiredError}
          */
-        v1QuotesCurrentGet(filterSymbolId?: string, options?: RequestOptions = {}): Promise<Array<V1QuoteTrade>> {
-            const localVarFetchArgs = QuotesApiFetchParamCreator(configuration).v1QuotesCurrentGet(filterSymbolId, options);
+        v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, options?: RequestOptions = {}): Promise<Array<V1QuoteTrade>> {
+            const localVarFetchArgs = QuotesApiFetchParamCreator(configuration).v1QuotesCurrentGet(filterSymbolId, filterExchangeId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -4781,8 +4799,8 @@ export const QuotesApi = function(configuration?: Configuration, fetch: FetchAPI
          * @summary Latest data
          * @throws {RequiredError}
          */
-        v1QuotesLatestGet(filterSymbolId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<V1Quote>> {
-            const localVarFetchArgs = QuotesApiFetchParamCreator(configuration).v1QuotesLatestGet(filterSymbolId, limit, options);
+        v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<V1Quote>> {
+            const localVarFetchArgs = QuotesApiFetchParamCreator(configuration).v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();

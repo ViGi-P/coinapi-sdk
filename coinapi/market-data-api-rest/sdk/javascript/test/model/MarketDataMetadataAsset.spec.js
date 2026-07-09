@@ -168,6 +168,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property assetType (base name: "asset_type")', function() {
+      // uncomment below and update the code to test the property assetType
+      //var instance = new CoinApiMarketDataRestApi.MarketDataMetadataAsset();
+      //expect(instance).to.be();
+    });
+
     it('should have the property dataStart (base name: "data_start")', function() {
       // uncomment below and update the code to test the property dataStart
       //var instance = new CoinApiMarketDataRestApi.MarketDataMetadataAsset();

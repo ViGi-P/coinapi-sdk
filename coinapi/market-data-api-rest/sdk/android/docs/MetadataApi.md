@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## v1AssetsGet
 
-> List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId)
+> List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId, filterAssetType)
 
 List all assets
 
@@ -78,8 +78,9 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 
 MetadataApi apiInstance = new MetadataApi();
 String filterAssetId = null; // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+String filterAssetType = null; // String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 try {
-    List<MarketDataMetadataAsset> result = apiInstance.v1AssetsGet(filterAssetId);
+    List<MarketDataMetadataAsset> result = apiInstance.v1AssetsGet(filterAssetId, filterAssetType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1AssetsGet");
@@ -93,6 +94,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterAssetId** | **String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] [default to null]
+ **filterAssetType** | **String**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] [default to null]
 
 ### Return type
 

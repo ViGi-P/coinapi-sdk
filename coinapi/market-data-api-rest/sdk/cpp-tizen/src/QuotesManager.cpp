@@ -96,7 +96,7 @@ static bool v1QuotesCurrentGetProcessor(MemoryStruct_s p_chunk, long code, char*
 }
 
 static bool v1QuotesCurrentGetHelper(char * accessToken,
-	std::string filterSymbolId, 
+	std::string filterSymbolId, std::string filterExchangeId, 
 	void(* handler)(std::list<V1.QuoteTrade>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -118,6 +118,13 @@ static bool v1QuotesCurrentGetHelper(char * accessToken,
 	queryParams.insert(pair<string, string>("filter_symbol_id", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("filter_symbol_id");
+	}
+
+
+	itemAtq = stringify(&filterExchangeId, "std::string");
+	queryParams.insert(pair<string, string>("filter_exchange_id", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("filter_exchange_id");
 	}
 
 	string mBody = "";
@@ -174,22 +181,22 @@ static bool v1QuotesCurrentGetHelper(char * accessToken,
 
 
 bool QuotesManager::v1QuotesCurrentGetAsync(char * accessToken,
-	std::string filterSymbolId, 
+	std::string filterSymbolId, std::string filterExchangeId, 
 	void(* handler)(std::list<V1.QuoteTrade>, Error, void* )
 	, void* userData)
 {
 	return v1QuotesCurrentGetHelper(accessToken,
-	filterSymbolId, 
+	filterSymbolId, filterExchangeId, 
 	handler, userData, true);
 }
 
 bool QuotesManager::v1QuotesCurrentGetSync(char * accessToken,
-	std::string filterSymbolId, 
+	std::string filterSymbolId, std::string filterExchangeId, 
 	void(* handler)(std::list<V1.QuoteTrade>, Error, void* )
 	, void* userData)
 {
 	return v1QuotesCurrentGetHelper(accessToken,
-	filterSymbolId, 
+	filterSymbolId, filterExchangeId, 
 	handler, userData, false);
 }
 
@@ -241,7 +248,7 @@ static bool v1QuotesLatestGetProcessor(MemoryStruct_s p_chunk, long code, char* 
 }
 
 static bool v1QuotesLatestGetHelper(char * accessToken,
-	std::string filterSymbolId, int limit, 
+	std::string filterSymbolId, std::string filterExchangeId, int limit, 
 	void(* handler)(std::list<V1.Quote>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -263,6 +270,13 @@ static bool v1QuotesLatestGetHelper(char * accessToken,
 	queryParams.insert(pair<string, string>("filter_symbol_id", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("filter_symbol_id");
+	}
+
+
+	itemAtq = stringify(&filterExchangeId, "std::string");
+	queryParams.insert(pair<string, string>("filter_exchange_id", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("filter_exchange_id");
 	}
 
 
@@ -326,22 +340,22 @@ static bool v1QuotesLatestGetHelper(char * accessToken,
 
 
 bool QuotesManager::v1QuotesLatestGetAsync(char * accessToken,
-	std::string filterSymbolId, int limit, 
+	std::string filterSymbolId, std::string filterExchangeId, int limit, 
 	void(* handler)(std::list<V1.Quote>, Error, void* )
 	, void* userData)
 {
 	return v1QuotesLatestGetHelper(accessToken,
-	filterSymbolId, limit, 
+	filterSymbolId, filterExchangeId, limit, 
 	handler, userData, true);
 }
 
 bool QuotesManager::v1QuotesLatestGetSync(char * accessToken,
-	std::string filterSymbolId, int limit, 
+	std::string filterSymbolId, std::string filterExchangeId, int limit, 
 	void(* handler)(std::list<V1.Quote>, Error, void* )
 	, void* userData)
 {
 	return v1QuotesLatestGetHelper(accessToken,
-	filterSymbolId, limit, 
+	filterSymbolId, filterExchangeId, limit, 
 	handler, userData, false);
 }
 

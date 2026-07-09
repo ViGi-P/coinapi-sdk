@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_get**
-> List[MarketDataMetadataAsset] v1_assets_get(filter_asset_id=filter_asset_id)
+> List[MarketDataMetadataAsset] v1_assets_get(filter_asset_id=filter_asset_id, filter_asset_type=filter_asset_type)
 
 List all assets
 
@@ -153,10 +153,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     # Create an instance of the API class
     api_instance = api_bricks_coinapi_market_data_api_rest.MetadataApi(api_client)
     filter_asset_id = 'filter_asset_id_example' # str | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). (optional)
+    filter_asset_type = 'filter_asset_type_example' # str | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
 
     try:
         # List all assets
-        api_response = api_instance.v1_assets_get(filter_asset_id=filter_asset_id)
+        api_response = api_instance.v1_assets_get(filter_asset_id=filter_asset_id, filter_asset_type=filter_asset_type)
         print("The response of MetadataApi->v1_assets_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -171,6 +172,7 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_asset_id** | **str**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] 
+ **filter_asset_type** | **str**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 
 ### Return type
 

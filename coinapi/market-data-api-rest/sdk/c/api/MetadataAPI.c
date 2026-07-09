@@ -108,7 +108,7 @@ end:
 // Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
 //
 list_t*
-MetadataAPI_v1AssetsGet(apiClient_t *apiClient, char *filter_asset_id)
+MetadataAPI_v1AssetsGet(apiClient_t *apiClient, char *filter_asset_id, char *filter_asset_type)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -138,6 +138,18 @@ MetadataAPI_v1AssetsGet(apiClient_t *apiClient, char *filter_asset_id)
         valueQuery_filter_asset_id = strdup((filter_asset_id));
         keyPairQuery_filter_asset_id = keyValuePair_create(keyQuery_filter_asset_id, valueQuery_filter_asset_id);
         list_addElement(localVarQueryParameters,keyPairQuery_filter_asset_id);
+    }
+
+    // query parameters
+    char *keyQuery_filter_asset_type = NULL;
+    char * valueQuery_filter_asset_type = NULL;
+    keyValuePair_t *keyPairQuery_filter_asset_type = 0;
+    if (filter_asset_type)
+    {
+        keyQuery_filter_asset_type = strdup("filter_asset_type");
+        valueQuery_filter_asset_type = strdup((filter_asset_type));
+        keyPairQuery_filter_asset_type = keyValuePair_create(keyQuery_filter_asset_type, valueQuery_filter_asset_type);
+        list_addElement(localVarQueryParameters,keyPairQuery_filter_asset_type);
     }
     list_addElement(localVarHeaderType,"text/plain"); //produces
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -202,6 +214,18 @@ MetadataAPI_v1AssetsGet(apiClient_t *apiClient, char *filter_asset_id)
     if(keyPairQuery_filter_asset_id){
         keyValuePair_free(keyPairQuery_filter_asset_id);
         keyPairQuery_filter_asset_id = NULL;
+    }
+    if(keyQuery_filter_asset_type){
+        free(keyQuery_filter_asset_type);
+        keyQuery_filter_asset_type = NULL;
+    }
+    if(valueQuery_filter_asset_type){
+        free(valueQuery_filter_asset_type);
+        valueQuery_filter_asset_type = NULL;
+    }
+    if(keyPairQuery_filter_asset_type){
+        keyValuePair_free(keyPairQuery_filter_asset_type);
+        keyPairQuery_filter_asset_type = NULL;
     }
     return elementToReturn;
 end:

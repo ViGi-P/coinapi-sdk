@@ -16,7 +16,7 @@ All URIs are relative to https://rest.coinapi.io, except if the operation define
 ## `v1QuotesCurrentGet()`
 
 ```php
-v1QuotesCurrentGet($filter_symbol_id): \OpenAPI\Client\Model\V1QuoteTrade[]
+v1QuotesCurrentGet($filter_symbol_id, $filter_exchange_id): \OpenAPI\Client\Model\V1QuoteTrade[]
 ```
 
 Current data
@@ -46,9 +46,10 @@ $apiInstance = new OpenAPI\Client\Api\QuotesApi(
     $config
 );
 $filter_symbol_id = 'filter_symbol_id_example'; // string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+$filter_exchange_id = 'filter_exchange_id_example'; // string | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 
 try {
-    $result = $apiInstance->v1QuotesCurrentGet($filter_symbol_id);
+    $result = $apiInstance->v1QuotesCurrentGet($filter_symbol_id, $filter_exchange_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotesApi->v1QuotesCurrentGet: ', $e->getMessage(), PHP_EOL;
@@ -60,6 +61,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **filter_symbol_id** | **string**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filter_exchange_id** | **string**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 
 ### Return type
 
@@ -81,7 +83,7 @@ try {
 ## `v1QuotesLatestGet()`
 
 ```php
-v1QuotesLatestGet($filter_symbol_id, $limit): \OpenAPI\Client\Model\V1Quote[]
+v1QuotesLatestGet($filter_symbol_id, $filter_exchange_id, $limit): \OpenAPI\Client\Model\V1Quote[]
 ```
 
 Latest data
@@ -111,10 +113,11 @@ $apiInstance = new OpenAPI\Client\Api\QuotesApi(
     $config
 );
 $filter_symbol_id = 'filter_symbol_id_example'; // string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+$filter_exchange_id = 'filter_exchange_id_example'; // string | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 $limit = 100; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    $result = $apiInstance->v1QuotesLatestGet($filter_symbol_id, $limit);
+    $result = $apiInstance->v1QuotesLatestGet($filter_symbol_id, $filter_exchange_id, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotesApi->v1QuotesLatestGet: ', $e->getMessage(), PHP_EOL;
@@ -126,6 +129,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **filter_symbol_id** | **string**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filter_exchange_id** | **string**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 | **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 
 ### Return type

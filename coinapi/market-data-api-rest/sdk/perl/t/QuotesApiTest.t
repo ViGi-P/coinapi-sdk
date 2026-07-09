@@ -34,15 +34,17 @@ isa_ok($api, 'WWW::OpenAPIClient::QuotesApi');
 #
 # uncomment below and update the test
 #my $v1_quotes_current_get_filter_symbol_id = undef; # replace NULL with a proper value
-#my $v1_quotes_current_get_result = $api->v1_quotes_current_get(filter_symbol_id => $v1_quotes_current_get_filter_symbol_id);
+#my $v1_quotes_current_get_filter_exchange_id = undef; # replace NULL with a proper value
+#my $v1_quotes_current_get_result = $api->v1_quotes_current_get(filter_symbol_id => $v1_quotes_current_get_filter_symbol_id, filter_exchange_id => $v1_quotes_current_get_filter_exchange_id);
 
 #
 # v1_quotes_latest_get test
 #
 # uncomment below and update the test
 #my $v1_quotes_latest_get_filter_symbol_id = undef; # replace NULL with a proper value
+#my $v1_quotes_latest_get_filter_exchange_id = undef; # replace NULL with a proper value
 #my $v1_quotes_latest_get_limit = undef; # replace NULL with a proper value
-#my $v1_quotes_latest_get_result = $api->v1_quotes_latest_get(filter_symbol_id => $v1_quotes_latest_get_filter_symbol_id, limit => $v1_quotes_latest_get_limit);
+#my $v1_quotes_latest_get_result = $api->v1_quotes_latest_get(filter_symbol_id => $v1_quotes_latest_get_filter_symbol_id, filter_exchange_id => $v1_quotes_latest_get_filter_exchange_id, limit => $v1_quotes_latest_get_limit);
 
 #
 # v1_quotes_symbol_id_current_get test

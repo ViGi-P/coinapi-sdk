@@ -70,7 +70,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
         public async Task V1AssetsGetAsyncTest()
         {
             Client.Option<string> filterAssetId = default!;
-            var response = await _instance.V1AssetsGetAsync(filterAssetId);
+            Client.Option<string> filterAssetType = default!;
+            var response = await _instance.V1AssetsGetAsync(filterAssetId, filterAssetType);
             var model = response.Ok();
             Assert.IsType<List<MarketDataMetadataAsset>>(model);
         }

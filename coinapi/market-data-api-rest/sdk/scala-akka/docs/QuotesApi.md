@@ -52,8 +52,10 @@ object Example extends App {
     val apiInvoker = ApiInvoker()
     val apiInstance = QuotesApi("https://rest.coinapi.io")
     val filterSymbolId: String = filterSymbolId_example // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+
+    val filterExchangeId: String = filterExchangeId_example // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     
-    val request = apiInstance.v1QuotesCurrentGet(filterSymbolId)
+    val request = apiInstance.v1QuotesCurrentGet(filterSymbolId, filterExchangeId)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -82,6 +84,7 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional]
+ **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional]
 
 ### Return type
 
@@ -139,9 +142,11 @@ object Example extends App {
     val apiInstance = QuotesApi("https://rest.coinapi.io")
     val filterSymbolId: String = filterSymbolId_example // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
 
+    val filterExchangeId: String = filterExchangeId_example // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+
     val limit: Int = 56 // Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     
-    val request = apiInstance.v1QuotesLatestGet(filterSymbolId, limit)
+    val request = apiInstance.v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -170,6 +175,7 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional]
+ **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional]
  **limit** | **Int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional]
 
 ### Return type

@@ -115,7 +115,8 @@ end
 
 api_instance = OpenapiClient::MetadataApi.new
 opts = {
-  filter_asset_id: 'filter_asset_id_example' # String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+  filter_asset_id: 'filter_asset_id_example', # String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+  filter_asset_type: 'filter_asset_type_example' # String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 }
 
 begin
@@ -150,6 +151,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **filter_asset_id** | **String** | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] |
+| **filter_asset_type** | **String** | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] |
 
 ### Return type
 

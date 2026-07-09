@@ -240,7 +240,7 @@ static bool v1AssetsGetProcessor(MemoryStruct_s p_chunk, long code, char* errorm
 }
 
 static bool v1AssetsGetHelper(char * accessToken,
-	std::string filterAssetId, 
+	std::string filterAssetId, std::string filterAssetType, 
 	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -262,6 +262,13 @@ static bool v1AssetsGetHelper(char * accessToken,
 	queryParams.insert(pair<string, string>("filter_asset_id", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("filter_asset_id");
+	}
+
+
+	itemAtq = stringify(&filterAssetType, "std::string");
+	queryParams.insert(pair<string, string>("filter_asset_type", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("filter_asset_type");
 	}
 
 	string mBody = "";
@@ -318,22 +325,22 @@ static bool v1AssetsGetHelper(char * accessToken,
 
 
 bool MetadataManager::v1AssetsGetAsync(char * accessToken,
-	std::string filterAssetId, 
+	std::string filterAssetId, std::string filterAssetType, 
 	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsGetHelper(accessToken,
-	filterAssetId, 
+	filterAssetId, filterAssetType, 
 	handler, userData, true);
 }
 
 bool MetadataManager::v1AssetsGetSync(char * accessToken,
-	std::string filterAssetId, 
+	std::string filterAssetId, std::string filterAssetType, 
 	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData)
 {
 	return v1AssetsGetHelper(accessToken,
-	filterAssetId, 
+	filterAssetId, filterAssetType, 
 	handler, userData, false);
 }
 

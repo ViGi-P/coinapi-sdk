@@ -685,6 +685,7 @@ package .Models is
        Supply_Total : Swagger.Number;
        Supply_Max : Swagger.Number;
        Chain_Addresses : .Models.V1ChainNetworkAddress_Type_Vectors.Vector;
+       Asset_Type : Swagger.Nullable_UString;
        Data_Start : Swagger.Nullable_UString;
        Data_End : Swagger.Nullable_UString;
      end record;

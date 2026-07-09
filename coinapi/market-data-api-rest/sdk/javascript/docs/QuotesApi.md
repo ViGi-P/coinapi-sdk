@@ -36,7 +36,8 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiMarketDataRestApi.QuotesApi();
 let opts = {
-  'filterSymbolId': "filterSymbolId_example" // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  'filterSymbolId': "filterSymbolId_example", // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  'filterExchangeId': "filterExchangeId_example" // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 };
 apiInstance.v1QuotesCurrentGet(opts, (error, data, response) => {
   if (error) {
@@ -53,6 +54,7 @@ apiInstance.v1QuotesCurrentGet(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
 
 ### Return type
 
@@ -93,6 +95,7 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CoinApiMarketDataRestApi.QuotesApi();
 let opts = {
   'filterSymbolId': "filterSymbolId_example", // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  'filterExchangeId': "filterExchangeId_example", // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
   'limit': 100 // Number | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 };
 apiInstance.v1QuotesLatestGet(opts, (error, data, response) => {
@@ -110,6 +113,7 @@ apiInstance.v1QuotesLatestGet(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
  **limit** | **Number**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

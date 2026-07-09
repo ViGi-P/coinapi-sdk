@@ -57,6 +57,8 @@ feature --Access
       -- Gets or sets the maximum supply of the asset.
     chain_addresses: detachable LIST [V1_CHAIN_NETWORK_ADDRESS]
       -- 
+    asset_type: detachable STRING_32
+      -- Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     data_start: detachable STRING_32
       
     data_end: detachable STRING_32
@@ -216,6 +218,14 @@ feature -- Change Element
         chain_addresses_set: chain_addresses = a_name
       end
 
+    set_asset_type (a_name: like asset_type)
+        -- Set 'asset_type' with 'a_name'.
+      do
+        asset_type := a_name
+      ensure
+        asset_type_set: asset_type = a_name
+      end
+
     set_data_start (a_name: like data_start)
         -- Set 'data_start' with 'a_name'.
       do
@@ -336,6 +346,11 @@ feature -- Change Element
             Result.append (ic.item.out)
             Result.append ("%N")
           end
+        end
+        if attached asset_type as l_asset_type then
+          Result.append ("%Nasset_type:")
+          Result.append (l_asset_type.out)
+          Result.append ("%N")
         end
         if attached data_start as l_data_start then
           Result.append ("%Ndata_start:")

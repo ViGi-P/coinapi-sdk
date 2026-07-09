@@ -50,6 +50,7 @@ import com.squareup.moshi.JsonClass
  * @param supplyTotal Gets or sets the total supply of the asset.
  * @param supplyMax Gets or sets the maximum supply of the asset.
  * @param chainAddresses 
+ * @param assetType Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
  * @param dataStart 
  * @param dataEnd 
  */
@@ -132,6 +133,10 @@ data class MarketDataMetadataAsset (
     /*  */
     @Json(name = "chain_addresses")
     val chainAddresses: kotlin.collections.List<V1ChainNetworkAddress>? = null,
+
+    /* Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. */
+    @Json(name = "asset_type")
+    val assetType: kotlin.String? = null,
 
     @Json(name = "data_start")
     val dataStart: kotlin.String? = null,

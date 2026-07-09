@@ -50,9 +50,10 @@ class MarketDataMetadataAsset(BaseModel):
     supply_total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the total supply of the asset.")
     supply_max: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the maximum supply of the asset.")
     chain_addresses: Optional[List[V1ChainNetworkAddress]] = None
+    asset_type: Optional[StrictStr] = Field(default=None, description="Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.")
     data_start: Optional[StrictStr] = None
     data_end: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "data_start", "data_end"]
+    __properties: ClassVar[List[str]] = ["asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "asset_type", "data_start", "data_end"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -194,6 +195,11 @@ class MarketDataMetadataAsset(BaseModel):
         if self.chain_addresses is None and "chain_addresses" in self.model_fields_set:
             _dict['chain_addresses'] = None
 
+        # set to None if asset_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.asset_type is None and "asset_type" in self.model_fields_set:
+            _dict['asset_type'] = None
+
         # set to None if data_start (nullable) is None
         # and model_fields_set contains the field
         if self.data_start is None and "data_start" in self.model_fields_set:
@@ -235,6 +241,7 @@ class MarketDataMetadataAsset(BaseModel):
             "supply_total": obj.get("supply_total"),
             "supply_max": obj.get("supply_max"),
             "chain_addresses": [V1ChainNetworkAddress.from_dict(_item) for _item in obj["chain_addresses"]] if obj.get("chain_addresses") is not None else None,
+            "asset_type": obj.get("asset_type"),
             "data_start": obj.get("data_start"),
             "data_end": obj.get("data_end")
         })

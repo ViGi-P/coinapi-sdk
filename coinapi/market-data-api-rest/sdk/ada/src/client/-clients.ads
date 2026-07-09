@@ -92,6 +92,7 @@ package .Clients is
    procedure V_1Assets_Get
       (Client : in out Client_Type;
        Filter_Asset_Id : in Swagger.Nullable_UString;
+       Filter_Asset_Type : in Swagger.Nullable_UString;
        Result : out .Models.MarketDataMetadataAsset_Type_Vectors.Vector);
 
    --  List all asset icons
@@ -571,6 +572,7 @@ package .Clients is
    procedure V_1Quotes_Current_Get
       (Client : in out Client_Type;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
+       Filter_Exchange_Id : in Swagger.Nullable_UString;
        Result : out .Models.V1QuoteTrade_Type_Vectors.Vector);
 
    --  Latest data
@@ -578,6 +580,7 @@ package .Clients is
    procedure V_1Quotes_Latest_Get
       (Client : in out Client_Type;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
+       Filter_Exchange_Id : in Swagger.Nullable_UString;
        Limit : in Swagger.Nullable_Integer;
        Result : out .Models.V1Quote_Type_Vectors.Vector);
 

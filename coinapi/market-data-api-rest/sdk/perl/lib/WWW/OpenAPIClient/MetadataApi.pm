@@ -121,11 +121,17 @@ sub v1_assets_asset_id_get {
 # List all assets
 #
 # @param string $filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+# @param string $filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
 {
     my $params = {
     'filter_asset_id' => {
         data_type => 'string',
         description => 'Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).',
+        required => '0',
+    },
+    'filter_asset_type' => {
+        data_type => 'string',
+        description => 'Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.',
         required => '0',
     },
     };
@@ -158,6 +164,11 @@ sub v1_assets_get {
     # query params
     if ( exists $args{'filter_asset_id'}) {
         $query_params->{'filter_asset_id'} = $self->{api_client}->to_query_value($args{'filter_asset_id'});
+    }
+
+    # query params
+    if ( exists $args{'filter_asset_type'}) {
+        $query_params->{'filter_asset_type'} = $self->{api_client}->to_query_value($args{'filter_asset_type'});
     }
 
     my $_body_data;

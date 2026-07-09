@@ -439,15 +439,16 @@ class MetadataApi
      * List all assets
      *
      * @param  string|null $filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param  string|null $filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AssetsGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\MarketDataMetadataAsset[]
      */
-    public function v1AssetsGet($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
+    public function v1AssetsGet($filter_asset_id = null, $filter_asset_type = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
-        list($response) = $this->v1AssetsGetWithHttpInfo($filter_asset_id, $contentType);
+        list($response) = $this->v1AssetsGetWithHttpInfo($filter_asset_id, $filter_asset_type, $contentType);
         return $response;
     }
 
@@ -457,15 +458,16 @@ class MetadataApi
      * List all assets
      *
      * @param  string|null $filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param  string|null $filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AssetsGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\MarketDataMetadataAsset[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1AssetsGetWithHttpInfo($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
+    public function v1AssetsGetWithHttpInfo($filter_asset_id = null, $filter_asset_type = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
-        $request = $this->v1AssetsGetRequest($filter_asset_id, $contentType);
+        $request = $this->v1AssetsGetRequest($filter_asset_id, $filter_asset_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -542,14 +544,15 @@ class MetadataApi
      * List all assets
      *
      * @param  string|null $filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param  string|null $filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AssetsGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1AssetsGetAsync($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
+    public function v1AssetsGetAsync($filter_asset_id = null, $filter_asset_type = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
-        return $this->v1AssetsGetAsyncWithHttpInfo($filter_asset_id, $contentType)
+        return $this->v1AssetsGetAsyncWithHttpInfo($filter_asset_id, $filter_asset_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -563,15 +566,16 @@ class MetadataApi
      * List all assets
      *
      * @param  string|null $filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param  string|null $filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AssetsGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1AssetsGetAsyncWithHttpInfo($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
+    public function v1AssetsGetAsyncWithHttpInfo($filter_asset_id = null, $filter_asset_type = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\MarketDataMetadataAsset[]';
-        $request = $this->v1AssetsGetRequest($filter_asset_id, $contentType);
+        $request = $this->v1AssetsGetRequest($filter_asset_id, $filter_asset_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -613,13 +617,15 @@ class MetadataApi
      * Create request for operation 'v1AssetsGet'
      *
      * @param  string|null $filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param  string|null $filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AssetsGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v1AssetsGetRequest($filter_asset_id = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
+    public function v1AssetsGetRequest($filter_asset_id = null, $filter_asset_type = null, string $contentType = self::contentTypes['v1AssetsGet'][0])
     {
+
 
 
 
@@ -634,6 +640,15 @@ class MetadataApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $filter_asset_id,
             'filter_asset_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filter_asset_type,
+            'filter_asset_type', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

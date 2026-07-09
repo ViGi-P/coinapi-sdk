@@ -39,6 +39,7 @@ typedef struct market_data_metadata_asset_t {
     double *supply_total; //numeric
     double *supply_max; //numeric
     list_t *chain_addresses; //nonprimitive container
+    char *asset_type; // string
     char *data_start; // string
     char *data_end; // string
 
@@ -65,6 +66,7 @@ __attribute__((deprecated)) market_data_metadata_asset_t *market_data_metadata_a
     double *supply_total,
     double *supply_max,
     list_t *chain_addresses,
+    char *asset_type,
     char *data_start,
     char *data_end
 );

@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an asset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-08T06:05:10.460145271Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-09T06:07:07.876766921Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class MarketDataMetadataAsset {
   public static final String SERIALIZED_NAME_ASSET_ID = "asset_id";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -150,6 +150,11 @@ public class MarketDataMetadataAsset {
   @SerializedName(SERIALIZED_NAME_CHAIN_ADDRESSES)
   @javax.annotation.Nullable
   private List<V1ChainNetworkAddress> chainAddresses;
+
+  public static final String SERIALIZED_NAME_ASSET_TYPE = "asset_type";
+  @SerializedName(SERIALIZED_NAME_ASSET_TYPE)
+  @javax.annotation.Nullable
+  private String assetType;
 
   public static final String SERIALIZED_NAME_DATA_START = "data_start";
   @SerializedName(SERIALIZED_NAME_DATA_START)
@@ -542,6 +547,25 @@ public class MarketDataMetadataAsset {
   }
 
 
+  public MarketDataMetadataAsset assetType(@javax.annotation.Nullable String assetType) {
+    this.assetType = assetType;
+    return this;
+  }
+
+  /**
+   * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+   * @return assetType
+   */
+  @javax.annotation.Nullable
+  public String getAssetType() {
+    return assetType;
+  }
+
+  public void setAssetType(@javax.annotation.Nullable String assetType) {
+    this.assetType = assetType;
+  }
+
+
   /**
    * Get dataStart
    * @return dataStart
@@ -593,6 +617,7 @@ public class MarketDataMetadataAsset {
         Objects.equals(this.supplyTotal, marketDataMetadataAsset.supplyTotal) &&
         Objects.equals(this.supplyMax, marketDataMetadataAsset.supplyMax) &&
         Objects.equals(this.chainAddresses, marketDataMetadataAsset.chainAddresses) &&
+        Objects.equals(this.assetType, marketDataMetadataAsset.assetType) &&
         Objects.equals(this.dataStart, marketDataMetadataAsset.dataStart) &&
         Objects.equals(this.dataEnd, marketDataMetadataAsset.dataEnd);
   }
@@ -603,7 +628,7 @@ public class MarketDataMetadataAsset {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, name, typeIsCrypto, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, dataSymbolsCount, volume1hrsUsd, volume1dayUsd, volume1mthUsd, priceUsd, idIcon, supplyCurrent, supplyTotal, supplyMax, chainAddresses, dataStart, dataEnd);
+    return Objects.hash(assetId, name, typeIsCrypto, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, dataSymbolsCount, volume1hrsUsd, volume1dayUsd, volume1mthUsd, priceUsd, idIcon, supplyCurrent, supplyTotal, supplyMax, chainAddresses, assetType, dataStart, dataEnd);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -636,6 +661,7 @@ public class MarketDataMetadataAsset {
     sb.append("    supplyTotal: ").append(toIndentedString(supplyTotal)).append("\n");
     sb.append("    supplyMax: ").append(toIndentedString(supplyMax)).append("\n");
     sb.append("    chainAddresses: ").append(toIndentedString(chainAddresses)).append("\n");
+    sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
     sb.append("    dataStart: ").append(toIndentedString(dataStart)).append("\n");
     sb.append("    dataEnd: ").append(toIndentedString(dataEnd)).append("\n");
     sb.append("}");
@@ -656,7 +682,7 @@ public class MarketDataMetadataAsset {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "data_start", "data_end"));
+    openapiFields = new HashSet<String>(Arrays.asList("asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "asset_type", "data_start", "data_end"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -705,6 +731,9 @@ public class MarketDataMetadataAsset {
             V1ChainNetworkAddress.validateJsonElement(jsonArraychainAddresses.get(i));
           };
         }
+      }
+      if ((jsonObj.get("asset_type") != null && !jsonObj.get("asset_type").isJsonNull()) && !jsonObj.get("asset_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `asset_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asset_type").toString()));
       }
       if ((jsonObj.get("data_start") != null && !jsonObj.get("data_start").isJsonNull()) && !jsonObj.get("data_start").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `data_start` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data_start").toString()));

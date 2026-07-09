@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **V1QuotesCurrentGet**
-> array[V1QuoteTrade] V1QuotesCurrentGet(filter_symbol_id = var.filter_symbol_id)
+> array[V1QuoteTrade] V1QuotesCurrentGet(filter_symbol_id = var.filter_symbol_id, filter_exchange_id = var.filter_exchange_id)
 
 Current data
 
@@ -26,6 +26,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (Optional)
+var_filter_exchange_id <- "filter_exchange_id_example" # character | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (Optional)
 
 api_instance <- QuotesApi$new()
 # Configure API key authorization: APIKey
@@ -33,8 +34,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_iddata_file = "result.txt")
-result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_id)
+# result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_iddata_file = "result.txt")
+result <- api_instance$V1QuotesCurrentGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id)
 dput(result)
 ```
 
@@ -43,6 +44,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **character**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filter_exchange_id** | **character**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
 
 ### Return type
 
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1QuotesLatestGet**
-> array[V1Quote] V1QuotesLatestGet(filter_symbol_id = var.filter_symbol_id, limit = 100)
+> array[V1Quote] V1QuotesLatestGet(filter_symbol_id = var.filter_symbol_id, filter_exchange_id = var.filter_exchange_id, limit = 100)
 
 Latest data
 
@@ -77,6 +79,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (Optional)
+var_filter_exchange_id <- "filter_exchange_id_example" # character | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (Optional)
 var_limit <- 100 # integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
 
 api_instance <- QuotesApi$new()
@@ -85,8 +88,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, limit = var_limit)
+# result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id, limit = var_limitdata_file = "result.txt")
+result <- api_instance$V1QuotesLatestGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id, limit = var_limit)
 dput(result)
 ```
 
@@ -95,6 +98,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **character**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filter_exchange_id** | **character**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
  **limit** | **integer**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

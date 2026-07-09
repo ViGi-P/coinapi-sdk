@@ -26,7 +26,10 @@ class QuotesApi {
   ///
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
-  Future<Response> v1QuotesCurrentGetWithHttpInfo({ String? filterSymbolId, Future<void>? abortTrigger, }) async {
+  ///
+  /// * [String] filterExchangeId:
+  ///   Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+  Future<Response> v1QuotesCurrentGetWithHttpInfo({ String? filterSymbolId, String? filterExchangeId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/quotes/current';
 
@@ -39,6 +42,9 @@ class QuotesApi {
 
     if (filterSymbolId != null) {
       queryParams.addAll(_queryParams('', 'filter_symbol_id', filterSymbolId));
+    }
+    if (filterExchangeId != null) {
+      queryParams.addAll(_queryParams('', 'filter_exchange_id', filterExchangeId));
     }
 
     const contentTypes = <String>[];
@@ -64,8 +70,11 @@ class QuotesApi {
   ///
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
-  Future<List<V1QuoteTrade>?> v1QuotesCurrentGet({ String? filterSymbolId, Future<void>? abortTrigger, }) async {
-    final response = await v1QuotesCurrentGetWithHttpInfo(filterSymbolId: filterSymbolId, abortTrigger: abortTrigger,);
+  ///
+  /// * [String] filterExchangeId:
+  ///   Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+  Future<List<V1QuoteTrade>?> v1QuotesCurrentGet({ String? filterSymbolId, String? filterExchangeId, Future<void>? abortTrigger, }) async {
+    final response = await v1QuotesCurrentGetWithHttpInfo(filterSymbolId: filterSymbolId, filterExchangeId: filterExchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -93,9 +102,12 @@ class QuotesApi {
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
   ///
+  /// * [String] filterExchangeId:
+  ///   Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+  ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1QuotesLatestGetWithHttpInfo({ String? filterSymbolId, int? limit, Future<void>? abortTrigger, }) async {
+  Future<Response> v1QuotesLatestGetWithHttpInfo({ String? filterSymbolId, String? filterExchangeId, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/quotes/latest';
 
@@ -108,6 +120,9 @@ class QuotesApi {
 
     if (filterSymbolId != null) {
       queryParams.addAll(_queryParams('', 'filter_symbol_id', filterSymbolId));
+    }
+    if (filterExchangeId != null) {
+      queryParams.addAll(_queryParams('', 'filter_exchange_id', filterExchangeId));
     }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
@@ -137,10 +152,13 @@ class QuotesApi {
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
   ///
+  /// * [String] filterExchangeId:
+  ///   Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+  ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1Quote>?> v1QuotesLatestGet({ String? filterSymbolId, int? limit, Future<void>? abortTrigger, }) async {
-    final response = await v1QuotesLatestGetWithHttpInfo(filterSymbolId: filterSymbolId, limit: limit, abortTrigger: abortTrigger,);
+  Future<List<V1Quote>?> v1QuotesLatestGet({ String? filterSymbolId, String? filterExchangeId, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1QuotesLatestGetWithHttpInfo(filterSymbolId: filterSymbolId, filterExchangeId: filterExchangeId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

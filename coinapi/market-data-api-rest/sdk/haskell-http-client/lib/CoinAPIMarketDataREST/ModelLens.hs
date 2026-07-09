@@ -134,6 +134,11 @@ marketDataMetadataAssetChainAddressesL :: Lens_' MarketDataMetadataAsset (Maybe 
 marketDataMetadataAssetChainAddressesL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetChainAddresses -> MarketDataMetadataAsset { marketDataMetadataAssetChainAddresses, ..} ) <$> f marketDataMetadataAssetChainAddresses
 {-# INLINE marketDataMetadataAssetChainAddressesL #-}
 
+-- | 'marketDataMetadataAssetAssetType' Lens
+marketDataMetadataAssetAssetTypeL :: Lens_' MarketDataMetadataAsset (Maybe Text)
+marketDataMetadataAssetAssetTypeL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetAssetType -> MarketDataMetadataAsset { marketDataMetadataAssetAssetType, ..} ) <$> f marketDataMetadataAssetAssetType
+{-# INLINE marketDataMetadataAssetAssetTypeL #-}
+
 -- | 'marketDataMetadataAssetDataStart' Lens
 marketDataMetadataAssetDataStartL :: Lens_' MarketDataMetadataAsset (Maybe Text)
 marketDataMetadataAssetDataStartL f MarketDataMetadataAsset{..} = (\marketDataMetadataAssetDataStart -> MarketDataMetadataAsset { marketDataMetadataAssetDataStart, ..} ) <$> f marketDataMetadataAssetDataStart

@@ -32,6 +32,7 @@ part 'market_data_metadata_asset.g.dart';
 /// * [supplyTotal] - Gets or sets the total supply of the asset.
 /// * [supplyMax] - Gets or sets the maximum supply of the asset.
 /// * [chainAddresses] - 
+/// * [assetType] - Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 /// * [dataStart] 
 /// * [dataEnd] 
 @BuiltValue()
@@ -111,6 +112,10 @@ abstract class MarketDataMetadataAsset implements Built<MarketDataMetadataAsset,
   /// 
   @BuiltValueField(wireName: r'chain_addresses')
   BuiltList<V1ChainNetworkAddress>? get chainAddresses;
+
+  /// Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+  @BuiltValueField(wireName: r'asset_type')
+  String? get assetType;
 
   @BuiltValueField(wireName: r'data_start')
   String? get dataStart;
@@ -272,6 +277,13 @@ class _$MarketDataMetadataAssetSerializer implements PrimitiveSerializer<MarketD
       yield serializers.serialize(
         object.chainAddresses,
         specifiedType: const FullType.nullable(BuiltList, [FullType(V1ChainNetworkAddress)]),
+      );
+    }
+    if (object.assetType != null) {
+      yield r'asset_type';
+      yield serializers.serialize(
+        object.assetType,
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.dataStart != null) {
@@ -461,6 +473,14 @@ class _$MarketDataMetadataAssetSerializer implements PrimitiveSerializer<MarketD
           ) as BuiltList<V1ChainNetworkAddress>?;
           if (valueDes == null) continue;
           result.chainAddresses.replace(valueDes);
+          break;
+        case r'asset_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.assetType = valueDes;
           break;
         case r'data_start':
           final valueDes = serializers.deserialize(

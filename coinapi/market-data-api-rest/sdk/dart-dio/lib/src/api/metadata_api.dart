@@ -116,6 +116,7 @@ class MetadataApi {
   ///
   /// Parameters:
   /// * [filterAssetId] - Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+  /// * [filterAssetType] - Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -127,6 +128,7 @@ class MetadataApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<MarketDataMetadataAsset>>> v1AssetsGet({ 
     String? filterAssetId,
+    String? filterAssetType,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -160,6 +162,7 @@ class MetadataApi {
 
     final _queryParameters = <String, dynamic>{
       if (filterAssetId != null) r'filter_asset_id': encodeQueryParameter(_serializers, filterAssetId, const FullType(String)),
+      if (filterAssetType != null) r'filter_asset_type': encodeQueryParameter(_serializers, filterAssetType, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

@@ -55,13 +55,13 @@ v1AssetsAssetIdGet assetId_path auth_token =
 Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
 
 -}
-v1AssetsGet : Maybe String -> String -> Api.Request (List Api.Data.MarketDataMetadataAsset)
-v1AssetsGet filterAssetId_query auth_token =
+v1AssetsGet : Maybe String -> Maybe String -> String -> Api.Request (List Api.Data.MarketDataMetadataAsset)
+v1AssetsGet filterAssetId_query filterAssetType_query auth_token =
     Api.request
         "GET"
         "/v1/assets"
         []
-        [ ( "filter_asset_id", Maybe.map identity filterAssetId_query ) ]
+        [ ( "filter_asset_id", Maybe.map identity filterAssetId_query ), ( "filter_asset_type", Maybe.map identity filterAssetType_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.marketDataMetadataAssetDecoder)

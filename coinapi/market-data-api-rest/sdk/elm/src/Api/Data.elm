@@ -134,6 +134,7 @@ type alias MarketDataMetadataAsset =
     , supplyTotal : Maybe Float
     , supplyMax : Maybe Float
     , chainAddresses : Maybe ( List V1ChainNetworkAddress )
+    , assetType : Maybe String
     , dataStart : Maybe String
     , dataEnd : Maybe String
     }
@@ -554,6 +555,7 @@ encodeMarketDataMetadataAssetPairs model =
             , maybeEncodeNullable "supply_total" Json.Encode.float model.supplyTotal
             , maybeEncodeNullable "supply_max" Json.Encode.float model.supplyMax
             , maybeEncodeNullable "chain_addresses" (Json.Encode.list encodeV1ChainNetworkAddress) model.chainAddresses
+            , maybeEncodeNullable "asset_type" Json.Encode.string model.assetType
             , maybeEncodeNullable "data_start" Json.Encode.string model.dataStart
             , maybeEncodeNullable "data_end" Json.Encode.string model.dataEnd
             ]
@@ -1316,6 +1318,7 @@ marketDataMetadataAssetDecoder =
         |> maybeDecodeNullable "supply_total" Json.Decode.float Nothing
         |> maybeDecodeNullable "supply_max" Json.Decode.float Nothing
         |> maybeDecodeNullable "chain_addresses" (Json.Decode.list v1ChainNetworkAddressDecoder) Nothing
+        |> maybeDecodeNullable "asset_type" Json.Decode.string Nothing
         |> maybeDecodeNullable "data_start" Json.Decode.string Nothing
         |> maybeDecodeNullable "data_end" Json.Decode.string Nothing
 

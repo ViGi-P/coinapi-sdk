@@ -140,6 +140,13 @@ API.Client.MarketDataMetadataAsset.prototype.supplyMax;
 API.Client.MarketDataMetadataAsset.prototype.chainAddresses;
 
 /**
+ * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+ * @type {!string}
+ * @export
+ */
+API.Client.MarketDataMetadataAsset.prototype.assetType;
+
+/**
  * @type {!string}
  * @export
  */

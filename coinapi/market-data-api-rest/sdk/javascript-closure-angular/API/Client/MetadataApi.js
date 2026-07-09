@@ -90,10 +90,11 @@ API.Client.MetadataApi.prototype.v1AssetsAssetIdGet = function(assetId, opt_extr
  * List all assets
  * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
  * @param {!string=} opt_filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+ * @param {!string=} opt_filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.MarketDataMetadata.Asset>>}
  */
-API.Client.MetadataApi.prototype.v1AssetsGet = function(opt_filterAssetId, opt_extraHttpRequestParams) {
+API.Client.MetadataApi.prototype.v1AssetsGet = function(opt_filterAssetId, opt_filterAssetType, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/assets';
 
@@ -104,6 +105,10 @@ API.Client.MetadataApi.prototype.v1AssetsGet = function(opt_filterAssetId, opt_e
   var headerParams = angular.extend({}, this.defaultHeaders_);
   if (opt_filterAssetId !== undefined) {
     queryParameters['filter_asset_id'] = opt_filterAssetId;
+  }
+
+  if (opt_filterAssetType !== undefined) {
+    queryParameters['filter_asset_type'] = opt_filterAssetType;
   }
 
   /** @type {!Object} */

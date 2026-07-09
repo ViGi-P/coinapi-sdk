@@ -74,7 +74,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1AssetsGet"></a>
 # **v1AssetsGet**
-> kotlin.collections.List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId)
+> kotlin.collections.List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId, filterAssetType)
 
 List all assets
 
@@ -88,8 +88,9 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 
 val apiInstance = MetadataApi()
 val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+val filterAssetType : kotlin.String = filterAssetType_example // kotlin.String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 try {
-    val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsGet(filterAssetId)
+    val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsGet(filterAssetId, filterAssetType)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1AssetsGet")
@@ -101,9 +102,10 @@ try {
 ```
 
 ### Parameters
+| **filterAssetId** | **kotlin.String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filterAssetId** | **kotlin.String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] |
+| **filterAssetType** | **kotlin.String**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] |
 
 ### Return type
 

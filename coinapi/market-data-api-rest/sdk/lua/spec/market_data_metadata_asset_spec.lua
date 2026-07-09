@@ -149,6 +149,13 @@ describe("market_data_metadata_asset", function()
     end)
   end)
 
+  -- unit tests for the property 'asset_type'
+  describe("property asset_type test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'data_start'
   describe("property data_start test", function()
     it("should work", function()

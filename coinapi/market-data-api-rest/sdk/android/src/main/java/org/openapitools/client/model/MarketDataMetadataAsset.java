@@ -63,6 +63,8 @@ public class MarketDataMetadataAsset {
   private Double supplyMax = null;
   @SerializedName("chain_addresses")
   private List<V1ChainNetworkAddress> chainAddresses = null;
+  @SerializedName("asset_type")
+  private String assetType = null;
   @SerializedName("data_start")
   private String dataStart = null;
   @SerializedName("data_end")
@@ -278,6 +280,17 @@ public class MarketDataMetadataAsset {
   }
 
   /**
+   * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+   **/
+  @ApiModelProperty(value = "Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.")
+  public String getAssetType() {
+    return assetType;
+  }
+  public void setAssetType(String assetType) {
+    this.assetType = assetType;
+  }
+
+  /**
    **/
   @ApiModelProperty(value = "")
   public String getDataStart() {
@@ -326,6 +339,7 @@ public class MarketDataMetadataAsset {
         (this.supplyTotal == null ? marketDataMetadataAsset.supplyTotal == null : this.supplyTotal.equals(marketDataMetadataAsset.supplyTotal)) &&
         (this.supplyMax == null ? marketDataMetadataAsset.supplyMax == null : this.supplyMax.equals(marketDataMetadataAsset.supplyMax)) &&
         (this.chainAddresses == null ? marketDataMetadataAsset.chainAddresses == null : this.chainAddresses.equals(marketDataMetadataAsset.chainAddresses)) &&
+        (this.assetType == null ? marketDataMetadataAsset.assetType == null : this.assetType.equals(marketDataMetadataAsset.assetType)) &&
         (this.dataStart == null ? marketDataMetadataAsset.dataStart == null : this.dataStart.equals(marketDataMetadataAsset.dataStart)) &&
         (this.dataEnd == null ? marketDataMetadataAsset.dataEnd == null : this.dataEnd.equals(marketDataMetadataAsset.dataEnd));
   }
@@ -352,6 +366,7 @@ public class MarketDataMetadataAsset {
     result = 31 * result + (this.supplyTotal == null ? 0: this.supplyTotal.hashCode());
     result = 31 * result + (this.supplyMax == null ? 0: this.supplyMax.hashCode());
     result = 31 * result + (this.chainAddresses == null ? 0: this.chainAddresses.hashCode());
+    result = 31 * result + (this.assetType == null ? 0: this.assetType.hashCode());
     result = 31 * result + (this.dataStart == null ? 0: this.dataStart.hashCode());
     result = 31 * result + (this.dataEnd == null ? 0: this.dataEnd.hashCode());
     return result;
@@ -381,6 +396,7 @@ public class MarketDataMetadataAsset {
     sb.append("  supplyTotal: ").append(supplyTotal).append("\n");
     sb.append("  supplyMax: ").append(supplyMax).append("\n");
     sb.append("  chainAddresses: ").append(chainAddresses).append("\n");
+    sb.append("  assetType: ").append(assetType).append("\n");
     sb.append("  dataStart: ").append(dataStart).append("\n");
     sb.append("  dataEnd: ").append(dataEnd).append("\n");
     sb.append("}\n");

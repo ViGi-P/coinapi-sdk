@@ -15,6 +15,7 @@ Method | HTTP request | Description
 # **Invoke-V1QuotesCurrentGet**
 > V1QuoteTrade[] Invoke-V1QuotesCurrentGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterSymbolId] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterExchangeId] <String><br>
 
 Current data
 
@@ -31,10 +32,11 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $FilterSymbolId = "MyFilterSymbolId" # String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+$FilterExchangeId = "MyFilterExchangeId" # String | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
 
 # Current data
 try {
-    $Result = Invoke-V1QuotesCurrentGet -FilterSymbolId $FilterSymbolId
+    $Result = Invoke-V1QuotesCurrentGet -FilterSymbolId $FilterSymbolId -FilterExchangeId $FilterExchangeId
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1QuotesCurrentGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -46,6 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **FilterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **FilterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
 
 ### Return type
 
@@ -66,6 +69,7 @@ Name | Type | Description  | Notes
 # **Invoke-V1QuotesLatestGet**
 > V1Quote[] Invoke-V1QuotesLatestGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterSymbolId] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterExchangeId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Latest data
@@ -83,11 +87,12 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $FilterSymbolId = "MyFilterSymbolId" # String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+$FilterExchangeId = "MyFilterExchangeId" # String | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
 $Limit = 56 # Int32 | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
 
 # Latest data
 try {
-    $Result = Invoke-V1QuotesLatestGet -FilterSymbolId $FilterSymbolId -Limit $Limit
+    $Result = Invoke-V1QuotesLatestGet -FilterSymbolId $FilterSymbolId -FilterExchangeId $FilterExchangeId -Limit $Limit
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1QuotesLatestGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -99,6 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **FilterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **FilterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
  **Limit** | **Int32**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

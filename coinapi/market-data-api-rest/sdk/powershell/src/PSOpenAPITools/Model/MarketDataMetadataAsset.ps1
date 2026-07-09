@@ -53,6 +53,8 @@ Gets or sets the total supply of the asset.
 Gets or sets the maximum supply of the asset.
 .PARAMETER ChainAddresses
 
+.PARAMETER AssetType
+Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 .PARAMETER DataStart
 No description available.
 .PARAMETER DataEnd
@@ -124,8 +126,11 @@ function Initialize-MarketDataMetadataAsset {
         ${ChainAddresses},
         [Parameter(Position = 19, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${DataStart},
+        ${AssetType},
         [Parameter(Position = 20, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${DataStart},
+        [Parameter(Position = 21, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${DataEnd}
     )
@@ -155,6 +160,7 @@ function Initialize-MarketDataMetadataAsset {
             'supply_total' = ${SupplyTotal}
             'supply_max' = ${SupplyMax}
             'chain_addresses' = ${ChainAddresses}
+            'asset_type' = ${AssetType}
             'data_start' = ${DataStart}
             'data_end' = ${DataEnd}
         }
@@ -194,7 +200,7 @@ function ConvertFrom-JsonToMarketDataMetadataAsset {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in MarketDataMetadataAsset
-        $AllProperties = ('asset_id', 'name', 'type_is_crypto', 'data_quote_start', 'data_quote_end', 'data_orderbook_start', 'data_orderbook_end', 'data_trade_start', 'data_trade_end', 'data_symbols_count', 'volume_1hrs_usd', 'volume_1day_usd', 'volume_1mth_usd', 'price_usd', 'id_icon', 'supply_current', 'supply_total', 'supply_max', 'chain_addresses', 'data_start', 'data_end')
+        $AllProperties = ('asset_id', 'name', 'type_is_crypto', 'data_quote_start', 'data_quote_end', 'data_orderbook_start', 'data_orderbook_end', 'data_trade_start', 'data_trade_end', 'data_symbols_count', 'volume_1hrs_usd', 'volume_1day_usd', 'volume_1mth_usd', 'price_usd', 'id_icon', 'supply_current', 'supply_total', 'supply_max', 'chain_addresses', 'asset_type', 'data_start', 'data_end')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -315,6 +321,12 @@ function ConvertFrom-JsonToMarketDataMetadataAsset {
             $ChainAddresses = $JsonParameters.PSobject.Properties['chain_addresses'].value
         }
 
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_type'))) { #optional property not found
+            $AssetType = $null
+        } else {
+            $AssetType = $JsonParameters.PSobject.Properties['asset_type'].value
+        }
+
         if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_start'))) { #optional property not found
             $DataStart = $null
         } else {
@@ -347,6 +359,7 @@ function ConvertFrom-JsonToMarketDataMetadataAsset {
             'supply_total' = ${SupplyTotal}
             'supply_max' = ${SupplyMax}
             'chain_addresses' = ${ChainAddresses}
+            'asset_type' = ${AssetType}
             'data_start' = ${DataStart}
             'data_end' = ${DataEnd}
         }

@@ -28,11 +28,18 @@ type ApiV1QuotesCurrentGetRequest struct {
 	ctx context.Context
 	ApiService *QuotesAPIService
 	filterSymbolId *string
+	filterExchangeId *string
 }
 
 // Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
 func (r ApiV1QuotesCurrentGetRequest) FilterSymbolId(filterSymbolId string) ApiV1QuotesCurrentGetRequest {
 	r.filterSymbolId = &filterSymbolId
+	return r
+}
+
+// Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+func (r ApiV1QuotesCurrentGetRequest) FilterExchangeId(filterExchangeId string) ApiV1QuotesCurrentGetRequest {
+	r.filterExchangeId = &filterExchangeId
 	return r
 }
 
@@ -82,6 +89,9 @@ func (a *QuotesAPIService) V1QuotesCurrentGetExecute(r ApiV1QuotesCurrentGetRequ
 
 	if r.filterSymbolId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_symbol_id", r.filterSymbolId, "form", "")
+	}
+	if r.filterExchangeId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_exchange_id", r.filterExchangeId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -155,12 +165,19 @@ type ApiV1QuotesLatestGetRequest struct {
 	ctx context.Context
 	ApiService *QuotesAPIService
 	filterSymbolId *string
+	filterExchangeId *string
 	limit *int32
 }
 
 // Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
 func (r ApiV1QuotesLatestGetRequest) FilterSymbolId(filterSymbolId string) ApiV1QuotesLatestGetRequest {
 	r.filterSymbolId = &filterSymbolId
+	return r
+}
+
+// Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+func (r ApiV1QuotesLatestGetRequest) FilterExchangeId(filterExchangeId string) ApiV1QuotesLatestGetRequest {
+	r.filterExchangeId = &filterExchangeId
 	return r
 }
 
@@ -212,6 +229,9 @@ func (a *QuotesAPIService) V1QuotesLatestGetExecute(r ApiV1QuotesLatestGetReques
 
 	if r.filterSymbolId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_symbol_id", r.filterSymbolId, "form", "")
+	}
+	if r.filterExchangeId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_exchange_id", r.filterExchangeId, "form", "")
 	}
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")

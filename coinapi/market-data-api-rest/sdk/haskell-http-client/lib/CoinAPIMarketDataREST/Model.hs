@@ -89,6 +89,9 @@ newtype ExchangeId = ExchangeId { unExchangeId :: Text } deriving (P.Eq, P.Show)
 -- ** FilterAssetId
 newtype FilterAssetId = FilterAssetId { unFilterAssetId :: Text } deriving (P.Eq, P.Show)
 
+-- ** FilterAssetType
+newtype FilterAssetType = FilterAssetType { unFilterAssetType :: Text } deriving (P.Eq, P.Show)
+
 -- ** FilterChainId
 newtype FilterChainId = FilterChainId { unFilterChainId :: Text } deriving (P.Eq, P.Show)
 
@@ -175,6 +178,7 @@ data MarketDataMetadataAsset = MarketDataMetadataAsset
   , marketDataMetadataAssetSupplyTotal :: !(Maybe Double) -- ^ "supply_total" - Gets or sets the total supply of the asset.
   , marketDataMetadataAssetSupplyMax :: !(Maybe Double) -- ^ "supply_max" - Gets or sets the maximum supply of the asset.
   , marketDataMetadataAssetChainAddresses :: !(Maybe [V1ChainNetworkAddress]) -- ^ "chain_addresses" - 
+  , marketDataMetadataAssetAssetType :: !(Maybe Text) -- ^ "asset_type" - Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
   , marketDataMetadataAssetDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
   , marketDataMetadataAssetDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
   } deriving (P.Show, P.Eq, P.Typeable)
@@ -202,6 +206,7 @@ instance A.FromJSON MarketDataMetadataAsset where
       <*> (o .:? "supply_total")
       <*> (o .:? "supply_max")
       <*> (o .:? "chain_addresses")
+      <*> (o .:? "asset_type")
       <*> (o .:? "data_start")
       <*> (o .:? "data_end")
 
@@ -228,6 +233,7 @@ instance A.ToJSON MarketDataMetadataAsset where
       , "supply_total" .= marketDataMetadataAssetSupplyTotal
       , "supply_max" .= marketDataMetadataAssetSupplyMax
       , "chain_addresses" .= marketDataMetadataAssetChainAddresses
+      , "asset_type" .= marketDataMetadataAssetAssetType
       , "data_start" .= marketDataMetadataAssetDataStart
       , "data_end" .= marketDataMetadataAssetDataEnd
       ]
@@ -257,6 +263,7 @@ mkMarketDataMetadataAsset =
   , marketDataMetadataAssetSupplyTotal = Nothing
   , marketDataMetadataAssetSupplyMax = Nothing
   , marketDataMetadataAssetChainAddresses = Nothing
+  , marketDataMetadataAssetAssetType = Nothing
   , marketDataMetadataAssetDataStart = Nothing
   , marketDataMetadataAssetDataEnd = Nothing
   }

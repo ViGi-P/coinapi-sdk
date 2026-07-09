@@ -121,8 +121,9 @@ export class MetadataApi {
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @summary List all assets
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
      */
-    public v1AssetsGet(filterAssetId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1AssetsGet(filterAssetId?: string, filterAssetType?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.MarketDataMetadataAsset>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -132,6 +133,9 @@ export class MetadataApi {
         let headerParams: any = {};
         if (filterAssetId !== null && filterAssetId !== undefined) {
             queryParameters['filter_asset_id'] = <string><any>filterAssetId;
+        }
+        if (filterAssetType !== null && filterAssetType !== undefined) {
+            queryParameters['filter_asset_type'] = <string><any>filterAssetType;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);

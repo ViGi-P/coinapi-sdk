@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **supply_total** | **numeric** | Gets or sets the total supply of the asset. | [optional] 
 **supply_max** | **numeric** | Gets or sets the maximum supply of the asset. | [optional] 
 **chain_addresses** | [**array[V1ChainNetworkAddress]**](v1.ChainNetworkAddress.md) |  | [optional] 
+**asset_type** | **character** | Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 **data_start** | **character** |  | [optional] [readonly] 
 **data_end** | **character** |  | [optional] [readonly] 
 

@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-07-08T06:04:35.7441849Z
+                    time: 2026-07-09T06:05:56.0084982Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-07-08T06:04:35.7441849Z
+                    time: 2026-07-09T06:05:56.0084982Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-07-08T06:04:35.7441849Z
+                    time: 2026-07-09T06:05:56.0084982Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-07-08T06:04:35.7441849Z
+                    time: 2026-07-09T06:05:56.0084982Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -1847,6 +1847,15 @@ paths:
         explode: true
         in: query
         name: filter_asset_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Optional asset type filter. Allowed values: FIAT, STABLECOIN,\
+          \ CRYPTO, COMMODITY, STOCK."
+        explode: true
+        in: query
+        name: filter_asset_type
         required: false
         schema:
           type: string
@@ -6058,6 +6067,15 @@ paths:
         schema:
           type: string
         style: form
+      - description: Comma or semicolon delimited exchange identifiers used to filter
+          response. (optional)
+        explode: true
+        in: query
+        name: filter_exchange_id
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -6373,6 +6391,15 @@ paths:
         explode: true
         in: query
         name: filter_symbol_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Comma or semicolon delimited exchange identifiers used to filter
+          response. (optional)
+        explode: true
+        in: query
+        name: filter_exchange_id
         required: false
         schema:
           type: string
@@ -7063,6 +7090,7 @@ components:
         - chain_id: chain_id
           network_id: network_id
           address: address
+        asset_type: asset_type
         data_start: data_start
         data_end: data_end
       properties:
@@ -7159,6 +7187,11 @@ components:
             $ref: "#/components/schemas/v1.ChainNetworkAddress"
           nullable: true
           type: array
+        asset_type:
+          description: "Asset type classification. Possible values: FIAT, STABLECOIN,\
+            \ CRYPTO, COMMODITY, STOCK."
+          nullable: true
+          type: string
         data_start:
           nullable: true
           readOnly: true

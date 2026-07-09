@@ -17,7 +17,7 @@ Describe -tag 'PSOpenAPITools' -name 'MetadataApi' {
 
     Context 'Invoke-V1AssetsGet' {
         It 'Test Invoke-V1AssetsGet' {
-            #$TestResult = Invoke-V1AssetsGet -FilterAssetId "TEST_VALUE"
+            #$TestResult = Invoke-V1AssetsGet -FilterAssetId "TEST_VALUE" -FilterAssetType "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

@@ -213,6 +213,14 @@ public:
     void unsetChain_addresses();
     void setChainAddresses(const std::vector<std::shared_ptr<V1_ChainNetworkAddress>>& value);
 
+    /// <summary>
+    /// Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+    /// </summary>
+    utility::string_t getAssetType() const;
+    bool assetTypeIsSet() const;
+    void unsetAsset_type();
+    void setAssetType(const utility::string_t& value);
+
     utility::string_t getDataStart() const;
     bool dataStartIsSet() const;
     void unsetData_start();
@@ -263,6 +271,8 @@ protected:
     boost::optional<double> m_Supply_max;
 
     boost::optional<std::vector<std::shared_ptr<V1_ChainNetworkAddress>>> m_Chain_addresses;
+
+    boost::optional<utility::string_t> m_Asset_type;
 
     boost::optional<utility::string_t> m_Data_start;
 

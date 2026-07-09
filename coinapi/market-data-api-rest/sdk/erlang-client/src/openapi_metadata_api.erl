@@ -48,7 +48,7 @@ v1_assets_get(Ctx, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/assets"],
-    QS = lists:flatten([])++openapi_utils:optional_params(['filter_asset_id'], _OptionalParams),
+    QS = lists:flatten([])++openapi_utils:optional_params(['filter_asset_id', 'filter_asset_type'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

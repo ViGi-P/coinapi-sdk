@@ -143,11 +143,18 @@ type ApiV1AssetsGetRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
 	filterAssetId *string
+	filterAssetType *string
 }
 
 // Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
 func (r ApiV1AssetsGetRequest) FilterAssetId(filterAssetId string) ApiV1AssetsGetRequest {
 	r.filterAssetId = &filterAssetId
+	return r
+}
+
+// Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+func (r ApiV1AssetsGetRequest) FilterAssetType(filterAssetType string) ApiV1AssetsGetRequest {
+	r.filterAssetType = &filterAssetType
 	return r
 }
 
@@ -201,6 +208,9 @@ func (a *MetadataAPIService) V1AssetsGetExecute(r ApiV1AssetsGetRequest) ([]Mark
 
 	if r.filterAssetId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_asset_id", r.filterAssetId, "form", "")
+	}
+	if r.filterAssetType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_asset_type", r.filterAssetType, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

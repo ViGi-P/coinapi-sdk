@@ -353,6 +353,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'asset_type' => {
+        datatype => 'string',
+        base_name => 'asset_type',
+        description => 'Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.',
+        format => '',
+        read_only => '',
+            },
     'data_start' => {
         datatype => 'string',
         base_name => 'data_start',
@@ -389,6 +396,7 @@ __PACKAGE__->openapi_types( {
     'supply_total' => 'double',
     'supply_max' => 'double',
     'chain_addresses' => 'ARRAY[V1ChainNetworkAddress]',
+    'asset_type' => 'string',
     'data_start' => 'string',
     'data_end' => 'string'
 } );
@@ -413,6 +421,7 @@ __PACKAGE__->attribute_map( {
     'supply_total' => 'supply_total',
     'supply_max' => 'supply_max',
     'chain_addresses' => 'chain_addresses',
+    'asset_type' => 'asset_type',
     'data_start' => 'data_start',
     'data_end' => 'data_end'
 } );

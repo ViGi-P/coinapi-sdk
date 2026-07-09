@@ -19,7 +19,7 @@ local function cast_market_data_metadata_asset(t)
 	return setmetatable(t, market_data_metadata_asset_mt)
 end
 
-local function new_market_data_metadata_asset(asset_id, name, type_is_crypto, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, data_symbols_count, volume_1hrs_usd, volume_1day_usd, volume_1mth_usd, price_usd, id_icon, supply_current, supply_total, supply_max, chain_addresses, data_start, data_end)
+local function new_market_data_metadata_asset(asset_id, name, type_is_crypto, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, data_symbols_count, volume_1hrs_usd, volume_1day_usd, volume_1mth_usd, price_usd, id_icon, supply_current, supply_total, supply_max, chain_addresses, asset_type, data_start, data_end)
 	return cast_market_data_metadata_asset({
 		["asset_id"] = asset_id;
 		["name"] = name;
@@ -40,6 +40,7 @@ local function new_market_data_metadata_asset(asset_id, name, type_is_crypto, da
 		["supply_total"] = supply_total;
 		["supply_max"] = supply_max;
 		["chain_addresses"] = chain_addresses;
+		["asset_type"] = asset_type;
 		["data_start"] = data_start;
 		["data_end"] = data_end;
 	})

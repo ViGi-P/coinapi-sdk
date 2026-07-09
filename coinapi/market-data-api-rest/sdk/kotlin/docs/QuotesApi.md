@@ -13,7 +13,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1QuotesCurrentGet"></a>
 # **v1QuotesCurrentGet**
-> kotlin.collections.List&lt;V1QuoteTrade&gt; v1QuotesCurrentGet(filterSymbolId)
+> kotlin.collections.List&lt;V1QuoteTrade&gt; v1QuotesCurrentGet(filterSymbolId, filterExchangeId)
 
 Current data
 
@@ -27,8 +27,9 @@ Get current quotes for all symbols or for a specific symbol.              :::inf
 
 val apiInstance = QuotesApi()
 val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+val filterExchangeId : kotlin.String = filterExchangeId_example // kotlin.String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 try {
-    val result : kotlin.collections.List<V1QuoteTrade> = apiInstance.v1QuotesCurrentGet(filterSymbolId)
+    val result : kotlin.collections.List<V1QuoteTrade> = apiInstance.v1QuotesCurrentGet(filterSymbolId, filterExchangeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling QuotesApi#v1QuotesCurrentGet")
@@ -40,9 +41,10 @@ try {
 ```
 
 ### Parameters
+| **filterSymbolId** | **kotlin.String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filterSymbolId** | **kotlin.String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filterExchangeId** | **kotlin.String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 
 ### Return type
 
@@ -70,7 +72,7 @@ apiInstance.accessTokenProvider = { "" }
 
 <a id="v1QuotesLatestGet"></a>
 # **v1QuotesLatestGet**
-> kotlin.collections.List&lt;V1Quote&gt; v1QuotesLatestGet(filterSymbolId, limit)
+> kotlin.collections.List&lt;V1Quote&gt; v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit)
 
 Latest data
 
@@ -84,9 +86,10 @@ Get latest updates of the quotes up to 1 minute ago. Latest data is always retur
 
 val apiInstance = QuotesApi()
 val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+val filterExchangeId : kotlin.String = filterExchangeId_example // kotlin.String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    val result : kotlin.collections.List<V1Quote> = apiInstance.v1QuotesLatestGet(filterSymbolId, limit)
+    val result : kotlin.collections.List<V1Quote> = apiInstance.v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling QuotesApi#v1QuotesLatestGet")
@@ -99,6 +102,7 @@ try {
 
 ### Parameters
 | **filterSymbolId** | **kotlin.String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filterExchangeId** | **kotlin.String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **limit** | **kotlin.Int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |

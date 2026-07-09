@@ -37,6 +37,7 @@ describe 'QuotesApi' do
   # Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional)
   # @return [Array<V1QuoteTrade>]
   describe 'v1_quotes_current_get test' do
     it 'should work' do
@@ -49,6 +50,7 @@ describe 'QuotesApi' do
   # Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  # @option opts [String] :filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional)
   # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   # @return [Array<V1Quote>]
   describe 'v1_quotes_latest_get test' do

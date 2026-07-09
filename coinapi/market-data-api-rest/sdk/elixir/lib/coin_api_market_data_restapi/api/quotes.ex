@@ -18,6 +18,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Quotes do
   - `connection` (CoinAPIMarketDataRESTAPI.Connection): Connection to server
   - `opts` (keyword): Optional parameters
     - `:filter_symbol_id` (String.t): Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    - `:filter_exchange_id` (String.t): Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 
   ### Returns
 
@@ -27,7 +28,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Quotes do
   @spec v1_quotes_current_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1QuoteTrade.t]} | {:error, Tesla.Env.t}
   def v1_quotes_current_get(connection, opts \\ []) do
     optional_params = %{
-      :filter_symbol_id => :query
+      :filter_symbol_id => :query,
+      :filter_exchange_id => :query
     }
 
     request =
@@ -53,6 +55,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Quotes do
   - `connection` (CoinAPIMarketDataRESTAPI.Connection): Connection to server
   - `opts` (keyword): Optional parameters
     - `:filter_symbol_id` (String.t): Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    - `:filter_exchange_id` (String.t): Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     - `:limit` (integer()): Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
   ### Returns
@@ -64,6 +67,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Quotes do
   def v1_quotes_latest_get(connection, opts \\ []) do
     optional_params = %{
       :filter_symbol_id => :query,
+      :filter_exchange_id => :query,
       :limit => :query
     }
 

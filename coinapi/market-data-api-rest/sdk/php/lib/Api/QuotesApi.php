@@ -144,15 +144,16 @@ class QuotesApi
      * Current data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesCurrentGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1QuoteTrade[]
      */
-    public function v1QuotesCurrentGet($filter_symbol_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
+    public function v1QuotesCurrentGet($filter_symbol_id = null, $filter_exchange_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
     {
-        list($response) = $this->v1QuotesCurrentGetWithHttpInfo($filter_symbol_id, $contentType);
+        list($response) = $this->v1QuotesCurrentGetWithHttpInfo($filter_symbol_id, $filter_exchange_id, $contentType);
         return $response;
     }
 
@@ -162,15 +163,16 @@ class QuotesApi
      * Current data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesCurrentGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1QuoteTrade[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1QuotesCurrentGetWithHttpInfo($filter_symbol_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
+    public function v1QuotesCurrentGetWithHttpInfo($filter_symbol_id = null, $filter_exchange_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
     {
-        $request = $this->v1QuotesCurrentGetRequest($filter_symbol_id, $contentType);
+        $request = $this->v1QuotesCurrentGetRequest($filter_symbol_id, $filter_exchange_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -247,14 +249,15 @@ class QuotesApi
      * Current data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesCurrentGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1QuotesCurrentGetAsync($filter_symbol_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
+    public function v1QuotesCurrentGetAsync($filter_symbol_id = null, $filter_exchange_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
     {
-        return $this->v1QuotesCurrentGetAsyncWithHttpInfo($filter_symbol_id, $contentType)
+        return $this->v1QuotesCurrentGetAsyncWithHttpInfo($filter_symbol_id, $filter_exchange_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -268,15 +271,16 @@ class QuotesApi
      * Current data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesCurrentGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1QuotesCurrentGetAsyncWithHttpInfo($filter_symbol_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
+    public function v1QuotesCurrentGetAsyncWithHttpInfo($filter_symbol_id = null, $filter_exchange_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1QuoteTrade[]';
-        $request = $this->v1QuotesCurrentGetRequest($filter_symbol_id, $contentType);
+        $request = $this->v1QuotesCurrentGetRequest($filter_symbol_id, $filter_exchange_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -318,13 +322,15 @@ class QuotesApi
      * Create request for operation 'v1QuotesCurrentGet'
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesCurrentGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v1QuotesCurrentGetRequest($filter_symbol_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
+    public function v1QuotesCurrentGetRequest($filter_symbol_id = null, $filter_exchange_id = null, string $contentType = self::contentTypes['v1QuotesCurrentGet'][0])
     {
+
 
 
 
@@ -339,6 +345,15 @@ class QuotesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $filter_symbol_id,
             'filter_symbol_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filter_exchange_id,
+            'filter_exchange_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -416,6 +431,7 @@ class QuotesApi
      * Latest data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesLatestGet'] to see the possible values for this operation
      *
@@ -423,9 +439,9 @@ class QuotesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1Quote[]
      */
-    public function v1QuotesLatestGet($filter_symbol_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
+    public function v1QuotesLatestGet($filter_symbol_id = null, $filter_exchange_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
     {
-        list($response) = $this->v1QuotesLatestGetWithHttpInfo($filter_symbol_id, $limit, $contentType);
+        list($response) = $this->v1QuotesLatestGetWithHttpInfo($filter_symbol_id, $filter_exchange_id, $limit, $contentType);
         return $response;
     }
 
@@ -435,6 +451,7 @@ class QuotesApi
      * Latest data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesLatestGet'] to see the possible values for this operation
      *
@@ -442,9 +459,9 @@ class QuotesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1Quote[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1QuotesLatestGetWithHttpInfo($filter_symbol_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
+    public function v1QuotesLatestGetWithHttpInfo($filter_symbol_id = null, $filter_exchange_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
     {
-        $request = $this->v1QuotesLatestGetRequest($filter_symbol_id, $limit, $contentType);
+        $request = $this->v1QuotesLatestGetRequest($filter_symbol_id, $filter_exchange_id, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -521,15 +538,16 @@ class QuotesApi
      * Latest data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesLatestGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1QuotesLatestGetAsync($filter_symbol_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
+    public function v1QuotesLatestGetAsync($filter_symbol_id = null, $filter_exchange_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
     {
-        return $this->v1QuotesLatestGetAsyncWithHttpInfo($filter_symbol_id, $limit, $contentType)
+        return $this->v1QuotesLatestGetAsyncWithHttpInfo($filter_symbol_id, $filter_exchange_id, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -543,16 +561,17 @@ class QuotesApi
      * Latest data
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesLatestGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1QuotesLatestGetAsyncWithHttpInfo($filter_symbol_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
+    public function v1QuotesLatestGetAsyncWithHttpInfo($filter_symbol_id = null, $filter_exchange_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1Quote[]';
-        $request = $this->v1QuotesLatestGetRequest($filter_symbol_id, $limit, $contentType);
+        $request = $this->v1QuotesLatestGetRequest($filter_symbol_id, $filter_exchange_id, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -594,14 +613,16 @@ class QuotesApi
      * Create request for operation 'v1QuotesLatestGet'
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param  string|null $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1QuotesLatestGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v1QuotesLatestGetRequest($filter_symbol_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
+    public function v1QuotesLatestGetRequest($filter_symbol_id = null, $filter_exchange_id = null, $limit = 100, string $contentType = self::contentTypes['v1QuotesLatestGet'][0])
     {
+
 
 
 
@@ -617,6 +638,15 @@ class QuotesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $filter_symbol_id,
             'filter_symbol_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filter_exchange_id,
+            'filter_exchange_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

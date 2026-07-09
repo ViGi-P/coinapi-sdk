@@ -130,6 +130,12 @@ void main() {
       // TODO
     });
 
+    // Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+    // String assetType
+    test('to test the property `assetType`', () async {
+      // TODO
+    });
+
     // String dataStart
     test('to test the property `dataStart`', () async {
       // TODO

@@ -20,10 +20,11 @@ feature -- Test routines
         local
             l_response: LIST [V1_QUOTE_TRADE]
             l_filter_symbol_id: STRING_32
+            l_filter_exchange_id: STRING_32
         do
             -- TODO: Initialize required params.
 
-            -- l_response := api.v1_quotes_current_get(l_filter_symbol_id)
+            -- l_response := api.v1_quotes_current_get(l_filter_symbol_id, l_filter_exchange_id)
             assert ("not_implemented", False)
         end
 
@@ -34,11 +35,12 @@ feature -- Test routines
         local
             l_response: LIST [V1_QUOTE]
             l_filter_symbol_id: STRING_32
+            l_filter_exchange_id: STRING_32
             l_limit: INTEGER_32
         do
             -- TODO: Initialize required params.
 
-            -- l_response := api.v1_quotes_latest_get(l_filter_symbol_id, l_limit)
+            -- l_response := api.v1_quotes_latest_get(l_filter_symbol_id, l_filter_exchange_id, l_limit)
             assert ("not_implemented", False)
         end
 

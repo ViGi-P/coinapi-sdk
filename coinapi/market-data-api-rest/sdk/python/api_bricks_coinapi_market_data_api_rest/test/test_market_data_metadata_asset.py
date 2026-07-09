@@ -60,6 +60,7 @@ class TestMarketDataMetadataAsset(unittest.TestCase):
                         network_id = '', 
                         address = '', )
                     ],
+                asset_type = '',
                 data_start = '',
                 data_end = ''
             )

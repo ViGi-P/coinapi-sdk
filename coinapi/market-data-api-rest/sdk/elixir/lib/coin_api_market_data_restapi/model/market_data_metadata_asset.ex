@@ -27,6 +27,7 @@ defmodule CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataAsset do
     :supply_total,
     :supply_max,
     :chain_addresses,
+    :asset_type,
     :data_start,
     :data_end
   ]
@@ -51,6 +52,7 @@ defmodule CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataAsset do
     :supply_total => float() | nil,
     :supply_max => float() | nil,
     :chain_addresses => [CoinAPIMarketDataRESTAPI.Model.V1ChainNetworkAddress.t] | nil,
+    :asset_type => String.t | nil,
     :data_start => String.t | nil,
     :data_end => String.t | nil
   }

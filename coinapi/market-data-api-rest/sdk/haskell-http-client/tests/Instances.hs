@@ -138,6 +138,7 @@ genMarketDataMetadataAsset n =
     <*> arbitraryReducedMaybe n -- marketDataMetadataAssetSupplyTotal :: Maybe Double
     <*> arbitraryReducedMaybe n -- marketDataMetadataAssetSupplyMax :: Maybe Double
     <*> arbitraryReducedMaybe n -- marketDataMetadataAssetChainAddresses :: Maybe [V1ChainNetworkAddress]
+    <*> arbitraryReducedMaybe n -- marketDataMetadataAssetAssetType :: Maybe Text
     <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataStart :: Maybe Text
     <*> arbitraryReducedMaybe n -- marketDataMetadataAssetDataEnd :: Maybe Text
   

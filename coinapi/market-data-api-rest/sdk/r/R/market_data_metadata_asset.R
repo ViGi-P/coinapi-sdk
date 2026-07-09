@@ -26,6 +26,7 @@
 #' @field supply_total Gets or sets the total supply of the asset. numeric [optional]
 #' @field supply_max Gets or sets the maximum supply of the asset. numeric [optional]
 #' @field chain_addresses  list(\link{V1ChainNetworkAddress}) [optional]
+#' @field asset_type Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. character [optional]
 #' @field data_start  character [optional]
 #' @field data_end  character [optional]
 #' @importFrom R6 R6Class
@@ -53,6 +54,7 @@ MarketDataMetadataAsset <- R6::R6Class(
     `supply_total` = NULL,
     `supply_max` = NULL,
     `chain_addresses` = NULL,
+    `asset_type` = NULL,
     `data_start` = NULL,
     `data_end` = NULL,
 
@@ -78,10 +80,11 @@ MarketDataMetadataAsset <- R6::R6Class(
     #' @param supply_total Gets or sets the total supply of the asset.
     #' @param supply_max Gets or sets the maximum supply of the asset.
     #' @param chain_addresses 
+    #' @param asset_type Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     #' @param data_start data_start
     #' @param data_end data_end
     #' @param ... Other optional arguments.
-    initialize = function(`asset_id` = NULL, `name` = NULL, `type_is_crypto` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `data_symbols_count` = NULL, `volume_1hrs_usd` = NULL, `volume_1day_usd` = NULL, `volume_1mth_usd` = NULL, `price_usd` = NULL, `id_icon` = NULL, `supply_current` = NULL, `supply_total` = NULL, `supply_max` = NULL, `chain_addresses` = NULL, `data_start` = NULL, `data_end` = NULL, ...) {
+    initialize = function(`asset_id` = NULL, `name` = NULL, `type_is_crypto` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `data_symbols_count` = NULL, `volume_1hrs_usd` = NULL, `volume_1day_usd` = NULL, `volume_1mth_usd` = NULL, `price_usd` = NULL, `id_icon` = NULL, `supply_current` = NULL, `supply_total` = NULL, `supply_max` = NULL, `chain_addresses` = NULL, `asset_type` = NULL, `data_start` = NULL, `data_end` = NULL, ...) {
       if (!is.null(`asset_id`)) {
         if (!(is.character(`asset_id`) && length(`asset_id`) == 1)) {
           stop(paste("Error! Invalid data for `asset_id`. Must be a string:", `asset_id`))
@@ -194,6 +197,12 @@ MarketDataMetadataAsset <- R6::R6Class(
         stopifnot(is.vector(`chain_addresses`), length(`chain_addresses`) != 0)
         sapply(`chain_addresses`, function(x) stopifnot(R6::is.R6(x)))
         self$`chain_addresses` <- `chain_addresses`
+      }
+      if (!is.null(`asset_type`)) {
+        if (!(is.character(`asset_type`) && length(`asset_type`) == 1)) {
+          stop(paste("Error! Invalid data for `asset_type`. Must be a string:", `asset_type`))
+        }
+        self$`asset_type` <- `asset_type`
       }
       if (!is.null(`data_start`)) {
         if (!(is.character(`data_start`) && length(`data_start`) == 1)) {
@@ -316,6 +325,10 @@ MarketDataMetadataAsset <- R6::R6Class(
         MarketDataMetadataAssetObject[["chain_addresses"]] <-
           self$extractSimpleType(self$`chain_addresses`)
       }
+      if (!is.null(self$`asset_type`)) {
+        MarketDataMetadataAssetObject[["asset_type"]] <-
+          self$`asset_type`
+      }
       if (!is.null(self$`data_start`)) {
         MarketDataMetadataAssetObject[["data_start"]] <-
           self$`data_start`
@@ -414,6 +427,9 @@ MarketDataMetadataAsset <- R6::R6Class(
       if (!is.null(this_object$`chain_addresses`)) {
         self$`chain_addresses` <- ApiClient$new()$deserializeObj(this_object$`chain_addresses`, "array[V1ChainNetworkAddress]", loadNamespace("openapi"))
       }
+      if (!is.null(this_object$`asset_type`)) {
+        self$`asset_type` <- this_object$`asset_type`
+      }
       if (!is.null(this_object$`data_start`)) {
         self$`data_start` <- this_object$`data_start`
       }
@@ -460,6 +476,7 @@ MarketDataMetadataAsset <- R6::R6Class(
       self$`supply_total` <- this_object$`supply_total`
       self$`supply_max` <- this_object$`supply_max`
       self$`chain_addresses` <- ApiClient$new()$deserializeObj(this_object$`chain_addresses`, "array[V1ChainNetworkAddress]", loadNamespace("openapi"))
+      self$`asset_type` <- this_object$`asset_type`
       self$`data_start` <- this_object$`data_start`
       self$`data_end` <- this_object$`data_end`
       self

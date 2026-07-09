@@ -28,6 +28,7 @@
   | {'supply_total', float() }
   | {'supply_max', float() }
   | {'chain_addresses', list(openapi_v1_chain_network_address:openapi_v1_chain_network_address()) }
+  | {'asset_type', binary() }
   | {'data_start', binary() }
   | {'data_end', binary() }
   ].
@@ -56,6 +57,7 @@ openapi_market_data_metadata_asset(Fields) ->
             , {'supply_total', float() }
             , {'supply_max', float() }
             , {'chain_addresses', list(openapi_v1_chain_network_address:openapi_v1_chain_network_address()) }
+            , {'asset_type', binary() }
             , {'data_start', binary() }
             , {'data_end', binary() }
             ],

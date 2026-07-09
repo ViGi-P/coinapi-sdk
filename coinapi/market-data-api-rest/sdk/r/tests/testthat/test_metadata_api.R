@@ -22,6 +22,7 @@ test_that("V1AssetsGet", {
   # List all assets
   # Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
   # @param filter_asset_id character Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). (optional)
+  # @param filter_asset_type character Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
   # @return [array[MarketDataMetadataAsset]]
 
   # uncomment below to test the operation

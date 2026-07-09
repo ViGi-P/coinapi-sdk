@@ -38,6 +38,7 @@
 #'
 #' library(openapi)
 #' var_filter_asset_id <- "filter_asset_id_example" # character | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). (Optional)
+#' var_filter_asset_type <- "filter_asset_type_example" # character | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (Optional)
 #'
 #' #List all assets
 #' api_instance <- MetadataApi$new()
@@ -49,8 +50,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_iddata_file = "result.txt")
-#' result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_id)
+#' # result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_id, filter_asset_type = var_filter_asset_typedata_file = "result.txt")
+#' result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_id, filter_asset_type = var_filter_asset_type)
 #' dput(result)
 #'
 #'
@@ -382,13 +383,14 @@ MetadataApi <- R6::R6Class(
     #' List all assets
     #'
     #' @param filter_asset_id (optional) Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+    #' @param filter_asset_type (optional) Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[MarketDataMetadataAsset]
-    V1AssetsGet = function(filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1AssetsGetWithHttpInfo(filter_asset_id, data_file = data_file, ..., .parse = .parse)
+    V1AssetsGet = function(filter_asset_id = NULL, filter_asset_type = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1AssetsGetWithHttpInfo(filter_asset_id, filter_asset_type, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -404,12 +406,13 @@ MetadataApi <- R6::R6Class(
     #' List all assets
     #'
     #' @param filter_asset_id (optional) Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+    #' @param filter_asset_type (optional) Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[MarketDataMetadataAsset]) with additional information such as HTTP status code, headers
-    V1AssetsGetWithHttpInfo = function(filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+    V1AssetsGetWithHttpInfo = function(filter_asset_id = NULL, filter_asset_type = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -423,7 +426,13 @@ MetadataApi <- R6::R6Class(
         stop("Invalid value for `filter_asset_id` when calling MetadataApi$V1AssetsGet, `filter_asset_id` is not nullable")
       }
 
+      if (!missing(`filter_asset_type`) && is.null(`filter_asset_type`)) {
+        stop("Invalid value for `filter_asset_type` when calling MetadataApi$V1AssetsGet, `filter_asset_type` is not nullable")
+      }
+
       query_params[["filter_asset_id"]] <- `filter_asset_id`
+
+      query_params[["filter_asset_type"]] <- `filter_asset_type`
 
       local_var_url_path <- "/v1/assets"
       # API key authentication

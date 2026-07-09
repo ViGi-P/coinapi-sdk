@@ -252,6 +252,15 @@ class MarketDataMetadataAssetTest extends TestCase
     }
 
     /**
+     * Test attribute "asset_type"
+     */
+    public function testPropertyAssetType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "data_start"
      */
     public function testPropertyDataStart()

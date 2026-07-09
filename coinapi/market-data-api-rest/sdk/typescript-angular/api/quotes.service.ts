@@ -42,14 +42,15 @@ export class QuotesService extends BaseService {
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @endpoint get /v1/quotes/current
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1QuotesCurrentGet(filterSymbolId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1QuoteTrade>>;
-    public v1QuotesCurrentGet(filterSymbolId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1QuoteTrade>>>;
-    public v1QuotesCurrentGet(filterSymbolId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1QuoteTrade>>>;
-    public v1QuotesCurrentGet(filterSymbolId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1QuoteTrade>>;
+    public v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1QuoteTrade>>>;
+    public v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1QuoteTrade>>>;
+    public v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
 
@@ -57,6 +58,15 @@ export class QuotesService extends BaseService {
             localVarQueryParameters,
             'filter_symbol_id',
             <any>filterSymbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_exchange_id',
+            <any>filterExchangeId,
             QueryParamStyle.Form,
             true,
         );
@@ -117,15 +127,16 @@ export class QuotesService extends BaseService {
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @endpoint get /v1/quotes/latest
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Quote>>;
-    public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Quote>>>;
-    public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Quote>>>;
-    public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Quote>>;
+    public v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Quote>>>;
+    public v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Quote>>>;
+    public v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
 
@@ -133,6 +144,15 @@ export class QuotesService extends BaseService {
             localVarQueryParameters,
             'filter_symbol_id',
             <any>filterSymbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_exchange_id',
+            <any>filterExchangeId,
             QueryParamStyle.Form,
             true,
         );

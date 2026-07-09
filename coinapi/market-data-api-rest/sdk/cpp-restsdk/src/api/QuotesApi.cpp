@@ -36,7 +36,7 @@ QuotesApi::~QuotesApi()
 {
 }
 
-pplx::task<std::vector<std::shared_ptr<V1_QuoteTrade>>> QuotesApi::v1QuotesCurrentGet(boost::optional<utility::string_t> filterSymbolId) const
+pplx::task<std::vector<std::shared_ptr<V1_QuoteTrade>>> QuotesApi::v1QuotesCurrentGet(boost::optional<utility::string_t> filterSymbolId, boost::optional<utility::string_t> filterExchangeId) const
 {
 
 
@@ -83,6 +83,10 @@ pplx::task<std::vector<std::shared_ptr<V1_QuoteTrade>>> QuotesApi::v1QuotesCurre
     if (filterSymbolId)
     {
         localVarQueryParams[utility::conversions::to_string_t("filter_symbol_id")] = ApiClient::parameterToString(*filterSymbolId);
+    }
+    if (filterExchangeId)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("filter_exchange_id")] = ApiClient::parameterToString(*filterExchangeId);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -178,7 +182,7 @@ pplx::task<std::vector<std::shared_ptr<V1_QuoteTrade>>> QuotesApi::v1QuotesCurre
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_Quote>>> QuotesApi::v1QuotesLatestGet(boost::optional<utility::string_t> filterSymbolId, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<V1_Quote>>> QuotesApi::v1QuotesLatestGet(boost::optional<utility::string_t> filterSymbolId, boost::optional<utility::string_t> filterExchangeId, boost::optional<int32_t> limit) const
 {
 
 
@@ -225,6 +229,10 @@ pplx::task<std::vector<std::shared_ptr<V1_Quote>>> QuotesApi::v1QuotesLatestGet(
     if (filterSymbolId)
     {
         localVarQueryParams[utility::conversions::to_string_t("filter_symbol_id")] = ApiClient::parameterToString(*filterSymbolId);
+    }
+    if (filterExchangeId)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("filter_exchange_id")] = ApiClient::parameterToString(*filterExchangeId);
     }
     if (limit)
     {

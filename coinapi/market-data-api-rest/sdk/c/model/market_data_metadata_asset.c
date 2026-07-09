@@ -25,6 +25,7 @@ static market_data_metadata_asset_t *market_data_metadata_asset_create_internal(
     double *supply_total,
     double *supply_max,
     list_t *chain_addresses,
+    char *asset_type,
     char *data_start,
     char *data_end
     ) {
@@ -53,6 +54,7 @@ static market_data_metadata_asset_t *market_data_metadata_asset_create_internal(
     market_data_metadata_asset_local_var->supply_total = supply_total;
     market_data_metadata_asset_local_var->supply_max = supply_max;
     market_data_metadata_asset_local_var->chain_addresses = chain_addresses;
+    market_data_metadata_asset_local_var->asset_type = asset_type;
     market_data_metadata_asset_local_var->data_start = data_start;
     market_data_metadata_asset_local_var->data_end = data_end;
     return market_data_metadata_asset_local_var;
@@ -78,6 +80,7 @@ __attribute__((deprecated)) market_data_metadata_asset_t *market_data_metadata_a
     double *supply_total,
     double *supply_max,
     list_t *chain_addresses,
+    char *asset_type,
     char *data_start,
     char *data_end
     ) {
@@ -146,6 +149,7 @@ __attribute__((deprecated)) market_data_metadata_asset_t *market_data_metadata_a
         supply_total_copy,
         supply_max_copy,
         chain_addresses,
+        asset_type,
         data_start,
         data_end
         );
@@ -250,6 +254,10 @@ void market_data_metadata_asset_free(market_data_metadata_asset_t *market_data_m
         }
         list_freeList(market_data_metadata_asset->chain_addresses);
         market_data_metadata_asset->chain_addresses = NULL;
+    }
+    if (market_data_metadata_asset->asset_type) {
+        free(market_data_metadata_asset->asset_type);
+        market_data_metadata_asset->asset_type = NULL;
     }
     if (market_data_metadata_asset->data_start) {
         free(market_data_metadata_asset->data_start);
@@ -429,6 +437,14 @@ cJSON *market_data_metadata_asset_convertToJSON(market_data_metadata_asset_t *ma
     }
 
 
+    // market_data_metadata_asset->asset_type
+    if(market_data_metadata_asset->asset_type) {
+    if(cJSON_AddStringToObject(item, "asset_type", market_data_metadata_asset->asset_type) == NULL) {
+    goto fail; //String
+    }
+    }
+
+
     // market_data_metadata_asset->data_start
     if(market_data_metadata_asset->data_start) {
     if(cJSON_AddStringToObject(item, "data_start", market_data_metadata_asset->data_start) == NULL) {
@@ -503,6 +519,8 @@ market_data_metadata_asset_t *market_data_metadata_asset_parseFromJSON(cJSON *ma
 
     // define the local list for market_data_metadata_asset->chain_addresses
     list_t *chain_addressesList = NULL;
+
+    char *asset_type_local_str = NULL;
 
     char *data_start_local_str = NULL;
 
@@ -802,6 +820,18 @@ market_data_metadata_asset_t *market_data_metadata_asset_parseFromJSON(cJSON *ma
     }
     }
 
+    // market_data_metadata_asset->asset_type
+    cJSON *asset_type = cJSON_GetObjectItemCaseSensitive(market_data_metadata_assetJSON, "asset_type");
+    if (cJSON_IsNull(asset_type)) {
+        asset_type = NULL;
+    }
+    if (asset_type) { 
+    if(!cJSON_IsString(asset_type) && !cJSON_IsNull(asset_type))
+    {
+    goto end; //String
+    }
+    }
+
     // market_data_metadata_asset->data_start
     cJSON *data_start = cJSON_GetObjectItemCaseSensitive(market_data_metadata_assetJSON, "data_start");
     if (cJSON_IsNull(data_start)) {
@@ -836,6 +866,7 @@ market_data_metadata_asset_t *market_data_metadata_asset_parseFromJSON(cJSON *ma
     if (data_trade_start && !cJSON_IsNull(data_trade_start)) data_trade_start_local_str = strdup(data_trade_start->valuestring);
     if (data_trade_end && !cJSON_IsNull(data_trade_end)) data_trade_end_local_str = strdup(data_trade_end->valuestring);
     if (id_icon && !cJSON_IsNull(id_icon)) id_icon_local_str = strdup(id_icon->valuestring);
+    if (asset_type && !cJSON_IsNull(asset_type)) asset_type_local_str = strdup(asset_type->valuestring);
     if (data_start && !cJSON_IsNull(data_start)) data_start_local_str = strdup(data_start->valuestring);
     if (data_end && !cJSON_IsNull(data_end)) data_end_local_str = strdup(data_end->valuestring);
 
@@ -859,6 +890,7 @@ market_data_metadata_asset_t *market_data_metadata_asset_parseFromJSON(cJSON *ma
         supply_total_local_var,
         supply_max_local_var,
         chain_addresses ? chain_addressesList : NULL,
+        asset_type_local_str,
         data_start_local_str,
         data_end_local_str
         );
@@ -949,6 +981,10 @@ end:
         }
         list_freeList(chain_addressesList);
         chain_addressesList = NULL;
+    }
+    if (asset_type_local_str) {
+        free(asset_type_local_str);
+        asset_type_local_str = NULL;
     }
     if (data_start_local_str) {
         free(data_start_local_str);

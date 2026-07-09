@@ -21,7 +21,7 @@ v1_quotes_current_get(Ctx, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/quotes/current"],
-    QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id'], _OptionalParams),
+    QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id', 'filter_exchange_id'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),
@@ -42,7 +42,7 @@ v1_quotes_latest_get(Ctx, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/quotes/latest"],
-    QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id', 'limit'], _OptionalParams),
+    QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id', 'filter_exchange_id', 'limit'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

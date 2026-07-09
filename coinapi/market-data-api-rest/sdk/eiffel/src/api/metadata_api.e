@@ -60,11 +60,13 @@ feature -- API Access
 			end
 		end
 
-	v1_assets_get (filter_asset_id: STRING_32): detachable LIST [MARKET_DATA_METADATA_ASSET]
+	v1_assets_get (filter_asset_id: STRING_32; filter_asset_type: STRING_32): detachable LIST [MARKET_DATA_METADATA_ASSET]
 			-- List all assets
 			-- Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
 			-- 
 			-- argument: filter_asset_id Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional, default to null)
+			-- 
+			-- argument: filter_asset_type Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional, default to null)
 			-- 
 			-- 
 			-- Result LIST [MARKET_DATA_METADATA_ASSET]
@@ -79,6 +81,7 @@ feature -- API Access
 			
 			l_path := "/v1/assets"
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_asset_id", filter_asset_id));
+			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_asset_type", filter_asset_type));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json", "application/x-msgpack">>)  as l_accept then

@@ -41,7 +41,8 @@ isa_ok($api, 'WWW::OpenAPIClient::MetadataApi');
 #
 # uncomment below and update the test
 #my $v1_assets_get_filter_asset_id = undef; # replace NULL with a proper value
-#my $v1_assets_get_result = $api->v1_assets_get(filter_asset_id => $v1_assets_get_filter_asset_id);
+#my $v1_assets_get_filter_asset_type = undef; # replace NULL with a proper value
+#my $v1_assets_get_result = $api->v1_assets_get(filter_asset_id => $v1_assets_get_filter_asset_id, filter_asset_type => $v1_assets_get_filter_asset_type);
 
 #
 # v1_assets_icons_size_get test

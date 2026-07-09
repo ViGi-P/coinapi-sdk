@@ -47,6 +47,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
   - `connection` (CoinAPIMarketDataRESTAPI.Connection): Connection to server
   - `opts` (keyword): Optional parameters
     - `:filter_asset_id` (String.t): Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+    - `:filter_asset_type` (String.t): Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 
   ### Returns
 
@@ -56,7 +57,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Metadata do
   @spec v1_assets_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.MarketDataMetadataAsset.t]} | {:error, Tesla.Env.t}
   def v1_assets_get(connection, opts \\ []) do
     optional_params = %{
-      :filter_asset_id => :query
+      :filter_asset_id => :query,
+      :filter_asset_type => :query
     }
 
     request =

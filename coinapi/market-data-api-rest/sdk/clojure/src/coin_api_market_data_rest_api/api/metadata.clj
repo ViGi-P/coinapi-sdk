@@ -69,11 +69,11 @@ Our asset identifiers are aligned with the ISO 4217 currency codes standard only
 Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.
 :::"
   ([] (v1-assets-get-with-http-info nil))
-  ([{:keys [filter_asset_id]} (s/map-of keyword? any?)]
+  ([{:keys [filter_asset_id filter_asset_type]} (s/map-of keyword? any?)]
    (call-api "/v1/assets" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"filter_asset_id" filter_asset_id }
+              :query-params  {"filter_asset_id" filter_asset_id "filter_asset_type" filter_asset_type }
               :form-params   {}
               :content-types []
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]

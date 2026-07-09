@@ -115,14 +115,15 @@ export class MetadataService extends BaseService {
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @endpoint get /v1/assets
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1AssetsGet(filterAssetId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataAsset>>;
-    public v1AssetsGet(filterAssetId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataAsset>>>;
-    public v1AssetsGet(filterAssetId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataAsset>>>;
-    public v1AssetsGet(filterAssetId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1AssetsGet(filterAssetId?: string, filterAssetType?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<MarketDataMetadataAsset>>;
+    public v1AssetsGet(filterAssetId?: string, filterAssetType?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<MarketDataMetadataAsset>>>;
+    public v1AssetsGet(filterAssetId?: string, filterAssetType?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<MarketDataMetadataAsset>>>;
+    public v1AssetsGet(filterAssetId?: string, filterAssetType?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
 
@@ -130,6 +131,15 @@ export class MetadataService extends BaseService {
             localVarQueryParameters,
             'filter_asset_id',
             <any>filterAssetId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_asset_type',
+            <any>filterAssetType,
             QueryParamStyle.Form,
             true,
         );

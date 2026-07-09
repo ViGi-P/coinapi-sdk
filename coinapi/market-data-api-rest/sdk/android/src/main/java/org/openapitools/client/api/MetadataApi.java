@@ -192,9 +192,10 @@ public class MetadataApi {
   * List all assets
   * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
    * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+   * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
    * @return List<MarketDataMetadataAsset>
   */
-  public List<MarketDataMetadataAsset> v1AssetsGet (String filterAssetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<MarketDataMetadataAsset> v1AssetsGet (String filterAssetId, String filterAssetType) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -207,6 +208,7 @@ public class MetadataApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_asset_id", filterAssetId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_asset_type", filterAssetType));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -249,9 +251,9 @@ public class MetadataApi {
       /**
    * List all assets
    * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
-   * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+   * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).   * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
   */
-  public void v1AssetsGet (String filterAssetId, final Response.Listener<List<MarketDataMetadataAsset>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1AssetsGet (String filterAssetId, String filterAssetType, final Response.Listener<List<MarketDataMetadataAsset>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -266,6 +268,7 @@ public class MetadataApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_asset_id", filterAssetId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_asset_type", filterAssetType));
 
 
     String[] contentTypes = {

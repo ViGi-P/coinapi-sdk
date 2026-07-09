@@ -11,7 +11,7 @@ void main() {
     //
     // Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
     //
-    //Future<BuiltList<V1QuoteTrade>> v1QuotesCurrentGet({ String filterSymbolId }) async
+    //Future<BuiltList<V1QuoteTrade>> v1QuotesCurrentGet({ String filterSymbolId, String filterExchangeId }) async
     test('test v1QuotesCurrentGet', () async {
       // TODO
     });
@@ -20,7 +20,7 @@ void main() {
     //
     // Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
     //
-    //Future<BuiltList<V1Quote>> v1QuotesLatestGet({ String filterSymbolId, int limit }) async
+    //Future<BuiltList<V1Quote>> v1QuotesLatestGet({ String filterSymbolId, String filterExchangeId, int limit }) async
     test('test v1QuotesLatestGet', () async {
       // TODO
     });

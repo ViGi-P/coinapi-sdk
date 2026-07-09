@@ -42,7 +42,8 @@ public class QuotesApiTest {
     @Test
     public void v1QuotesCurrentGetTest() throws ApiException {
         String filterSymbolId = null;
-        List<V1QuoteTrade> response = api.v1QuotesCurrentGet(filterSymbolId);
+        String filterExchangeId = null;
+        List<V1QuoteTrade> response = api.v1QuotesCurrentGet(filterSymbolId, filterExchangeId);
         // TODO: test validations
     }
 
@@ -56,8 +57,9 @@ public class QuotesApiTest {
     @Test
     public void v1QuotesLatestGetTest() throws ApiException {
         String filterSymbolId = null;
+        String filterExchangeId = null;
         Integer limit = null;
-        List<V1Quote> response = api.v1QuotesLatestGet(filterSymbolId, limit);
+        List<V1Quote> response = api.v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit);
         // TODO: test validations
     }
 

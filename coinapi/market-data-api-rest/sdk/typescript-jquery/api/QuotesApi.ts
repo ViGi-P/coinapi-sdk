@@ -50,8 +50,9 @@ export class QuotesApi {
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @summary Current data
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      */
-    public v1QuotesCurrentGet(filterSymbolId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1QuotesCurrentGet(filterSymbolId?: string, filterExchangeId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1QuoteTrade>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -61,6 +62,9 @@ export class QuotesApi {
         let headerParams: any = {};
         if (filterSymbolId !== null && filterSymbolId !== undefined) {
             queryParameters['filter_symbol_id'] = <string><any>filterSymbolId;
+        }
+        if (filterExchangeId !== null && filterExchangeId !== undefined) {
+            queryParameters['filter_exchange_id'] = <string><any>filterExchangeId;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -119,9 +123,10 @@ export class QuotesApi {
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @summary Latest data
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1QuotesLatestGet(filterSymbolId?: string, filterExchangeId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1Quote>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -131,6 +136,9 @@ export class QuotesApi {
         let headerParams: any = {};
         if (filterSymbolId !== null && filterSymbolId !== undefined) {
             queryParameters['filter_symbol_id'] = <string><any>filterSymbolId;
+        }
+        if (filterExchangeId !== null && filterExchangeId !== undefined) {
+            queryParameters['filter_exchange_id'] = <string><any>filterExchangeId;
         }
         if (limit !== null && limit !== undefined) {
             queryParameters['limit'] = <string><any>limit;

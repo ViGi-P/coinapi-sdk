@@ -25,7 +25,7 @@ When requesting current data for a specific symbol, output is not encapsulated i
 ### Example
 
 ```bash
- v1QuotesCurrentGet  filter_symbol_id=value
+ v1QuotesCurrentGet  filter_symbol_id=value  filter_exchange_id=value
 ```
 
 ### Parameters
@@ -34,6 +34,7 @@ When requesting current data for a specific symbol, output is not encapsulated i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] [default to null]
+ **filterExchangeId** | **string** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] [default to null]
 
 ### Return type
 
@@ -60,7 +61,7 @@ Get latest updates of the quotes up to 1 minute ago. Latest data is always retur
 ### Example
 
 ```bash
- v1QuotesLatestGet  filter_symbol_id=value  limit=value
+ v1QuotesLatestGet  filter_symbol_id=value  filter_exchange_id=value  limit=value
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ Get latest updates of the quotes up to 1 minute ago. Latest data is always retur
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] [default to null]
+ **filterExchangeId** | **string** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] [default to null]
  **limit** | **integer** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

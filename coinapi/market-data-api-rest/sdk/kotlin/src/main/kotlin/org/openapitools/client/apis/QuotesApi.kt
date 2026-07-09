@@ -59,6 +59,7 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * Current data
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @return kotlin.collections.List<V1QuoteTrade>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -68,8 +69,8 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1QuotesCurrentGet(filterSymbolId: kotlin.String? = null) : kotlin.collections.List<V1QuoteTrade> {
-        val localVarResponse = v1QuotesCurrentGetWithHttpInfo(filterSymbolId = filterSymbolId)
+    fun v1QuotesCurrentGet(filterSymbolId: kotlin.String? = null, filterExchangeId: kotlin.String? = null) : kotlin.collections.List<V1QuoteTrade> {
+        val localVarResponse = v1QuotesCurrentGetWithHttpInfo(filterSymbolId = filterSymbolId, filterExchangeId = filterExchangeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1QuoteTrade>
@@ -91,14 +92,15 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * Current data
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @return ApiResponse<kotlin.collections.List<V1QuoteTrade>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1QuotesCurrentGetWithHttpInfo(filterSymbolId: kotlin.String?) : ApiResponse<kotlin.collections.List<V1QuoteTrade>?> {
-        val localVariableConfig = v1QuotesCurrentGetRequestConfig(filterSymbolId = filterSymbolId)
+    fun v1QuotesCurrentGetWithHttpInfo(filterSymbolId: kotlin.String?, filterExchangeId: kotlin.String?) : ApiResponse<kotlin.collections.List<V1QuoteTrade>?> {
+        val localVariableConfig = v1QuotesCurrentGetRequestConfig(filterSymbolId = filterSymbolId, filterExchangeId = filterExchangeId)
 
         return request<Unit, kotlin.collections.List<V1QuoteTrade>>(
             localVariableConfig
@@ -109,14 +111,18 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * To obtain the request config of the operation v1QuotesCurrentGet
      *
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @return RequestConfig
      */
-    fun v1QuotesCurrentGetRequestConfig(filterSymbolId: kotlin.String?) : RequestConfig<Unit> {
+    fun v1QuotesCurrentGetRequestConfig(filterSymbolId: kotlin.String?, filterExchangeId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (filterSymbolId != null) {
                     put("filter_symbol_id", listOf(filterSymbolId.toString()))
+                }
+                if (filterExchangeId != null) {
+                    put("filter_exchange_id", listOf(filterExchangeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -137,6 +143,7 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * Latest data
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return kotlin.collections.List<V1Quote>
      * @throws IllegalStateException If the request is not correctly configured
@@ -147,8 +154,8 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1QuotesLatestGet(filterSymbolId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<V1Quote> {
-        val localVarResponse = v1QuotesLatestGetWithHttpInfo(filterSymbolId = filterSymbolId, limit = limit)
+    fun v1QuotesLatestGet(filterSymbolId: kotlin.String? = null, filterExchangeId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<V1Quote> {
+        val localVarResponse = v1QuotesLatestGetWithHttpInfo(filterSymbolId = filterSymbolId, filterExchangeId = filterExchangeId, limit = limit)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1Quote>
@@ -170,6 +177,7 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * Latest data
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return ApiResponse<kotlin.collections.List<V1Quote>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -177,8 +185,8 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1QuotesLatestGetWithHttpInfo(filterSymbolId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<V1Quote>?> {
-        val localVariableConfig = v1QuotesLatestGetRequestConfig(filterSymbolId = filterSymbolId, limit = limit)
+    fun v1QuotesLatestGetWithHttpInfo(filterSymbolId: kotlin.String?, filterExchangeId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<V1Quote>?> {
+        val localVariableConfig = v1QuotesLatestGetRequestConfig(filterSymbolId = filterSymbolId, filterExchangeId = filterExchangeId, limit = limit)
 
         return request<Unit, kotlin.collections.List<V1Quote>>(
             localVariableConfig
@@ -189,15 +197,19 @@ open class QuotesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * To obtain the request config of the operation v1QuotesLatestGet
      *
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return RequestConfig
      */
-    fun v1QuotesLatestGetRequestConfig(filterSymbolId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1QuotesLatestGetRequestConfig(filterSymbolId: kotlin.String?, filterExchangeId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (filterSymbolId != null) {
                     put("filter_symbol_id", listOf(filterSymbolId.toString()))
+                }
+                if (filterExchangeId != null) {
+                    put("filter_exchange_id", listOf(filterExchangeId.toString()))
                 }
                 if (limit != null) {
                     put("limit", listOf(limit.toString()))

@@ -210,6 +210,7 @@ public class MetadataApi {
     /**
      * Build call for v1AssetsGet
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -220,7 +221,7 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1AssetsGetCall(@javax.annotation.Nullable String filterAssetId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1AssetsGetCall(@javax.annotation.Nullable String filterAssetId, @javax.annotation.Nullable String filterAssetType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -249,6 +250,10 @@ public class MetadataApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_asset_id", filterAssetId));
         }
 
+        if (filterAssetType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_asset_type", filterAssetType));
+        }
+
         final String[] localVarAccepts = {
             "text/plain",
             "application/json",
@@ -272,8 +277,8 @@ public class MetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1AssetsGetValidateBeforeCall(@javax.annotation.Nullable String filterAssetId, final ApiCallback _callback) throws ApiException {
-        return v1AssetsGetCall(filterAssetId, _callback);
+    private okhttp3.Call v1AssetsGetValidateBeforeCall(@javax.annotation.Nullable String filterAssetId, @javax.annotation.Nullable String filterAssetType, final ApiCallback _callback) throws ApiException {
+        return v1AssetsGetCall(filterAssetId, filterAssetType, _callback);
 
     }
 
@@ -281,6 +286,7 @@ public class MetadataApi {
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @return List&lt;MarketDataMetadataAsset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -290,8 +296,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<MarketDataMetadataAsset> v1AssetsGet(@javax.annotation.Nullable String filterAssetId) throws ApiException {
-        ApiResponse<List<MarketDataMetadataAsset>> localVarResp = v1AssetsGetWithHttpInfo(filterAssetId);
+    public List<MarketDataMetadataAsset> v1AssetsGet(@javax.annotation.Nullable String filterAssetId, @javax.annotation.Nullable String filterAssetType) throws ApiException {
+        ApiResponse<List<MarketDataMetadataAsset>> localVarResp = v1AssetsGetWithHttpInfo(filterAssetId, filterAssetType);
         return localVarResp.getData();
     }
 
@@ -299,6 +305,7 @@ public class MetadataApi {
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @return ApiResponse&lt;List&lt;MarketDataMetadataAsset&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -308,8 +315,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<MarketDataMetadataAsset>> v1AssetsGetWithHttpInfo(@javax.annotation.Nullable String filterAssetId) throws ApiException {
-        okhttp3.Call localVarCall = v1AssetsGetValidateBeforeCall(filterAssetId, null);
+    public ApiResponse<List<MarketDataMetadataAsset>> v1AssetsGetWithHttpInfo(@javax.annotation.Nullable String filterAssetId, @javax.annotation.Nullable String filterAssetType) throws ApiException {
+        okhttp3.Call localVarCall = v1AssetsGetValidateBeforeCall(filterAssetId, filterAssetType, null);
         Type localVarReturnType = new TypeToken<List<MarketDataMetadataAsset>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -318,6 +325,7 @@ public class MetadataApi {
      * List all assets (asynchronously)
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -328,9 +336,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1AssetsGetAsync(@javax.annotation.Nullable String filterAssetId, final ApiCallback<List<MarketDataMetadataAsset>> _callback) throws ApiException {
+    public okhttp3.Call v1AssetsGetAsync(@javax.annotation.Nullable String filterAssetId, @javax.annotation.Nullable String filterAssetType, final ApiCallback<List<MarketDataMetadataAsset>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1AssetsGetValidateBeforeCall(filterAssetId, _callback);
+        okhttp3.Call localVarCall = v1AssetsGetValidateBeforeCall(filterAssetId, filterAssetType, _callback);
         Type localVarReturnType = new TypeToken<List<MarketDataMetadataAsset>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

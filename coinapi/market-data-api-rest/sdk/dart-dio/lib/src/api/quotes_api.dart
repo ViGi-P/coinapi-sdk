@@ -26,6 +26,7 @@ class QuotesApi {
   ///
   /// Parameters:
   /// * [filterSymbolId] - Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  /// * [filterExchangeId] - Comma or semicolon delimited exchange identifiers used to filter response. (optional)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -37,6 +38,7 @@ class QuotesApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<V1QuoteTrade>>> v1QuotesCurrentGet({ 
     String? filterSymbolId,
+    String? filterExchangeId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -70,6 +72,7 @@ class QuotesApi {
 
     final _queryParameters = <String, dynamic>{
       if (filterSymbolId != null) r'filter_symbol_id': encodeQueryParameter(_serializers, filterSymbolId, const FullType(String)),
+      if (filterExchangeId != null) r'filter_exchange_id': encodeQueryParameter(_serializers, filterExchangeId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -117,6 +120,7 @@ class QuotesApi {
   ///
   /// Parameters:
   /// * [filterSymbolId] - Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  /// * [filterExchangeId] - Comma or semicolon delimited exchange identifiers used to filter response. (optional)
   /// * [limit] - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -129,6 +133,7 @@ class QuotesApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<V1Quote>>> v1QuotesLatestGet({ 
     String? filterSymbolId,
+    String? filterExchangeId,
     int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -163,6 +168,7 @@ class QuotesApi {
 
     final _queryParameters = <String, dynamic>{
       if (filterSymbolId != null) r'filter_symbol_id': encodeQueryParameter(_serializers, filterSymbolId, const FullType(String)),
+      if (filterExchangeId != null) r'filter_exchange_id': encodeQueryParameter(_serializers, filterExchangeId, const FullType(String)),
       if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 

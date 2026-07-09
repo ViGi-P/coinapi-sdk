@@ -148,6 +148,12 @@ class MarketDataMetadataAssetTest : ShouldSpec() {
             //modelInstance.chainAddresses shouldBe ("TODO")
         }
 
+        // to test the property `assetType` - Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+        should("test assetType") {
+            // uncomment below to test the property
+            //modelInstance.assetType shouldBe ("TODO")
+        }
+
         // to test the property `dataStart`
         should("test dataStart") {
             // uncomment below to test the property

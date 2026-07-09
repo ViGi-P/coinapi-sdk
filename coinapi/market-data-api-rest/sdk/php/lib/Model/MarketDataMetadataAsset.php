@@ -78,6 +78,7 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
         'supply_total' => 'float',
         'supply_max' => 'float',
         'chain_addresses' => '\OpenAPI\Client\Model\V1ChainNetworkAddress[]',
+        'asset_type' => 'string',
         'data_start' => 'string',
         'data_end' => 'string'
     ];
@@ -109,6 +110,7 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
         'supply_total' => 'double',
         'supply_max' => 'double',
         'chain_addresses' => null,
+        'asset_type' => null,
         'data_start' => null,
         'data_end' => null
     ];
@@ -138,6 +140,7 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
         'supply_total' => true,
         'supply_max' => true,
         'chain_addresses' => true,
+        'asset_type' => true,
         'data_start' => true,
         'data_end' => true
     ];
@@ -247,6 +250,7 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
         'supply_total' => 'supply_total',
         'supply_max' => 'supply_max',
         'chain_addresses' => 'chain_addresses',
+        'asset_type' => 'asset_type',
         'data_start' => 'data_start',
         'data_end' => 'data_end'
     ];
@@ -276,6 +280,7 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
         'supply_total' => 'setSupplyTotal',
         'supply_max' => 'setSupplyMax',
         'chain_addresses' => 'setChainAddresses',
+        'asset_type' => 'setAssetType',
         'data_start' => 'setDataStart',
         'data_end' => 'setDataEnd'
     ];
@@ -305,6 +310,7 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
         'supply_total' => 'getSupplyTotal',
         'supply_max' => 'getSupplyMax',
         'chain_addresses' => 'getChainAddresses',
+        'asset_type' => 'getAssetType',
         'data_start' => 'getDataStart',
         'data_end' => 'getDataEnd'
     ];
@@ -385,6 +391,7 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('supply_total', $data ?? [], null);
         $this->setIfExists('supply_max', $data ?? [], null);
         $this->setIfExists('chain_addresses', $data ?? [], null);
+        $this->setIfExists('asset_type', $data ?? [], null);
         $this->setIfExists('data_start', $data ?? [], null);
         $this->setIfExists('data_end', $data ?? [], null);
     }
@@ -1066,6 +1073,40 @@ class MarketDataMetadataAsset implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['chain_addresses'] = $chain_addresses;
+
+        return $this;
+    }
+
+    /**
+     * Gets asset_type
+     *
+     * @return string|null
+     */
+    public function getAssetType()
+    {
+        return $this->container['asset_type'];
+    }
+
+    /**
+     * Sets asset_type
+     *
+     * @param string|null $asset_type Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+     *
+     * @return self
+     */
+    public function setAssetType($asset_type)
+    {
+        if (is_null($asset_type)) {
+            array_push($this->openAPINullablesSetToNull, 'asset_type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('asset_type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['asset_type'] = $asset_type;
 
         return $this;
     }

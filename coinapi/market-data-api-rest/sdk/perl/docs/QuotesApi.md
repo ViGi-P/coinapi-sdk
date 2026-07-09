@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **v1_quotes_current_get**
-> ARRAY[V1QuoteTrade] v1_quotes_current_get(filter_symbol_id => $filter_symbol_id)
+> ARRAY[V1QuoteTrade] v1_quotes_current_get(filter_symbol_id => $filter_symbol_id, filter_exchange_id => $filter_exchange_id)
 
 Current data
 
@@ -39,9 +39,10 @@ my $api_instance = WWW::OpenAPIClient::QuotesApi->new(
 );
 
 my $filter_symbol_id = "filter_symbol_id_example"; # string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+my $filter_exchange_id = "filter_exchange_id_example"; # string | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 
 eval {
-    my $result = $api_instance->v1_quotes_current_get(filter_symbol_id => $filter_symbol_id);
+    my $result = $api_instance->v1_quotes_current_get(filter_symbol_id => $filter_symbol_id, filter_exchange_id => $filter_exchange_id);
     print Dumper($result);
 };
 if ($@) {
@@ -54,6 +55,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **string**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filter_exchange_id** | **string**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
 
 ### Return type
 
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_quotes_latest_get**
-> ARRAY[V1Quote] v1_quotes_latest_get(filter_symbol_id => $filter_symbol_id, limit => $limit)
+> ARRAY[V1Quote] v1_quotes_latest_get(filter_symbol_id => $filter_symbol_id, filter_exchange_id => $filter_exchange_id, limit => $limit)
 
 Latest data
 
@@ -93,10 +95,11 @@ my $api_instance = WWW::OpenAPIClient::QuotesApi->new(
 );
 
 my $filter_symbol_id = "filter_symbol_id_example"; # string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+my $filter_exchange_id = "filter_exchange_id_example"; # string | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 my $limit = 100; # int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 eval {
-    my $result = $api_instance->v1_quotes_latest_get(filter_symbol_id => $filter_symbol_id, limit => $limit);
+    my $result = $api_instance->v1_quotes_latest_get(filter_symbol_id => $filter_symbol_id, filter_exchange_id => $filter_exchange_id, limit => $limit);
     print Dumper($result);
 };
 if ($@) {
@@ -109,6 +112,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **string**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filter_exchange_id** | **string**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
  **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

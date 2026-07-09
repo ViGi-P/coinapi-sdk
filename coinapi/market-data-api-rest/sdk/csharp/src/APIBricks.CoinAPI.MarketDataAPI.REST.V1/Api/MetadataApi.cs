@@ -69,9 +69,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="filterAssetId">Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)</param>
+        /// <param name="filterAssetType">Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1AssetsGetApiResponse"/>&gt;</returns>
-        Task<IV1AssetsGetApiResponse> V1AssetsGetAsync(Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1AssetsGetApiResponse> V1AssetsGetAsync(Option<string> filterAssetId = default, Option<string> filterAssetType = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List all assets
@@ -80,9 +81,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
         /// </remarks>
         /// <param name="filterAssetId">Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)</param>
+        /// <param name="filterAssetType">Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1AssetsGetApiResponse"/>?&gt;</returns>
-        Task<IV1AssetsGetApiResponse?> V1AssetsGetOrDefaultAsync(Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1AssetsGetApiResponse?> V1AssetsGetOrDefaultAsync(Option<string> filterAssetId = default, Option<string> filterAssetType = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List all asset icons
@@ -972,17 +974,21 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatV1AssetsGet(ref Option<string> filterAssetId);
+        partial void FormatV1AssetsGet(ref Option<string> filterAssetId, ref Option<string> filterAssetType);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="filterAssetId"></param>
+        /// <param name="filterAssetType"></param>
         /// <returns></returns>
-        private void ValidateV1AssetsGet(Option<string> filterAssetId)
+        private void ValidateV1AssetsGet(Option<string> filterAssetId, Option<string> filterAssetType)
         {
             if (filterAssetId.IsSet && filterAssetId.Value == null)
                 throw new ArgumentNullException(nameof(filterAssetId));
+
+            if (filterAssetType.IsSet && filterAssetType.Value == null)
+                throw new ArgumentNullException(nameof(filterAssetType));
         }
 
         /// <summary>
@@ -990,10 +996,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="filterAssetId"></param>
-        private void AfterV1AssetsGetDefaultImplementation(IV1AssetsGetApiResponse apiResponseLocalVar, Option<string> filterAssetId)
+        /// <param name="filterAssetType"></param>
+        private void AfterV1AssetsGetDefaultImplementation(IV1AssetsGetApiResponse apiResponseLocalVar, Option<string> filterAssetId, Option<string> filterAssetType)
         {
             bool suppressDefaultLog = false;
-            AfterV1AssetsGet(ref suppressDefaultLog, apiResponseLocalVar, filterAssetId);
+            AfterV1AssetsGet(ref suppressDefaultLog, apiResponseLocalVar, filterAssetId, filterAssetType);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1004,7 +1011,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="filterAssetId"></param>
-        partial void AfterV1AssetsGet(ref bool suppressDefaultLog, IV1AssetsGetApiResponse apiResponseLocalVar, Option<string> filterAssetId);
+        /// <param name="filterAssetType"></param>
+        partial void AfterV1AssetsGet(ref bool suppressDefaultLog, IV1AssetsGetApiResponse apiResponseLocalVar, Option<string> filterAssetId, Option<string> filterAssetType);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1013,10 +1021,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="filterAssetId"></param>
-        private void OnErrorV1AssetsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterAssetId)
+        /// <param name="filterAssetType"></param>
+        private void OnErrorV1AssetsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterAssetId, Option<string> filterAssetType)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1AssetsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, filterAssetId);
+            OnErrorV1AssetsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, filterAssetId, filterAssetType);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1029,19 +1038,21 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="filterAssetId"></param>
-        partial void OnErrorV1AssetsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterAssetId);
+        /// <param name="filterAssetType"></param>
+        partial void OnErrorV1AssetsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterAssetId, Option<string> filterAssetType);
 
         /// <summary>
         /// List all assets Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
         /// </summary>
         /// <param name="filterAssetId">Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)</param>
+        /// <param name="filterAssetType">Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1AssetsGetApiResponse"/>&gt;</returns>
-        public async Task<IV1AssetsGetApiResponse?> V1AssetsGetOrDefaultAsync(Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1AssetsGetApiResponse?> V1AssetsGetOrDefaultAsync(Option<string> filterAssetId = default, Option<string> filterAssetType = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1AssetsGetAsync(filterAssetId, cancellationToken).ConfigureAwait(false);
+                return await V1AssetsGetAsync(filterAssetId, filterAssetType, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1054,17 +1065,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="filterAssetId">Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)</param>
+        /// <param name="filterAssetType">Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1AssetsGetApiResponse"/>&gt;</returns>
-        public async Task<IV1AssetsGetApiResponse> V1AssetsGetAsync(Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1AssetsGetApiResponse> V1AssetsGetAsync(Option<string> filterAssetId = default, Option<string> filterAssetType = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateV1AssetsGet(filterAssetId);
+                ValidateV1AssetsGet(filterAssetId, filterAssetType);
 
-                FormatV1AssetsGet(ref filterAssetId);
+                FormatV1AssetsGet(ref filterAssetId, ref filterAssetType);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1079,6 +1091,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     if (filterAssetId.IsSet)
                         parseQueryStringLocalVar["filter_asset_id"] = ClientUtils.ParameterToString(filterAssetId.Value);
+
+                    if (filterAssetType.IsSet)
+                        parseQueryStringLocalVar["filter_asset_type"] = ClientUtils.ParameterToString(filterAssetType.Value);
 
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
 
@@ -1125,7 +1140,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterV1AssetsGetDefaultImplementation(apiResponseLocalVar, filterAssetId);
+                        AfterV1AssetsGetDefaultImplementation(apiResponseLocalVar, filterAssetId, filterAssetType);
 
                         Events.ExecuteOnV1AssetsGet(apiResponseLocalVar);
 
@@ -1139,7 +1154,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1AssetsGetDefaultImplementation(e, "/v1/assets", uriBuilderLocalVar.Path, filterAssetId);
+                OnErrorV1AssetsGetDefaultImplementation(e, "/v1/assets", uriBuilderLocalVar.Path, filterAssetId, filterAssetType);
                 Events.ExecuteOnErrorV1AssetsGet(e);
                 throw;
             }

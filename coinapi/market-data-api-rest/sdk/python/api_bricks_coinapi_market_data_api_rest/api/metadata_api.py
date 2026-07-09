@@ -310,6 +310,7 @@ class MetadataApi:
     def v1_assets_get(
         self,
         filter_asset_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).")] = None,
+        filter_asset_type: Annotated[Optional[StrictStr], Field(description="Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -329,6 +330,8 @@ class MetadataApi:
 
         :param filter_asset_id: Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
         :type filter_asset_id: str
+        :param filter_asset_type: Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+        :type filter_asset_type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -353,6 +356,7 @@ class MetadataApi:
 
         _param = self._v1_assets_get_serialize(
             filter_asset_id=filter_asset_id,
+            filter_asset_type=filter_asset_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -377,6 +381,7 @@ class MetadataApi:
     def v1_assets_get_with_http_info(
         self,
         filter_asset_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).")] = None,
+        filter_asset_type: Annotated[Optional[StrictStr], Field(description="Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -396,6 +401,8 @@ class MetadataApi:
 
         :param filter_asset_id: Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
         :type filter_asset_id: str
+        :param filter_asset_type: Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+        :type filter_asset_type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -420,6 +427,7 @@ class MetadataApi:
 
         _param = self._v1_assets_get_serialize(
             filter_asset_id=filter_asset_id,
+            filter_asset_type=filter_asset_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -444,6 +452,7 @@ class MetadataApi:
     def v1_assets_get_without_preload_content(
         self,
         filter_asset_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).")] = None,
+        filter_asset_type: Annotated[Optional[StrictStr], Field(description="Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -463,6 +472,8 @@ class MetadataApi:
 
         :param filter_asset_id: Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
         :type filter_asset_id: str
+        :param filter_asset_type: Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+        :type filter_asset_type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -487,6 +498,7 @@ class MetadataApi:
 
         _param = self._v1_assets_get_serialize(
             filter_asset_id=filter_asset_id,
+            filter_asset_type=filter_asset_type,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -506,6 +518,7 @@ class MetadataApi:
     def _v1_assets_get_serialize(
         self,
         filter_asset_id,
+        filter_asset_type,
         _request_auth,
         _content_type,
         _headers,
@@ -531,6 +544,10 @@ class MetadataApi:
         if filter_asset_id is not None:
             
             _query_params.append(('filter_asset_id', filter_asset_id))
+            
+        if filter_asset_type is not None:
+            
+            _query_params.append(('filter_asset_type', filter_asset_type))
             
         # process the header parameters
         # process the form parameters
