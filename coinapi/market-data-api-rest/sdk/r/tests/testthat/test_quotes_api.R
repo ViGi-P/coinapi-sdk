@@ -11,6 +11,7 @@ test_that("V1QuotesCurrentGet", {
   # Current data
   # Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
   # @param filter_symbol_id character Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+  # @param filter_exchange_id character Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
   # @return [array[V1QuoteTrade]]
 
   # uncomment below to test the operation
@@ -23,6 +24,7 @@ test_that("V1QuotesLatestGet", {
   # Latest data
   # Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
   # @param filter_symbol_id character Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+  # @param filter_exchange_id character Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
   # @param limit integer Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
   # @return [array[V1Quote]]
 

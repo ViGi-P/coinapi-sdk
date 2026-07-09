@@ -29,6 +29,7 @@ public class OASQuotesApi {
      * Current data
      * Get current quotes for all symbols or for a specific symbol.\n            \n:::info\nWhen requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned.\n:::
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @return List<OASV1QuoteTrade>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -37,6 +38,7 @@ public class OASQuotesApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('filter_symbol_id', (String) params.get('filterSymbolId')));
+        query.addAll(client.makeParam('filter_exchange_id', (String) params.get('filterExchangeId')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 
@@ -55,6 +57,7 @@ public class OASQuotesApi {
      * Latest data
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param r_limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return List<OASV1Quote>
      * @throws OAS.ApiException if fails to make API call
@@ -64,6 +67,7 @@ public class OASQuotesApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('filter_symbol_id', (String) params.get('filterSymbolId')));
+        query.addAll(client.makeParam('filter_exchange_id', (String) params.get('filterExchangeId')));
         query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();

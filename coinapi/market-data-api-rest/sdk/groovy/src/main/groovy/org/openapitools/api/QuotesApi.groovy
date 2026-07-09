@@ -9,7 +9,7 @@ class QuotesApi {
     String versionPath = ""
     ApiUtils apiUtils = new ApiUtils();
 
-    def v1QuotesCurrentGet ( String filterSymbolId, Closure onSuccess, Closure onFailure)  {
+    def v1QuotesCurrentGet ( String filterSymbolId, String filterExchangeId, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/quotes/current"
 
         // params
@@ -23,6 +23,9 @@ class QuotesApi {
         if (filterSymbolId != null) {
             queryParams.put("filter_symbol_id", filterSymbolId)
         }
+        if (filterExchangeId != null) {
+            queryParams.put("filter_exchange_id", filterExchangeId)
+        }
 
 
 
@@ -35,7 +38,7 @@ class QuotesApi {
 
     }
 
-    def v1QuotesLatestGet ( String filterSymbolId, Integer limit, Closure onSuccess, Closure onFailure)  {
+    def v1QuotesLatestGet ( String filterSymbolId, String filterExchangeId, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/quotes/latest"
 
         // params
@@ -48,6 +51,9 @@ class QuotesApi {
 
         if (filterSymbolId != null) {
             queryParams.put("filter_symbol_id", filterSymbolId)
+        }
+        if (filterExchangeId != null) {
+            queryParams.put("filter_exchange_id", filterExchangeId)
         }
         if (limit != null) {
             queryParams.put("limit", limit)

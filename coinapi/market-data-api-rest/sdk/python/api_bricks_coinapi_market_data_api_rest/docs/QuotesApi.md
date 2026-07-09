@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **v1_quotes_current_get**
-> List[V1QuoteTrade] v1_quotes_current_get(filter_symbol_id=filter_symbol_id)
+> List[V1QuoteTrade] v1_quotes_current_get(filter_symbol_id=filter_symbol_id, filter_exchange_id=filter_exchange_id)
 
 Current data
 
@@ -60,10 +60,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     # Create an instance of the API class
     api_instance = api_bricks_coinapi_market_data_api_rest.QuotesApi(api_client)
     filter_symbol_id = 'filter_symbol_id_example' # str | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+    filter_exchange_id = 'filter_exchange_id_example' # str | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
 
     try:
         # Current data
-        api_response = api_instance.v1_quotes_current_get(filter_symbol_id=filter_symbol_id)
+        api_response = api_instance.v1_quotes_current_get(filter_symbol_id=filter_symbol_id, filter_exchange_id=filter_exchange_id)
         print("The response of QuotesApi->v1_quotes_current_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -78,6 +79,7 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **str**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filter_exchange_id** | **str**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
 
 ### Return type
 
@@ -101,7 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_quotes_latest_get**
-> List[V1Quote] v1_quotes_latest_get(filter_symbol_id=filter_symbol_id, limit=limit)
+> List[V1Quote] v1_quotes_latest_get(filter_symbol_id=filter_symbol_id, filter_exchange_id=filter_exchange_id, limit=limit)
 
 Latest data
 
@@ -145,11 +147,12 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     # Create an instance of the API class
     api_instance = api_bricks_coinapi_market_data_api_rest.QuotesApi(api_client)
     filter_symbol_id = 'filter_symbol_id_example' # str | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+    filter_exchange_id = 'filter_exchange_id_example' # str | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
     limit = 100 # int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
 
     try:
         # Latest data
-        api_response = api_instance.v1_quotes_latest_get(filter_symbol_id=filter_symbol_id, limit=limit)
+        api_response = api_instance.v1_quotes_latest_get(filter_symbol_id=filter_symbol_id, filter_exchange_id=filter_exchange_id, limit=limit)
         print("The response of QuotesApi->v1_quotes_latest_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -164,6 +167,7 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **str**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filter_exchange_id** | **str**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
  **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

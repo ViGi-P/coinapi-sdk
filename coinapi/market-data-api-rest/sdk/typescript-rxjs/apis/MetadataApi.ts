@@ -30,6 +30,7 @@ export interface V1AssetsAssetIdGetRequest {
 
 export interface V1AssetsGetRequest {
     filterAssetId?: string;
+    filterAssetType?: string;
 }
 
 export interface V1AssetsIconsSizeGetRequest {
@@ -100,9 +101,9 @@ export class MetadataApi extends BaseAPI {
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * List all assets
      */
-    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest): Observable<Array<MarketDataMetadataAsset>>
-    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataAsset>>>
-    v1AssetsGet({ filterAssetId }: V1AssetsGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataAsset> | AjaxResponse<Array<MarketDataMetadataAsset>>> {
+    v1AssetsGet({ filterAssetId, filterAssetType }: V1AssetsGetRequest): Observable<Array<MarketDataMetadataAsset>>
+    v1AssetsGet({ filterAssetId, filterAssetType }: V1AssetsGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<MarketDataMetadataAsset>>>
+    v1AssetsGet({ filterAssetId, filterAssetType }: V1AssetsGetRequest, opts?: OperationOpts): Observable<Array<MarketDataMetadataAsset> | AjaxResponse<Array<MarketDataMetadataAsset>>> {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -111,6 +112,7 @@ export class MetadataApi extends BaseAPI {
         const query: HttpQuery = {};
 
         if (filterAssetId != null) { query['filter_asset_id'] = filterAssetId; }
+        if (filterAssetType != null) { query['filter_asset_type'] = filterAssetType; }
 
         return this.request<Array<MarketDataMetadataAsset>>({
             url: '/v1/assets',

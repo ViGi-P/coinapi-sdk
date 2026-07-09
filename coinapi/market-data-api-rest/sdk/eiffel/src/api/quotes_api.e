@@ -24,11 +24,13 @@ inherit
 feature -- API Access
 
 
-	v1_quotes_current_get (filter_symbol_id: STRING_32): detachable LIST [V1_QUOTE_TRADE]
+	v1_quotes_current_get (filter_symbol_id: STRING_32; filter_exchange_id: STRING_32): detachable LIST [V1_QUOTE_TRADE]
 			-- Current data
 			-- Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
 			-- 
 			-- argument: filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional, default to null)
+			-- 
+			-- argument: filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional, default to null)
 			-- 
 			-- 
 			-- Result LIST [V1_QUOTE_TRADE]
@@ -43,6 +45,7 @@ feature -- API Access
 			
 			l_path := "/v1/quotes/current"
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_symbol_id", filter_symbol_id));
+			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_exchange_id", filter_exchange_id));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json", "application/x-msgpack">>)  as l_accept then
@@ -60,11 +63,13 @@ feature -- API Access
 			end
 		end
 
-	v1_quotes_latest_get (filter_symbol_id: STRING_32; limit: INTEGER_32): detachable LIST [V1_QUOTE]
+	v1_quotes_latest_get (filter_symbol_id: STRING_32; filter_exchange_id: STRING_32; limit: INTEGER_32): detachable LIST [V1_QUOTE]
 			-- Latest data
 			-- Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
 			-- 
 			-- argument: filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional, default to null)
+			-- 
+			-- argument: filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional, default to null)
 			-- 
 			-- argument: limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
 			-- 
@@ -81,6 +86,7 @@ feature -- API Access
 			
 			l_path := "/v1/quotes/latest"
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_symbol_id", filter_symbol_id));
+			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_exchange_id", filter_exchange_id));
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 

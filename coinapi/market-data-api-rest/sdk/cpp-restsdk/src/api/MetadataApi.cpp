@@ -175,7 +175,7 @@ pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> MetadataApi::
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> MetadataApi::v1AssetsGet(boost::optional<utility::string_t> filterAssetId) const
+pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> MetadataApi::v1AssetsGet(boost::optional<utility::string_t> filterAssetId, boost::optional<utility::string_t> filterAssetType) const
 {
 
 
@@ -222,6 +222,10 @@ pplx::task<std::vector<std::shared_ptr<MarketDataMetadata_Asset>>> MetadataApi::
     if (filterAssetId)
     {
         localVarQueryParams[utility::conversions::to_string_t("filter_asset_id")] = ApiClient::parameterToString(*filterAssetId);
+    }
+    if (filterAssetType)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("filter_asset_type")] = ApiClient::parameterToString(*filterAssetType);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

@@ -49,6 +49,8 @@ class MarketDataMetadataAsset {
     Double supplyMax
     /*  */
     List<V1ChainNetworkAddress> chainAddresses
+    /* Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. */
+    String assetType
     
     String dataStart
     

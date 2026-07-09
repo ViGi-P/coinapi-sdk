@@ -35,13 +35,13 @@ import Json.Encode
 Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
 
 -}
-v1QuotesCurrentGet : Maybe String -> String -> Api.Request (List Api.Data.V1QuoteTrade)
-v1QuotesCurrentGet filterSymbolId_query auth_token =
+v1QuotesCurrentGet : Maybe String -> Maybe String -> String -> Api.Request (List Api.Data.V1QuoteTrade)
+v1QuotesCurrentGet filterSymbolId_query filterExchangeId_query auth_token =
     Api.request
         "GET"
         "/v1/quotes/current"
         []
-        [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ) ]
+        [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ), ( "filter_exchange_id", Maybe.map identity filterExchangeId_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.v1QuoteTradeDecoder)
@@ -52,13 +52,13 @@ v1QuotesCurrentGet filterSymbolId_query auth_token =
 Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
 
 -}
-v1QuotesLatestGet : Maybe String -> Maybe Int -> String -> Api.Request (List Api.Data.V1Quote)
-v1QuotesLatestGet filterSymbolId_query limit_query auth_token =
+v1QuotesLatestGet : Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Api.Data.V1Quote)
+v1QuotesLatestGet filterSymbolId_query filterExchangeId_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/quotes/latest"
         []
-        [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
+        [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ), ( "filter_exchange_id", Maybe.map identity filterExchangeId_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.v1QuoteDecoder)

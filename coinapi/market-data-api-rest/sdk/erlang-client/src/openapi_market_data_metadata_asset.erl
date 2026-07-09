@@ -24,6 +24,7 @@
        'supply_total' => float(),
        'supply_max' => float(),
        'chain_addresses' => list(),
+       'asset_type' => binary(),
        'data_start' => binary(),
        'data_end' => binary()
      }.
@@ -47,6 +48,7 @@ encode(#{ 'asset_id' := AssetId,
           'supply_total' := SupplyTotal,
           'supply_max' := SupplyMax,
           'chain_addresses' := ChainAddresses,
+          'asset_type' := AssetType,
           'data_start' := DataStart,
           'data_end' := DataEnd
         }) ->
@@ -69,6 +71,7 @@ encode(#{ 'asset_id' := AssetId,
        'supply_total' => SupplyTotal,
        'supply_max' => SupplyMax,
        'chain_addresses' => ChainAddresses,
+       'asset_type' => AssetType,
        'data_start' => DataStart,
        'data_end' => DataEnd
      }.

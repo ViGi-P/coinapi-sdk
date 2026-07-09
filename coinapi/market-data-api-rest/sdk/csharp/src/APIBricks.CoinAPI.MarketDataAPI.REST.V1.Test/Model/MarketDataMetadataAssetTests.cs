@@ -226,6 +226,15 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'AssetType'
+        /// </summary>
+        [Fact]
+        public void AssetTypeTest()
+        {
+            // TODO unit test for the property 'AssetType'
+        }
+
+        /// <summary>
         /// Test the property 'DataStart'
         /// </summary>
         [Fact]

@@ -1255,6 +1255,7 @@ package body .Models is
       Serialize (Into, "supply_total", Value.Supply_Total);
       Serialize (Into, "supply_max", Value.Supply_Max);
       Serialize (Into, "chain_addresses", Value.Chain_Addresses);
+      Into.Write_Entity ("asset_type", Value.Asset_Type);
       Into.Write_Entity ("data_start", Value.Data_Start);
       Into.Write_Entity ("data_end", Value.Data_End);
       Into.End_Entity (Name);
@@ -1296,6 +1297,7 @@ package body .Models is
       Swagger.Streams.Deserialize (Object, "supply_total", Value.Supply_Total);
       Swagger.Streams.Deserialize (Object, "supply_max", Value.Supply_Max);
       Deserialize (Object, "chain_addresses", Value.Chain_Addresses);
+      Swagger.Streams.Deserialize (Object, "asset_type", Value.Asset_Type);
       Swagger.Streams.Deserialize (Object, "data_start", Value.Data_Start);
       Swagger.Streams.Deserialize (Object, "data_end", Value.Data_End);
    end Deserialize;

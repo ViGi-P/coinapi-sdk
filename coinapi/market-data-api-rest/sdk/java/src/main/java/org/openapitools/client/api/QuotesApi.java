@@ -76,6 +76,7 @@ public class QuotesApi {
     /**
      * Build call for v1QuotesCurrentGet
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -86,7 +87,7 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1QuotesCurrentGetCall(@javax.annotation.Nullable String filterSymbolId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1QuotesCurrentGetCall(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -115,6 +116,10 @@ public class QuotesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_symbol_id", filterSymbolId));
         }
 
+        if (filterExchangeId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_exchange_id", filterExchangeId));
+        }
+
         final String[] localVarAccepts = {
             "text/plain",
             "application/json",
@@ -138,8 +143,8 @@ public class QuotesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1QuotesCurrentGetValidateBeforeCall(@javax.annotation.Nullable String filterSymbolId, final ApiCallback _callback) throws ApiException {
-        return v1QuotesCurrentGetCall(filterSymbolId, _callback);
+    private okhttp3.Call v1QuotesCurrentGetValidateBeforeCall(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, final ApiCallback _callback) throws ApiException {
+        return v1QuotesCurrentGetCall(filterSymbolId, filterExchangeId, _callback);
 
     }
 
@@ -147,6 +152,7 @@ public class QuotesApi {
      * Current data
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @return List&lt;V1QuoteTrade&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -156,8 +162,8 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1QuoteTrade> v1QuotesCurrentGet(@javax.annotation.Nullable String filterSymbolId) throws ApiException {
-        ApiResponse<List<V1QuoteTrade>> localVarResp = v1QuotesCurrentGetWithHttpInfo(filterSymbolId);
+    public List<V1QuoteTrade> v1QuotesCurrentGet(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId) throws ApiException {
+        ApiResponse<List<V1QuoteTrade>> localVarResp = v1QuotesCurrentGetWithHttpInfo(filterSymbolId, filterExchangeId);
         return localVarResp.getData();
     }
 
@@ -165,6 +171,7 @@ public class QuotesApi {
      * Current data
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @return ApiResponse&lt;List&lt;V1QuoteTrade&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -174,8 +181,8 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1QuoteTrade>> v1QuotesCurrentGetWithHttpInfo(@javax.annotation.Nullable String filterSymbolId) throws ApiException {
-        okhttp3.Call localVarCall = v1QuotesCurrentGetValidateBeforeCall(filterSymbolId, null);
+    public ApiResponse<List<V1QuoteTrade>> v1QuotesCurrentGetWithHttpInfo(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId) throws ApiException {
+        okhttp3.Call localVarCall = v1QuotesCurrentGetValidateBeforeCall(filterSymbolId, filterExchangeId, null);
         Type localVarReturnType = new TypeToken<List<V1QuoteTrade>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -184,6 +191,7 @@ public class QuotesApi {
      * Current data (asynchronously)
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -194,9 +202,9 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1QuotesCurrentGetAsync(@javax.annotation.Nullable String filterSymbolId, final ApiCallback<List<V1QuoteTrade>> _callback) throws ApiException {
+    public okhttp3.Call v1QuotesCurrentGetAsync(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, final ApiCallback<List<V1QuoteTrade>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1QuotesCurrentGetValidateBeforeCall(filterSymbolId, _callback);
+        okhttp3.Call localVarCall = v1QuotesCurrentGetValidateBeforeCall(filterSymbolId, filterExchangeId, _callback);
         Type localVarReturnType = new TypeToken<List<V1QuoteTrade>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -204,6 +212,7 @@ public class QuotesApi {
     /**
      * Build call for v1QuotesLatestGet
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -215,7 +224,7 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1QuotesLatestGetCall(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1QuotesLatestGetCall(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -242,6 +251,10 @@ public class QuotesApi {
 
         if (filterSymbolId != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_symbol_id", filterSymbolId));
+        }
+
+        if (filterExchangeId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_exchange_id", filterExchangeId));
         }
 
         if (limit != null) {
@@ -271,8 +284,8 @@ public class QuotesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1QuotesLatestGetValidateBeforeCall(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
-        return v1QuotesLatestGetCall(filterSymbolId, limit, _callback);
+    private okhttp3.Call v1QuotesLatestGetValidateBeforeCall(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        return v1QuotesLatestGetCall(filterSymbolId, filterExchangeId, limit, _callback);
 
     }
 
@@ -280,6 +293,7 @@ public class QuotesApi {
      * Latest data
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return List&lt;V1Quote&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -290,8 +304,8 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1Quote> v1QuotesLatestGet(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<V1Quote>> localVarResp = v1QuotesLatestGetWithHttpInfo(filterSymbolId, limit);
+    public List<V1Quote> v1QuotesLatestGet(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<V1Quote>> localVarResp = v1QuotesLatestGetWithHttpInfo(filterSymbolId, filterExchangeId, limit);
         return localVarResp.getData();
     }
 
@@ -299,6 +313,7 @@ public class QuotesApi {
      * Latest data
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return ApiResponse&lt;List&lt;V1Quote&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -309,8 +324,8 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1Quote>> v1QuotesLatestGetWithHttpInfo(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1QuotesLatestGetValidateBeforeCall(filterSymbolId, limit, null);
+    public ApiResponse<List<V1Quote>> v1QuotesLatestGetWithHttpInfo(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v1QuotesLatestGetValidateBeforeCall(filterSymbolId, filterExchangeId, limit, null);
         Type localVarReturnType = new TypeToken<List<V1Quote>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -319,6 +334,7 @@ public class QuotesApi {
      * Latest data (asynchronously)
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -330,9 +346,9 @@ public class QuotesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1QuotesLatestGetAsync(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<V1Quote>> _callback) throws ApiException {
+    public okhttp3.Call v1QuotesLatestGetAsync(@javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable String filterExchangeId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<V1Quote>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1QuotesLatestGetValidateBeforeCall(filterSymbolId, limit, _callback);
+        okhttp3.Call localVarCall = v1QuotesLatestGetValidateBeforeCall(filterSymbolId, filterExchangeId, limit, _callback);
         Type localVarReturnType = new TypeToken<List<V1Quote>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -106,6 +106,9 @@ class MarketDataMetadataAsset {
             if (data.hasOwnProperty('chain_addresses')) {
                 obj['chain_addresses'] = ApiClient.convertToType(data['chain_addresses'], [V1ChainNetworkAddress]);
             }
+            if (data.hasOwnProperty('asset_type')) {
+                obj['asset_type'] = ApiClient.convertToType(data['asset_type'], 'String');
+            }
             if (data.hasOwnProperty('data_start')) {
                 obj['data_start'] = ApiClient.convertToType(data['data_start'], 'String');
             }
@@ -143,6 +146,10 @@ class MarketDataMetadataAsset {
             for (const item of data['chain_addresses']) {
                 V1ChainNetworkAddress.validateJSON(item);
             };
+        }
+        // ensure the json data is a string
+        if (data['asset_type'] && !(typeof data['asset_type'] === 'string' || data['asset_type'] instanceof String)) {
+            throw new Error("Expected the field `asset_type` to be a primitive type in the JSON string but got " + data['asset_type']);
         }
         // ensure the json data is a string
         if (data['data_start'] && !(typeof data['data_start'] === 'string' || data['data_start'] instanceof String)) {
@@ -274,6 +281,12 @@ MarketDataMetadataAsset.prototype['supply_max'] = undefined;
  * @member {Array.<module:model/V1ChainNetworkAddress>} chain_addresses
  */
 MarketDataMetadataAsset.prototype['chain_addresses'] = undefined;
+
+/**
+ * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+ * @member {String} asset_type
+ */
+MarketDataMetadataAsset.prototype['asset_type'] = undefined;
 
 /**
  * @member {String} data_start

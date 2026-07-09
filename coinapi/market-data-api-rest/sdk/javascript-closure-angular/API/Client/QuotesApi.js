@@ -49,10 +49,11 @@ API.Client.QuotesApi.$inject = ['$http', '$httpParamSerializer', '$injector'];
  * Current data
  * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
  * @param {!string=} opt_filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+ * @param {!string=} opt_filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.QuoteTrade>>}
  */
-API.Client.QuotesApi.prototype.v1QuotesCurrentGet = function(opt_filterSymbolId, opt_extraHttpRequestParams) {
+API.Client.QuotesApi.prototype.v1QuotesCurrentGet = function(opt_filterSymbolId, opt_filterExchangeId, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/quotes/current';
 
@@ -63,6 +64,10 @@ API.Client.QuotesApi.prototype.v1QuotesCurrentGet = function(opt_filterSymbolId,
   var headerParams = angular.extend({}, this.defaultHeaders_);
   if (opt_filterSymbolId !== undefined) {
     queryParameters['filter_symbol_id'] = opt_filterSymbolId;
+  }
+
+  if (opt_filterExchangeId !== undefined) {
+    queryParameters['filter_exchange_id'] = opt_filterExchangeId;
   }
 
   /** @type {!Object} */
@@ -85,11 +90,12 @@ API.Client.QuotesApi.prototype.v1QuotesCurrentGet = function(opt_filterSymbolId,
  * Latest data
  * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
  * @param {!string=} opt_filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+ * @param {!string=} opt_filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
  * @param {!number=} opt_limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.Quote>>}
  */
-API.Client.QuotesApi.prototype.v1QuotesLatestGet = function(opt_filterSymbolId, opt_limit, opt_extraHttpRequestParams) {
+API.Client.QuotesApi.prototype.v1QuotesLatestGet = function(opt_filterSymbolId, opt_filterExchangeId, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/quotes/latest';
 
@@ -100,6 +106,10 @@ API.Client.QuotesApi.prototype.v1QuotesLatestGet = function(opt_filterSymbolId, 
   var headerParams = angular.extend({}, this.defaultHeaders_);
   if (opt_filterSymbolId !== undefined) {
     queryParameters['filter_symbol_id'] = opt_filterSymbolId;
+  }
+
+  if (opt_filterExchangeId !== undefined) {
+    queryParameters['filter_exchange_id'] = opt_filterExchangeId;
   }
 
   if (opt_limit !== undefined) {

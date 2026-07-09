@@ -61,12 +61,13 @@ bool v1AssetsAssetIdGetAsync(char * accessToken,
  *
  * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
  * \param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+ * \param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1AssetsGetSync(char * accessToken,
-	std::string filterAssetId, 
+	std::string filterAssetId, std::string filterAssetType, 
 	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData);
 
@@ -74,12 +75,13 @@ bool v1AssetsGetSync(char * accessToken,
  *
  * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
  * \param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+ * \param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1AssetsGetAsync(char * accessToken,
-	std::string filterAssetId, 
+	std::string filterAssetId, std::string filterAssetType, 
 	void(* handler)(std::list<MarketDataMetadata.Asset>, Error, void* )
 	, void* userData);
 

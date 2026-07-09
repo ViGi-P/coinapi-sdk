@@ -12,7 +12,7 @@ Feature | HTTP request | Description
 
 
 # **v1_quotes_current_get**
-> v1_quotes_current_get (filter_symbol_id:  detachable STRING_32 ): detachable LIST [V1_QUOTE_TRADE]
+> v1_quotes_current_get (filter_symbol_id:  detachable STRING_32 ; filter_exchange_id:  detachable STRING_32 ): detachable LIST [V1_QUOTE_TRADE]
 
 
 Current data
@@ -25,6 +25,7 @@ Get current quotes for all symbols or for a specific symbol.              :::inf
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **STRING_32**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] [default to null]
+ **filter_exchange_id** | **STRING_32**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] [default to null]
 
 ### Return type
 
@@ -42,7 +43,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_quotes_latest_get**
-> v1_quotes_latest_get (filter_symbol_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [V1_QUOTE]
+> v1_quotes_latest_get (filter_symbol_id:  detachable STRING_32 ; filter_exchange_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [V1_QUOTE]
 
 
 Latest data
@@ -55,6 +56,7 @@ Get latest updates of the quotes up to 1 minute ago. Latest data is always retur
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_symbol_id** | **STRING_32**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] [default to null]
+ **filter_exchange_id** | **STRING_32**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] [default to null]
  **limit** | **INTEGER_32**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

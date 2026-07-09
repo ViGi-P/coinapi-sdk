@@ -12,7 +12,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1quotescurrentget"></a>
 # **V1QuotesCurrentGet**
-> List&lt;V1QuoteTrade&gt; V1QuotesCurrentGet (string filterSymbolId = null)
+> List&lt;V1QuoteTrade&gt; V1QuotesCurrentGet (string filterSymbolId = null, string filterExchangeId = null)
 
 Current data
 
@@ -24,6 +24,7 @@ Get current quotes for all symbols or for a specific symbol.              :::inf
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional]  |
+| **filterExchangeId** | **string** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional]  |
 
 ### Return type
 
@@ -48,7 +49,7 @@ Get current quotes for all symbols or for a specific symbol.              :::inf
 
 <a id="v1quoteslatestget"></a>
 # **V1QuotesLatestGet**
-> List&lt;V1Quote&gt; V1QuotesLatestGet (string filterSymbolId = null, int limit = null)
+> List&lt;V1Quote&gt; V1QuotesLatestGet (string filterSymbolId = null, string filterExchangeId = null, int limit = null)
 
 Latest data
 
@@ -60,6 +61,7 @@ Get latest updates of the quotes up to 1 minute ago. Latest data is always retur
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional]  |
+| **filterExchangeId** | **string** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional]  |
 | **limit** | **int** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 
 ### Return type

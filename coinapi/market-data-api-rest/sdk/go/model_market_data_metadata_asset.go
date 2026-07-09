@@ -59,6 +59,8 @@ type MarketDataMetadataAsset struct {
 	SupplyMax NullableFloat64 `json:"supply_max,omitempty"`
 	// 
 	ChainAddresses []V1ChainNetworkAddress `json:"chain_addresses,omitempty"`
+	// Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+	AssetType NullableString `json:"asset_type,omitempty"`
 	DataStart NullableString `json:"data_start,omitempty"`
 	DataEnd NullableString `json:"data_end,omitempty"`
 }
@@ -859,6 +861,48 @@ func (o *MarketDataMetadataAsset) SetChainAddresses(v []V1ChainNetworkAddress) {
 	o.ChainAddresses = v
 }
 
+// GetAssetType returns the AssetType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *MarketDataMetadataAsset) GetAssetType() string {
+	if o == nil || IsNil(o.AssetType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.AssetType.Get()
+}
+
+// GetAssetTypeOk returns a tuple with the AssetType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *MarketDataMetadataAsset) GetAssetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.AssetType.Get(), o.AssetType.IsSet()
+}
+
+// HasAssetType returns a boolean if a field has been set.
+func (o *MarketDataMetadataAsset) HasAssetType() bool {
+	if o != nil && o.AssetType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAssetType gets a reference to the given NullableString and assigns it to the AssetType field.
+func (o *MarketDataMetadataAsset) SetAssetType(v string) {
+	o.AssetType.Set(&v)
+}
+// SetAssetTypeNil sets the value for AssetType to be an explicit nil
+func (o *MarketDataMetadataAsset) SetAssetTypeNil() {
+	o.AssetType.Set(nil)
+}
+
+// UnsetAssetType ensures that no value is present for AssetType, not even an explicit nil
+func (o *MarketDataMetadataAsset) UnsetAssetType() {
+	o.AssetType.Unset()
+}
+
 // GetDataStart returns the DataStart field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MarketDataMetadataAsset) GetDataStart() string {
 	if o == nil || IsNil(o.DataStart.Get()) {
@@ -1009,6 +1053,9 @@ func (o MarketDataMetadataAsset) ToMap() (map[string]interface{}, error) {
 	}
 	if o.ChainAddresses != nil {
 		toSerialize["chain_addresses"] = o.ChainAddresses
+	}
+	if o.AssetType.IsSet() {
+		toSerialize["asset_type"] = o.AssetType.Get()
 	}
 	if o.DataStart.IsSet() {
 		toSerialize["data_start"] = o.DataStart.Get()

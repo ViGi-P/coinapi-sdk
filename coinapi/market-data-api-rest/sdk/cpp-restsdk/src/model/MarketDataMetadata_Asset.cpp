@@ -132,6 +132,11 @@ web::json::value MarketDataMetadata_Asset::toJson() const
         
         val[utility::conversions::to_string_t(_XPLATSTR("chain_addresses"))] = ModelBase::toJson(m_Chain_addresses.get());
     }
+    if(m_Asset_type.has_value())
+    {
+        
+        val[utility::conversions::to_string_t(_XPLATSTR("asset_type"))] = ModelBase::toJson(m_Asset_type.get());
+    }
     if(m_Data_start.has_value())
     {
         
@@ -358,6 +363,17 @@ bool MarketDataMetadata_Asset::fromJson(const web::json::value& val)
             
         }
     }
+    if(val.has_field(utility::conversions::to_string_t(_XPLATSTR("asset_type"))))
+    {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("asset_type")));
+        if(!fieldValue.is_null())
+        {
+            utility::string_t refVal_setAssetType;
+            ok &= ModelBase::fromJson(fieldValue, refVal_setAssetType);
+            setAssetType(refVal_setAssetType);
+            
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t(_XPLATSTR("data_start"))))
     {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("data_start")));
@@ -465,6 +481,10 @@ void MarketDataMetadata_Asset::toMultipart(std::shared_ptr<MultipartFormData> mu
     if(m_Chain_addresses.has_value())
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("chain_addresses")), m_Chain_addresses.get()));
+    }
+    if(m_Asset_type.has_value())
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("asset_type")), m_Asset_type.get()));
     }
     if(m_Data_start.has_value())
     {
@@ -598,6 +618,12 @@ bool MarketDataMetadata_Asset::fromMultiPart(std::shared_ptr<MultipartFormData> 
         std::vector<std::shared_ptr<V1_ChainNetworkAddress>> refVal_setChainAddresses;
         ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("chain_addresses"))), refVal_setChainAddresses );
         setChainAddresses(refVal_setChainAddresses);
+    }
+    if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("asset_type"))))
+    {
+        utility::string_t refVal_setAssetType;
+        ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("asset_type"))), refVal_setAssetType );
+        setAssetType(refVal_setAssetType);
     }
     if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("data_start"))))
     {
@@ -986,6 +1012,26 @@ bool MarketDataMetadata_Asset::chainAddressesIsSet() const
 void MarketDataMetadata_Asset::unsetChain_addresses()
 {
     m_Chain_addresses.reset();
+}
+utility::string_t MarketDataMetadata_Asset::getAssetType() const
+{
+    return m_Asset_type.get();
+}
+
+
+void MarketDataMetadata_Asset::setAssetType(const utility::string_t& value)
+{
+    m_Asset_type = value;
+}
+
+bool MarketDataMetadata_Asset::assetTypeIsSet() const
+{
+    return m_Asset_type.has_value();
+}
+
+void MarketDataMetadata_Asset::unsetAsset_type()
+{
+    m_Asset_type.reset();
 }
 utility::string_t MarketDataMetadata_Asset::getDataStart() const
 {

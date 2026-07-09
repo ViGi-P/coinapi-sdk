@@ -56,11 +56,13 @@ class MetadataApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+   * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
    */
-  def v1AssetsGet(filterAssetId: Option[String] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Asset]] =
+  def v1AssetsGet(filterAssetId: Option[String] = None, filterAssetType: Option[String] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Asset]] =
     ApiRequest[Seq[Asset]](ApiMethods.GET, baseUrl, "/v1/assets", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("filter_asset_id", filterAssetId)
+      .withQueryParam("filter_asset_type", filterAssetType)
       .withSuccessResponse[Seq[Asset]](200)
       
 

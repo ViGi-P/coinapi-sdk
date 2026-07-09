@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_get**
-> v1_assets_get (filter_asset_id:  detachable STRING_32 ): detachable LIST [MARKET_DATA_METADATA_ASSET]
+> v1_assets_get (filter_asset_id:  detachable STRING_32 ; filter_asset_type:  detachable STRING_32 ): detachable LIST [MARKET_DATA_METADATA_ASSET]
 
 
 List all assets
@@ -59,6 +59,7 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_asset_id** | **STRING_32**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] [default to null]
+ **filter_asset_type** | **STRING_32**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] [default to null]
 
 ### Return type
 

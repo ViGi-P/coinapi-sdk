@@ -91,6 +91,7 @@ private class OASMarketDataMetadataAssetTest {
         System.assertEquals('supplyTotal', x-property-mappings.get('supply_total'));
         System.assertEquals('supplyMax', x-property-mappings.get('supply_max'));
         System.assertEquals('chainAddresses', x-property-mappings.get('chain_addresses'));
+        System.assertEquals('assetType', x-property-mappings.get('asset_type'));
         System.assertEquals('dataStart', x-property-mappings.get('data_start'));
         System.assertEquals('dataEnd', x-property-mappings.get('data_end'));
     }
@@ -117,6 +118,7 @@ private class OASMarketDataMetadataAssetTest {
         System.assertEquals(null, marketDataMetadataAsset.supplyCurrent);
         System.assertEquals(null, marketDataMetadataAsset.supplyTotal);
         System.assertEquals(null, marketDataMetadataAsset.supplyMax);
+        System.assertEquals(null, marketDataMetadataAsset.assetType);
         System.assertEquals(null, marketDataMetadataAsset.dataStart);
         System.assertEquals(null, marketDataMetadataAsset.dataEnd);
     }

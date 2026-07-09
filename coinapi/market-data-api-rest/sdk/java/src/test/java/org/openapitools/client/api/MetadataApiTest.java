@@ -58,7 +58,8 @@ public class MetadataApiTest {
     @Test
     public void v1AssetsGetTest() throws ApiException {
         String filterAssetId = null;
-        List<MarketDataMetadataAsset> response = api.v1AssetsGet(filterAssetId);
+        String filterAssetType = null;
+        List<MarketDataMetadataAsset> response = api.v1AssetsGet(filterAssetId, filterAssetType);
         // TODO: test validations
     }
 

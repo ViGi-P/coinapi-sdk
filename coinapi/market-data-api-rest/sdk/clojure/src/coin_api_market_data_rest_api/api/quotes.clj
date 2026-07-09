@@ -43,11 +43,11 @@
 When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned.
 :::"
   ([] (v1-quotes-current-get-with-http-info nil))
-  ([{:keys [filter_symbol_id]} (s/map-of keyword? any?)]
+  ([{:keys [filter_symbol_id filter_exchange_id]} (s/map-of keyword? any?)]
    (call-api "/v1/quotes/current" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"filter_symbol_id" filter_symbol_id }
+              :query-params  {"filter_symbol_id" filter_symbol_id "filter_exchange_id" filter_exchange_id }
               :form-params   {}
               :content-types []
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
@@ -72,11 +72,11 @@ When requesting current data for a specific symbol, output is not encapsulated i
   "Latest data
   Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order."
   ([] (v1-quotes-latest-get-with-http-info nil))
-  ([{:keys [filter_symbol_id limit]} (s/map-of keyword? any?)]
+  ([{:keys [filter_symbol_id filter_exchange_id limit]} (s/map-of keyword? any?)]
    (call-api "/v1/quotes/latest" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"filter_symbol_id" filter_symbol_id "limit" limit }
+              :query-params  {"filter_symbol_id" filter_symbol_id "filter_exchange_id" filter_exchange_id "limit" limit }
               :form-params   {}
               :content-types []
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]

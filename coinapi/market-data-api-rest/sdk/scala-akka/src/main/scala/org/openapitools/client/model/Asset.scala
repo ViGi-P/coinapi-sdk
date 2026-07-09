@@ -54,6 +54,8 @@ case class Asset (
   supplyMax: Option[Double] = None,
   /*  */
   chainAddresses: Option[Seq[ChainNetworkAddress]] = None,
+  /* Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. */
+  assetType: Option[String] = None,
   dataStart: Option[String] = None,
   dataEnd: Option[String] = None
 ) extends ApiModel

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **v1QuotesCurrentGet**
-> BuiltList<V1QuoteTrade> v1QuotesCurrentGet(filterSymbolId)
+> BuiltList<V1QuoteTrade> v1QuotesCurrentGet(filterSymbolId, filterExchangeId)
 
 Current data
 
@@ -33,9 +33,10 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getQuotesApi();
 final String filterSymbolId = filterSymbolId_example; // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+final String filterExchangeId = filterExchangeId_example; // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 
 try {
-    final response = api.v1QuotesCurrentGet(filterSymbolId);
+    final response = api.v1QuotesCurrentGet(filterSymbolId, filterExchangeId);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling QuotesApi->v1QuotesCurrentGet: $e\n');
@@ -47,6 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
 
 ### Return type
 
@@ -64,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1QuotesLatestGet**
-> BuiltList<V1Quote> v1QuotesLatestGet(filterSymbolId, limit)
+> BuiltList<V1Quote> v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit)
 
 Latest data
 
@@ -80,10 +82,11 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getQuotesApi();
 final String filterSymbolId = filterSymbolId_example; // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+final String filterExchangeId = filterExchangeId_example; // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 final int limit = 56; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    final response = api.v1QuotesLatestGet(filterSymbolId, limit);
+    final response = api.v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling QuotesApi->v1QuotesLatestGet: $e\n');
@@ -95,6 +98,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] 
+ **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] 
  **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

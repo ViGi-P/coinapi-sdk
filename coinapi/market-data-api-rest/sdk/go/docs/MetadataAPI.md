@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AssetsGet
 
-> []MarketDataMetadataAsset V1AssetsGet(ctx).FilterAssetId(filterAssetId).Execute()
+> []MarketDataMetadataAsset V1AssetsGet(ctx).FilterAssetId(filterAssetId).FilterAssetType(filterAssetType).Execute()
 
 List all assets
 
@@ -108,10 +108,11 @@ import (
 
 func main() {
 	filterAssetId := "filterAssetId_example" // string | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). (optional)
+	filterAssetType := "filterAssetType_example" // string | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetadataAPI.V1AssetsGet(context.Background()).FilterAssetId(filterAssetId).Execute()
+	resp, r, err := apiClient.MetadataAPI.V1AssetsGet(context.Background()).FilterAssetId(filterAssetId).FilterAssetType(filterAssetType).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1AssetsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,6 +134,7 @@ Other parameters are passed through a pointer to a apiV1AssetsGetRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterAssetId** | **string** | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | 
+ **filterAssetType** | **string** | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | 
 
 ### Return type
 

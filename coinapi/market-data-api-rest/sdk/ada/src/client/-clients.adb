@@ -166,6 +166,7 @@ package body .Clients is
    procedure V_1Assets_Get
       (Client : in out Client_Type;
        Filter_Asset_Id : in Swagger.Nullable_UString;
+       Filter_Asset_Type : in Swagger.Nullable_UString;
        Result : out .Models.MarketDataMetadataAsset_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -174,6 +175,7 @@ package body .Clients is
 
 
       URI.Add_Param ("filter_asset_id", Filter_Asset_Id);
+      URI.Add_Param ("filter_asset_type", Filter_Asset_Type);
       URI.Set_Path ("/v1/assets");
       Client.Call (Swagger.Clients.GET, URI, Reply);
       .Models.Deserialize (Reply, "", Result);
@@ -1135,6 +1137,7 @@ package body .Clients is
    procedure V_1Quotes_Current_Get
       (Client : in out Client_Type;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
+       Filter_Exchange_Id : in Swagger.Nullable_UString;
        Result : out .Models.V1QuoteTrade_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -1143,6 +1146,7 @@ package body .Clients is
 
 
       URI.Add_Param ("filter_symbol_id", Filter_Symbol_Id);
+      URI.Add_Param ("filter_exchange_id", Filter_Exchange_Id);
       URI.Set_Path ("/v1/quotes/current");
       Client.Call (Swagger.Clients.GET, URI, Reply);
       .Models.Deserialize (Reply, "", Result);
@@ -1153,6 +1157,7 @@ package body .Clients is
    procedure V_1Quotes_Latest_Get
       (Client : in out Client_Type;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
+       Filter_Exchange_Id : in Swagger.Nullable_UString;
        Limit : in Swagger.Nullable_Integer;
        Result : out .Models.V1Quote_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
@@ -1162,6 +1167,7 @@ package body .Clients is
 
 
       URI.Add_Param ("filter_symbol_id", Filter_Symbol_Id);
+      URI.Add_Param ("filter_exchange_id", Filter_Exchange_Id);
       URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/quotes/latest");
       Client.Call (Swagger.Clients.GET, URI, Reply);

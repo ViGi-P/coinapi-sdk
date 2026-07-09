@@ -39,7 +39,8 @@ class QuotesApiTest : ShouldSpec() {
         should("test v1QuotesCurrentGet") {
             // uncomment below to test v1QuotesCurrentGet
             //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
-            //val result : kotlin.collections.List<V1QuoteTrade> = apiInstance.v1QuotesCurrentGet(filterSymbolId)
+            //val filterExchangeId : kotlin.String = filterExchangeId_example // kotlin.String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+            //val result : kotlin.collections.List<V1QuoteTrade> = apiInstance.v1QuotesCurrentGet(filterSymbolId, filterExchangeId)
             //result shouldBe ("TODO")
         }
 
@@ -47,8 +48,9 @@ class QuotesApiTest : ShouldSpec() {
         should("test v1QuotesLatestGet") {
             // uncomment below to test v1QuotesLatestGet
             //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+            //val filterExchangeId : kotlin.String = filterExchangeId_example // kotlin.String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<V1Quote> = apiInstance.v1QuotesLatestGet(filterSymbolId, limit)
+            //val result : kotlin.collections.List<V1Quote> = apiInstance.v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit)
             //result shouldBe ("TODO")
         }
 

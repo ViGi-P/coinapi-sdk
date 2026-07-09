@@ -53,8 +53,10 @@ public:
     /// Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
     /// </remarks>
     /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::vector<std::shared_ptr<V1_QuoteTrade>>> v1QuotesCurrentGet(
-        boost::optional<utility::string_t> filterSymbolId
+        boost::optional<utility::string_t> filterSymbolId,
+        boost::optional<utility::string_t> filterExchangeId
     ) const;
     /// <summary>
     /// Latest data
@@ -63,9 +65,11 @@ public:
     /// Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
     /// </remarks>
     /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
+    /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<V1_Quote>>> v1QuotesLatestGet(
         boost::optional<utility::string_t> filterSymbolId,
+        boost::optional<utility::string_t> filterExchangeId,
         boost::optional<int32_t> limit
     ) const;
     /// <summary>

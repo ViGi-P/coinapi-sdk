@@ -14,7 +14,7 @@
 // Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
 //
 list_t*
-QuotesAPI_v1QuotesCurrentGet(apiClient_t *apiClient, char *filter_symbol_id)
+QuotesAPI_v1QuotesCurrentGet(apiClient_t *apiClient, char *filter_symbol_id, char *filter_exchange_id)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -44,6 +44,18 @@ QuotesAPI_v1QuotesCurrentGet(apiClient_t *apiClient, char *filter_symbol_id)
         valueQuery_filter_symbol_id = strdup((filter_symbol_id));
         keyPairQuery_filter_symbol_id = keyValuePair_create(keyQuery_filter_symbol_id, valueQuery_filter_symbol_id);
         list_addElement(localVarQueryParameters,keyPairQuery_filter_symbol_id);
+    }
+
+    // query parameters
+    char *keyQuery_filter_exchange_id = NULL;
+    char * valueQuery_filter_exchange_id = NULL;
+    keyValuePair_t *keyPairQuery_filter_exchange_id = 0;
+    if (filter_exchange_id)
+    {
+        keyQuery_filter_exchange_id = strdup("filter_exchange_id");
+        valueQuery_filter_exchange_id = strdup((filter_exchange_id));
+        keyPairQuery_filter_exchange_id = keyValuePair_create(keyQuery_filter_exchange_id, valueQuery_filter_exchange_id);
+        list_addElement(localVarQueryParameters,keyPairQuery_filter_exchange_id);
     }
     list_addElement(localVarHeaderType,"text/plain"); //produces
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -109,6 +121,18 @@ QuotesAPI_v1QuotesCurrentGet(apiClient_t *apiClient, char *filter_symbol_id)
         keyValuePair_free(keyPairQuery_filter_symbol_id);
         keyPairQuery_filter_symbol_id = NULL;
     }
+    if(keyQuery_filter_exchange_id){
+        free(keyQuery_filter_exchange_id);
+        keyQuery_filter_exchange_id = NULL;
+    }
+    if(valueQuery_filter_exchange_id){
+        free(valueQuery_filter_exchange_id);
+        valueQuery_filter_exchange_id = NULL;
+    }
+    if(keyPairQuery_filter_exchange_id){
+        keyValuePair_free(keyPairQuery_filter_exchange_id);
+        keyPairQuery_filter_exchange_id = NULL;
+    }
     return elementToReturn;
 end:
     free(localVarPath);
@@ -121,7 +145,7 @@ end:
 // Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
 //
 list_t*
-QuotesAPI_v1QuotesLatestGet(apiClient_t *apiClient, char *filter_symbol_id, int *limit)
+QuotesAPI_v1QuotesLatestGet(apiClient_t *apiClient, char *filter_symbol_id, char *filter_exchange_id, int *limit)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -151,6 +175,18 @@ QuotesAPI_v1QuotesLatestGet(apiClient_t *apiClient, char *filter_symbol_id, int 
         valueQuery_filter_symbol_id = strdup((filter_symbol_id));
         keyPairQuery_filter_symbol_id = keyValuePair_create(keyQuery_filter_symbol_id, valueQuery_filter_symbol_id);
         list_addElement(localVarQueryParameters,keyPairQuery_filter_symbol_id);
+    }
+
+    // query parameters
+    char *keyQuery_filter_exchange_id = NULL;
+    char * valueQuery_filter_exchange_id = NULL;
+    keyValuePair_t *keyPairQuery_filter_exchange_id = 0;
+    if (filter_exchange_id)
+    {
+        keyQuery_filter_exchange_id = strdup("filter_exchange_id");
+        valueQuery_filter_exchange_id = strdup((filter_exchange_id));
+        keyPairQuery_filter_exchange_id = keyValuePair_create(keyQuery_filter_exchange_id, valueQuery_filter_exchange_id);
+        list_addElement(localVarQueryParameters,keyPairQuery_filter_exchange_id);
     }
 
     // query parameters
@@ -228,6 +264,18 @@ QuotesAPI_v1QuotesLatestGet(apiClient_t *apiClient, char *filter_symbol_id, int 
     if(keyPairQuery_filter_symbol_id){
         keyValuePair_free(keyPairQuery_filter_symbol_id);
         keyPairQuery_filter_symbol_id = NULL;
+    }
+    if(keyQuery_filter_exchange_id){
+        free(keyQuery_filter_exchange_id);
+        keyQuery_filter_exchange_id = NULL;
+    }
+    if(valueQuery_filter_exchange_id){
+        free(valueQuery_filter_exchange_id);
+        valueQuery_filter_exchange_id = NULL;
+    }
+    if(keyPairQuery_filter_exchange_id){
+        keyValuePair_free(keyPairQuery_filter_exchange_id);
+        keyPairQuery_filter_exchange_id = NULL;
     }
     if(keyQuery_limit){
         free(keyQuery_limit);

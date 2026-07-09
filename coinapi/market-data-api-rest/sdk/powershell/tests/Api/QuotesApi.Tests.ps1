@@ -9,7 +9,7 @@
 Describe -tag 'PSOpenAPITools' -name 'QuotesApi' {
     Context 'Invoke-V1QuotesCurrentGet' {
         It 'Test Invoke-V1QuotesCurrentGet' {
-            #$TestResult = Invoke-V1QuotesCurrentGet -FilterSymbolId "TEST_VALUE"
+            #$TestResult = Invoke-V1QuotesCurrentGet -FilterSymbolId "TEST_VALUE" -FilterExchangeId "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
@@ -17,7 +17,7 @@ Describe -tag 'PSOpenAPITools' -name 'QuotesApi' {
 
     Context 'Invoke-V1QuotesLatestGet' {
         It 'Test Invoke-V1QuotesLatestGet' {
-            #$TestResult = Invoke-V1QuotesLatestGet -FilterSymbolId "TEST_VALUE" -Limit "TEST_VALUE"
+            #$TestResult = Invoke-V1QuotesLatestGet -FilterSymbolId "TEST_VALUE" -FilterExchangeId "TEST_VALUE" -Limit "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

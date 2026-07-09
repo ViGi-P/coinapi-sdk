@@ -99,8 +99,9 @@ export class QuotesApi {
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * @summary Current data
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      */
-    public async v1QuotesCurrentGet (filterSymbolId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1QuoteTrade>;  }> {
+    public async v1QuotesCurrentGet (filterSymbolId?: string, filterExchangeId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1QuoteTrade>;  }> {
         const localVarPath = this.basePath + '/v1/quotes/current';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -115,6 +116,10 @@ export class QuotesApi {
 
         if (filterSymbolId !== undefined) {
             localVarQueryParameters['filter_symbol_id'] = ObjectSerializer.serialize(filterSymbolId, "string");
+        }
+
+        if (filterExchangeId !== undefined) {
+            localVarQueryParameters['filter_exchange_id'] = ObjectSerializer.serialize(filterExchangeId, "string");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -172,9 +177,10 @@ export class QuotesApi {
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * @summary Latest data
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+     * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public async v1QuotesLatestGet (filterSymbolId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Quote>;  }> {
+    public async v1QuotesLatestGet (filterSymbolId?: string, filterExchangeId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Quote>;  }> {
         const localVarPath = this.basePath + '/v1/quotes/latest';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -189,6 +195,10 @@ export class QuotesApi {
 
         if (filterSymbolId !== undefined) {
             localVarQueryParameters['filter_symbol_id'] = ObjectSerializer.serialize(filterSymbolId, "string");
+        }
+
+        if (filterExchangeId !== undefined) {
+            localVarQueryParameters['filter_exchange_id'] = ObjectSerializer.serialize(filterExchangeId, "string");
         }
 
         if (limit !== undefined) {

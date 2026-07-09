@@ -45,13 +45,13 @@ local function new_quotes_api(authority, basePath, schemes)
 	}, quotes_api_mt)
 end
 
-function quotes_api:v1_quotes_current_get(filter_symbol_id)
+function quotes_api:v1_quotes_current_get(filter_symbol_id, filter_exchange_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/quotes/current?filter_symbol_id=%s",
-			self.basePath, http_util.encodeURIComponent(filter_symbol_id));
+		path = string.format("%s/v1/quotes/current?filter_symbol_id=%s&filter_exchange_id=%s",
+			self.basePath, http_util.encodeURIComponent(filter_symbol_id), http_util.encodeURIComponent(filter_exchange_id));
 	})
 
 	-- set HTTP verb
@@ -98,13 +98,13 @@ function quotes_api:v1_quotes_current_get(filter_symbol_id)
 	end
 end
 
-function quotes_api:v1_quotes_latest_get(filter_symbol_id, limit)
+function quotes_api:v1_quotes_latest_get(filter_symbol_id, filter_exchange_id, limit)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/quotes/latest?filter_symbol_id=%s&limit=%s",
-			self.basePath, http_util.encodeURIComponent(filter_symbol_id), http_util.encodeURIComponent(limit));
+		path = string.format("%s/v1/quotes/latest?filter_symbol_id=%s&filter_exchange_id=%s&limit=%s",
+			self.basePath, http_util.encodeURIComponent(filter_symbol_id), http_util.encodeURIComponent(filter_exchange_id), http_util.encodeURIComponent(limit));
 	})
 
 	-- set HTTP verb

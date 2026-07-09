@@ -110,6 +110,11 @@ data V1AssetsGet
 instance HasOptionalParam V1AssetsGet FilterAssetId where
   applyOptionalParam req (FilterAssetId xs) =
     req `addQuery` toQuery ("filter_asset_id", Just xs)
+
+-- | /Optional Param/ "filter_asset_type" - Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+instance HasOptionalParam V1AssetsGet FilterAssetType where
+  applyOptionalParam req (FilterAssetType xs) =
+    req `addQuery` toQuery ("filter_asset_type", Just xs)
 -- | @application/json@
 instance Produces V1AssetsGet MimeJSON
 -- | @application/x-msgpack@

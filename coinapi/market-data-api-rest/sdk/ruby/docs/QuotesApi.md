@@ -37,7 +37,8 @@ end
 
 api_instance = OpenapiClient::QuotesApi.new
 opts = {
-  filter_symbol_id: 'filter_symbol_id_example' # String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  filter_symbol_id: 'filter_symbol_id_example', # String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  filter_exchange_id: 'filter_exchange_id_example' # String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
 }
 
 begin
@@ -72,6 +73,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **filter_symbol_id** | **String** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filter_exchange_id** | **String** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 
 ### Return type
 
@@ -114,6 +116,7 @@ end
 api_instance = OpenapiClient::QuotesApi.new
 opts = {
   filter_symbol_id: 'filter_symbol_id_example', # String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+  filter_exchange_id: 'filter_exchange_id_example', # String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
   limit: 56 # Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 }
 
@@ -149,6 +152,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **filter_symbol_id** | **String** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filter_exchange_id** | **String** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 | **limit** | **Integer** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional][default to 100] |
 
 ### Return type

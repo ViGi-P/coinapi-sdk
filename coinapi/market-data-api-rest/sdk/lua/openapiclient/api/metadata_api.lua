@@ -102,13 +102,13 @@ function metadata_api:v1_assets_asset_id_get(asset_id)
 	end
 end
 
-function metadata_api:v1_assets_get(filter_asset_id)
+function metadata_api:v1_assets_get(filter_asset_id, filter_asset_type)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/assets?filter_asset_id=%s",
-			self.basePath, http_util.encodeURIComponent(filter_asset_id));
+		path = string.format("%s/v1/assets?filter_asset_id=%s&filter_asset_type=%s",
+			self.basePath, http_util.encodeURIComponent(filter_asset_id), http_util.encodeURIComponent(filter_asset_type));
 	})
 
 	-- set HTTP verb

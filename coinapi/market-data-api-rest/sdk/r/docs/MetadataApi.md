@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1AssetsGet**
-> array[MarketDataMetadataAsset] V1AssetsGet(filter_asset_id = var.filter_asset_id)
+> array[MarketDataMetadataAsset] V1AssetsGet(filter_asset_id = var.filter_asset_id, filter_asset_type = var.filter_asset_type)
 
 List all assets
 
@@ -81,6 +81,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_filter_asset_id <- "filter_asset_id_example" # character | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). (Optional)
+var_filter_asset_type <- "filter_asset_type_example" # character | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (Optional)
 
 api_instance <- MetadataApi$new()
 # Configure API key authorization: APIKey
@@ -88,8 +89,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_iddata_file = "result.txt")
-result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_id)
+# result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_id, filter_asset_type = var_filter_asset_typedata_file = "result.txt")
+result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_id, filter_asset_type = var_filter_asset_type)
 dput(result)
 ```
 
@@ -98,6 +99,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_asset_id** | **character**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] 
+ **filter_asset_type** | **character**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 
 ### Return type
 

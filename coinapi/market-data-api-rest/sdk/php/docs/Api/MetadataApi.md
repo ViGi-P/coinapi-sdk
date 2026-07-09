@@ -85,7 +85,7 @@ try {
 ## `v1AssetsGet()`
 
 ```php
-v1AssetsGet($filter_asset_id): \OpenAPI\Client\Model\MarketDataMetadataAsset[]
+v1AssetsGet($filter_asset_id, $filter_asset_type): \OpenAPI\Client\Model\MarketDataMetadataAsset[]
 ```
 
 List all assets
@@ -115,9 +115,10 @@ $apiInstance = new OpenAPI\Client\Api\MetadataApi(
     $config
 );
 $filter_asset_id = 'filter_asset_id_example'; // string | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+$filter_asset_type = 'filter_asset_type_example'; // string | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 
 try {
-    $result = $apiInstance->v1AssetsGet($filter_asset_id);
+    $result = $apiInstance->v1AssetsGet($filter_asset_id, $filter_asset_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MetadataApi->v1AssetsGet: ', $e->getMessage(), PHP_EOL;
@@ -129,6 +130,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **filter_asset_id** | **string**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] |
+| **filter_asset_type** | **string**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] |
 
 ### Return type
 

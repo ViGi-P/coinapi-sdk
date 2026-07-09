@@ -82,6 +82,11 @@ data V1QuotesCurrentGet
 instance HasOptionalParam V1QuotesCurrentGet FilterSymbolId where
   applyOptionalParam req (FilterSymbolId xs) =
     req `addQuery` toQuery ("filter_symbol_id", Just xs)
+
+-- | /Optional Param/ "filter_exchange_id" - Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+instance HasOptionalParam V1QuotesCurrentGet FilterExchangeId where
+  applyOptionalParam req (FilterExchangeId xs) =
+    req `addQuery` toQuery ("filter_exchange_id", Just xs)
 -- | @application/json@
 instance Produces V1QuotesCurrentGet MimeJSON
 -- | @application/x-msgpack@
@@ -116,6 +121,11 @@ data V1QuotesLatestGet
 instance HasOptionalParam V1QuotesLatestGet FilterSymbolId where
   applyOptionalParam req (FilterSymbolId xs) =
     req `addQuery` toQuery ("filter_symbol_id", Just xs)
+
+-- | /Optional Param/ "filter_exchange_id" - Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+instance HasOptionalParam V1QuotesLatestGet FilterExchangeId where
+  applyOptionalParam req (FilterExchangeId xs) =
+    req `addQuery` toQuery ("filter_exchange_id", Just xs)
 
 -- | /Optional Param/ "limit" - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 instance HasOptionalParam V1QuotesLatestGet Limit where

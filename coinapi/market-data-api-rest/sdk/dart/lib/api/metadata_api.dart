@@ -85,7 +85,10 @@ class MetadataApi {
   ///
   /// * [String] filterAssetId:
   ///   Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
-  Future<Response> v1AssetsGetWithHttpInfo({ String? filterAssetId, Future<void>? abortTrigger, }) async {
+  ///
+  /// * [String] filterAssetType:
+  ///   Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+  Future<Response> v1AssetsGetWithHttpInfo({ String? filterAssetId, String? filterAssetType, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/assets';
 
@@ -98,6 +101,9 @@ class MetadataApi {
 
     if (filterAssetId != null) {
       queryParams.addAll(_queryParams('', 'filter_asset_id', filterAssetId));
+    }
+    if (filterAssetType != null) {
+      queryParams.addAll(_queryParams('', 'filter_asset_type', filterAssetType));
     }
 
     const contentTypes = <String>[];
@@ -123,8 +129,11 @@ class MetadataApi {
   ///
   /// * [String] filterAssetId:
   ///   Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
-  Future<List<MarketDataMetadataAsset>?> v1AssetsGet({ String? filterAssetId, Future<void>? abortTrigger, }) async {
-    final response = await v1AssetsGetWithHttpInfo(filterAssetId: filterAssetId, abortTrigger: abortTrigger,);
+  ///
+  /// * [String] filterAssetType:
+  ///   Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+  Future<List<MarketDataMetadataAsset>?> v1AssetsGet({ String? filterAssetId, String? filterAssetType, Future<void>? abortTrigger, }) async {
+    final response = await v1AssetsGetWithHttpInfo(filterAssetId: filterAssetId, filterAssetType: filterAssetType, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

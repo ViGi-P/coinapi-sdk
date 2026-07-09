@@ -23,6 +23,7 @@
 | **supplyTotal** | **kotlin.Double** | Gets or sets the total supply of the asset. |  [optional] |
 | **supplyMax** | **kotlin.Double** | Gets or sets the maximum supply of the asset. |  [optional] |
 | **chainAddresses** | [**kotlin.collections.List&lt;V1ChainNetworkAddress&gt;**](V1ChainNetworkAddress.md) |  |  [optional] |
+| **assetType** | **kotlin.String** | Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. |  [optional] |
 | **dataStart** | **kotlin.String** |  |  [optional] [readonly] |
 | **dataEnd** | **kotlin.String** |  |  [optional] [readonly] |
 

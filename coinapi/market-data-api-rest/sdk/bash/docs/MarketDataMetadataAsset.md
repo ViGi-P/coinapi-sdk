@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **supplyUnderscoretotal** | **float** |  | [optional] [default to null]
 **supplyUnderscoremax** | **float** |  | [optional] [default to null]
 **chainUnderscoreaddresses** | [**array[V1ChainNetworkAddress]**](V1ChainNetworkAddress.md) |  | [optional] [default to null]
+**assetUnderscoretype** | **string** |  | [optional] [default to null]
 **dataUnderscorestart** | **string** |  | [optional] [readonly] [default to null]
 **dataUnderscoreend** | **string** |  | [optional] [readonly] [default to null]
 

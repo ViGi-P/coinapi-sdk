@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **SupplyTotal** | Pointer to **NullableFloat64** | Gets or sets the total supply of the asset. | [optional] 
 **SupplyMax** | Pointer to **NullableFloat64** | Gets or sets the maximum supply of the asset. | [optional] 
 **ChainAddresses** | Pointer to [**[]V1ChainNetworkAddress**](V1ChainNetworkAddress.md) |  | [optional] 
+**AssetType** | Pointer to **NullableString** | Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 **DataStart** | Pointer to **NullableString** |  | [optional] [readonly] 
 **DataEnd** | Pointer to **NullableString** |  | [optional] [readonly] 
 
@@ -700,6 +701,41 @@ HasChainAddresses returns a boolean if a field has been set.
 `func (o *MarketDataMetadataAsset) UnsetChainAddresses()`
 
 UnsetChainAddresses ensures that no value is present for ChainAddresses, not even an explicit nil
+### GetAssetType
+
+`func (o *MarketDataMetadataAsset) GetAssetType() string`
+
+GetAssetType returns the AssetType field if non-nil, zero value otherwise.
+
+### GetAssetTypeOk
+
+`func (o *MarketDataMetadataAsset) GetAssetTypeOk() (*string, bool)`
+
+GetAssetTypeOk returns a tuple with the AssetType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssetType
+
+`func (o *MarketDataMetadataAsset) SetAssetType(v string)`
+
+SetAssetType sets AssetType field to given value.
+
+### HasAssetType
+
+`func (o *MarketDataMetadataAsset) HasAssetType() bool`
+
+HasAssetType returns a boolean if a field has been set.
+
+### SetAssetTypeNil
+
+`func (o *MarketDataMetadataAsset) SetAssetTypeNil(b bool)`
+
+ SetAssetTypeNil sets the value for AssetType to be an explicit nil
+
+### UnsetAssetType
+`func (o *MarketDataMetadataAsset) UnsetAssetType()`
+
+UnsetAssetType ensures that no value is present for AssetType, not even an explicit nil
 ### GetDataStart
 
 `func (o *MarketDataMetadataAsset) GetDataStart() string`

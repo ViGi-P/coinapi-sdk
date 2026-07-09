@@ -111,6 +111,7 @@ operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseGet:::invert"
 operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseGet:::time"]=0
 operation_parameters_minimum_occurrences["v1AssetsAssetIdGet:::asset_id"]=1
 operation_parameters_minimum_occurrences["v1AssetsGet:::filter_asset_id"]=0
+operation_parameters_minimum_occurrences["v1AssetsGet:::filter_asset_type"]=0
 operation_parameters_minimum_occurrences["v1AssetsIconsSizeGet:::size"]=1
 operation_parameters_minimum_occurrences["v1ChainsChainIdGet:::chain_id"]=1
 operation_parameters_minimum_occurrences["v1ChainsGet:::filter_chain_id"]=0
@@ -219,7 +220,9 @@ operation_parameters_minimum_occurrences["v1Orderbooks3CurrentGet:::limit_levels
 operation_parameters_minimum_occurrences["v1Orderbooks3SymbolIdCurrentGet:::symbol_id"]=1
 operation_parameters_minimum_occurrences["v1Orderbooks3SymbolIdCurrentGet:::limit_levels"]=0
 operation_parameters_minimum_occurrences["v1QuotesCurrentGet:::filter_symbol_id"]=0
+operation_parameters_minimum_occurrences["v1QuotesCurrentGet:::filter_exchange_id"]=0
 operation_parameters_minimum_occurrences["v1QuotesLatestGet:::filter_symbol_id"]=0
+operation_parameters_minimum_occurrences["v1QuotesLatestGet:::filter_exchange_id"]=0
 operation_parameters_minimum_occurrences["v1QuotesLatestGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1QuotesSymbolIdCurrentGet:::symbol_id"]=1
 operation_parameters_minimum_occurrences["v1QuotesSymbolIdHistoryGet:::symbol_id"]=1
@@ -264,6 +267,7 @@ operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseGet:::invert"
 operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseGet:::time"]=0
 operation_parameters_maximum_occurrences["v1AssetsAssetIdGet:::asset_id"]=0
 operation_parameters_maximum_occurrences["v1AssetsGet:::filter_asset_id"]=0
+operation_parameters_maximum_occurrences["v1AssetsGet:::filter_asset_type"]=0
 operation_parameters_maximum_occurrences["v1AssetsIconsSizeGet:::size"]=0
 operation_parameters_maximum_occurrences["v1ChainsChainIdGet:::chain_id"]=0
 operation_parameters_maximum_occurrences["v1ChainsGet:::filter_chain_id"]=0
@@ -372,7 +376,9 @@ operation_parameters_maximum_occurrences["v1Orderbooks3CurrentGet:::limit_levels
 operation_parameters_maximum_occurrences["v1Orderbooks3SymbolIdCurrentGet:::symbol_id"]=0
 operation_parameters_maximum_occurrences["v1Orderbooks3SymbolIdCurrentGet:::limit_levels"]=0
 operation_parameters_maximum_occurrences["v1QuotesCurrentGet:::filter_symbol_id"]=0
+operation_parameters_maximum_occurrences["v1QuotesCurrentGet:::filter_exchange_id"]=0
 operation_parameters_maximum_occurrences["v1QuotesLatestGet:::filter_symbol_id"]=0
+operation_parameters_maximum_occurrences["v1QuotesLatestGet:::filter_exchange_id"]=0
 operation_parameters_maximum_occurrences["v1QuotesLatestGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1QuotesSymbolIdCurrentGet:::symbol_id"]=0
 operation_parameters_maximum_occurrences["v1QuotesSymbolIdHistoryGet:::symbol_id"]=0
@@ -414,6 +420,7 @@ operation_parameters_collection_type["v1ExchangerateAssetIdBaseGet:::invert"]=""
 operation_parameters_collection_type["v1ExchangerateAssetIdBaseGet:::time"]=""
 operation_parameters_collection_type["v1AssetsAssetIdGet:::asset_id"]=""
 operation_parameters_collection_type["v1AssetsGet:::filter_asset_id"]=""
+operation_parameters_collection_type["v1AssetsGet:::filter_asset_type"]=""
 operation_parameters_collection_type["v1AssetsIconsSizeGet:::size"]=""
 operation_parameters_collection_type["v1ChainsChainIdGet:::chain_id"]=""
 operation_parameters_collection_type["v1ChainsGet:::filter_chain_id"]=""
@@ -522,7 +529,9 @@ operation_parameters_collection_type["v1Orderbooks3CurrentGet:::limit_levels"]="
 operation_parameters_collection_type["v1Orderbooks3SymbolIdCurrentGet:::symbol_id"]=""
 operation_parameters_collection_type["v1Orderbooks3SymbolIdCurrentGet:::limit_levels"]=""
 operation_parameters_collection_type["v1QuotesCurrentGet:::filter_symbol_id"]=""
+operation_parameters_collection_type["v1QuotesCurrentGet:::filter_exchange_id"]=""
 operation_parameters_collection_type["v1QuotesLatestGet:::filter_symbol_id"]=""
+operation_parameters_collection_type["v1QuotesLatestGet:::filter_exchange_id"]=""
 operation_parameters_collection_type["v1QuotesLatestGet:::limit"]=""
 operation_parameters_collection_type["v1QuotesSymbolIdCurrentGet:::symbol_id"]=""
 operation_parameters_collection_type["v1QuotesSymbolIdHistoryGet:::symbol_id"]=""
@@ -1247,6 +1256,8 @@ Properties of the output are providing aggregated information from across all sy
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}filter_asset_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. 'BTC;ETH').${YELLOW} Specify as: filter_asset_id=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}filter_asset_type${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.${YELLOW} Specify as: filter_asset_type=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -2231,6 +2242,8 @@ When requesting current data for a specific symbol, output is not encapsulated i
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}filter_symbol_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)${YELLOW} Specify as: filter_symbol_id=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}filter_exchange_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited exchange identifiers used to filter response. (optional)${YELLOW} Specify as: filter_exchange_id=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -2249,6 +2262,8 @@ print_v1QuotesLatestGet_help() {
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}filter_symbol_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)${YELLOW} Specify as: filter_symbol_id=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}filter_exchange_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited exchange identifiers used to filter response. (optional)${YELLOW} Specify as: filter_exchange_id=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
@@ -2597,7 +2612,7 @@ call_v1AssetsGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(filter_asset_id    )
+    local query_parameter_names=(filter_asset_id filter_asset_type    )
     local path
 
     if ! path=$(build_request_path "/v1/assets" path_parameter_names query_parameter_names); then
@@ -3929,7 +3944,7 @@ call_v1QuotesCurrentGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(filter_symbol_id    )
+    local query_parameter_names=(filter_symbol_id filter_exchange_id    )
     local path
 
     if ! path=$(build_request_path "/v1/quotes/current" path_parameter_names query_parameter_names); then
@@ -3965,7 +3980,7 @@ call_v1QuotesLatestGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(filter_symbol_id limit    )
+    local query_parameter_names=(filter_symbol_id filter_exchange_id limit    )
     local path
 
     if ! path=$(build_request_path "/v1/quotes/latest" path_parameter_names query_parameter_names); then

@@ -52,7 +52,7 @@ List all assets by asset ID
 
 <a id="v1assetsget"></a>
 # **V1AssetsGet**
-> List&lt;MarketDataMetadataAsset&gt; V1AssetsGet (string filterAssetId = null)
+> List&lt;MarketDataMetadataAsset&gt; V1AssetsGet (string filterAssetId = null, string filterAssetType = null)
 
 List all assets
 
@@ -64,6 +64,7 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **filterAssetId** | **string** | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional]  |
+| **filterAssetType** | **string** | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional]  |
 
 ### Return type
 

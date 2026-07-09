@@ -136,6 +136,7 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @return kotlin.collections.List<MarketDataMetadataAsset>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -145,8 +146,8 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1AssetsGet(filterAssetId: kotlin.String? = null) : kotlin.collections.List<MarketDataMetadataAsset> {
-        val localVarResponse = v1AssetsGetWithHttpInfo(filterAssetId = filterAssetId)
+    fun v1AssetsGet(filterAssetId: kotlin.String? = null, filterAssetType: kotlin.String? = null) : kotlin.collections.List<MarketDataMetadataAsset> {
+        val localVarResponse = v1AssetsGetWithHttpInfo(filterAssetId = filterAssetId, filterAssetType = filterAssetType)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<MarketDataMetadataAsset>
@@ -168,14 +169,15 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * List all assets
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @return ApiResponse<kotlin.collections.List<MarketDataMetadataAsset>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1AssetsGetWithHttpInfo(filterAssetId: kotlin.String?) : ApiResponse<kotlin.collections.List<MarketDataMetadataAsset>?> {
-        val localVariableConfig = v1AssetsGetRequestConfig(filterAssetId = filterAssetId)
+    fun v1AssetsGetWithHttpInfo(filterAssetId: kotlin.String?, filterAssetType: kotlin.String?) : ApiResponse<kotlin.collections.List<MarketDataMetadataAsset>?> {
+        val localVariableConfig = v1AssetsGetRequestConfig(filterAssetId = filterAssetId, filterAssetType = filterAssetType)
 
         return request<Unit, kotlin.collections.List<MarketDataMetadataAsset>>(
             localVariableConfig
@@ -186,14 +188,18 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * To obtain the request config of the operation v1AssetsGet
      *
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @return RequestConfig
      */
-    fun v1AssetsGetRequestConfig(filterAssetId: kotlin.String?) : RequestConfig<Unit> {
+    fun v1AssetsGetRequestConfig(filterAssetId: kotlin.String?, filterAssetType: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (filterAssetId != null) {
                     put("filter_asset_id", listOf(filterAssetId.toString()))
+                }
+                if (filterAssetType != null) {
+                    put("filter_asset_type", listOf(filterAssetType.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

@@ -148,8 +148,10 @@ object Example extends App {
     val apiInvoker = ApiInvoker()
     val apiInstance = MetadataApi("https://rest.coinapi.io")
     val filterAssetId: String = filterAssetId_example // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+
+    val filterAssetType: String = filterAssetType_example // String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     
-    val request = apiInstance.v1AssetsGet(filterAssetId)
+    val request = apiInstance.v1AssetsGet(filterAssetId, filterAssetType)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -178,6 +180,7 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterAssetId** | **String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional]
+ **filterAssetType** | **String**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional]
 
 ### Return type
 

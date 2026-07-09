@@ -35,10 +35,11 @@ feature -- Test routines
         local
             l_response: LIST [MARKET_DATA_METADATA_ASSET]
             l_filter_asset_id: STRING_32
+            l_filter_asset_type: STRING_32
         do
             -- TODO: Initialize required params.
 
-            -- l_response := api.v1_assets_get(l_filter_asset_id)
+            -- l_response := api.v1_assets_get(l_filter_asset_id, l_filter_asset_type)
             assert ("not_implemented", False)
         end
 

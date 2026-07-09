@@ -90,7 +90,7 @@ public class Example {
 
 <a id="v1AssetsGet"></a>
 # **v1AssetsGet**
-> List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId)
+> List&lt;MarketDataMetadataAsset&gt; v1AssetsGet(filterAssetId, filterAssetType)
 
 List all assets
 
@@ -123,8 +123,9 @@ public class Example {
 
     MetadataApi apiInstance = new MetadataApi(defaultClient);
     String filterAssetId = "filterAssetId_example"; // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+    String filterAssetType = "filterAssetType_example"; // String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
     try {
-      List<MarketDataMetadataAsset> result = apiInstance.v1AssetsGet(filterAssetId);
+      List<MarketDataMetadataAsset> result = apiInstance.v1AssetsGet(filterAssetId, filterAssetType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetadataApi#v1AssetsGet");
@@ -142,6 +143,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **filterAssetId** | **String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] |
+| **filterAssetType** | **String**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] |
 
 ### Return type
 

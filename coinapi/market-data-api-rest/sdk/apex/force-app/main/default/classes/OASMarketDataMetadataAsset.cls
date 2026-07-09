@@ -129,6 +129,12 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
     public List<OASV1ChainNetworkAddress> chainAddresses { get; set; }
 
     /**
+     * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+     * @return assetType
+     */
+    public String assetType { get; set; }
+
+    /**
      * Get dataStart
      * @return dataStart
      */
@@ -159,6 +165,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -186,6 +193,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -213,6 +221,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -240,6 +249,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -267,6 +277,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -294,6 +305,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -321,6 +333,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -348,6 +361,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -375,6 +389,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -402,6 +417,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -429,6 +445,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -456,6 +473,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -483,6 +501,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -510,6 +529,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -537,6 +557,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -564,6 +585,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -591,6 +613,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -618,6 +641,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -645,6 +669,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -672,6 +697,35 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         'supply_total' => 'supplyTotal',
         'supply_max' => 'supplyMax',
         'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
+        'data_start' => 'dataStart',
+        'data_end' => 'dataEnd'
+    };
+
+    public Map<String, String> getPropertyMappings() {
+        return propertyMappings;
+    }
+
+    private static final Map<String, String> propertyMappings = new Map<String, String>{
+        'asset_id' => 'assetId',
+        'type_is_crypto' => 'typeIsCrypto',
+        'data_quote_start' => 'dataQuoteStart',
+        'data_quote_end' => 'dataQuoteEnd',
+        'data_orderbook_start' => 'dataOrderbookStart',
+        'data_orderbook_end' => 'dataOrderbookEnd',
+        'data_trade_start' => 'dataTradeStart',
+        'data_trade_end' => 'dataTradeEnd',
+        'data_symbols_count' => 'dataSymbolsCount',
+        'volume_1hrs_usd' => 'volume1hrsUsd',
+        'volume_1day_usd' => 'volume1dayUsd',
+        'volume_1mth_usd' => 'volume1mthUsd',
+        'price_usd' => 'priceUsd',
+        'id_icon' => 'idIcon',
+        'supply_current' => 'supplyCurrent',
+        'supply_total' => 'supplyTotal',
+        'supply_max' => 'supplyMax',
+        'chain_addresses' => 'chainAddresses',
+        'asset_type' => 'assetType',
         'data_start' => 'dataStart',
         'data_end' => 'dataEnd'
     };
@@ -705,6 +759,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
           marketDataMetadataAsset.supplyTotal = 1.3579;
           marketDataMetadataAsset.supplyMax = 1.3579;
           marketDataMetadataAsset.chainAddresses = new List<OASV1ChainNetworkAddress>{OASV1ChainNetworkAddress.getExample()};
+          marketDataMetadataAsset.assetType = '';
           marketDataMetadataAsset.dataStart = '';
           marketDataMetadataAsset.dataEnd = '';
         return marketDataMetadataAsset;
@@ -732,6 +787,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
                 && this.supplyTotal == marketDataMetadataAsset.supplyTotal
                 && this.supplyMax == marketDataMetadataAsset.supplyMax
                 && this.chainAddresses == marketDataMetadataAsset.chainAddresses
+                && this.assetType == marketDataMetadataAsset.assetType
                 && this.dataStart == marketDataMetadataAsset.dataStart
                 && this.dataEnd == marketDataMetadataAsset.dataEnd;
         }
@@ -759,6 +815,7 @@ public class OASMarketDataMetadataAsset implements OAS.MappedProperties {
         hashCode = (17 * hashCode) + (supplyTotal == null ? 0 : System.hashCode(supplyTotal));
         hashCode = (17 * hashCode) + (supplyMax == null ? 0 : System.hashCode(supplyMax));
         hashCode = (17 * hashCode) + (chainAddresses == null ? 0 : System.hashCode(chainAddresses));
+        hashCode = (17 * hashCode) + (assetType == null ? 0 : System.hashCode(assetType));
         hashCode = (17 * hashCode) + (dataStart == null ? 0 : System.hashCode(dataStart));
         hashCode = (17 * hashCode) + (dataEnd == null ? 0 : System.hashCode(dataEnd));
         return hashCode;

@@ -118,6 +118,9 @@ No description available.
 .PARAMETER FilterAssetId
 Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
 
+.PARAMETER FilterAssetType
+Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+
 .PARAMETER ReturnType
 
 Select the return type (optional): text/plain, application/json, text/json, application/x-msgpack
@@ -136,6 +139,9 @@ function Invoke-V1AssetsGet {
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${FilterAssetId},
+        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${FilterAssetType},
         [String]
         [ValidateSet("text/plain", "application/json", "text/json", "application/x-msgpack")]
         $ReturnType,
@@ -169,6 +175,10 @@ function Invoke-V1AssetsGet {
 
         if ($FilterAssetId) {
             $LocalVarQueryParameters['filter_asset_id'] = $FilterAssetId
+        }
+
+        if ($FilterAssetType) {
+            $LocalVarQueryParameters['filter_asset_type'] = $FilterAssetType
         }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {

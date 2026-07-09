@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a trade executed on the exchange.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-08T06:05:10.460145271Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-09T06:07:07.876766921Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class V1Trade {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)

@@ -178,8 +178,9 @@ export class MetadataApi {
      * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * @summary List all assets
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;).
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
      */
-    public async v1AssetsGet (filterAssetId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataAsset>;  }> {
+    public async v1AssetsGet (filterAssetId?: string, filterAssetType?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<MarketDataMetadataAsset>;  }> {
         const localVarPath = this.basePath + '/v1/assets';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -194,6 +195,10 @@ export class MetadataApi {
 
         if (filterAssetId !== undefined) {
             localVarQueryParameters['filter_asset_id'] = ObjectSerializer.serialize(filterAssetId, "string");
+        }
+
+        if (filterAssetType !== undefined) {
+            localVarQueryParameters['filter_asset_type'] = ObjectSerializer.serialize(filterAssetType, "string");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

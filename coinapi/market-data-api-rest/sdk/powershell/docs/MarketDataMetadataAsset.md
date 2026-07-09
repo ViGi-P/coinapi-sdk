@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **SupplyTotal** | **Double** | Gets or sets the total supply of the asset. | [optional] 
 **SupplyMax** | **Double** | Gets or sets the maximum supply of the asset. | [optional] 
 **ChainAddresses** | [**V1ChainNetworkAddress[]**](V1ChainNetworkAddress.md) |  | [optional] 
+**AssetType** | **String** | Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 **DataStart** | **String** |  | [optional] [readonly] 
 **DataEnd** | **String** |  | [optional] [readonly] 
 
@@ -48,6 +49,7 @@ $MarketDataMetadataAsset = Initialize-PSOpenAPIToolsMarketDataMetadataAsset  -As
  -SupplyTotal null `
  -SupplyMax null `
  -ChainAddresses null `
+ -AssetType null `
  -DataStart null `
  -DataEnd null
 ```

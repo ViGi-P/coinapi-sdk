@@ -40,7 +40,7 @@ class MetadataApi {
 
     }
 
-    def v1AssetsGet ( String filterAssetId, Closure onSuccess, Closure onFailure)  {
+    def v1AssetsGet ( String filterAssetId, String filterAssetType, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/assets"
 
         // params
@@ -53,6 +53,9 @@ class MetadataApi {
 
         if (filterAssetId != null) {
             queryParams.put("filter_asset_id", filterAssetId)
+        }
+        if (filterAssetType != null) {
+            queryParams.put("filter_asset_type", filterAssetType)
         }
 
 

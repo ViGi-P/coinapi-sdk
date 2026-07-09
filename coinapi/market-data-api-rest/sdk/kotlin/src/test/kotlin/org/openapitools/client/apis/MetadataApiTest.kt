@@ -51,7 +51,8 @@ class MetadataApiTest : ShouldSpec() {
         should("test v1AssetsGet") {
             // uncomment below to test v1AssetsGet
             //val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
-            //val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsGet(filterAssetId)
+            //val filterAssetType : kotlin.String = filterAssetType_example // kotlin.String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+            //val result : kotlin.collections.List<MarketDataMetadataAsset> = apiInstance.v1AssetsGet(filterAssetId, filterAssetType)
             //result shouldBe ("TODO")
         }
 

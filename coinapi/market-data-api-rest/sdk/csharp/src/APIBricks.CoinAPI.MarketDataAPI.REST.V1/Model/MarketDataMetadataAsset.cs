@@ -54,10 +54,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="supplyTotal">Gets or sets the total supply of the asset.</param>
         /// <param name="supplyMax">Gets or sets the maximum supply of the asset.</param>
         /// <param name="chainAddresses">chainAddresses</param>
+        /// <param name="assetType">Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.</param>
         /// <param name="dataStart">dataStart</param>
         /// <param name="dataEnd">dataEnd</param>
         [JsonConstructor]
-        public MarketDataMetadataAsset(Option<string?> assetId = default, Option<string?> name = default, Option<int?> typeIsCrypto = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<long?> dataSymbolsCount = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mthUsd = default, Option<double?> priceUsd = default, Option<Guid?> idIcon = default, Option<double?> supplyCurrent = default, Option<double?> supplyTotal = default, Option<double?> supplyMax = default, Option<List<V1ChainNetworkAddress>?> chainAddresses = default, Option<string?> dataStart = default, Option<string?> dataEnd = default)
+        public MarketDataMetadataAsset(Option<string?> assetId = default, Option<string?> name = default, Option<int?> typeIsCrypto = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<long?> dataSymbolsCount = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mthUsd = default, Option<double?> priceUsd = default, Option<Guid?> idIcon = default, Option<double?> supplyCurrent = default, Option<double?> supplyTotal = default, Option<double?> supplyMax = default, Option<List<V1ChainNetworkAddress>?> chainAddresses = default, Option<string?> assetType = default, Option<string?> dataStart = default, Option<string?> dataEnd = default)
         {
             AssetIdOption = assetId;
             NameOption = name;
@@ -78,6 +79,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             SupplyTotalOption = supplyTotal;
             SupplyMaxOption = supplyMax;
             ChainAddressesOption = chainAddresses;
+            AssetTypeOption = assetType;
             DataStartOption = dataStart;
             DataEndOption = dataEnd;
             OnCreated();
@@ -351,6 +353,20 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public List<V1ChainNetworkAddress>? ChainAddresses { get { return this.ChainAddressesOption.Value; } set { this.ChainAddressesOption = new(value); } }
 
         /// <summary>
+        /// Used to track the state of AssetType
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> AssetTypeOption { get; private set; }
+
+        /// <summary>
+        /// Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+        /// </summary>
+        /// <value>Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.</value>
+        [JsonPropertyName("asset_type")]
+        public string? AssetType { get { return this.AssetTypeOption.Value; } set { this.AssetTypeOption = new(value); } }
+
+        /// <summary>
         /// Used to track the state of DataStart
         /// </summary>
         [JsonIgnore]
@@ -403,6 +419,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             sb.Append("  SupplyTotal: ").Append(SupplyTotal).Append("\n");
             sb.Append("  SupplyMax: ").Append(SupplyMax).Append("\n");
             sb.Append("  ChainAddresses: ").Append(ChainAddresses).Append("\n");
+            sb.Append("  AssetType: ").Append(AssetType).Append("\n");
             sb.Append("  DataStart: ").Append(DataStart).Append("\n");
             sb.Append("  DataEnd: ").Append(DataEnd).Append("\n");
             sb.Append("}\n");
@@ -491,6 +508,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             Option<double?> supplyTotal = default;
             Option<double?> supplyMax = default;
             Option<List<V1ChainNetworkAddress>?> chainAddresses = default;
+            Option<string?> assetType = default;
             Option<string?> dataStart = default;
             Option<string?> dataEnd = default;
 
@@ -566,6 +584,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
                         case "chain_addresses":
                             chainAddresses = new Option<List<V1ChainNetworkAddress>?>(JsonSerializer.Deserialize<List<V1ChainNetworkAddress>>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
+                        case "asset_type":
+                            assetType = new Option<string?>(utf8JsonReader.GetString());
+                            break;
                         case "data_start":
                             dataStart = new Option<string?>(utf8JsonReader.GetString());
                             break;
@@ -581,7 +602,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             if (typeIsCrypto.IsSet && typeIsCrypto.Value == null)
                 throw new ArgumentNullException(nameof(typeIsCrypto), "Property is not nullable for class MarketDataMetadataAsset.");
 
-            return new MarketDataMetadataAsset(assetId, name, typeIsCrypto, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, dataSymbolsCount, volume1hrsUsd, volume1dayUsd, volume1mthUsd, priceUsd, idIcon, supplyCurrent, supplyTotal, supplyMax, chainAddresses, dataStart, dataEnd);
+            return new MarketDataMetadataAsset(assetId, name, typeIsCrypto, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, dataSymbolsCount, volume1hrsUsd, volume1dayUsd, volume1mthUsd, priceUsd, idIcon, supplyCurrent, supplyTotal, supplyMax, chainAddresses, assetType, dataStart, dataEnd);
         }
 
         /// <summary>
@@ -721,6 +742,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
                 }
                 else
                     writer.WriteNull("chain_addresses");
+            if (marketDataMetadataAsset.AssetTypeOption.IsSet)
+                if (marketDataMetadataAsset.AssetTypeOption.Value != null)
+                    writer.WriteString("asset_type", marketDataMetadataAsset.AssetType);
+                else
+                    writer.WriteNull("asset_type");
+
             if (marketDataMetadataAsset.DataStartOption.IsSet)
                 if (marketDataMetadataAsset.DataStartOption.Value != null)
                     writer.WriteString("data_start", marketDataMetadataAsset.DataStart);

@@ -18,6 +18,9 @@ No description available.
 .PARAMETER FilterSymbolId
 Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
 
+.PARAMETER FilterExchangeId
+Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+
 .PARAMETER ReturnType
 
 Select the return type (optional): text/plain, application/json, text/json, application/x-msgpack
@@ -36,6 +39,9 @@ function Invoke-V1QuotesCurrentGet {
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${FilterSymbolId},
+        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${FilterExchangeId},
         [String]
         [ValidateSet("text/plain", "application/json", "text/json", "application/x-msgpack")]
         $ReturnType,
@@ -69,6 +75,10 @@ function Invoke-V1QuotesCurrentGet {
 
         if ($FilterSymbolId) {
             $LocalVarQueryParameters['filter_symbol_id'] = $FilterSymbolId
+        }
+
+        if ($FilterExchangeId) {
+            $LocalVarQueryParameters['filter_exchange_id'] = $FilterExchangeId
         }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
@@ -118,6 +128,9 @@ No description available.
 .PARAMETER FilterSymbolId
 Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
 
+.PARAMETER FilterExchangeId
+Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+
 .PARAMETER Limit
 Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
@@ -140,6 +153,9 @@ function Invoke-V1QuotesLatestGet {
         [String]
         ${FilterSymbolId},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${FilterExchangeId},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.Nullable[Int32]]
         ${Limit},
         [String]
@@ -175,6 +191,10 @@ function Invoke-V1QuotesLatestGet {
 
         if ($FilterSymbolId) {
             $LocalVarQueryParameters['filter_symbol_id'] = $FilterSymbolId
+        }
+
+        if ($FilterExchangeId) {
+            $LocalVarQueryParameters['filter_exchange_id'] = $FilterExchangeId
         }
 
         if ($Limit) {

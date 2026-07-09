@@ -35,11 +35,13 @@ class QuotesApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+   * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
    */
-  def v1QuotesCurrentGet(filterSymbolId: Option[String] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[QuoteTrade]] =
+  def v1QuotesCurrentGet(filterSymbolId: Option[String] = None, filterExchangeId: Option[String] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[QuoteTrade]] =
     ApiRequest[Seq[QuoteTrade]](ApiMethods.GET, baseUrl, "/v1/quotes/current", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("filter_symbol_id", filterSymbolId)
+      .withQueryParam("filter_exchange_id", filterExchangeId)
       .withSuccessResponse[Seq[QuoteTrade]](200)
       
 
@@ -54,12 +56,14 @@ class QuotesApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+   * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    */
-  def v1QuotesLatestGet(filterSymbolId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Quote]] =
+  def v1QuotesLatestGet(filterSymbolId: Option[String] = None, filterExchangeId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Quote]] =
     ApiRequest[Seq[Quote]](ApiMethods.GET, baseUrl, "/v1/quotes/latest", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("filter_symbol_id", filterSymbolId)
+      .withQueryParam("filter_exchange_id", filterExchangeId)
       .withQueryParam("limit", limit)
       .withSuccessResponse[Seq[Quote]](200)
       

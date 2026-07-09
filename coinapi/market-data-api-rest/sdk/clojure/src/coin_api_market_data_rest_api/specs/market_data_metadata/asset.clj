@@ -27,6 +27,7 @@
    (ds/opt :supply_total) float?
    (ds/opt :supply_max) float?
    (ds/opt :chain_addresses) (s/coll-of v1/chain-network-address-spec)
+   (ds/opt :asset_type) string?
    (ds/opt :data_start) string?
    (ds/opt :data_end) string?
    })

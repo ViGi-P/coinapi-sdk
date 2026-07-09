@@ -90,6 +90,10 @@ export interface MarketDataMetadataAsset {
      * 
      */
     chain_addresses?: Array<V1ChainNetworkAddress> | null;
+    /**
+     * Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+     */
+    asset_type?: string | null;
     readonly data_start?: string | null;
     readonly data_end?: string | null;
 }

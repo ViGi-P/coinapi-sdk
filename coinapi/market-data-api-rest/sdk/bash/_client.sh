@@ -394,6 +394,7 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "filter_asset_id=:[QUERY] Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#39;BTC;ETH&#39;)."
+"filter_asset_type=:[QUERY] Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -724,6 +725,7 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "filter_symbol_id=:[QUERY] Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)"
+"filter_exchange_id=:[QUERY] Comma or semicolon delimited exchange identifiers used to filter response. (optional)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -731,6 +733,7 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "filter_symbol_id=:[QUERY] Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)"
+"filter_exchange_id=:[QUERY] Comma or semicolon delimited exchange identifiers used to filter response. (optional)"
 "limit=:[QUERY] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0

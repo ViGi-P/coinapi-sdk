@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1QuotesCurrentGet
 
-> []V1QuoteTrade V1QuotesCurrentGet(ctx).FilterSymbolId(filterSymbolId).Execute()
+> []V1QuoteTrade V1QuotesCurrentGet(ctx).FilterSymbolId(filterSymbolId).FilterExchangeId(filterExchangeId).Execute()
 
 Current data
 
@@ -34,10 +34,11 @@ import (
 
 func main() {
 	filterSymbolId := "filterSymbolId_example" // string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+	filterExchangeId := "filterExchangeId_example" // string | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QuotesAPI.V1QuotesCurrentGet(context.Background()).FilterSymbolId(filterSymbolId).Execute()
+	resp, r, err := apiClient.QuotesAPI.V1QuotesCurrentGet(context.Background()).FilterSymbolId(filterSymbolId).FilterExchangeId(filterExchangeId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QuotesAPI.V1QuotesCurrentGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,6 +60,7 @@ Other parameters are passed through a pointer to a apiV1QuotesCurrentGetRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | 
+ **filterExchangeId** | **string** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | 
 
 ### Return type
 
@@ -80,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## V1QuotesLatestGet
 
-> []V1Quote V1QuotesLatestGet(ctx).FilterSymbolId(filterSymbolId).Limit(limit).Execute()
+> []V1Quote V1QuotesLatestGet(ctx).FilterSymbolId(filterSymbolId).FilterExchangeId(filterExchangeId).Limit(limit).Execute()
 
 Latest data
 
@@ -100,11 +102,12 @@ import (
 
 func main() {
 	filterSymbolId := "filterSymbolId_example" // string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+	filterExchangeId := "filterExchangeId_example" // string | Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
 	limit := int32(56) // int32 | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QuotesAPI.V1QuotesLatestGet(context.Background()).FilterSymbolId(filterSymbolId).Limit(limit).Execute()
+	resp, r, err := apiClient.QuotesAPI.V1QuotesLatestGet(context.Background()).FilterSymbolId(filterSymbolId).FilterExchangeId(filterExchangeId).Limit(limit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QuotesAPI.V1QuotesLatestGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,6 +129,7 @@ Other parameters are passed through a pointer to a apiV1QuotesLatestGetRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | 
+ **filterExchangeId** | **string** | Comma or semicolon delimited exchange identifiers used to filter response. (optional) | 
  **limit** | **int32** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
 
 ### Return type

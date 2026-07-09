@@ -44,6 +44,7 @@ class QuotesApi:
     def v1_quotes_current_get(
         self,
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)")] = None,
+        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited exchange identifiers used to filter response. (optional)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -63,6 +64,8 @@ class QuotesApi:
 
         :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
         :type filter_symbol_id: str
+        :param filter_exchange_id: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+        :type filter_exchange_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -87,6 +90,7 @@ class QuotesApi:
 
         _param = self._v1_quotes_current_get_serialize(
             filter_symbol_id=filter_symbol_id,
+            filter_exchange_id=filter_exchange_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -111,6 +115,7 @@ class QuotesApi:
     def v1_quotes_current_get_with_http_info(
         self,
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)")] = None,
+        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited exchange identifiers used to filter response. (optional)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -130,6 +135,8 @@ class QuotesApi:
 
         :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
         :type filter_symbol_id: str
+        :param filter_exchange_id: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+        :type filter_exchange_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -154,6 +161,7 @@ class QuotesApi:
 
         _param = self._v1_quotes_current_get_serialize(
             filter_symbol_id=filter_symbol_id,
+            filter_exchange_id=filter_exchange_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,6 +186,7 @@ class QuotesApi:
     def v1_quotes_current_get_without_preload_content(
         self,
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)")] = None,
+        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited exchange identifiers used to filter response. (optional)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -197,6 +206,8 @@ class QuotesApi:
 
         :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
         :type filter_symbol_id: str
+        :param filter_exchange_id: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+        :type filter_exchange_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -221,6 +232,7 @@ class QuotesApi:
 
         _param = self._v1_quotes_current_get_serialize(
             filter_symbol_id=filter_symbol_id,
+            filter_exchange_id=filter_exchange_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -240,6 +252,7 @@ class QuotesApi:
     def _v1_quotes_current_get_serialize(
         self,
         filter_symbol_id,
+        filter_exchange_id,
         _request_auth,
         _content_type,
         _headers,
@@ -265,6 +278,10 @@ class QuotesApi:
         if filter_symbol_id is not None:
             
             _query_params.append(('filter_symbol_id', filter_symbol_id))
+            
+        if filter_exchange_id is not None:
+            
+            _query_params.append(('filter_exchange_id', filter_exchange_id))
             
         # process the header parameters
         # process the form parameters
@@ -311,6 +328,7 @@ class QuotesApi:
     def v1_quotes_latest_get(
         self,
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)")] = None,
+        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited exchange identifiers used to filter response. (optional)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
         _request_timeout: Union[
             None,
@@ -331,6 +349,8 @@ class QuotesApi:
 
         :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
         :type filter_symbol_id: str
+        :param filter_exchange_id: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+        :type filter_exchange_id: str
         :param limit: Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
@@ -357,6 +377,7 @@ class QuotesApi:
 
         _param = self._v1_quotes_latest_get_serialize(
             filter_symbol_id=filter_symbol_id,
+            filter_exchange_id=filter_exchange_id,
             limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -382,6 +403,7 @@ class QuotesApi:
     def v1_quotes_latest_get_with_http_info(
         self,
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)")] = None,
+        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited exchange identifiers used to filter response. (optional)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
         _request_timeout: Union[
             None,
@@ -402,6 +424,8 @@ class QuotesApi:
 
         :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
         :type filter_symbol_id: str
+        :param filter_exchange_id: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+        :type filter_exchange_id: str
         :param limit: Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
@@ -428,6 +452,7 @@ class QuotesApi:
 
         _param = self._v1_quotes_latest_get_serialize(
             filter_symbol_id=filter_symbol_id,
+            filter_exchange_id=filter_exchange_id,
             limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -453,6 +478,7 @@ class QuotesApi:
     def v1_quotes_latest_get_without_preload_content(
         self,
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)")] = None,
+        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited exchange identifiers used to filter response. (optional)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
         _request_timeout: Union[
             None,
@@ -473,6 +499,8 @@ class QuotesApi:
 
         :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
         :type filter_symbol_id: str
+        :param filter_exchange_id: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+        :type filter_exchange_id: str
         :param limit: Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
@@ -499,6 +527,7 @@ class QuotesApi:
 
         _param = self._v1_quotes_latest_get_serialize(
             filter_symbol_id=filter_symbol_id,
+            filter_exchange_id=filter_exchange_id,
             limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -519,6 +548,7 @@ class QuotesApi:
     def _v1_quotes_latest_get_serialize(
         self,
         filter_symbol_id,
+        filter_exchange_id,
         limit,
         _request_auth,
         _content_type,
@@ -545,6 +575,10 @@ class QuotesApi:
         if filter_symbol_id is not None:
             
             _query_params.append(('filter_symbol_id', filter_symbol_id))
+            
+        if filter_exchange_id is not None:
+            
+            _query_params.append(('filter_exchange_id', filter_exchange_id))
             
         if limit is not None:
             

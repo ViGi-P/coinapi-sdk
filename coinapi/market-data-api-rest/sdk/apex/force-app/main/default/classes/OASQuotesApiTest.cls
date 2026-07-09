@@ -13,7 +13,8 @@ private class OASQuotesApiTest {
         Test.setMock(HttpCalloutMock.class, new OASResponseMock(res));
 
         Map<String, Object> params = new Map<String, Object>{
-            'filterSymbolId' => 'null'
+            'filterSymbolId' => 'null',
+            'filterExchangeId' => 'null'
         };
 
         OASClient client;
@@ -58,6 +59,7 @@ private class OASQuotesApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'filterSymbolId' => 'null',
+            'filterExchangeId' => 'null',
             'r_limit' => ''
         };
 

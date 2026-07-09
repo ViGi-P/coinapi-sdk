@@ -42,6 +42,7 @@ MarketDataMetadata.Asset::__init()
 	//supply_total = double(0);
 	//supply_max = double(0);
 	//new std::list()std::list> chain_addresses;
+	//asset_type = std::string();
 	//data_start = std::string();
 	//data_end = std::string();
 }
@@ -143,6 +144,11 @@ MarketDataMetadata.Asset::__cleanup()
 	//chain_addresses.RemoveAll(true);
 	//delete chain_addresses;
 	//chain_addresses = NULL;
+	//}
+	//if(asset_type != NULL) {
+	//
+	//delete asset_type;
+	//asset_type = NULL;
 	//}
 	//if(data_start != NULL) {
 	//
@@ -384,6 +390,17 @@ MarketDataMetadata.Asset::fromJson(char* jsonStr)
 		}
 		
 	}
+	const gchar *asset_typeKey = "asset_type";
+	node = json_object_get_member(pJsonObject, asset_typeKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("std::string")) {
+			jsonToValue(&asset_type, node, "std::string", "");
+		} else {
+			
+		}
+	}
 	const gchar *data_startKey = "data_start";
 	node = json_object_get_member(pJsonObject, data_startKey);
 	if (node !=NULL) {
@@ -605,6 +622,15 @@ MarketDataMetadata.Asset::toJson()
 	
 	const gchar *chain_addressesKey = "chain_addresses";
 	json_object_set_member(pJsonObject, chain_addressesKey, node);
+	if (isprimitive("std::string")) {
+		std::string obj = getAssetType();
+		node = converttoJson(&obj, "std::string", "");
+	}
+	else {
+		
+	}
+	const gchar *asset_typeKey = "asset_type";
+	json_object_set_member(pJsonObject, asset_typeKey, node);
 	if (isprimitive("std::string")) {
 		std::string obj = getDataStart();
 		node = converttoJson(&obj, "std::string", "");
@@ -857,6 +883,18 @@ void
 MarketDataMetadata.Asset::setChainAddresses(std::list <V1.ChainNetworkAddress> chain_addresses)
 {
 	this->chain_addresses = chain_addresses;
+}
+
+std::string
+MarketDataMetadata.Asset::getAssetType()
+{
+	return asset_type;
+}
+
+void
+MarketDataMetadata.Asset::setAssetType(std::string  asset_type)
+{
+	this->asset_type = asset_type;
 }
 
 std::string

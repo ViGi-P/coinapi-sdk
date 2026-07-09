@@ -22,10 +22,12 @@ import type {
 
 export interface V1QuotesCurrentGetRequest {
     filterSymbolId?: string;
+    filterExchangeId?: string;
 }
 
 export interface V1QuotesLatestGetRequest {
     filterSymbolId?: string;
+    filterExchangeId?: string;
     limit?: number;
 }
 
@@ -55,9 +57,9 @@ export class QuotesApi extends BaseAPI {
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
      * Current data
      */
-    v1QuotesCurrentGet({ filterSymbolId }: V1QuotesCurrentGetRequest): Observable<Array<V1QuoteTrade>>
-    v1QuotesCurrentGet({ filterSymbolId }: V1QuotesCurrentGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1QuoteTrade>>>
-    v1QuotesCurrentGet({ filterSymbolId }: V1QuotesCurrentGetRequest, opts?: OperationOpts): Observable<Array<V1QuoteTrade> | AjaxResponse<Array<V1QuoteTrade>>> {
+    v1QuotesCurrentGet({ filterSymbolId, filterExchangeId }: V1QuotesCurrentGetRequest): Observable<Array<V1QuoteTrade>>
+    v1QuotesCurrentGet({ filterSymbolId, filterExchangeId }: V1QuotesCurrentGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1QuoteTrade>>>
+    v1QuotesCurrentGet({ filterSymbolId, filterExchangeId }: V1QuotesCurrentGetRequest, opts?: OperationOpts): Observable<Array<V1QuoteTrade> | AjaxResponse<Array<V1QuoteTrade>>> {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -66,6 +68,7 @@ export class QuotesApi extends BaseAPI {
         const query: HttpQuery = {};
 
         if (filterSymbolId != null) { query['filter_symbol_id'] = filterSymbolId; }
+        if (filterExchangeId != null) { query['filter_exchange_id'] = filterExchangeId; }
 
         return this.request<Array<V1QuoteTrade>>({
             url: '/v1/quotes/current',
@@ -79,9 +82,9 @@ export class QuotesApi extends BaseAPI {
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
      * Latest data
      */
-    v1QuotesLatestGet({ filterSymbolId, limit }: V1QuotesLatestGetRequest): Observable<Array<V1Quote>>
-    v1QuotesLatestGet({ filterSymbolId, limit }: V1QuotesLatestGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Quote>>>
-    v1QuotesLatestGet({ filterSymbolId, limit }: V1QuotesLatestGetRequest, opts?: OperationOpts): Observable<Array<V1Quote> | AjaxResponse<Array<V1Quote>>> {
+    v1QuotesLatestGet({ filterSymbolId, filterExchangeId, limit }: V1QuotesLatestGetRequest): Observable<Array<V1Quote>>
+    v1QuotesLatestGet({ filterSymbolId, filterExchangeId, limit }: V1QuotesLatestGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Quote>>>
+    v1QuotesLatestGet({ filterSymbolId, filterExchangeId, limit }: V1QuotesLatestGetRequest, opts?: OperationOpts): Observable<Array<V1Quote> | AjaxResponse<Array<V1Quote>>> {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -90,6 +93,7 @@ export class QuotesApi extends BaseAPI {
         const query: HttpQuery = {};
 
         if (filterSymbolId != null) { query['filter_symbol_id'] = filterSymbolId; }
+        if (filterExchangeId != null) { query['filter_exchange_id'] = filterExchangeId; }
         if (limit != null) { query['limit'] = limit; }
 
         return this.request<Array<V1Quote>>({

@@ -61,9 +61,10 @@ public class QuotesApi {
   * Current data
   * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
    * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+   * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
    * @return List<V1QuoteTrade>
   */
-  public List<V1QuoteTrade> v1QuotesCurrentGet (String filterSymbolId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1QuoteTrade> v1QuotesCurrentGet (String filterSymbolId, String filterExchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -76,6 +77,7 @@ public class QuotesApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_symbol_id", filterSymbolId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_exchange_id", filterExchangeId));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -118,9 +120,9 @@ public class QuotesApi {
       /**
    * Current data
    * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
-   * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+   * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)   * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
   */
-  public void v1QuotesCurrentGet (String filterSymbolId, final Response.Listener<List<V1QuoteTrade>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1QuotesCurrentGet (String filterSymbolId, String filterExchangeId, final Response.Listener<List<V1QuoteTrade>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -135,6 +137,7 @@ public class QuotesApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_symbol_id", filterSymbolId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_exchange_id", filterExchangeId));
 
 
     String[] contentTypes = {
@@ -180,10 +183,11 @@ public class QuotesApi {
   * Latest data
   * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
    * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+   * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    * @return List<V1Quote>
   */
-  public List<V1Quote> v1QuotesLatestGet (String filterSymbolId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1Quote> v1QuotesLatestGet (String filterSymbolId, String filterExchangeId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -196,6 +200,7 @@ public class QuotesApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_symbol_id", filterSymbolId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_exchange_id", filterExchangeId));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
@@ -239,9 +244,9 @@ public class QuotesApi {
       /**
    * Latest data
    * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
-   * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+   * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)   * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional)   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void v1QuotesLatestGet (String filterSymbolId, Integer limit, final Response.Listener<List<V1Quote>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1QuotesLatestGet (String filterSymbolId, String filterExchangeId, Integer limit, final Response.Listener<List<V1Quote>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -256,6 +261,7 @@ public class QuotesApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_symbol_id", filterSymbolId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_exchange_id", filterExchangeId));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 

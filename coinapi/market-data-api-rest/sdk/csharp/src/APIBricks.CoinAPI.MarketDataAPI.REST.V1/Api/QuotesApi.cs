@@ -46,9 +46,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesCurrentGetApiResponse"/>&gt;</returns>
-        Task<IV1QuotesCurrentGetApiResponse> V1QuotesCurrentGetAsync(Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1QuotesCurrentGetApiResponse> V1QuotesCurrentGetAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Current data
@@ -57,9 +58,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
         /// </remarks>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesCurrentGetApiResponse"/>?&gt;</returns>
-        Task<IV1QuotesCurrentGetApiResponse?> V1QuotesCurrentGetOrDefaultAsync(Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1QuotesCurrentGetApiResponse?> V1QuotesCurrentGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Latest data
@@ -69,10 +71,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesLatestGetApiResponse"/>&gt;</returns>
-        Task<IV1QuotesLatestGetApiResponse> V1QuotesLatestGetAsync(Option<string> filterSymbolId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1QuotesLatestGetApiResponse> V1QuotesLatestGetAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Latest data
@@ -81,10 +84,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
         /// </remarks>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesLatestGetApiResponse"/>?&gt;</returns>
-        Task<IV1QuotesLatestGetApiResponse?> V1QuotesLatestGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1QuotesLatestGetApiResponse?> V1QuotesLatestGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Current quotes for a specific symbol
@@ -386,17 +390,21 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             BearerTokenProvider = bearerTokenProvider;
         }
 
-        partial void FormatV1QuotesCurrentGet(ref Option<string> filterSymbolId);
+        partial void FormatV1QuotesCurrentGet(ref Option<string> filterSymbolId, ref Option<string> filterExchangeId);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="filterSymbolId"></param>
+        /// <param name="filterExchangeId"></param>
         /// <returns></returns>
-        private void ValidateV1QuotesCurrentGet(Option<string> filterSymbolId)
+        private void ValidateV1QuotesCurrentGet(Option<string> filterSymbolId, Option<string> filterExchangeId)
         {
             if (filterSymbolId.IsSet && filterSymbolId.Value == null)
                 throw new ArgumentNullException(nameof(filterSymbolId));
+
+            if (filterExchangeId.IsSet && filterExchangeId.Value == null)
+                throw new ArgumentNullException(nameof(filterExchangeId));
         }
 
         /// <summary>
@@ -404,10 +412,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="filterSymbolId"></param>
-        private void AfterV1QuotesCurrentGetDefaultImplementation(IV1QuotesCurrentGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId)
+        /// <param name="filterExchangeId"></param>
+        private void AfterV1QuotesCurrentGetDefaultImplementation(IV1QuotesCurrentGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId)
         {
             bool suppressDefaultLog = false;
-            AfterV1QuotesCurrentGet(ref suppressDefaultLog, apiResponseLocalVar, filterSymbolId);
+            AfterV1QuotesCurrentGet(ref suppressDefaultLog, apiResponseLocalVar, filterSymbolId, filterExchangeId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -418,7 +427,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="filterSymbolId"></param>
-        partial void AfterV1QuotesCurrentGet(ref bool suppressDefaultLog, IV1QuotesCurrentGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId);
+        /// <param name="filterExchangeId"></param>
+        partial void AfterV1QuotesCurrentGet(ref bool suppressDefaultLog, IV1QuotesCurrentGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -427,10 +437,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="filterSymbolId"></param>
-        private void OnErrorV1QuotesCurrentGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId)
+        /// <param name="filterExchangeId"></param>
+        private void OnErrorV1QuotesCurrentGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1QuotesCurrentGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, filterSymbolId);
+            OnErrorV1QuotesCurrentGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, filterSymbolId, filterExchangeId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -443,19 +454,21 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="filterSymbolId"></param>
-        partial void OnErrorV1QuotesCurrentGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId);
+        /// <param name="filterExchangeId"></param>
+        partial void OnErrorV1QuotesCurrentGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId);
 
         /// <summary>
         /// Current data Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
         /// </summary>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesCurrentGetApiResponse"/>&gt;</returns>
-        public async Task<IV1QuotesCurrentGetApiResponse?> V1QuotesCurrentGetOrDefaultAsync(Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1QuotesCurrentGetApiResponse?> V1QuotesCurrentGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1QuotesCurrentGetAsync(filterSymbolId, cancellationToken).ConfigureAwait(false);
+                return await V1QuotesCurrentGetAsync(filterSymbolId, filterExchangeId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -468,17 +481,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesCurrentGetApiResponse"/>&gt;</returns>
-        public async Task<IV1QuotesCurrentGetApiResponse> V1QuotesCurrentGetAsync(Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1QuotesCurrentGetApiResponse> V1QuotesCurrentGetAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateV1QuotesCurrentGet(filterSymbolId);
+                ValidateV1QuotesCurrentGet(filterSymbolId, filterExchangeId);
 
-                FormatV1QuotesCurrentGet(ref filterSymbolId);
+                FormatV1QuotesCurrentGet(ref filterSymbolId, ref filterExchangeId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -493,6 +507,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     if (filterSymbolId.IsSet)
                         parseQueryStringLocalVar["filter_symbol_id"] = ClientUtils.ParameterToString(filterSymbolId.Value);
+
+                    if (filterExchangeId.IsSet)
+                        parseQueryStringLocalVar["filter_exchange_id"] = ClientUtils.ParameterToString(filterExchangeId.Value);
 
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
 
@@ -539,7 +556,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterV1QuotesCurrentGetDefaultImplementation(apiResponseLocalVar, filterSymbolId);
+                        AfterV1QuotesCurrentGetDefaultImplementation(apiResponseLocalVar, filterSymbolId, filterExchangeId);
 
                         Events.ExecuteOnV1QuotesCurrentGet(apiResponseLocalVar);
 
@@ -553,7 +570,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1QuotesCurrentGetDefaultImplementation(e, "/v1/quotes/current", uriBuilderLocalVar.Path, filterSymbolId);
+                OnErrorV1QuotesCurrentGetDefaultImplementation(e, "/v1/quotes/current", uriBuilderLocalVar.Path, filterSymbolId, filterExchangeId);
                 Events.ExecuteOnErrorV1QuotesCurrentGet(e);
                 throw;
             }
@@ -652,17 +669,21 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatV1QuotesLatestGet(ref Option<string> filterSymbolId, ref Option<int> limit);
+        partial void FormatV1QuotesLatestGet(ref Option<string> filterSymbolId, ref Option<string> filterExchangeId, ref Option<int> limit);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="filterSymbolId"></param>
+        /// <param name="filterExchangeId"></param>
         /// <returns></returns>
-        private void ValidateV1QuotesLatestGet(Option<string> filterSymbolId)
+        private void ValidateV1QuotesLatestGet(Option<string> filterSymbolId, Option<string> filterExchangeId)
         {
             if (filterSymbolId.IsSet && filterSymbolId.Value == null)
                 throw new ArgumentNullException(nameof(filterSymbolId));
+
+            if (filterExchangeId.IsSet && filterExchangeId.Value == null)
+                throw new ArgumentNullException(nameof(filterExchangeId));
         }
 
         /// <summary>
@@ -670,11 +691,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="filterSymbolId"></param>
+        /// <param name="filterExchangeId"></param>
         /// <param name="limit"></param>
-        private void AfterV1QuotesLatestGetDefaultImplementation(IV1QuotesLatestGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<int> limit)
+        private void AfterV1QuotesLatestGetDefaultImplementation(IV1QuotesLatestGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<int> limit)
         {
             bool suppressDefaultLog = false;
-            AfterV1QuotesLatestGet(ref suppressDefaultLog, apiResponseLocalVar, filterSymbolId, limit);
+            AfterV1QuotesLatestGet(ref suppressDefaultLog, apiResponseLocalVar, filterSymbolId, filterExchangeId, limit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -685,8 +707,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="filterSymbolId"></param>
+        /// <param name="filterExchangeId"></param>
         /// <param name="limit"></param>
-        partial void AfterV1QuotesLatestGet(ref bool suppressDefaultLog, IV1QuotesLatestGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<int> limit);
+        partial void AfterV1QuotesLatestGet(ref bool suppressDefaultLog, IV1QuotesLatestGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<int> limit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -695,11 +718,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="filterSymbolId"></param>
+        /// <param name="filterExchangeId"></param>
         /// <param name="limit"></param>
-        private void OnErrorV1QuotesLatestGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<int> limit)
+        private void OnErrorV1QuotesLatestGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<int> limit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1QuotesLatestGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, filterSymbolId, limit);
+            OnErrorV1QuotesLatestGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, filterSymbolId, filterExchangeId, limit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -712,21 +736,23 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="filterSymbolId"></param>
+        /// <param name="filterExchangeId"></param>
         /// <param name="limit"></param>
-        partial void OnErrorV1QuotesLatestGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<int> limit);
+        partial void OnErrorV1QuotesLatestGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<int> limit);
 
         /// <summary>
         /// Latest data Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
         /// </summary>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesLatestGetApiResponse"/>&gt;</returns>
-        public async Task<IV1QuotesLatestGetApiResponse?> V1QuotesLatestGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1QuotesLatestGetApiResponse?> V1QuotesLatestGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1QuotesLatestGetAsync(filterSymbolId, limit, cancellationToken).ConfigureAwait(false);
+                return await V1QuotesLatestGetAsync(filterSymbolId, filterExchangeId, limit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -739,18 +765,19 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)</param>
+        /// <param name="filterExchangeId">Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1QuotesLatestGetApiResponse"/>&gt;</returns>
-        public async Task<IV1QuotesLatestGetApiResponse> V1QuotesLatestGetAsync(Option<string> filterSymbolId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1QuotesLatestGetApiResponse> V1QuotesLatestGetAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateV1QuotesLatestGet(filterSymbolId);
+                ValidateV1QuotesLatestGet(filterSymbolId, filterExchangeId);
 
-                FormatV1QuotesLatestGet(ref filterSymbolId, ref limit);
+                FormatV1QuotesLatestGet(ref filterSymbolId, ref filterExchangeId, ref limit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -765,6 +792,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     if (filterSymbolId.IsSet)
                         parseQueryStringLocalVar["filter_symbol_id"] = ClientUtils.ParameterToString(filterSymbolId.Value);
+
+                    if (filterExchangeId.IsSet)
+                        parseQueryStringLocalVar["filter_exchange_id"] = ClientUtils.ParameterToString(filterExchangeId.Value);
 
                     if (limit.IsSet)
                         parseQueryStringLocalVar["limit"] = ClientUtils.ParameterToString(limit.Value);
@@ -814,7 +844,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterV1QuotesLatestGetDefaultImplementation(apiResponseLocalVar, filterSymbolId, limit);
+                        AfterV1QuotesLatestGetDefaultImplementation(apiResponseLocalVar, filterSymbolId, filterExchangeId, limit);
 
                         Events.ExecuteOnV1QuotesLatestGet(apiResponseLocalVar);
 
@@ -828,7 +858,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1QuotesLatestGetDefaultImplementation(e, "/v1/quotes/latest", uriBuilderLocalVar.Path, filterSymbolId, limit);
+                OnErrorV1QuotesLatestGetDefaultImplementation(e, "/v1/quotes/latest", uriBuilderLocalVar.Path, filterSymbolId, filterExchangeId, limit);
                 Events.ExecuteOnErrorV1QuotesLatestGet(e);
                 throw;
             }

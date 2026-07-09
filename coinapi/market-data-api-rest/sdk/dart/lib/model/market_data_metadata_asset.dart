@@ -32,6 +32,7 @@ class MarketDataMetadataAsset {
     this.supplyTotal,
     this.supplyMax,
     this.chainAddresses = const [],
+    this.assetType,
     this.dataStart,
     this.dataEnd,
   });
@@ -99,6 +100,9 @@ class MarketDataMetadataAsset {
   /// 
   List<V1ChainNetworkAddress>? chainAddresses;
 
+  /// Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+  String? assetType;
+
   String? dataStart;
 
   String? dataEnd;
@@ -124,6 +128,7 @@ class MarketDataMetadataAsset {
     other.supplyTotal == supplyTotal &&
     other.supplyMax == supplyMax &&
     _deepEquality.equals(other.chainAddresses, chainAddresses) &&
+    other.assetType == assetType &&
     other.dataStart == dataStart &&
     other.dataEnd == dataEnd;
 
@@ -149,11 +154,12 @@ class MarketDataMetadataAsset {
     (supplyTotal == null ? 0 : supplyTotal!.hashCode) +
     (supplyMax == null ? 0 : supplyMax!.hashCode) +
     (chainAddresses == null ? 0 : chainAddresses!.hashCode) +
+    (assetType == null ? 0 : assetType!.hashCode) +
     (dataStart == null ? 0 : dataStart!.hashCode) +
     (dataEnd == null ? 0 : dataEnd!.hashCode);
 
   @override
-  String toString() => 'MarketDataMetadataAsset[assetId=$assetId, name=$name, typeIsCrypto=$typeIsCrypto, dataQuoteStart=$dataQuoteStart, dataQuoteEnd=$dataQuoteEnd, dataOrderbookStart=$dataOrderbookStart, dataOrderbookEnd=$dataOrderbookEnd, dataTradeStart=$dataTradeStart, dataTradeEnd=$dataTradeEnd, dataSymbolsCount=$dataSymbolsCount, volume1hrsUsd=$volume1hrsUsd, volume1dayUsd=$volume1dayUsd, volume1mthUsd=$volume1mthUsd, priceUsd=$priceUsd, idIcon=$idIcon, supplyCurrent=$supplyCurrent, supplyTotal=$supplyTotal, supplyMax=$supplyMax, chainAddresses=$chainAddresses, dataStart=$dataStart, dataEnd=$dataEnd]';
+  String toString() => 'MarketDataMetadataAsset[assetId=$assetId, name=$name, typeIsCrypto=$typeIsCrypto, dataQuoteStart=$dataQuoteStart, dataQuoteEnd=$dataQuoteEnd, dataOrderbookStart=$dataOrderbookStart, dataOrderbookEnd=$dataOrderbookEnd, dataTradeStart=$dataTradeStart, dataTradeEnd=$dataTradeEnd, dataSymbolsCount=$dataSymbolsCount, volume1hrsUsd=$volume1hrsUsd, volume1dayUsd=$volume1dayUsd, volume1mthUsd=$volume1mthUsd, priceUsd=$priceUsd, idIcon=$idIcon, supplyCurrent=$supplyCurrent, supplyTotal=$supplyTotal, supplyMax=$supplyMax, chainAddresses=$chainAddresses, assetType=$assetType, dataStart=$dataStart, dataEnd=$dataEnd]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -252,6 +258,11 @@ class MarketDataMetadataAsset {
     } else {
       json[r'chain_addresses'] = null;
     }
+    if (this.assetType != null) {
+      json[r'asset_type'] = this.assetType;
+    } else {
+      json[r'asset_type'] = null;
+    }
     if (this.dataStart != null) {
       json[r'data_start'] = this.dataStart;
     } else {
@@ -299,6 +310,7 @@ class MarketDataMetadataAsset {
         supplyTotal: mapValueOfType<double>(json, r'supply_total'),
         supplyMax: mapValueOfType<double>(json, r'supply_max'),
         chainAddresses: V1ChainNetworkAddress.listFromJson(json[r'chain_addresses']),
+        assetType: mapValueOfType<String>(json, r'asset_type'),
         dataStart: mapValueOfType<String>(json, r'data_start'),
         dataEnd: mapValueOfType<String>(json, r'data_end'),
       );

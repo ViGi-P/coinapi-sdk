@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_assets_get**
-> ARRAY[MarketDataMetadataAsset] v1_assets_get(filter_asset_id => $filter_asset_id)
+> ARRAY[MarketDataMetadataAsset] v1_assets_get(filter_asset_id => $filter_asset_id, filter_asset_type => $filter_asset_type)
 
 List all assets
 
@@ -97,9 +97,10 @@ my $api_instance = WWW::OpenAPIClient::MetadataApi->new(
 );
 
 my $filter_asset_id = "filter_asset_id_example"; # string | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+my $filter_asset_type = "filter_asset_type_example"; # string | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 
 eval {
-    my $result = $api_instance->v1_assets_get(filter_asset_id => $filter_asset_id);
+    my $result = $api_instance->v1_assets_get(filter_asset_id => $filter_asset_id, filter_asset_type => $filter_asset_type);
     print Dumper($result);
 };
 if ($@) {
@@ -112,6 +113,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter_asset_id** | **string**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). | [optional] 
+ **filter_asset_type** | **string**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 
 ### Return type
 

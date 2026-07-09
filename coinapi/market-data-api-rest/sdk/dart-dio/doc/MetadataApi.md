@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1AssetsGet**
-> BuiltList<MarketDataMetadataAsset> v1AssetsGet(filterAssetId)
+> BuiltList<MarketDataMetadataAsset> v1AssetsGet(filterAssetId, filterAssetType)
 
 List all assets
 
@@ -84,9 +84,10 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getMetadataApi();
 final String filterAssetId = filterAssetId_example; // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
+final String filterAssetType = filterAssetType_example; // String | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
 
 try {
-    final response = api.v1AssetsGet(filterAssetId);
+    final response = api.v1AssetsGet(filterAssetId, filterAssetType);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling MetadataApi->v1AssetsGet: $e\n');
@@ -98,6 +99,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterAssetId** | **String**| Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`). | [optional] 
+ **filterAssetType** | **String**| Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] 
 
 ### Return type
 

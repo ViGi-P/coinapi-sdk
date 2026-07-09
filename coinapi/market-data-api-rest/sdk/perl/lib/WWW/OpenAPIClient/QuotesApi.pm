@@ -54,11 +54,17 @@ sub new {
 # Current data
 #
 # @param string $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+# @param string $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
 {
     my $params = {
     'filter_symbol_id' => {
         data_type => 'string',
         description => 'Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)',
+        required => '0',
+    },
+    'filter_exchange_id' => {
+        data_type => 'string',
+        description => 'Comma or semicolon delimited exchange identifiers used to filter response. (optional)',
         required => '0',
     },
     };
@@ -93,6 +99,11 @@ sub v1_quotes_current_get {
         $query_params->{'filter_symbol_id'} = $self->{api_client}->to_query_value($args{'filter_symbol_id'});
     }
 
+    # query params
+    if ( exists $args{'filter_exchange_id'}) {
+        $query_params->{'filter_exchange_id'} = $self->{api_client}->to_query_value($args{'filter_exchange_id'});
+    }
+
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw(APIKey JWT )];
@@ -114,12 +125,18 @@ sub v1_quotes_current_get {
 # Latest data
 #
 # @param string $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) (optional)
+# @param string $filter_exchange_id Comma or semicolon delimited exchange identifiers used to filter response. (optional) (optional)
 # @param int $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
 {
     my $params = {
     'filter_symbol_id' => {
         data_type => 'string',
         description => 'Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)',
+        required => '0',
+    },
+    'filter_exchange_id' => {
+        data_type => 'string',
+        description => 'Comma or semicolon delimited exchange identifiers used to filter response. (optional)',
         required => '0',
     },
     'limit' => {
@@ -157,6 +174,11 @@ sub v1_quotes_latest_get {
     # query params
     if ( exists $args{'filter_symbol_id'}) {
         $query_params->{'filter_symbol_id'} = $self->{api_client}->to_query_value($args{'filter_symbol_id'});
+    }
+
+    # query params
+    if ( exists $args{'filter_exchange_id'}) {
+        $query_params->{'filter_exchange_id'} = $self->{api_client}->to_query_value($args{'filter_exchange_id'});
     }
 
     # query params

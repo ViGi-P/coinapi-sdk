@@ -73,6 +73,9 @@ module OpenapiClient
     # 
     attr_accessor :chain_addresses
 
+    # Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.
+    attr_accessor :asset_type
+
     attr_accessor :data_start
 
     attr_accessor :data_end
@@ -99,6 +102,7 @@ module OpenapiClient
         :'supply_total' => :'supply_total',
         :'supply_max' => :'supply_max',
         :'chain_addresses' => :'chain_addresses',
+        :'asset_type' => :'asset_type',
         :'data_start' => :'data_start',
         :'data_end' => :'data_end'
       }
@@ -136,6 +140,7 @@ module OpenapiClient
         :'supply_total' => :'Float',
         :'supply_max' => :'Float',
         :'chain_addresses' => :'Array<V1ChainNetworkAddress>',
+        :'asset_type' => :'String',
         :'data_start' => :'String',
         :'data_end' => :'String'
       }
@@ -162,6 +167,7 @@ module OpenapiClient
         :'supply_total',
         :'supply_max',
         :'chain_addresses',
+        :'asset_type',
         :'data_start',
         :'data_end'
       ])
@@ -261,6 +267,10 @@ module OpenapiClient
         end
       end
 
+      if attributes.key?(:'asset_type')
+        self.asset_type = attributes[:'asset_type']
+      end
+
       if attributes.key?(:'data_start')
         self.data_start = attributes[:'data_start']
       end
@@ -309,6 +319,7 @@ module OpenapiClient
           supply_total == o.supply_total &&
           supply_max == o.supply_max &&
           chain_addresses == o.chain_addresses &&
+          asset_type == o.asset_type &&
           data_start == o.data_start &&
           data_end == o.data_end
     end
@@ -322,7 +333,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [asset_id, name, type_is_crypto, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, data_symbols_count, volume_1hrs_usd, volume_1day_usd, volume_1mth_usd, price_usd, id_icon, supply_current, supply_total, supply_max, chain_addresses, data_start, data_end].hash
+      [asset_id, name, type_is_crypto, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, data_symbols_count, volume_1hrs_usd, volume_1day_usd, volume_1mth_usd, price_usd, id_icon, supply_current, supply_total, supply_max, chain_addresses, asset_type, data_start, data_end].hash
     end
 
     # Builds the object from hash

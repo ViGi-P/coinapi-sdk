@@ -13,7 +13,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1QuotesCurrentGet"></a>
 # **v1QuotesCurrentGet**
-> List&lt;V1QuoteTrade&gt; v1QuotesCurrentGet(filterSymbolId)
+> List&lt;V1QuoteTrade&gt; v1QuotesCurrentGet(filterSymbolId, filterExchangeId)
 
 Current data
 
@@ -46,8 +46,9 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String filterSymbolId = "filterSymbolId_example"; // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    String filterExchangeId = "filterExchangeId_example"; // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     try {
-      List<V1QuoteTrade> result = apiInstance.v1QuotesCurrentGet(filterSymbolId);
+      List<V1QuoteTrade> result = apiInstance.v1QuotesCurrentGet(filterSymbolId, filterExchangeId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#v1QuotesCurrentGet");
@@ -65,6 +66,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 
 ### Return type
 
@@ -86,7 +88,7 @@ public class Example {
 
 <a id="v1QuotesLatestGet"></a>
 # **v1QuotesLatestGet**
-> List&lt;V1Quote&gt; v1QuotesLatestGet(filterSymbolId, limit)
+> List&lt;V1Quote&gt; v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit)
 
 Latest data
 
@@ -119,9 +121,10 @@ public class Example {
 
     QuotesApi apiInstance = new QuotesApi(defaultClient);
     String filterSymbolId = "filterSymbolId_example"; // String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+    String filterExchangeId = "filterExchangeId_example"; // String | Comma or semicolon delimited exchange identifiers used to filter response. (optional)
     Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     try {
-      List<V1Quote> result = apiInstance.v1QuotesLatestGet(filterSymbolId, limit);
+      List<V1Quote> result = apiInstance.v1QuotesLatestGet(filterSymbolId, filterExchangeId, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QuotesApi#v1QuotesLatestGet");
@@ -139,6 +142,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **filterSymbolId** | **String**| Comma or semicolon delimited parts of symbol identifier used to filter response. (optional) | [optional] |
+| **filterExchangeId** | **String**| Comma or semicolon delimited exchange identifiers used to filter response. (optional) | [optional] |
 | **limit** | **Integer**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 
 ### Return type

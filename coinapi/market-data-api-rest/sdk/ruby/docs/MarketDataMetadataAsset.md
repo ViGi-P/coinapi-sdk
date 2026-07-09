@@ -23,6 +23,7 @@
 | **supply_total** | **Float** | Gets or sets the total supply of the asset. | [optional] |
 | **supply_max** | **Float** | Gets or sets the maximum supply of the asset. | [optional] |
 | **chain_addresses** | [**Array&lt;V1ChainNetworkAddress&gt;**](V1ChainNetworkAddress.md) |  | [optional] |
+| **asset_type** | **String** | Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] |
 | **data_start** | **String** |  | [optional][readonly] |
 | **data_end** | **String** |  | [optional][readonly] |
 
@@ -51,6 +52,7 @@ instance = OpenapiClient::MarketDataMetadataAsset.new(
   supply_total: null,
   supply_max: null,
   chain_addresses: null,
+  asset_type: null,
   data_start: null,
   data_end: null
 )

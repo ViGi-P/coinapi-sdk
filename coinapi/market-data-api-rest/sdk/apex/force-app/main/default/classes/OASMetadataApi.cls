@@ -54,6 +54,7 @@ public class OASMetadataApi {
      * List all assets
      * Retrieves all assets.\n            \n:::info\nOur asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency).\n:::\n            \n:::info\nProperties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.\n:::
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. &#x60;BTC;ETH&#x60;). (optional)
+     * @param filterAssetType Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. (optional)
      * @return List<OASMarketDataMetadataAsset>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -62,6 +63,7 @@ public class OASMetadataApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('filter_asset_id', (String) params.get('filterAssetId')));
+        query.addAll(client.makeParam('filter_asset_type', (String) params.get('filterAssetType')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 

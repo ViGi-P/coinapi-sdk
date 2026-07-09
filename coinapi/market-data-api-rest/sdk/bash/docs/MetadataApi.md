@@ -68,7 +68,7 @@ Properties of the output are providing aggregated information from across all sy
 ### Example
 
 ```bash
- v1AssetsGet  filter_asset_id=value
+ v1AssetsGet  filter_asset_id=value  filter_asset_type=value
 ```
 
 ### Parameters
@@ -77,6 +77,7 @@ Properties of the output are providing aggregated information from across all sy
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterAssetId** | **string** | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. 'BTC;ETH'). | [optional] [default to null]
+ **filterAssetType** | **string** | Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK. | [optional] [default to null]
 
 ### Return type
 

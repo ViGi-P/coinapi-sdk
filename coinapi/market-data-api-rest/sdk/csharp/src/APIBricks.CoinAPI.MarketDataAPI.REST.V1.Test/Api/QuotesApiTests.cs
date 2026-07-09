@@ -58,7 +58,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
         public async Task V1QuotesCurrentGetAsyncTest()
         {
             Client.Option<string> filterSymbolId = default!;
-            var response = await _instance.V1QuotesCurrentGetAsync(filterSymbolId);
+            Client.Option<string> filterExchangeId = default!;
+            var response = await _instance.V1QuotesCurrentGetAsync(filterSymbolId, filterExchangeId);
             var model = response.Ok();
             Assert.IsType<List<V1QuoteTrade>>(model);
         }
@@ -70,8 +71,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
         public async Task V1QuotesLatestGetAsyncTest()
         {
             Client.Option<string> filterSymbolId = default!;
+            Client.Option<string> filterExchangeId = default!;
             Client.Option<int> limit = default!;
-            var response = await _instance.V1QuotesLatestGetAsync(filterSymbolId, limit);
+            var response = await _instance.V1QuotesLatestGetAsync(filterSymbolId, filterExchangeId, limit);
             var model = response.Ok();
             Assert.IsType<List<V1Quote>>(model);
         }
