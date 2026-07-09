@@ -48,7 +48,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-07-08T06:04:35.7981508Z",
+  "time": "2026-07-09T06:05:56.0640780Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -59,7 +59,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-07-08T06:04:35.7981508Z",
+  "time": "2026-07-09T06:05:56.0640780Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -70,7 +70,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-07-08T06:04:35.7981508Z",
+  "time": "2026-07-09T06:05:56.0640780Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -81,7 +81,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-07-08T06:04:35.7981508Z",
+  "time": "2026-07-09T06:05:56.0640780Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1883,6 +1883,11 @@ paths:
         - name: filter_asset_id
           in: query
           description: 'Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).'
+          schema:
+            type: string
+        - name: filter_asset_type
+          in: query
+          description: 'Optional asset type filter. Allowed values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.'
           schema:
             type: string
       responses:
@@ -6517,6 +6522,11 @@ paths:
           description: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
           schema:
             type: string
+        - name: filter_exchange_id
+          in: query
+          description: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
+          schema:
+            type: string
       responses:
         '200':
           description: successful operation
@@ -6883,6 +6893,11 @@ paths:
         - name: filter_symbol_id
           in: query
           description: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
+          schema:
+            type: string
+        - name: filter_exchange_id
+          in: query
+          description: Comma or semicolon delimited exchange identifiers used to filter response. (optional)
           schema:
             type: string
         - name: limit
@@ -7660,6 +7675,10 @@ components:
           items:
             $ref: '#/components/schemas/v1.ChainNetworkAddress'
           description: ''
+          nullable: true
+        asset_type:
+          type: string
+          description: 'Asset type classification. Possible values: FIAT, STABLECOIN, CRYPTO, COMMODITY, STOCK.'
           nullable: true
         data_start:
           type: string
