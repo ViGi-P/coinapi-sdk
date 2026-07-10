@@ -57,7 +57,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Index ID</value>
         [JsonPropertyName("id")]
-        public string? Id { get { return this.IdOption; } set { this.IdOption = new(value); } }
+        public string? Id { get { return this.IdOption.Value; } set { this.IdOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

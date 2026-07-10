@@ -102,7 +102,7 @@ export class IndexInputDataApi {
      */
     public async v1IndexdefInputDataIndexDefinitionIdAllGet (indexDefinitionId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionInputData>;  }> {
         const localVarPath = this.basePath + '/v1/indexdef/input-data/{index_definition_id}/all'
-            .replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+            .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -182,7 +182,7 @@ export class IndexInputDataApi {
      */
     public async v1IndexdefInputDataIndexDefinitionIdGet (indexDefinitionId: string, time?: Date, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionSnapshotEntry>;  }> {
         const localVarPath = this.basePath + '/v1/indexdef/input-data/{index_definition_id}'
-            .replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+            .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

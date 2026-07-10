@@ -172,7 +172,7 @@ export class IndexesApi {
      */
     public async v1IndexesIndexDefinitionIdCurrentSnapshotGet (indexDefinitionId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionSnapshotEntry>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/currentSnapshot'
-            .replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+            .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -248,7 +248,7 @@ export class IndexesApi {
      */
     public async v1IndexesIndexDefinitionIdHistorySnapshotGet (indexDefinitionId: string, time?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionSnapshotEntry>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/historySnapshot'
-            .replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+            .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -327,7 +327,7 @@ export class IndexesApi {
      */
     public async v1IndexesIndexIdCurrentGet (indexId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ModelsIndexValue;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_id}/current'
-            .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+            .replace('{index_id}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -405,7 +405,7 @@ export class IndexesApi {
      */
     public async v1IndexesIndexIdHistoryGet (indexId: string, timeStart?: Date, timeEnd?: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexValue>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_id}/history'
-            .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+            .replace('{index_id}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -496,7 +496,7 @@ export class IndexesApi {
      */
     public async v1IndexesIndexIdTimeseriesGet (indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_id}/timeseries'
-            .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+            .replace('{index_id}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

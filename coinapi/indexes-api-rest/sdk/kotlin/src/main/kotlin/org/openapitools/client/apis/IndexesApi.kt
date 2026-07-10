@@ -264,7 +264,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (time != null) {
-                    put("time", listOf(parseDateToQueryString(time)))
+                    put("time", listOf(parseDateToQueryString<java.time.OffsetDateTime>(time)))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -424,10 +424,10 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (timeStart != null) {
-                    put("time_start", listOf(parseDateToQueryString(timeStart)))
+                    put("time_start", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeStart)))
                 }
                 if (timeEnd != null) {
-                    put("time_end", listOf(parseDateToQueryString(timeEnd)))
+                    put("time_end", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeEnd)))
                 }
                 if (limit != null) {
                     put("limit", listOf(limit.toString()))

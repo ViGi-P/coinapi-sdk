@@ -521,7 +521,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexes"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexes");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexes");
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
@@ -780,7 +780,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexes/{index_definition_id}/currentSnapshot"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexes/{index_definition_id}/currentSnapshot");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexes/{index_definition_id}/currentSnapshot");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_definition_id%7D", Uri.EscapeDataString(indexDefinitionId.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
@@ -1046,7 +1046,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexes/{index_definition_id}/historySnapshot"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexes/{index_definition_id}/historySnapshot");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexes/{index_definition_id}/historySnapshot");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_definition_id%7D", Uri.EscapeDataString(indexDefinitionId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -1313,7 +1313,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexes/{index_id}/current"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexes/{index_id}/current");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexes/{index_id}/current");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_id%7D", Uri.EscapeDataString(indexId.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
@@ -1591,7 +1591,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexes/{index_id}/history"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexes/{index_id}/history");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexes/{index_id}/history");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_id%7D", Uri.EscapeDataString(indexId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -1900,7 +1900,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexes/{index_id}/timeseries"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexes/{index_id}/timeseries");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexes/{index_id}/timeseries");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_id%7D", Uri.EscapeDataString(indexId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);

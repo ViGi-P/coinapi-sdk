@@ -285,7 +285,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexdef/multiasset"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexdef/multiasset");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexdef/multiasset");
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
@@ -544,7 +544,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/indexdef/multiasset/{index_id}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexdef/multiasset/{index_id}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/indexdef/multiasset/{index_id}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_id%7D", Uri.EscapeDataString(indexId.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();

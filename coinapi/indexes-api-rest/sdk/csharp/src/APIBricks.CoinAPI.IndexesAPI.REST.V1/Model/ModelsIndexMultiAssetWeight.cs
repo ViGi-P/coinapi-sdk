@@ -60,7 +60,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets IndexId
         /// </summary>
         [JsonPropertyName("indexId")]
-        public string? IndexId { get { return this.IndexIdOption; } set { this.IndexIdOption = new(value); } }
+        public string? IndexId { get { return this.IndexIdOption.Value; } set { this.IndexIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetId
@@ -73,7 +73,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets AssetId
         /// </summary>
         [JsonPropertyName("assetId")]
-        public string? AssetId { get { return this.AssetIdOption; } set { this.AssetIdOption = new(value); } }
+        public string? AssetId { get { return this.AssetIdOption.Value; } set { this.AssetIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Weight
@@ -86,7 +86,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets Weight
         /// </summary>
         [JsonPropertyName("weight")]
-        public double? Weight { get { return this.WeightOption; } set { this.WeightOption = new(value); } }
+        public double? Weight { get { return this.WeightOption.Value; } set { this.WeightOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

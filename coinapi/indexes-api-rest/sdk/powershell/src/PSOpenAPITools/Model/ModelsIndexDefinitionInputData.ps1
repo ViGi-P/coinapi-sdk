@@ -76,15 +76,15 @@ function Initialize-ModelsIndexDefinitionInputData {
 
 
         $PSO = [PSCustomObject]@{
-            "exchangeId" = ${ExchangeId}
-            "exchangeSymbolId" = ${ExchangeSymbolId}
-            "baseAssetId" = ${BaseAssetId}
-            "quoteAssetId" = ${QuoteAssetId}
-            "beginDate" = ${BeginDate}
-            "endDate" = ${EndDate}
-            "status" = ${Status}
-            "statusInfo" = ${StatusInfo}
-            "lastModificationTime" = ${LastModificationTime}
+            'exchangeId' = ${ExchangeId}
+            'exchangeSymbolId' = ${ExchangeSymbolId}
+            'baseAssetId' = ${BaseAssetId}
+            'quoteAssetId' = ${QuoteAssetId}
+            'beginDate' = ${BeginDate}
+            'endDate' = ${EndDate}
+            'status' = ${Status}
+            'statusInfo' = ${StatusInfo}
+            'lastModificationTime' = ${LastModificationTime}
         }
 
 
@@ -122,77 +122,77 @@ function ConvertFrom-JsonToModelsIndexDefinitionInputData {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in ModelsIndexDefinitionInputData
-        $AllProperties = ("exchangeId", "exchangeSymbolId", "baseAssetId", "quoteAssetId", "beginDate", "endDate", "status", "statusInfo", "lastModificationTime")
+        $AllProperties = ('exchangeId', 'exchangeSymbolId', 'baseAssetId', 'quoteAssetId', 'beginDate', 'endDate', 'status', 'statusInfo', 'lastModificationTime')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchangeId"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchangeId'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchangeId"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchangeId'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchangeSymbolId"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchangeSymbolId'))) { #optional property not found
             $ExchangeSymbolId = $null
         } else {
-            $ExchangeSymbolId = $JsonParameters.PSobject.Properties["exchangeSymbolId"].value
+            $ExchangeSymbolId = $JsonParameters.PSobject.Properties['exchangeSymbolId'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "baseAssetId"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'baseAssetId'))) { #optional property not found
             $BaseAssetId = $null
         } else {
-            $BaseAssetId = $JsonParameters.PSobject.Properties["baseAssetId"].value
+            $BaseAssetId = $JsonParameters.PSobject.Properties['baseAssetId'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "quoteAssetId"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'quoteAssetId'))) { #optional property not found
             $QuoteAssetId = $null
         } else {
-            $QuoteAssetId = $JsonParameters.PSobject.Properties["quoteAssetId"].value
+            $QuoteAssetId = $JsonParameters.PSobject.Properties['quoteAssetId'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "beginDate"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'beginDate'))) { #optional property not found
             $BeginDate = $null
         } else {
-            $BeginDate = $JsonParameters.PSobject.Properties["beginDate"].value
+            $BeginDate = $JsonParameters.PSobject.Properties['beginDate'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "endDate"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'endDate'))) { #optional property not found
             $EndDate = $null
         } else {
-            $EndDate = $JsonParameters.PSobject.Properties["endDate"].value
+            $EndDate = $JsonParameters.PSobject.Properties['endDate'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "status"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'status'))) { #optional property not found
             $Status = $null
         } else {
-            $Status = $JsonParameters.PSobject.Properties["status"].value
+            $Status = $JsonParameters.PSobject.Properties['status'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "statusInfo"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'statusInfo'))) { #optional property not found
             $StatusInfo = $null
         } else {
-            $StatusInfo = $JsonParameters.PSobject.Properties["statusInfo"].value
+            $StatusInfo = $JsonParameters.PSobject.Properties['statusInfo'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "lastModificationTime"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'lastModificationTime'))) { #optional property not found
             $LastModificationTime = $null
         } else {
-            $LastModificationTime = $JsonParameters.PSobject.Properties["lastModificationTime"].value
+            $LastModificationTime = $JsonParameters.PSobject.Properties['lastModificationTime'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "exchangeId" = ${ExchangeId}
-            "exchangeSymbolId" = ${ExchangeSymbolId}
-            "baseAssetId" = ${BaseAssetId}
-            "quoteAssetId" = ${QuoteAssetId}
-            "beginDate" = ${BeginDate}
-            "endDate" = ${EndDate}
-            "status" = ${Status}
-            "statusInfo" = ${StatusInfo}
-            "lastModificationTime" = ${LastModificationTime}
+            'exchangeId' = ${ExchangeId}
+            'exchangeSymbolId' = ${ExchangeSymbolId}
+            'baseAssetId' = ${BaseAssetId}
+            'quoteAssetId' = ${QuoteAssetId}
+            'beginDate' = ${BeginDate}
+            'endDate' = ${EndDate}
+            'status' = ${Status}
+            'statusInfo' = ${StatusInfo}
+            'lastModificationTime' = ${LastModificationTime}
         }
 
         return $PSO

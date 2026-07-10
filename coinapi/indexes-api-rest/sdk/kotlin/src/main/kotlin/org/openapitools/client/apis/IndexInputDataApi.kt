@@ -204,7 +204,7 @@ open class IndexInputDataApi(basePath: kotlin.String = defaultBasePath, client: 
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (time != null) {
-                    put("time", listOf(parseDateToQueryString(time)))
+                    put("time", listOf(parseDateToQueryString<java.time.OffsetDateTime>(time)))
                 }
                 if (enabledOnly != null) {
                     put("enabled_only", listOf(enabledOnly.toString()))

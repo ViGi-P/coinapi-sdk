@@ -310,7 +310,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/api/metadata/exchanges/{exchange_id}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/api/metadata/exchanges/{exchange_id}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/api/metadata/exchanges/{exchange_id}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
@@ -570,7 +570,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/api/metadata/exchanges"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/api/metadata/exchanges");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/api/metadata/exchanges");
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
 

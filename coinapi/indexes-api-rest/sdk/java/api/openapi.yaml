@@ -1078,14 +1078,14 @@ components:
       additionalProperties: false
       example:
         exchangeId: exchangeId
-        baseAssetId: baseAssetId
-        beginDate: 2000-01-23T04:56:07.000+00:00
-        statusInfo: statusInfo
         exchangeSymbolId: exchangeSymbolId
-        endDate: 2000-01-23T04:56:07.000+00:00
-        lastModificationTime: 2000-01-23T04:56:07.000+00:00
+        baseAssetId: baseAssetId
         quoteAssetId: quoteAssetId
+        beginDate: 2000-01-23T04:56:07.000+00:00
+        endDate: 2000-01-23T04:56:07.000+00:00
         status: status
+        statusInfo: statusInfo
+        lastModificationTime: 2000-01-23T04:56:07.000+00:00
       properties:
         exchangeId:
           nullable: true
@@ -1121,8 +1121,8 @@ components:
       additionalProperties: false
       example:
         index_id: index_id
-        value: 0.8008281904610115
         timestamp: 2000-01-23T04:56:07.000+00:00
+        value: 0.8008281904610115
       properties:
         index_id:
           nullable: true
@@ -1148,8 +1148,8 @@ components:
     Models.IndexMultiAssetWeight:
       additionalProperties: false
       example:
-        assetId: assetId
         indexId: indexId
+        assetId: assetId
         weight: 0.8008281904610115
       properties:
         indexId:
@@ -1166,14 +1166,14 @@ components:
       additionalProperties: false
       description: Represents a timeseries item with value information.
       example:
-        time_period_end: 2000-01-23T04:56:07.000+00:00
-        value_open: 0.8008281904610115
-        time_open: 2000-01-23T04:56:07.000+00:00
-        value_close: 5.962133916683182
-        value_high: 6.027456183070403
-        time_close: 2000-01-23T04:56:07.000+00:00
-        value_low: 1.4658129805029452
         time_period_start: 2000-01-23T04:56:07.000+00:00
+        time_period_end: 2000-01-23T04:56:07.000+00:00
+        time_open: 2000-01-23T04:56:07.000+00:00
+        time_close: 2000-01-23T04:56:07.000+00:00
+        value_open: 0.8008281904610115
+        value_high: 6.027456183070403
+        value_low: 1.4658129805029452
+        value_close: 5.962133916683182
         value_count: 5
       properties:
         time_period_start:
@@ -1222,13 +1222,13 @@ components:
     Models.IndexValue:
       additionalProperties: false
       example:
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        value: 0.8008281904610115
         composition:
         - component_id: component_id
           component_value: 6.027456183070403
         - component_id: component_id
           component_value: 6.027456183070403
-        value: 0.8008281904610115
-        timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         timestamp:
           format: date-time
@@ -1259,12 +1259,12 @@ components:
       additionalProperties: false
       description: Represents a timeseries period used in exchange rate data.
       example:
-        unit_name: unit_name
-        length_months: 6
-        length_seconds: 0
         period_id: period_id
-        display_name: display_name
+        length_seconds: 0
+        length_months: 6
         unit_count: 1
+        unit_name: unit_name
+        display_name: display_name
       properties:
         period_id:
           description: Gets or sets the period ID.

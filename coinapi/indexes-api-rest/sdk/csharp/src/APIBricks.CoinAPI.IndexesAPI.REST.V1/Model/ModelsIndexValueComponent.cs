@@ -58,7 +58,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets ComponentId
         /// </summary>
         [JsonPropertyName("component_id")]
-        public string? ComponentId { get { return this.ComponentIdOption; } set { this.ComponentIdOption = new(value); } }
+        public string? ComponentId { get { return this.ComponentIdOption.Value; } set { this.ComponentIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ComponentValue
@@ -71,7 +71,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets ComponentValue
         /// </summary>
         [JsonPropertyName("component_value")]
-        public double? ComponentValue { get { return this.ComponentValueOption; } set { this.ComponentValueOption = new(value); } }
+        public double? ComponentValue { get { return this.ComponentValueOption.Value; } set { this.ComponentValueOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

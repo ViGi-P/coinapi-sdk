@@ -46,9 +46,9 @@ function Initialize-ModelsExchange {
 
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "website" = ${Website}
-            "name" = ${Name}
+            'exchange_id' = ${ExchangeId}
+            'website' = ${Website}
+            'name' = ${Name}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToModelsExchange {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in ModelsExchange
-        $AllProperties = ("exchange_id", "website", "name")
+        $AllProperties = ('exchange_id', 'website', 'name')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "website"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'website'))) { #optional property not found
             $Website = $null
         } else {
-            $Website = $JsonParameters.PSobject.Properties["website"].value
+            $Website = $JsonParameters.PSobject.Properties['website'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'name'))) { #optional property not found
             $Name = $null
         } else {
-            $Name = $JsonParameters.PSobject.Properties["name"].value
+            $Name = $JsonParameters.PSobject.Properties['name'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "website" = ${Website}
-            "name" = ${Name}
+            'exchange_id' = ${ExchangeId}
+            'website' = ${Website}
+            'name' = ${Name}
         }
 
         return $PSO

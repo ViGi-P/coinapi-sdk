@@ -72,7 +72,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets ExchangeId
         /// </summary>
         [JsonPropertyName("exchangeId")]
-        public string? ExchangeId { get { return this.ExchangeIdOption; } set { this.ExchangeIdOption = new(value); } }
+        public string? ExchangeId { get { return this.ExchangeIdOption.Value; } set { this.ExchangeIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExchangeSymbolId
@@ -85,7 +85,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets ExchangeSymbolId
         /// </summary>
         [JsonPropertyName("exchangeSymbolId")]
-        public string? ExchangeSymbolId { get { return this.ExchangeSymbolIdOption; } set { this.ExchangeSymbolIdOption = new(value); } }
+        public string? ExchangeSymbolId { get { return this.ExchangeSymbolIdOption.Value; } set { this.ExchangeSymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of BaseAssetId
@@ -98,7 +98,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets BaseAssetId
         /// </summary>
         [JsonPropertyName("baseAssetId")]
-        public string? BaseAssetId { get { return this.BaseAssetIdOption; } set { this.BaseAssetIdOption = new(value); } }
+        public string? BaseAssetId { get { return this.BaseAssetIdOption.Value; } set { this.BaseAssetIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of QuoteAssetId
@@ -111,7 +111,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets QuoteAssetId
         /// </summary>
         [JsonPropertyName("quoteAssetId")]
-        public string? QuoteAssetId { get { return this.QuoteAssetIdOption; } set { this.QuoteAssetIdOption = new(value); } }
+        public string? QuoteAssetId { get { return this.QuoteAssetIdOption.Value; } set { this.QuoteAssetIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of BeginDate
@@ -124,7 +124,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets BeginDate
         /// </summary>
         [JsonPropertyName("beginDate")]
-        public DateTime? BeginDate { get { return this.BeginDateOption; } set { this.BeginDateOption = new(value); } }
+        public DateTime? BeginDate { get { return this.BeginDateOption.Value; } set { this.BeginDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of EndDate
@@ -137,7 +137,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets EndDate
         /// </summary>
         [JsonPropertyName("endDate")]
-        public DateTime? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTime? EndDate { get { return this.EndDateOption.Value; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Status
@@ -150,7 +150,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets Status
         /// </summary>
         [JsonPropertyName("status")]
-        public string? Status { get { return this.StatusOption; } set { this.StatusOption = new(value); } }
+        public string? Status { get { return this.StatusOption.Value; } set { this.StatusOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of StatusInfo
@@ -163,7 +163,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets StatusInfo
         /// </summary>
         [JsonPropertyName("statusInfo")]
-        public string? StatusInfo { get { return this.StatusInfoOption; } set { this.StatusInfoOption = new(value); } }
+        public string? StatusInfo { get { return this.StatusInfoOption.Value; } set { this.StatusInfoOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LastModificationTime
@@ -176,7 +176,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets LastModificationTime
         /// </summary>
         [JsonPropertyName("lastModificationTime")]
-        public DateTime? LastModificationTime { get { return this.LastModificationTimeOption; } set { this.LastModificationTimeOption = new(value); } }
+        public DateTime? LastModificationTime { get { return this.LastModificationTimeOption.Value; } set { this.LastModificationTimeOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

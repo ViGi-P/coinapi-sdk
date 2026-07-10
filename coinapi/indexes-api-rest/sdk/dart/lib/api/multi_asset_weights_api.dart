@@ -19,7 +19,7 @@ class MultiAssetWeightsApi {
   /// Get all multi-asset weights
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> v1IndexdefMultiassetGetWithHttpInfo() async {
+  Future<Response> v1IndexdefMultiassetGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexdef/multiasset';
 
@@ -41,12 +41,13 @@ class MultiAssetWeightsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
   /// Get all multi-asset weights
-  Future<List<ModelsIndexMultiAssetWeight>?> v1IndexdefMultiassetGet() async {
-    final response = await v1IndexdefMultiassetGetWithHttpInfo();
+  Future<List<ModelsIndexMultiAssetWeight>?> v1IndexdefMultiassetGet({ Future<void>? abortTrigger, }) async {
+    final response = await v1IndexdefMultiassetGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -70,7 +71,7 @@ class MultiAssetWeightsApi {
   /// Parameters:
   ///
   /// * [String] indexId (required):
-  Future<Response> v1IndexdefMultiassetIndexIdGetWithHttpInfo(String indexId,) async {
+  Future<Response> v1IndexdefMultiassetIndexIdGetWithHttpInfo(String indexId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexdef/multiasset/{index_id}'
       .replaceAll('{index_id}', indexId);
@@ -93,6 +94,7 @@ class MultiAssetWeightsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -101,8 +103,8 @@ class MultiAssetWeightsApi {
   /// Parameters:
   ///
   /// * [String] indexId (required):
-  Future<List<ModelsIndexMultiAssetWeight>?> v1IndexdefMultiassetIndexIdGet(String indexId,) async {
-    final response = await v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId,);
+  Future<List<ModelsIndexMultiAssetWeight>?> v1IndexdefMultiassetIndexIdGet(String indexId, { Future<void>? abortTrigger, }) async {
+    final response = await v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

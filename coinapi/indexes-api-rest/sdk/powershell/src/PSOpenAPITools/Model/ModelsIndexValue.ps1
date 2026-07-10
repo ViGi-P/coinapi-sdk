@@ -46,9 +46,9 @@ function Initialize-ModelsIndexValue {
 
 
         $PSO = [PSCustomObject]@{
-            "timestamp" = ${Timestamp}
-            "value" = ${Value}
-            "composition" = ${Composition}
+            'timestamp' = ${Timestamp}
+            'value' = ${Value}
+            'composition' = ${Composition}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToModelsIndexValue {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in ModelsIndexValue
-        $AllProperties = ("timestamp", "value", "composition")
+        $AllProperties = ('timestamp', 'value', 'composition')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "timestamp"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'timestamp'))) { #optional property not found
             $Timestamp = $null
         } else {
-            $Timestamp = $JsonParameters.PSobject.Properties["timestamp"].value
+            $Timestamp = $JsonParameters.PSobject.Properties['timestamp'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value'))) { #optional property not found
             $Value = $null
         } else {
-            $Value = $JsonParameters.PSobject.Properties["value"].value
+            $Value = $JsonParameters.PSobject.Properties['value'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "composition"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'composition'))) { #optional property not found
             $Composition = $null
         } else {
-            $Composition = $JsonParameters.PSobject.Properties["composition"].value
+            $Composition = $JsonParameters.PSobject.Properties['composition'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "timestamp" = ${Timestamp}
-            "value" = ${Value}
-            "composition" = ${Composition}
+            'timestamp' = ${Timestamp}
+            'value' = ${Value}
+            'composition' = ${Composition}
         }
 
         return $PSO

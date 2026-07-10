@@ -76,15 +76,15 @@ function Initialize-ModelsIndexTimeseriesItem {
 
 
         $PSO = [PSCustomObject]@{
-            "time_period_start" = ${TimePeriodStart}
-            "time_period_end" = ${TimePeriodEnd}
-            "time_open" = ${TimeOpen}
-            "time_close" = ${TimeClose}
-            "value_open" = ${ValueOpen}
-            "value_high" = ${ValueHigh}
-            "value_low" = ${ValueLow}
-            "value_close" = ${ValueClose}
-            "value_count" = ${ValueCount}
+            'time_period_start' = ${TimePeriodStart}
+            'time_period_end' = ${TimePeriodEnd}
+            'time_open' = ${TimeOpen}
+            'time_close' = ${TimeClose}
+            'value_open' = ${ValueOpen}
+            'value_high' = ${ValueHigh}
+            'value_low' = ${ValueLow}
+            'value_close' = ${ValueClose}
+            'value_count' = ${ValueCount}
         }
 
 
@@ -122,77 +122,77 @@ function ConvertFrom-JsonToModelsIndexTimeseriesItem {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in ModelsIndexTimeseriesItem
-        $AllProperties = ("time_period_start", "time_period_end", "time_open", "time_close", "value_open", "value_high", "value_low", "value_close", "value_count")
+        $AllProperties = ('time_period_start', 'time_period_end', 'time_open', 'time_close', 'value_open', 'value_high', 'value_low', 'value_close', 'value_count')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_period_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_period_start'))) { #optional property not found
             $TimePeriodStart = $null
         } else {
-            $TimePeriodStart = $JsonParameters.PSobject.Properties["time_period_start"].value
+            $TimePeriodStart = $JsonParameters.PSobject.Properties['time_period_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_period_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_period_end'))) { #optional property not found
             $TimePeriodEnd = $null
         } else {
-            $TimePeriodEnd = $JsonParameters.PSobject.Properties["time_period_end"].value
+            $TimePeriodEnd = $JsonParameters.PSobject.Properties['time_period_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_open"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_open'))) { #optional property not found
             $TimeOpen = $null
         } else {
-            $TimeOpen = $JsonParameters.PSobject.Properties["time_open"].value
+            $TimeOpen = $JsonParameters.PSobject.Properties['time_open'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_close"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_close'))) { #optional property not found
             $TimeClose = $null
         } else {
-            $TimeClose = $JsonParameters.PSobject.Properties["time_close"].value
+            $TimeClose = $JsonParameters.PSobject.Properties['time_close'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_open"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_open'))) { #optional property not found
             $ValueOpen = $null
         } else {
-            $ValueOpen = $JsonParameters.PSobject.Properties["value_open"].value
+            $ValueOpen = $JsonParameters.PSobject.Properties['value_open'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_high"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_high'))) { #optional property not found
             $ValueHigh = $null
         } else {
-            $ValueHigh = $JsonParameters.PSobject.Properties["value_high"].value
+            $ValueHigh = $JsonParameters.PSobject.Properties['value_high'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_low"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_low'))) { #optional property not found
             $ValueLow = $null
         } else {
-            $ValueLow = $JsonParameters.PSobject.Properties["value_low"].value
+            $ValueLow = $JsonParameters.PSobject.Properties['value_low'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_close"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_close'))) { #optional property not found
             $ValueClose = $null
         } else {
-            $ValueClose = $JsonParameters.PSobject.Properties["value_close"].value
+            $ValueClose = $JsonParameters.PSobject.Properties['value_close'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_count"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_count'))) { #optional property not found
             $ValueCount = $null
         } else {
-            $ValueCount = $JsonParameters.PSobject.Properties["value_count"].value
+            $ValueCount = $JsonParameters.PSobject.Properties['value_count'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "time_period_start" = ${TimePeriodStart}
-            "time_period_end" = ${TimePeriodEnd}
-            "time_open" = ${TimeOpen}
-            "time_close" = ${TimeClose}
-            "value_open" = ${ValueOpen}
-            "value_high" = ${ValueHigh}
-            "value_low" = ${ValueLow}
-            "value_close" = ${ValueClose}
-            "value_count" = ${ValueCount}
+            'time_period_start' = ${TimePeriodStart}
+            'time_period_end' = ${TimePeriodEnd}
+            'time_open' = ${TimeOpen}
+            'time_close' = ${TimeClose}
+            'value_open' = ${ValueOpen}
+            'value_high' = ${ValueHigh}
+            'value_low' = ${ValueLow}
+            'value_close' = ${ValueClose}
+            'value_count' = ${ValueCount}
         }
 
         return $PSO
