@@ -39,32 +39,32 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "exchange_id": "KALSHI",
-    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
-    "website": "https://kalshi.com"
-  },
-  {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  {
-    "exchange_id": "MYRIAD",
-    "market_name_institution_description": "A decentralized prediction markets platform.",
-    "website": "https://myriad.markets"
-  },
-  {
-    "exchange_id": "MANIFOLD",
-    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
-    "website": "https://manifold.markets"
-  },
-  {
-    "exchange_id": "HYPERLIQUIDOUTCOME",
-    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
-    "website": "https://hyperliquid.xyz"
-  }
-]
+                      {
+                        "exchange_id": "KALSHI",
+                        "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+                        "website": "https://kalshi.com"
+                      },
+                      {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      {
+                        "exchange_id": "MYRIAD",
+                        "market_name_institution_description": "A decentralized prediction markets platform.",
+                        "website": "https://myriad.markets"
+                      },
+                      {
+                        "exchange_id": "MANIFOLD",
+                        "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+                        "website": "https://manifold.markets"
+                      },
+                      {
+                        "exchange_id": "HYPERLIQUIDOUTCOME",
+                        "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+                        "website": "https://hyperliquid.xyz"
+                      }
+                    ]
                   }
                 }
               },
@@ -78,32 +78,32 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "exchange_id": "KALSHI",
-    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
-    "website": "https://kalshi.com"
-  },
-  {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  {
-    "exchange_id": "MYRIAD",
-    "market_name_institution_description": "A decentralized prediction markets platform.",
-    "website": "https://myriad.markets"
-  },
-  {
-    "exchange_id": "MANIFOLD",
-    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
-    "website": "https://manifold.markets"
-  },
-  {
-    "exchange_id": "HYPERLIQUIDOUTCOME",
-    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
-    "website": "https://hyperliquid.xyz"
-  }
-]
+                      {
+                        "exchange_id": "KALSHI",
+                        "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+                        "website": "https://kalshi.com"
+                      },
+                      {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      {
+                        "exchange_id": "MYRIAD",
+                        "market_name_institution_description": "A decentralized prediction markets platform.",
+                        "website": "https://myriad.markets"
+                      },
+                      {
+                        "exchange_id": "MANIFOLD",
+                        "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+                        "website": "https://manifold.markets"
+                      },
+                      {
+                        "exchange_id": "HYPERLIQUIDOUTCOME",
+                        "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+                        "website": "https://hyperliquid.xyz"
+                      }
+                    ]
                   }
                 }
               },
@@ -117,32 +117,32 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "exchange_id": "KALSHI",
-    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
-    "website": "https://kalshi.com"
-  },
-  {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  {
-    "exchange_id": "MYRIAD",
-    "market_name_institution_description": "A decentralized prediction markets platform.",
-    "website": "https://myriad.markets"
-  },
-  {
-    "exchange_id": "MANIFOLD",
-    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
-    "website": "https://manifold.markets"
-  },
-  {
-    "exchange_id": "HYPERLIQUIDOUTCOME",
-    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
-    "website": "https://hyperliquid.xyz"
-  }
-]
+                      {
+                        "exchange_id": "KALSHI",
+                        "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+                        "website": "https://kalshi.com"
+                      },
+                      {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      {
+                        "exchange_id": "MYRIAD",
+                        "market_name_institution_description": "A decentralized prediction markets platform.",
+                        "website": "https://myriad.markets"
+                      },
+                      {
+                        "exchange_id": "MANIFOLD",
+                        "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+                        "website": "https://manifold.markets"
+                      },
+                      {
+                        "exchange_id": "HYPERLIQUIDOUTCOME",
+                        "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+                        "website": "https://hyperliquid.xyz"
+                      }
+                    ]
                   }
                 }
               },
@@ -156,32 +156,32 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "exchange_id": "KALSHI",
-    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
-    "website": "https://kalshi.com"
-  },
-  {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  {
-    "exchange_id": "MYRIAD",
-    "market_name_institution_description": "A decentralized prediction markets platform.",
-    "website": "https://myriad.markets"
-  },
-  {
-    "exchange_id": "MANIFOLD",
-    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
-    "website": "https://manifold.markets"
-  },
-  {
-    "exchange_id": "HYPERLIQUIDOUTCOME",
-    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
-    "website": "https://hyperliquid.xyz"
-  }
-]
+                      {
+                        "exchange_id": "KALSHI",
+                        "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+                        "website": "https://kalshi.com"
+                      },
+                      {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      {
+                        "exchange_id": "MYRIAD",
+                        "market_name_institution_description": "A decentralized prediction markets platform.",
+                        "website": "https://myriad.markets"
+                      },
+                      {
+                        "exchange_id": "MANIFOLD",
+                        "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+                        "website": "https://manifold.markets"
+                      },
+                      {
+                        "exchange_id": "HYPERLIQUIDOUTCOME",
+                        "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+                        "website": "https://hyperliquid.xyz"
+                      }
+                    ]
                   }
                 }
               }
@@ -218,10 +218,10 @@
                 "examples": {
                   "Example exchange": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_name_institution_description": "The world's largest prediction market.",
-  "website": "https://polymarket.com"
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_name_institution_description": "The world's largest prediction market.",
+                      "website": "https://polymarket.com"
+                    }
                   }
                 }
               },
@@ -232,10 +232,10 @@
                 "examples": {
                   "Example exchange": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_name_institution_description": "The world's largest prediction market.",
-  "website": "https://polymarket.com"
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_name_institution_description": "The world's largest prediction market.",
+                      "website": "https://polymarket.com"
+                    }
                   }
                 }
               },
@@ -246,10 +246,10 @@
                 "examples": {
                   "Example exchange": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_name_institution_description": "The world's largest prediction market.",
-  "website": "https://polymarket.com"
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_name_institution_description": "The world's largest prediction market.",
+                      "website": "https://polymarket.com"
+                    }
                   }
                 }
               },
@@ -260,10 +260,10 @@
                 "examples": {
                   "Example exchange": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_name_institution_description": "The world's largest prediction market.",
-  "website": "https://polymarket.com"
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_name_institution_description": "The world's largest prediction market.",
+                      "website": "https://polymarket.com"
+                    }
                   }
                 }
               }
@@ -646,26 +646,26 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "description": "Resolves based on official reporting by the Trump Administration.",
-    "outcome_name": "Yes",
-    "price": 0.12,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  },
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "outcome_name": "No",
-    "price": 0.88,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  }
-]
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "description": "Resolves based on official reporting by the Trump Administration.",
+                        "outcome_name": "Yes",
+                        "price": 0.12,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      },
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "outcome_name": "No",
+                        "price": 0.88,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      }
+                    ]
                   }
                 }
               },
@@ -676,26 +676,26 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "description": "Resolves based on official reporting by the Trump Administration.",
-    "outcome_name": "Yes",
-    "price": 0.12,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  },
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "outcome_name": "No",
-    "price": 0.88,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  }
-]
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "description": "Resolves based on official reporting by the Trump Administration.",
+                        "outcome_name": "Yes",
+                        "price": 0.12,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      },
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "outcome_name": "No",
+                        "price": 0.88,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      }
+                    ]
                   }
                 }
               },
@@ -706,26 +706,26 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "description": "Resolves based on official reporting by the Trump Administration.",
-    "outcome_name": "Yes",
-    "price": 0.12,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  },
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "outcome_name": "No",
-    "price": 0.88,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  }
-]
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "description": "Resolves based on official reporting by the Trump Administration.",
+                        "outcome_name": "Yes",
+                        "price": 0.12,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      },
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "outcome_name": "No",
+                        "price": 0.88,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      }
+                    ]
                   }
                 }
               },
@@ -736,26 +736,26 @@
                 "examples": {
                   "Example list": {
                     "value": [
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "description": "Resolves based on official reporting by the Trump Administration.",
-    "outcome_name": "Yes",
-    "price": 0.12,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  },
-  {
-    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-    "outcome_name": "No",
-    "price": 0.88,
-    "status": "Open",
-    "exchange_id": "POLYMARKET",
-    "outcome_type": "Binary"
-  }
-]
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "description": "Resolves based on official reporting by the Trump Administration.",
+                        "outcome_name": "Yes",
+                        "price": 0.12,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      },
+                      {
+                        "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                        "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                        "outcome_name": "No",
+                        "price": 0.88,
+                        "status": "Open",
+                        "exchange_id": "POLYMARKET",
+                        "outcome_type": "Binary"
+                      }
+                    ]
                   }
                 }
               }
@@ -822,12 +822,12 @@
                 "examples": {
                   "Example active market IDs": {
                     "value": [
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
-  "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
-]
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
+                      "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
+                    ]
                   }
                 }
               },
@@ -841,12 +841,12 @@
                 "examples": {
                   "Example active market IDs": {
                     "value": [
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
-  "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
-]
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
+                      "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
+                    ]
                   }
                 }
               },
@@ -860,12 +860,12 @@
                 "examples": {
                   "Example active market IDs": {
                     "value": [
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
-  "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
-]
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
+                      "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
+                    ]
                   }
                 }
               },
@@ -879,12 +879,12 @@
                 "examples": {
                   "Example active market IDs": {
                     "value": [
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
-  "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
-  "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
-]
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_YES",
+                      "NFL-PIT-CAR-2025-08-21-SPREAD-AWAY-5PT5_NO",
+                      "CRYPTO-BTC-PRICE-ABOVE-100K-BY-EOY-2025_YES"
+                    ]
                   }
                 }
               }
@@ -936,24 +936,24 @@
                 "examples": {
                   "Example market": {
                     "value": {
-  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-  "description": "Resolves based on official reporting by the Trump Administration.",
-  "outcome_name": "Yes",
-  "price": 0.1234,
-  "status": "Open",
-  "exchange": {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  "exchange_id": "POLYMARKET",
-  "outcome_type": "Binary",
-  "mechanism": "CPMM",
-  "source_specific_data": {
-    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
-  }
-}
+                      "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                      "description": "Resolves based on official reporting by the Trump Administration.",
+                      "outcome_name": "Yes",
+                      "price": 0.1234,
+                      "status": "Open",
+                      "exchange": {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      "exchange_id": "POLYMARKET",
+                      "outcome_type": "Binary",
+                      "mechanism": "CPMM",
+                      "source_specific_data": {
+                        "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+                      }
+                    }
                   }
                 }
               },
@@ -964,24 +964,24 @@
                 "examples": {
                   "Example market": {
                     "value": {
-  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-  "description": "Resolves based on official reporting by the Trump Administration.",
-  "outcome_name": "Yes",
-  "price": 0.1234,
-  "status": "Open",
-  "exchange": {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  "exchange_id": "POLYMARKET",
-  "outcome_type": "Binary",
-  "mechanism": "CPMM",
-  "source_specific_data": {
-    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
-  }
-}
+                      "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                      "description": "Resolves based on official reporting by the Trump Administration.",
+                      "outcome_name": "Yes",
+                      "price": 0.1234,
+                      "status": "Open",
+                      "exchange": {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      "exchange_id": "POLYMARKET",
+                      "outcome_type": "Binary",
+                      "mechanism": "CPMM",
+                      "source_specific_data": {
+                        "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+                      }
+                    }
                   }
                 }
               },
@@ -992,24 +992,24 @@
                 "examples": {
                   "Example market": {
                     "value": {
-  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-  "description": "Resolves based on official reporting by the Trump Administration.",
-  "outcome_name": "Yes",
-  "price": 0.1234,
-  "status": "Open",
-  "exchange": {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  "exchange_id": "POLYMARKET",
-  "outcome_type": "Binary",
-  "mechanism": "CPMM",
-  "source_specific_data": {
-    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
-  }
-}
+                      "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                      "description": "Resolves based on official reporting by the Trump Administration.",
+                      "outcome_name": "Yes",
+                      "price": 0.1234,
+                      "status": "Open",
+                      "exchange": {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      "exchange_id": "POLYMARKET",
+                      "outcome_type": "Binary",
+                      "mechanism": "CPMM",
+                      "source_specific_data": {
+                        "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+                      }
+                    }
                   }
                 }
               },
@@ -1020,24 +1020,24 @@
                 "examples": {
                   "Example market": {
                     "value": {
-  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
-  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
-  "description": "Resolves based on official reporting by the Trump Administration.",
-  "outcome_name": "Yes",
-  "price": 0.1234,
-  "status": "Open",
-  "exchange": {
-    "exchange_id": "POLYMARKET",
-    "market_name_institution_description": "The world's largest prediction market.",
-    "website": "https://polymarket.com"
-  },
-  "exchange_id": "POLYMARKET",
-  "outcome_type": "Binary",
-  "mechanism": "CPMM",
-  "source_specific_data": {
-    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
-  }
-}
+                      "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+                      "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+                      "description": "Resolves based on official reporting by the Trump Administration.",
+                      "outcome_name": "Yes",
+                      "price": 0.1234,
+                      "status": "Open",
+                      "exchange": {
+                        "exchange_id": "POLYMARKET",
+                        "market_name_institution_description": "The world's largest prediction market.",
+                        "website": "https://polymarket.com"
+                      },
+                      "exchange_id": "POLYMARKET",
+                      "outcome_type": "Binary",
+                      "mechanism": "CPMM",
+                      "source_specific_data": {
+                        "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+                      }
+                    }
                   }
                 }
               }
@@ -1070,31 +1070,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               },
@@ -1108,31 +1108,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               },
@@ -1146,31 +1146,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               },
@@ -1184,31 +1184,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               }
@@ -1538,13 +1538,13 @@
                 "examples": {
                   "Example orderbook": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_id": "market_yes",
-  "time_exchange": "0001-01-01T00:00:00.0000000Z",
-  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
-  "asks": [],
-  "bids": []
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_id": "market_yes",
+                      "time_exchange": "0001-01-01T00:00:00.0000000Z",
+                      "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+                      "asks": [ ],
+                      "bids": [ ]
+                    }
                   }
                 }
               },
@@ -1555,13 +1555,13 @@
                 "examples": {
                   "Example orderbook": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_id": "market_yes",
-  "time_exchange": "0001-01-01T00:00:00.0000000Z",
-  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
-  "asks": [],
-  "bids": []
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_id": "market_yes",
+                      "time_exchange": "0001-01-01T00:00:00.0000000Z",
+                      "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+                      "asks": [ ],
+                      "bids": [ ]
+                    }
                   }
                 }
               },
@@ -1572,13 +1572,13 @@
                 "examples": {
                   "Example orderbook": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_id": "market_yes",
-  "time_exchange": "0001-01-01T00:00:00.0000000Z",
-  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
-  "asks": [],
-  "bids": []
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_id": "market_yes",
+                      "time_exchange": "0001-01-01T00:00:00.0000000Z",
+                      "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+                      "asks": [ ],
+                      "bids": [ ]
+                    }
                   }
                 }
               },
@@ -1589,13 +1589,13 @@
                 "examples": {
                   "Example orderbook": {
                     "value": {
-  "exchange_id": "POLYMARKET",
-  "market_id": "market_yes",
-  "time_exchange": "0001-01-01T00:00:00.0000000Z",
-  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
-  "asks": [],
-  "bids": []
-}
+                      "exchange_id": "POLYMARKET",
+                      "market_id": "market_yes",
+                      "time_exchange": "0001-01-01T00:00:00.0000000Z",
+                      "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+                      "asks": [ ],
+                      "bids": [ ]
+                    }
                   }
                 }
               }
