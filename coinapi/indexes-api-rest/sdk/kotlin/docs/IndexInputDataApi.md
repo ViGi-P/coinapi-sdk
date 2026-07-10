@@ -49,8 +49,14 @@ try {
 Configure APIKey:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure JWT:
-    ApiClient.accessToken = ""
+Configure JWT statically:
+```kotlin
+ApiClient.accessToken = ""
+```
+Configure JWT dynamically:
+```kotlin
+apiInstance.accessTokenProvider = { "" }
+```
 
 ### HTTP request headers
 
@@ -108,8 +114,14 @@ try {
 Configure APIKey:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure JWT:
-    ApiClient.accessToken = ""
+Configure JWT statically:
+```kotlin
+ApiClient.accessToken = ""
+```
+Configure JWT dynamically:
+```kotlin
+apiInstance.accessTokenProvider = { "" }
+```
 
 ### HTTP request headers
 

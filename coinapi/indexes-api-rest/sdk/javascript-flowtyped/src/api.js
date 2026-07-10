@@ -385,7 +385,7 @@ export const IndexInputDataApiFetchParamCreator = function (configuration?: Conf
                 throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdAllGet.');
             }
             const localVarPath = `/v1/indexdef/input-data/{index_definition_id}/all`
-                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
+                .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -422,7 +422,7 @@ export const IndexInputDataApiFetchParamCreator = function (configuration?: Conf
                 throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdGet.');
             }
             const localVarPath = `/v1/indexdef/input-data/{index_definition_id}`
-                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
+                .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -567,7 +567,7 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
                 throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexesIndexDefinitionIdCurrentSnapshotGet.');
             }
             const localVarPath = `/v1/indexes/{index_definition_id}/currentSnapshot`
-                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
+                .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -604,7 +604,7 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
                 throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexesIndexDefinitionIdHistorySnapshotGet.');
             }
             const localVarPath = `/v1/indexes/{index_definition_id}/historySnapshot`
-                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
+                .replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -645,7 +645,7 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
                 throw new RequiredError('indexId','Required parameter indexId was null or undefined when calling v1IndexesIndexIdCurrentGet.');
             }
             const localVarPath = `/v1/indexes/{index_id}/current`
-                .replace(`{${"index_id"}}`, encodeURIComponent(String(indexId)));
+                .replace('{index_id}', encodeURIComponent(String(indexId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -682,7 +682,7 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
                 throw new RequiredError('indexId','Required parameter indexId was null or undefined when calling v1IndexesIndexIdHistoryGet.');
             }
             const localVarPath = `/v1/indexes/{index_id}/history`
-                .replace(`{${"index_id"}}`, encodeURIComponent(String(indexId)));
+                .replace('{index_id}', encodeURIComponent(String(indexId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -743,7 +743,7 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
                 throw new RequiredError('timeEnd','Required parameter timeEnd was null or undefined when calling v1IndexesIndexIdTimeseriesGet.');
             }
             const localVarPath = `/v1/indexes/{index_id}/timeseries`
-                .replace(`{${"index_id"}}`, encodeURIComponent(String(indexId)));
+                .replace('{index_id}', encodeURIComponent(String(indexId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -920,7 +920,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling apiMetadataExchangesExchangeIdGet.');
             }
             const localVarPath = `/api/metadata/exchanges/{exchange_id}`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -1081,7 +1081,7 @@ export const MultiAssetWeightsApiFetchParamCreator = function (configuration?: C
                 throw new RequiredError('indexId','Required parameter indexId was null or undefined when calling v1IndexdefMultiassetIndexIdGet.');
             }
             const localVarPath = `/v1/indexdef/multiasset/{index_id}`
-                .replace(`{${"index_id"}}`, encodeURIComponent(String(indexId)));
+                .replace('{index_id}', encodeURIComponent(String(indexId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};

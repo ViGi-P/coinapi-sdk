@@ -101,7 +101,7 @@ export class MetadataApi {
      */
     public async apiMetadataExchangesExchangeIdGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsExchange>;  }> {
         const localVarPath = this.basePath + '/api/metadata/exchanges/{exchange_id}'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

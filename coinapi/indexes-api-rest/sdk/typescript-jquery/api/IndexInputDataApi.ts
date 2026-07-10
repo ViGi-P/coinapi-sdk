@@ -55,7 +55,7 @@ export class IndexInputDataApi {
     { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionInputData>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexdef/input-data/{index_definition_id}/all'.replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+        let localVarPath = this.basePath + '/v1/indexdef/input-data/{index_definition_id}/all'.replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -131,7 +131,7 @@ export class IndexInputDataApi {
     { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionSnapshotEntry>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexdef/input-data/{index_definition_id}'.replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+        let localVarPath = this.basePath + '/v1/indexdef/input-data/{index_definition_id}'.replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

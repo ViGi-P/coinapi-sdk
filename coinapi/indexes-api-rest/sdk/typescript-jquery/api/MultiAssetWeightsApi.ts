@@ -120,7 +120,7 @@ export class MultiAssetWeightsApi {
     { response: JQueryXHR; body: Array<models.ModelsIndexMultiAssetWeight>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexdef/multiasset/{index_id}'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+        let localVarPath = this.basePath + '/v1/indexdef/multiasset/{index_id}'.replace('{index_id}', encodeURIComponent(String(indexId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

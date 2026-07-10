@@ -73,7 +73,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the start time of the time period.</value>
         [JsonPropertyName("time_period_start")]
-        public DateTime? TimePeriodStart { get { return this.TimePeriodStartOption; } set { this.TimePeriodStartOption = new(value); } }
+        public DateTime? TimePeriodStart { get { return this.TimePeriodStartOption.Value; } set { this.TimePeriodStartOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimePeriodEnd
@@ -87,7 +87,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the end time of the time period.</value>
         [JsonPropertyName("time_period_end")]
-        public DateTime? TimePeriodEnd { get { return this.TimePeriodEndOption; } set { this.TimePeriodEndOption = new(value); } }
+        public DateTime? TimePeriodEnd { get { return this.TimePeriodEndOption.Value; } set { this.TimePeriodEndOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeOpen
@@ -101,7 +101,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the time when the value opened.</value>
         [JsonPropertyName("time_open")]
-        public DateTime? TimeOpen { get { return this.TimeOpenOption; } set { this.TimeOpenOption = new(value); } }
+        public DateTime? TimeOpen { get { return this.TimeOpenOption.Value; } set { this.TimeOpenOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeClose
@@ -115,7 +115,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the time when the value closed.</value>
         [JsonPropertyName("time_close")]
-        public DateTime? TimeClose { get { return this.TimeCloseOption; } set { this.TimeCloseOption = new(value); } }
+        public DateTime? TimeClose { get { return this.TimeCloseOption.Value; } set { this.TimeCloseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueOpen
@@ -129,7 +129,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the opening value.</value>
         [JsonPropertyName("value_open")]
-        public double? ValueOpen { get { return this.ValueOpenOption; } set { this.ValueOpenOption = new(value); } }
+        public double? ValueOpen { get { return this.ValueOpenOption.Value; } set { this.ValueOpenOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueHigh
@@ -143,7 +143,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the highest value during the time period.</value>
         [JsonPropertyName("value_high")]
-        public double? ValueHigh { get { return this.ValueHighOption; } set { this.ValueHighOption = new(value); } }
+        public double? ValueHigh { get { return this.ValueHighOption.Value; } set { this.ValueHighOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueLow
@@ -157,7 +157,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the lowest value during the time period.</value>
         [JsonPropertyName("value_low")]
-        public double? ValueLow { get { return this.ValueLowOption; } set { this.ValueLowOption = new(value); } }
+        public double? ValueLow { get { return this.ValueLowOption.Value; } set { this.ValueLowOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueClose
@@ -171,7 +171,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the closing value.</value>
         [JsonPropertyName("value_close")]
-        public double? ValueClose { get { return this.ValueCloseOption; } set { this.ValueCloseOption = new(value); } }
+        public double? ValueClose { get { return this.ValueCloseOption.Value; } set { this.ValueCloseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueCount
@@ -185,7 +185,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the number of values during the time period.</value>
         [JsonPropertyName("value_count")]
-        public long? ValueCount { get { return this.ValueCountOption; } set { this.ValueCountOption = new(value); } }
+        public long? ValueCount { get { return this.ValueCountOption.Value; } set { this.ValueCountOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

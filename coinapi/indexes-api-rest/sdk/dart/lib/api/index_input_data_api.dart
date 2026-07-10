@@ -23,7 +23,7 @@ class IndexInputDataApi {
   /// Parameters:
   ///
   /// * [String] indexDefinitionId (required):
-  Future<Response> v1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo(String indexDefinitionId,) async {
+  Future<Response> v1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo(String indexDefinitionId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexdef/input-data/{index_definition_id}/all'
       .replaceAll('{index_definition_id}', indexDefinitionId);
@@ -46,6 +46,7 @@ class IndexInputDataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -54,8 +55,8 @@ class IndexInputDataApi {
   /// Parameters:
   ///
   /// * [String] indexDefinitionId (required):
-  Future<List<ModelsIndexDefinitionInputData>?> v1IndexdefInputDataIndexDefinitionIdAllGet(String indexDefinitionId,) async {
-    final response = await v1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo(indexDefinitionId,);
+  Future<List<ModelsIndexDefinitionInputData>?> v1IndexdefInputDataIndexDefinitionIdAllGet(String indexDefinitionId, { Future<void>? abortTrigger, }) async {
+    final response = await v1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo(indexDefinitionId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -89,7 +90,7 @@ class IndexInputDataApi {
   /// * [String] filterAssetId:
   ///
   /// * [bool] withStatusInfo:
-  Future<Response> v1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo(String indexDefinitionId, { DateTime? time, bool? enabledOnly, bool? pendingOnly, String? filterAssetId, bool? withStatusInfo, }) async {
+  Future<Response> v1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo(String indexDefinitionId, { DateTime? time, bool? enabledOnly, bool? pendingOnly, String? filterAssetId, bool? withStatusInfo, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexdef/input-data/{index_definition_id}'
       .replaceAll('{index_definition_id}', indexDefinitionId);
@@ -128,6 +129,7 @@ class IndexInputDataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -146,8 +148,8 @@ class IndexInputDataApi {
   /// * [String] filterAssetId:
   ///
   /// * [bool] withStatusInfo:
-  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexdefInputDataIndexDefinitionIdGet(String indexDefinitionId, { DateTime? time, bool? enabledOnly, bool? pendingOnly, String? filterAssetId, bool? withStatusInfo, }) async {
-    final response = await v1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo(indexDefinitionId,  time: time, enabledOnly: enabledOnly, pendingOnly: pendingOnly, filterAssetId: filterAssetId, withStatusInfo: withStatusInfo, );
+  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexdefInputDataIndexDefinitionIdGet(String indexDefinitionId, { DateTime? time, bool? enabledOnly, bool? pendingOnly, String? filterAssetId, bool? withStatusInfo, Future<void>? abortTrigger, }) async {
+    final response = await v1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo(indexDefinitionId, time: time, enabledOnly: enabledOnly, pendingOnly: pendingOnly, filterAssetId: filterAssetId, withStatusInfo: withStatusInfo, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -169,7 +169,7 @@ export class MultiAssetWeightsApi {
      */
     public async v1IndexdefMultiassetIndexIdGet (indexId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexMultiAssetWeight>;  }> {
         const localVarPath = this.basePath + '/v1/indexdef/multiasset/{index_id}'
-            .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+            .replace('{index_id}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

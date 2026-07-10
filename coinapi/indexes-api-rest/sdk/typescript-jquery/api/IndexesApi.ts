@@ -120,7 +120,7 @@ export class IndexesApi {
     { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionSnapshotEntry>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/currentSnapshot'.replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+        let localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/currentSnapshot'.replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -192,7 +192,7 @@ export class IndexesApi {
     { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionSnapshotEntry>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/historySnapshot'.replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
+        let localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/historySnapshot'.replace('{index_definition_id}', encodeURIComponent(String(indexDefinitionId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -266,7 +266,7 @@ export class IndexesApi {
     { response: JQueryXHR; body: models.ModelsIndexValue;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexes/{index_id}/current'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+        let localVarPath = this.basePath + '/v1/indexes/{index_id}/current'.replace('{index_id}', encodeURIComponent(String(indexId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -340,7 +340,7 @@ export class IndexesApi {
     { response: JQueryXHR; body: Array<models.ModelsIndexValue>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexes/{index_id}/history'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+        let localVarPath = this.basePath + '/v1/indexes/{index_id}/history'.replace('{index_id}', encodeURIComponent(String(indexId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -424,7 +424,7 @@ export class IndexesApi {
     { response: JQueryXHR; body: Array<models.ModelsIndexTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/indexes/{index_id}/timeseries'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
+        let localVarPath = this.basePath + '/v1/indexes/{index_id}/timeseries'.replace('{index_id}', encodeURIComponent(String(indexId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

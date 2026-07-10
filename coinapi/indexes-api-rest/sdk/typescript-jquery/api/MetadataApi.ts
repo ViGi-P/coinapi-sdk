@@ -55,7 +55,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.ModelsExchange>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/api/metadata/exchanges/{exchange_id}'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/api/metadata/exchanges/{exchange_id}'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

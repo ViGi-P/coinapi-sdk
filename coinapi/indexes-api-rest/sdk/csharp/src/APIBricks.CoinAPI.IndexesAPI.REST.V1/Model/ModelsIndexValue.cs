@@ -60,7 +60,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets Timestamp
         /// </summary>
         [JsonPropertyName("timestamp")]
-        public DateTime? Timestamp { get { return this.TimestampOption; } set { this.TimestampOption = new(value); } }
+        public DateTime? Timestamp { get { return this.TimestampOption.Value; } set { this.TimestampOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Value
@@ -73,7 +73,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets Value
         /// </summary>
         [JsonPropertyName("value")]
-        public double? Value { get { return this.ValueOption; } set { this.ValueOption = new(value); } }
+        public double? Value { get { return this.ValueOption.Value; } set { this.ValueOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Composition
@@ -86,7 +86,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// Gets or Sets Composition
         /// </summary>
         [JsonPropertyName("composition")]
-        public List<ModelsIndexValueComponent>? Composition { get { return this.CompositionOption; } set { this.CompositionOption = new(value); } }
+        public List<ModelsIndexValueComponent>? Composition { get { return this.CompositionOption.Value; } set { this.CompositionOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

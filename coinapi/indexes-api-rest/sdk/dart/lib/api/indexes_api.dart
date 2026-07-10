@@ -19,7 +19,7 @@ class IndexesApi {
   /// List indexes
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> v1IndexesGetWithHttpInfo() async {
+  Future<Response> v1IndexesGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexes';
 
@@ -41,12 +41,13 @@ class IndexesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
   /// List indexes
-  Future<List<ModelsIndexIdentifier>?> v1IndexesGet() async {
-    final response = await v1IndexesGetWithHttpInfo();
+  Future<List<ModelsIndexIdentifier>?> v1IndexesGet({ Future<void>? abortTrigger, }) async {
+    final response = await v1IndexesGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -70,7 +71,7 @@ class IndexesApi {
   /// Parameters:
   ///
   /// * [String] indexDefinitionId (required):
-  Future<Response> v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(String indexDefinitionId,) async {
+  Future<Response> v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(String indexDefinitionId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexes/{index_definition_id}/currentSnapshot'
       .replaceAll('{index_definition_id}', indexDefinitionId);
@@ -93,6 +94,7 @@ class IndexesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -101,8 +103,8 @@ class IndexesApi {
   /// Parameters:
   ///
   /// * [String] indexDefinitionId (required):
-  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdCurrentSnapshotGet(String indexDefinitionId,) async {
-    final response = await v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId,);
+  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdCurrentSnapshotGet(String indexDefinitionId, { Future<void>? abortTrigger, }) async {
+    final response = await v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -128,7 +130,7 @@ class IndexesApi {
   /// * [String] indexDefinitionId (required):
   ///
   /// * [DateTime] time:
-  Future<Response> v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(String indexDefinitionId, { DateTime? time, }) async {
+  Future<Response> v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(String indexDefinitionId, { DateTime? time, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexes/{index_definition_id}/historySnapshot'
       .replaceAll('{index_definition_id}', indexDefinitionId);
@@ -155,6 +157,7 @@ class IndexesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -165,8 +168,8 @@ class IndexesApi {
   /// * [String] indexDefinitionId (required):
   ///
   /// * [DateTime] time:
-  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdHistorySnapshotGet(String indexDefinitionId, { DateTime? time, }) async {
-    final response = await v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId,  time: time, );
+  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdHistorySnapshotGet(String indexDefinitionId, { DateTime? time, Future<void>? abortTrigger, }) async {
+    final response = await v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId, time: time, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -190,7 +193,7 @@ class IndexesApi {
   /// Parameters:
   ///
   /// * [String] indexId (required):
-  Future<Response> v1IndexesIndexIdCurrentGetWithHttpInfo(String indexId,) async {
+  Future<Response> v1IndexesIndexIdCurrentGetWithHttpInfo(String indexId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexes/{index_id}/current'
       .replaceAll('{index_id}', indexId);
@@ -213,6 +216,7 @@ class IndexesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -221,8 +225,8 @@ class IndexesApi {
   /// Parameters:
   ///
   /// * [String] indexId (required):
-  Future<ModelsIndexValue?> v1IndexesIndexIdCurrentGet(String indexId,) async {
-    final response = await v1IndexesIndexIdCurrentGetWithHttpInfo(indexId,);
+  Future<ModelsIndexValue?> v1IndexesIndexIdCurrentGet(String indexId, { Future<void>? abortTrigger, }) async {
+    final response = await v1IndexesIndexIdCurrentGetWithHttpInfo(indexId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -249,7 +253,7 @@ class IndexesApi {
   /// * [DateTime] timeEnd:
   ///
   /// * [int] limit:
-  Future<Response> v1IndexesIndexIdHistoryGetWithHttpInfo(String indexId, { DateTime? timeStart, DateTime? timeEnd, int? limit, }) async {
+  Future<Response> v1IndexesIndexIdHistoryGetWithHttpInfo(String indexId, { DateTime? timeStart, DateTime? timeEnd, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexes/{index_id}/history'
       .replaceAll('{index_id}', indexId);
@@ -282,6 +286,7 @@ class IndexesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -296,8 +301,8 @@ class IndexesApi {
   /// * [DateTime] timeEnd:
   ///
   /// * [int] limit:
-  Future<List<ModelsIndexValue>?> v1IndexesIndexIdHistoryGet(String indexId, { DateTime? timeStart, DateTime? timeEnd, int? limit, }) async {
-    final response = await v1IndexesIndexIdHistoryGetWithHttpInfo(indexId,  timeStart: timeStart, timeEnd: timeEnd, limit: limit, );
+  Future<List<ModelsIndexValue>?> v1IndexesIndexIdHistoryGet(String indexId, { DateTime? timeStart, DateTime? timeEnd, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1IndexesIndexIdHistoryGetWithHttpInfo(indexId, timeStart: timeStart, timeEnd: timeEnd, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -334,7 +339,7 @@ class IndexesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1IndexesIndexIdTimeseriesGetWithHttpInfo(String indexId, String periodId, String timeStart, String timeEnd, { int? limit, }) async {
+  Future<Response> v1IndexesIndexIdTimeseriesGetWithHttpInfo(String indexId, String periodId, String timeStart, String timeEnd, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/indexes/{index_id}/timeseries'
       .replaceAll('{index_id}', indexId);
@@ -364,6 +369,7 @@ class IndexesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -385,8 +391,8 @@ class IndexesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<ModelsIndexTimeseriesItem>?> v1IndexesIndexIdTimeseriesGet(String indexId, String periodId, String timeStart, String timeEnd, { int? limit, }) async {
-    final response = await v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId, periodId, timeStart, timeEnd,  limit: limit, );
+  Future<List<ModelsIndexTimeseriesItem>?> v1IndexesIndexIdTimeseriesGet(String indexId, String periodId, String timeStart, String timeEnd, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId, periodId, timeStart, timeEnd, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

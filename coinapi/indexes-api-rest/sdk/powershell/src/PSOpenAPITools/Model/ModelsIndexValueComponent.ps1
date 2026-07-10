@@ -41,8 +41,8 @@ function Initialize-ModelsIndexValueComponent {
 
 
         $PSO = [PSCustomObject]@{
-            "component_id" = ${ComponentId}
-            "component_value" = ${ComponentValue}
+            'component_id' = ${ComponentId}
+            'component_value' = ${ComponentValue}
         }
 
 
@@ -80,28 +80,28 @@ function ConvertFrom-JsonToModelsIndexValueComponent {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in ModelsIndexValueComponent
-        $AllProperties = ("component_id", "component_value")
+        $AllProperties = ('component_id', 'component_value')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "component_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'component_id'))) { #optional property not found
             $ComponentId = $null
         } else {
-            $ComponentId = $JsonParameters.PSobject.Properties["component_id"].value
+            $ComponentId = $JsonParameters.PSobject.Properties['component_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "component_value"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'component_value'))) { #optional property not found
             $ComponentValue = $null
         } else {
-            $ComponentValue = $JsonParameters.PSobject.Properties["component_value"].value
+            $ComponentValue = $JsonParameters.PSobject.Properties['component_value'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "component_id" = ${ComponentId}
-            "component_value" = ${ComponentValue}
+            'component_id' = ${ComponentId}
+            'component_value' = ${ComponentValue}
         }
 
         return $PSO

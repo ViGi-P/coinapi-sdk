@@ -24,7 +24,7 @@ class MetadataApi {
   ///
   /// * [String] exchangeId (required):
   ///   The ID of the exchange.
-  Future<Response> apiMetadataExchangesExchangeIdGetWithHttpInfo(String exchangeId,) async {
+  Future<Response> apiMetadataExchangesExchangeIdGetWithHttpInfo(String exchangeId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/metadata/exchanges/{exchange_id}'
       .replaceAll('{exchange_id}', exchangeId);
@@ -47,6 +47,7 @@ class MetadataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -56,8 +57,8 @@ class MetadataApi {
   ///
   /// * [String] exchangeId (required):
   ///   The ID of the exchange.
-  Future<List<ModelsExchange>?> apiMetadataExchangesExchangeIdGet(String exchangeId,) async {
-    final response = await apiMetadataExchangesExchangeIdGetWithHttpInfo(exchangeId,);
+  Future<List<ModelsExchange>?> apiMetadataExchangesExchangeIdGet(String exchangeId, { Future<void>? abortTrigger, }) async {
+    final response = await apiMetadataExchangesExchangeIdGetWithHttpInfo(exchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -84,7 +85,7 @@ class MetadataApi {
   ///
   /// * [String] filterExchangeId:
   ///   Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
-  Future<Response> apiMetadataExchangesGetWithHttpInfo({ String? filterExchangeId, }) async {
+  Future<Response> apiMetadataExchangesGetWithHttpInfo({ String? filterExchangeId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/metadata/exchanges';
 
@@ -110,6 +111,7 @@ class MetadataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -121,8 +123,8 @@ class MetadataApi {
   ///
   /// * [String] filterExchangeId:
   ///   Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
-  Future<List<ModelsExchange>?> apiMetadataExchangesGet({ String? filterExchangeId, }) async {
-    final response = await apiMetadataExchangesGetWithHttpInfo( filterExchangeId: filterExchangeId, );
+  Future<List<ModelsExchange>?> apiMetadataExchangesGet({ String? filterExchangeId, Future<void>? abortTrigger, }) async {
+    final response = await apiMetadataExchangesGetWithHttpInfo(filterExchangeId: filterExchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -46,9 +46,9 @@ function Initialize-ModelsIndexDefinitionSnapshotEntry {
 
 
         $PSO = [PSCustomObject]@{
-            "index_id" = ${IndexId}
-            "timestamp" = ${Timestamp}
-            "value" = ${Value}
+            'index_id' = ${IndexId}
+            'timestamp' = ${Timestamp}
+            'value' = ${Value}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToModelsIndexDefinitionSnapshotEntry {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in ModelsIndexDefinitionSnapshotEntry
-        $AllProperties = ("index_id", "timestamp", "value")
+        $AllProperties = ('index_id', 'timestamp', 'value')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "index_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'index_id'))) { #optional property not found
             $IndexId = $null
         } else {
-            $IndexId = $JsonParameters.PSobject.Properties["index_id"].value
+            $IndexId = $JsonParameters.PSobject.Properties['index_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "timestamp"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'timestamp'))) { #optional property not found
             $Timestamp = $null
         } else {
-            $Timestamp = $JsonParameters.PSobject.Properties["timestamp"].value
+            $Timestamp = $JsonParameters.PSobject.Properties['timestamp'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value'))) { #optional property not found
             $Value = $null
         } else {
-            $Value = $JsonParameters.PSobject.Properties["value"].value
+            $Value = $JsonParameters.PSobject.Properties['value'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "index_id" = ${IndexId}
-            "timestamp" = ${Timestamp}
-            "value" = ${Value}
+            'index_id' = ${IndexId}
+            'timestamp' = ${Timestamp}
+            'value' = ${Value}
         }
 
         return $PSO

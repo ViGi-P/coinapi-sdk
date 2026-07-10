@@ -61,7 +61,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange ID.</value>
         [JsonPropertyName("exchange_id")]
-        public string? ExchangeId { get { return this.ExchangeIdOption; } set { this.ExchangeIdOption = new(value); } }
+        public string? ExchangeId { get { return this.ExchangeIdOption.Value; } set { this.ExchangeIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Website
@@ -75,7 +75,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the website URL of the exchange.</value>
         [JsonPropertyName("website")]
-        public string? Website { get { return this.WebsiteOption; } set { this.WebsiteOption = new(value); } }
+        public string? Website { get { return this.WebsiteOption.Value; } set { this.WebsiteOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -89,7 +89,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the name of the exchange.</value>
         [JsonPropertyName("name")]
-        public string? Name { get { return this.NameOption; } set { this.NameOption = new(value); } }
+        public string? Name { get { return this.NameOption.Value; } set { this.NameOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

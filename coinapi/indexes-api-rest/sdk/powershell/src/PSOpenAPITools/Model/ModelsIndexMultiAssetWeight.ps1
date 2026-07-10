@@ -46,9 +46,9 @@ function Initialize-ModelsIndexMultiAssetWeight {
 
 
         $PSO = [PSCustomObject]@{
-            "indexId" = ${IndexId}
-            "assetId" = ${AssetId}
-            "weight" = ${Weight}
+            'indexId' = ${IndexId}
+            'assetId' = ${AssetId}
+            'weight' = ${Weight}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToModelsIndexMultiAssetWeight {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in ModelsIndexMultiAssetWeight
-        $AllProperties = ("indexId", "assetId", "weight")
+        $AllProperties = ('indexId', 'assetId', 'weight')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "indexId"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'indexId'))) { #optional property not found
             $IndexId = $null
         } else {
-            $IndexId = $JsonParameters.PSobject.Properties["indexId"].value
+            $IndexId = $JsonParameters.PSobject.Properties['indexId'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "assetId"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'assetId'))) { #optional property not found
             $AssetId = $null
         } else {
-            $AssetId = $JsonParameters.PSobject.Properties["assetId"].value
+            $AssetId = $JsonParameters.PSobject.Properties['assetId'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "weight"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'weight'))) { #optional property not found
             $Weight = $null
         } else {
-            $Weight = $JsonParameters.PSobject.Properties["weight"].value
+            $Weight = $JsonParameters.PSobject.Properties['weight'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "indexId" = ${IndexId}
-            "assetId" = ${AssetId}
-            "weight" = ${Weight}
+            'indexId' = ${IndexId}
+            'assetId' = ${AssetId}
+            'weight' = ${Weight}
         }
 
         return $PSO
