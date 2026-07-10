@@ -192,22 +192,22 @@
                 "examples": {
                   "Sample Index List": {
                     "value": [
-  {
-    "id": "IDX_REFRATE_VWAP_BTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ETH"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_LTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_XRP"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ADA"
-  }
-]
+                      {
+                        "id": "IDX_REFRATE_VWAP_BTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ETH"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_LTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_XRP"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ADA"
+                      }
+                    ]
                   }
                 }
               },
@@ -221,22 +221,22 @@
                 "examples": {
                   "Sample Index List": {
                     "value": [
-  {
-    "id": "IDX_REFRATE_VWAP_BTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ETH"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_LTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_XRP"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ADA"
-  }
-]
+                      {
+                        "id": "IDX_REFRATE_VWAP_BTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ETH"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_LTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_XRP"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ADA"
+                      }
+                    ]
                   }
                 }
               },
@@ -250,22 +250,22 @@
                 "examples": {
                   "Sample Index List": {
                     "value": [
-  {
-    "id": "IDX_REFRATE_VWAP_BTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ETH"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_LTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_XRP"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ADA"
-  }
-]
+                      {
+                        "id": "IDX_REFRATE_VWAP_BTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ETH"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_LTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_XRP"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ADA"
+                      }
+                    ]
                   }
                 }
               },
@@ -279,22 +279,22 @@
                 "examples": {
                   "Sample Index List": {
                     "value": [
-  {
-    "id": "IDX_REFRATE_VWAP_BTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ETH"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_LTC"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_XRP"
-  },
-  {
-    "id": "IDX_REFRATE_VWAP_ADA"
-  }
-]
+                      {
+                        "id": "IDX_REFRATE_VWAP_BTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ETH"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_LTC"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_XRP"
+                      },
+                      {
+                        "id": "IDX_REFRATE_VWAP_ADA"
+                      }
+                    ]
                   }
                 }
               }
@@ -330,9 +330,9 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "timestamp": "2024-09-01T09:00:00",
-  "value": 56787.5997300339
-}
+                      "timestamp": "2024-09-01T09:00:00",
+                      "value": 56787.5997300339
+                    }
                   }
                 }
               },
@@ -343,9 +343,9 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "timestamp": "2024-09-01T09:00:00",
-  "value": 56787.5997300339
-}
+                      "timestamp": "2024-09-01T09:00:00",
+                      "value": 56787.5997300339
+                    }
                   }
                 }
               },
@@ -356,9 +356,9 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "timestamp": "2024-09-01T09:00:00",
-  "value": 56787.5997300339
-}
+                      "timestamp": "2024-09-01T09:00:00",
+                      "value": 56787.5997300339
+                    }
                   }
                 }
               },
@@ -369,9 +369,9 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "timestamp": "2024-09-01T09:00:00",
-  "value": 56787.5997300339
-}
+                      "timestamp": "2024-09-01T09:00:00",
+                      "value": 56787.5997300339
+                    }
                   }
                 }
               }
@@ -492,22 +492,22 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "timestamp": "2024-09-05T11:29:04+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:03+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:02+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  }
-]
+                      {
+                        "timestamp": "2024-09-05T11:29:04+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:03+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:02+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      }
+                    ]
                   }
                 }
               },
@@ -521,22 +521,22 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "timestamp": "2024-09-05T11:29:04+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:03+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:02+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  }
-]
+                      {
+                        "timestamp": "2024-09-05T11:29:04+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:03+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:02+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      }
+                    ]
                   }
                 }
               },
@@ -550,22 +550,22 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "timestamp": "2024-09-05T11:29:04+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:03+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:02+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  }
-]
+                      {
+                        "timestamp": "2024-09-05T11:29:04+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:03+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:02+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      }
+                    ]
                   }
                 }
               },
@@ -579,22 +579,22 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "timestamp": "2024-09-05T11:29:04+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:03+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  },
-  {
-    "timestamp": "2024-09-05T11:29:02+00:00",
-    "value": 56786.84840020827,
-    "composition": []
-  }
-]
+                      {
+                        "timestamp": "2024-09-05T11:29:04+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:03+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      },
+                      {
+                        "timestamp": "2024-09-05T11:29:02+00:00",
+                        "value": 56786.84840020827,
+                        "composition": [ ]
+                      }
+                    ]
                   }
                 }
               }
@@ -736,40 +736,40 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "time_period_start": "2024-09-05T08:00:00+00:00",
-    "time_period_end": "2024-09-05T09:00:00+00:00",
-    "time_open": "2024-09-05T08:00:44+00:00",
-    "time_close": "2024-09-05T08:59:44+00:00",
-    "value_open": 57146.1153570673,
-    "value_high": 57210.0651836076,
-    "value_low": 56950.4558254606,
-    "value_close": 56993.5152800002,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T09:00:00+00:00",
-    "time_period_end": "2024-09-05T10:00:00+00:00",
-    "time_open": "2024-09-05T09:00:44+00:00",
-    "time_close": "2024-09-05T09:59:59.9+00:00",
-    "value_open": 57000.6574615287,
-    "value_high": 57000.6574615287,
-    "value_low": 56650.5866347198,
-    "value_close": 56787.2920819528,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T10:00:00+00:00",
-    "time_period_end": "2024-09-05T11:00:00+00:00",
-    "time_open": "2024-09-05T10:00:00+00:00",
-    "time_close": "2024-09-05T10:59:59.9+00:00",
-    "value_open": 56787.2920819528,
-    "value_high": 56788.3686345929,
-    "value_low": 56786.7251004355,
-    "value_close": 56787.2066526585,
-    "value_count": 0
-  }
-]
+                      {
+                        "time_period_start": "2024-09-05T08:00:00+00:00",
+                        "time_period_end": "2024-09-05T09:00:00+00:00",
+                        "time_open": "2024-09-05T08:00:44+00:00",
+                        "time_close": "2024-09-05T08:59:44+00:00",
+                        "value_open": 57146.1153570673,
+                        "value_high": 57210.0651836076,
+                        "value_low": 56950.4558254606,
+                        "value_close": 56993.5152800002,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T09:00:00+00:00",
+                        "time_period_end": "2024-09-05T10:00:00+00:00",
+                        "time_open": "2024-09-05T09:00:44+00:00",
+                        "time_close": "2024-09-05T09:59:59.9+00:00",
+                        "value_open": 57000.6574615287,
+                        "value_high": 57000.6574615287,
+                        "value_low": 56650.5866347198,
+                        "value_close": 56787.2920819528,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T10:00:00+00:00",
+                        "time_period_end": "2024-09-05T11:00:00+00:00",
+                        "time_open": "2024-09-05T10:00:00+00:00",
+                        "time_close": "2024-09-05T10:59:59.9+00:00",
+                        "value_open": 56787.2920819528,
+                        "value_high": 56788.3686345929,
+                        "value_low": 56786.7251004355,
+                        "value_close": 56787.2066526585,
+                        "value_count": 0
+                      }
+                    ]
                   }
                 }
               },
@@ -783,40 +783,40 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "time_period_start": "2024-09-05T08:00:00+00:00",
-    "time_period_end": "2024-09-05T09:00:00+00:00",
-    "time_open": "2024-09-05T08:00:44+00:00",
-    "time_close": "2024-09-05T08:59:44+00:00",
-    "value_open": 57146.1153570673,
-    "value_high": 57210.0651836076,
-    "value_low": 56950.4558254606,
-    "value_close": 56993.5152800002,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T09:00:00+00:00",
-    "time_period_end": "2024-09-05T10:00:00+00:00",
-    "time_open": "2024-09-05T09:00:44+00:00",
-    "time_close": "2024-09-05T09:59:59.9+00:00",
-    "value_open": 57000.6574615287,
-    "value_high": 57000.6574615287,
-    "value_low": 56650.5866347198,
-    "value_close": 56787.2920819528,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T10:00:00+00:00",
-    "time_period_end": "2024-09-05T11:00:00+00:00",
-    "time_open": "2024-09-05T10:00:00+00:00",
-    "time_close": "2024-09-05T10:59:59.9+00:00",
-    "value_open": 56787.2920819528,
-    "value_high": 56788.3686345929,
-    "value_low": 56786.7251004355,
-    "value_close": 56787.2066526585,
-    "value_count": 0
-  }
-]
+                      {
+                        "time_period_start": "2024-09-05T08:00:00+00:00",
+                        "time_period_end": "2024-09-05T09:00:00+00:00",
+                        "time_open": "2024-09-05T08:00:44+00:00",
+                        "time_close": "2024-09-05T08:59:44+00:00",
+                        "value_open": 57146.1153570673,
+                        "value_high": 57210.0651836076,
+                        "value_low": 56950.4558254606,
+                        "value_close": 56993.5152800002,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T09:00:00+00:00",
+                        "time_period_end": "2024-09-05T10:00:00+00:00",
+                        "time_open": "2024-09-05T09:00:44+00:00",
+                        "time_close": "2024-09-05T09:59:59.9+00:00",
+                        "value_open": 57000.6574615287,
+                        "value_high": 57000.6574615287,
+                        "value_low": 56650.5866347198,
+                        "value_close": 56787.2920819528,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T10:00:00+00:00",
+                        "time_period_end": "2024-09-05T11:00:00+00:00",
+                        "time_open": "2024-09-05T10:00:00+00:00",
+                        "time_close": "2024-09-05T10:59:59.9+00:00",
+                        "value_open": 56787.2920819528,
+                        "value_high": 56788.3686345929,
+                        "value_low": 56786.7251004355,
+                        "value_close": 56787.2066526585,
+                        "value_count": 0
+                      }
+                    ]
                   }
                 }
               },
@@ -830,40 +830,40 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "time_period_start": "2024-09-05T08:00:00+00:00",
-    "time_period_end": "2024-09-05T09:00:00+00:00",
-    "time_open": "2024-09-05T08:00:44+00:00",
-    "time_close": "2024-09-05T08:59:44+00:00",
-    "value_open": 57146.1153570673,
-    "value_high": 57210.0651836076,
-    "value_low": 56950.4558254606,
-    "value_close": 56993.5152800002,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T09:00:00+00:00",
-    "time_period_end": "2024-09-05T10:00:00+00:00",
-    "time_open": "2024-09-05T09:00:44+00:00",
-    "time_close": "2024-09-05T09:59:59.9+00:00",
-    "value_open": 57000.6574615287,
-    "value_high": 57000.6574615287,
-    "value_low": 56650.5866347198,
-    "value_close": 56787.2920819528,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T10:00:00+00:00",
-    "time_period_end": "2024-09-05T11:00:00+00:00",
-    "time_open": "2024-09-05T10:00:00+00:00",
-    "time_close": "2024-09-05T10:59:59.9+00:00",
-    "value_open": 56787.2920819528,
-    "value_high": 56788.3686345929,
-    "value_low": 56786.7251004355,
-    "value_close": 56787.2066526585,
-    "value_count": 0
-  }
-]
+                      {
+                        "time_period_start": "2024-09-05T08:00:00+00:00",
+                        "time_period_end": "2024-09-05T09:00:00+00:00",
+                        "time_open": "2024-09-05T08:00:44+00:00",
+                        "time_close": "2024-09-05T08:59:44+00:00",
+                        "value_open": 57146.1153570673,
+                        "value_high": 57210.0651836076,
+                        "value_low": 56950.4558254606,
+                        "value_close": 56993.5152800002,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T09:00:00+00:00",
+                        "time_period_end": "2024-09-05T10:00:00+00:00",
+                        "time_open": "2024-09-05T09:00:44+00:00",
+                        "time_close": "2024-09-05T09:59:59.9+00:00",
+                        "value_open": 57000.6574615287,
+                        "value_high": 57000.6574615287,
+                        "value_low": 56650.5866347198,
+                        "value_close": 56787.2920819528,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T10:00:00+00:00",
+                        "time_period_end": "2024-09-05T11:00:00+00:00",
+                        "time_open": "2024-09-05T10:00:00+00:00",
+                        "time_close": "2024-09-05T10:59:59.9+00:00",
+                        "value_open": 56787.2920819528,
+                        "value_high": 56788.3686345929,
+                        "value_low": 56786.7251004355,
+                        "value_close": 56787.2066526585,
+                        "value_count": 0
+                      }
+                    ]
                   }
                 }
               },
@@ -877,40 +877,40 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "time_period_start": "2024-09-05T08:00:00+00:00",
-    "time_period_end": "2024-09-05T09:00:00+00:00",
-    "time_open": "2024-09-05T08:00:44+00:00",
-    "time_close": "2024-09-05T08:59:44+00:00",
-    "value_open": 57146.1153570673,
-    "value_high": 57210.0651836076,
-    "value_low": 56950.4558254606,
-    "value_close": 56993.5152800002,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T09:00:00+00:00",
-    "time_period_end": "2024-09-05T10:00:00+00:00",
-    "time_open": "2024-09-05T09:00:44+00:00",
-    "time_close": "2024-09-05T09:59:59.9+00:00",
-    "value_open": 57000.6574615287,
-    "value_high": 57000.6574615287,
-    "value_low": 56650.5866347198,
-    "value_close": 56787.2920819528,
-    "value_count": 0
-  },
-  {
-    "time_period_start": "2024-09-05T10:00:00+00:00",
-    "time_period_end": "2024-09-05T11:00:00+00:00",
-    "time_open": "2024-09-05T10:00:00+00:00",
-    "time_close": "2024-09-05T10:59:59.9+00:00",
-    "value_open": 56787.2920819528,
-    "value_high": 56788.3686345929,
-    "value_low": 56786.7251004355,
-    "value_close": 56787.2066526585,
-    "value_count": 0
-  }
-]
+                      {
+                        "time_period_start": "2024-09-05T08:00:00+00:00",
+                        "time_period_end": "2024-09-05T09:00:00+00:00",
+                        "time_open": "2024-09-05T08:00:44+00:00",
+                        "time_close": "2024-09-05T08:59:44+00:00",
+                        "value_open": 57146.1153570673,
+                        "value_high": 57210.0651836076,
+                        "value_low": 56950.4558254606,
+                        "value_close": 56993.5152800002,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T09:00:00+00:00",
+                        "time_period_end": "2024-09-05T10:00:00+00:00",
+                        "time_open": "2024-09-05T09:00:44+00:00",
+                        "time_close": "2024-09-05T09:59:59.9+00:00",
+                        "value_open": 57000.6574615287,
+                        "value_high": 57000.6574615287,
+                        "value_low": 56650.5866347198,
+                        "value_close": 56787.2920819528,
+                        "value_count": 0
+                      },
+                      {
+                        "time_period_start": "2024-09-05T10:00:00+00:00",
+                        "time_period_end": "2024-09-05T11:00:00+00:00",
+                        "time_open": "2024-09-05T10:00:00+00:00",
+                        "time_close": "2024-09-05T10:59:59.9+00:00",
+                        "value_open": 56787.2920819528,
+                        "value_high": 56788.3686345929,
+                        "value_low": 56786.7251004355,
+                        "value_close": 56787.2066526585,
+                        "value_count": 0
+                      }
+                    ]
                   }
                 }
               }
@@ -950,17 +950,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               },
@@ -974,17 +974,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               },
@@ -998,17 +998,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               },
@@ -1022,17 +1022,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               }
@@ -1072,17 +1072,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               },
@@ -1096,17 +1096,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               },
@@ -1120,17 +1120,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               },
@@ -1144,17 +1144,17 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "exchange_id": "OKCOIN_CNY",
-    "website": "https://www.okcoin.cn/",
-    "name": "OKCoin CNY"
-  },
-  {
-    "exchange_id": "HUOBI",
-    "website": "https://www.huobi.com/",
-    "name": "Huobi (HBUS)"
-  }
-]
+                      {
+                        "exchange_id": "OKCOIN_CNY",
+                        "website": "https://www.okcoin.cn/",
+                        "name": "OKCoin CNY"
+                      },
+                      {
+                        "exchange_id": "HUOBI",
+                        "website": "https://www.huobi.com/",
+                        "name": "Huobi (HBUS)"
+                      }
+                    ]
                   }
                 }
               }
@@ -1288,31 +1288,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               },
@@ -1326,31 +1326,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               },
@@ -1364,31 +1364,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               },
@@ -1402,31 +1402,31 @@
                 "examples": {
                   "Example response": {
                     "value": [
-  {
-    "period_id": "1SEC",
-    "length_seconds": 1,
-    "length_months": 0,
-    "unit_count": 1,
-    "unit_name": "second",
-    "display_name": "1 Second"
-  },
-  {
-    "period_id": "10DAY",
-    "length_seconds": 864000,
-    "length_months": 0,
-    "unit_count": 10,
-    "unit_name": "day",
-    "display_name": "10 Days"
-  },
-  {
-    "period_id": "2YRS",
-    "length_seconds": 0,
-    "length_months": 24,
-    "unit_count": 2,
-    "unit_name": "year",
-    "display_name": "2 Years"
-  }
-]
+                      {
+                        "period_id": "1SEC",
+                        "length_seconds": 1,
+                        "length_months": 0,
+                        "unit_count": 1,
+                        "unit_name": "second",
+                        "display_name": "1 Second"
+                      },
+                      {
+                        "period_id": "10DAY",
+                        "length_seconds": 864000,
+                        "length_months": 0,
+                        "unit_count": 10,
+                        "unit_name": "day",
+                        "display_name": "10 Days"
+                      },
+                      {
+                        "period_id": "2YRS",
+                        "length_seconds": 0,
+                        "length_months": 24,
+                        "unit_count": 2,
+                        "unit_name": "year",
+                        "display_name": "2 Years"
+                      }
+                    ]
                   }
                 }
               }
