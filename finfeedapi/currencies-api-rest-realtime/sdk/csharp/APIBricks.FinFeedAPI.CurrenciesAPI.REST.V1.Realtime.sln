@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime", "src\APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime\APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.csproj", "{9E751952-C442-4AE4-9C10-B7FDE11545E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime", "src\APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime\APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.csproj", "{457A3479-9A73-4EDE-A667-C4BD2A2B6415}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test", "src\APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test\APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9E751952-C442-4AE4-9C10-B7FDE11545E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E751952-C442-4AE4-9C10-B7FDE11545E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E751952-C442-4AE4-9C10-B7FDE11545E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E751952-C442-4AE4-9C10-B7FDE11545E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{457A3479-9A73-4EDE-A667-C4BD2A2B6415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{457A3479-9A73-4EDE-A667-C4BD2A2B6415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{457A3479-9A73-4EDE-A667-C4BD2A2B6415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{457A3479-9A73-4EDE-A667-C4BD2A2B6415}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
