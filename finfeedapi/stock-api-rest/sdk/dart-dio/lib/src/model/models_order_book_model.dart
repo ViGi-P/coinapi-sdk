@@ -122,36 +122,41 @@ class _$ModelsOrderBookModelSerializer implements PrimitiveSerializer<ModelsOrde
         case r'add_order':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsAddOrderModel),
-          ) as ModelsAddOrderModel;
+            specifiedType: const FullType.nullable(ModelsAddOrderModel),
+          ) as ModelsAddOrderModel?;
+          if (valueDes == null) continue;
           result.addOrder.replace(valueDes);
           break;
         case r'delete_order':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsDeleteOrderModel),
-          ) as ModelsDeleteOrderModel;
+            specifiedType: const FullType.nullable(ModelsDeleteOrderModel),
+          ) as ModelsDeleteOrderModel?;
+          if (valueDes == null) continue;
           result.deleteOrder.replace(valueDes);
           break;
         case r'modify_order':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsModifyOrderModel),
-          ) as ModelsModifyOrderModel;
+            specifiedType: const FullType.nullable(ModelsModifyOrderModel),
+          ) as ModelsModifyOrderModel?;
+          if (valueDes == null) continue;
           result.modifyOrder.replace(valueDes);
           break;
         case r'executed_order':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsExecutedOrderModel),
-          ) as ModelsExecutedOrderModel;
+            specifiedType: const FullType.nullable(ModelsExecutedOrderModel),
+          ) as ModelsExecutedOrderModel?;
+          if (valueDes == null) continue;
           result.executedOrder.replace(valueDes);
           break;
         case r'clear_book':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsClearBookModel),
-          ) as ModelsClearBookModel;
+            specifiedType: const FullType.nullable(ModelsClearBookModel),
+          ) as ModelsClearBookModel?;
+          if (valueDes == null) continue;
           result.clearBook.replace(valueDes);
           break;
         default:

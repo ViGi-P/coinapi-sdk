@@ -222,12 +222,22 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="ModelsOfficialPriceModel" />
     /// </summary>
-    public class ModelsOfficialPriceModelJsonConverter : JsonConverter<ModelsOfficialPriceModel>
+    public partial class ModelsOfficialPriceModelJsonConverter : JsonConverter<ModelsOfficialPriceModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelsOfficialPriceModelJsonConverter" /> class.
+        /// </summary>
+        public ModelsOfficialPriceModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize Timestamp
         /// </summary>
-        public static string TimestampFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimestampFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="ModelsOfficialPriceModel" />

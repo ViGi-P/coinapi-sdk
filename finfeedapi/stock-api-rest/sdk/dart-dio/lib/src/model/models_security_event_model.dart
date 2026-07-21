@@ -166,22 +166,25 @@ class _$ModelsSecurityEventModelSerializer implements PrimitiveSerializer<Models
         case r'timestamp_nanos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.timestampNanos = valueDes;
           break;
         case r'timestamp':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timestamp = valueDes;
           break;
         case r'security_event':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.securityEvent = valueDes;
           break;
         case r'security_event_code':
@@ -203,15 +206,17 @@ class _$ModelsSecurityEventModelSerializer implements PrimitiveSerializer<Models
         case r'is_opening_process_complete':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isOpeningProcessComplete = valueDes;
           break;
         case r'is_closing_process_complete':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isClosingProcessComplete = valueDes;
           break;
         default:

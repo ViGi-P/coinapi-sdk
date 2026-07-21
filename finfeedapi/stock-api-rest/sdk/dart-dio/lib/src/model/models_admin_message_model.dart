@@ -170,64 +170,73 @@ class _$ModelsAdminMessageModelSerializer implements PrimitiveSerializer<ModelsA
         case r'trading_status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsTradingStatusModel),
-          ) as ModelsTradingStatusModel;
+            specifiedType: const FullType.nullable(ModelsTradingStatusModel),
+          ) as ModelsTradingStatusModel?;
+          if (valueDes == null) continue;
           result.tradingStatus.replace(valueDes);
           break;
         case r'official_price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsOfficialPriceModel),
-          ) as ModelsOfficialPriceModel;
+            specifiedType: const FullType.nullable(ModelsOfficialPriceModel),
+          ) as ModelsOfficialPriceModel?;
+          if (valueDes == null) continue;
           result.officialPrice.replace(valueDes);
           break;
         case r'security_event':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsSecurityEventModel),
-          ) as ModelsSecurityEventModel;
+            specifiedType: const FullType.nullable(ModelsSecurityEventModel),
+          ) as ModelsSecurityEventModel?;
+          if (valueDes == null) continue;
           result.securityEvent.replace(valueDes);
           break;
         case r'auction_information':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsAuctionInformationModel),
-          ) as ModelsAuctionInformationModel;
+            specifiedType: const FullType.nullable(ModelsAuctionInformationModel),
+          ) as ModelsAuctionInformationModel?;
+          if (valueDes == null) continue;
           result.auctionInformation.replace(valueDes);
           break;
         case r'short_sale_price_test':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsShortSalePriceTestStatusModel),
-          ) as ModelsShortSalePriceTestStatusModel;
+            specifiedType: const FullType.nullable(ModelsShortSalePriceTestStatusModel),
+          ) as ModelsShortSalePriceTestStatusModel?;
+          if (valueDes == null) continue;
           result.shortSalePriceTest.replace(valueDes);
           break;
         case r'operational_halt_status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsOperationalHaltStatusModel),
-          ) as ModelsOperationalHaltStatusModel;
+            specifiedType: const FullType.nullable(ModelsOperationalHaltStatusModel),
+          ) as ModelsOperationalHaltStatusModel?;
+          if (valueDes == null) continue;
           result.operationalHaltStatus.replace(valueDes);
           break;
         case r'retail_liquidity_indicator':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsRetailLiquidityIndicatorModel),
-          ) as ModelsRetailLiquidityIndicatorModel;
+            specifiedType: const FullType.nullable(ModelsRetailLiquidityIndicatorModel),
+          ) as ModelsRetailLiquidityIndicatorModel?;
+          if (valueDes == null) continue;
           result.retailLiquidityIndicator.replace(valueDes);
           break;
         case r'system_event':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(IEXSystemEventSystemEventModel),
-          ) as IEXSystemEventSystemEventModel;
+            specifiedType: const FullType.nullable(IEXSystemEventSystemEventModel),
+          ) as IEXSystemEventSystemEventModel?;
+          if (valueDes == null) continue;
           result.systemEvent.replace(valueDes);
           break;
         case r'security_directory':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ModelsSecurityDirectoryModel),
-          ) as ModelsSecurityDirectoryModel;
+            specifiedType: const FullType.nullable(ModelsSecurityDirectoryModel),
+          ) as ModelsSecurityDirectoryModel?;
+          if (valueDes == null) continue;
           result.securityDirectory.replace(valueDes);
           break;
         default:

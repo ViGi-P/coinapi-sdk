@@ -341,12 +341,22 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="ModelsShortSalePriceTestStatusModel" />
     /// </summary>
-    public class ModelsShortSalePriceTestStatusModelJsonConverter : JsonConverter<ModelsShortSalePriceTestStatusModel>
+    public partial class ModelsShortSalePriceTestStatusModelJsonConverter : JsonConverter<ModelsShortSalePriceTestStatusModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelsShortSalePriceTestStatusModelJsonConverter" /> class.
+        /// </summary>
+        public ModelsShortSalePriceTestStatusModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize Timestamp
         /// </summary>
-        public static string TimestampFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimestampFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="ModelsShortSalePriceTestStatusModel" />

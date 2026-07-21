@@ -51,7 +51,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) => Host.CreateDefaultBuilder(args)
-            .ConfigureApi((context, services, options) =>
+            .ConfigureApi((context, options) =>
             {
                 string apiKeyTokenValue1 = context.Configuration["<token>"] ?? throw new Exception("Token not found.");
                 ApiKeyToken apiKeyToken1 = new(apiKeyTokenValue1, ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));

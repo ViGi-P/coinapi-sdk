@@ -380,8 +380,18 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="FinFeedAPISymbolModel" />
     /// </summary>
-    public class FinFeedAPISymbolModelJsonConverter : JsonConverter<FinFeedAPISymbolModel>
+    public partial class FinFeedAPISymbolModelJsonConverter : JsonConverter<FinFeedAPISymbolModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinFeedAPISymbolModelJsonConverter" /> class.
+        /// </summary>
+        public FinFeedAPISymbolModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="FinFeedAPISymbolModel" />
         /// </summary>

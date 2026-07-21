@@ -190,22 +190,25 @@ class _$ModelsRetailLiquidityIndicatorModelSerializer implements PrimitiveSerial
         case r'timestamp_nanos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.timestampNanos = valueDes;
           break;
         case r'timestamp':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timestamp = valueDes;
           break;
         case r'retail_liquidity_indicator':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.retailLiquidityIndicator = valueDes;
           break;
         case r'retail_liquidity_indicator_code':
@@ -227,29 +230,33 @@ class _$ModelsRetailLiquidityIndicatorModelSerializer implements PrimitiveSerial
         case r'is_retail_indicator_not_applicable':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isRetailIndicatorNotApplicable = valueDes;
           break;
         case r'is_retail_indicator_buy_interest':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isRetailIndicatorBuyInterest = valueDes;
           break;
         case r'is_retail_indicator_sell_interest':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isRetailIndicatorSellInterest = valueDes;
           break;
         case r'is_retail_indicator_buy_and_sell_interest':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isRetailIndicatorBuyAndSellInterest = valueDes;
           break;
         default:

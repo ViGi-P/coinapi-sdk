@@ -213,8 +213,18 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="ModelsAdminMessageModel" />
     /// </summary>
-    public class ModelsAdminMessageModelJsonConverter : JsonConverter<ModelsAdminMessageModel>
+    public partial class ModelsAdminMessageModelJsonConverter : JsonConverter<ModelsAdminMessageModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelsAdminMessageModelJsonConverter" /> class.
+        /// </summary>
+        public ModelsAdminMessageModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="ModelsAdminMessageModel" />
         /// </summary>

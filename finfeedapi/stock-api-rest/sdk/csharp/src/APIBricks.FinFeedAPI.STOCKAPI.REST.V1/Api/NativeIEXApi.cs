@@ -22,6 +22,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client;
+using APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Logging;
 using APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model;
 using System.Diagnostics.CodeAnalysis;
 
@@ -405,11 +406,6 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         private JsonSerializerOptions _jsonSerializerOptions;
 
         /// <summary>
-        /// The logger factory
-        /// </summary>
-        public ILoggerFactory LoggerFactory { get; }
-
-        /// <summary>
         /// The logger
         /// </summary>
         public ILogger<NativeIEXApi> Logger { get; }
@@ -438,13 +434,12 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// Initializes a new instance of the <see cref="NativeIEXApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public NativeIEXApi(ILogger<NativeIEXApi> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, NativeIEXApiEvents nativeIEXApiEvents,
+        public NativeIEXApi(ILogger<NativeIEXApi> logger, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, NativeIEXApiEvents nativeIEXApiEvents,
             TokenProvider<ApiKeyToken> apiKeyProvider,
             TokenProvider<BearerToken> bearerTokenProvider)
         {
             _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
-            LoggerFactory = loggerFactory;
-            Logger = LoggerFactory.CreateLogger<NativeIEXApi>();
+            Logger = logger;
             HttpClient = httpClient;
             Events = nativeIEXApiEvents;
             ApiKeyProvider = apiKeyProvider;
@@ -476,7 +471,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexAdminMessagesSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -503,7 +498,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1NativeIexAdminMessagesSymbolGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, symbol, date, limit);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -604,13 +599,12 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1NativeIexAdminMessagesSymbolGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1NativeIexAdminMessagesSymbolGetApiResponse>();
                         V1NativeIexAdminMessagesSymbolGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/admin/messages/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/admin/messages/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -644,7 +638,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1NativeIexAdminMessagesSymbolGetApiResponse> Logger { get; }
+            public ILogger<NativeIEXApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1NativeIexAdminMessagesSymbolGetApiResponse"/>
@@ -656,7 +650,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexAdminMessagesSymbolGetApiResponse(ILogger<V1NativeIexAdminMessagesSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexAdminMessagesSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -672,7 +666,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexAdminMessagesSymbolGetApiResponse(ILogger<V1NativeIexAdminMessagesSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexAdminMessagesSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -723,7 +717,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -742,7 +736,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexAdminSystemEventGet(ref suppressDefaultLog, apiResponseLocalVar, date, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -767,7 +761,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1NativeIexAdminSystemEventGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, date, limit);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -862,13 +856,12 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1NativeIexAdminSystemEventGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1NativeIexAdminSystemEventGetApiResponse>();
                         V1NativeIexAdminSystemEventGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/admin/system-event", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/admin/system-event", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -902,7 +895,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1NativeIexAdminSystemEventGetApiResponse> Logger { get; }
+            public ILogger<NativeIEXApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1NativeIexAdminSystemEventGetApiResponse"/>
@@ -914,7 +907,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexAdminSystemEventGetApiResponse(ILogger<V1NativeIexAdminSystemEventGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexAdminSystemEventGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -930,7 +923,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexAdminSystemEventGetApiResponse(ILogger<V1NativeIexAdminSystemEventGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexAdminSystemEventGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -981,7 +974,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -1012,7 +1005,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexLevel1QuoteSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1039,7 +1032,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1NativeIexLevel1QuoteSymbolGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, symbol, date, limit);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -1140,13 +1133,12 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1NativeIexLevel1QuoteSymbolGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1NativeIexLevel1QuoteSymbolGetApiResponse>();
                         V1NativeIexLevel1QuoteSymbolGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/level1-quote/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/level1-quote/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -1180,7 +1172,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1NativeIexLevel1QuoteSymbolGetApiResponse> Logger { get; }
+            public ILogger<NativeIEXApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1NativeIexLevel1QuoteSymbolGetApiResponse"/>
@@ -1192,7 +1184,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexLevel1QuoteSymbolGetApiResponse(ILogger<V1NativeIexLevel1QuoteSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexLevel1QuoteSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1208,7 +1200,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexLevel1QuoteSymbolGetApiResponse(ILogger<V1NativeIexLevel1QuoteSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexLevel1QuoteSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1259,7 +1251,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -1290,7 +1282,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexLevel2PriceLevelUpdateSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1317,7 +1309,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1NativeIexLevel2PriceLevelUpdateSymbolGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, symbol, date, limit);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -1418,13 +1410,12 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse>();
                         V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/level2-price-level-update/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/level2-price-level-update/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -1458,7 +1449,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse> Logger { get; }
+            public ILogger<NativeIEXApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse"/>
@@ -1470,7 +1461,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse(ILogger<V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1486,7 +1477,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse(ILogger<V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1537,7 +1528,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -1568,7 +1559,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexLevel3OrderBookSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1595,7 +1586,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1NativeIexLevel3OrderBookSymbolGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, symbol, date, limit);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -1696,13 +1687,12 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1NativeIexLevel3OrderBookSymbolGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1NativeIexLevel3OrderBookSymbolGetApiResponse>();
                         V1NativeIexLevel3OrderBookSymbolGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/level3-order-book/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/level3-order-book/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -1736,7 +1726,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1NativeIexLevel3OrderBookSymbolGetApiResponse> Logger { get; }
+            public ILogger<NativeIEXApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1NativeIexLevel3OrderBookSymbolGetApiResponse"/>
@@ -1748,7 +1738,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexLevel3OrderBookSymbolGetApiResponse(ILogger<V1NativeIexLevel3OrderBookSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexLevel3OrderBookSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1764,7 +1754,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexLevel3OrderBookSymbolGetApiResponse(ILogger<V1NativeIexLevel3OrderBookSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexLevel3OrderBookSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1815,7 +1805,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -1846,7 +1836,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexTradeSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1873,7 +1863,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1NativeIexTradeSymbolGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, symbol, date, limit);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -1974,13 +1964,12 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1NativeIexTradeSymbolGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1NativeIexTradeSymbolGetApiResponse>();
                         V1NativeIexTradeSymbolGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/trade/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/native/iex/trade/{symbol}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -2014,7 +2003,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1NativeIexTradeSymbolGetApiResponse> Logger { get; }
+            public ILogger<NativeIEXApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1NativeIexTradeSymbolGetApiResponse"/>
@@ -2026,7 +2015,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexTradeSymbolGetApiResponse(ILogger<V1NativeIexTradeSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexTradeSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2042,7 +2031,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1NativeIexTradeSymbolGetApiResponse(ILogger<V1NativeIexTradeSymbolGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1NativeIexTradeSymbolGetApiResponse(ILogger<NativeIEXApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2093,7 +2082,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);

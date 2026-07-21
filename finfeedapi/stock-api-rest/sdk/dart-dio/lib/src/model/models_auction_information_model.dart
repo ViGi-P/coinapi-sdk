@@ -406,22 +406,25 @@ class _$ModelsAuctionInformationModelSerializer implements PrimitiveSerializer<M
         case r'timestamp_nanos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.timestampNanos = valueDes;
           break;
         case r'timestamp':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timestamp = valueDes;
           break;
         case r'auction_type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.auctionType = valueDes;
           break;
         case r'auction_type_code':
@@ -443,71 +446,81 @@ class _$ModelsAuctionInformationModelSerializer implements PrimitiveSerializer<M
         case r'is_auction_type_opening':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isAuctionTypeOpening = valueDes;
           break;
         case r'is_auction_type_closing':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isAuctionTypeClosing = valueDes;
           break;
         case r'is_auction_type_ipo':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isAuctionTypeIpo = valueDes;
           break;
         case r'is_auction_type_halt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isAuctionTypeHalt = valueDes;
           break;
         case r'is_auction_type_volatility':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isAuctionTypeVolatility = valueDes;
           break;
         case r'paired_shares':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.pairedShares = valueDes;
           break;
         case r'reference_price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.referencePrice = valueDes;
           break;
         case r'indicative_clearing_price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.indicativeClearingPrice = valueDes;
           break;
         case r'imbalance_shares':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.imbalanceShares = valueDes;
           break;
         case r'imbalance_side':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.imbalanceSide = valueDes;
           break;
         case r'imbalance_side_code':
@@ -529,71 +542,81 @@ class _$ModelsAuctionInformationModelSerializer implements PrimitiveSerializer<M
         case r'is_imbalance_side_buy':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isImbalanceSideBuy = valueDes;
           break;
         case r'is_imbalance_side_sell':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isImbalanceSideSell = valueDes;
           break;
         case r'is_imbalance_side_none':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isImbalanceSideNone = valueDes;
           break;
         case r'extension_number':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.extensionNumber = valueDes;
           break;
         case r'scheduled_auction_time_seconds':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.scheduledAuctionTimeSeconds = valueDes;
           break;
         case r'scheduled_auction_time':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.scheduledAuctionTime = valueDes;
           break;
         case r'auction_book_clearing_price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.auctionBookClearingPrice = valueDes;
           break;
         case r'collar_reference_price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.collarReferencePrice = valueDes;
           break;
         case r'lower_auction_collar':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.lowerAuctionCollar = valueDes;
           break;
         case r'upper_auction_collar':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.upperAuctionCollar = valueDes;
           break;
         default:

@@ -255,27 +255,37 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="OHLCVTimeSeriesExchangeTimeseriesItem" />
     /// </summary>
-    public class OHLCVTimeSeriesExchangeTimeseriesItemJsonConverter : JsonConverter<OHLCVTimeSeriesExchangeTimeseriesItem>
+    public partial class OHLCVTimeSeriesExchangeTimeseriesItemJsonConverter : JsonConverter<OHLCVTimeSeriesExchangeTimeseriesItem>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OHLCVTimeSeriesExchangeTimeseriesItemJsonConverter" /> class.
+        /// </summary>
+        public OHLCVTimeSeriesExchangeTimeseriesItemJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize TimePeriodStart
         /// </summary>
-        public static string TimePeriodStartFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimePeriodStartFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize TimePeriodEnd
         /// </summary>
-        public static string TimePeriodEndFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimePeriodEndFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize TimeOpen
         /// </summary>
-        public static string TimeOpenFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeOpenFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize TimeClose
         /// </summary>
-        public static string TimeCloseFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeCloseFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="OHLCVTimeSeriesExchangeTimeseriesItem" />

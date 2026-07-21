@@ -290,12 +290,22 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="ModelsExecutedOrderModel" />
     /// </summary>
-    public class ModelsExecutedOrderModelJsonConverter : JsonConverter<ModelsExecutedOrderModel>
+    public partial class ModelsExecutedOrderModelJsonConverter : JsonConverter<ModelsExecutedOrderModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelsExecutedOrderModelJsonConverter" /> class.
+        /// </summary>
+        public ModelsExecutedOrderModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize Timestamp
         /// </summary>
-        public static string TimestampFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimestampFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="ModelsExecutedOrderModel" />

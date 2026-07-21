@@ -194,22 +194,25 @@ class _$IEXSystemEventSystemEventModelSerializer implements PrimitiveSerializer<
         case r'timestamp_nanos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.timestampNanos = valueDes;
           break;
         case r'timestamp':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timestamp = valueDes;
           break;
         case r'system_event':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.systemEvent = valueDes;
           break;
         case r'system_event_code':
@@ -231,43 +234,49 @@ class _$IEXSystemEventSystemEventModelSerializer implements PrimitiveSerializer<
         case r'is_system_event_start_of_messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isSystemEventStartOfMessages = valueDes;
           break;
         case r'is_system_event_start_of_system_hours':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isSystemEventStartOfSystemHours = valueDes;
           break;
         case r'is_system_event_start_of_regular_market_hours':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isSystemEventStartOfRegularMarketHours = valueDes;
           break;
         case r'is_system_event_end_of_regular_market_hours':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isSystemEventEndOfRegularMarketHours = valueDes;
           break;
         case r'is_system_event_end_of_system_hours':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isSystemEventEndOfSystemHours = valueDes;
           break;
         case r'is_system_event_end_of_messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isSystemEventEndOfMessages = valueDes;
           break;
         default:

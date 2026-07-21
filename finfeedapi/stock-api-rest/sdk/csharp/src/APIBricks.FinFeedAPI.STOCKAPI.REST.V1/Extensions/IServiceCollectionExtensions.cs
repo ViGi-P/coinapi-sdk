@@ -59,6 +59,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Extensions
                         s => s.GetRequiredService(typeof(RateLimitProvider<>).MakeGenericType(tokenType)));
                 }
             }
+
+            host.NotifyServicesAdded(services);
         }
     }
 }

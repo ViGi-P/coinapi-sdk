@@ -193,15 +193,17 @@ class _$OHLCVTimeSeriesExchangeTimeseriesItemSerializer implements PrimitiveSeri
         case r'time_period_start':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timePeriodStart = valueDes;
           break;
         case r'time_period_end':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timePeriodEnd = valueDes;
           break;
         case r'time_open':
@@ -255,15 +257,17 @@ class _$OHLCVTimeSeriesExchangeTimeseriesItemSerializer implements PrimitiveSeri
         case r'volume_traded':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.volumeTraded = valueDes;
           break;
         case r'trades_count':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.tradesCount = valueDes;
           break;
         case r'symbol_id_exchange':

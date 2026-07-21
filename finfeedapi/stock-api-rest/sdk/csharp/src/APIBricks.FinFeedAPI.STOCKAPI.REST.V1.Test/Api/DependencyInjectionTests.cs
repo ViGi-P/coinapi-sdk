@@ -26,7 +26,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
     public class DependencyInjectionTest
     {
         private readonly IHost _hostUsingConfigureWithoutAClient =
-            Host.CreateDefaultBuilder([]).ConfigureApi((context, services, options) =>
+            Host.CreateDefaultBuilder([]).ConfigureApi((context, options) =>
             {
                 ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
                 options.AddTokens(apiKeyToken1);
@@ -37,7 +37,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
             .Build();
 
         private readonly IHost _hostUsingConfigureWithAClient =
-            Host.CreateDefaultBuilder([]).ConfigureApi((context, services, options) =>
+            Host.CreateDefaultBuilder([]).ConfigureApi((context, options) =>
             {
                 ApiKeyToken apiKeyToken1 = new("<token>", ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
                 options.AddTokens(apiKeyToken1);

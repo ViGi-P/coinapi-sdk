@@ -239,12 +239,22 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="ModelsRetailLiquidityIndicatorModel" />
     /// </summary>
-    public class ModelsRetailLiquidityIndicatorModelJsonConverter : JsonConverter<ModelsRetailLiquidityIndicatorModel>
+    public partial class ModelsRetailLiquidityIndicatorModelJsonConverter : JsonConverter<ModelsRetailLiquidityIndicatorModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelsRetailLiquidityIndicatorModelJsonConverter" /> class.
+        /// </summary>
+        public ModelsRetailLiquidityIndicatorModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize Timestamp
         /// </summary>
-        public static string TimestampFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimestampFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="ModelsRetailLiquidityIndicatorModel" />

@@ -154,43 +154,49 @@ class _$IEXPriceLevelUpdatePriceLevelUpdateModelSerializer implements PrimitiveS
         case r'timestamp_nanos':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.timestampNanos = valueDes;
           break;
         case r'timestamp':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timestamp = valueDes;
           break;
         case r'is_side_buy':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isSideBuy = valueDes;
           break;
         case r'is_event_processing_complete':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isEventProcessingComplete = valueDes;
           break;
         case r'size':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.size = valueDes;
           break;
         case r'price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.price = valueDes;
           break;
         default:

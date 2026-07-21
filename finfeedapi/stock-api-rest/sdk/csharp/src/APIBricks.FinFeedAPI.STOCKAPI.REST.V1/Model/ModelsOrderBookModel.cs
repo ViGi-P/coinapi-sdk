@@ -149,8 +149,18 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="ModelsOrderBookModel" />
     /// </summary>
-    public class ModelsOrderBookModelJsonConverter : JsonConverter<ModelsOrderBookModel>
+    public partial class ModelsOrderBookModelJsonConverter : JsonConverter<ModelsOrderBookModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelsOrderBookModelJsonConverter" /> class.
+        /// </summary>
+        public ModelsOrderBookModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="ModelsOrderBookModel" />
         /// </summary>

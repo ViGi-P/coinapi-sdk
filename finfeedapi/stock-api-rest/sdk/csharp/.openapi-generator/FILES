@@ -93,6 +93,7 @@ src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/TokenProvider`1.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Extensions/IHostBuilderExtensions.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Extensions/IHttpClientBuilderExtensions.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Extensions/IServiceCollectionExtensions.cs
+src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Logging/RestLogEvents.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Model/FinFeedAPIExchangeModel.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Model/FinFeedAPISymbolModel.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Model/IEXPriceLevelUpdatePriceLevelUpdateModel.cs

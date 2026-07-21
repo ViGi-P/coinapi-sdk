@@ -171,8 +171,18 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="OHLCVTimeSeriesTimeseriesPeriod" />
     /// </summary>
-    public class OHLCVTimeSeriesTimeseriesPeriodJsonConverter : JsonConverter<OHLCVTimeSeriesTimeseriesPeriod>
+    public partial class OHLCVTimeSeriesTimeseriesPeriodJsonConverter : JsonConverter<OHLCVTimeSeriesTimeseriesPeriod>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OHLCVTimeSeriesTimeseriesPeriodJsonConverter" /> class.
+        /// </summary>
+        public OHLCVTimeSeriesTimeseriesPeriodJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="OHLCVTimeSeriesTimeseriesPeriod" />
         /// </summary>

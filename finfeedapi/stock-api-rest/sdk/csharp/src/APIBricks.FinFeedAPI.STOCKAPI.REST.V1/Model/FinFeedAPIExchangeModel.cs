@@ -380,27 +380,37 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="FinFeedAPIExchangeModel" />
     /// </summary>
-    public class FinFeedAPIExchangeModelJsonConverter : JsonConverter<FinFeedAPIExchangeModel>
+    public partial class FinFeedAPIExchangeModelJsonConverter : JsonConverter<FinFeedAPIExchangeModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinFeedAPIExchangeModelJsonConverter" /> class.
+        /// </summary>
+        public FinFeedAPIExchangeModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize CreationDate
         /// </summary>
-        public static string CreationDateFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string CreationDateFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize LastUpdateDate
         /// </summary>
-        public static string LastUpdateDateFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string LastUpdateDateFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize LastValidationDate
         /// </summary>
-        public static string LastValidationDateFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string LastValidationDateFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize ExpiryDate
         /// </summary>
-        public static string ExpiryDateFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string ExpiryDateFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="FinFeedAPIExchangeModel" />

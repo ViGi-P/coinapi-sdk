@@ -545,17 +545,27 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="ModelsAuctionInformationModel" />
     /// </summary>
-    public class ModelsAuctionInformationModelJsonConverter : JsonConverter<ModelsAuctionInformationModel>
+    public partial class ModelsAuctionInformationModelJsonConverter : JsonConverter<ModelsAuctionInformationModel>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelsAuctionInformationModelJsonConverter" /> class.
+        /// </summary>
+        public ModelsAuctionInformationModelJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize Timestamp
         /// </summary>
-        public static string TimestampFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimestampFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize ScheduledAuctionTime
         /// </summary>
-        public static string ScheduledAuctionTimeFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string ScheduledAuctionTimeFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="ModelsAuctionInformationModel" />
