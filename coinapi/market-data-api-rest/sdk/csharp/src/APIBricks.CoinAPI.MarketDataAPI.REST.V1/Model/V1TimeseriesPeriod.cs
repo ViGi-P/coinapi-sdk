@@ -171,8 +171,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1TimeseriesPeriod" />
     /// </summary>
-    public class V1TimeseriesPeriodJsonConverter : JsonConverter<V1TimeseriesPeriod>
+    public partial class V1TimeseriesPeriodJsonConverter : JsonConverter<V1TimeseriesPeriod>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1TimeseriesPeriodJsonConverter" /> class.
+        /// </summary>
+        public V1TimeseriesPeriodJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="V1TimeseriesPeriod" />
         /// </summary>

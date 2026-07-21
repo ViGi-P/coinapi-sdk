@@ -148,8 +148,9 @@ class _$V1OptionExchangeGroupSerializer implements PrimitiveSerializer<V1OptionE
         case r'time_expiration':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timeExpiration = valueDes;
           break;
         case r'strikes':

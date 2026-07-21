@@ -122,6 +122,7 @@ src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/TokenProvider`1.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Extensions/IHostBuilderExtensions.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Extensions/IHttpClientBuilderExtensions.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Extensions/IServiceCollectionExtensions.cs
+src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Logging/RestLogEvents.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Model/MarketDataMetadataAsset.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Model/MarketDataMetadataChain.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Model/MarketDataMetadataExchange.cs

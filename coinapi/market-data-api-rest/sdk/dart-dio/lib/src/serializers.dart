@@ -77,40 +77,16 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OhlcvExchangeTimeseriesItem)]),
-        () => ListBuilder<OhlcvExchangeTimeseriesItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MarketDataMetadataExchange)]),
-        () => ListBuilder<MarketDataMetadataExchange>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1Quote)]),
-        () => ListBuilder<V1Quote>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1Trade)]),
-        () => ListBuilder<V1Trade>(),
+        const FullType(BuiltList, [FullType(V1ChainNetworkAddress)]),
+        () => ListBuilder<V1ChainNetworkAddress>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1OptionExchangeGroup)]),
         () => ListBuilder<V1OptionExchangeGroup>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1OrderBook)]),
-        () => ListBuilder<V1OrderBook>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(JsonObject)]),
-        () => ListBuilder<JsonObject>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1MetricInfo)]),
         () => ListBuilder<V1MetricInfo>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1TimeseriesItem)]),
-        () => ListBuilder<V1TimeseriesItem>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1ListingItem)]),
@@ -121,24 +97,12 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<V1QuoteTrade>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1TimeseriesPeriod)]),
-        () => ListBuilder<V1TimeseriesPeriod>(),
+        const FullType(BuiltList, [FullType(V1ExchangeRatesRate)]),
+        () => ListBuilder<V1ExchangeRatesRate>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1OrderBookBase)]),
         () => ListBuilder<V1OrderBookBase>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1SymbolMapping)]),
-        () => ListBuilder<V1SymbolMapping>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MarketDataMetadataAsset)]),
-        () => ListBuilder<MarketDataMetadataAsset>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(V1GeneralData)]),
-        () => ListBuilder<V1GeneralData>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MarketDataMetadataSymbol)]),
@@ -161,8 +125,64 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<V1Metric>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltMap, [FullType(String), FullType.nullable(String)]),
+        () => MapBuilder<String, String?>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1ExchangeRatesTimeseriesItem)]),
         () => ListBuilder<V1ExchangeRatesTimeseriesItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(OhlcvExchangeTimeseriesItem)]),
+        () => ListBuilder<OhlcvExchangeTimeseriesItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MarketDataMetadataExchange)]),
+        () => ListBuilder<MarketDataMetadataExchange>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1Quote)]),
+        () => ListBuilder<V1Quote>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1Trade)]),
+        () => ListBuilder<V1Trade>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1OrderBook)]),
+        () => ListBuilder<V1OrderBook>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(JsonObject)]),
+        () => ListBuilder<JsonObject>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1TimeseriesItem)]),
+        () => ListBuilder<V1TimeseriesItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1Strike)]),
+        () => ListBuilder<V1Strike>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1TimeseriesPeriod)]),
+        () => ListBuilder<V1TimeseriesPeriod>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1SymbolMapping)]),
+        () => ListBuilder<V1SymbolMapping>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MarketDataMetadataAsset)]),
+        () => ListBuilder<MarketDataMetadataAsset>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1GeneralData)]),
+        () => ListBuilder<V1GeneralData>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(String)]),
+        () => ListBuilder<String>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

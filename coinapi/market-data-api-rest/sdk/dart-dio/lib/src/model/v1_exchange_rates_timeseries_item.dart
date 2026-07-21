@@ -158,15 +158,17 @@ class _$V1ExchangeRatesTimeseriesItemSerializer implements PrimitiveSerializer<V
         case r'time_period_start':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timePeriodStart = valueDes;
           break;
         case r'time_period_end':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timePeriodEnd = valueDes;
           break;
         case r'time_open':

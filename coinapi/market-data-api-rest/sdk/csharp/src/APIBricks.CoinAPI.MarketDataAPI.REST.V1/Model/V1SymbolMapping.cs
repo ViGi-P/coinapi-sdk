@@ -222,8 +222,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1SymbolMapping" />
     /// </summary>
-    public class V1SymbolMappingJsonConverter : JsonConverter<V1SymbolMapping>
+    public partial class V1SymbolMappingJsonConverter : JsonConverter<V1SymbolMapping>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1SymbolMappingJsonConverter" /> class.
+        /// </summary>
+        public V1SymbolMappingJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="V1SymbolMapping" />
         /// </summary>

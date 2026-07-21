@@ -446,8 +446,9 @@ class _$MarketDataMetadataExchangeSerializer implements PrimitiveSerializer<Mark
         case r'rank':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.rank = valueDes;
           break;
         case r'integration_status':

@@ -131,15 +131,17 @@ class _$V1OrderBookSerializer implements PrimitiveSerializer<V1OrderBook> {
         case r'time_exchange':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timeExchange = valueDes;
           break;
         case r'time_coinapi':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timeCoinapi = valueDes;
           break;
         case r'asks':

@@ -106,7 +106,7 @@ type MarketDataMetadataSymbol struct {
 	// The size precision.
 	SizePrecision NullableFloat64 `json:"size_precision,omitempty"`
 	// Key Value Pair store with raw data from the data source.
-	RawKvp map[string]string `json:"raw_kvp,omitempty"`
+	RawKvp map[string]*string `json:"raw_kvp,omitempty"`
 	// Indicates whether the futures contract is inverse (coin-margined).
 	FutureIsInverse NullableBool `json:"future_is_inverse,omitempty"`
 	// Indicates whether the futures contract is quanto.
@@ -1949,9 +1949,9 @@ func (o *MarketDataMetadataSymbol) UnsetSizePrecision() {
 }
 
 // GetRawKvp returns the RawKvp field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MarketDataMetadataSymbol) GetRawKvp() map[string]string {
+func (o *MarketDataMetadataSymbol) GetRawKvp() map[string]*string {
 	if o == nil {
-		var ret map[string]string
+		var ret map[string]*string
 		return ret
 	}
 	return o.RawKvp
@@ -1960,7 +1960,7 @@ func (o *MarketDataMetadataSymbol) GetRawKvp() map[string]string {
 // GetRawKvpOk returns a tuple with the RawKvp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MarketDataMetadataSymbol) GetRawKvpOk() (*map[string]string, bool) {
+func (o *MarketDataMetadataSymbol) GetRawKvpOk() (*map[string]*string, bool) {
 	if o == nil || IsNil(o.RawKvp) {
 		return nil, false
 	}
@@ -1976,8 +1976,8 @@ func (o *MarketDataMetadataSymbol) HasRawKvp() bool {
 	return false
 }
 
-// SetRawKvp gets a reference to the given map[string]string and assigns it to the RawKvp field.
-func (o *MarketDataMetadataSymbol) SetRawKvp(v map[string]string) {
+// SetRawKvp gets a reference to the given map[string]*string and assigns it to the RawKvp field.
+func (o *MarketDataMetadataSymbol) SetRawKvp(v map[string]*string) {
 	o.RawKvp = v
 }
 

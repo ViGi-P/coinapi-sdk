@@ -97,22 +97,25 @@ class _$V1StrikeSerializer implements PrimitiveSerializer<V1Strike> {
         case r'strike_price':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(double),
-          ) as double;
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
           result.strikePrice = valueDes;
           break;
         case r'call':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(V1QuoteTrade),
-          ) as V1QuoteTrade;
+            specifiedType: const FullType.nullable(V1QuoteTrade),
+          ) as V1QuoteTrade?;
+          if (valueDes == null) continue;
           result.call.replace(valueDes);
           break;
         case r'put':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(V1QuoteTrade),
-          ) as V1QuoteTrade;
+            specifiedType: const FullType.nullable(V1QuoteTrade),
+          ) as V1QuoteTrade?;
+          if (valueDes == null) continue;
           result.put.replace(valueDes);
           break;
         default:

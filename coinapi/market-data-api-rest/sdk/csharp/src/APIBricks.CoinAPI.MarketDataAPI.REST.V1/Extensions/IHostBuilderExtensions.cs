@@ -27,13 +27,13 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Extensions
         /// </summary>
         /// <param name="builder"></param>
         /// <param name="options"></param>
-        public static IHostBuilder ConfigureApi(this IHostBuilder builder, Action<HostBuilderContext, IServiceCollection, HostConfiguration> options)
+        public static IHostBuilder ConfigureApi(this IHostBuilder builder, Action<HostBuilderContext, HostConfiguration>? options = null)
         {
             builder.ConfigureServices((context, services) => 
             {
                 HostConfiguration config = new HostConfiguration(services);
 
-                options(context, services, config);
+                options?.Invoke(context, config);
 
                 IServiceCollectionExtensions.AddApi(services, config);
             });

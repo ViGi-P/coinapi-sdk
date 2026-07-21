@@ -273,17 +273,27 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1Trade" />
     /// </summary>
-    public class V1TradeJsonConverter : JsonConverter<V1Trade>
+    public partial class V1TradeJsonConverter : JsonConverter<V1Trade>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1TradeJsonConverter" /> class.
+        /// </summary>
+        public V1TradeJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize TimeExchange
         /// </summary>
-        public static string TimeExchangeFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeExchangeFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize TimeCoinapi
         /// </summary>
-        public static string TimeCoinapiFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeCoinapiFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="V1Trade" />

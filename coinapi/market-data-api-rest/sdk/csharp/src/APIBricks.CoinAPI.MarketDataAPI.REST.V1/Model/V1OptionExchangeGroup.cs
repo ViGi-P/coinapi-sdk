@@ -154,12 +154,22 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1OptionExchangeGroup" />
     /// </summary>
-    public class V1OptionExchangeGroupJsonConverter : JsonConverter<V1OptionExchangeGroup>
+    public partial class V1OptionExchangeGroupJsonConverter : JsonConverter<V1OptionExchangeGroup>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1OptionExchangeGroupJsonConverter" /> class.
+        /// </summary>
+        public V1OptionExchangeGroupJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize TimeExpiration
         /// </summary>
-        public static string TimeExpirationFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeExpirationFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="V1OptionExchangeGroup" />

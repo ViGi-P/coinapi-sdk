@@ -186,8 +186,9 @@ class _$V1SymbolMappingSerializer implements PrimitiveSerializer<V1SymbolMapping
         case r'coinapi_datainfo_id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.coinapiDatainfoId = valueDes;
           break;
         case r'asset_id_base_exchange':

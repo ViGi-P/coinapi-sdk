@@ -120,8 +120,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1MetricInfo" />
     /// </summary>
-    public class V1MetricInfoJsonConverter : JsonConverter<V1MetricInfo>
+    public partial class V1MetricInfoJsonConverter : JsonConverter<V1MetricInfo>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1MetricInfoJsonConverter" /> class.
+        /// </summary>
+        public V1MetricInfoJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="V1MetricInfo" />
         /// </summary>

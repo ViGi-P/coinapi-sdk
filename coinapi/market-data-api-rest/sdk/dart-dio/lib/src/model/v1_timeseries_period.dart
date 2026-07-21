@@ -142,15 +142,17 @@ class _$V1TimeseriesPeriodSerializer implements PrimitiveSerializer<V1Timeseries
         case r'length_seconds':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.lengthSeconds = valueDes;
           break;
         case r'length_months':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.lengthMonths = valueDes;
           break;
         case r'unit_count':

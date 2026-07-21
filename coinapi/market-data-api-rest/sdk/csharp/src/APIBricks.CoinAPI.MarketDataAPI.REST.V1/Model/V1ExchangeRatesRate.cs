@@ -120,12 +120,22 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1ExchangeRatesRate" />
     /// </summary>
-    public class V1ExchangeRatesRateJsonConverter : JsonConverter<V1ExchangeRatesRate>
+    public partial class V1ExchangeRatesRateJsonConverter : JsonConverter<V1ExchangeRatesRate>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1ExchangeRatesRateJsonConverter" /> class.
+        /// </summary>
+        public V1ExchangeRatesRateJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize Time
         /// </summary>
-        public static string TimeFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="V1ExchangeRatesRate" />

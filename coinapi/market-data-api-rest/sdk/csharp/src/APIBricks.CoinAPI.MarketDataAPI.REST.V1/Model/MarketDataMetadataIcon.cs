@@ -120,8 +120,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="MarketDataMetadataIcon" />
     /// </summary>
-    public class MarketDataMetadataIconJsonConverter : JsonConverter<MarketDataMetadataIcon>
+    public partial class MarketDataMetadataIconJsonConverter : JsonConverter<MarketDataMetadataIcon>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketDataMetadataIconJsonConverter" /> class.
+        /// </summary>
+        public MarketDataMetadataIconJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="MarketDataMetadataIcon" />
         /// </summary>

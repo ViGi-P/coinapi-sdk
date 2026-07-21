@@ -170,15 +170,17 @@ class _$V1GeneralDataSerializer implements PrimitiveSerializer<V1GeneralData> {
         case r'entry_time':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.entryTime = valueDes;
           break;
         case r'recv_time':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.recvTime = valueDes;
           break;
         case r'exchange_id':

@@ -103,8 +103,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="MarketDataMetadataChain" />
     /// </summary>
-    public class MarketDataMetadataChainJsonConverter : JsonConverter<MarketDataMetadataChain>
+    public partial class MarketDataMetadataChainJsonConverter : JsonConverter<MarketDataMetadataChain>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketDataMetadataChainJsonConverter" /> class.
+        /// </summary>
+        public MarketDataMetadataChainJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="MarketDataMetadataChain" />
         /// </summary>

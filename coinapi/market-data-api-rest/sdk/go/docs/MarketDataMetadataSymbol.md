@@ -1583,20 +1583,20 @@ HasSizePrecision returns a boolean if a field has been set.
 UnsetSizePrecision ensures that no value is present for SizePrecision, not even an explicit nil
 ### GetRawKvp
 
-`func (o *MarketDataMetadataSymbol) GetRawKvp() map[string]string`
+`func (o *MarketDataMetadataSymbol) GetRawKvp() map[string]*string`
 
 GetRawKvp returns the RawKvp field if non-nil, zero value otherwise.
 
 ### GetRawKvpOk
 
-`func (o *MarketDataMetadataSymbol) GetRawKvpOk() (*map[string]string, bool)`
+`func (o *MarketDataMetadataSymbol) GetRawKvpOk() (*map[string]*string, bool)`
 
 GetRawKvpOk returns a tuple with the RawKvp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRawKvp
 
-`func (o *MarketDataMetadataSymbol) SetRawKvp(v map[string]string)`
+`func (o *MarketDataMetadataSymbol) SetRawKvp(v map[string]*string)`
 
 SetRawKvp sets RawKvp field to given value.
 

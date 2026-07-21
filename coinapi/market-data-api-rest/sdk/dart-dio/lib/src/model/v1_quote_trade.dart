@@ -166,15 +166,17 @@ class _$V1QuoteTradeSerializer implements PrimitiveSerializer<V1QuoteTrade> {
         case r'time_exchange':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timeExchange = valueDes;
           break;
         case r'time_coinapi':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
           result.timeCoinapi = valueDes;
           break;
         case r'ask_price':
@@ -212,8 +214,9 @@ class _$V1QuoteTradeSerializer implements PrimitiveSerializer<V1QuoteTrade> {
         case r'last_trade':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(V1LastTrade),
-          ) as V1LastTrade;
+            specifiedType: const FullType.nullable(V1LastTrade),
+          ) as V1LastTrade?;
+          if (valueDes == null) continue;
           result.lastTrade.replace(valueDes);
           break;
         default:

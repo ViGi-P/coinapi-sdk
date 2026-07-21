@@ -440,37 +440,47 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="MarketDataMetadataAsset" />
     /// </summary>
-    public class MarketDataMetadataAssetJsonConverter : JsonConverter<MarketDataMetadataAsset>
+    public partial class MarketDataMetadataAssetJsonConverter : JsonConverter<MarketDataMetadataAsset>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketDataMetadataAssetJsonConverter" /> class.
+        /// </summary>
+        public MarketDataMetadataAssetJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize DataQuoteStart
         /// </summary>
-        public static string DataQuoteStartFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string DataQuoteStartFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize DataQuoteEnd
         /// </summary>
-        public static string DataQuoteEndFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string DataQuoteEndFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize DataOrderbookStart
         /// </summary>
-        public static string DataOrderbookStartFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string DataOrderbookStartFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize DataOrderbookEnd
         /// </summary>
-        public static string DataOrderbookEndFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string DataOrderbookEndFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize DataTradeStart
         /// </summary>
-        public static string DataTradeStartFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string DataTradeStartFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize DataTradeEnd
         /// </summary>
-        public static string DataTradeEndFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string DataTradeEndFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="MarketDataMetadataAsset" />
