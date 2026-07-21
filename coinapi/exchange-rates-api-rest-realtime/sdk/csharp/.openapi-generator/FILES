@@ -57,6 +57,7 @@ src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Client/TokenProvider`1.c
 src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Extensions/IHostBuilderExtensions.cs
 src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Extensions/IHttpClientBuilderExtensions.cs
 src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Extensions/IServiceCollectionExtensions.cs
+src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Logging/RestLogEvents.cs
 src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Model/V1Asset.cs
 src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Model/V1ExchangeRate.cs
 src/APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1/Model/V1ExchangeRates.cs

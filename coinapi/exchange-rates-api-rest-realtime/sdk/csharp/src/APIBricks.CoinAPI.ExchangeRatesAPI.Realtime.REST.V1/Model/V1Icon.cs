@@ -120,8 +120,18 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1Icon" />
     /// </summary>
-    public class V1IconJsonConverter : JsonConverter<V1Icon>
+    public partial class V1IconJsonConverter : JsonConverter<V1Icon>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1IconJsonConverter" /> class.
+        /// </summary>
+        public V1IconJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="V1Icon" />
         /// </summary>

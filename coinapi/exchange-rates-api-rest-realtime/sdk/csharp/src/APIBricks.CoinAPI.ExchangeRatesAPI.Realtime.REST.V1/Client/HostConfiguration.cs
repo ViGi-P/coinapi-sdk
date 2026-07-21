@@ -25,7 +25,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client
     /// <summary>
     /// Provides hosting configuration for APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1
     /// </summary>
-    public class HostConfiguration
+    public partial class HostConfiguration
     {
         private readonly IServiceCollection _services;
         private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions();
@@ -56,6 +56,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client
             _services.AddSingleton<ExchangeRatesApiEvents>();
             _services.AddSingleton<MetadataApiEvents>();
             _services.AddSingleton<RateLimitApiEvents>();
+            OnHostConfigurationCreated();
         }
 
         /// <summary>
@@ -103,15 +104,40 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client
             builders.Add(_services.AddHttpClient<IExchangeRatesApi, ExchangeRatesApi>("APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api.IExchangeRatesApi", client));
             builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>("APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api.IMetadataApi", client));
             builders.Add(_services.AddHttpClient<IRateLimitApi, RateLimitApi>("APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api.IRateLimitApi", client));
-            
-            if (builder != null)
-                foreach (IHttpClientBuilder instance in builders)
-                    builder(instance);
+
+            foreach (IHttpClientBuilder instance in builders)
+            {
+                OnAddApiHttpClientBuilder(instance);
+                builder?.Invoke(instance);
+            }
 
             HttpClientsAdded = true;
 
             return this;
         }
+
+        /// <summary>
+        /// Applies configuration to each HttpClient after registration.
+        /// Implement this partial method in a separate file to provide custom defaults;
+        /// the caller's <c>builder</c> action runs after.
+        /// </summary>
+        /// <param name="builder"></param>
+        partial void OnAddApiHttpClientBuilder(IHttpClientBuilder builder);
+
+        /// <summary>
+        /// Called at the end of the constructor after all JSON converters and services are registered.
+        /// Implement this partial method to further configure <c>_jsonOptions</c> or register additional singletons via <c>_services</c>.
+        /// </summary>
+        partial void OnHostConfigurationCreated();
+
+        /// <summary>
+        /// Called after all services have been registered.
+        /// Implement this partial method to register additional services.
+        /// </summary>
+        /// <param name="services"></param>
+        partial void OnServicesAdded(IServiceCollection services);
+
+        internal void NotifyServicesAdded(IServiceCollection services) => OnServicesAdded(services);
 
         /// <summary>
         /// Configures the JsonSerializerSettings

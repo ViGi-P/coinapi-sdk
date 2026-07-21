@@ -22,6 +22,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client;
+using APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Logging;
 using System.Diagnostics.CodeAnalysis;
 
 namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
@@ -211,11 +212,6 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
         private JsonSerializerOptions _jsonSerializerOptions;
 
         /// <summary>
-        /// The logger factory
-        /// </summary>
-        public ILoggerFactory LoggerFactory { get; }
-
-        /// <summary>
         /// The logger
         /// </summary>
         public ILogger<RateLimitApi> Logger { get; }
@@ -244,13 +240,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
         /// Initializes a new instance of the <see cref="RateLimitApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public RateLimitApi(ILogger<RateLimitApi> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, RateLimitApiEvents rateLimitApiEvents,
+        public RateLimitApi(ILogger<RateLimitApi> logger, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, RateLimitApiEvents rateLimitApiEvents,
             TokenProvider<ApiKeyToken> apiKeyProvider,
             TokenProvider<BearerToken> bearerTokenProvider)
         {
             _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
-            LoggerFactory = loggerFactory;
-            Logger = LoggerFactory.CreateLogger<RateLimitApi>();
+            Logger = logger;
             HttpClient = httpClient;
             Events = rateLimitApiEvents;
             ApiKeyProvider = apiKeyProvider;
@@ -266,7 +261,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterInternalRatelimitWsconconApikeyGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -287,7 +282,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorInternalRatelimitWsconconApikeyGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -356,13 +351,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<InternalRatelimitWsconconApikeyGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<InternalRatelimitWsconconApikeyGetApiResponse>();
                         InternalRatelimitWsconconApikeyGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/internal/ratelimit/wsconcon/apikey", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/internal/ratelimit/wsconcon/apikey", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -396,7 +390,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<InternalRatelimitWsconconApikeyGetApiResponse> Logger { get; }
+            public ILogger<RateLimitApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="InternalRatelimitWsconconApikeyGetApiResponse"/>
@@ -408,7 +402,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public InternalRatelimitWsconconApikeyGetApiResponse(ILogger<InternalRatelimitWsconconApikeyGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public InternalRatelimitWsconconApikeyGetApiResponse(ILogger<RateLimitApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -424,7 +418,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public InternalRatelimitWsconconApikeyGetApiResponse(ILogger<InternalRatelimitWsconconApikeyGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public InternalRatelimitWsconconApikeyGetApiResponse(ILogger<RateLimitApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -443,7 +437,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -458,7 +452,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterInternalRatelimitWshelloIpGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -479,7 +473,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorInternalRatelimitWshelloIpGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -548,13 +542,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<InternalRatelimitWshelloIpGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<InternalRatelimitWshelloIpGetApiResponse>();
                         InternalRatelimitWshelloIpGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/internal/ratelimit/wshello/ip", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/internal/ratelimit/wshello/ip", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -588,7 +581,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<InternalRatelimitWshelloIpGetApiResponse> Logger { get; }
+            public ILogger<RateLimitApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="InternalRatelimitWshelloIpGetApiResponse"/>
@@ -600,7 +593,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public InternalRatelimitWshelloIpGetApiResponse(ILogger<InternalRatelimitWshelloIpGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public InternalRatelimitWshelloIpGetApiResponse(ILogger<RateLimitApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -616,7 +609,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public InternalRatelimitWshelloIpGetApiResponse(ILogger<InternalRatelimitWshelloIpGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public InternalRatelimitWshelloIpGetApiResponse(ILogger<RateLimitApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -635,7 +628,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -650,7 +643,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterInternalRatelimitWsreqIpGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -671,7 +664,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorInternalRatelimitWsreqIpGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -740,13 +733,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<InternalRatelimitWsreqIpGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<InternalRatelimitWsreqIpGetApiResponse>();
                         InternalRatelimitWsreqIpGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/internal/ratelimit/wsreq/ip", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/internal/ratelimit/wsreq/ip", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -780,7 +772,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<InternalRatelimitWsreqIpGetApiResponse> Logger { get; }
+            public ILogger<RateLimitApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="InternalRatelimitWsreqIpGetApiResponse"/>
@@ -792,7 +784,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public InternalRatelimitWsreqIpGetApiResponse(ILogger<InternalRatelimitWsreqIpGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public InternalRatelimitWsreqIpGetApiResponse(ILogger<RateLimitApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -808,7 +800,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public InternalRatelimitWsreqIpGetApiResponse(ILogger<InternalRatelimitWsreqIpGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public InternalRatelimitWsreqIpGetApiResponse(ILogger<RateLimitApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -827,7 +819,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
