@@ -37,6 +37,14 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<V1Asset>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1ExchangeRatesChainNetworkAddress)]),
+        () => ListBuilder<V1ExchangeRatesChainNetworkAddress>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1ExchangeRatesRate)]),
+        () => ListBuilder<V1ExchangeRatesRate>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1Icon)]),
         () => ListBuilder<V1Icon>(),
       )

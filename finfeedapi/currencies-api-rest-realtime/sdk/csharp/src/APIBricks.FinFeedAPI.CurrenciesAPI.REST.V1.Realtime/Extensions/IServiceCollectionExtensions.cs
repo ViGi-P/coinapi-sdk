@@ -59,6 +59,8 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Extensions
                         s => s.GetRequiredService(typeof(RateLimitProvider<>).MakeGenericType(tokenType)));
                 }
             }
+
+            host.NotifyServicesAdded(services);
         }
     }
 }

@@ -57,6 +57,7 @@ src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Client/TokenProvider`1.c
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Extensions/IHostBuilderExtensions.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Extensions/IHttpClientBuilderExtensions.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Extensions/IServiceCollectionExtensions.cs
+src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Logging/RestLogEvents.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1Asset.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1ExchangeRate.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Model/V1ExchangeRates.cs
