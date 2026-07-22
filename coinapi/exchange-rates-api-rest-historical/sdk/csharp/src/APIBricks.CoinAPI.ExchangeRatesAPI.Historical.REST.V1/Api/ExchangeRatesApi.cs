@@ -22,6 +22,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Client;
+using APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Logging;
 using APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model;
 using System.Diagnostics.CodeAnalysis;
 
@@ -293,11 +294,6 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
         private JsonSerializerOptions _jsonSerializerOptions;
 
         /// <summary>
-        /// The logger factory
-        /// </summary>
-        public ILoggerFactory LoggerFactory { get; }
-
-        /// <summary>
         /// The logger
         /// </summary>
         public ILogger<ExchangeRatesApi> Logger { get; }
@@ -321,12 +317,11 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
         /// Initializes a new instance of the <see cref="ExchangeRatesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ExchangeRatesApi(ILogger<ExchangeRatesApi> logger, ILoggerFactory loggerFactory, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, ExchangeRatesApiEvents exchangeRatesApiEvents,
+        public ExchangeRatesApi(ILogger<ExchangeRatesApi> logger, HttpClient httpClient, JsonSerializerOptionsProvider jsonSerializerOptionsProvider, ExchangeRatesApiEvents exchangeRatesApiEvents,
             TokenProvider<ApiKeyToken> apiKeyProvider)
         {
             _jsonSerializerOptions = jsonSerializerOptionsProvider.Options;
-            LoggerFactory = loggerFactory;
-            Logger = LoggerFactory.CreateLogger<ExchangeRatesApi>();
+            Logger = logger;
             HttpClient = httpClient;
             Events = exchangeRatesApiEvents;
             ApiKeyProvider = apiKeyProvider;
@@ -365,7 +360,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterGetSpecificRate(ref suppressDefaultLog, apiResponseLocalVar, assetIdBase, assetIdQuote, time);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -392,7 +387,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorGetSpecificRate(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, assetIdBase, assetIdQuote, time);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -488,13 +483,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<GetSpecificRateApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetSpecificRateApiResponse>();
                         GetSpecificRateApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -528,7 +522,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<GetSpecificRateApiResponse> Logger { get; }
+            public ILogger<ExchangeRatesApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="GetSpecificRateApiResponse"/>
@@ -540,7 +534,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public GetSpecificRateApiResponse(ILogger<GetSpecificRateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetSpecificRateApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -556,7 +550,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public GetSpecificRateApiResponse(ILogger<GetSpecificRateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetSpecificRateApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -607,7 +601,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -658,7 +652,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -693,7 +687,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -813,13 +807,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse>();
                         V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -853,7 +846,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> Logger { get; }
+            public ILogger<ExchangeRatesApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse"/>
@@ -865,7 +858,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse(ILogger<V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -881,7 +874,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse(ILogger<V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -932,7 +925,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -972,7 +965,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1ExchangerateAssetIdBaseGet(ref suppressDefaultLog, apiResponseLocalVar, assetIdBase, filterAssetId, invert, time);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1001,7 +994,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1ExchangerateAssetIdBaseGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, assetIdBase, filterAssetId, invert, time);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -1105,13 +1098,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1ExchangerateAssetIdBaseGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1ExchangerateAssetIdBaseGetApiResponse>();
                         V1ExchangerateAssetIdBaseGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/{asset_id_base}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/{asset_id_base}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -1145,7 +1137,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1ExchangerateAssetIdBaseGetApiResponse> Logger { get; }
+            public ILogger<ExchangeRatesApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1ExchangerateAssetIdBaseGetApiResponse"/>
@@ -1157,7 +1149,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1ExchangerateAssetIdBaseGetApiResponse(ILogger<V1ExchangerateAssetIdBaseGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1ExchangerateAssetIdBaseGetApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1173,7 +1165,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1ExchangerateAssetIdBaseGetApiResponse(ILogger<V1ExchangerateAssetIdBaseGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1ExchangerateAssetIdBaseGetApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1224,7 +1216,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
@@ -1239,7 +1231,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1ExchangerateHistoryPeriodsGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation(RestLogEvents.ApiRequestCompleted, "{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1260,7 +1252,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             bool suppressDefaultLogLocalVar = false;
             OnErrorV1ExchangerateHistoryPeriodsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+                Logger.LogError(RestLogEvents.ApiRequestFailed, exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
 
         /// <summary>
@@ -1334,13 +1326,12 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<V1ExchangerateHistoryPeriodsGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1ExchangerateHistoryPeriodsGetApiResponse>();
                         V1ExchangerateHistoryPeriodsGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/history/periods", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(Logger, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/exchangerate/history/periods", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
@@ -1374,7 +1365,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1ExchangerateHistoryPeriodsGetApiResponse> Logger { get; }
+            public ILogger<ExchangeRatesApi> Logger { get; }
 
             /// <summary>
             /// The <see cref="V1ExchangerateHistoryPeriodsGetApiResponse"/>
@@ -1386,7 +1377,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1ExchangerateHistoryPeriodsGetApiResponse(ILogger<V1ExchangerateHistoryPeriodsGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1ExchangerateHistoryPeriodsGetApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1402,7 +1393,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1ExchangerateHistoryPeriodsGetApiResponse(ILogger<V1ExchangerateHistoryPeriodsGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V1ExchangerateHistoryPeriodsGetApiResponse(ILogger<ExchangeRatesApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1453,7 +1444,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);

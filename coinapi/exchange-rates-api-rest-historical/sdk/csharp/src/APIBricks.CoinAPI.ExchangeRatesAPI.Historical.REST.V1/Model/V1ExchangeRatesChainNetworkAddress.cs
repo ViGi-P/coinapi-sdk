@@ -120,8 +120,18 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1ExchangeRatesChainNetworkAddress" />
     /// </summary>
-    public class V1ExchangeRatesChainNetworkAddressJsonConverter : JsonConverter<V1ExchangeRatesChainNetworkAddress>
+    public partial class V1ExchangeRatesChainNetworkAddressJsonConverter : JsonConverter<V1ExchangeRatesChainNetworkAddress>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1ExchangeRatesChainNetworkAddressJsonConverter" /> class.
+        /// </summary>
+        public V1ExchangeRatesChainNetworkAddressJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="V1ExchangeRatesChainNetworkAddress" />
         /// </summary>

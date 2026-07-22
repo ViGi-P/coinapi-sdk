@@ -205,27 +205,37 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
     /// <summary>
     /// A Json converter for type <see cref="V1ExchangeRatesTimeseriesItem" />
     /// </summary>
-    public class V1ExchangeRatesTimeseriesItemJsonConverter : JsonConverter<V1ExchangeRatesTimeseriesItem>
+    public partial class V1ExchangeRatesTimeseriesItemJsonConverter : JsonConverter<V1ExchangeRatesTimeseriesItem>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1ExchangeRatesTimeseriesItemJsonConverter" /> class.
+        /// </summary>
+        public V1ExchangeRatesTimeseriesItemJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize TimePeriodStart
         /// </summary>
-        public static string TimePeriodStartFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimePeriodStartFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize TimePeriodEnd
         /// </summary>
-        public static string TimePeriodEndFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimePeriodEndFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize TimeOpen
         /// </summary>
-        public static string TimeOpenFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeOpenFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// The format to use to serialize TimeClose
         /// </summary>
-        public static string TimeCloseFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeCloseFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="V1ExchangeRatesTimeseriesItem" />
