@@ -103,8 +103,18 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
     /// <summary>
     /// A Json converter for type <see cref="V1ExchangeRates" />
     /// </summary>
-    public class V1ExchangeRatesJsonConverter : JsonConverter<V1ExchangeRates>
+    public partial class V1ExchangeRatesJsonConverter : JsonConverter<V1ExchangeRates>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1ExchangeRatesJsonConverter" /> class.
+        /// </summary>
+        public V1ExchangeRatesJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// Deserializes json to <see cref="V1ExchangeRates" />
         /// </summary>

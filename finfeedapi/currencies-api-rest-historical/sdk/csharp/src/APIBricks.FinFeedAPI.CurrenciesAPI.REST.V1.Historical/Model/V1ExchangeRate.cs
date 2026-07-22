@@ -137,12 +137,22 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
     /// <summary>
     /// A Json converter for type <see cref="V1ExchangeRate" />
     /// </summary>
-    public class V1ExchangeRateJsonConverter : JsonConverter<V1ExchangeRate>
+    public partial class V1ExchangeRateJsonConverter : JsonConverter<V1ExchangeRate>
     {
+        partial void OnCreated();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1ExchangeRateJsonConverter" /> class.
+        /// </summary>
+        public V1ExchangeRateJsonConverter()
+        {
+            OnCreated();
+        }
+
         /// <summary>
         /// The format to use to serialize Time
         /// </summary>
-        public static string TimeFormat { get; set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
+        public string TimeFormat { get; private set; } = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffK";
 
         /// <summary>
         /// Deserializes json to <see cref="V1ExchangeRate" />
